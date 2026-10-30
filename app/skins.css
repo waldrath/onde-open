@@ -576,6 +576,17 @@
   background: color-mix(in srgb, var(--skin-bar, var(--bg)) 88%, transparent);
   backdrop-filter: blur(18px) saturate(1.2);
 }
+.app-shell .geo-filter-note {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin: -2px 0 14px;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.45;
+}
+.app-shell .geo-filter-note svg { color: var(--skin-accent); flex-shrink: 0; }
+
 .app-shell .topbar::after {
   content: "";
   position: absolute;

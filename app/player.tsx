@@ -85,7 +85,8 @@ export default function Player({channel,active,onPlay,programmeTitle,programmes,
   else void import('hls.js').then(({default:Hls})=>{
     if(cancelled)return;if(!Hls.isSupported()){if(el.canPlayType('application/vnd.apple.mpegurl')){el.src=source.url;attempt();return;}setFailure('Ce navigateur ne prend pas en charge ce flux vidéo. Essaie Chrome, Safari ou Edge.');setStatus('error');return;}
     const player=new Hls({enableWorker:true,backBufferLength:60,maxBufferLength:30,capLevelToPlayerSize:true,liveSyncDurationCount:3,liveMaxLatencyDurationCount:8,maxLiveSyncPlaybackRate:1.1});hls.current=player;
-    player.on(Hls.Events.MANIFEST_PARSED,attempt);
+    player.on(Hls.Events.MANIFEST_PARSED,()=>{player.subtitleDisplay=false;player.subtitleTrack=-1;attempt();});
+    player.on(Hls.Events.SUBTITLE_TRACKS_UPDATED,()=>{if(!cancelled){player.subtitleDisplay=false;player.subtitleTrack=-1;}});
     player.on(Hls.Events.AUDIO_TRACKS_UPDATED,()=>{
      if(cancelled)return;const opts=player.audioTracks.map((t,i)=>({id:i,name:t.name||t.lang||`Piste ${i+1}`,lang:t.lang||''}));setAudioOptions(opts);
      const preferred=opts.find(t=>matchesAudioLanguage(t,preferredAudio.current));if(preferred&&player.audioTrack!==preferred.id)player.audioTrack=preferred.id;
@@ -98,6 +99,15 @@ export default function Player({channel,active,onPlay,programmeTitle,programmes,
    }).catch(reconnect);
   return()=>{cancelled=true;clearInterval(watchdog);if(retryTimer)clearTimeout(retryTimer);el.removeEventListener('playing',playing);el.removeEventListener('waiting',waiting);el.removeEventListener('pause',paused);el.removeEventListener('timeupdate',progress);el.removeEventListener('error',reconnect);el.removeEventListener('loadedmetadata',nativeAudio);hls.current?.destroy();hls.current=null;el.pause();el.removeAttribute('src');el.load();};
  },[active,source?.url,source?.kind,sourceIndex,sources.length,resolving,recovery]);
+ useEffect(()=>{
+  const el=video.current;if(!el)return;
+  const disableAll=()=>{for(let i=0;i<el.textTracks.length;i++)el.textTracks[i].mode='disabled';};
+  const disableTrack=(event:Event)=>{const track=(event as TrackEvent).track;if(track)track.mode='disabled';};
+  disableAll();
+  el.addEventListener('loadedmetadata',disableAll);
+  el.textTracks.addEventListener?.('addtrack',disableTrack);
+  return()=>{el.removeEventListener('loadedmetadata',disableAll);el.textTracks.removeEventListener?.('addtrack',disableTrack);};
+ },[source?.url,active,reload]);
  useEffect(()=>{if(active&&source?.kind==='embed'){setStatus('loading');setAudioOptions([]);}},[source?.url,source?.kind,active]);
  const retry=()=>{retries.current=0;setReload(x=>x+1);setRecovery(x=>x+1);};
  const alternate=()=>{retries.current=0;setSourceIndex(i=>(i+1)%sources.length);setFailure('');setPlayBlocked(false);};

@@ -14,6 +14,8 @@ This repository is the community edition. It is meant for learning, self-hosting
 - A curated selection of channels by genre.
 - Twelve complete visual skins, each with its own palette, type, icon treatment, ambient motion, and surfaces.
 - French and English interface. Catalogue metadata remains in the language supplied by the broadcaster.
+- Automatic region detection hides channels flagged as geo-limited for another country. An optional filter reveals them.
+- Player captions are disabled by default; viewers can enable the tracks they want.
 - Responsive layouts for desktop, tablet, and mobile, including swipe navigation between main sections.
 - Optional accounts for syncing preferences across devices.
 - Progressive web app manifest, installable on mobile and desktop.
