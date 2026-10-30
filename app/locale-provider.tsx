@@ -1,6 +1,6 @@
 'use client';
 import {createContext,useContext,useEffect,type ReactNode} from 'react';
-import {isLocale,translate,type Locale} from '../lib/i18n';
+import {translate,type Locale} from '../lib/i18n';
 
 type LocaleContextValue={
  locale:Locale;
@@ -20,10 +20,6 @@ function writeLocale(next:Locale){
 export function LocaleProvider({children,initialLocale='fr'}:{children:ReactNode;initialLocale?:Locale}){
  useEffect(()=>{
   document.documentElement.lang=initialLocale==='fr'?'fr-CA':'en';
-  try{
-   const saved=localStorage.getItem('onde-locale');
-   if(isLocale(saved)&&saved!==initialLocale){writeLocale(saved);window.location.reload();}
-  }catch{}
  },[initialLocale]);
  const setLocale=(next:Locale)=>{if(next===initialLocale)return;writeLocale(next);window.location.reload();};
  const t=(fr:string,vars?:Record<string,string|number>)=>translate(initialLocale,fr,vars);
