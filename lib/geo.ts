@@ -6,6 +6,17 @@ const CANADA_ZONES = /^America\/(Toronto|Montreal|Quebec|Halifax|St_Johns|Vancou
 const USA_ZONES = /^America\/(New_York|Chicago|Denver|Los_Angeles|Phoenix|Anchorage|Honolulu|Detroit|Indiana|Kentucky|Boise|Juneau|Nome|Sitka|Adak|Menominee|North_Dakota|Puerto_Rico|Virgin)$/;
 
 export function detectViewerCountry(input?:{locale?:string;timeZone?:string}):ViewerCountry {
+  // The time zone is the better signal for where playback is happening; the
+  // browser language is a fallback when the zone is missing or unrecognized.
+  const timeZone = input?.timeZone ?? (
+    typeof Intl !== 'undefined'
+      ? Intl.DateTimeFormat().resolvedOptions().timeZone || ''
+      : ''
+  );
+  if (timeZone === 'Europe/Paris' || timeZone === 'Europe/Monaco') return 'FR';
+  if (CANADA_ZONES.test(timeZone)) return 'CA';
+  if (USA_ZONES.test(timeZone)) return 'US';
+
   const locale = input?.locale ?? (
     typeof navigator !== 'undefined'
       ? (navigator.languages?.[0] || navigator.language || '')
@@ -15,15 +26,6 @@ export function detectViewerCountry(input?:{locale?:string;timeZone?:string}):Vi
   if (normalizedLocale === 'fr-ca' || normalizedLocale === 'en-ca') return 'CA';
   if (normalizedLocale === 'fr-fr' || normalizedLocale === 'fr-mc') return 'FR';
   if (normalizedLocale === 'en-us') return 'US';
-
-  const timeZone = input?.timeZone ?? (
-    typeof Intl !== 'undefined'
-      ? Intl.DateTimeFormat().resolvedOptions().timeZone || ''
-      : ''
-  );
-  if (timeZone === 'Europe/Paris' || timeZone === 'Europe/Monaco') return 'FR';
-  if (CANADA_ZONES.test(timeZone)) return 'CA';
-  if (USA_ZONES.test(timeZone)) return 'US';
   return 'XX';
 }
 
