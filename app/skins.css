@@ -1,0 +1,1223 @@
+/* ---------------------------------------------------------------------------
+   Onde skin system v2
+   A skin is a complete art direction: ambient light, icon language, surface
+   material, type and motion. Keep every rule scoped to .app-shell so the
+   sign-in page can share the same skin without inheriting app chrome.
+--------------------------------------------------------------------------- */
+
+.app-shell {
+  --skin-icon-size: 34px;
+  --skin-icon-radius: 10px;
+  --skin-icon-bg: rgba(255, 255, 255, .06);
+  --skin-icon-border: rgba(255, 255, 255, .12);
+  --skin-icon-color: currentColor;
+  --skin-icon-shadow: none;
+  --skin-surface-shadow: 0 22px 55px rgba(0, 0, 0, .28), inset 0 1px 0 rgba(255, 255, 255, .06);
+  --skin-heading-font: var(--font-heading);
+  --skin-heading-tracking: -.025em;
+  --skin-heading-transform: none;
+  --skin-heading-shadow: none;
+  --skin-accent: var(--accent);
+  --skin-line: var(--line);
+  --skin-speck: rgba(255, 255, 255, .55);
+  --skin-aura-a: rgba(100, 200, 209, .22);
+  --skin-aura-b: rgba(70, 120, 255, .16);
+  --skin-aura-c: rgba(160, 107, 255, .12);
+  --skin-ring: rgba(255, 255, 255, .12);
+  --skin-grid: rgba(255, 255, 255, .05);
+  --skin-glow: rgba(100, 200, 209, .22);
+  --skin-warm: rgba(255, 180, 120, .18);
+}
+
+/* Dark — deep broadcast blue with cyan signal light. */
+.app-shell[data-theme=dark] {
+  --skin-icon-bg: linear-gradient(145deg, rgba(100, 200, 209, .2), rgba(24, 52, 88, .72));
+  --skin-icon-border: rgba(130, 225, 232, .32);
+  --skin-icon-color: #a7edf0;
+  --skin-icon-shadow: 0 8px 20px rgba(0, 0, 0, .35), inset 0 1px 0 rgba(255, 255, 255, .14);
+  --skin-surface-shadow: 0 22px 60px rgba(0, 0, 0, .34), inset 0 1px 0 rgba(255, 255, 255, .07);
+  --skin-accent: #64c8d1;
+  --skin-speck: rgba(180, 235, 255, .65);
+  --skin-aura-a: rgba(40, 130, 200, .26);
+  --skin-aura-b: rgba(70, 220, 210, .18);
+  --skin-aura-c: rgba(140, 110, 255, .13);
+  --skin-ring: rgba(120, 220, 235, .18);
+  --skin-grid: rgba(120, 200, 230, .045);
+  --skin-glow: rgba(100, 200, 209, .24);
+}
+
+/* Clair — warm paper, ink green and a soft sun. */
+.app-shell[data-theme=light] {
+  --skin-icon-bg: linear-gradient(145deg, #fffefa, #e4ede0);
+  --skin-icon-border: #c9dbca;
+  --skin-icon-color: #194f40;
+  --skin-icon-shadow: 0 8px 18px rgba(31, 48, 40, .09), inset 0 1px 0 #fff;
+  --skin-surface-shadow: 0 24px 60px rgba(42, 60, 50, .1), inset 0 1px 0 #fff;
+  --skin-heading-font: Georgia, 'Times New Roman', serif;
+  --skin-heading-tracking: -.02em;
+  --skin-accent: #194f40;
+  --skin-speck: rgba(25, 79, 64, .22);
+  --skin-aura-a: rgba(255, 190, 130, .3);
+  --skin-aura-b: rgba(150, 200, 170, .24);
+  --skin-aura-c: rgba(240, 220, 180, .24);
+  --skin-ring: rgba(31, 80, 62, .12);
+  --skin-grid: rgba(31, 80, 62, .04);
+  --skin-glow: rgba(25, 79, 64, .16);
+  --skin-warm: rgba(255, 180, 110, .25);
+}
+
+/* Rétro 90 — CRT magenta, cyan and a chrome horizon. */
+.app-shell[data-theme=retro] {
+  --skin-icon-bg: linear-gradient(145deg, rgba(255, 63, 200, .22), rgba(57, 246, 255, .12));
+  --skin-icon-border: rgba(255, 63, 200, .5);
+  --skin-icon-color: #9ff6ff;
+  --skin-icon-shadow: 0 0 18px rgba(255, 63, 200, .3), inset 0 0 12px rgba(57, 246, 255, .14);
+  --skin-surface-shadow: 0 22px 60px rgba(4, 1, 14, .55), 0 0 34px rgba(255, 63, 200, .1), inset 0 0 0 1px rgba(255, 63, 200, .16);
+  --skin-heading-font: ui-monospace, SFMono-Regular, Consolas, monospace;
+  --skin-heading-tracking: .015em;
+  --skin-heading-transform: uppercase;
+  --skin-heading-shadow: 0 0 18px rgba(255, 63, 200, .34), 0 0 42px rgba(57, 246, 255, .14);
+  --skin-accent: #ff3fc8;
+  --skin-speck: rgba(57, 246, 255, .7);
+  --skin-aura-a: rgba(255, 63, 200, .22);
+  --skin-aura-b: rgba(57, 246, 255, .18);
+  --skin-aura-c: rgba(122, 92, 255, .18);
+  --skin-ring: rgba(57, 246, 255, .2);
+  --skin-grid: rgba(255, 63, 200, .07);
+  --skin-glow: rgba(255, 63, 200, .28);
+}
+
+/* Matrix — terminal green, hard edges, glyph rain. */
+.app-shell[data-theme=matrix] {
+  --skin-icon-bg: linear-gradient(145deg, rgba(61, 255, 138, .18), rgba(4, 25, 12, .8));
+  --skin-icon-border: rgba(61, 255, 138, .38);
+  --skin-icon-color: #7dffae;
+  --skin-icon-shadow: 0 0 16px rgba(61, 255, 138, .22), inset 0 0 10px rgba(61, 255, 138, .1);
+  --skin-icon-radius: 4px;
+  --skin-heading-font: ui-monospace, SFMono-Regular, Consolas, monospace;
+  --skin-heading-tracking: .02em;
+  --skin-heading-transform: uppercase;
+  --skin-heading-shadow: 0 0 16px rgba(61, 255, 138, .35);
+  --skin-accent: #3dff8a;
+  --skin-speck: rgba(61, 255, 138, .7);
+  --skin-aura-a: rgba(61, 255, 138, .15);
+  --skin-aura-b: rgba(0, 180, 90, .12);
+  --skin-aura-c: rgba(61, 255, 138, .08);
+  --skin-ring: rgba(61, 255, 138, .14);
+  --skin-grid: rgba(61, 255, 138, .055);
+  --skin-glow: rgba(61, 255, 138, .24);
+}
+
+/* Manga — blossom paper, rose ink, soft rounded chips. */
+.app-shell[data-theme=anime] {
+  --skin-icon-bg: linear-gradient(145deg, #fffdfd, #f9dce7);
+  --skin-icon-border: #efbed1;
+  --skin-icon-color: #b83d6c;
+  --skin-icon-radius: 14px;
+  --skin-icon-shadow: 0 8px 18px rgba(224, 86, 138, .12), inset 0 1px 0 #fff;
+  --skin-surface-shadow: 0 24px 55px rgba(224, 86, 138, .12), inset 0 1px 0 #fff;
+  --skin-accent: #e0568a;
+  --skin-speck: rgba(224, 86, 138, .38);
+  --skin-aura-a: rgba(255, 170, 200, .38);
+  --skin-aura-b: rgba(210, 180, 255, .22);
+  --skin-aura-c: rgba(255, 220, 235, .4);
+  --skin-ring: rgba(224, 86, 138, .14);
+  --skin-grid: rgba(224, 86, 138, .035);
+  --skin-glow: rgba(224, 86, 138, .18);
+}
+
+/* Blueprint — technical drawing, square modules, measured type. */
+.app-shell[data-theme=blueprint] {
+  --skin-icon-bg: rgba(9, 32, 60, .7);
+  --skin-icon-border: rgba(100, 210, 255, .4);
+  --skin-icon-color: #8fe1ff;
+  --skin-icon-radius: 3px;
+  --skin-icon-shadow: inset 0 0 0 1px rgba(255, 209, 102, .12), 0 0 18px rgba(100, 210, 255, .1);
+  --skin-surface-shadow: 0 22px 55px rgba(0, 8, 18, .4), inset 0 0 0 1px rgba(100, 210, 255, .12);
+  --skin-heading-font: ui-monospace, SFMono-Regular, Consolas, monospace;
+  --skin-heading-tracking: .04em;
+  --skin-heading-transform: uppercase;
+  --skin-heading-shadow: 0 0 16px rgba(100, 210, 255, .18);
+  --skin-accent: #ffd166;
+  --skin-speck: rgba(100, 210, 255, .55);
+  --skin-aura-a: rgba(40, 130, 200, .18);
+  --skin-aura-b: rgba(255, 209, 102, .1);
+  --skin-aura-c: rgba(100, 210, 255, .1);
+  --skin-ring: rgba(100, 210, 255, .16);
+  --skin-grid: rgba(100, 210, 255, .07);
+  --skin-glow: rgba(100, 210, 255, .2);
+}
+
+/* Noir — cinema black, thin gold, editorial serif. */
+.app-shell[data-theme=noir] {
+  --skin-icon-bg: linear-gradient(145deg, #1c1914, #0f0d0a);
+  --skin-icon-border: rgba(217, 180, 91, .38);
+  --skin-icon-color: #e8cb86;
+  --skin-icon-radius: 2px;
+  --skin-icon-shadow: inset 0 0 0 1px rgba(217, 180, 91, .08), 0 8px 18px rgba(0, 0, 0, .4);
+  --skin-surface-shadow: 0 24px 60px rgba(0, 0, 0, .5), inset 0 1px 0 rgba(217, 180, 91, .08);
+  --skin-heading-font: Georgia, 'Times New Roman', serif;
+  --skin-heading-tracking: .005em;
+  --skin-heading-shadow: 0 10px 30px rgba(0, 0, 0, .45);
+  --skin-accent: #d9b45b;
+  --skin-speck: rgba(217, 180, 91, .45);
+  --skin-aura-a: rgba(217, 180, 91, .14);
+  --skin-aura-b: rgba(255, 255, 255, .05);
+  --skin-aura-c: rgba(120, 90, 40, .12);
+  --skin-ring: rgba(217, 180, 91, .12);
+  --skin-grid: rgba(217, 180, 91, .035);
+  --skin-glow: rgba(217, 180, 91, .2);
+}
+
+/* Marée — deep water, bioluminescent aqua. */
+.app-shell[data-theme=ocean] {
+  --skin-icon-bg: linear-gradient(145deg, rgba(63, 224, 200, .18), rgba(5, 42, 55, .8));
+  --skin-icon-border: rgba(63, 224, 200, .35);
+  --skin-icon-color: #8ff7e7;
+  --skin-icon-radius: 16px;
+  --skin-icon-shadow: 0 0 18px rgba(63, 224, 200, .16), inset 0 1px 0 rgba(255, 255, 255, .12);
+  --skin-surface-shadow: 0 24px 60px rgba(0, 8, 14, .4), inset 0 1px 0 rgba(63, 224, 200, .1);
+  --skin-accent: #3fe0c8;
+  --skin-speck: rgba(120, 245, 230, .55);
+  --skin-aura-a: rgba(30, 150, 190, .24);
+  --skin-aura-b: rgba(63, 224, 200, .16);
+  --skin-aura-c: rgba(20, 80, 130, .2);
+  --skin-ring: rgba(63, 224, 200, .15);
+  --skin-grid: rgba(63, 224, 200, .04);
+  --skin-glow: rgba(63, 224, 200, .22);
+}
+
+/* Orbite — violet space, orbital rings. */
+.app-shell[data-theme=cosmos] {
+  --skin-icon-bg: linear-gradient(145deg, rgba(160, 107, 255, .2), rgba(20, 12, 48, .82));
+  --skin-icon-border: rgba(160, 107, 255, .4);
+  --skin-icon-color: #d3bcff;
+  --skin-icon-radius: 50%;
+  --skin-icon-shadow: 0 0 18px rgba(160, 107, 255, .22), inset 0 0 12px rgba(80, 120, 255, .12);
+  --skin-surface-shadow: 0 24px 60px rgba(0, 0, 0, .42), inset 0 1px 0 rgba(160, 107, 255, .12);
+  --skin-accent: #a06bff;
+  --skin-speck: rgba(200, 180, 255, .6);
+  --skin-aura-a: rgba(120, 80, 255, .22);
+  --skin-aura-b: rgba(40, 80, 220, .16);
+  --skin-aura-c: rgba(220, 120, 255, .12);
+  --skin-ring: rgba(160, 107, 255, .16);
+  --skin-grid: rgba(160, 107, 255, .04);
+  --skin-glow: rgba(160, 107, 255, .22);
+}
+
+/* Arcade — coin-op neon, pixel corners, hard grid. */
+.app-shell[data-theme=arcade] {
+  --skin-icon-bg: linear-gradient(145deg, rgba(255, 107, 53, .22), rgba(12, 15, 34, .85));
+  --skin-icon-border: rgba(255, 107, 53, .5);
+  --skin-icon-color: #ffc09a;
+  --skin-icon-radius: 0;
+  --skin-icon-shadow: 0 0 16px rgba(255, 107, 53, .24), inset 0 0 10px rgba(57, 246, 255, .1);
+  --skin-surface-shadow: 0 22px 55px rgba(0, 0, 0, .45), inset 0 0 0 1px rgba(255, 107, 53, .16);
+  --skin-heading-font: ui-monospace, SFMono-Regular, Consolas, monospace;
+  --skin-heading-tracking: .03em;
+  --skin-heading-transform: uppercase;
+  --skin-heading-shadow: 0 3px 0 rgba(57, 246, 255, .2), 0 0 18px rgba(255, 107, 53, .25);
+  --skin-accent: #ff6b35;
+  --skin-speck: rgba(57, 246, 255, .6);
+  --skin-aura-a: rgba(255, 107, 53, .18);
+  --skin-aura-b: rgba(57, 246, 255, .12);
+  --skin-aura-c: rgba(120, 80, 255, .14);
+  --skin-ring: rgba(255, 107, 53, .16);
+  --skin-grid: rgba(57, 246, 255, .06);
+  --skin-glow: rgba(255, 107, 53, .24);
+}
+
+/* Encre — washi paper, sumi ink, vermilion seal. */
+.app-shell[data-theme=sumi] {
+  --skin-icon-bg: linear-gradient(145deg, #fffefa, #e9e4d6);
+  --skin-icon-border: #d8d2c2;
+  --skin-icon-color: #1d1c1a;
+  --skin-icon-radius: 50%;
+  --skin-icon-shadow: 0 6px 16px rgba(30, 25, 20, .1), inset 0 1px 0 #fff;
+  --skin-surface-shadow: 0 20px 50px rgba(40, 35, 28, .12), inset 0 1px 0 #fff;
+  --skin-heading-font: Georgia, 'Times New Roman', serif;
+  --skin-heading-tracking: 0;
+  --skin-heading-shadow: 0 1px 0 rgba(255, 255, 255, .6);
+  --skin-accent: #c8452f;
+  --skin-speck: rgba(29, 28, 26, .28);
+  --skin-aura-a: rgba(200, 69, 47, .1);
+  --skin-aura-b: rgba(70, 65, 55, .08);
+  --skin-aura-c: rgba(240, 235, 220, .5);
+  --skin-ring: rgba(29, 28, 26, .1);
+  --skin-grid: rgba(29, 28, 26, .025);
+  --skin-glow: rgba(200, 69, 47, .14);
+}
+
+/* Braise — night hearth, ember orange, warm smoke. */
+.app-shell[data-theme=ember] {
+  --skin-icon-bg: linear-gradient(145deg, rgba(255, 122, 47, .2), rgba(30, 14, 6, .85));
+  --skin-icon-border: rgba(255, 122, 47, .4);
+  --skin-icon-color: #ffc39c;
+  --skin-icon-radius: 14px;
+  --skin-icon-shadow: 0 0 18px rgba(255, 122, 47, .22), inset 0 1px 0 rgba(255, 255, 255, .1);
+  --skin-surface-shadow: 0 24px 60px rgba(0, 0, 0, .42), inset 0 1px 0 rgba(255, 122, 47, .12);
+  --skin-heading-shadow: 0 0 22px rgba(255, 122, 47, .2);
+  --skin-accent: #ff7a2f;
+  --skin-speck: rgba(255, 160, 90, .6);
+  --skin-aura-a: rgba(255, 90, 20, .22);
+  --skin-aura-b: rgba(255, 170, 80, .12);
+  --skin-aura-c: rgba(120, 40, 10, .18);
+  --skin-ring: rgba(255, 122, 47, .16);
+  --skin-grid: rgba(255, 122, 47, .04);
+  --skin-glow: rgba(255, 122, 47, .24);
+}
+
+/* ---------------------------------------------------------------------------
+   Ambient backdrop
+--------------------------------------------------------------------------- */
+
+.theme-backdrop { background-color: var(--bg); }
+.backdrop-aura { position: absolute; inset: 0; overflow: hidden; }
+.backdrop-aura i {
+  position: absolute;
+  width: 48vw;
+  height: 48vw;
+  border-radius: 50%;
+  filter: blur(78px);
+  opacity: .72;
+  animation: aura-drift 30s ease-in-out infinite alternate;
+  will-change: transform;
+}
+.backdrop-aura i:nth-child(1) { left: -14%; top: -20%; background: radial-gradient(circle, var(--skin-aura-a), transparent 68%); }
+.backdrop-aura i:nth-child(2) { right: -12%; top: 4%; background: radial-gradient(circle, var(--skin-aura-b), transparent 68%); animation-delay: -11s; animation-duration: 36s; }
+.backdrop-aura i:nth-child(3) { left: 24%; bottom: -26%; background: radial-gradient(circle, var(--skin-aura-c), transparent 68%); animation-delay: -19s; animation-duration: 42s; }
+
+.backdrop-mesh {
+  position: absolute;
+  inset: -12%;
+  background-image:
+    linear-gradient(var(--skin-grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--skin-grid) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: radial-gradient(circle at 50% 34%, #000 0 32%, transparent 76%);
+  opacity: .7;
+  animation: mesh-pan 48s linear infinite;
+}
+
+.backdrop-rings { position: absolute; left: 50%; top: 40%; width: min(76vw, 960px); aspect-ratio: 1; transform: translate(-50%, -50%); }
+.backdrop-rings i { position: absolute; inset: 0; border: 1px solid var(--skin-ring); border-radius: 50%; animation: ring-breathe 11s ease-out infinite; }
+.backdrop-rings i:nth-child(2) { inset: 13%; animation-delay: 3.4s; }
+.backdrop-rings i:nth-child(3) { inset: 27%; animation-delay: 6.8s; }
+
+.backdrop-specks { position: absolute; inset: 0; }
+.backdrop-specks i {
+  position: absolute;
+  width: var(--speck-size, 2px);
+  height: var(--speck-size, 2px);
+  border-radius: 50%;
+  background: var(--skin-speck);
+  opacity: var(--speck-opacity, .4);
+  box-shadow: 0 0 9px var(--skin-speck);
+  animation: speck-float 12s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+.backdrop-grain {
+  position: absolute;
+  inset: 0;
+  background: url('/themes/noir-grain.svg') repeat;
+  opacity: .045;
+  mix-blend-mode: overlay;
+  animation: grain-shift 9s steps(3) infinite;
+}
+
+.theme-sunrays {
+  position: absolute;
+  inset: -30%;
+  background: conic-gradient(from 210deg at 72% 12%, transparent 0 8deg, rgba(255, 216, 160, .18) 9deg 11deg, transparent 12deg 31deg, rgba(255, 220, 170, .12) 32deg 34deg, transparent 35deg 58deg, rgba(255, 210, 150, .1) 59deg 61deg, transparent 62deg 360deg);
+  mix-blend-mode: screen;
+  animation: sun-turn 110s linear infinite;
+  opacity: .6;
+}
+
+.theme-neon-grid {
+  position: absolute;
+  left: -20%;
+  right: -20%;
+  bottom: -18%;
+  height: 52%;
+  background-image:
+    linear-gradient(rgba(57, 246, 255, .16) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 63, 200, .12) 1px, transparent 1px);
+  background-size: 54px 34px;
+  transform: perspective(420px) rotateX(62deg);
+  transform-origin: bottom;
+  mask-image: linear-gradient(to top, #000, transparent 82%);
+  animation: grid-run 5s linear infinite;
+  opacity: .65;
+}
+
+.theme-spotlight {
+  position: absolute;
+  inset: -20% -10% 35%;
+  background: radial-gradient(ellipse at 50% 18%, rgba(217, 180, 91, .16), transparent 58%);
+  mix-blend-mode: screen;
+  animation: spotlight-breathe 16s ease-in-out infinite;
+}
+
+.theme-tide {
+  position: absolute;
+  left: -10%;
+  right: -10%;
+  bottom: -6%;
+  height: 36%;
+  background:
+    radial-gradient(120% 60% at 50% 100%, rgba(63, 224, 200, .18), transparent 62%),
+    repeating-radial-gradient(ellipse at 50% 120%, rgba(63, 224, 200, .12) 0 1px, transparent 2px 44px);
+  animation: tide-drift 18s ease-in-out infinite alternate;
+  opacity: .7;
+}
+
+.theme-heat {
+  position: absolute;
+  left: 10%;
+  right: 10%;
+  bottom: -18%;
+  height: 44%;
+  background: radial-gradient(ellipse at 50% 100%, rgba(255, 105, 30, .3), rgba(255, 60, 10, .08) 42%, transparent 70%);
+  filter: blur(22px);
+  animation: heat-breathe 7s ease-in-out infinite alternate;
+}
+
+@media (max-width: 760px) {
+  .backdrop-aura i { width: 72vw; height: 72vw; filter: blur(52px); }
+  .backdrop-rings { width: 120vw; }
+  .backdrop-specks i:nth-child(n+13) { display: none; }
+  .theme-sunrays { inset: -45%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .backdrop-aura i,
+  .backdrop-mesh,
+  .backdrop-rings i,
+  .backdrop-specks i,
+  .backdrop-grain,
+  .theme-sunrays,
+  .theme-neon-grid,
+  .theme-spotlight,
+  .theme-tide,
+  .theme-heat { animation: none !important; }
+}
+
+/* ---------------------------------------------------------------------------
+   Typography and skin-native icons
+--------------------------------------------------------------------------- */
+
+.app-shell :is(.page-heading h1, .home-hero h2, .home-section-heading h2, .section-heading h2, .selection-theme-head h2, .favorites-lists h2, .access-card h1) {
+  font-family: var(--skin-heading-font);
+  letter-spacing: var(--skin-heading-tracking);
+  text-transform: var(--skin-heading-transform);
+  text-shadow: var(--skin-heading-shadow);
+}
+
+.app-shell .page-heading h1 { position: relative; }
+.app-shell .page-heading h1::after {
+  content: "";
+  display: block;
+  width: 46px;
+  height: 2px;
+  margin-top: 9px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--skin-accent), transparent);
+  opacity: .72;
+}
+
+.app-shell :is(.nav-item, .home-category-grid button, .quick-option, .player-more summary) > svg:first-of-type {
+  width: var(--skin-icon-size);
+  height: var(--skin-icon-size);
+  padding: calc(var(--skin-icon-size) * .24);
+  border-radius: var(--skin-icon-radius);
+  background: var(--skin-icon-bg);
+  border: 1px solid var(--skin-icon-border);
+  color: var(--skin-icon-color);
+  box-shadow: var(--skin-icon-shadow);
+  transition: transform .22s cubic-bezier(.2, .8, .2, 1), box-shadow .22s ease, background .22s ease;
+}
+.app-shell .nav-item > svg:first-of-type { flex: 0 0 auto; }
+.app-shell .nav-item:hover > svg:first-of-type { transform: translateY(-1px) scale(1.05) rotate(-2deg); }
+.app-shell .home-category-grid button:hover > svg:first-of-type { transform: rotate(-7deg) scale(1.08); }
+.app-shell .quick-option > svg:first-of-type { width: 30px; height: 30px; padding: 7px; border-radius: calc(var(--skin-icon-radius) - 2px); }
+.app-shell .player-more summary > svg:first-of-type { width: 30px; height: 30px; padding: 7px; }
+
+.app-shell .nav-item.nav-active > svg:first-of-type {
+  background: rgba(0, 0, 0, .16);
+  border-color: rgba(255, 255, 255, .34);
+  color: #fff;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .16);
+}
+
+.locale-picker { position: relative; display: flex; }
+.locale-switch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  min-height: 38px;
+  padding: 0 10px;
+  border-radius: 9px;
+  border: 1px solid var(--skin-icon-border);
+  background: var(--skin-icon-bg);
+  color: var(--skin-icon-color);
+  font-size: 10px;
+  font-weight: 750;
+  letter-spacing: .08em;
+  box-shadow: var(--skin-icon-shadow);
+}
+.locale-switch:hover { border-color: var(--skin-accent); background: color-mix(in srgb, var(--skin-accent) 20%, transparent); }
+.locale-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  width: 152px;
+  padding: 6px;
+  display: grid;
+  gap: 3px;
+  border: 1px solid rgba(255, 255, 255, .14);
+  border-radius: 10px;
+  background: rgba(7, 14, 22, .94);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, .45);
+  backdrop-filter: blur(22px) saturate(1.2);
+  z-index: 96;
+  animation: menu-pop .24s cubic-bezier(.2, .9, .2, 1) both;
+}
+.locale-menu button {
+  padding: 8px 10px;
+  border-radius: 7px;
+  color: #eef6f8;
+  font-size: 12px;
+  text-align: left;
+}
+.locale-menu button:hover { background: rgba(255, 255, 255, .1); }
+.locale-menu button.is-active { background: color-mix(in srgb, var(--skin-accent) 28%, transparent); color: #fff; font-weight: 650; }
+@media (max-width: 760px) {
+  .locale-switch { min-width: 38px; min-height: 38px; padding: 0 8px; }
+  .locale-switch span { display: none; }
+}
+
+.app-shell .theme-switch {
+  background: var(--skin-icon-bg);
+  border: 1px solid var(--skin-icon-border);
+  color: var(--skin-icon-color);
+  box-shadow: var(--skin-icon-shadow);
+}
+.app-shell .theme-switch:hover { background: color-mix(in srgb, var(--skin-accent) 22%, transparent); border-color: var(--skin-accent); }
+.app-shell .theme-switch svg { transition: transform .35s cubic-bezier(.2, .8, .2, 1), filter .3s ease; }
+.app-shell .theme-switch:hover svg { transform: rotate(18deg) scale(1.06); filter: drop-shadow(0 0 8px var(--skin-glow)); }
+.app-shell .profile-avatar {
+  background: var(--skin-icon-bg);
+  border: 1px solid var(--skin-icon-border);
+  color: var(--skin-icon-color);
+  box-shadow: var(--skin-icon-shadow);
+}
+
+.app-shell[data-theme=dark] { --skin-stroke: 1.7; }
+.app-shell[data-theme=light] { --skin-stroke: 1.8; }
+.app-shell[data-theme=retro] { --skin-stroke: 1.6; }
+.app-shell[data-theme=matrix] { --skin-stroke: 1.7; }
+.app-shell[data-theme=anime] { --skin-stroke: 2.3; }
+.app-shell[data-theme=blueprint] { --skin-stroke: 1.5; }
+.app-shell[data-theme=noir] { --skin-stroke: 1.3; }
+.app-shell[data-theme=ocean] { --skin-stroke: 1.8; }
+.app-shell[data-theme=cosmos] { --skin-stroke: 1.6; }
+.app-shell[data-theme=arcade] { --skin-stroke: 2; }
+.app-shell[data-theme=sumi] { --skin-stroke: 1.7; }
+.app-shell[data-theme=ember] { --skin-stroke: 1.7; }
+.app-shell :is(.nav-item, .quick-option, .home-category-grid button, .player-more summary) > svg:first-of-type { stroke-width: var(--skin-stroke, 2); }
+
+/* ---------------------------------------------------------------------------
+   Surfaces, depth and light
+--------------------------------------------------------------------------- */
+
+.app-shell :is(.channel-card, .home-hero, .desktop-channel-panel, .desktop-programme-panel, .up-next, .player-shell, .guide-row, .selection-row, .list-card, .favorites-lists, .filter-sheet) {
+  border-color: var(--skin-line);
+  box-shadow: var(--skin-surface-shadow);
+}
+
+.app-shell .channel-card {
+  position: relative;
+  isolation: isolate;
+  transition: transform .28s cubic-bezier(.2, .8, .2, 1), box-shadow .28s ease, border-color .28s ease;
+}
+.app-shell .channel-card::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: radial-gradient(260px circle at var(--spot-x, 50%) var(--spot-y, 50%), color-mix(in srgb, var(--skin-accent) 20%, transparent), transparent 66%);
+  opacity: 0;
+  transition: opacity .28s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+.app-shell .channel-card:hover::before { opacity: 1; }
+.app-shell .channel-card > * { position: relative; z-index: 1; }
+.app-shell .channel-card:hover { transform: translateY(-4px); border-color: color-mix(in srgb, var(--skin-accent) 55%, var(--skin-line)); }
+
+.app-shell .channel-card .card-visual img,
+.app-shell .home-favorite-art img { transition: transform .5s cubic-bezier(.2, .8, .2, 1), filter .4s ease; }
+.app-shell .channel-card:hover .card-visual img,
+.app-shell .home-favorite-row button:hover .home-favorite-art img { transform: scale(1.045); }
+
+.app-shell .desktop-channel-row,
+.app-shell .guide-row,
+.app-shell .selection-row { transition: transform .22s ease, background .22s ease, border-color .22s ease; }
+.app-shell .desktop-channel-row:hover { transform: translateX(2px); }
+.app-shell .guide-row:hover { transform: translateX(3px); border-color: color-mix(in srgb, var(--skin-accent) 50%, var(--skin-line)); }
+
+/* The top bar reads as a sheet of glass with a signal line underneath. */
+.app-shell .topbar {
+  position: relative;
+  z-index: 70;
+  background: color-mix(in srgb, var(--skin-bar, var(--bg)) 88%, transparent);
+  backdrop-filter: blur(18px) saturate(1.2);
+}
+.app-shell .topbar::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--skin-accent), transparent);
+  background-size: 220% 100%;
+  opacity: .55;
+  pointer-events: none;
+  animation: signal-sweep 7s linear infinite;
+}
+.app-shell .search-box { transition: border-color .22s ease, box-shadow .22s ease, background .22s ease; }
+.app-shell .search-box:focus-within { border-color: var(--skin-accent); box-shadow: 0 0 0 3px color-mix(in srgb, var(--skin-accent) 18%, transparent), 0 8px 30px rgba(0, 0, 0, .12); }
+
+/* ---------------------------------------------------------------------------
+   Navigation details
+--------------------------------------------------------------------------- */
+
+.app-shell .nav-item { position: relative; overflow: hidden; }
+.app-shell .nav-item::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 50%;
+  width: 2px;
+  height: 0;
+  border-radius: 2px;
+  background: currentColor;
+  transform: translateY(-50%);
+  transition: height .25s cubic-bezier(.2, .8, .2, 1);
+  opacity: .7;
+}
+.app-shell .nav-item.nav-active::before { height: 48%; }
+.app-shell .nav-item > svg { transition: transform .22s cubic-bezier(.2, .8, .2, 1); }
+.app-shell .nav-item.nav-active { box-shadow: inset 0 1px 0 rgba(255, 255, 255, .18), 0 6px 18px color-mix(in srgb, var(--skin-accent) 18%, transparent); }
+
+.app-shell .logo-mark { animation: logo-wave 8s ease-in-out infinite; transform-origin: 50% 55%; }
+.app-shell .logo-mark path:nth-child(2) { animation: logo-wave-soft 8s ease-in-out infinite; }
+.app-shell .logo-period { animation: logo-dot 8s ease-in-out infinite; }
+
+/* ---------------------------------------------------------------------------
+   Skin gallery (theme menu)
+--------------------------------------------------------------------------- */
+
+.theme-menu {
+  width: min(348px, calc(100vw - 24px));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  padding: 10px;
+  max-height: calc(100dvh - 112px);
+  background: rgba(7, 14, 22, .9);
+  border: 1px solid rgba(255, 255, 255, .14);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, .55), 0 0 0 1px rgba(0, 0, 0, .25);
+  backdrop-filter: blur(26px) saturate(1.25);
+  animation: menu-pop .28s cubic-bezier(.2, .9, .2, 1) both;
+}
+.theme-menu .theme-option {
+  position: relative;
+  display: block;
+  min-height: 78px;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, .1);
+  border-radius: 10px;
+  overflow: hidden;
+  color: #fff;
+  background: #0d141c;
+  animation: theme-card-in .34s cubic-bezier(.2, .8, .2, 1) both;
+  animation-delay: calc(var(--i, 0) * 22ms);
+  transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
+.theme-menu .theme-option:hover { transform: translateY(-2px); border-color: rgba(255, 255, 255, .32); }
+.theme-menu .theme-option[aria-selected=true],
+.theme-menu .theme-option.theme-option-active {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent), 0 12px 32px color-mix(in srgb, var(--accent) 22%, transparent);
+}
+.theme-preview {
+  position: absolute;
+  inset: 0;
+  display: block;
+  background:
+    radial-gradient(120% 90% at 18% 0%, color-mix(in srgb, var(--accent) 70%, transparent), transparent 60%),
+    linear-gradient(135deg, var(--swatch), color-mix(in srgb, var(--accent) 34%, #000));
+  transform: scale(1.001);
+  transition: transform .35s cubic-bezier(.2, .8, .2, 1);
+}
+.theme-menu .theme-option:hover .theme-preview { transform: scale(1.06); }
+.theme-preview::before {
+  content: "";
+  position: absolute;
+  left: 14%;
+  right: 14%;
+  top: 22%;
+  height: 38%;
+  border: 1px solid rgba(255, 255, 255, .28);
+  border-radius: 4px;
+  box-shadow: 0 0 24px color-mix(in srgb, var(--accent) 45%, transparent), inset 0 0 18px rgba(255, 255, 255, .08);
+  background: linear-gradient(160deg, rgba(255, 255, 255, .16), transparent 70%);
+}
+.theme-preview::after {
+  content: "";
+  position: absolute;
+  left: 18%;
+  right: 18%;
+  bottom: 27%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .7), transparent);
+  box-shadow: 0 0 10px color-mix(in srgb, var(--accent) 60%, transparent);
+}
+.theme-preview i {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, .6), transparent 70%);
+  filter: blur(1px);
+}
+.theme-preview i:first-child { left: 10%; top: 16%; }
+.theme-preview i:last-child { right: 9%; bottom: 22%; width: 16px; height: 16px; opacity: .7; }
+.theme-option-label {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 7px 9px 8px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .01em;
+  text-align: left;
+  color: #fff;
+  background: linear-gradient(0deg, rgba(0, 0, 0, .82), rgba(0, 0, 0, .3) 65%, transparent);
+}
+.theme-option-check {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 19px;
+  height: 19px;
+  padding: 3px;
+  color: #0b1118;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .4);
+}
+.theme-menu .theme-option[data-theme-id=dark] .theme-preview { background: radial-gradient(120% 90% at 18% 0%, rgba(100, 200, 209, .55), transparent 58%), linear-gradient(135deg, #07162e, #0b1b35); }
+.theme-menu .theme-option[data-theme-id=light] .theme-preview { background: radial-gradient(120% 90% at 18% 0%, rgba(255, 190, 130, .8), transparent 58%), linear-gradient(135deg, #fffefa, #e7eee3); }
+.theme-menu .theme-option[data-theme-id=light] .theme-preview::before { border-color: rgba(25, 79, 64, .35); }
+.theme-menu .theme-option[data-theme-id=retro] .theme-preview { background: radial-gradient(120% 90% at 18% 0%, rgba(255, 63, 200, .55), transparent 58%), linear-gradient(135deg, #1a0b3d, #12021f); }
+.theme-menu .theme-option[data-theme-id=matrix] .theme-preview { background: repeating-linear-gradient(0deg, rgba(61, 255, 138, .16) 0 1px, transparent 1px 7px), linear-gradient(135deg, #02120a, #04130a); }
+.theme-menu .theme-option[data-theme-id=anime] .theme-preview { background: radial-gradient(120% 90% at 18% 0%, rgba(255, 255, 255, .8), transparent 58%), linear-gradient(135deg, #ffd9e4, #fdf3f6); }
+.theme-menu .theme-option[data-theme-id=anime] .theme-preview::before { border-color: rgba(224, 86, 138, .3); }
+.theme-menu .theme-option[data-theme-id=blueprint] .theme-preview { background: linear-gradient(rgba(100, 210, 255, .2) 1px, transparent 1px), linear-gradient(90deg, rgba(100, 210, 255, .2) 1px, transparent 1px), linear-gradient(135deg, #05162c, #08223f); background-size: 12px 12px, 12px 12px, auto; }
+.theme-menu .theme-option[data-theme-id=noir] .theme-preview { background: radial-gradient(90% 90% at 50% 0%, rgba(217, 180, 91, .45), transparent 60%), linear-gradient(135deg, #0b0a08, #14120e); }
+.theme-menu .theme-option[data-theme-id=ocean] .theme-preview { background: radial-gradient(120% 90% at 18% 0%, rgba(63, 224, 200, .45), transparent 58%), linear-gradient(135deg, #03121a, #062430); }
+.theme-menu .theme-option[data-theme-id=cosmos] .theme-preview { background: radial-gradient(1px 1px at 20% 30%, #fff, transparent), radial-gradient(1px 1px at 70% 20%, #fff, transparent), radial-gradient(1px 1px at 40% 70%, #fff, transparent), radial-gradient(120% 90% at 18% 0%, rgba(160, 107, 255, .5), transparent 58%), linear-gradient(135deg, #0c0820, #140b2e); }
+.theme-menu .theme-option[data-theme-id=arcade] .theme-preview { background: linear-gradient(rgba(57, 246, 255, .15) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 107, 53, .15) 1px, transparent 1px), linear-gradient(135deg, #0c0f22, #110b1c); background-size: 10px 10px, 10px 10px, auto; }
+.theme-menu .theme-option[data-theme-id=sumi] .theme-preview { background: radial-gradient(58% 58% at 68% 34%, rgba(200, 69, 47, .55), transparent 62%), linear-gradient(135deg, #f4f1e8, #e4ded0); }
+.theme-menu .theme-option[data-theme-id=sumi] .theme-preview::before { border-color: rgba(29, 28, 26, .35); }
+.theme-menu .theme-option[data-theme-id=ember] .theme-preview { background: radial-gradient(100% 100% at 50% 100%, rgba(255, 122, 47, .6), transparent 60%), linear-gradient(135deg, #1a0c05, #0d0603); }
+
+@media (max-width: 760px) {
+  .theme-menu {
+    position: fixed;
+    top: 68px;
+    right: 12px;
+    left: 12px;
+    width: auto;
+    max-height: calc(100dvh - 82px);
+    padding: 8px;
+    gap: 7px;
+  }
+  .theme-menu .theme-option { min-height: 72px; }
+  .theme-option-label { font-size: 10px; padding: 6px 8px; }
+}
+
+/* ---------------------------------------------------------------------------
+   Light theme: keep dark player surfaces readable
+--------------------------------------------------------------------------- */
+
+.app-shell[data-theme=light] :is(.player-shell, .watch-dock) {
+  --text: #edf4ef;
+  --muted: #aebdb4;
+  color: #edf4ef;
+  background: #10231c;
+  border-color: #31503e;
+}
+.app-shell[data-theme=light] :is(.player-shell, .watch-dock) :is(
+  .player-label strong,
+  .player-channel-copy > span,
+  .player-schedule-head,
+  .player-schedule-time,
+  .player-schedule-title,
+  .player-schedule-live,
+  .player-schedule-toggle,
+  .player-note,
+  .embed-controls,
+  .quick-option,
+  .tv-cast-button
+) { color: #e7f1e9; }
+.app-shell[data-theme=light] :is(.player-shell, .watch-dock) .player-channel-copy > span { color: #a9c0b1; }
+.app-shell[data-theme=light] :is(.player-shell, .watch-dock) .player-schedule {
+  background: rgba(6, 18, 12, .58);
+  border-color: #2c4636;
+}
+.app-shell[data-theme=light] :is(.player-shell, .watch-dock) .player-schedule li { border-color: #274033; }
+.app-shell[data-theme=light] :is(.player-shell, .watch-dock) .player-schedule-live {
+  color: #b9f3c8;
+  border-color: #4c8a62;
+  background: rgba(90, 200, 130, .12);
+}
+.app-shell[data-theme=light] :is(.player-shell, .watch-dock) :is(.quick-option, .icon-button) > svg {
+  background: rgba(255, 255, 255, .08);
+  border-color: rgba(255, 255, 255, .16);
+  color: #e7f1e9;
+  box-shadow: none;
+}
+.app-shell[data-theme=light] :is(.player-shell, .watch-dock) :is(.quick-option:hover, .icon-button:hover) { background: rgba(255, 255, 255, .12); color: #fff; }
+.app-shell[data-theme=light] :is(.player-shell, .watch-dock) .tv-cast-button { border-color: #4d7059; background: rgba(255, 255, 255, .05); }
+
+/* ---------------------------------------------------------------------------
+   Sign-in page: the same skin, on a quieter stage
+--------------------------------------------------------------------------- */
+
+.access-page.app-shell {
+  position: relative;
+  isolation: isolate;
+  overflow-x: hidden;
+  background: var(--bg);
+  color: var(--text);
+}
+.access-page .theme-backdrop { z-index: 0; }
+.access-page .access-halo {
+  position: absolute;
+  width: min(70vw, 760px);
+  aspect-ratio: 1;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(circle, color-mix(in srgb, var(--skin-accent) 22%, transparent), transparent 66%);
+  filter: blur(40px);
+  opacity: .55;
+  pointer-events: none;
+  z-index: 1;
+  animation: access-halo 12s ease-in-out infinite alternate;
+}
+.access-page .access-card {
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  background: color-mix(in srgb, var(--surface, var(--panel)) 88%, transparent);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  color: var(--text);
+  box-shadow: var(--skin-surface-shadow);
+  backdrop-filter: blur(28px) saturate(1.15);
+  animation: access-card-in .6s cubic-bezier(.2, .8, .2, 1) both;
+}
+.access-page .access-locale {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  display: flex;
+  gap: 2px;
+  padding: 3px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--surface) 80%, transparent);
+  z-index: 3;
+}
+.access-page .access-locale button {
+  min-width: 30px;
+  min-height: 26px;
+  padding: 0 7px;
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 750;
+  letter-spacing: .06em;
+}
+.access-page .access-locale button.is-active { background: var(--accent); color: var(--accent-ink, #fff); }
+.access-page .access-card-glow {
+  position: absolute;
+  inset: -40% 30% 45% -25%;
+  background: radial-gradient(circle, color-mix(in srgb, var(--skin-accent) 24%, transparent), transparent 65%);
+  filter: blur(30px);
+  pointer-events: none;
+}
+.access-page .access-kicker {
+  display: block;
+  margin-top: 22px;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2.2px;
+  color: var(--skin-accent);
+}
+.access-page .access-card h1 { position: relative; }
+.access-page .access-card :is(h1, h2, .logo) { color: var(--text); }
+.access-page .access-card :is(p, small, .access-note, .auth-links button) { color: var(--muted); }
+.access-page .access-card .auth-form label { color: var(--text); }
+.access-page .access-card .auth-form input {
+  background: var(--surface-raised, var(--panel2));
+  border-color: var(--border, var(--line));
+  color: var(--text);
+  transition: border-color .2s ease, box-shadow .2s ease, background .2s ease;
+}
+.access-page .access-card .auth-form input:focus-visible {
+  outline: none;
+  border-color: var(--skin-accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--skin-accent) 20%, transparent);
+}
+.access-page .access-card .auth-setup { background: var(--surface-raised, var(--panel2)); border: 1px solid var(--line); }
+.access-page .access-card .primary { background: var(--accent); color: var(--accent-ink, #fff); }
+.access-page .access-card .secondary {
+  background: var(--surface-raised, var(--panel2));
+  border-color: var(--border, var(--line));
+  color: var(--text);
+}
+.access-page .access-card .auth-links button { color: var(--skin-accent); }
+.access-page .access-card .access-note { color: var(--muted); }
+
+/* ---------------------------------------------------------------------------
+   Directional page transitions
+--------------------------------------------------------------------------- */
+
+#contenu { view-transition-name: onde-main; }
+::view-transition-old(root),
+::view-transition-new(root) { animation: none; mix-blend-mode: normal; }
+::view-transition-group(onde-main) { animation-duration: .46s; animation-timing-function: cubic-bezier(.22, .8, .2, 1); mix-blend-mode: normal; }
+::view-transition-old(onde-main),
+::view-transition-new(onde-main) { mix-blend-mode: normal; }
+html[data-nav=forward]::view-transition-old(onde-main) { animation: page-out-back .34s cubic-bezier(.4, 0, 1, 1) both; }
+html[data-nav=forward]::view-transition-new(onde-main) { animation: page-in-forward .48s cubic-bezier(.22, .8, .2, 1) both; }
+html[data-nav=back]::view-transition-old(onde-main) { animation: page-out-forward .34s cubic-bezier(.4, 0, 1, 1) both; }
+html[data-nav=back]::view-transition-new(onde-main) { animation: page-in-back .48s cubic-bezier(.22, .8, .2, 1) both; }
+
+/* ---------------------------------------------------------------------------
+   Micro-interactions
+--------------------------------------------------------------------------- */
+
+.app-shell .primary,
+.app-shell .secondary,
+.app-shell .icon-button,
+.app-shell .quick-option,
+.app-shell .tv-cast-button,
+.app-shell .theme-switch { transition: transform .18s ease, background .18s ease, color .18s ease, border-color .18s ease, box-shadow .18s ease; }
+.app-shell :is(.primary, .secondary, .icon-button, .quick-option, .tv-cast-button):active { transform: scale(.965); }
+.app-shell .primary { position: relative; overflow: hidden; box-shadow: 0 10px 24px color-mix(in srgb, var(--skin-accent) 18%, transparent); }
+.app-shell .primary::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(110deg, transparent 30%, rgba(255, 255, 255, .28) 46%, transparent 62%);
+  transform: translateX(-130%);
+  transition: transform .65s cubic-bezier(.2, .8, .2, 1);
+  pointer-events: none;
+}
+.app-shell .primary:hover::after { transform: translateX(130%); }
+.app-shell .primary:hover { box-shadow: 0 14px 30px color-mix(in srgb, var(--skin-accent) 26%, transparent); }
+
+.app-shell .card-favorite.is-favorite svg,
+.app-shell .home-favorite-heart { animation: heart-pop .38s cubic-bezier(.2, .9, .3, 1.4) both; }
+.app-shell .card-favorite svg { transition: transform .2s ease, color .2s ease; }
+.app-shell .card-favorite:hover svg { transform: scale(1.12); }
+
+.app-shell .search-results { animation: menu-pop .24s cubic-bezier(.2, .9, .2, 1) both; }
+.app-shell .toast { animation: toast-in .34s cubic-bezier(.2, .9, .2, 1) both; }
+.app-shell .notice { animation: toast-in .3s ease both; }
+.app-shell .player-schedule-toggle svg { transition: transform .25s ease; }
+.app-shell .player-schedule-toggle svg.is-closed { transform: rotate(-90deg); }
+
+.app-shell .home-favorite-row button,
+.app-shell .home-category-grid button,
+.app-shell .home-tv { transition: transform .24s cubic-bezier(.2, .8, .2, 1), box-shadow .24s ease, filter .24s ease; }
+.app-shell .home-favorite-row button:hover,
+.app-shell .home-category-grid button:hover { transform: translateY(-3px); }
+
+.app-shell .status-dot.live,
+.app-shell .tiny-dot { animation: live-pulse 2.6s ease-in-out infinite; }
+.app-shell .watch-dock { animation: dock-in .38s cubic-bezier(.2, .8, .2, 1) both; }
+
+/* ---------------------------------------------------------------------------
+   Skin-specific finishing details
+--------------------------------------------------------------------------- */
+
+.app-shell[data-theme=retro] .channel-card,
+.app-shell[data-theme=retro] .desktop-channel-panel,
+.app-shell[data-theme=retro] .up-next { border-color: #4a3390; }
+.app-shell[data-theme=retro] .page-heading h1 { text-shadow: 0 0 18px rgba(255, 63, 200, .34), 0 0 42px rgba(57, 246, 255, .14); }
+.app-shell[data-theme=retro] .nav-item.nav-active { background: linear-gradient(90deg, #ff3fc8, #7a5cff); }
+.app-shell[data-theme=retro] .logo { text-shadow: 0 0 14px rgba(255, 63, 200, .42); }
+
+.app-shell[data-theme=blueprint] .channel-card::after,
+.app-shell[data-theme=blueprint] .desktop-channel-panel::after {
+  content: "";
+  position: absolute;
+  inset: 5px;
+  border: 1px solid rgba(100, 210, 255, .12);
+  border-radius: 1px;
+  pointer-events: none;
+}
+.app-shell[data-theme=blueprint] .section-heading h2::before { content: "▦ "; color: var(--skin-accent); }
+
+.app-shell[data-theme=noir] .channel-card { border-color: rgba(217, 180, 91, .18); }
+.app-shell[data-theme=noir] .page-heading h1 { font-style: italic; }
+.app-shell[data-theme=noir] .search-box { border-radius: 2px; }
+
+.app-shell[data-theme=arcade] .channel-card,
+.app-shell[data-theme=arcade] .home-category-grid button,
+.app-shell[data-theme=arcade] .list-card { border-radius: 0; box-shadow: 4px 4px 0 rgba(0, 0, 0, .35), var(--skin-surface-shadow); }
+.app-shell[data-theme=arcade] .channel-card:hover { transform: translate(-2px, -4px); }
+.app-shell[data-theme=arcade] .page-heading h1::after { height: 3px; box-shadow: 0 3px 0 rgba(57, 246, 255, .35); }
+
+.app-shell[data-theme=sumi] .channel-card,
+.app-shell[data-theme=sumi] .desktop-channel-panel,
+.app-shell[data-theme=sumi] .up-next { background-image: url('/themes/noir-grain.svg'); background-blend-mode: multiply; }
+.app-shell[data-theme=sumi] .page-heading h1::after { background: linear-gradient(90deg, #c8452f, transparent); }
+
+@media (min-width: 1024px) {
+  .app-shell[data-theme=light] .desktop-first {
+    background: linear-gradient(0deg, rgba(246, 243, 235, .97), rgba(246, 243, 235, .48)), url('/images/onde-river-hero.webp') center 55% / cover no-repeat;
+    color: #20382c;
+  }
+  .app-shell[data-theme=light] .desktop-first h2 { color: #20382c; }
+  .app-shell[data-theme=light] .desktop-first p { color: #4f6759; }
+}
+
+.app-shell[data-theme=cosmos] .desktop-channel-panel,
+.app-shell[data-theme=cosmos] .desktop-programme-panel { box-shadow: var(--skin-surface-shadow), 0 0 40px rgba(160, 107, 255, .1); }
+.app-shell[data-theme=cosmos] .nav-item.nav-active { box-shadow: inset 0 1px 0 rgba(255, 255, 255, .18), 0 0 24px rgba(160, 107, 255, .3); }
+
+/* ---------------------------------------------------------------------------
+   Utilities and keyframes
+--------------------------------------------------------------------------- */
+
+.page-announcer { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+
+@keyframes aura-drift {
+  0% { transform: translate3d(-3%, -2%, 0) scale(1); }
+  50% { transform: translate3d(4%, 3%, 0) scale(1.08); }
+  100% { transform: translate3d(-2%, 5%, 0) scale(.96); }
+}
+@keyframes mesh-pan {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(72px, 72px, 0); }
+}
+@keyframes ring-breathe {
+  0% { transform: scale(.94); opacity: .1; }
+  45% { opacity: .55; }
+  100% { transform: scale(1.1); opacity: 0; }
+}
+@keyframes speck-float {
+  0%, 100% { transform: translate3d(0, 0, 0); opacity: calc(var(--speck-opacity, .4) * .55); }
+  50% { transform: translate3d(6px, -18px, 0); opacity: var(--speck-opacity, .4); }
+}
+@keyframes grain-shift {
+  0% { background-position: 0 0; }
+  33% { background-position: 18px 12px; }
+  66% { background-position: -12px 20px; }
+  100% { background-position: 0 0; }
+}
+@keyframes sun-turn { to { transform: rotate(360deg); } }
+@keyframes grid-run { to { background-position: 0 34px, 54px 0; } }
+@keyframes spotlight-breathe { 0%, 100% { opacity: .6; transform: scale(1); } 50% { opacity: .9; transform: scale(1.06); } }
+@keyframes tide-drift { 0% { transform: translate3d(-2%, 2%, 0) scale(1); } 100% { transform: translate3d(2%, -2%, 0) scale(1.04); } }
+@keyframes heat-breathe { 0%, 100% { opacity: .55; transform: scale(.96); } 50% { opacity: .9; transform: scale(1.06); } }
+
+@keyframes signal-sweep { from { background-position: 200% 0; } to { background-position: -200% 0; } }
+@keyframes logo-wave { 0%, 100% { transform: translateY(0) rotate(0); } 48% { transform: translateY(-1px) rotate(-1deg); } 52% { transform: translateY(1px) rotate(1deg); } }
+@keyframes logo-wave-soft { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(1px); } }
+@keyframes logo-dot { 0%, 92%, 100% { opacity: 1; } 95% { opacity: .35; } }
+@keyframes menu-pop { from { opacity: 0; transform: translateY(-8px) scale(.97); } to { opacity: 1; transform: translateY(0) scale(1); } }
+@keyframes theme-card-in { from { opacity: 0; transform: translateY(8px) scale(.98); } to { opacity: 1; transform: translateY(0) scale(1); } }
+@keyframes heart-pop { 0% { transform: scale(.6); } 55% { transform: scale(1.22); } 100% { transform: scale(1); } }
+@keyframes toast-in { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes live-pulse { 0%, 100% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--skin-accent) 38%, transparent); } 50% { box-shadow: 0 0 0 5px transparent; } }
+@keyframes dock-in { from { opacity: 0; transform: translateY(14px) scale(.98); } to { opacity: 1; transform: translateY(0) scale(1); } }
+@keyframes access-halo { from { transform: translate(-50%, -50%) scale(.94); opacity: .4; } to { transform: translate(-50%, -50%) scale(1.08); opacity: .7; } }
+@keyframes access-card-in { from { opacity: 0; transform: translateY(16px) scale(.985); } to { opacity: 1; transform: translateY(0) scale(1); } }
+@keyframes page-in-forward { from { opacity: .1; transform: translate3d(34px, 0, 0) scale(.988); } to { opacity: 1; transform: translate3d(0, 0, 0) scale(1); } }
+@keyframes page-out-back { from { opacity: 1; transform: translate3d(0, 0, 0) scale(1); } to { opacity: .2; transform: translate3d(-24px, 0, 0) scale(.99); } }
+@keyframes page-in-back { from { opacity: .1; transform: translate3d(-34px, 0, 0) scale(.988); } to { opacity: 1; transform: translate3d(0, 0, 0) scale(1); } }
+@keyframes page-out-forward { from { opacity: 1; transform: translate3d(0, 0, 0) scale(1); } to { opacity: .2; transform: translate3d(24px, 0, 0) scale(.99); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .app-shell *, .access-page * { scroll-behavior: auto !important; }
+  .app-shell .logo-mark, .app-shell .logo-mark path, .app-shell .logo-period,
+  .app-shell .access-card, .access-page .access-halo,
+  .app-shell .status-dot.live, .app-shell .tiny-dot,
+  .app-shell .watch-dock, .app-shell .toast, .app-shell .notice,
+  .app-shell .search-results, .theme-menu, .theme-menu .theme-option { animation: none !important; }
+  ::view-transition-old(*), ::view-transition-new(*), ::view-transition-group(*) { animation-duration: .01s !important; }
+}
+
+/* ---------------------------------------------------------------------------
+   Finishing pass: rows, cards, hero and window chrome.
+   Carousels keep a clean edge (no visible scrollbar, no card cut mid-logo),
+   the home hero says what it is for, and small broadcast labels stay legible.
+--------------------------------------------------------------------------- */
+
+/* Rows scroll with snap and fade only on the side that still holds content. */
+.app-shell :is(.home-favorite-row, .home-category-grid, .guide-days) {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  scroll-snap-type: x proximity;
+  scroll-padding-inline: 2px;
+}
+.app-shell :is(.home-favorite-row, .home-category-grid, .guide-days)::-webkit-scrollbar { display: none; }
+.app-shell :is(.home-favorite-row, .home-category-grid) > * { scroll-snap-align: start; }
+.app-shell :is(.home-favorite-row, .home-category-grid)[data-next=true] {
+  -webkit-mask-image: linear-gradient(90deg, #000 calc(100% - 30px), transparent);
+  mask-image: linear-gradient(90deg, #000 calc(100% - 30px), transparent);
+}
+.app-shell :is(.home-favorite-row, .home-category-grid)[data-previous=true] {
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 26px);
+  mask-image: linear-gradient(90deg, transparent, #000 26px);
+}
+.app-shell :is(.home-favorite-row, .home-category-grid)[data-previous=true][data-next=true] {
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 26px, #000 calc(100% - 30px), transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 26px, #000 calc(100% - 30px), transparent);
+}
+
+/* Long side panels scroll without painting a scrollbar across the design. */
+@media (min-width: 761px) {
+  .app-shell .sidebar { overflow-y: auto; overflow-x: hidden; scrollbar-width: none; }
+  .app-shell .sidebar::-webkit-scrollbar { display: none; }
+  .app-shell .sidebar-bottom { padding-bottom: 20px; }
+}
+.app-shell :is(.desktop-channel-list, .expanded-programmes, .player-schedule ol) {
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in srgb, var(--skin-accent) 42%, transparent) transparent;
+}
+
+/* Hero: an editorial opener instead of an empty photograph. */
+.app-shell .hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 650;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--skin-accent);
+}
+.app-shell .hero-eyebrow::before {
+  content: "";
+  width: 18px;
+  height: 2px;
+  border-radius: 2px;
+  background: currentColor;
+  opacity: .7;
+}
+.app-shell .desktop-first h2 { font-size: clamp(23px, 2.1vw, 31px); line-height: 1.15; max-width: 24ch; }
+.app-shell .desktop-first p { max-width: 48ch; line-height: 1.55; }
+.app-shell .desktop-first .hero-eyebrow { color: #d9f4f6; }
+.app-shell .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-top: 4px; }
+.app-shell .hero-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 16px;
+  border-radius: 11px;
+  border: 1px solid color-mix(in srgb, var(--skin-line) 82%, transparent);
+  background: rgba(6, 18, 32, .5);
+  color: #eaf4f8;
+  font-size: 14px;
+  font-weight: 600;
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+}
+.app-shell .hero-secondary:hover { border-color: var(--skin-accent); background: color-mix(in srgb, var(--skin-accent) 24%, transparent); color: #fff; }
+
+/* Clair: the river photograph reads as a sunlit paper inset. */
+.app-shell[data-theme=light] .desktop-first {
+  background: linear-gradient(0deg, rgba(255, 254, 250, .97), rgba(255, 254, 250, .58)), url('/images/onde-river-hero.webp') center/cover no-repeat;
+}
+.app-shell[data-theme=light] .desktop-first :is(h2, p) { color: #1f3028; }
+.app-shell[data-theme=light] .desktop-first .hero-eyebrow { color: #194f40; }
+.app-shell[data-theme=light] .desktop-first .hero-secondary { background: rgba(255, 255, 255, .72); border-color: #c9d8d0; color: #194f40; }
+.app-shell[data-theme=light] .desktop-first .hero-secondary:hover { background: #fff; border-color: #194f40; color: #123e32; }
+
+/* Cards: readable broadcast labels over any artwork. */
+.app-shell .channel-card .card-visual::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 34%;
+  background: linear-gradient(0deg, rgba(4, 12, 10, .46), transparent);
+  pointer-events: none;
+  z-index: 1;
+}
+.app-shell .playback-tag {
+  z-index: 2;
+  font-size: 10px;
+  line-height: 1.25;
+  letter-spacing: .01em;
+  padding: 4px 7px;
+  border-radius: 6px;
+  background: rgba(4, 12, 10, .68);
+  border: 1px solid rgba(255, 255, 255, .16);
+  color: #f2f8f4;
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+}
+.app-shell .playback-tag > span { width: 5px; height: 5px; background: #7ef0b2; box-shadow: 0 0 6px rgba(126, 240, 178, .8); }
+.app-shell .playback-tag.integrated { color: #eafff2; }
+.app-shell :is(.card-meta, .card-programme) { font-size: 12px; line-height: 1.45; }
+.app-shell .channel-card:focus-within { border-color: color-mix(in srgb, var(--skin-accent) 55%, var(--skin-line)); }
+.app-shell .card-select:focus-visible { outline: 2px solid var(--skin-accent); outline-offset: -3px; border-radius: inherit; }
+
+@media (max-width: 760px) {
+  .app-shell .home-hero .hero-eyebrow { font-size: 10px; }
+  .app-shell :is(.card-meta, .card-programme) { font-size: 11px; }
+  .app-shell .playback-tag { font-size: 9.5px; padding: 3px 6px; }
+  .app-shell .section-count { font-size: 11px; padding: 3px 8px; }
+  .app-shell .mobile-nav button { font-size: 10px; letter-spacing: .01em; }
+}
+
+/* Paper skins (Clair, Manga, Encre) keep ink text on their pale heroes, and
+   the small accent links stay readable at 11-12px. */
+.app-shell:is([data-theme=light],[data-theme=anime],[data-theme=sumi]) :is(.desktop-first, .home-hero) .hero-eyebrow {
+  color: var(--text);
+}
+.app-shell:is([data-theme=light],[data-theme=anime],[data-theme=sumi]) :is(.desktop-first, .home-hero) .hero-eyebrow::before {
+  background: var(--accent);
+  opacity: .85;
+}
+.app-shell:is([data-theme=anime],[data-theme=sumi]) .desktop-first .hero-secondary {
+  background: color-mix(in srgb, var(--surface) 84%, transparent);
+  border-color: var(--border);
+  color: var(--text);
+}
+.app-shell:is([data-theme=anime],[data-theme=sumi]) .desktop-first .hero-secondary:hover {
+  background: var(--surface);
+  border-color: var(--accent);
+  color: var(--text);
+}
+.app-shell:is([data-theme=anime],[data-theme=sumi]) :is(.desktop-panel-heading button, .home-section-heading > button, .home-carousel-all) {
+  color: color-mix(in srgb, var(--accent) 72%, #000);
+}
+.app-shell:is([data-theme=anime],[data-theme=sumi]) .desktop-programme-panel p { color: var(--muted); }
+.app-shell:is([data-theme=anime],[data-theme=sumi]) :is(.nav-item, .mobile-nav button) { color: color-mix(in srgb, var(--muted) 82%, #000); }

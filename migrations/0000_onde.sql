@@ -1,0 +1,10 @@
+CREATE TABLE IF NOT EXISTS preferences (user_id text PRIMARY KEY,data text NOT NULL,last_operations text NOT NULL DEFAULT '[]',revision integer NOT NULL DEFAULT 0,updated_at text NOT NULL);
+CREATE TABLE IF NOT EXISTS catalogue_entries (channel_id text PRIMARY KEY,data text NOT NULL,added_at text NOT NULL,updated_at text NOT NULL,run_id text);
+CREATE TABLE IF NOT EXISTS catalogue_health (channel_id text PRIMARY KEY,data text NOT NULL);
+CREATE TABLE IF NOT EXISTS catalogue_runs (run_id text PRIMARY KEY,data text NOT NULL,started_at text NOT NULL);
+CREATE TABLE IF NOT EXISTS onde_handoffs (code_hash text PRIMARY KEY,state_hash text NOT NULL,data text NOT NULL,expires_at text NOT NULL);
+CREATE TABLE IF NOT EXISTS onde_sessions (token_hash text PRIMARY KEY,data text NOT NULL,expires_at text NOT NULL);
+CREATE INDEX IF NOT EXISTS onde_session_expiry ON onde_sessions(expires_at);
+CREATE INDEX IF NOT EXISTS onde_handoff_expiry ON onde_handoffs(expires_at);
+CREATE TABLE IF NOT EXISTS channel_reports (id text PRIMARY KEY, channel_id text NOT NULL, reason text NOT NULL, created_at text NOT NULL, reporter text NOT NULL);
+CREATE INDEX IF NOT EXISTS channel_report_channel ON channel_reports(channel_id, created_at);

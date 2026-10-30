@@ -1,0 +1,2 @@
+import fs from 'node:fs';import {neon} from '@neondatabase/serverless';
+const url=process.env.DATABASE_URL_UNPOOLED;if(!url)throw new Error('Direct database connection required');const sql=neon(url);const statements=fs.readFileSync(new URL('../migrations/0000_onde.sql',import.meta.url),'utf8').split(';').map(s=>s.trim()).filter(Boolean);await sql.transaction(statements.map(s=>sql.query(s)));console.log('Onde schema ready: 6 tables.');

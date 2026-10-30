@@ -1,0 +1,1 @@
+export default function Logo(){return <span className="logo"><svg className="logo-mark" viewBox="0 0 48 32" aria-hidden="true"><path d="M2 12C11 2 17 2 25 8s14 8 21-1c-5 13-13 16-22 10S10 8 2 17z"/><path d="M2 23c8-9 14-9 22-3s15 8 22-1c-5 12-13 15-22 9S10 19 2 28z"/></svg>onde<span className="logo-period">.</span></span>;}
