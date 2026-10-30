@@ -142,7 +142,7 @@ export default function Television({userId,initialTheme='dark'}:{userId:string|n
   const direction=pageIndex(id)>=pageIndex(view)?'forward':'back';
   const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const doc=document as ViewTransitionDocument;
-  if(locale==='fr'&&!reduced&&doc.startViewTransition){
+  if(!reduced&&doc.startViewTransition){
    const token=++navToken.current;
    const cleanup=()=>{if(navToken.current===token)delete document.documentElement.dataset.nav;};
    document.documentElement.dataset.nav=direction;
