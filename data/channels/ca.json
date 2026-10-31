@@ -18,7 +18,7 @@
     "source": "iptv-org"
   },
   {
-    "id": "48-hours-ca",
+    "id": "48-hours",
     "name": "48 Hours CA",
     "brand": "48 Hours CA",
     "region": "Canada",
@@ -34,7 +34,7 @@
     "source": "iptv-org"
   },
   {
-    "id": "ae-east",
+    "id": "ae",
     "name": "A&E",
     "brand": "A&E",
     "region": "Canada",
@@ -95,11 +95,17 @@
     "guide": "https://adtv.watch/",
     "stream": "https://uni01rtmp.tulix.tv/amazingdtv/amazingdtv/playlist.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "streamAlts": [
+      {
+        "url": "https://rpn.bozztv.com/gfaith/gfaith-amazing/index.m3u8",
+        "label": "SD"
+      }
+    ],
     "logoUrl": "https://i.imgur.com/I0oPFTj.png",
     "source": "iptv-org"
   },
   {
-    "id": "americas-next-top-model-ca",
+    "id": "americas-next-top-model",
     "name": "America's Next Top Model CA",
     "brand": "America's Next Top Model CA",
     "region": "Canada",
@@ -161,6 +167,16 @@
     "guide": "https://www.azstartv.com/",
     "stream": "https://live.livestreamtv.ca/azstar/amlst:azstar/playlist.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "streamAlts": [
+      {
+        "url": "https://live.livestreamtv.ca/azstar/ngrp:azstar/playlist.m3u8",
+        "label": "SD"
+      },
+      {
+        "url": "http://live.azstartv.com/azstar/smil:azstar.smil/playlist.m3u8",
+        "label": "SD · live.azstartv.com"
+      }
+    ],
     "logoUrl": "https://i.imgur.com/di3XX5L.png",
     "source": "iptv-org"
   },
@@ -181,7 +197,7 @@
     "source": "iptv-org"
   },
   {
-    "id": "bar-rescue-ca",
+    "id": "bar-rescue",
     "name": "Bar Rescue CA",
     "brand": "Bar Rescue CA",
     "region": "Canada",
@@ -197,7 +213,7 @@
     "source": "iptv-org"
   },
   {
-    "id": "bestof-the-drew-barrymore-show-ca",
+    "id": "bestof-the-drew-barrymore-show",
     "name": "Best of The Drew Barrymore Show (United States)",
     "brand": "Best of The Drew Barrymore Show (United States)",
     "region": "Canada",
@@ -213,7 +229,7 @@
     "source": "iptv-org"
   },
   {
-    "id": "bobleponge-ca",
+    "id": "bobleponge",
     "name": "Bob l'eponge",
     "brand": "Bob l'eponge",
     "region": "Canada",
@@ -229,7 +245,7 @@
     "source": "iptv-org"
   },
   {
-    "id": "bonanza-ca",
+    "id": "bonanza",
     "name": "Bonanza CA",
     "brand": "Bonanza CA",
     "region": "Canada",
@@ -245,7 +261,7 @@
     "source": "iptv-org"
   },
   {
-    "id": "bondi-rescue-ca",
+    "id": "bondi-rescue",
     "name": "Bondi Rescue (United States)",
     "brand": "Bondi Rescue (United States)",
     "region": "Canada",
@@ -261,7 +277,7 @@
     "source": "iptv-org"
   },
   {
-    "id": "british-comedy-ca",
+    "id": "british-comedy",
     "name": "British Comedy",
     "brand": "British Comedy",
     "region": "Canada",
@@ -322,11 +338,25 @@
     "guide": "https://www.cbc.ca/programguide/daily/today/cbc_news_network/",
     "stream": "https://d2ny9lo79ujali.cloudfront.net/CBC_News_International.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "streamAlts": [
+      {
+        "url": "https://cbcrclinear-tor.akamaized.net/hls/live/2042769/geo_allow_ca/CBCRCLINEAR_TOR_15/master5.m3u8",
+        "label": "SD"
+      },
+      {
+        "url": "https://aegis-cloudfront-1.tubi.video/c71ce9b6-cddb-4cec-b0db-2f09289f8782/master.m3u8",
+        "label": "SD · aegis-cloudfront-1.tubi.video"
+      },
+      {
+        "url": "https://amg00788-cbc-amg00788c4-xumo-us-3045.playouts.now.amagi.tv/master.m3u8",
+        "label": "SD · amg00788-cbc-amg00788c4-xumo-us-30…"
+      }
+    ],
     "logoUrl": "https://i.imgur.com/SjTdhvJ.png",
     "source": "iptv-org"
   },
   {
-    "id": "cbc-television-cbatdt",
+    "id": "cbc-television",
     "name": "CBC Television CBAT-DT",
     "brand": "CBC Television CBAT-DT",
     "region": "Canada",
@@ -338,243 +368,43 @@
     "guide": "https://www.cbc.ca/television",
     "stream": "https://cbcrclinear-tor.akamaized.net/hls/live/2042757/CBCRCLINEAR_TOR_3/master5.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "streamAlts": [
+      {
+        "url": "https://cbcrclinear-tor.akamaized.net/hls/live/2042756/CBCRCLINEAR_TOR_2/master5.m3u8",
+        "label": "CBCTDT"
+      },
+      {
+        "url": "https://cbcrclinear-tor.akamaized.net/hls/live/2042759/CBCRCLINEAR_TOR_5/master5.m3u8",
+        "label": "CBETDT"
+      },
+      {
+        "url": "https://cbcrclinear-tor.akamaized.net/hls/live/2042758/CBCRCLINEAR_TOR_4/master5.m3u8",
+        "label": "CBHTDT"
+      },
+      {
+        "url": "https://cbcrclinear-tor.akamaized.net/hls/live/2042764/CBCRCLINEAR_TOR_10/master5.m3u8",
+        "label": "CBKTDT"
+      },
+      {
+        "url": "https://cbcrclinear-tor.akamaized.net/hls/live/2042760/CBCRCLINEAR_TOR_6/master5.m3u8",
+        "label": "CBLTDT"
+      },
+      {
+        "url": "https://cbcrclinear-tor.akamaized.net/hls/live/2042761/CBCRCLINEAR_TOR_7/master5.m3u8",
+        "label": "CBMTDT"
+      },
+      {
+        "url": "https://cbcrclinear-tor.akamaized.net/hls/live/2042755/CBCRCLINEAR_TOR_1/master5.m3u8",
+        "label": "CBNTDT"
+      },
+      {
+        "url": "https://cbcrclinear-tor.akamaized.net/hls/live/2042762/CBCRCLINEAR_TOR_8/master5.m3u8",
+        "label": "CBOTDT"
+      }
+    ],
     "limited": true,
     "note": "Stream flagged geo-blocked in the iptv-org directory: playback is limited to the regions the broadcaster allows.",
     "logoUrl": "https://i.imgur.com/xflShTG.png",
-    "source": "iptv-org"
-  },
-  {
-    "id": "cbc-television-cbctdt",
-    "name": "CBC Television CBCT-DT",
-    "brand": "CBC Television CBCT-DT",
-    "region": "Canada",
-    "category": "General",
-    "color": "#6b8c92",
-    "language": "en",
-    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: General).",
-    "official": "https://www.cbc.ca/television",
-    "guide": "https://www.cbc.ca/television",
-    "stream": "https://cbcrclinear-tor.akamaized.net/hls/live/2042756/CBCRCLINEAR_TOR_2/master5.m3u8",
-    "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
-    "limited": true,
-    "note": "Stream flagged geo-blocked in the iptv-org directory: playback is limited to the regions the broadcaster allows.",
-    "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/CBCT-DT_2017.svg/960px-CBCT-DT_2017.svg.png",
-    "source": "iptv-org"
-  },
-  {
-    "id": "cbc-television-cbetdt",
-    "name": "CBC Television CBET-DT",
-    "brand": "CBC Television CBET-DT",
-    "region": "Canada",
-    "category": "General",
-    "color": "#6b8c92",
-    "language": "en",
-    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: General).",
-    "official": "https://www.cbc.ca/television",
-    "guide": "https://www.cbc.ca/television",
-    "stream": "https://cbcrclinear-tor.akamaized.net/hls/live/2042759/CBCRCLINEAR_TOR_5/master5.m3u8",
-    "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
-    "limited": true,
-    "note": "Stream flagged geo-blocked in the iptv-org directory: playback is limited to the regions the broadcaster allows.",
-    "logoUrl": "https://i.imgur.com/NFts1uU.png",
-    "source": "iptv-org"
-  },
-  {
-    "id": "cbc-television-cbhtdt",
-    "name": "CBC Television CBHT-DT",
-    "brand": "CBC Television CBHT-DT",
-    "region": "Canada",
-    "category": "General",
-    "color": "#6b8c92",
-    "language": "en",
-    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: General).",
-    "official": "https://www.cbc.ca/television",
-    "guide": "https://www.cbc.ca/television",
-    "stream": "https://cbcrclinear-tor.akamaized.net/hls/live/2042758/CBCRCLINEAR_TOR_4/master5.m3u8",
-    "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
-    "limited": true,
-    "note": "Stream flagged geo-blocked in the iptv-org directory: playback is limited to the regions the broadcaster allows.",
-    "logoUrl": "https://i.imgur.com/jdlYY4t.png",
-    "source": "iptv-org"
-  },
-  {
-    "id": "cbc-television-cbktdt",
-    "name": "CBC Television CBKT-DT",
-    "brand": "CBC Television CBKT-DT",
-    "region": "Canada",
-    "category": "General",
-    "color": "#6b8c92",
-    "language": "en",
-    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: General).",
-    "official": "https://www.cbc.ca/television",
-    "guide": "https://www.cbc.ca/television",
-    "stream": "https://cbcrclinear-tor.akamaized.net/hls/live/2042764/CBCRCLINEAR_TOR_10/master5.m3u8",
-    "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
-    "limited": true,
-    "note": "Stream flagged geo-blocked in the iptv-org directory: playback is limited to the regions the broadcaster allows.",
-    "logoUrl": "https://i.imgur.com/PWGVjsg.png",
-    "source": "iptv-org"
-  },
-  {
-    "id": "cbc-television-cbltdt",
-    "name": "CBC Television CBLT-DT",
-    "brand": "CBC Television CBLT-DT",
-    "region": "Canada",
-    "category": "General",
-    "color": "#6b8c92",
-    "language": "en",
-    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: General).",
-    "official": "https://www.cbc.ca/television",
-    "guide": "https://www.cbc.ca/television",
-    "stream": "https://cbcrclinear-tor.akamaized.net/hls/live/2042760/CBCRCLINEAR_TOR_6/master5.m3u8",
-    "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
-    "limited": true,
-    "note": "Stream flagged geo-blocked in the iptv-org directory: playback is limited to the regions the broadcaster allows.",
-    "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/CBC_Logo_1992-Present.svg/960px-CBC_Logo_1992-Present.svg.png",
-    "source": "iptv-org"
-  },
-  {
-    "id": "cbc-television-cbmtdt",
-    "name": "CBC Television CBMT-DT",
-    "brand": "CBC Television CBMT-DT",
-    "region": "Canada",
-    "category": "General",
-    "color": "#6b8c92",
-    "language": "en",
-    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: General).",
-    "official": "https://www.cbc.ca/television",
-    "guide": "https://www.cbc.ca/television",
-    "stream": "https://cbcrclinear-tor.akamaized.net/hls/live/2042761/CBCRCLINEAR_TOR_7/master5.m3u8",
-    "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
-    "limited": true,
-    "note": "Stream flagged geo-blocked in the iptv-org directory: playback is limited to the regions the broadcaster allows.",
-    "logoUrl": "https://i.imgur.com/OiiM6Mz.png",
-    "source": "iptv-org"
-  },
-  {
-    "id": "cbc-television-cbntdt",
-    "name": "CBC Television CBNT-DT",
-    "brand": "CBC Television CBNT-DT",
-    "region": "Canada",
-    "category": "General",
-    "color": "#6b8c92",
-    "language": "en",
-    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: General).",
-    "official": "https://www.cbc.ca/television",
-    "guide": "https://www.cbc.ca/television",
-    "stream": "https://cbcrclinear-tor.akamaized.net/hls/live/2042755/CBCRCLINEAR_TOR_1/master5.m3u8",
-    "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
-    "limited": true,
-    "note": "Stream flagged geo-blocked in the iptv-org directory: playback is limited to the regions the broadcaster allows.",
-    "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/CBNT-DT_2017.svg/960px-CBNT-DT_2017.svg.png",
-    "source": "iptv-org"
-  },
-  {
-    "id": "cbc-television-cbotdt",
-    "name": "CBC Television CBOT-DT",
-    "brand": "CBC Television CBOT-DT",
-    "region": "Canada",
-    "category": "General",
-    "color": "#6b8c92",
-    "language": "en",
-    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: General).",
-    "official": "https://www.cbc.ca/television",
-    "guide": "https://www.cbc.ca/television",
-    "stream": "https://cbcrclinear-tor.akamaized.net/hls/live/2042762/CBCRCLINEAR_TOR_8/master5.m3u8",
-    "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
-    "limited": true,
-    "note": "Stream flagged geo-blocked in the iptv-org directory: playback is limited to the regions the broadcaster allows.",
-    "logoUrl": "https://i.imgur.com/v3DJUa8.png",
-    "source": "iptv-org"
-  },
-  {
-    "id": "cbc-television-cbrtdt",
-    "name": "CBC Television CBRT-DT",
-    "brand": "CBC Television CBRT-DT",
-    "region": "Canada",
-    "category": "General",
-    "color": "#6b8c92",
-    "language": "en",
-    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: General).",
-    "official": "https://www.cbc.ca/television",
-    "guide": "https://www.cbc.ca/television",
-    "stream": "https://cbcrclinear-tor.akamaized.net/hls/live/2042763/CBCRCLINEAR_TOR_9/master5.m3u8",
-    "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
-    "limited": true,
-    "note": "Stream flagged geo-blocked in the iptv-org directory: playback is limited to the regions the broadcaster allows.",
-    "logoUrl": "https://i.imgur.com/ocq1x2B.png",
-    "source": "iptv-org"
-  },
-  {
-    "id": "cbc-television-cbutdt",
-    "name": "CBC Television CBUT-DT",
-    "brand": "CBC Television CBUT-DT",
-    "region": "Canada",
-    "category": "General",
-    "color": "#6b8c92",
-    "language": "en",
-    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: General).",
-    "official": "https://www.cbc.ca/television",
-    "guide": "https://www.cbc.ca/television",
-    "stream": "https://cbcrclinear-tor.akamaized.net/hls/live/2042768/CBCRCLINEAR_TOR_14/master5.m3u8",
-    "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
-    "limited": true,
-    "note": "Stream flagged geo-blocked in the iptv-org directory: playback is limited to the regions the broadcaster allows.",
-    "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1a/CBUT_Logo_%28cleaned_up_ver%29.png",
-    "source": "iptv-org"
-  },
-  {
-    "id": "cbc-television-cbwtdt",
-    "name": "CBC Television CBWT-DT",
-    "brand": "CBC Television CBWT-DT",
-    "region": "Canada",
-    "category": "General",
-    "color": "#6b8c92",
-    "language": "en",
-    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: General).",
-    "official": "https://www.cbc.ca/television",
-    "guide": "https://www.cbc.ca/television",
-    "stream": "https://cbcrclinear-tor.akamaized.net/hls/live/2042767/CBCRCLINEAR_TOR_13/master5.m3u8",
-    "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
-    "limited": true,
-    "note": "Stream flagged geo-blocked in the iptv-org directory: playback is limited to the regions the broadcaster allows.",
-    "logoUrl": "https://i.imgur.com/aWNHg5z.png",
-    "source": "iptv-org"
-  },
-  {
-    "id": "cbc-television-cbxtdt",
-    "name": "CBC Television CBXT-DT",
-    "brand": "CBC Television CBXT-DT",
-    "region": "Canada",
-    "category": "General",
-    "color": "#6b8c92",
-    "language": "en",
-    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: General).",
-    "official": "https://www.cbc.ca/television",
-    "guide": "https://www.cbc.ca/television",
-    "stream": "https://cbcrclinear-tor.akamaized.net/hls/live/2042765/CBCRCLINEAR_TOR_11/master5.m3u8",
-    "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
-    "limited": true,
-    "note": "Stream flagged geo-blocked in the iptv-org directory: playback is limited to the regions the broadcaster allows.",
-    "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/CBC_Logo_1992-Present.svg/960px-CBC_Logo_1992-Present.svg.png",
-    "source": "iptv-org"
-  },
-  {
-    "id": "cbc-television-cfykdt",
-    "name": "CBC Television CFYK-DT",
-    "brand": "CBC Television CFYK-DT",
-    "region": "Canada",
-    "category": "General",
-    "color": "#6b8c92",
-    "language": "en",
-    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: General).",
-    "official": "https://www.cbc.ca/television",
-    "guide": "https://www.cbc.ca/television",
-    "stream": "https://cbcrclinear-tor.akamaized.net/hls/live/2042766/CBCRCLINEAR_TOR_12/master5.m3u8",
-    "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
-    "limited": true,
-    "note": "Stream flagged geo-blocked in the iptv-org directory: playback is limited to the regions the broadcaster allows.",
-    "logoUrl": "https://i.imgur.com/EHGOQhj.png",
     "source": "iptv-org"
   },
   {
@@ -596,7 +426,7 @@
     "source": "iptv-org"
   },
   {
-    "id": "cheers-ca",
+    "id": "cheers",
     "name": "Cheers (United States)",
     "brand": "Cheers (United States)",
     "region": "Canada",
@@ -612,7 +442,7 @@
     "source": "iptv-org"
   },
   {
-    "id": "classic-tv-families-ca",
+    "id": "classic-tv-families",
     "name": "Classic TV: Families CA",
     "brand": "Classic TV: Families CA",
     "region": "Canada",
@@ -644,7 +474,7 @@
     "source": "iptv-org"
   },
   {
-    "id": "comedy-central-ca",
+    "id": "comedy-central",
     "name": "Comedy Central (United States) CA",
     "brand": "Comedy Central (United States) CA",
     "region": "Canada",
@@ -710,7 +540,7 @@
     "source": "iptv-org"
   },
   {
-    "id": "ctv-cftodt",
+    "id": "ctv",
     "name": "CTV (Canada) CFTO-DT",
     "brand": "CTV (Canada) CFTO-DT",
     "region": "Canada",
@@ -776,7 +606,7 @@
     "source": "iptv-org"
   },
   {
-    "id": "doc-martin-ca",
+    "id": "doc-martin",
     "name": "Doc Martin (United States)",
     "brand": "Doc Martin (United States)",
     "region": "Canada",
@@ -792,7 +622,7 @@
     "source": "iptv-org"
   },
   {
-    "id": "dora-tv-ca",
+    "id": "dora-tv",
     "name": "Dora TV",
     "brand": "Dora TV",
     "region": "Canada",
@@ -892,7 +722,7 @@
     "source": "iptv-org"
   },
   {
-    "id": "ewtn-canada",
+    "id": "ewtn",
     "name": "EWTN (United States) Canada",
     "brand": "EWTN (United States) Canada",
     "region": "Canada",
@@ -920,11 +750,17 @@
     "guide": "https://www.fevatv.com/",
     "stream": "https://d21x3vavxu7p2x.cloudfront.net/v1/master/9d062541f2ff39b5c0f48b743c6411d25f62fc25/DistroTV-MuxIP-FEVATV/416.m3u8?ads.vf=nn5CUAdOxVu",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "streamAlts": [
+      {
+        "url": "https://d3c1w351ahk83d.cloudfront.net/scheduler/scheduleMaster/416.m3u8",
+        "label": "SD"
+      }
+    ],
     "logoUrl": "https://i.imgur.com/QSi0YTS.png",
     "source": "iptv-org"
   },
   {
-    "id": "frasier-ca",
+    "id": "frasier",
     "name": "Frasier (United States)",
     "brand": "Frasier (United States)",
     "region": "Canada",
@@ -1025,7 +861,7 @@
     "source": "iptv-org"
   },
   {
-    "id": "happy-days-ca",
+    "id": "happy-days",
     "name": "Happy Days (United States) CA",
     "brand": "Happy Days (United States) CA",
     "region": "Canada",
@@ -1053,11 +889,21 @@
     "guide": "https://iptv-org.github.io/iptv/countries/ca.m3u",
     "stream": "https://d3uyzhwvmemdyf.cloudfront.net/v1/master/9d062541f2ff39b5c0f48b743c6411d25f62fc25/Hard-Knocks-DistroTV/109.m3u8?ads.vf=6pOF6kgy418",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "streamAlts": [
+      {
+        "url": "https://d3uyzhwvmemdyf.cloudfront.net/v1/master/9d062541f2ff39b5c0f48b743c6411d25f62fc25/HardKnocks-SportsTribal/121.m3u8",
+        "label": "SD"
+      },
+      {
+        "url": "https://d3uyzhwvmemdyf.cloudfront.net/v1/master/9d062541f2ff39b5c0f48b743c6411d25f62fc25/HardKnocks-PLEX/121.m3u8",
+        "label": "SD · d3uyzhwvmemdyf.cloudfront.net"
+      }
+    ],
     "logoUrl": "https://i.imgur.com/nt9B6jx.png",
     "source": "iptv-org"
   },
   {
-    "id": "haunt-tv-ca",
+    "id": "haunt-tv",
     "name": "HauntTV CA",
     "brand": "HauntTV CA",
     "region": "Canada",
@@ -1069,6 +915,32 @@
     "guide": "https://haunt-tv.com/",
     "stream": "https://jmp2.uk/plu-63934c218ef524000757b122.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "streamAlts": [
+      {
+        "url": "https://blueantmediacanada-haunttv-samsungca.amagi.tv/playlist.m3u8",
+        "label": "SD"
+      },
+      {
+        "url": "https://amg01446-blueantmediacan-haunttvaus-samsungnz-xo5xf.amagi.tv/playlist/amg01446-blueantmediacan-haunttvaus-samsungnz/playlist.m3u8",
+        "label": "SD · amg01446-blueantmediacan-haunttvau…"
+      },
+      {
+        "url": "https://jmp2.uk/plu-6319f06067a3ee000708af95.m3u8",
+        "label": "SD · jmp2.uk"
+      },
+      {
+        "url": "https://bamcahaunttvrakuten.amagi.tv/playlist.m3u8",
+        "label": "SD · bamcahaunttvrakuten.amagi.tv"
+      },
+      {
+        "url": "https://d1ak5jijks54h1.cloudfront.net/Haunt_TV.m3u8",
+        "label": "SD · d1ak5jijks54h1.cloudfront.net"
+      },
+      {
+        "url": "https://aegis-cloudfront-1.tubi.video/69da419c-6bb2-473f-98c3-246153fc909b/playlist.m3u8",
+        "label": "SD · aegis-cloudfront-1.tubi.video"
+      }
+    ],
     "logoUrl": "https://images.pluto.tv/channels/63934c218ef524000757b122/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -1106,7 +978,7 @@
     "source": "iptv-org"
   },
   {
-    "id": "i-love-lucy-ca",
+    "id": "i-love-lucy",
     "name": "I Love Lucy CA",
     "brand": "I Love Lucy CA",
     "region": "Canada",
@@ -1122,10 +994,10 @@
     "source": "iptv-org"
   },
   {
-    "id": "ici-radio-canada-tele-cbaftdt",
-    "name": "ICI Télé (Moncton)",
-    "brand": "ICI Télé (Moncton)",
-    "region": "Canada",
+    "id": "ici-radio-canada-tele",
+    "name": "ICI Télé",
+    "brand": "ICI Télé",
+    "region": "Québec",
     "category": "General",
     "color": "#6b8c92",
     "language": "fr",
@@ -1134,238 +1006,40 @@
     "guide": "https://ici.radio-canada.ca/tele",
     "stream": "https://rcavlive.akamaized.net/hls/live/704014/cancbaft/master.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
-    "limited": true,
-    "note": "Flux marqué géo-bloqué dans l'annuaire iptv-org : lecture réservée aux régions autorisées par le diffuseur (limité).",
-    "logoUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/c/cf/Current_Logo_of_Ici_Radio-Canada_T%C3%A9l%C3%A9_%282016-present%29.svg/960px-Current_Logo_of_Ici_Radio-Canada_T%C3%A9l%C3%A9_%282016-present%29.svg.png",
-    "source": "iptv-org"
-  },
-  {
-    "id": "ici-radio-canada-tele-cbftdt",
-    "name": "ICI Télé (Montréal)",
-    "brand": "ICI Télé (Montréal)",
-    "region": "Québec",
-    "category": "General",
-    "color": "#6b8c92",
-    "language": "fr",
-    "description": "En lecture directe dans Onde via le flux public répertorié par iptv-org (catégorie : General).",
-    "official": "https://ici.radio-canada.ca/tele",
-    "guide": "https://ici.radio-canada.ca/tele",
-    "stream": "https://rcavlive-dai.akamaized.net/hls/live/696614/cancbftprem/master.m3u8",
-    "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
-    "limited": true,
-    "note": "Flux marqué géo-bloqué dans l'annuaire iptv-org : lecture réservée aux régions autorisées par le diffuseur (limité).",
-    "logoUrl": "https://i.imgur.com/pFCJGj4.png",
-    "source": "iptv-org"
-  },
-  {
-    "id": "ici-radio-canada-tele-cbkftdt",
-    "name": "ICI Télé (Regina)",
-    "brand": "ICI Télé (Regina)",
-    "region": "Canada",
-    "category": "General",
-    "color": "#6b8c92",
-    "language": "fr",
-    "description": "En lecture directe dans Onde via le flux public répertorié par iptv-org (catégorie : General).",
-    "official": "https://ici.radio-canada.ca/tele",
-    "guide": "https://ici.radio-canada.ca/tele",
-    "stream": "https://rcavlive.akamaized.net/hls/live/704019/cancbkft/master.m3u8",
-    "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
-    "limited": true,
-    "note": "Flux marqué géo-bloqué dans l'annuaire iptv-org : lecture réservée aux régions autorisées par le diffuseur (limité).",
-    "logoUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/c/cf/Current_Logo_of_Ici_Radio-Canada_T%C3%A9l%C3%A9_%282016-present%29.svg/960px-Current_Logo_of_Ici_Radio-Canada_T%C3%A9l%C3%A9_%282016-present%29.svg.png",
-    "source": "iptv-org"
-  },
-  {
-    "id": "ici-radio-canada-tele-cblftdt",
-    "name": "ICI Télé (Toronto)",
-    "brand": "ICI Télé (Toronto)",
-    "region": "Canada",
-    "category": "General",
-    "color": "#6b8c92",
-    "language": "fr",
-    "description": "En lecture directe dans Onde via le flux public répertorié par iptv-org (catégorie : General).",
-    "official": "https://ici.radio-canada.ca/tele",
-    "guide": "https://ici.radio-canada.ca/tele",
-    "stream": "https://rcavlive.akamaized.net/hls/live/704022/cancblft/master.m3u8",
-    "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
-    "limited": true,
-    "note": "Flux marqué géo-bloqué dans l'annuaire iptv-org : lecture réservée aux régions autorisées par le diffuseur (limité).",
-    "logoUrl": "https://i.imgur.com/1f798e8.png",
-    "source": "iptv-org"
-  },
-  {
-    "id": "ici-radio-canada-tele-cboftdt",
-    "name": "ICI Télé (Ottawa)",
-    "brand": "ICI Télé (Ottawa)",
-    "region": "Canada",
-    "category": "General",
-    "color": "#6b8c92",
-    "language": "fr",
-    "description": "En lecture directe dans Onde via le flux public répertorié par iptv-org (catégorie : General).",
-    "official": "https://ici.radio-canada.ca/tele",
-    "guide": "https://ici.radio-canada.ca/tele",
-    "stream": "https://rcavlive.akamaized.net/hls/live/664046/cancboft/master.m3u8",
-    "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
-    "limited": true,
-    "note": "Flux marqué géo-bloqué dans l'annuaire iptv-org : lecture réservée aux régions autorisées par le diffuseur (limité).",
-    "logoUrl": "https://i.imgur.com/373Y8Py.png",
-    "source": "iptv-org"
-  },
-  {
-    "id": "ici-radio-canada-tele-cbuftdt",
-    "name": "ICI Télé (Vancouver)",
-    "brand": "ICI Télé (Vancouver)",
-    "region": "Canada",
-    "category": "General",
-    "color": "#6b8c92",
-    "language": "fr",
-    "description": "En lecture directe dans Onde via le flux public répertorié par iptv-org (catégorie : General).",
-    "official": "https://ici.radio-canada.ca/tele",
-    "guide": "https://ici.radio-canada.ca/tele",
-    "stream": "https://rcavlive.akamaized.net/hls/live/704017/cancbuft/master.m3u8",
-    "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
-    "limited": true,
-    "note": "Flux marqué géo-bloqué dans l'annuaire iptv-org : lecture réservée aux régions autorisées par le diffuseur (limité).",
-    "logoUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/c/cf/Current_Logo_of_Ici_Radio-Canada_T%C3%A9l%C3%A9_%282016-present%29.svg/960px-Current_Logo_of_Ici_Radio-Canada_T%C3%A9l%C3%A9_%282016-present%29.svg.png",
-    "source": "iptv-org"
-  },
-  {
-    "id": "ici-radio-canada-tele-cbvtdt",
-    "name": "ICI Télé (Québec)",
-    "brand": "ICI Télé (Québec)",
-    "region": "Québec",
-    "category": "General",
-    "color": "#6b8c92",
-    "language": "fr",
-    "description": "En lecture directe dans Onde via le flux public répertorié par iptv-org (catégorie : General).",
-    "official": "https://ici.radio-canada.ca/tele",
-    "guide": "https://ici.radio-canada.ca/tele",
-    "stream": "https://rcavlive.akamaized.net/hls/live/664045/cancbvt/master.m3u8",
-    "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
-    "limited": true,
-    "note": "Flux marqué géo-bloqué dans l'annuaire iptv-org : lecture réservée aux régions autorisées par le diffuseur (limité).",
-    "logoUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/c/cf/Current_Logo_of_Ici_Radio-Canada_T%C3%A9l%C3%A9_%282016-present%29.svg/960px-Current_Logo_of_Ici_Radio-Canada_T%C3%A9l%C3%A9_%282016-present%29.svg.png",
-    "source": "iptv-org"
-  },
-  {
-    "id": "ici-radio-canada-tele-cbwftdt",
-    "name": "ICI Télé (Winnipeg)",
-    "brand": "ICI Télé (Winnipeg)",
-    "region": "Canada",
-    "category": "General",
-    "color": "#6b8c92",
-    "language": "fr",
-    "description": "En lecture directe dans Onde via le flux public répertorié par iptv-org (catégorie : General).",
-    "official": "https://ici.radio-canada.ca/tele",
-    "guide": "https://ici.radio-canada.ca/tele",
-    "stream": "https://rcavlive.akamaized.net/hls/live/704018/cancbwft/master.m3u8",
-    "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
-    "limited": true,
-    "note": "Flux marqué géo-bloqué dans l'annuaire iptv-org : lecture réservée aux régions autorisées par le diffuseur (limité).",
-    "logoUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/c/cf/Current_Logo_of_Ici_Radio-Canada_T%C3%A9l%C3%A9_%282016-present%29.svg/960px-Current_Logo_of_Ici_Radio-Canada_T%C3%A9l%C3%A9_%282016-present%29.svg.png",
-    "source": "iptv-org"
-  },
-  {
-    "id": "ici-radio-canada-tele-cbxftdt",
-    "name": "ICI Télé (Edmonton)",
-    "brand": "ICI Télé (Edmonton)",
-    "region": "Canada",
-    "category": "General",
-    "color": "#6b8c92",
-    "language": "fr",
-    "description": "En lecture directe dans Onde via le flux public répertorié par iptv-org (catégorie : General).",
-    "official": "https://ici.radio-canada.ca/tele",
-    "guide": "https://ici.radio-canada.ca/tele",
-    "stream": "https://rcavlive.akamaized.net/hls/live/704020/cancbxft/master.m3u8",
-    "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
-    "limited": true,
-    "note": "Flux marqué géo-bloqué dans l'annuaire iptv-org : lecture réservée aux régions autorisées par le diffuseur (limité).",
-    "logoUrl": "https://i.imgur.com/xN4Valg.png",
-    "source": "iptv-org"
-  },
-  {
-    "id": "ici-radio-canada-tele-cfhddt",
-    "name": "Ici Radio-Canada Tele CFHD-DT",
-    "brand": "Ici Radio-Canada Tele CFHD-DT",
-    "region": "Canada",
-    "category": "General",
-    "color": "#6b8c92",
-    "language": "fr",
-    "description": "En lecture directe dans Onde via le flux public répertorié par iptv-org (catégorie : General).",
-    "official": "https://ici.radio-canada.ca/tele",
-    "guide": "https://ici.radio-canada.ca/tele",
-    "stream": "https://amdici.akamaized.net/hls/live/873426/ICI-Live-Stream/master.m3u8",
-    "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
-    "logoUrl": "https://i.imgur.com/x0vLIWr.png",
-    "source": "iptv-org"
-  },
-  {
-    "id": "ici-radio-canada-tele-cjbrdt",
-    "name": "ICI Télé (Rimouski)",
-    "brand": "ICI Télé (Rimouski)",
-    "region": "Québec",
-    "category": "General",
-    "color": "#6b8c92",
-    "language": "fr",
-    "description": "En lecture directe dans Onde via le flux public répertorié par iptv-org (catégorie : General).",
-    "official": "https://ici.radio-canada.ca/tele",
-    "guide": "https://ici.radio-canada.ca/tele",
-    "stream": "https://rcavlive.akamaized.net/hls/live/704024/cancjbr/master.m3u8",
-    "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
-    "limited": true,
-    "note": "Flux marqué géo-bloqué dans l'annuaire iptv-org : lecture réservée aux régions autorisées par le diffuseur (limité).",
-    "logoUrl": "https://i.imgur.com/1B3d8Jc.png",
-    "source": "iptv-org"
-  },
-  {
-    "id": "ici-radio-canada-tele-ckshdt",
-    "name": "ICI Télé (Sherbrooke)",
-    "brand": "ICI Télé (Sherbrooke)",
-    "region": "Québec",
-    "category": "General",
-    "color": "#6b8c92",
-    "language": "fr",
-    "description": "En lecture directe dans Onde via le flux public répertorié par iptv-org (catégorie : General).",
-    "official": "https://ici.radio-canada.ca/tele",
-    "guide": "https://ici.radio-canada.ca/tele",
-    "stream": "https://rcavlive.akamaized.net/hls/live/704016/cancksh/master.m3u8",
-    "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
-    "limited": true,
-    "note": "Flux marqué géo-bloqué dans l'annuaire iptv-org : lecture réservée aux régions autorisées par le diffuseur (limité).",
-    "logoUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/c/cf/Current_Logo_of_Ici_Radio-Canada_T%C3%A9l%C3%A9_%282016-present%29.svg/960px-Current_Logo_of_Ici_Radio-Canada_T%C3%A9l%C3%A9_%282016-present%29.svg.png",
-    "source": "iptv-org"
-  },
-  {
-    "id": "ici-radio-canada-tele-cktmdt",
-    "name": "ICI Télé (Trois-Rivières)",
-    "brand": "ICI Télé (Trois-Rivières)",
-    "region": "Québec",
-    "category": "General",
-    "color": "#6b8c92",
-    "language": "fr",
-    "description": "En lecture directe dans Onde via le flux public répertorié par iptv-org (catégorie : General).",
-    "official": "https://ici.radio-canada.ca/tele",
-    "guide": "https://ici.radio-canada.ca/tele",
-    "stream": "https://rcavlive.akamaized.net/hls/live/704021/cancktm/master.m3u8",
-    "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
-    "limited": true,
-    "note": "Flux marqué géo-bloqué dans l'annuaire iptv-org : lecture réservée aux régions autorisées par le diffuseur (limité).",
-    "logoUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/c/cf/Current_Logo_of_Ici_Radio-Canada_T%C3%A9l%C3%A9_%282016-present%29.svg/960px-Current_Logo_of_Ici_Radio-Canada_T%C3%A9l%C3%A9_%282016-present%29.svg.png",
-    "source": "iptv-org"
-  },
-  {
-    "id": "ici-radio-canada-tele-cktvdt",
-    "name": "ICI Télé (Saguenay)",
-    "brand": "ICI Télé (Saguenay)",
-    "region": "Québec",
-    "category": "General",
-    "color": "#6b8c92",
-    "language": "fr",
-    "description": "En lecture directe dans Onde via le flux public répertorié par iptv-org (catégorie : General).",
-    "official": "https://ici.radio-canada.ca/tele",
-    "guide": "https://ici.radio-canada.ca/tele",
-    "stream": "https://rcavlive.akamaized.net/hls/live/704023/cancktv/master.m3u8",
-    "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "streamAlts": [
+      {
+        "url": "https://rcavlive-dai.akamaized.net/hls/live/696614/cancbftprem/master.m3u8",
+        "label": "Montréal"
+      },
+      {
+        "url": "https://rcavlive.akamaized.net/hls/live/704019/cancbkft/master.m3u8",
+        "label": "Regina"
+      },
+      {
+        "url": "https://rcavlive.akamaized.net/hls/live/704022/cancblft/master.m3u8",
+        "label": "Toronto"
+      },
+      {
+        "url": "https://rcavlive.akamaized.net/hls/live/664046/cancboft/master.m3u8",
+        "label": "Ottawa"
+      },
+      {
+        "url": "https://rcavlive.akamaized.net/hls/live/704017/cancbuft/master.m3u8",
+        "label": "Vancouver"
+      },
+      {
+        "url": "https://rcavlive.akamaized.net/hls/live/664045/cancbvt/master.m3u8",
+        "label": "Québec"
+      },
+      {
+        "url": "https://rcavlive.akamaized.net/hls/live/704018/cancbwft/master.m3u8",
+        "label": "Winnipeg"
+      },
+      {
+        "url": "https://rcavlive.akamaized.net/hls/live/704020/cancbxft/master.m3u8",
+        "label": "Edmonton"
+      }
+    ],
     "limited": true,
     "note": "Flux marqué géo-bloqué dans l'annuaire iptv-org : lecture réservée aux régions autorisées par le diffuseur (limité).",
     "logoUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/c/cf/Current_Logo_of_Ici_Radio-Canada_T%C3%A9l%C3%A9_%282016-present%29.svg/960px-Current_Logo_of_Ici_Radio-Canada_T%C3%A9l%C3%A9_%282016-present%29.svg.png",
@@ -1416,11 +1090,17 @@
     "guide": "https://www.iipccanada.com/contacts/",
     "stream": "https://rpn.bozztv.com/dvrfl03/iipctv/index.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "streamAlts": [
+      {
+        "url": "https://uni10rtmp.tulix.tv/iipctv/iipctv.smil/playlist.m3u8",
+        "label": "SD"
+      }
+    ],
     "logoUrl": "https://i.imgur.com/mIih39Y.png",
     "source": "iptv-org"
   },
   {
-    "id": "ink-master-ca",
+    "id": "ink-master",
     "name": "Ink Master CA",
     "brand": "Ink Master CA",
     "region": "Canada",
@@ -1436,7 +1116,7 @@
     "source": "iptv-org"
   },
   {
-    "id": "jag-ca",
+    "id": "jag",
     "name": "JAG (United States)",
     "brand": "JAG (United States)",
     "region": "Canada",
@@ -1531,6 +1211,12 @@
     "guide": "https://www.ola.org/",
     "stream": "https://temp3.isilive.ca/live/_definst_/ontla/house-en/playlist.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "streamAlts": [
+      {
+        "url": "https://temp2.isilive.ca/live/_definst_/ontla/house-en-cc/playlist.m3u8",
+        "label": "SD"
+      }
+    ],
     "logoUrl": "https://i.imgur.com/n24MrsX.png",
     "source": "iptv-org"
   },
@@ -1552,7 +1238,7 @@
     "source": "iptv-org"
   },
   {
-    "id": "matlock-ca",
+    "id": "matlock",
     "name": "Matlock (United States) CA",
     "brand": "Matlock (United States) CA",
     "region": "Canada",
@@ -1584,7 +1270,7 @@
     "source": "iptv-org"
   },
   {
-    "id": "mission-impossible-ca",
+    "id": "mission-impossible",
     "name": "Mission Impossible (United States) CA",
     "brand": "Mission Impossible (United States) CA",
     "region": "Canada",
@@ -1612,11 +1298,17 @@
     "guide": "https://greektimes.ca/greektv/",
     "stream": "https://live.greektv.ca/hls1/greektv.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "streamAlts": [
+      {
+        "url": "http://live.greektv.ca/hls1/greektv.m3u8",
+        "label": "SD"
+      }
+    ],
     "logoUrl": "https://i.imgur.com/Y5YnUit.png",
     "source": "iptv-org"
   },
   {
-    "id": "more-pluto-tv-comedy-ca",
+    "id": "more-pluto-tv-comedy",
     "name": "More Pluto TV Comedy",
     "brand": "More Pluto TV Comedy",
     "region": "Canada",
@@ -1648,7 +1340,7 @@
     "source": "iptv-org"
   },
   {
-    "id": "movie-sphere-ca",
+    "id": "movie-sphere",
     "name": "MovieSphere CA",
     "brand": "MovieSphere CA",
     "region": "Canada",
@@ -1664,7 +1356,7 @@
     "source": "iptv-org"
   },
   {
-    "id": "mtv-biggest-pop-ca",
+    "id": "mtv-biggest-pop",
     "name": "MTV Biggest Pop CA",
     "brand": "MTV Biggest Pop CA",
     "region": "Canada",
@@ -1680,7 +1372,7 @@
     "source": "iptv-org"
   },
   {
-    "id": "mtv-catfish-ca",
+    "id": "mtv-catfish",
     "name": "MTV Catfish (United States)",
     "brand": "MTV Catfish (United States)",
     "region": "Canada",
@@ -1696,7 +1388,7 @@
     "source": "iptv-org"
   },
   {
-    "id": "mtv-classic-ca",
+    "id": "mtv-classic",
     "name": "MTV Classic CA",
     "brand": "MTV Classic CA",
     "region": "Canada",
@@ -1712,7 +1404,7 @@
     "source": "iptv-org"
   },
   {
-    "id": "mtv-dating-ca",
+    "id": "mtv-dating",
     "name": "MTV Dating (United States) CA",
     "brand": "MTV Dating (United States) CA",
     "region": "Canada",
@@ -1728,7 +1420,7 @@
     "source": "iptv-org"
   },
   {
-    "id": "mtv-jersey-shore-ca",
+    "id": "mtv-jersey-shore",
     "name": "MTV Jersey Shore",
     "brand": "MTV Jersey Shore",
     "region": "Canada",
@@ -1744,7 +1436,7 @@
     "source": "iptv-org"
   },
   {
-    "id": "mtv-reality-ca",
+    "id": "mtv-reality",
     "name": "MTV Reality (United States) CA",
     "brand": "MTV Reality (United States) CA",
     "region": "Canada",
@@ -1760,7 +1452,7 @@
     "source": "iptv-org"
   },
   {
-    "id": "mtv-ridiculousness-ca",
+    "id": "mtv-ridiculousness",
     "name": "MTV Ridiculousness (United States) CA",
     "brand": "MTV Ridiculousness (United States) CA",
     "region": "Canada",
@@ -1776,7 +1468,7 @@
     "source": "iptv-org"
   },
   {
-    "id": "mtv-spankin-new-ca",
+    "id": "mtv-spankin-new",
     "name": "MTV Spankin' New CA",
     "brand": "MTV Spankin' New CA",
     "region": "Canada",
@@ -1808,7 +1500,7 @@
     "source": "iptv-org"
   },
   {
-    "id": "nashville-ca",
+    "id": "nashville",
     "name": "Nashville CA",
     "brand": "Nashville CA",
     "region": "Canada",
@@ -1824,7 +1516,7 @@
     "source": "iptv-org"
   },
   {
-    "id": "ncis-ca",
+    "id": "ncis",
     "name": "NCIS (United States) CA",
     "brand": "NCIS (United States) CA",
     "region": "Canada",
@@ -1840,7 +1532,7 @@
     "source": "iptv-org"
   },
   {
-    "id": "ncis-los-angeles-ca",
+    "id": "ncis-los-angeles",
     "name": "NCIS: Los Angeles (United States)",
     "brand": "NCIS: Los Angeles (United States)",
     "region": "Canada",
@@ -1888,7 +1580,7 @@
     "source": "iptv-org"
   },
   {
-    "id": "nick-jr-pluto-tv-ca",
+    "id": "nick-jr-pluto-tv",
     "name": "Nick Jr. Pluto TV CA",
     "brand": "Nick Jr. Pluto TV CA",
     "region": "Canada",
@@ -1904,7 +1596,7 @@
     "source": "iptv-org"
   },
   {
-    "id": "nicktoons-ca",
+    "id": "nicktoons",
     "name": "Nicktoons (United States) CA",
     "brand": "Nicktoons (United States) CA",
     "region": "Canada",
@@ -1920,7 +1612,7 @@
     "source": "iptv-org"
   },
   {
-    "id": "ntdtv-canada-east",
+    "id": "ntdtv-canada",
     "name": "NTD TV Canada",
     "brand": "NTD TV Canada",
     "region": "Canada",
@@ -1932,27 +1624,17 @@
     "guide": "https://ca.ntdtv.com/",
     "stream": "https://live.ntdtv.com/mllive860/playlist.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "streamAlts": [
+      {
+        "url": "https://live.ntdtv.com/cwlive220/playlist.m3u8",
+        "label": "West"
+      }
+    ],
     "logoUrl": "https://i.imgur.com/iyFXcDy.png",
     "source": "iptv-org"
   },
   {
-    "id": "ntdtv-canada-west",
-    "name": "NTD TV Canada West",
-    "brand": "NTD TV Canada West",
-    "region": "Canada",
-    "category": "General",
-    "color": "#6b8c92",
-    "language": "en",
-    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: General).",
-    "official": "https://ca.ntdtv.com/",
-    "guide": "https://ca.ntdtv.com/",
-    "stream": "https://live.ntdtv.com/cwlive220/playlist.m3u8",
-    "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
-    "logoUrl": "https://i.imgur.com/iyFXcDy.png",
-    "source": "iptv-org"
-  },
-  {
-    "id": "ntv-cjondt",
+    "id": "ntv",
     "name": "NTV (Canada) CJON-DT",
     "brand": "NTV (Canada) CJON-DT",
     "region": "Canada",
@@ -1968,7 +1650,7 @@
     "source": "iptv-org"
   },
   {
-    "id": "one-piece-ca",
+    "id": "one-piece",
     "name": "One Piece CA",
     "brand": "One Piece CA",
     "region": "Canada",
@@ -1994,8 +1676,15 @@
     "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Outdoor).",
     "official": "https://www.outdoorchannelplus.com/",
     "guide": "https://www.outdoorchannelplus.com/",
-    "stream": "https://amg00718-outdoorchannela-outdoortv-samsungau-uc7mp.amagi.tv/playlist/amg00718-outdoorchannela-outdoortv-samsungau/playlist.m3u8",
+    "stream": "http://23.237.104.106:8080/USA_OUTDOOR/index.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "streamAlts": [
+      {
+        "url": "https://amg00718-outdoorchannela-outdoortv-samsungau-uc7mp.amagi.tv/playlist/amg00718-outdoorchannela-outdoortv-samsungau/playlist.m3u8",
+        "label": "SD"
+      }
+    ],
+    "insecureStream": true,
     "logoUrl": "https://i.imgur.com/Kh4MWaY.png",
     "source": "iptv-org"
   },
@@ -2012,12 +1701,18 @@
     "guide": "https://www.pamirtv.com/",
     "stream": "https://live.stream.cdn.pamirtv.com/ptv/d0dbe915091d400bd8ee7f27f0791303.sdp/index.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "streamAlts": [
+      {
+        "url": "http://live.stream.cdn.pamirtv.com/ptv/d0dbe915091d400bd8ee7f27f0791303.sdp/index.m3u8",
+        "label": "SD"
+      }
+    ],
     "note": "Channel flagged \"Not 24/7\" in the iptv-org directory: part-time schedule.",
     "logoUrl": "https://i.imgur.com/sCBbBOj.png",
     "source": "iptv-org"
   },
   {
-    "id": "paramount-network-east",
+    "id": "paramount-network",
     "name": "Paramount Network",
     "brand": "Paramount Network",
     "region": "Canada",
@@ -2046,6 +1741,12 @@
     "guide": "https://iptv-org.github.io/iptv/countries/ca.m3u",
     "stream": "http://stream.pardesitv.online/pardesi/tracks-v1a1/mono.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "streamAlts": [
+      {
+        "url": "http://stream.pardesitv.online/pardesi/index.m3u8",
+        "label": "SD"
+      }
+    ],
     "insecureStream": true,
     "logoUrl": "https://i.imgur.com/CwAdPpZ.jpg",
     "source": "iptv-org"
@@ -2067,7 +1768,7 @@
     "source": "iptv-org"
   },
   {
-    "id": "perry-mason-ca",
+    "id": "perry-mason",
     "name": "Perry Mason CA",
     "brand": "Perry Mason CA",
     "region": "Canada",
@@ -2083,7 +1784,7 @@
     "source": "iptv-org"
   },
   {
-    "id": "pluto-classic-movie-westerns-ca",
+    "id": "pluto-classic-movie-westerns",
     "name": "Pluto Classic Movie Westerns",
     "brand": "Pluto Classic Movie Westerns",
     "region": "Canada",
@@ -2099,7 +1800,7 @@
     "source": "iptv-org"
   },
   {
-    "id": "pluto-tv-action-movies-ca",
+    "id": "pluto-tv-action-movies",
     "name": "Pluto TV Action Movies",
     "brand": "Pluto TV Action Movies",
     "region": "Canada",
@@ -2115,7 +1816,7 @@
     "source": "iptv-org"
   },
   {
-    "id": "pluto-tv-adventure-ca",
+    "id": "pluto-tv-adventure",
     "name": "Pluto TV Adventure CA",
     "brand": "Pluto TV Adventure CA",
     "region": "Canada",
@@ -2131,7 +1832,7 @@
     "source": "iptv-org"
   },
   {
-    "id": "pluto-tv-anime-ca",
+    "id": "pluto-tv-anime",
     "name": "Pluto TV Anime CA",
     "brand": "Pluto TV Anime CA",
     "region": "Canada",
@@ -2147,7 +1848,7 @@
     "source": "iptv-org"
   },
   {
-    "id": "pluto-tv-cars-ca",
+    "id": "pluto-tv-cars",
     "name": "Pluto TV Cars CA",
     "brand": "Pluto TV Cars CA",
     "region": "Canada",
@@ -2163,7 +1864,7 @@
     "source": "iptv-org"
   },
   {
-    "id": "pluto-tv-classic-tv-variety-ca",
+    "id": "pluto-tv-classic-tv-variety",
     "name": "Pluto TV Classic TV Variety",
     "brand": "Pluto TV Classic TV Variety",
     "region": "Canada",
@@ -2179,7 +1880,7 @@
     "source": "iptv-org"
   },
   {
-    "id": "pluto-tv-comedy-ca",
+    "id": "pluto-tv-comedy",
     "name": "Pluto TV Comedy CA",
     "brand": "Pluto TV Comedy CA",
     "region": "Canada",
@@ -2195,7 +1896,7 @@
     "source": "iptv-org"
   },
   {
-    "id": "pluto-tv-comedy-movies-ca",
+    "id": "pluto-tv-comedy-movies",
     "name": "Pluto TV Comedy Movies",
     "brand": "Pluto TV Comedy Movies",
     "region": "Canada",
@@ -2211,7 +1912,7 @@
     "source": "iptv-org"
   },
   {
-    "id": "pluto-tv-crime-drama-ca",
+    "id": "pluto-tv-crime-drama",
     "name": "Pluto TV Crime Drama CA",
     "brand": "Pluto TV Crime Drama CA",
     "region": "Canada",
@@ -2227,7 +1928,7 @@
     "source": "iptv-org"
   },
   {
-    "id": "pluto-tv-drama-movies-ca",
+    "id": "pluto-tv-drama-movies",
     "name": "Pluto TV Drama Movies",
     "brand": "Pluto TV Drama Movies",
     "region": "Canada",
@@ -2243,7 +1944,7 @@
     "source": "iptv-org"
   },
   {
-    "id": "pluto-tvfbi-ca",
+    "id": "pluto-tvfbi",
     "name": "Pluto TV FBI",
     "brand": "Pluto TV FBI",
     "region": "Canada",
@@ -2259,7 +1960,7 @@
     "source": "iptv-org"
   },
   {
-    "id": "pluto-tv-horror-ca",
+    "id": "pluto-tv-horror",
     "name": "Pluto TV Horror (United States) CA",
     "brand": "Pluto TV Horror (United States) CA",
     "region": "Canada",
@@ -2275,7 +1976,7 @@
     "source": "iptv-org"
   },
   {
-    "id": "pluto-tv-paranormal-ca",
+    "id": "pluto-tv-paranormal",
     "name": "Pluto TV Paranormal (United States) CA",
     "brand": "Pluto TV Paranormal (United States) CA",
     "region": "Canada",
@@ -2291,7 +1992,7 @@
     "source": "iptv-org"
   },
   {
-    "id": "pluto-tv-reality-ca",
+    "id": "pluto-tv-reality",
     "name": "Pluto TV Reality CA",
     "brand": "Pluto TV Reality CA",
     "region": "Canada",
@@ -2307,7 +2008,7 @@
     "source": "iptv-org"
   },
   {
-    "id": "pluto-tv-retro-action-movies-ca",
+    "id": "pluto-tv-retro-action-movies",
     "name": "Pluto TV Retro Action Movies",
     "brand": "Pluto TV Retro Action Movies",
     "region": "Canada",
@@ -2323,7 +2024,7 @@
     "source": "iptv-org"
   },
   {
-    "id": "pluto-tv-retro-crime-action-ca",
+    "id": "pluto-tv-retro-crime-action",
     "name": "Pluto TV Retro Crime Action",
     "brand": "Pluto TV Retro Crime Action",
     "region": "Canada",
@@ -2339,7 +2040,7 @@
     "source": "iptv-org"
   },
   {
-    "id": "pluto-tv-retro-crime-drama-ca",
+    "id": "pluto-tv-retro-crime-drama",
     "name": "Pluto TV Retro Crime Drama",
     "brand": "Pluto TV Retro Crime Drama",
     "region": "Canada",
@@ -2355,7 +2056,7 @@
     "source": "iptv-org"
   },
   {
-    "id": "pluto-tv-retro-kid-ca",
+    "id": "pluto-tv-retro-kid",
     "name": "Pluto TV Retro Kid",
     "brand": "Pluto TV Retro Kid",
     "region": "Canada",
@@ -2371,7 +2072,7 @@
     "source": "iptv-org"
   },
   {
-    "id": "pluto-tv-sci-fi-ca",
+    "id": "pluto-tv-sci-fi",
     "name": "Pluto TV Sci-Fi (United States) CA",
     "brand": "Pluto TV Sci-Fi (United States) CA",
     "region": "Canada",
@@ -2387,7 +2088,7 @@
     "source": "iptv-org"
   },
   {
-    "id": "pluto-tv-snooker900-ca",
+    "id": "pluto-tv-snooker900",
     "name": "Pluto TV Snooker 900 (United States)",
     "brand": "Pluto TV Snooker 900 (United States)",
     "region": "Canada",
@@ -2403,7 +2104,7 @@
     "source": "iptv-org"
   },
   {
-    "id": "pluto-tv-true-crime-ca",
+    "id": "pluto-tv-true-crime",
     "name": "Pluto TV True Crime (United States) CA",
     "brand": "Pluto TV True Crime (United States) CA",
     "region": "Canada",
@@ -2419,7 +2120,7 @@
     "source": "iptv-org"
   },
   {
-    "id": "pluto-tv-westerns-ca",
+    "id": "pluto-tv-westerns",
     "name": "Pluto TV Westerns (United States) CA",
     "brand": "Pluto TV Westerns (United States) CA",
     "region": "Canada",
@@ -2503,7 +2204,7 @@
     "source": "iptv-org"
   },
   {
-    "id": "puto-tv-classic-tv-crime-drama-ca",
+    "id": "puto-tv-classic-tv-crime-drama",
     "name": "Puto TV Classic TV Crime Drama",
     "brand": "Puto TV Classic TV Crime Drama",
     "region": "Canada",
@@ -2551,7 +2252,7 @@
     "source": "iptv-org"
   },
   {
-    "id": "rawhide-ca",
+    "id": "rawhide",
     "name": "Rawhide (United States) CA",
     "brand": "Rawhide (United States) CA",
     "region": "Canada",
@@ -2567,7 +2268,7 @@
     "source": "iptv-org"
   },
   {
-    "id": "red-bull-tv-us",
+    "id": "red-bull-tv",
     "name": "Red Bull TV US",
     "brand": "Red Bull TV US",
     "region": "Canada",
@@ -2666,7 +2367,7 @@
     "source": "iptv-org"
   },
   {
-    "id": "south-park-ca",
+    "id": "south-park",
     "name": "South Park (United States)",
     "brand": "South Park (United States)",
     "region": "Canada",
@@ -2682,7 +2383,7 @@
     "source": "iptv-org"
   },
   {
-    "id": "south-park-en-francais-ca",
+    "id": "south-park-en-francais",
     "name": "South Park En Francais",
     "brand": "South Park En Francais",
     "region": "Canada",
@@ -2698,7 +2399,7 @@
     "source": "iptv-org"
   },
   {
-    "id": "south-park-cartman-collection-ca",
+    "id": "south-park-cartman-collection",
     "name": "South Park: Cartman Collection (United States)",
     "brand": "South Park: Cartman Collection (United States)",
     "region": "Canada",
@@ -2714,7 +2415,7 @@
     "source": "iptv-org"
   },
   {
-    "id": "south-park-kenny-collection-ca",
+    "id": "south-park-kenny-collection",
     "name": "South Park: Kenny Collection (United States)",
     "brand": "South Park: Kenny Collection (United States)",
     "region": "Canada",
@@ -2730,7 +2431,7 @@
     "source": "iptv-org"
   },
   {
-    "id": "south-park-kyle-collection-ca",
+    "id": "south-park-kyle-collection",
     "name": "South Park: Kyle Collection (United States)",
     "brand": "South Park: Kyle Collection (United States)",
     "region": "Canada",
@@ -2746,7 +2447,7 @@
     "source": "iptv-org"
   },
   {
-    "id": "south-park-stan-collection-ca",
+    "id": "south-park-stan-collection",
     "name": "South Park: Stan Collection (United States)",
     "brand": "South Park: Stan Collection (United States)",
     "region": "Canada",
@@ -2762,7 +2463,7 @@
     "source": "iptv-org"
   },
   {
-    "id": "south-park-welcometo-canada-ca",
+    "id": "south-park-welcometo-canada",
     "name": "South Park: Welcome to Canada!",
     "brand": "South Park: Welcome to Canada!",
     "region": "Canada",
@@ -2778,7 +2479,7 @@
     "source": "iptv-org"
   },
   {
-    "id": "sponge-bob-square-pants-ca",
+    "id": "sponge-bob-square-pants",
     "name": "SpongeBob SquarePants",
     "brand": "SpongeBob SquarePants",
     "region": "Canada",
@@ -2870,6 +2571,12 @@
     "guide": "https://iptv-org.github.io/iptv/countries/ca.m3u",
     "stream": "https://d39g1vxj2ef6in.cloudfront.net/v1/manifest/3fec3e5cac39a52b2132f9c66c83dae043dc17d4/prod-rakuten-stitched/68cc5f97-cf6c-4ff7-9125-f56f272dbcb6/1.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "streamAlts": [
+      {
+        "url": "https://d39g1vxj2ef6in.cloudfront.net/v1/master/3fec3e5cac39a52b2132f9c66c83dae043dc17d4/prod-rakuten-stitched/master.m3u8?ads.xumo_channelId=88883071",
+        "label": "Poland"
+      }
+    ],
     "logoUrl": "https://i.imgur.com/duwc8E8.png",
     "source": "iptv-org"
   },
@@ -2922,7 +2629,7 @@
     "source": "iptv-org"
   },
   {
-    "id": "summerof-movies-ca",
+    "id": "summerof-movies",
     "name": "Summer of Movies",
     "brand": "Summer of Movies",
     "region": "Canada",
@@ -3053,7 +2760,7 @@
     "source": "iptv-org"
   },
   {
-    "id": "the-andy-griffith-show-ca",
+    "id": "the-andy-griffith-show",
     "name": "The Andy Griffith Show CA",
     "brand": "The Andy Griffith Show CA",
     "region": "Canada",
@@ -3069,7 +2776,7 @@
     "source": "iptv-org"
   },
   {
-    "id": "the-beverly-hillbillies-ca",
+    "id": "the-beverly-hillbillies",
     "name": "The Beverly Hillbillies",
     "brand": "The Beverly Hillbillies",
     "region": "Canada",
@@ -3085,7 +2792,7 @@
     "source": "iptv-org"
   },
   {
-    "id": "the-challenge-ca",
+    "id": "the-challenge",
     "name": "The Challenge CA",
     "brand": "The Challenge CA",
     "region": "Canada",
@@ -3133,7 +2840,7 @@
     "source": "iptv-org"
   },
   {
-    "id": "the-judge-judy-channel-ca",
+    "id": "the-judge-judy-channel",
     "name": "The Judge Judy Channel CA",
     "brand": "The Judge Judy Channel CA",
     "region": "Canada",
@@ -3149,7 +2856,7 @@
     "source": "iptv-org"
   },
   {
-    "id": "the-new-detectives-ca",
+    "id": "the-new-detectives",
     "name": "The New Detectives (United States) CA",
     "brand": "The New Detectives (United States) CA",
     "region": "Canada",
@@ -3165,7 +2872,7 @@
     "source": "iptv-org"
   },
   {
-    "id": "the-price-is-right-ca",
+    "id": "the-price-is-right",
     "name": "The Price Is Right CA",
     "brand": "The Price Is Right CA",
     "region": "Canada",
@@ -3197,7 +2904,7 @@
     "source": "iptv-org"
   },
   {
-    "id": "threes-company-ca",
+    "id": "threes-company",
     "name": "Three's Company CA",
     "brand": "Three's Company CA",
     "region": "Canada",
@@ -3231,7 +2938,7 @@
     "source": "iptv-org"
   },
   {
-    "id": "tortues-ninja-tv-ca",
+    "id": "tortues-ninja-tv",
     "name": "Tortues Ninja TV (United States)",
     "brand": "Tortues Ninja TV (United States)",
     "region": "Canada",
@@ -3247,7 +2954,7 @@
     "source": "iptv-org"
   },
   {
-    "id": "total-crime-ca",
+    "id": "total-crime",
     "name": "Total Crime",
     "brand": "Total Crime",
     "region": "Canada",
@@ -3263,7 +2970,7 @@
     "source": "iptv-org"
   },
   {
-    "id": "totally-turtles-ca",
+    "id": "totally-turtles",
     "name": "Totally Turtles (United States) CA",
     "brand": "Totally Turtles (United States) CA",
     "region": "Canada",
@@ -3279,7 +2986,7 @@
     "source": "iptv-org"
   },
   {
-    "id": "transformers-tv-ca",
+    "id": "transformers-tv",
     "name": "Transformers TV CA",
     "brand": "Transformers TV CA",
     "region": "Canada",
@@ -3383,8 +3090,8 @@
   },
   {
     "id": "tve-internacional-america",
-    "name": "TVE Internacional America HD",
-    "brand": "TVE Internacional America HD",
+    "name": "TVE Internacional America",
+    "brand": "TVE Internacional America",
     "region": "Canada",
     "category": "General",
     "color": "#6b8c92",
@@ -3412,6 +3119,12 @@
     "guide": "https://iptv-org.github.io/iptv/countries/ca.m3u",
     "stream": "https://fastly.live.brightcove.com/6369851620112/us-east-1/15364602001/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJob3N0IjoicGZncmlmLmVncmVzcy50N2M3emwiLCJhY2NvdW50X2lkIjoiMTUzNjQ2MDIwMDEiLCJlaG4iOiJmYXN0bHkubGl2ZS5icmlnaHRjb3ZlLmNvbSIsImlzcyI6ImJsaXZlLXBsYXliYWNrLXNvdXJjZS1hcGkiLCJzdWIiOiJwYXRobWFwdG9rZW4iLCJhdWQiOlsiMTUzNjQ2MDIwMDEiXSwianRpIjoiNjM2OTg1MTYyMDExMiJ9.zRE6fD9JwdbNLUIK5zgvlTAvXCQ3HeeE5p0yH0Pd3-Q/playlist-hls.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "streamAlts": [
+      {
+        "url": "https://bcovlive-a.akamaihd.net/rf86f817779524249abf842af6d16f55f/us-east-1/15364602001/playlist.m3u8",
+        "label": "SD"
+      }
+    ],
     "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tvokids-logo.svg/960px-Tvokids-logo.svg.png",
     "source": "iptv-org"
   },
@@ -3464,7 +3177,7 @@
     "source": "iptv-org"
   },
   {
-    "id": "yo-mtv-ca",
+    "id": "yo-mtv",
     "name": "Yo! MTV CA",
     "brand": "Yo! MTV CA",
     "region": "Canada",
@@ -3513,22 +3226,6 @@
     "source": "iptv-org"
   },
   {
-    "id": "gusto-tv-poland",
-    "name": "Gusto TV (Poland)",
-    "brand": "Gusto TV (Poland)",
-    "region": "Canada",
-    "category": "Cooking",
-    "color": "#6b8c92",
-    "language": "en",
-    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Cooking).",
-    "official": "https://gustotv.com/",
-    "guide": "https://gustotv.com/",
-    "stream": "https://563f72af.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/UmFrdXRlblRWLWV1X0d1c3RvVFZfSExT/playlist.m3u8",
-    "directory": "https://iptv-org.github.io/api/streams.json",
-    "logoUrl": "https://i.imgur.com/swUX3hQ.png",
-    "source": "iptv-org"
-  },
-  {
     "id": "i-cnet2",
     "name": "ICnet 2",
     "brand": "ICnet 2",
@@ -3560,70 +3257,6 @@
     "source": "iptv-org"
   },
   {
-    "id": "nature-time-au",
-    "name": "NatureTime (AU)",
-    "brand": "NatureTime (AU)",
-    "region": "Canada",
-    "category": "Documentary",
-    "color": "#6b8c92",
-    "language": "en",
-    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Documentary).",
-    "official": "https://naturetimetv.com/",
-    "guide": "https://naturetimetv.com/",
-    "stream": "https://amg00090-blueantllc-lovenature-au-samsungau-wggcn.amagi.tv/playlist/amg00090-blueantllc-lovenature-au-samsungau/playlist.m3u8",
-    "directory": "https://iptv-org.github.io/api/streams.json",
-    "logoUrl": "https://i.imgur.com/72JmyjM.png",
-    "source": "iptv-org"
-  },
-  {
-    "id": "nature-time-es",
-    "name": "NatureTime (ES)",
-    "brand": "NatureTime (ES)",
-    "region": "Canada",
-    "category": "Documentary",
-    "color": "#6b8c92",
-    "language": "en",
-    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Documentary).",
-    "official": "https://naturetimetv.com/",
-    "guide": "https://naturetimetv.com/",
-    "stream": "https://shls-live-ak.akamaized.net/out/v1/b06a89a463764d3688cda337d40dc5bf/index.m3u8",
-    "directory": "https://iptv-org.github.io/api/streams.json",
-    "logoUrl": "https://i.imgur.com/72JmyjM.png",
-    "source": "iptv-org"
-  },
-  {
-    "id": "nature-time-france",
-    "name": "NatureTime (France)",
-    "brand": "NatureTime (France)",
-    "region": "Canada",
-    "category": "Documentary",
-    "color": "#6b8c92",
-    "language": "en",
-    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Documentary).",
-    "official": "https://naturetimetv.com/",
-    "guide": "https://naturetimetv.com/",
-    "stream": "https://jmp2.uk/plu-61fc0df14159c40007250432.m3u8",
-    "directory": "https://iptv-org.github.io/api/streams.json",
-    "logoUrl": "https://i.imgur.com/72JmyjM.png",
-    "source": "iptv-org"
-  },
-  {
-    "id": "nature-time-latam",
-    "name": "NatureTime (LATAM)",
-    "brand": "NatureTime (LATAM)",
-    "region": "Canada",
-    "category": "Documentary",
-    "color": "#6b8c92",
-    "language": "en",
-    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Documentary).",
-    "official": "https://naturetimetv.com/",
-    "guide": "https://naturetimetv.com/",
-    "stream": "https://jmp2.uk/plu-681ba2729624e6275efe0044.m3u8",
-    "directory": "https://iptv-org.github.io/api/streams.json",
-    "logoUrl": "https://i.imgur.com/72JmyjM.png",
-    "source": "iptv-org"
-  },
-  {
     "id": "nature-time",
     "name": "NatureTime",
     "brand": "NatureTime",
@@ -3634,45 +3267,47 @@
     "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Documentary).",
     "official": "https://naturetimetv.com/",
     "guide": "https://naturetimetv.com/",
-    "stream": "https://jmp2.uk/plu-681ba2ad93d3d19bcab47433.m3u8",
+    "stream": "https://amg00090-blueantllc-lovenature-au-samsungau-wggcn.amagi.tv/playlist/amg00090-blueantllc-lovenature-au-samsungau/playlist.m3u8",
     "directory": "https://iptv-org.github.io/api/streams.json",
+    "streamAlts": [
+      {
+        "url": "https://amg00090-blueantllc-lovenatureau-samsungnz-r3iaz.amagi.tv/playlist/amg00090-blueantllc-lovenatureau-samsungnz/playlist.m3u8",
+        "label": "AU"
+      },
+      {
+        "url": "https://shls-live-ak.akamaized.net/out/v1/b06a89a463764d3688cda337d40dc5bf/index.m3u8",
+        "label": "ES"
+      },
+      {
+        "url": "https://jmp2.uk/plu-60dd6b1da79e4d0007309455.m3u8",
+        "label": "ES · jmp2.uk"
+      },
+      {
+        "url": "https://amg00090-amgnaturetimeemea-rakuten.amagi.tv/playlist.m3u8",
+        "label": "ES · amg00090-amgnaturetimeemea-rakuten…"
+      },
+      {
+        "url": "https://jmp2.uk/plu-61fc0df14159c40007250432.m3u8",
+        "label": "France"
+      },
+      {
+        "url": "https://jmp2.uk/plu-681ba2729624e6275efe0044.m3u8",
+        "label": "LATAM"
+      },
+      {
+        "url": "https://jmp2.uk/plu-681ba2ad93d3d19bcab47433.m3u8",
+        "label": "SD"
+      },
+      {
+        "url": "https://bamusa-naturetime-emea-eng-rakuten.amagi.tv/playlist.m3u8",
+        "label": "SD · bamusa-naturetime-emea-eng-rakuten…"
+      }
+    ],
     "logoUrl": "https://i.imgur.com/72JmyjM.png",
     "source": "iptv-org"
   },
   {
-    "id": "nature-time-uk",
-    "name": "NatureTime (UK)",
-    "brand": "NatureTime (UK)",
-    "region": "Canada",
-    "category": "Documentary",
-    "color": "#6b8c92",
-    "language": "en",
-    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Documentary).",
-    "official": "https://naturetimetv.com/",
-    "guide": "https://naturetimetv.com/",
-    "stream": "https://amg01515-amg01515c43-samsung-gb-9038.playouts.now.amagi.tv/playlist.m3u8",
-    "directory": "https://iptv-org.github.io/api/streams.json",
-    "logoUrl": "https://i.imgur.com/72JmyjM.png",
-    "source": "iptv-org"
-  },
-  {
-    "id": "qello-concertsby-stingray-poland",
-    "name": "Qello Concerts by Stingray (Poland)",
-    "brand": "Qello Concerts by Stingray (Poland)",
-    "region": "Canada",
-    "category": "Music",
-    "color": "#6b8c92",
-    "language": "en",
-    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Music).",
-    "official": "https://qello.com/en/",
-    "guide": "https://qello.com/en/",
-    "stream": "https://d39g1vxj2ef6in.cloudfront.net/v1/master/3fec3e5cac39a52b2132f9c66c83dae043dc17d4/prod-rakuten-stitched/master.m3u8?ads.xumo_channelId=88883052",
-    "directory": "https://iptv-org.github.io/api/streams.json",
-    "logoUrl": "https://i.imgur.com/IRyFTWq.png",
-    "source": "iptv-org"
-  },
-  {
-    "id": "stingray-greatest-hits-poland",
+    "id": "stingray-greatest-hits",
     "name": "Stingray Greatest Hits",
     "brand": "Stingray Greatest Hits",
     "region": "Canada",
@@ -3684,54 +3319,6 @@
     "guide": "https://iptv-org.github.io/api/streams.json",
     "stream": "https://d39g1vxj2ef6in.cloudfront.net/v1/master/3fec3e5cac39a52b2132f9c66c83dae043dc17d4/prod-rakuten-stitched/master.m3u8?ads.xumo_channelId=88883053",
     "directory": "https://iptv-org.github.io/api/streams.json",
-    "source": "iptv-org"
-  },
-  {
-    "id": "stingray-hit-list-poland",
-    "name": "Stingray Hit List (Poland)",
-    "brand": "Stingray Hit List (Poland)",
-    "region": "Canada",
-    "category": "Music",
-    "color": "#6b8c92",
-    "language": "en",
-    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Music).",
-    "official": "https://music.stingray.com/en/CA/channels/007/hit-list",
-    "guide": "https://music.stingray.com/en/CA/channels/007/hit-list",
-    "stream": "https://d39g1vxj2ef6in.cloudfront.net/v1/master/3fec3e5cac39a52b2132f9c66c83dae043dc17d4/prod-rakuten-stitched/master.m3u8?ads.xumo_channelId=88883054",
-    "directory": "https://iptv-org.github.io/api/streams.json",
-    "logoUrl": "https://i.imgur.com/lgpIwId.png",
-    "source": "iptv-org"
-  },
-  {
-    "id": "stingray-naturescape-poland",
-    "name": "Stingray Naturescape (Poland)",
-    "brand": "Stingray Naturescape (Poland)",
-    "region": "Canada",
-    "category": "Music",
-    "color": "#6b8c92",
-    "language": "en",
-    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Music).",
-    "official": "https://www.stingray.com/stingray-naturescape",
-    "guide": "https://www.stingray.com/stingray-naturescape",
-    "stream": "https://d39g1vxj2ef6in.cloudfront.net/v1/master/3fec3e5cac39a52b2132f9c66c83dae043dc17d4/prod-rakuten-stitched/master.m3u8?ads.xumo_channelId=88883056",
-    "directory": "https://iptv-org.github.io/api/streams.json",
-    "logoUrl": "https://i.imgur.com/882kd90.png",
-    "source": "iptv-org"
-  },
-  {
-    "id": "stingray-rememberthe80s-poland",
-    "name": "Stingray Remember the 80s (Poland)",
-    "brand": "Stingray Remember the 80s (Poland)",
-    "region": "Canada",
-    "category": "Music",
-    "color": "#6b8c92",
-    "language": "en",
-    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Music).",
-    "official": "https://iptv-org.github.io/api/streams.json",
-    "guide": "https://iptv-org.github.io/api/streams.json",
-    "stream": "https://d39g1vxj2ef6in.cloudfront.net/v1/master/3fec3e5cac39a52b2132f9c66c83dae043dc17d4/prod-rakuten-stitched/master.m3u8?ads.xumo_channelId=88883071",
-    "directory": "https://iptv-org.github.io/api/streams.json",
-    "logoUrl": "https://i.imgur.com/duwc8E8.png",
     "source": "iptv-org"
   },
   {
@@ -3751,7 +3338,7 @@
     "source": "iptv-org"
   },
   {
-    "id": "tln-kqsl",
+    "id": "tln",
     "name": "TLN",
     "brand": "TLN",
     "region": "Canada",

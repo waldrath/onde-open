@@ -1,10 +1,17 @@
 import type { Channel } from './channels';
-export type PlaybackSource={kind:'hls'|'embed';url:string;label:string};
+export type PlaybackSource={kind:'hls'|'embed';url:string;label:string;insecure?:boolean};
 export type PlaybackResult={sources:PlaybackSource[];message?:string;expiresAt?:number};
 export function hasPlayback(channel:Channel){return !!(channel.stream||channel.embed||channel.resolve);}
+// Sources served over plain http are flagged so the player can explain the
+// browser setting instead of failing silently (same panel as `insecureStream`).
+const hlsSource=(url:string,label:string):PlaybackSource=>({kind:'hls',url,label,...(url.startsWith('http://')?{insecure:true}:{})});
 export function defaultSources(channel:Channel):PlaybackSource[]{
  const sources:PlaybackSource[]=[];
- if(channel.stream)sources.push({kind:'hls',url:channel.stream,label:'Lecteur Onde'});
+ if(channel.stream)sources.push(hlsSource(channel.stream,'Lecteur Onde'));
+ // Variants come right after the primary stream: the player lists them in
+ // its selector and retries them automatically when the primary host stops
+ // answering (see `reconnect` in app/player.tsx).
+ for(const [index,alternate] of (channel.streamAlts??[]).entries())sources.push(hlsSource(alternate.url,alternate.label?`Lecteur Onde · ${alternate.label}`:`Lecteur Onde · secours ${index+1}`));
  if(channel.embed)sources.push({kind:'embed',url:channel.embed,label:'Lecteur du diffuseur'});
  return sources;
 }

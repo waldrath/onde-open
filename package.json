@@ -2,14 +2,6 @@
   "name": "onde",
   "version": "0.1.0",
   "private": true,
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/waldrath/onde-open.git"
-  },
-  "bugs": {
-    "url": "https://github.com/waldrath/onde-open/issues"
-  },
   "engines": {
     "node": ">=22.13.0"
   },
@@ -24,13 +16,11 @@
   "dependencies": {
     "@neondatabase/auth": "0.6.0-beta",
     "@neondatabase/serverless": "^1.0.2",
-    "clsx": "2.1.1",
     "hls.js": "^1.7.3",
     "lucide-react": "^1.31.0",
     "next": "16.3.4",
     "react": "19.2.6",
-    "react-dom": "19.2.6",
-    "tailwind-merge": "3.6.0"
+    "react-dom": "19.2.6"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "4.2.1",
