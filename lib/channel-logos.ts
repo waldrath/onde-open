@@ -1,22 +1,20 @@
 /**
- * Channel logo lookup — backward-compatibility shim.
+ * Channel logo lookup.
  *
- * Logo URLs now live on each channel entry as `logoUrl` in
- * `data/channels/*.json`, and this module only resolves them. It is kept so
- * existing imports (`app/television.tsx`, `app/player.tsx`) keep working.
+ * Logo URLs live on each channel entry as `logoUrl` in
+ * `data/channels/*.json`; this module only resolves them for
+ * `app/television.tsx` and `app/player.tsx`.
  *
- * Provenance of the URLs (carried over from the former hand-maintained map
- * that lived in this file): iptv-org/database `data/channels.csv` and
- * `data/logos.csv`, read at
- * https://github.com/iptv-org/database/tree/d38154951b3077ec6b80317e6bc78c91ca708354/data
- * The database metadata is public domain (repository LICENSE / Unlicense).
- * Artwork and trademarks retain their respective owners' rights; an entry
- * is not a claim that the image is public domain or official-hosted.
+ * Sources: iptv-org/database `data/channels.csv` and `data/logos.csv`
+ * (https://github.com/iptv-org/database/tree/master/data). The database
+ * metadata is public domain (repository LICENSE / Unlicense); artwork and
+ * trademarks remain their owners' rights, and an entry is not a claim that
+ * the image is public domain or officially hosted.
  *
- * Rules that still apply:
- * - No logo URL is ever synthesized from a channel slug. A URL is used
- *   only when it was explicitly matched to that exact channel id.
- * - Missing or failed images must use the UI's text fallback (`brand`).
+ * Rules:
+ * - No logo URL is ever synthesized from a channel slug; a URL is used only
+ *   when it was explicitly matched to that exact channel id.
+ * - Missing or failed images use the UI's text fallback (`brand`).
  */
 
 import { channelsById } from './channels';

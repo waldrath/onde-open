@@ -101,10 +101,14 @@ const EN: Record<string, string> = {
   'France': 'France',
   'USA': 'USA',
   'International': 'International',
+  'Suède': 'Sweden',
   'Affiner les chaînes': 'Refine channels',
   'Filtrer par langue': 'Filter by language',
   'Filtrer par catégorie': 'Filter by category',
   'Filtrer par région': 'Filter by region',
+  'Choisir la source': 'Choose the source',
+  'Chaînes premium': 'Premium channels',
+  'Suédois': 'Swedish',
   'Trier les chaînes': 'Sort channels',
   'Tri : par défaut': 'Sort: default',
   'Nom (A-Z)': 'Name (A-Z)',
@@ -119,6 +123,17 @@ const EN: Record<string, string> = {
   'Toutes les chaînes sont affichées, y compris celles qui peuvent être géo-bloquées.': 'All channels are shown, including those that may be geo-blocked.',
   'Afficher les chaînes géo-bloquées': 'Show geo-blocked channels',
   'Effacer les filtres': 'Clear filters',
+  'Filtres': 'Filters',
+  'Tout effacer': 'Clear all',
+  'Langue': 'Language',
+  'Catégorie': 'Category',
+  'Tri': 'Sort',
+  'Aucun filtre actif': 'No active filters',
+  '{count} filtres actifs': '{count} active filters',
+  'Nouvelles chaînes': 'New channels',
+  'Chaînes géo-bloquées': 'Geo-blocked channels',
+  'Chaînes à vérifier': 'Channels to check',
+  'Fermer le lecteur': 'Close player',
   'Aucune chaîne trouvée': 'No channels found',
   'Essayez une autre recherche ou une autre région.': 'Try another search or region.',
   'Découvrir les chaînes': 'Discover channels',
@@ -331,36 +346,4 @@ export function translate(locale: Locale, text: string, vars?: Record<string, st
   const source = locale === 'en' ? EN[text] ?? text : text;
   if (!vars) return source;
   return source.replace(/\{(\w+)\}/g, (match, key) => (key in vars ? String(vars[key]) : match));
-}
-
-export function plural(locale: Locale, count: number, one: string, many: string): string {
-  return count === 1 ? one : many;
-}
-
-// Fallback used by the DOM translator for strings built at runtime (counts,
-// channel names, favourite actions). Exact dictionary entries win first.
-export function translateDynamic(locale: Locale, text: string): string {
-  if (locale === 'fr') return text;
-  const exact = EN[text];
-  if (exact) return exact;
-  const patterns: Array<[RegExp, (match: RegExpMatchArray) => string]> = [
-    [/^([\d\s\u00a0\u202f]+)\s*CHAÎNES?\s*·\s*SANS ABONNEMENT$/i, match => `${match[1].trim()} CHANNELS · NO SUBSCRIPTION`],
-    [/^([\d\s\u00a0\u202f]+)\s+chaînes?$/i, match => `${match[1].trim()} channels`],
-    [/^(\d[\d\s\u00a0]*)\s+résultats?$/i, match => `${match[1]} results`],
-    [/^Regarder (.+)$/i, match => `Watch ${match[1]}`],
-    [/^Ajouter (.+) aux favoris$/i, match => `Add ${match[1]} to favorites`],
-    [/^Retirer (.+) des favoris$/i, match => `Remove ${match[1]} from favorites`],
-    [/^Modifier la liste (.+)$/i, match => `Edit list ${match[1]}`],
-    [/^Horaire de (.+)$/i, match => `${match[1]} schedule`],
-    [/^Guide de (.+)$/i, match => `${match[1]} guide`],
-    [/^(.+) ajouté aux favoris$/i, match => `${match[1]} added to favorites`],
-    [/^(.+) retiré des favoris$/i, match => `${match[1]} removed from favorites`],
-    [/^(.+), en direct$/i, match => `${match[1]}, live`],
-    [/^En ce moment · (.+)$/i, match => `On now · ${match[1]}`],
-  ];
-  for (const [pattern, format] of patterns) {
-    const match = text.match(pattern);
-    if (match) return format(match);
-  }
-  return text;
 }

@@ -17,7 +17,9 @@ test('source replacements retain stable IDs and unrelated channels, and new IDs 
 });
 test('published sources require a public HTTPS player and supported metadata',()=>{
  assert.deepEqual(validateChannel({...c,unexpected:'removed'}),c);
- for(const changes of [{stream:'http://cdn.example/live.m3u8'},{stream:'https://127.0.0.1/live.m3u8'},{stream:'https://10.0.0.1/a'},{stream:'https://user:secret@cdn.example/a'},{youtube:'https://other.example/live'},{id:'../bad'},{resolve:'unknown'},{stream:undefined,embed:undefined,resolve:undefined}])assert.throws(()=>validateChannel({...c,...changes}));
+ const withAlts={...c,streamAlts:[{url:'https://alt.example/live.m3u8',label:'HD'},{url:'http://1.2.3.4/b.m3u8'}]};
+ assert.deepEqual(validateChannel(withAlts),withAlts);
+ for(const changes of [{stream:'http://cdn.example/live.m3u8'},{stream:'https://127.0.0.1/live.m3u8'},{stream:'https://10.0.0.1/a'},{stream:'https://user:secret@cdn.example/a'},{youtube:'https://other.example/live'},{id:'../bad'},{resolve:'unknown'},{stream:undefined,embed:undefined,resolve:undefined},{streamAlts:[]},{streamAlts:[c.stream]},{streamAlts:['https://a.example/1.m3u8','https://a.example/2.m3u8','https://a.example/3.m3u8','https://a.example/4.m3u8']},{streamAlts:['https://127.0.0.1/a.m3u8']},{streamAlts:['not a url']},{stream:undefined,streamAlts:['https://a.example/live.m3u8']}])assert.throws(()=>validateChannel({...c,...changes}));
 });
 test('a discovered channel can be favorited without changing existing favorites or requiring a new build',async()=>{
  const catalogue='data:text/javascript;base64,'+Buffer.from('export const channels=[{id:"existing"}];').toString('base64');

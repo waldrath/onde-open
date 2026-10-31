@@ -533,7 +533,7 @@
    Surfaces, depth and light
 --------------------------------------------------------------------------- */
 
-.app-shell :is(.channel-card, .home-hero, .desktop-channel-panel, .desktop-programme-panel, .up-next, .player-shell, .guide-row, .selection-row, .list-card, .favorites-lists, .filter-sheet) {
+.app-shell :is(.channel-card, .home-hero, .desktop-channel-panel, .desktop-programme-panel, .up-next, .player-shell, .guide-row, .selection-row, .list-card, .favorites-lists) {
   border-color: var(--skin-line);
   box-shadow: var(--skin-surface-shadow);
 }
@@ -917,13 +917,18 @@
 #contenu { view-transition-name: onde-main; }
 ::view-transition-old(root),
 ::view-transition-new(root) { animation: none; mix-blend-mode: normal; }
-::view-transition-group(onde-main) { animation-duration: .46s; animation-timing-function: cubic-bezier(.22, .8, .2, 1); mix-blend-mode: normal; }
+/* Horizontal swap: the incoming page slides over the leaving one, which fades
+   out underneath. Only transform and opacity animate, so the transition stays
+   on the compositor; the group keeps a stable geometry to avoid resizes. */
+::view-transition-group(onde-main) { animation-duration: .42s; animation-timing-function: cubic-bezier(.22, .7, .2, 1); mix-blend-mode: normal; }
 ::view-transition-old(onde-main),
-::view-transition-new(onde-main) { mix-blend-mode: normal; }
-html[data-nav=forward]::view-transition-old(onde-main) { animation: page-out-back .34s cubic-bezier(.4, 0, 1, 1) both; }
-html[data-nav=forward]::view-transition-new(onde-main) { animation: page-in-forward .48s cubic-bezier(.22, .8, .2, 1) both; }
-html[data-nav=back]::view-transition-old(onde-main) { animation: page-out-forward .34s cubic-bezier(.4, 0, 1, 1) both; }
-html[data-nav=back]::view-transition-new(onde-main) { animation: page-in-back .48s cubic-bezier(.22, .8, .2, 1) both; }
+::view-transition-new(onde-main) { mix-blend-mode: normal; will-change: transform, opacity; }
+::view-transition-old(onde-main) { z-index: 1; animation: page-leave-left .42s cubic-bezier(.4, 0, .6, 1) both; }
+::view-transition-new(onde-main) { z-index: 2; animation: page-enter-right .42s cubic-bezier(.22, .7, .2, 1) both; box-shadow: -22px 0 48px rgba(0, 0, 0, .16); }
+html[data-nav=forward]::view-transition-old(onde-main) { animation-name: page-leave-left; }
+html[data-nav=forward]::view-transition-new(onde-main) { animation-name: page-enter-right; }
+html[data-nav=back]::view-transition-old(onde-main) { animation-name: page-leave-right; }
+html[data-nav=back]::view-transition-new(onde-main) { animation-name: page-enter-left; box-shadow: 22px 0 48px rgba(0, 0, 0, .16); }
 
 /* ---------------------------------------------------------------------------
    Micro-interactions
@@ -1068,10 +1073,10 @@ html[data-nav=back]::view-transition-new(onde-main) { animation: page-in-back .4
 @keyframes dock-in { from { opacity: 0; transform: translateY(14px) scale(.98); } to { opacity: 1; transform: translateY(0) scale(1); } }
 @keyframes access-halo { from { transform: translate(-50%, -50%) scale(.94); opacity: .4; } to { transform: translate(-50%, -50%) scale(1.08); opacity: .7; } }
 @keyframes access-card-in { from { opacity: 0; transform: translateY(16px) scale(.985); } to { opacity: 1; transform: translateY(0) scale(1); } }
-@keyframes page-in-forward { from { opacity: .1; transform: translate3d(34px, 0, 0) scale(.988); } to { opacity: 1; transform: translate3d(0, 0, 0) scale(1); } }
-@keyframes page-out-back { from { opacity: 1; transform: translate3d(0, 0, 0) scale(1); } to { opacity: .2; transform: translate3d(-24px, 0, 0) scale(.99); } }
-@keyframes page-in-back { from { opacity: .1; transform: translate3d(-34px, 0, 0) scale(.988); } to { opacity: 1; transform: translate3d(0, 0, 0) scale(1); } }
-@keyframes page-out-forward { from { opacity: 1; transform: translate3d(0, 0, 0) scale(1); } to { opacity: .2; transform: translate3d(24px, 0, 0) scale(.99); } }
+@keyframes page-enter-right { from { transform: translate3d(100%, 0, 0); } to { transform: translate3d(0, 0, 0); } }
+@keyframes page-enter-left { from { transform: translate3d(-100%, 0, 0); } to { transform: translate3d(0, 0, 0); } }
+@keyframes page-leave-left { from { opacity: 1; transform: translate3d(0, 0, 0); } to { opacity: 0; transform: translate3d(-8%, 0, 0); } }
+@keyframes page-leave-right { from { opacity: 1; transform: translate3d(0, 0, 0); } to { opacity: 0; transform: translate3d(8%, 0, 0); } }
 
 @media (prefers-reduced-motion: reduce) {
   .app-shell *, .access-page * { scroll-behavior: auto !important; }

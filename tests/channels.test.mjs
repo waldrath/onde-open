@@ -12,17 +12,19 @@ const CATALOGUE_FILES = [
   'data/channels/ca.json',
   'data/channels/fr.json',
   'data/channels/us.json',
+  'data/channels/se.json',
 ];
 const channels = CATALOGUE_FILES.flatMap((file) => JSON.parse(fs.readFileSync(file, 'utf8')));
 const imported = channels.filter((channel) => channel.source === 'iptv-org');
 
 const REQUIRED = ['id', 'name', 'brand', 'region', 'category', 'color', 'description', 'official', 'guide'];
-const REGIONS = ['Québec', 'Canada', 'France', 'USA', 'International'];
+const REGIONS = ['Québec', 'Canada', 'France', 'USA', 'Suède', 'International'];
 const RESOLVERS = ['telequebec', 'cpac', 'france24', 'youtube', 'tfo', 'public-senat'];
 const PLAYLISTS = [
   'https://iptv-org.github.io/iptv/countries/ca.m3u',
   'https://iptv-org.github.io/iptv/countries/fr.m3u',
   'https://iptv-org.github.io/iptv/countries/us.m3u',
+  'https://iptv-org.github.io/iptv/countries/se.m3u',
 ];
 // Provenance of an imported stream: a country playlist or the streams
 // export of the iptv-org database (database-only channels).
@@ -46,7 +48,8 @@ test('every channel has the required fields and valid metadata', () => {
     }
     assert.ok(REGIONS.includes(channel.region), `${channel.id}: region`);
     assert.match(channel.color, /^#[0-9a-f]{6}$/i, `${channel.id}: color`);
-    if (channel.language) assert.ok(['fr', 'en', 'zxx'].includes(channel.language), `${channel.id}: language`);
+    if (channel.language) assert.ok(['fr', 'en', 'sv', 'zxx'].includes(channel.language), `${channel.id}: language`);
+    if (channel.premium !== undefined) assert.equal(typeof channel.premium, 'boolean', `${channel.id}: premium`);
     if (channel.resolve) assert.ok(RESOLVERS.includes(channel.resolve), `${channel.id}: resolve`);
     if (channel.source) assert.ok(['core', 'additional', 'expanded', 'iptv-org'].includes(channel.source), `${channel.id}: source`);
   }
@@ -72,6 +75,42 @@ test('all URLs are public HTTPS, except flagged insecure streams', () => {
       assert.ok(channel.stream?.startsWith('http://'), `${channel.id}: insecureStream requires an http stream`);
     }
   }
+});
+
+test('one card per channel: variants are labelled public HTTP(S) HLS URLs', () => {
+  let withVariants = 0;
+  for (const channel of channels) {
+    if (channel.streamAlts === undefined) continue;
+    withVariants++;
+    const alternates = channel.streamAlts;
+    assert.ok(Array.isArray(alternates), `${channel.id}: streamAlts must be an array`);
+    assert.ok(alternates.length > 0 && alternates.length <= 8, `${channel.id}: 1..8 variants`);
+    assert.ok(channel.stream, `${channel.id}: variants require a primary stream`);
+    assert.equal(
+      new Set(alternates.map((alternate) => alternate.url)).size,
+      alternates.length,
+      `${channel.id}: duplicate variant URLs`,
+    );
+    for (const alternate of alternates) {
+      assert.equal(typeof alternate.url, 'string', `${channel.id}: variant url`);
+      assert.notEqual(alternate.url, channel.stream, `${channel.id}: variant duplicates the primary`);
+      if (alternate.label !== undefined) {
+        assert.equal(typeof alternate.label, 'string', `${channel.id}: variant label`);
+        assert.ok(alternate.label.trim() && alternate.label.length <= 40, `${channel.id}: variant label length`);
+      }
+      const url = new URL(alternate.url);
+      assert.ok(['https:', 'http:'].includes(url.protocol), `${channel.id}: variant protocol`);
+      assert.ok(!url.username && !url.password, `${channel.id}: variant credentials`);
+      const host = url.hostname;
+      assert.ok(!['localhost', 'localhost.localdomain'].includes(host), `${channel.id}: variant local host`);
+      assert.ok(!host.includes(':'), `${channel.id}: variant IPv6 host`);
+      assert.ok(
+        !/^(?:127\.|10\.|192\.168\.|169\.254\.|172\.(?:1[6-9]|2\d|3[01])\.)/.test(host),
+        `${channel.id}: variant private host`,
+      );
+    }
+  }
+  assert.ok(withVariants > 0, 'expected imported channels with variant streams');
 });
 
 test('insecure streams are explicit iptv-org imports, never local', () => {
@@ -108,9 +147,11 @@ test('iptv-org imports are playable HLS streams with a known provenance', () => 
   assert.equal(new Set(streams).size, streams.length, 'duplicate imported stream URLs');
   for (const channel of imported) {
     assert.ok(channel.stream, `${channel.id}: imported entries must be playable (stream required)`);
-    assert.ok(new URL(channel.stream).pathname.includes('.m3u8'), `${channel.id}: HLS stream required`);
+    // HLS is confirmed by content for URLs without `.m3u8` (the importer
+    // sniffs those candidates), so the extension is not a reliable rule.
+    assert.ok(channel.stream.startsWith('http'), `${channel.id}: stream URL`);
     assert.ok(SOURCES.includes(channel.directory), `${channel.id}: unknown provenance`);
-    assert.ok(['Canada', 'France', 'USA', 'Québec'].includes(channel.region), `${channel.id}: imported region`);
+    assert.ok(['Canada', 'France', 'USA', 'Québec', 'Suède', 'International'].includes(channel.region), `${channel.id}: imported region`);
     assert.equal(channel.embed, undefined, `${channel.id}: imports never carry embeds`);
     assert.equal(channel.resolve, undefined, `${channel.id}: imports never carry resolvers`);
   }
@@ -119,9 +160,12 @@ test('iptv-org imports are playable HLS streams with a known provenance', () => 
 test('Radio-Canada imports coexist with the curated ici-tele entry', () => {
   const rdi = channels.find((channel) => channel.id === 'ici-rdi');
   assert.ok(rdi?.stream?.startsWith('https://'), 'ici-rdi must be imported with its official HLS stream');
-  const montreal = channels.find((channel) => channel.id === 'ici-radio-canada-tele-cbftdt');
-  assert.equal(montreal?.name, 'ICI Télé (Montréal)', 'the main ICI Télé variant names its city');
-  assert.equal(montreal?.limited, true, 'ICI Télé variants are geo-blocked (Canada only)');
+  const tele = channels.find((channel) => channel.id === 'ici-radio-canada-tele');
+  assert.ok(tele, 'the ICI Télé import is missing from the catalogue');
+  assert.equal(tele.name, 'ICI Télé', 'one card for every ICI Télé station');
+  assert.equal(tele.limited, true, 'ICI Télé variants are geo-blocked (Canada only)');
+  const labels = (tele.streamAlts ?? []).map((alternate) => alternate.label);
+  assert.ok(labels.includes('Montréal'), 'the Montréal station is a variant of the single card');
 });
 
 test('paid channels stay official-link-only (no stream, embed or resolver)', () => {

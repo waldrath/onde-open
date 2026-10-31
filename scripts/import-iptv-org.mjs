@@ -8,8 +8,8 @@
  * Inputs (downloaded fresh, or read locally when the matching environment
  * variable points at a file / directory, which makes runs reproducible and
  * lets maintainers diff the report before committing):
- *   - Playlists: https://iptv-org.github.io/iptv/countries/{ca,fr,us}.m3u
- *     Override with IPTV_PLAYLIST_DIR=<dir containing ca.m3u/fr.m3u/us.m3u>.
+ *   - Playlists: https://iptv-org.github.io/iptv/countries/{ca,fr,us,se}.m3u
+ *     Override with IPTV_PLAYLIST_DIR=<dir containing ca.m3u/fr.m3u/…>.
  *   - Channel metadata: https://iptv-org.github.io/api/channels.json
  *     Override with IPTV_CHANNELS_API=<file path>.
  *   - Streams: https://iptv-org.github.io/api/streams.json
@@ -17,59 +17,71 @@
  *   - Logos: https://iptv-org.github.io/api/logos.json
  *     Override with IPTV_LOGOS_API=<file path>.
  *
+ * HLS detection: a stream URL is HLS when it contains `.m3u8`, but some
+ * public lists serve HLS from an extensionless URL (`?mode=hls`, `/play/…`).
+ * Those candidates are sniffed once per run (first bytes / content type);
+ * set IPTV_PROBE_CACHE=<file> to persist the probe results, which keeps
+ * runs reproducible and avoids re-probing dead hosts.
+ *
  * Output: data/channels/{ca,fr,us}.json (one file per country), merged at
  * load time by lib/channels.ts with data/channels/base.json into ONE logical
  * catalogue. The base file is never modified here.
  *
- * Coverage (owner decision, 2026-10-29): every active, non-NSFW channel of
- * the iptv-org database whose country is Canada, France or the USA, plus
- * every channel of the matching country playlist (playlists also list
- * foreign feeds available in that country). A channel is kept only when it
- * can actually play inside Onde:
+ * Coverage: every active, non-NSFW channel of the iptv-org database whose
+ * country is Canada, France, the USA or Sweden, plus every channel of the
+ * matching country playlist (playlists also list foreign feeds available in
+ * that country). A channel is kept only when it can actually play inside
+ * Onde:
  *   - NSFW channels are excluded;
  *   - closed/defunct channels are excluded;
- *   - non-HLS streams (no `.m3u8`: DASH/.mpd, FLV, …) are excluded — the
- *     Onde player is HLS-only;
- *   - one stream is picked per channel feed (see pickBestStream), so a
- *     channel is never listed twice for the same feed.
+ *   - streams that are not HLS (DASH/.mpd, FLV, …) are excluded, unless the
+ *     content sniffing above identifies them as HLS — the Onde player is
+ *     HLS-only;
+ *   - hosts a browser cannot reach publicly are excluded: localhost, private
+ *     address ranges and IPv6 literals;
+ *   - one card per channel: every playlist entry and every database stream
+ *     of the same channel (all its feeds) is a candidate, so the catalogue
+ *     lists the channel once. The best stream is `stream` (bare-IP hosts
+ *     before domain hosts; https before http inside each family); the other
+ *     playable candidates (up to 8, same order) are `streamAlts`, labelled
+ *     with their feed, which the player lists in its source selector and
+ *     retries automatically when the primary host stops answering.
  *
- * Unlike the first import, bare-IP hosts and third-party relays of premium
- * channels are no longer dropped: the owner asked for full country coverage,
- * and those streams are already publicly listed by iptv-org. Any plain
- * http:// stream is flagged `insecureStream: true` (browsers block it by
- * default on the HTTPS app; the player explains the Chrome setting that
- * unblocks it, and that Safari/iOS has no equivalent).
+ * Any plain http:// stream is flagged `insecureStream: true` (browsers block
+ * it by default on the HTTPS app; the player explains the Chrome setting
+ * that unblocks it, and that Safari/iOS has no equivalent). A `streamAlts`
+ * fallback can be http without the flag: the player marks that source
+ * itself.
  *
  * De-duplication, in order:
  *   - against `base.json` by normalized display name — when the curated
  *     entry already has a playable source (stream/embed/resolve) the
  *     generated copy is skipped (base wins); a link-only base entry never
  *     blocks a playable import;
- *   - across all three generated files and against the base catalogue by
- *     generated id, full tvg-id, stream URL, and normalized display name
- *     (so two feeds rendered under the same name are not shown twice).
+ *   - across the generated files and against the base catalogue by generated
+ *     id, channel tvg-id, stream URL and normalized display name.
  *
- * Two Canada-playlist entries are listed over http but verified to answer
- * over HTTPS on the same host and path; HTTPS_STREAM_UPGRADES rewrites
- * exactly those stream URLs to their verified https form.
+ * HTTPS_STREAM_UPGRADES lists playlist streams that also answer over HTTPS
+ * on the same host and path; those URLs are rewritten to their https form.
  *
  * Field mapping (schema: see data/README.md):
  *   id        stable slug from the tvg-id (see makeId);
- *   name      playlist name cleaned of "(720p)"-style quality suffixes
- *             and "[Geo-blocked]" / "[Not 24/7]" flags (the flags are
- *             kept as data: geo-blocked -> `limited: true`, both are
- *             explained in `note`); database-only channels use the
- *             database name, with the feed in brackets when the channel
- *             has several feeds;
- *   logoUrl   the playlist's tvg-logo, or the database logo, copied
- *             verbatim (never invented);
+ *   name      playlist name cleaned of "(720p)"-style quality suffixes and
+ *             "[Geo-blocked]" / "[Not 24/7]" flags (the flags are kept as
+ *             data: geo-blocked -> `limited: true`, both are explained in
+ *             `note`); database-only channels use the database name; the
+ *             Radio-Canada stations share one "ICI Télé" card, each station
+ *             being a variant (see variantLabel);
+ *   logoUrl   the playlist's tvg-logo, or the database logo, copied verbatim
+ *             (never invented);
  *   category  first `group-title` token ("Undefined"/empty -> "General");
  *             database-only channels use the first database category;
- *   region    ca -> "Canada", fr -> "France", us -> "USA" (Radio-Canada
- *             Québec stations are the one documented exception below);
+ *   region    ca -> "Canada", fr -> "France", us -> "USA", se -> "Suède";
+ *             ICI Télé cards use "Québec";
+ *   language  ca -> "en", fr -> "fr", us -> "en", se -> "sv";
  *   official/guide
- *             the broadcaster website from the iptv-org database for
- *             the channel's base tvg-id (http upgraded to https);
+ *             the broadcaster website from the iptv-org database for the
+ *             channel's tvg-id (http upgraded to https);
  *   directory the country playlist URL the stream was found in, or the
  *             streams API export for database-only channels;
  *   source    "iptv-org".
@@ -91,18 +103,19 @@ const COUNTRIES = [
   { code: 'ca', region: 'Canada', language: 'en', databaseCountry: 'CA' },
   { code: 'fr', region: 'France', language: 'fr', databaseCountry: 'FR' },
   { code: 'us', region: 'USA', language: 'en', databaseCountry: 'US' },
+  { code: 'se', region: 'Suède', language: 'sv', databaseCountry: 'SE' },
 ];
 
 /** Feed suffixes that carry no identity (quality only) — dropped from ids. */
 const GENERIC_FEEDS = new Set(['sd', 'hd', 'uhd', 'fhd', '4k', '720p', '1080p']);
 
-/** Accent colour used for iptv-org-sourced entries (phase-1 precedent). */
+/** Accent colour used for iptv-org-sourced entries. */
 const IMPORT_COLOR = '#6b8c92';
 
 /**
- * Streams the playlists list over http but that were verified (2026-10-29)
- * to serve the same host + path over HTTPS with HTTP 200: keyed by full
- * tvg-id, valued by the verified https URL. Re-verify before extending.
+ * Playlist streams listed over http that also answer over HTTPS on the same
+ * host and path (HTTP 200): keyed by full tvg-id, valued by the https URL.
+ * Re-verify before extending the map.
  */
 const HTTPS_STREAM_UPGRADES = new Map([
   ['MontrealGreekTV.ca@SD', 'https://live.greektv.ca/hls1/greektv.m3u8'],
@@ -293,24 +306,136 @@ function isHls(url) {
 }
 
 /**
- * Stream preference: https + domain first, then https + bare IP, then
- * http + domain, then http + bare IP. Playlist streams win ties so the
- * generated data stays stable between runs.
+ * Stream preference: bare-IP hosts first, then domain hosts; https before
+ * http inside each family. The order is therefore https bare IP, http bare
+ * IP, https domain, http domain. Playlist streams win ties so the generated
+ * data stays stable between runs.
  */
 function streamRank(candidate, fromPlaylist) {
   const url = new URL(candidate);
   let rank = 0;
-  if (url.protocol !== 'https:') rank += 2;
-  if (isBareIp(url.hostname)) rank += 1;
+  if (!isBareIp(url.hostname)) rank += 2;
+  if (url.protocol !== 'https:') rank += 1;
   if (!fromPlaylist) rank += 0.5;
   return rank;
 }
 
-/** Choose the best stream of a channel feed, or null when none is HLS. */
-function pickBestStream(candidates) {
-  const playable = candidates.filter((candidate) => isHls(candidate.url));
+/** Maximum number of variant streams stored per channel card. */
+const MAX_STREAM_VARIANTS = 8;
+
+/** Label shown in the player's source selector for one variant stream. */
+function variantLabel(feed, baseTvgId) {
+  const station = baseTvgId === 'IciRadioCanadaTele.ca' ? RADIO_CANADA_STATIONS[feed] : null;
+  if (station) return station[0];
+  return feed || 'Autre source';
+}
+
+/** Hosts the catalogue never serves: local names, private ranges, IPv6. */
+const isSupportedStreamHost = (url) => {
+  try {
+    const hostname = new URL(url).hostname;
+    return hostname.includes('.')
+      && !hostname.includes(':')
+      && !['localhost', 'localhost.localdomain'].includes(hostname)
+      && !/^(?:127\.|10\.|192\.168\.|169\.254\.|172\.(?:1[6-9]|2\d|3[01])\.)/.test(hostname);
+  } catch {
+    return false;
+  }
+};
+
+/**
+ * Choose the best stream of a channel card and its variants, or null when
+ * none is HLS. Variants keep the same preference order (bare-IP first) and
+ * are capped when the card is written, so one slow or dead host never
+ * removes the channel.
+ */
+function pickStreams(candidates, isHlsCandidate) {
+  const unique = new Map();
+  for (const candidate of candidates) {
+    if (isHlsCandidate(candidate.url) && isSupportedStreamHost(candidate.url) && !unique.has(candidate.url)) {
+      unique.set(candidate.url, candidate);
+    }
+  }
+  const playable = [...unique.values()];
   if (!playable.length) return null;
-  return playable.slice().sort((a, b) => streamRank(a.url, a.fromPlaylist) - streamRank(b.url, b.fromPlaylist))[0];
+  const ranked = playable
+    .slice()
+    .sort((a, b) => streamRank(a.url, a.fromPlaylist) - streamRank(b.url, b.fromPlaylist));
+  return { best: ranked[0], alternates: ranked.slice(1) };
+}
+
+/** Max time spent sniffing one extensionless stream for an HLS playlist. */
+const HLS_PROBE_TIMEOUT_MS = 6000;
+
+/** Optional JSON cache of probe results, so runs stay reproducible offline. */
+const PROBE_CACHE_FILE = process.env.IPTV_PROBE_CACHE;
+const probeCache = new Map();
+if (PROBE_CACHE_FILE && fs.existsSync(PROBE_CACHE_FILE)) {
+  for (const [url, value] of Object.entries(JSON.parse(fs.readFileSync(PROBE_CACHE_FILE, 'utf8')))) {
+    probeCache.set(url, value === true);
+  }
+}
+
+/**
+ * Some lists serve HLS from a URL without `.m3u8` (`?mode=hls`, `/play/…`,
+ * `/0.ts`). For those candidates the first bytes decide: an `#EXTM3U`
+ * header or an `application/vnd.apple.mpegurl` content type means HLS.
+ * Results are memoized per run (and cached on disk when IPTV_PROBE_CACHE
+ * points at a file), so a dead host is not re-probed on every group.
+ */
+async function probeHls(url) {
+  if (probeCache.has(url)) return probeCache.get(url);
+  let hls = false;
+  try {
+    const response = await fetch(url, {
+      signal: AbortSignal.timeout(HLS_PROBE_TIMEOUT_MS),
+      headers: { Range: 'bytes=0-4095' },
+      redirect: 'follow',
+    });
+    const type = response.headers.get('content-type') || '';
+    let head = '';
+    const reader = response.body?.getReader();
+    if (reader) {
+      const chunk = await reader.read();
+      head = chunk.value ? Buffer.from(chunk.value).toString('utf8', 0, 512) : '';
+      await reader.cancel().catch(() => {});
+    }
+    hls = head.startsWith('#EXTM3U') || /mpegurl/i.test(type);
+  } catch {
+    hls = false;
+  }
+  probeCache.set(url, hls);
+  return hls;
+}
+
+/** Probe every candidate that is not HLS by extension, once, concurrently. */
+async function probeUnknownHls(playlists, databaseStreams, channelsById) {
+  const scope = new Set(COUNTRIES.map((country) => country.databaseCountry));
+  const unknown = new Set();
+  for (const text of playlists.values()) {
+    for (const raw of parsePlaylist(text)) {
+      if (raw.url && !isHls(raw.url)) unknown.add(raw.url);
+    }
+  }
+  for (const stream of databaseStreams) {
+    if (!stream.url || isHls(stream.url)) continue;
+    const channel = channelsById.get(stream.channel);
+    if (channel && scope.has(channel.country)) unknown.add(stream.url);
+  }
+  const found = new Set();
+  const queue = [...unknown];
+  await Promise.all(
+    Array.from({ length: Math.min(8, queue.length || 1) }, async () => {
+      while (queue.length) {
+        const url = queue.shift();
+        if (await probeHls(url)) found.add(url);
+      }
+    }),
+  );
+  if (PROBE_CACHE_FILE) {
+    fs.writeFileSync(PROBE_CACHE_FILE, `${JSON.stringify(Object.fromEntries(probeCache), null, 2)}\n`);
+  }
+  return { found, candidates: unknown.size };
 }
 
 /** Best logo of the iptv-org database, keyed by `channel` and `channel@feed`. */
@@ -330,12 +455,8 @@ function buildLogoIndex(logos) {
 }
 
 async function main() {
-  // Base catalogue (never modified): accept both the phase-1 layout
-  // (data/channels.json) and the split layout (data/channels/base.json).
-  const splitBase = path.join(DATA_DIR, 'base.json');
-  const legacyBase = path.join(ROOT, 'data', 'channels.json');
-  const baseFile = fs.existsSync(splitBase) ? splitBase : legacyBase;
-  const base = JSON.parse(fs.readFileSync(baseFile, 'utf8'));
+  // Base catalogue (never modified): the split layout under data/channels/.
+  const base = JSON.parse(fs.readFileSync(path.join(DATA_DIR, 'base.json'), 'utf8'));
 
   // Database exports: channel metadata, streams, logos.
   const databaseChannels = await readJson(CHANNELS_API_URL, process.env.IPTV_CHANNELS_API);
@@ -356,6 +477,7 @@ async function main() {
   // copy would only duplicate the same card.
   const seenIds = new Set(base.map((channel) => channel.id));
   const seenStreams = new Set(base.map((channel) => channel.stream).filter(Boolean));
+  const seenAlternateUrls = new Set();
   const seenTvgIds = new Set();
   const seenNames = new Set();
   const basePlayableNames = new Set(
@@ -366,11 +488,21 @@ async function main() {
 
   const report = {};
 
+  // Playlists are read once, then every candidate that is not HLS by its
+  // extension is sniffed: some lists serve HLS from an extensionless URL.
+  const playlists = new Map();
   for (const country of COUNTRIES) {
     const playlistUrl = `${PLAYLIST_BASE}/${country.code}.m3u`;
-    const text = await readText(playlistUrl, process.env.IPTV_PLAYLIST_DIR
+    playlists.set(country.code, await readText(playlistUrl, process.env.IPTV_PLAYLIST_DIR
       ? path.join(process.env.IPTV_PLAYLIST_DIR, `${country.code}.m3u`)
-      : undefined);
+      : undefined));
+  }
+  const contentHls = await probeUnknownHls(playlists, databaseStreams, channelsById);
+  const isHlsCandidate = (url) => isHls(url) || contentHls.found.has(url);
+
+  for (const country of COUNTRIES) {
+    const playlistUrl = `${PLAYLIST_BASE}/${country.code}.m3u`;
+    const text = playlists.get(country.code);
     const rawEntries = parsePlaylist(text);
     const stats = {
       playlistEntries: rawEntries.length,
@@ -380,18 +512,19 @@ async function main() {
       excludedBaseDuplicate: 0, excludedDuplicateName: 0,
       excludedDuplicateId: 0, excludedDuplicateTvgId: 0, excludedDuplicateStream: 0,
       keptGeoBlocked: 0, keptNot247: 0, keptWithoutLogo: 0, keptWithoutWebsite: 0,
-      keptInsecure: 0, keptBareIp: 0, keptHttpsUpgrades: 0,
+      keptInsecure: 0, keptBareIp: 0, keptHttpsUpgrades: 0, keptAlternates: 0, keptProbedHls: 0,
     };
 
-    // One group per channel feed: playlist entry first, then every stream of
-    // the matching database channels. Group key = full tvg-id.
+    // One card per channel (tvg-id without its feed): every playlist entry
+    // and every database stream of that channel is a candidate, so several
+    // variants share one card and the player picks the one that works.
     const groups = new Map();
     const groupFor = (key) => {
       if (!groups.has(key)) {
         groups.set(key, {
           key, tvgId: key, name: '', logo: '', group: '',
           geoBlocked: false, not247: false, fromPlaylist: false,
-          databaseChannel: null, databaseFeed: null, candidates: [],
+          databaseChannel: null, candidates: [],
         });
       }
       return groups.get(key);
@@ -403,9 +536,8 @@ async function main() {
       const tvgId = attribute(raw.inf, 'tvg-id');
       const rawName = raw.inf.slice(raw.inf.lastIndexOf(',') + 1).trim();
       const { name, geoBlocked, not247 } = cleanName(rawName);
-      const groupKey = tvgId || `name:${nameKey(name)}`;
+      const groupKey = tvgId ? tvgId.split('@')[0] : `name:${nameKey(name)}`;
       const group = groupFor(groupKey);
-      group.tvgId = tvgId || group.tvgId;
       group.name = group.name || name;
       group.group = group.group || attribute(raw.inf, 'group-title');
       group.logo = group.logo || attribute(raw.inf, 'tvg-logo');
@@ -414,7 +546,7 @@ async function main() {
       group.fromPlaylist = true;
       const upgraded = HTTPS_STREAM_UPGRADES.get(tvgId);
       if (upgraded) stats.keptHttpsUpgrades++;
-      group.candidates.push({ url: upgraded || url, fromPlaylist: true });
+      group.candidates.push({ url: upgraded || url, fromPlaylist: true, label: tvgId.split('@')[1] || name });
     }
 
     for (const channel of databaseChannels) {
@@ -424,32 +556,19 @@ async function main() {
       if (!streams.length) continue;
       for (const stream of streams) {
         if (!stream.url) continue;
-        const feed = stream.feed || 'SD';
-        const tvgId = `${channel.id}@${feed}`;
-        const group = groupFor(tvgId);
-        group.tvgId = tvgId;
-        group.databaseChannel = channel;
-        group.databaseFeed = stream.feed || null;
-        group.candidates.push({ url: stream.url, fromPlaylist: false });
+        const group = groupFor(channel.id);
+        group.databaseChannel = group.databaseChannel || channel;
+        group.candidates.push({ url: stream.url, fromPlaylist: false, label: stream.feed || 'SD' });
       }
     }
     stats.databaseOnlyFeeds = [...groups.values()].filter((group) => !group.fromPlaylist).length;
 
-    // Name of a database-only channel: the database name, with the feed in
-    // brackets when the same channel has several playable feeds.
-    const feedsPerChannel = new Map();
-    for (const group of groups.values()) {
-      if (!group.databaseChannel || !group.databaseFeed) continue;
-      const list = feedsPerChannel.get(group.databaseChannel.id) || new Set();
-      list.add(group.databaseFeed);
-      feedsPerChannel.set(group.databaseChannel.id, list);
-    }
-
     const channels = [];
 
     for (const group of groups.values()) {
-      const best = pickBestStream(group.candidates);
-      if (!best) { stats.excludedNonHls++; continue; }
+      const picked = pickStreams(group.candidates, isHlsCandidate);
+      if (!picked) { stats.excludedNonHls++; continue; }
+      const best = picked.best;
       const record = group.databaseChannel || channelsById.get(group.tvgId.split('@')[0]);
       if (record?.closed) { stats.excludedClosed++; continue; }
       if (record?.is_nsfw) { stats.excludedNsfw++; continue; }
@@ -460,31 +579,25 @@ async function main() {
 
       // Region / name / language.
       let region = country.region;
-      let displayName = group.name;
-      if (!displayName) {
-        displayName = record?.name || group.tvgId.split('.')[0];
-        const feeds = group.databaseChannel ? feedsPerChannel.get(group.databaseChannel.id) : null;
-        if (group.databaseFeed && feeds && feeds.size > 1 && !GENERIC_FEEDS.has(group.databaseFeed.toLowerCase())) {
-          displayName = `${displayName} (${group.databaseFeed})`;
-        }
-        stats.keptFromDatabase++;
-      }
+      let displayName = group.name || record?.name || group.tvgId.split('.')[0];
+      if (!group.name) stats.keptFromDatabase++;
       let language = country.code === 'ca' ? canadaLanguage(displayName, group.tvgId) : country.language;
       if (country.code === 'fr' && /english/i.test(displayName)) language = 'en';
-      const rcMatch = group.tvgId.match(/^IciRadioCanadaTele\.ca@([A-Z]+)$/);
-      if (rcMatch && RADIO_CANADA_STATIONS[rcMatch[1]]) {
-        const [city, rcRegion] = RADIO_CANADA_STATIONS[rcMatch[1]];
-        displayName = `ICI Télé (${city})`;
-        region = rcRegion;
+      // One card for every ICI Télé station: the station is a variant of the
+      // card (its city is the label), not a separate channel.
+      if (group.tvgId === 'IciRadioCanadaTele.ca') {
+        displayName = 'ICI Télé';
+        region = 'Québec';
         language = 'fr';
       }
-      if (group.tvgId.split('@')[0] === 'IciRDI.ca') language = 'fr';
+      if (group.tvgId === 'IciRDI.ca') language = 'fr';
 
-      // De-duplication: curated playable card first, then id / tvg-id /
-      // stream URL / display name across everything imported so far.
+      // De-duplication: curated playable card first, then tvg-id / id /
+      // stream URL / display name. Variants of a channel share one card
+      // (see streamAlts), so a channel is never listed twice.
+      const id = makeId(group.tvgId, displayName);
       const key = nameKey(displayName);
       if (basePlayableNames.has(key)) { stats.excludedBaseDuplicate++; continue; }
-      const id = makeId(group.tvgId, displayName);
       if (seenTvgIds.has(group.tvgId)) { stats.excludedDuplicateTvgId++; continue; }
       if (seenIds.has(id)) { stats.excludedDuplicateId++; continue; }
       if (seenStreams.has(streamUrl)) { stats.excludedDuplicateStream++; continue; }
@@ -519,6 +632,31 @@ async function main() {
         stream: streamUrl,
         directory: group.fromPlaylist ? playlistUrl : STREAMS_API_URL,
       };
+      // Variants of the same channel, as labelled fallbacks: the player lists
+      // them in its source selector and switches automatically to the first
+      // one that plays (see defaultSources in lib/playback.ts).
+      const alternates = picked.alternates
+        .filter((candidate) => candidate.url !== streamUrl && !seenStreams.has(candidate.url) && !seenAlternateUrls.has(candidate.url))
+        .map((candidate) => ({ url: candidate.url, label: variantLabel(candidate.label, group.tvgId) }))
+        .slice(0, MAX_STREAM_VARIANTS);
+      // Two relays of the same feed would both read "SD": add the host to the
+      // label so the player's selector stays readable.
+      const usedLabels = new Set();
+      for (const alternate of alternates) {
+        let label = alternate.label;
+        if (usedLabels.has(label)) label = `${label} · ${new URL(alternate.url).hostname}`;
+        if (label.length > 40) label = `${label.slice(0, 39)}…`;
+        usedLabels.add(label);
+        alternate.label = label;
+      }
+      if (alternates.length) {
+        entry.streamAlts = alternates;
+        for (const alternate of alternates) seenAlternateUrls.add(alternate.url);
+        stats.keptAlternates += alternates.length;
+      }
+      if (contentHls.found.has(streamUrl) || alternates.some((alternate) => contentHls.found.has(alternate.url))) {
+        stats.keptProbedHls++;
+      }
       if (parsed.protocol !== 'https:') { entry.insecureStream = true; stats.keptInsecure++; }
       if (bareIp) stats.keptBareIp++;
       if (group.geoBlocked) { entry.limited = true; stats.keptGeoBlocked++; }
@@ -527,7 +665,6 @@ async function main() {
       if (note) entry.note = note;
 
       const logo = (group.logo.startsWith('https://') && group.logo)
-        || logosByKey.get(`${record?.id}@${group.databaseFeed}`)?.url
         || logosByKey.get(record?.id)?.url
         || '';
       if (logo) entry.logoUrl = logo;
@@ -544,7 +681,11 @@ async function main() {
     report[country.code] = { ...stats, file: `data/channels/${country.code}.json`, bytes: fs.statSync(outFile).size };
   }
 
-  console.log(JSON.stringify({ base: base.length, report }, null, 2));
+  console.log(JSON.stringify({
+    base: base.length,
+    probe: { candidates: contentHls.candidates, hlsByContent: contentHls.found.size },
+    report,
+  }, null, 2));
 }
 
 await main();
