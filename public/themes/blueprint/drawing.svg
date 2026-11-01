@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 420" fill="none" stroke="#bfe6ff" stroke-width="1.2" font-family="Arial,Helvetica,sans-serif" font-size="11" letter-spacing="1.5">
+<g stroke-opacity=".9">
+<rect x="90" y="150" width="300" height="200" rx="14"/>
+<rect x="112" y="170" width="206" height="160" rx="22"/>
+<path d="M340 178h32M340 196h32M340 214h32"/>
+<circle cx="356" cy="262" r="14"/><circle cx="356" cy="306" r="9"/>
+<path d="M150 350l-14 34M330 350l14 34M240 150l-70-110M240 150l90-96"/>
+<circle cx="240" cy="150" r="5"/>
+</g>
+<g stroke-opacity=".45" stroke-dasharray="6 4">
+<path d="M215 130v240M60 250h400"/>
+<circle cx="215" cy="250" r="64"/>
+</g>
+<g stroke-opacity=".7">
+<path d="M90 398v14M390 398v14M90 405h300M90 405l8-3v6zM390 405l-8-3v6z"/>
+<path d="M430 150h14M430 350h14M437 150v200M437 150l-3 8h6zM437 350l-3-8h6z"/>
+<path d="M330 54l40-30h70"/>
+</g>
+<g fill="#bfe6ff" stroke="none" fill-opacity=".85">
+<text x="214" y="400">720</text>
+<text x="446" y="254">480</text>
+<text x="376" y="20">ANT. DIPÔLE</text>
+<text x="96" y="140">ÉLÉV. A</text>
+</g>
+</svg>

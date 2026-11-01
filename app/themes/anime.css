@@ -1,0 +1,124 @@
+/* Manga — a sakura shōjo page: pastel paper, screentone dots, speed lines and
+   rounded panels drawn with a thin ink line. Petals drift down, slowly.
+   Every rule is scoped to .app-shell[data-theme=anime] (or this skin's tile in Réglages). */
+
+.app-shell[data-theme=anime] {
+  --ink: #2d2238;
+  --tone: url('/themes/anime/tone.svg');
+  --bg: #fdf2f6;
+  --line: #efc9d7;
+  --skin-radius: 18px;
+  --skin-card: #fffbfc;
+  --skin-tile: #fffbfc;
+  --skin-hero: linear-gradient(150deg, #ffdbe7, #f3e6ff);
+  --skin-line: var(--ink);
+  --skin-surface-shadow: 0 4px 0 #f6c3d5;
+  --skin-heading-shadow: 2px 2px 0 #ffcadb;
+  --skin-icon-bg: #fff;
+  --skin-icon-border: #e9b4c8;
+  --skin-icon-shadow: 0 2px 0 #f6c3d5;
+  --skin-aura-a: rgba(255, 175, 205, .42);
+  --skin-aura-b: rgba(206, 182, 255, .3);
+}
+
+/* Backdrop: pastel paper, screentone in two corners, focus lines at the edges. */
+.app-shell[data-theme=anime] .theme-backdrop { background: linear-gradient(165deg, #fff5f9 0%, #fdebf2 48%, #f2eafc 100%); }
+.app-shell[data-theme=anime] .backdrop-anime::before {
+  background: repeating-conic-gradient(from 0deg at 50% 42%, rgba(59, 42, 69, .055) 0 .5deg, transparent .5deg 5deg);
+  mask-image: radial-gradient(closest-side circle at 50% 42%, transparent 70%, #000 130%);
+  mix-blend-mode: normal;
+  animation: none;
+}
+.app-shell[data-theme=anime] .backdrop-anime::after {
+  background: var(--tone);
+  opacity: .1;
+  mask-image: radial-gradient(38% 46% at 100% 0%, #000, transparent), radial-gradient(34% 42% at 0% 100%, #000, transparent);
+}
+.app-shell[data-theme=anime] :is(.backdrop-mesh, .backdrop-rings, .backdrop-specks, .backdrop-aura i:nth-child(3)) { display: none; }
+.app-shell[data-theme=anime] .theme-petals i {
+  width: 13px;
+  height: 15px;
+  border-radius: 0;
+  background: url('/themes/anime/petal.svg') center / contain no-repeat;
+  opacity: .85;
+}
+.app-shell[data-theme=anime] .theme-petals i:nth-child(2n) { display: none; }
+
+/* Type: heavy panel titles with a pink offset, speed lines under page titles. */
+.app-shell[data-theme=anime] :is(.page-heading h1, .home-section-heading h2, .section-heading h2, .selection-theme-head h2, .desktop-panel-heading h2, .favorites-lists h2, .empty-state h2, .desktop-first h2, .access-card h1) {
+  font-weight: 800;
+  letter-spacing: -.01em;
+  text-wrap: balance;
+  color: var(--ink);
+}
+.app-shell[data-theme=anime] .page-heading h1 { text-shadow: 3px 3px 0 #ffc4d8; }
+.app-shell[data-theme=anime] .page-heading h1::after {
+  width: 54px;
+  height: 7px;
+  border-radius: 0;
+  background: repeating-linear-gradient(115deg, #c3386d 0 3px, transparent 3px 7px);
+  opacity: 1;
+}
+
+/* Chrome. */
+.app-shell[data-theme=anime] .topbar::after { opacity: .35; }
+.app-shell[data-theme=anime] .nav-item.nav-active {
+  background: #c3386d;
+  color: #fff;
+  box-shadow: inset 0 0 0 1.5px var(--ink), 3px 3px 0 var(--ink);
+}
+.app-shell[data-theme=anime] .search-box { border: 1.5px solid #e9b4c8; }
+.app-shell[data-theme=anime] .device-note { border: 1.5px solid #efc9d7; box-shadow: 0 4px 0 #f9d6e2; }
+
+/* Panels: rounded, outlined in ink, standing on a soft pink extrusion. */
+.app-shell[data-theme=anime] :is(.channel-card, .list-card, .selection-row, .home-favorite-row button, .home-category-grid button, .desktop-channel-panel, .desktop-programme-panel, .filter-panel, .guide-row, .favorites-lists, .selection-lead) {
+  border: 1.5px solid var(--ink);
+  box-shadow: 0 4px 0 #f6c3d5;
+}
+.app-shell[data-theme=anime] .home-favorite-row .home-favorite-fav { border: 1.5px solid var(--ink); box-shadow: none; }
+.app-shell[data-theme=anime] :is(.channel-card, .home-favorite-row .home-favorite-item, .home-category-grid button):hover { box-shadow: 0 7px 0 #f2b0c7; }
+.app-shell[data-theme=anime] .channel-card::before { display: none; }
+.app-shell[data-theme=anime] .card-visual { border-bottom: 1.5px solid var(--ink); }
+.app-shell[data-theme=anime] .home-favorite-art { background: radial-gradient(rgba(59, 42, 69, .1) 1px, transparent 1.5px) 0 0 / 8px 8px, #fff; border-color: #f3d3df; }
+.app-shell[data-theme=anime] .brand-has-logo { box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .08); }
+.app-shell[data-theme=anime] .desktop-channel-row { background: #fff7fa; border-color: #f3d3df; border-radius: 14px; }
+
+/* Home hero: a pastel sky panel, a rising sun and focus lines. */
+.app-shell[data-theme=anime] .desktop-first {
+  background:
+    radial-gradient(circle at 80% 36%, #fffaf5 0 64px, #ffd2e1 65px 69px, transparent 70px),
+    repeating-conic-gradient(from 0deg at 80% 36%, rgba(195, 56, 109, .08) 0 1.2deg, transparent 1.2deg 7deg),
+    linear-gradient(0deg, rgba(255, 248, 251, .97) 0 34%, rgba(255, 248, 251, 0) 70%),
+    radial-gradient(rgba(195, 56, 109, .16) 1.1px, transparent 1.6px) 0 0 / 9px 9px,
+    linear-gradient(160deg, #ffd3e2, #efe2ff);
+  border: 2px solid var(--ink);
+  border-radius: 22px;
+  box-shadow: 0 6px 0 #f2b0c7;
+}
+.app-shell[data-theme=anime] .desktop-first h2 { text-transform: none; text-shadow: 2px 2px 0 #ffc4d8; }
+.app-shell[data-theme=anime] .desktop-first .hero-secondary { background: #fffbfc; backdrop-filter: none; }
+.app-shell[data-theme=anime] .home-hero { border: 1.5px solid var(--ink); box-shadow: 0 4px 0 #f6c3d5; background: radial-gradient(rgba(59, 42, 69, .09) 1px, transparent 1.5px) 0 0 / 8px 8px, var(--skin-hero); }
+
+/* Buttons and chips. */
+.app-shell[data-theme=anime] :is(.primary, .home-primary) { border: 1.5px solid var(--ink); border-radius: 999px; box-shadow: 0 3px 0 var(--ink); font-weight: 800; }
+.app-shell[data-theme=anime] :is(.primary, .home-primary):hover { background: #b52f62; box-shadow: 0 4px 0 var(--ink); transform: translateY(-1px); }
+.app-shell[data-theme=anime] :is(.primary, .home-primary):active { box-shadow: 0 1px 0 var(--ink); transform: translateY(2px); }
+.app-shell[data-theme=anime] .secondary { border: 1.5px solid #e9b4c8; border-radius: 999px; background: #fff; }
+.app-shell[data-theme=anime] .guide-days button[aria-pressed=true],
+.app-shell[data-theme=anime] .region-tabs button.active { background: #ffe1eb; color: #a52a5a; box-shadow: inset 0 0 0 1.5px var(--ink); }
+
+/* Player, dialogs, mobile. */
+.app-shell[data-theme=anime] :is(.watch-dock, .modal) { border: 1.5px solid var(--ink); box-shadow: 0 6px 0 #f2b0c7, 0 24px 60px rgba(120, 60, 90, .22); }
+.app-shell[data-theme=anime] .modal::backdrop { background: rgba(60, 30, 50, .5); }
+.app-shell[data-theme=anime] .modal .primary { background: #c3386d; color: #fff; }
+.app-shell[data-theme=anime] .mobile-nav { border-top: 1.5px solid #efc9d7; }
+.app-shell[data-theme=anime] .mobile-nav button.active { background: #ffe1eb; color: #a52a5a; }
+.access-page.app-shell[data-theme=anime] .access-halo { background: radial-gradient(closest-side, rgba(255, 175, 205, .5), transparent); }
+.access-page.app-shell[data-theme=anime] .access-card { border: 1.5px solid var(--ink); box-shadow: 0 6px 0 #f2b0c7; }
+
+/* Réglages tile: pastel, screentone, an inked panel and a petal. */
+.settings-skins .theme-option[data-theme-id=anime] .theme-preview {
+  background: radial-gradient(#3b2a4522 1px, transparent 1.4px) 0 0 / 6px 6px, repeating-conic-gradient(from 0deg at 85% 15%, #c3386d14 0 2deg, transparent 2deg 10deg), linear-gradient(150deg, #ffd6e4, #f1e6ff);
+}
+.settings-skins .theme-option[data-theme-id=anime] .theme-preview::before { background: #fffbfc; border: 1.5px solid #2d2238; border-radius: 9px; box-shadow: 0 3px 0 #f2b0c7; }
+.settings-skins .theme-option[data-theme-id=anime] .theme-preview i { filter: none; border-radius: 0; background: url('/themes/anime/petal.svg') center / contain no-repeat; width: 11px; height: 13px; }

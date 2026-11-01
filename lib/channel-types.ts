@@ -7,7 +7,10 @@
  * without loading or validating the catalogue.
  */
 
-export type ChannelRegion = 'Québec' | 'Canada' | 'France' | 'USA' | 'Suède' | 'International';
+export type ChannelRegion =
+  | 'Québec' | 'Canada' | 'France' | 'USA' | 'Suède' | 'Cameroun'
+  | 'Belgique' | 'Suisse' | 'Luxembourg' | 'Sénégal' | "Côte d'Ivoire" | 'RD Congo' | 'Haïti'
+  | 'International';
 
 export type ChannelLanguage = 'fr' | 'en' | 'sv' | 'zxx';
 
@@ -63,6 +66,16 @@ export type Channel = {
    * the browser setting when it falls back to one.
    */
   streamAlts?: { url: string; label?: string }[];
+  /**
+   * True when every source of the channel plays only in a native HLS player
+   * (Safari on macOS, every iOS browser): the stream answers HLS over HTTPS
+   * but withholds CORS, so hls.js (Chrome, Firefox, Edge…) can never read
+   * it, while `<video src>` loads media without CORS. Set by the iptv-org
+   * importer's playability probe (Pluto TV relays are the main case) or on a
+   * curated entry checked the same way; the stream is always https. The UI
+   * offers these channels to native-HLS browsers only.
+   */
+  nativeHlsOnly?: boolean;
   /** Official embeddable player URL. */
   embed?: string;
   /** Resolver used to obtain a playable source from the official page. */

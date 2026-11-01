@@ -8,3 +8,5 @@ CREATE INDEX IF NOT EXISTS onde_session_expiry ON onde_sessions(expires_at);
 CREATE INDEX IF NOT EXISTS onde_handoff_expiry ON onde_handoffs(expires_at);
 CREATE TABLE IF NOT EXISTS channel_reports (id text PRIMARY KEY, channel_id text NOT NULL, reason text NOT NULL, created_at text NOT NULL, reporter text NOT NULL);
 CREATE INDEX IF NOT EXISTS channel_report_channel ON channel_reports(channel_id, created_at);
+CREATE TABLE IF NOT EXISTS playback_outcomes (channel_id text NOT NULL, reporter text NOT NULL, bucket text NOT NULL, ok boolean NOT NULL, created_at text NOT NULL, PRIMARY KEY (channel_id, reporter, bucket));
+CREATE INDEX IF NOT EXISTS playback_outcome_created ON playback_outcomes(created_at);

@@ -1,4 +1,5 @@
-import { channels } from './channels';
+// Client-safe: the known channel list is injected by the caller (the server
+// route or the hook), so this module never pulls the catalogue JSON.
 export type ChannelList={id:string;name:string;channels:string[]};
 export type Preferences={favorites:string[];lists:ChannelList[];lastChannel:string|null;lastAt:string|null};
 export const emptyPreferences:Preferences={favorites:[],lists:[],lastChannel:null,lastAt:null};
@@ -10,10 +11,13 @@ export type Operation =
  | {type:'renameList';id:string;name:string}
  | {type:'deleteList';id:string}
  | {type:'listChannel';id:string;channel:string;value:boolean};
-export function applyOperation(state:Preferences,op:Operation,now=new Date().toISOString(),knownChannels:readonly {id:string}[]=channels):Preferences {
+export function applyOperation(state:Preferences,op:Operation,now:string,knownChannels:readonly {id:string}[]):Preferences {
  const s=structuredClone(state);
  if(!op || typeof op!=='object')throw new Error('Action invalide');
- if('channel' in op&&!(typeof op.channel==='string'&&knownChannels.some(c=>c.id===op.channel)))throw new Error('Chaîne inconnue');
+ // Removing a channel that left the catalogue must stay possible (it cleans up
+ // favourites and lists); anything else needs a channel the catalogue knows.
+ const removal=(op.type==='favorite'||op.type==='listChannel')&&op.value===false;
+ if('channel' in op&&!(typeof op.channel==='string'&&(knownChannels.some(c=>c.id===op.channel)||removal&&/^[a-z0-9][a-z0-9-]{0,79}$/.test(op.channel))))throw new Error('Chaîne inconnue');
  switch(op.type){
  case 'favorite':if(typeof op.value!=='boolean')throw new Error('Valeur invalide');if(op.value){if(!s.favorites.includes(op.channel))s.favorites.push(op.channel);}else{s.favorites=s.favorites.filter(x=>x!==op.channel);}break;
  case 'move':{if(op.direction!==-1&&op.direction!==1)throw new Error('Direction invalide');const i=s.favorites.indexOf(op.channel),j=i+op.direction;if(i>=0&&j>=0&&j<s.favorites.length)[s.favorites[i],s.favorites[j]]=[s.favorites[j],s.favorites[i]];break;}

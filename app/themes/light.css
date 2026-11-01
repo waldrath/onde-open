@@ -1,0 +1,141 @@
+/* Clair — a morning edition: warm paper, ink-green type and a low sun.
+   White cards sit on the paper with soft layered shadows, headings are set in
+   Fraunces like a magazine, and the river photograph is mounted as a print.
+   Every rule is scoped to .app-shell[data-theme=light] (or this skin's tile in Réglages). */
+
+.app-shell[data-theme=light] {
+  --bg: #f6f2e9;
+  --panel: #fffdf8;
+  --panel2: #f1ece1;
+  --line: #e4ddcf;
+  --text: #1d2b24;
+  --muted: #56655c;
+  --accent: #194f40;
+  --accent-ink: #fffdf6;
+  --sidebar: #f2ede2;
+  --surface: #fffdf8;
+  --surface-raised: #f4efe5;
+  --border: #ddd5c5;
+  --copy: #1d2b24;
+  --quiet: #56655c;
+  --focus: #194f40;
+  --paper-shadow: 0 1px 1px rgba(70, 56, 34, .04), 0 2px 6px rgba(70, 56, 34, .05), 0 14px 32px -12px rgba(70, 56, 34, .16);
+  --paper-lift: 0 1px 1px rgba(70, 56, 34, .05), 0 6px 14px rgba(70, 56, 34, .07), 0 26px 48px -18px rgba(70, 56, 34, .26);
+  --skin-line: rgba(80, 64, 40, .1);
+  --skin-surface-shadow: var(--paper-shadow);
+  --skin-heading-font: var(--font-serif);
+  --skin-heading-tracking: -.018em;
+  --skin-icon-bg: #fffdf8;
+  --skin-icon-border: #e4ddcf;
+  --skin-icon-color: #194f40;
+  --skin-icon-shadow: 0 1px 2px rgba(70, 56, 34, .1);
+  --skin-aura-a: rgba(255, 214, 170, .42);
+  --skin-aura-b: rgba(255, 196, 128, .4);
+  --skin-aura-c: rgba(172, 206, 182, .26);
+  --skin-glow: rgba(25, 79, 64, .16);
+}
+
+/* Backdrop: paper, a low sun in the top-right corner and a few slow rays. */
+.app-shell[data-theme=light] .theme-backdrop {
+  background: radial-gradient(42% 38% at 92% 0%, rgba(255, 206, 146, .55), transparent 70%), linear-gradient(180deg, #f8f4ec, #f3eee3);
+}
+.app-shell[data-theme=light] :is(.backdrop-mesh, .backdrop-rings, .backdrop-specks) { display: none; }
+.app-shell[data-theme=light] .backdrop-grain { opacity: .045; }
+.app-shell[data-theme=light] .theme-sunrays {
+  inset: -40% -20% 10% 10%;
+  mix-blend-mode: normal;
+  opacity: .75;
+  transform-origin: 72% 12%;
+  animation: clair-sway 46s ease-in-out infinite alternate;
+}
+
+/* Chrome: a paper sidebar, a quiet top bar with a still hairline. */
+.app-shell[data-theme=light] .sidebar { box-shadow: inset -1px 0 0 rgba(255, 255, 255, .6); }
+.app-shell[data-theme=light] .topbar { background: rgba(248, 244, 236, .82); }
+.app-shell[data-theme=light] .topbar::after { opacity: .28; }
+.app-shell[data-theme=light] .search-box { background: #fffdf8; border-color: var(--line); box-shadow: inset 0 1px 2px rgba(70, 56, 34, .05); }
+.app-shell[data-theme=light] .nav-item.nav-active {
+  background: #194f40;
+  color: #fffdf6;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .12), 0 10px 22px -10px rgba(25, 79, 64, .7);
+}
+.app-shell[data-theme=light] .nav-item:hover:not(.nav-active) { background: rgba(255, 253, 248, .8); }
+.app-shell[data-theme=light] .device-note { background: #fffdf8; border-color: var(--line); box-shadow: var(--paper-shadow); }
+
+/* Type: Fraunces headings, an ink rule with a sun dot under page titles. */
+.app-shell[data-theme=light] :is(.page-heading h1, .home-section-heading h2, .section-heading h2, .selection-theme-head h2, .desktop-panel-heading h2, .desktop-first h2, .empty-state h2, .modal h2, .access-card h1) {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  text-wrap: balance;
+}
+.app-shell[data-theme=light] .page-heading h1::after {
+  width: 40px;
+  height: 3px;
+  background: linear-gradient(90deg, #194f40 0 68%, transparent 68% 82%, #d9913f 82%);
+  opacity: 1;
+}
+.app-shell[data-theme=light] .eyebrow { color: #194f40; }
+
+/* Home hero: the river photograph mounted as a print with a paper caption. */
+.app-shell[data-theme=light] .desktop-first {
+  background:
+    linear-gradient(0deg, rgba(255, 253, 248, .98) 0, rgba(255, 253, 248, .93) 36%, rgba(255, 253, 248, 0) 74%),
+    linear-gradient(rgba(255, 228, 190, .12), rgba(255, 228, 190, .12)),
+    url('/images/onde-river-hero.webp') center 52% / cover no-repeat;
+  background-clip: padding-box;
+  border: 10px solid #fffdf8;
+  border-radius: 8px;
+  box-shadow: 0 0 0 1px rgba(80, 64, 40, .08), var(--paper-lift);
+}
+.app-shell[data-theme=light] .desktop-first p { color: #3b4a42; }
+.app-shell[data-theme=light] .desktop-first .hero-secondary { background: #fffdf8; backdrop-filter: none; }
+.app-shell[data-theme=light] .home-hero { border: 6px solid #fffdf8; border-radius: 16px; box-shadow: 0 0 0 1px rgba(80, 64, 40, .08), var(--paper-shadow); }
+
+/* Paper cards: white on paper, lifted by shadow rather than borders. */
+.app-shell[data-theme=light] :is(.channel-card, .desktop-channel-panel, .desktop-programme-panel, .filter-panel, .favorites-lists, .selection-row, .selection-lead, .guide-row, .guide-channel-summary, .list-card, .empty-state, .up-next) {
+  background: #fffdf8;
+  border-color: rgba(80, 64, 40, .09);
+  box-shadow: var(--paper-shadow);
+}
+.app-shell[data-theme=light] .channel-card:hover { box-shadow: var(--paper-lift); border-color: rgba(25, 79, 64, .22); }
+.app-shell[data-theme=light] .channel-card::before { display: none; }
+.app-shell[data-theme=light] .card-visual { border-color: rgba(80, 64, 40, .08); }
+.app-shell[data-theme=light] .brand-has-logo { box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .07); }
+.app-shell[data-theme=light] .home-favorite-open { background: #fffdf8; border-color: rgba(80, 64, 40, .09); }
+.app-shell[data-theme=light] .home-favorite-row .home-favorite-item { border-radius: 14px; box-shadow: var(--paper-shadow); }
+.app-shell[data-theme=light] .home-favorite-row .home-favorite-item:hover { box-shadow: var(--paper-lift); }
+.app-shell[data-theme=light] .home-favorite-art { background: #f5f0e6; border-color: rgba(80, 64, 40, .07); }
+.app-shell[data-theme=light] .home-category-grid button { background: #fffdf8; border: 1px solid rgba(80, 64, 40, .09); box-shadow: var(--paper-shadow); }
+.app-shell[data-theme=light] .desktop-channel-row { background: #faf7f0; border-color: rgba(80, 64, 40, .08); }
+.app-shell[data-theme=light] .desktop-channel-row:hover { background: #fff; border-color: rgba(25, 79, 64, .2); }
+.app-shell[data-theme=light] .selection-rank { font-family: var(--font-serif); font-style: italic; color: #56655c; }
+
+/* Controls: a segmented region switch, ink chips for the active day and period. */
+.app-shell[data-theme=light] .region-tabs { background: #f1ece1; border-color: transparent; }
+.app-shell[data-theme=light] .region-tabs button.active { background: #fffdf8; color: #194f40; box-shadow: 0 1px 3px rgba(70, 56, 34, .14); }
+.app-shell[data-theme=light] .filter-field select { background-color: #faf7f0; border-color: var(--border); }
+.app-shell[data-theme=light] .guide-days button { background: #fffdf8; border-color: rgba(80, 64, 40, .1); box-shadow: 0 1px 2px rgba(70, 56, 34, .06); }
+.app-shell[data-theme=light] .guide-days button[aria-pressed=true] { background: #194f40; border-color: #194f40; color: #fffdf6; box-shadow: 0 10px 22px -12px rgba(25, 79, 64, .8); }
+.app-shell[data-theme=light] .secondary { background: #fffdf8; border-color: var(--border); box-shadow: 0 1px 2px rgba(70, 56, 34, .06); }
+.app-shell[data-theme=light] .secondary:hover { border-color: #194f40; }
+
+/* Player and mini player stay dark: deep ink green, the colour of the type. */
+.app-shell[data-theme=light] :is(.player-shell, .watch-dock) { background: #0f241d; border-color: #2a4538; }
+.app-shell[data-theme=light] .watch-dock { box-shadow: 0 0 0 1px rgba(80, 64, 40, .1), var(--paper-lift); }
+.app-shell[data-theme=light] .watch-dock .dock-controls { background: #0b1c16; border-color: #2a4538; color: #e7f1e9; }
+.app-shell[data-theme=light] .watch-dock .dock-controls button { color: #e7f1e9; }
+
+/* Dialogs and small surfaces. */
+.app-shell[data-theme=light] .modal { background: #fffdf8; box-shadow: 0 0 0 1px rgba(80, 64, 40, .08), 0 30px 80px -20px rgba(50, 40, 24, .38); }
+.app-shell[data-theme=light] .modal::backdrop { background: rgba(38, 34, 26, .42); }
+.app-shell[data-theme=light] .mobile-nav { background: rgba(248, 244, 236, .94); border-color: var(--line); }
+.app-shell[data-theme=light] .mobile-nav button.active { background: #e8eee5; color: #194f40; }
+.app-shell[data-theme=light] .toast { background: #194f40; color: #fffdf6; }
+.access-page.app-shell[data-theme=light] .access-halo { background: radial-gradient(closest-side, rgba(255, 206, 146, .5), transparent); }
+
+/* Réglages tile: paper, the sun in the corner and a white card with an ink rule. */
+.settings-skins .theme-option[data-theme-id=light] .theme-preview { background: radial-gradient(70% 80% at 96% 0%, rgba(255, 196, 128, .85), transparent 62%), linear-gradient(160deg, #fbf8f1, #efe9dc); }
+.settings-skins .theme-option[data-theme-id=light] .theme-preview::before { border: 0; background: #fffdf8; box-shadow: 0 1px 2px rgba(70, 56, 34, .12), 0 8px 18px -6px rgba(70, 56, 34, .3); }
+.settings-skins .theme-option[data-theme-id=light] .theme-preview::after { left: 22%; right: auto; width: 22%; height: 2px; bottom: 50%; background: #194f40; box-shadow: none; }
+
+@keyframes clair-sway { from { transform: rotate(-4deg); } to { transform: rotate(3deg); } }

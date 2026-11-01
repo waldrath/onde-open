@@ -30,56 +30,8 @@
     "guide": "https://www.cbsnews.com/live/48-hours/",
     "stream": "https://jmp2.uk/plu-62e925bc68d18a00077bb990.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/6176f39e709f160007ec61c3/colorLogoPNG.png",
-    "source": "iptv-org"
-  },
-  {
-    "id": "ae",
-    "name": "A&E",
-    "brand": "A&E",
-    "region": "Canada",
-    "category": "Entertainment",
-    "color": "#6b8c92",
-    "language": "en",
-    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Entertainment).",
-    "official": "https://www.aetv.com/",
-    "guide": "https://www.aetv.com/",
-    "stream": "http://23.239.31.26:8989/aande/index.m3u8",
-    "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
-    "insecureStream": true,
-    "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/A%26E_Network_logo.svg/960px-A%26E_Network_logo.svg.png",
-    "source": "iptv-org"
-  },
-  {
-    "id": "afghan-nobel-movies",
-    "name": "Afghan Nobel Movies",
-    "brand": "Afghan Nobel Movies",
-    "region": "Canada",
-    "category": "Movies",
-    "color": "#6b8c92",
-    "language": "en",
-    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Movies).",
-    "official": "https://www.afghannobel.com/",
-    "guide": "https://www.afghannobel.com/",
-    "stream": "https://live.relentlessinnovations.net:1936/afghannobel/afghannobel/playlist.m3u8",
-    "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
-    "logoUrl": "https://i.ibb.co/zfdbVSm/logo-1.png",
-    "source": "iptv-org"
-  },
-  {
-    "id": "afghan-nobel-tv",
-    "name": "Afghan Nobel TV",
-    "brand": "Afghan Nobel TV",
-    "region": "Canada",
-    "category": "General",
-    "color": "#6b8c92",
-    "language": "en",
-    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: General).",
-    "official": "https://www.afghannobel.com",
-    "guide": "https://www.afghannobel.com",
-    "stream": "https://live.relentlessinnovations.net:1936/afghannobeltv/afghannobeltv/playlist.m3u8",
-    "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
-    "logoUrl": "https://i.ibb.co/0Mb1ZQC/IMG-20230628-133738.jpg",
     "source": "iptv-org"
   },
   {
@@ -117,25 +69,8 @@
     "guide": "https://pluto.tv/live-tv/americas-next-top-model-ptv2/details",
     "stream": "https://jmp2.uk/plu-68679fc6bb46d0bdd38ac9a4.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/68679fc6bb46d0bdd38ac9a4/colorLogoPNG_1756466390265.png",
-    "source": "iptv-org"
-  },
-  {
-    "id": "animation-plus",
-    "name": "Animation+",
-    "brand": "Animation+",
-    "region": "Canada",
-    "category": "Animation",
-    "color": "#6b8c92",
-    "language": "en",
-    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Animation).",
-    "official": "https://animationplus.com",
-    "guide": "https://animationplus.com",
-    "stream": "https://pb-ioe9d0fpkd6pp.akamaized.net/playlist.m3u8",
-    "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
-    "limited": true,
-    "note": "Stream flagged geo-blocked in the iptv-org directory: playback is limited to the regions the broadcaster allows.",
-    "logoUrl": "https://i.imgur.com/OIFK6JB.png",
     "source": "iptv-org"
   },
   {
@@ -209,6 +144,7 @@
     "guide": "https://pluto.tv/en/live-tv/bar-rescue",
     "stream": "https://jmp2.uk/plu-655f2ee6c0fc88000877d26c.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/655f2ee6c0fc88000877d26c/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -225,6 +161,7 @@
     "guide": "https://pluto.tv/live-tv/best-of-the-drew-barrymore-show-ca/details",
     "stream": "https://jmp2.uk/plu-6310cbee5a8ad300070fdb7c.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/6310cbee5a8ad300070fdb7c/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -241,6 +178,7 @@
     "guide": "https://pluto.tv/live-tv/bob-leponge-ca-ptv2/details",
     "stream": "https://jmp2.uk/plu-66588931a3865300085ca800.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/66588931a3865300085ca800/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -257,6 +195,7 @@
     "guide": "https://pluto.tv/live-tv/bonanza/details",
     "stream": "https://jmp2.uk/plu-696e647b07ea70192d49f6a5.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/696e647b07ea70192d49f6a5/colorLogoPNG_1768842647658.png",
     "source": "iptv-org"
   },
@@ -273,6 +212,7 @@
     "guide": "https://pluto.tv/live-tv/bondi-rescue-ca/details",
     "stream": "https://jmp2.uk/plu-66166989635c7500084105a2.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/66166989635c7500084105a2/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -289,6 +229,7 @@
     "guide": "https://pluto.tv/live-tv/pluto-tv-british-comedy-ca/details",
     "stream": "https://jmp2.uk/plu-638e11951177840007fdd6b2.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/638e11951177840007fdd6b2/colorLogoPNG_1745597179027.png",
     "source": "iptv-org"
   },
@@ -336,93 +277,9 @@
     "description": "Playing directly in Onde via the public stream listed by iptv-org (category: News).",
     "official": "https://www.cbc.ca/programguide/daily/today/cbc_news_network/",
     "guide": "https://www.cbc.ca/programguide/daily/today/cbc_news_network/",
-    "stream": "https://d2ny9lo79ujali.cloudfront.net/CBC_News_International.m3u8",
+    "stream": "https://amg00788-cbc-amg00788c4-xumo-us-3045.playouts.now.amagi.tv/master.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
-    "streamAlts": [
-      {
-        "url": "https://cbcrclinear-tor.akamaized.net/hls/live/2042769/geo_allow_ca/CBCRCLINEAR_TOR_15/master5.m3u8",
-        "label": "SD"
-      },
-      {
-        "url": "https://aegis-cloudfront-1.tubi.video/c71ce9b6-cddb-4cec-b0db-2f09289f8782/master.m3u8",
-        "label": "SD · aegis-cloudfront-1.tubi.video"
-      },
-      {
-        "url": "https://amg00788-cbc-amg00788c4-xumo-us-3045.playouts.now.amagi.tv/master.m3u8",
-        "label": "SD · amg00788-cbc-amg00788c4-xumo-us-30…"
-      }
-    ],
     "logoUrl": "https://i.imgur.com/SjTdhvJ.png",
-    "source": "iptv-org"
-  },
-  {
-    "id": "cbc-television",
-    "name": "CBC Television CBAT-DT",
-    "brand": "CBC Television CBAT-DT",
-    "region": "Canada",
-    "category": "General",
-    "color": "#6b8c92",
-    "language": "en",
-    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: General).",
-    "official": "https://www.cbc.ca/television",
-    "guide": "https://www.cbc.ca/television",
-    "stream": "https://cbcrclinear-tor.akamaized.net/hls/live/2042757/CBCRCLINEAR_TOR_3/master5.m3u8",
-    "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
-    "streamAlts": [
-      {
-        "url": "https://cbcrclinear-tor.akamaized.net/hls/live/2042756/CBCRCLINEAR_TOR_2/master5.m3u8",
-        "label": "CBCTDT"
-      },
-      {
-        "url": "https://cbcrclinear-tor.akamaized.net/hls/live/2042759/CBCRCLINEAR_TOR_5/master5.m3u8",
-        "label": "CBETDT"
-      },
-      {
-        "url": "https://cbcrclinear-tor.akamaized.net/hls/live/2042758/CBCRCLINEAR_TOR_4/master5.m3u8",
-        "label": "CBHTDT"
-      },
-      {
-        "url": "https://cbcrclinear-tor.akamaized.net/hls/live/2042764/CBCRCLINEAR_TOR_10/master5.m3u8",
-        "label": "CBKTDT"
-      },
-      {
-        "url": "https://cbcrclinear-tor.akamaized.net/hls/live/2042760/CBCRCLINEAR_TOR_6/master5.m3u8",
-        "label": "CBLTDT"
-      },
-      {
-        "url": "https://cbcrclinear-tor.akamaized.net/hls/live/2042761/CBCRCLINEAR_TOR_7/master5.m3u8",
-        "label": "CBMTDT"
-      },
-      {
-        "url": "https://cbcrclinear-tor.akamaized.net/hls/live/2042755/CBCRCLINEAR_TOR_1/master5.m3u8",
-        "label": "CBNTDT"
-      },
-      {
-        "url": "https://cbcrclinear-tor.akamaized.net/hls/live/2042762/CBCRCLINEAR_TOR_8/master5.m3u8",
-        "label": "CBOTDT"
-      }
-    ],
-    "limited": true,
-    "note": "Stream flagged geo-blocked in the iptv-org directory: playback is limited to the regions the broadcaster allows.",
-    "logoUrl": "https://i.imgur.com/xflShTG.png",
-    "source": "iptv-org"
-  },
-  {
-    "id": "chcotv",
-    "name": "CHCO-TV",
-    "brand": "CHCO-TV",
-    "region": "Canada",
-    "category": "General",
-    "color": "#6b8c92",
-    "language": "en",
-    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: General).",
-    "official": "https://www.chco.tv/",
-    "guide": "https://www.chco.tv/",
-    "stream": "https://temp4.isilive.ca/live/CHCOTV/live/index.m3u8",
-    "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
-    "limited": true,
-    "note": "Stream flagged geo-blocked in the iptv-org directory: playback is limited to the regions the broadcaster allows.",
-    "logoUrl": "https://i.imgur.com/EpMawIy.png",
     "source": "iptv-org"
   },
   {
@@ -438,6 +295,7 @@
     "guide": "https://pluto.tv/live-tv/cheers-ca/details",
     "stream": "https://jmp2.uk/plu-62bdb7f0db2eb30007376d4d.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/62bdb7f0db2eb30007376d4d/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -454,6 +312,7 @@
     "guide": "https://pluto.tv/en/live-tv/classic-tv-families",
     "stream": "https://jmp2.uk/plu-62e91af00c43540007f2bb43.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/62e91af00c43540007f2bb43/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -486,24 +345,8 @@
     "guide": "https://pluto.tv/live-tv/comedy-central-ca/details",
     "stream": "https://jmp2.uk/plu-64f8a408bd341e000818fcda.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/64f8a408bd341e000818fcda/colorLogoPNG.png",
-    "source": "iptv-org"
-  },
-  {
-    "id": "cottage-life",
-    "name": "Cottage Life",
-    "brand": "Cottage Life",
-    "region": "Canada",
-    "category": "Lifestyle",
-    "color": "#6b8c92",
-    "language": "en",
-    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Lifestyle).",
-    "official": "https://tv.cottagelife.com/",
-    "guide": "https://tv.cottagelife.com/",
-    "stream": "http://185.246.209.113/CottageLife/index.m3u8",
-    "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
-    "insecureStream": true,
-    "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Cottage_Life_Logo.svg/960px-Cottage_Life_Logo.svg.png",
     "source": "iptv-org"
   },
   {
@@ -520,57 +363,6 @@
     "stream": "https://tvsen6.aynaott.com/cp24/index.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
     "logoUrl": "https://i.imgur.com/YzjZUEl.png",
-    "source": "iptv-org"
-  },
-  {
-    "id": "ctv2-atlantic",
-    "name": "CTV 2 Atlantic",
-    "brand": "CTV 2 Atlantic",
-    "region": "Canada",
-    "category": "General",
-    "color": "#6b8c92",
-    "language": "en",
-    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: General).",
-    "official": "https://atlantic.ctv.ca/",
-    "guide": "https://atlantic.ctv.ca/",
-    "stream": "http://stream.cammonitorplus.net/1731/index.m3u8",
-    "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
-    "insecureStream": true,
-    "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/CTV_2_2018.svg/960px-CTV_2_2018.svg.png",
-    "source": "iptv-org"
-  },
-  {
-    "id": "ctv",
-    "name": "CTV (Canada) CFTO-DT",
-    "brand": "CTV (Canada) CFTO-DT",
-    "region": "Canada",
-    "category": "General",
-    "color": "#6b8c92",
-    "language": "en",
-    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: General).",
-    "official": "https://crave.ca/en/ctv",
-    "guide": "https://crave.ca/en/ctv",
-    "stream": "http://stream.cammonitorplus.net/1712/index.m3u8",
-    "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
-    "insecureStream": true,
-    "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/CTV_logo_2018.svg/960px-CTV_logo_2018.svg.png",
-    "source": "iptv-org"
-  },
-  {
-    "id": "ctv-life-channel",
-    "name": "CTV Life Channel",
-    "brand": "CTV Life Channel",
-    "region": "Canada",
-    "category": "Lifestyle",
-    "color": "#6b8c92",
-    "language": "en",
-    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Lifestyle).",
-    "official": "https://www.ctv.ca/life",
-    "guide": "https://www.ctv.ca/life",
-    "stream": "http://185.246.209.113/ANIMALPLANETHD/index.m3u8",
-    "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
-    "insecureStream": true,
-    "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/CTV_Life_Channel_2019.svg/500px-CTV_Life_Channel_2019.svg.png",
     "source": "iptv-org"
   },
   {
@@ -618,6 +410,7 @@
     "guide": "https://pluto.tv/live-tv/doc-martin-ca/details",
     "stream": "https://jmp2.uk/plu-62e922f6675f71000736db3b.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/62e922f6675f71000736db3b/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -634,6 +427,7 @@
     "guide": "https://pluto.tv/live-tv/dora-tv-ca-ptv2/details",
     "stream": "https://jmp2.uk/plu-62e951258a26d40007b3034c.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://i.imgur.com/zJuSbmU.png",
     "source": "iptv-org"
   },
@@ -748,15 +542,25 @@
     "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Entertainment).",
     "official": "https://www.fevatv.com/",
     "guide": "https://www.fevatv.com/",
-    "stream": "https://d21x3vavxu7p2x.cloudfront.net/v1/master/9d062541f2ff39b5c0f48b743c6411d25f62fc25/DistroTV-MuxIP-FEVATV/416.m3u8?ads.vf=nn5CUAdOxVu",
+    "stream": "https://d3c1w351ahk83d.cloudfront.net/scheduler/scheduleMaster/416.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
-    "streamAlts": [
-      {
-        "url": "https://d3c1w351ahk83d.cloudfront.net/scheduler/scheduleMaster/416.m3u8",
-        "label": "SD"
-      }
-    ],
     "logoUrl": "https://i.imgur.com/QSi0YTS.png",
+    "source": "iptv-org"
+  },
+  {
+    "id": "fight-network",
+    "name": "Fight Network",
+    "brand": "Fight Network",
+    "region": "Canada",
+    "category": "Sports",
+    "color": "#6b8c92",
+    "language": "en",
+    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Sports).",
+    "official": "https://www.fightnetwork.com/",
+    "guide": "https://www.fightnetwork.com/",
+    "stream": "https://a-cdn.klowdtv.com/live2/fight_720p/playlist.m3u8",
+    "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "logoUrl": "https://i.imgur.com/vlKPZHR.png",
     "source": "iptv-org"
   },
   {
@@ -772,6 +576,7 @@
     "guide": "https://pluto.tv/live-tv/frasier-ca/details",
     "stream": "https://jmp2.uk/plu-62f4f90e39183b000769f12b.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/62f4f90e39183b000769f12b/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -873,6 +678,7 @@
     "guide": "https://pluto.tv/en/live-tv/happy-days-ptv1",
     "stream": "https://jmp2.uk/plu-62e917b5e354cf0007b97a67.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/62e917b5e354cf0007b97a67/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -887,61 +693,9 @@
     "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Sports).",
     "official": "https://iptv-org.github.io/iptv/countries/ca.m3u",
     "guide": "https://iptv-org.github.io/iptv/countries/ca.m3u",
-    "stream": "https://d3uyzhwvmemdyf.cloudfront.net/v1/master/9d062541f2ff39b5c0f48b743c6411d25f62fc25/Hard-Knocks-DistroTV/109.m3u8?ads.vf=6pOF6kgy418",
+    "stream": "https://d3uyzhwvmemdyf.cloudfront.net/v1/master/9d062541f2ff39b5c0f48b743c6411d25f62fc25/HardKnocks-PLEX/121.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
-    "streamAlts": [
-      {
-        "url": "https://d3uyzhwvmemdyf.cloudfront.net/v1/master/9d062541f2ff39b5c0f48b743c6411d25f62fc25/HardKnocks-SportsTribal/121.m3u8",
-        "label": "SD"
-      },
-      {
-        "url": "https://d3uyzhwvmemdyf.cloudfront.net/v1/master/9d062541f2ff39b5c0f48b743c6411d25f62fc25/HardKnocks-PLEX/121.m3u8",
-        "label": "SD · d3uyzhwvmemdyf.cloudfront.net"
-      }
-    ],
     "logoUrl": "https://i.imgur.com/nt9B6jx.png",
-    "source": "iptv-org"
-  },
-  {
-    "id": "haunt-tv",
-    "name": "HauntTV CA",
-    "brand": "HauntTV CA",
-    "region": "Canada",
-    "category": "Series",
-    "color": "#6b8c92",
-    "language": "en",
-    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Series).",
-    "official": "https://haunt-tv.com/",
-    "guide": "https://haunt-tv.com/",
-    "stream": "https://jmp2.uk/plu-63934c218ef524000757b122.m3u8",
-    "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
-    "streamAlts": [
-      {
-        "url": "https://blueantmediacanada-haunttv-samsungca.amagi.tv/playlist.m3u8",
-        "label": "SD"
-      },
-      {
-        "url": "https://amg01446-blueantmediacan-haunttvaus-samsungnz-xo5xf.amagi.tv/playlist/amg01446-blueantmediacan-haunttvaus-samsungnz/playlist.m3u8",
-        "label": "SD · amg01446-blueantmediacan-haunttvau…"
-      },
-      {
-        "url": "https://jmp2.uk/plu-6319f06067a3ee000708af95.m3u8",
-        "label": "SD · jmp2.uk"
-      },
-      {
-        "url": "https://bamcahaunttvrakuten.amagi.tv/playlist.m3u8",
-        "label": "SD · bamcahaunttvrakuten.amagi.tv"
-      },
-      {
-        "url": "https://d1ak5jijks54h1.cloudfront.net/Haunt_TV.m3u8",
-        "label": "SD · d1ak5jijks54h1.cloudfront.net"
-      },
-      {
-        "url": "https://aegis-cloudfront-1.tubi.video/69da419c-6bb2-473f-98c3-246153fc909b/playlist.m3u8",
-        "label": "SD · aegis-cloudfront-1.tubi.video"
-      }
-    ],
-    "logoUrl": "https://images.pluto.tv/channels/63934c218ef524000757b122/colorLogoPNG.png",
     "source": "iptv-org"
   },
   {
@@ -990,6 +744,7 @@
     "guide": "https://pluto.tv/live-tv/i-love-lucy-ptv1/details",
     "stream": "https://jmp2.uk/plu-63a2f1dda0d69700078b7cba.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/63a2f1dda0d69700078b7cba/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -1046,22 +801,6 @@
     "source": "iptv-org"
   },
   {
-    "id": "ici-rdi",
-    "name": "Ici RDI",
-    "brand": "Ici RDI",
-    "region": "Canada",
-    "category": "News",
-    "color": "#6b8c92",
-    "language": "fr",
-    "description": "En lecture directe dans Onde via le flux public répertorié par iptv-org (catégorie : News).",
-    "official": "https://ici.radio-canada.ca/rdi",
-    "guide": "https://ici.radio-canada.ca/rdi",
-    "stream": "https://rcavlive.akamaized.net/hls/live/704025/xcanrdi/master.m3u8",
-    "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
-    "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/ICI_RDI_logo.svg/960px-ICI_RDI_logo.svg.png",
-    "source": "iptv-org"
-  },
-  {
     "id": "i-cnet1",
     "name": "ICnet 1",
     "brand": "ICnet 1",
@@ -1112,6 +851,7 @@
     "guide": "https://pluto.tv/en/live-tv/ink-master",
     "stream": "https://jmp2.uk/plu-655f2d713944b60008bc7e90.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/655f2d713944b60008bc7e90/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -1128,6 +868,7 @@
     "guide": "https://pluto.tv/live-tv/jag-ca/details",
     "stream": "https://jmp2.uk/plu-66a105f4a79dea0008aa5e0f.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/66a105f4a79dea0008aa5e0f/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -1168,76 +909,6 @@
     "source": "iptv-org"
   },
   {
-    "id": "legislative-assemblyof-british-columbia",
-    "name": "Legislative Assembly of British Columbia",
-    "brand": "Legislative Assembly of British Columbia",
-    "region": "Canada",
-    "category": "Legislative",
-    "color": "#6b8c92",
-    "language": "en",
-    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Legislative).",
-    "official": "https://www.leg.bc.ca/",
-    "guide": "https://www.leg.bc.ca/",
-    "stream": "https://cdn3.wowza.com/5/YldIU1hsTlljRWZF/hbs-prim-house-httpo/HouseP.smil/playlist.m3u8",
-    "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
-    "logoUrl": "https://i.imgur.com/5QGxHhh.png",
-    "source": "iptv-org"
-  },
-  {
-    "id": "legislative-assemblyof-british-columbia-committee-a",
-    "name": "Legislative Assembly of British Columbia Committee A",
-    "brand": "Legislative Assembly of British Columbia Committee A",
-    "region": "Canada",
-    "category": "Legislative",
-    "color": "#6b8c92",
-    "language": "en",
-    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Legislative).",
-    "official": "https://video.leg.bc.ca/live/play.aspx?Video=dougfir&Title=Committee%20A&Description=Legislative%20Assembly%20of%20British%20Columbia&Mode=live&Popout=Yes&Mute=False",
-    "guide": "https://video.leg.bc.ca/live/play.aspx?Video=dougfir&Title=Committee%20A&Description=Legislative%20Assembly%20of%20British%20Columbia&Mode=live&Popout=Yes&Mute=False",
-    "stream": "https://cdn3.wowza.com/5/YldIU1hsTlljRWZF/hbs-prim-dougfir-httpo/DougFirP.smil/playlist.m3u8",
-    "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
-    "source": "iptv-org"
-  },
-  {
-    "id": "legislative-assemblyof-ontario",
-    "name": "Legislative Assembly of Ontario",
-    "brand": "Legislative Assembly of Ontario",
-    "region": "Canada",
-    "category": "Legislative",
-    "color": "#6b8c92",
-    "language": "en",
-    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Legislative).",
-    "official": "https://www.ola.org/",
-    "guide": "https://www.ola.org/",
-    "stream": "https://temp3.isilive.ca/live/_definst_/ontla/house-en/playlist.m3u8",
-    "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
-    "streamAlts": [
-      {
-        "url": "https://temp2.isilive.ca/live/_definst_/ontla/house-en-cc/playlist.m3u8",
-        "label": "SD"
-      }
-    ],
-    "logoUrl": "https://i.imgur.com/n24MrsX.png",
-    "source": "iptv-org"
-  },
-  {
-    "id": "legislative-assembly-tv-nunavut",
-    "name": "Legislative Assembly TV Nunavut",
-    "brand": "Legislative Assembly TV Nunavut",
-    "region": "Canada",
-    "category": "Legislative",
-    "color": "#6b8c92",
-    "language": "en",
-    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Legislative).",
-    "official": "https://www.assembly.nu.ca/",
-    "guide": "https://www.assembly.nu.ca/",
-    "stream": "http://temp2.isilive.ca/live/nunavut/live-eng/index.m3u8",
-    "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
-    "insecureStream": true,
-    "logoUrl": "https://i.imgur.com/wY9WhYS.png",
-    "source": "iptv-org"
-  },
-  {
     "id": "matlock",
     "name": "Matlock (United States) CA",
     "brand": "Matlock (United States) CA",
@@ -1250,6 +921,7 @@
     "guide": "https://pluto.tv/en/live-tv/matlock",
     "stream": "https://jmp2.uk/plu-63da365f60bc8f0008a50f44.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/63da365f60bc8f0008a50f44/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -1282,6 +954,7 @@
     "guide": "https://pluto.tv/en/live-tv/mission-impossible",
     "stream": "https://jmp2.uk/plu-62ea43aa0c43540007f2db96.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/62ea43aa0c43540007f2db96/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -1298,12 +971,6 @@
     "guide": "https://greektimes.ca/greektv/",
     "stream": "https://live.greektv.ca/hls1/greektv.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
-    "streamAlts": [
-      {
-        "url": "http://live.greektv.ca/hls1/greektv.m3u8",
-        "label": "SD"
-      }
-    ],
     "logoUrl": "https://i.imgur.com/Y5YnUit.png",
     "source": "iptv-org"
   },
@@ -1320,6 +987,7 @@
     "guide": "https://pluto.tv/live-tv/more-pluto-tv-comedy-ca/details",
     "stream": "https://jmp2.uk/plu-62e91c3add66e00007eeb24c.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/62e91c3add66e00007eeb24c/colorLogoPNG_1759310317971.png",
     "source": "iptv-org"
   },
@@ -1352,6 +1020,7 @@
     "guide": "https://lionsgatechannels.com/movie-sphere",
     "stream": "https://jmp2.uk/plu-64a3d96f060e830008af6745.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://i.imgur.com/h1ejU90.png",
     "source": "iptv-org"
   },
@@ -1368,6 +1037,7 @@
     "guide": "https://pluto.tv/en/live-tv/mtv-biggest-pop",
     "stream": "https://jmp2.uk/plu-65410176770cf1000866bf31.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/6047fbdbbb776a0007e7f2ff/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -1384,6 +1054,7 @@
     "guide": "https://pluto.tv/live-tv/mtv-catfish-ptv2/details",
     "stream": "https://jmp2.uk/plu-64f8a2a23a0d700008a6ed7b.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/626c2a3502d84a0007cec817/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -1400,6 +1071,7 @@
     "guide": "https://www.mtv.com/classic",
     "stream": "https://jmp2.uk/plu-654100b4bdf3cf0008aa49c7.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/66a01dcb8561260008b0a41d/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -1416,6 +1088,7 @@
     "guide": "https://pluto.tv/live-tv/mtv-dating-gf-ptv1/details",
     "stream": "https://jmp2.uk/plu-64f8a0c230ab3300084369b8.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/6851bb3426beced4f2f67ee6/colorLogoPNG_1750686926779.png",
     "source": "iptv-org"
   },
@@ -1432,6 +1105,7 @@
     "guide": "https://pluto.tv/live-tv/mtv-jersey-shore-ca/details",
     "stream": "https://jmp2.uk/plu-68b9b0dbf9cf3d7cb9f56d88.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/68b9b0dbf9cf3d7cb9f56d88/colorLogoPNG_1757455543454.png",
     "source": "iptv-org"
   },
@@ -1448,6 +1122,7 @@
     "guide": "https://pluto.tv/live-tv/mtv-reality/details",
     "stream": "https://jmp2.uk/plu-64f89fcfd661bb00081ba45c.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/6493f4f566e485000853d640/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -1464,6 +1139,7 @@
     "guide": "https://pluto.tv/live-tv/mtv-ridiculousness-ptv2/details",
     "stream": "https://jmp2.uk/plu-64f9cccf110545000837912e.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/68641eb4852dfe78698c3390/colorLogoPNG_1751392300412.png",
     "source": "iptv-org"
   },
@@ -1480,23 +1156,8 @@
     "guide": "https://pluto.tv/en/live-tv/mtv-spankin-new",
     "stream": "https://jmp2.uk/plu-6541010f770cf1000866be98.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/6541010f770cf1000866be98/colorLogoPNG.png",
-    "source": "iptv-org"
-  },
-  {
-    "id": "nash-bridges",
-    "name": "Nash Bridges",
-    "brand": "Nash Bridges",
-    "region": "Canada",
-    "category": "Series",
-    "color": "#6b8c92",
-    "language": "en",
-    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Series).",
-    "official": "https://lionsgatechannels.com/channel/nash-bridges",
-    "guide": "https://lionsgatechannels.com/channel/nash-bridges",
-    "stream": "https://jmp2.uk/plu-666021cccb3ea10008406866.m3u8",
-    "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
-    "logoUrl": "https://images.pluto.tv/channels/666021cccb3ea10008406866/colorLogoPNG.png",
     "source": "iptv-org"
   },
   {
@@ -1512,6 +1173,7 @@
     "guide": "https://lionsgatechannels.com/channel/nashville",
     "stream": "https://jmp2.uk/plu-65cf8d7428730900087c5907.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/65cf8d7428730900087c5907/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -1528,6 +1190,7 @@
     "guide": "https://pluto.tv/live-tv/ncis-ptv1/details",
     "stream": "https://jmp2.uk/plu-62f4f5de1c100100075665ef.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/63eb9fdda995710008991c54/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -1544,39 +1207,8 @@
     "guide": "https://pluto.tv/live-tv/ncis-los-angeles-ca/details",
     "stream": "https://jmp2.uk/plu-66a106c8a79dea0008aa5ef3.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/66a106c8a79dea0008aa5ef3/colorLogoPNG.png",
-    "source": "iptv-org"
-  },
-  {
-    "id": "new-channel",
-    "name": "New Channel",
-    "brand": "New Channel",
-    "region": "Canada",
-    "category": "Kids",
-    "color": "#6b8c92",
-    "language": "en",
-    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Kids).",
-    "official": "https://splay.bamboo-cloud.com/channel/6ab2104508fd5ee36702e3d4",
-    "guide": "https://splay.bamboo-cloud.com/channel/6ab2104508fd5ee36702e3d4",
-    "stream": "https://vodcdn.bamboo-cloud.com/livehls/6ab2104508fd5ee36702e3d4/master.m3u8",
-    "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
-    "logoUrl": "https://videocdn.bamboo-cloud.com/p/11294/sp/1129400/thumbnail/entry_id/0_hd6fo6eq/version/100002/width/1920",
-    "source": "iptv-org"
-  },
-  {
-    "id": "new-channel-pop",
-    "name": "New Channel Pop!",
-    "brand": "New Channel Pop!",
-    "region": "Canada",
-    "category": "Kids",
-    "color": "#6b8c92",
-    "language": "en",
-    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Kids).",
-    "official": "https://splay.bamboo-cloud.com/channel/6ab37c6c7e057f9063071c85",
-    "guide": "https://splay.bamboo-cloud.com/channel/6ab37c6c7e057f9063071c85",
-    "stream": "https://vodcdn.bamboo-cloud.com/livehls/6ab37c6c7e057f9063071c85/master.m3u8",
-    "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
-    "logoUrl": "https://videocdn.bamboo-cloud.com/p/11294/sp/1129400/thumbnail/entry_id/0_vjhh0bly/version/100012/width/1920",
     "source": "iptv-org"
   },
   {
@@ -1592,23 +1224,8 @@
     "guide": "https://pluto.tv/en/live-tv/nick-jr-pluto-tv-ptv1",
     "stream": "https://jmp2.uk/plu-62bdb75c3afd1200079146a6.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/62bdb75c3afd1200079146a6/colorLogoPNG.png",
-    "source": "iptv-org"
-  },
-  {
-    "id": "nicktoons",
-    "name": "Nicktoons (United States) CA",
-    "brand": "Nicktoons (United States) CA",
-    "region": "Canada",
-    "category": "Kids",
-    "color": "#6b8c92",
-    "language": "en",
-    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Kids).",
-    "official": "https://nicktoons.nick.com/",
-    "guide": "https://nicktoons.nick.com/",
-    "stream": "https://jmp2.uk/plu-654ca7f92c1d3300086b608c.m3u8",
-    "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
-    "logoUrl": "https://images.pluto.tv/channels/654ca7f92c1d3300086b608c/colorLogoPNG_1751457678592.png",
     "source": "iptv-org"
   },
   {
@@ -1662,6 +1279,7 @@
     "guide": "https://pluto.tv/en/live-tv/one-piece",
     "stream": "https://jmp2.uk/plu-62e94ec74823db0007277a8f.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://i.imgur.com/XsvbAWR.png",
     "source": "iptv-org"
   },
@@ -1678,12 +1296,6 @@
     "guide": "https://www.outdoorchannelplus.com/",
     "stream": "http://23.237.104.106:8080/USA_OUTDOOR/index.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
-    "streamAlts": [
-      {
-        "url": "https://amg00718-outdoorchannela-outdoortv-samsungau-uc7mp.amagi.tv/playlist/amg00718-outdoorchannela-outdoortv-samsungau/playlist.m3u8",
-        "label": "SD"
-      }
-    ],
     "insecureStream": true,
     "logoUrl": "https://i.imgur.com/Kh4MWaY.png",
     "source": "iptv-org"
@@ -1701,12 +1313,7 @@
     "guide": "https://www.pamirtv.com/",
     "stream": "https://live.stream.cdn.pamirtv.com/ptv/d0dbe915091d400bd8ee7f27f0791303.sdp/index.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
-    "streamAlts": [
-      {
-        "url": "http://live.stream.cdn.pamirtv.com/ptv/d0dbe915091d400bd8ee7f27f0791303.sdp/index.m3u8",
-        "label": "SD"
-      }
-    ],
+    "nativeHlsOnly": true,
     "note": "Channel flagged \"Not 24/7\" in the iptv-org directory: part-time schedule.",
     "logoUrl": "https://i.imgur.com/sCBbBOj.png",
     "source": "iptv-org"
@@ -1780,6 +1387,7 @@
     "guide": "https://pluto.tv/en/live-tv/perry-mason",
     "stream": "https://jmp2.uk/plu-63e20bd160bc8f0008b4c949.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/63e20bd160bc8f0008b4c949/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -1796,6 +1404,7 @@
     "guide": "https://pluto.tv/live-tv/pluto-classic-movie-westerns-ca/details",
     "stream": "https://jmp2.uk/plu-66dad50215d2c60008d7afbd.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/66dad50215d2c60008d7afbd/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -1812,6 +1421,7 @@
     "guide": "https://pluto.tv/live-tv/pluto-tv-action-movies-ca/details",
     "stream": "https://jmp2.uk/plu-62ea3c2e4823db00072788ed.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/62ea3c2e4823db00072788ed/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -1828,6 +1438,7 @@
     "guide": "https://pluto.tv/live-tv/pluto-tv-adventure-ca/details",
     "stream": "https://jmp2.uk/plu-653bdb0fbdf3cf00089cc395.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/653bdb0fbdf3cf00089cc395/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -1844,6 +1455,7 @@
     "guide": "https://pluto.tv/live-tv/pluto-tv-anime-1/details",
     "stream": "https://jmp2.uk/plu-68d25b620a0f3829b116bb6f.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/5f12136385bccc00070142ed/colorLogoPNG_1777595293242.png",
     "source": "iptv-org"
   },
@@ -1860,6 +1472,7 @@
     "guide": "https://pluto.tv/en/live-tv/cars",
     "stream": "https://jmp2.uk/plu-69c592dff0f1a7d732dc6e36.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/69c592dff0f1a7d732dc6e36/colorLogoPNG_1774557827331.png",
     "source": "iptv-org"
   },
@@ -1876,6 +1489,7 @@
     "guide": "https://pluto.tv/live-tv/pluto-tv-classic-tv-variety/details",
     "stream": "https://jmp2.uk/plu-68d25c623175a2780d051d3a.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/68d25c623175a2780d051d3a/colorLogoPNG_1758809678864.png",
     "source": "iptv-org"
   },
@@ -1892,6 +1506,7 @@
     "guide": "https://pluto.tv/en/live-tv/pluto-tv-comedy",
     "stream": "https://jmp2.uk/plu-62e92178946c8000079a3160.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/62e92178946c8000079a3160/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -1908,6 +1523,7 @@
     "guide": "https://pluto.tv/live-tv/pluto-tv-comedy-movies-ca/details",
     "stream": "https://jmp2.uk/plu-62ea3d24b8e02600071fa296.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/62ea3d24b8e02600071fa296/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -1924,6 +1540,7 @@
     "guide": "https://pluto.tv/en/live-tv/pluto-tv-crime-drama",
     "stream": "https://jmp2.uk/plu-62e92708a7ce600007b2676a.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/62e92708a7ce600007b2676a/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -1940,6 +1557,7 @@
     "guide": "https://pluto.tv/live-tv/pluto-tv-drama-movies-ca/details",
     "stream": "https://jmp2.uk/plu-62bdb0bcd707b9000739d2e5.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/62bdb0bcd707b9000739d2e5/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -1956,6 +1574,7 @@
     "guide": "https://pluto.tv/live-tv/pluto-tv-fbi-ca/details",
     "stream": "https://jmp2.uk/plu-693adae77f21340ef9746f56.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/693adae77f21340ef9746f56/colorLogoPNG_1767879898099.png",
     "source": "iptv-org"
   },
@@ -1972,6 +1591,7 @@
     "guide": "https://pluto.tv/en/live-tv/pluto-tv-horror",
     "stream": "https://jmp2.uk/plu-62ea3f8a38acc80007072d26.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/569546031a619b8f07ce6e25/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -1988,6 +1608,7 @@
     "guide": "https://pluto.tv/en/live-tv/pluto-tv-paranormal",
     "stream": "https://jmp2.uk/plu-62e92a58f3e4290007290c96.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/62e92a58f3e4290007290c96/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -2004,6 +1625,7 @@
     "guide": "https://pluto.tv/en/live-tv/pluto-tv-reality",
     "stream": "https://jmp2.uk/plu-67922858b83355184c699699.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/67922858b83355184c699699/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -2020,6 +1642,7 @@
     "guide": "https://pluto.tv/live-tv/pluto-tv-retro-action-movies/details",
     "stream": "https://jmp2.uk/plu-69a9ae4d3bd16a4ed04240d7.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/69a9ae4d3bd16a4ed04240d7/colorLogoPNG_1774879695281.png",
     "source": "iptv-org"
   },
@@ -2036,6 +1659,7 @@
     "guide": "https://pluto.tv/live-tv/pluto-tv-retro-crime-action-ca/details",
     "stream": "https://jmp2.uk/plu-69aee8a1acb7eb0bb68df641.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/69aee8a1acb7eb0bb68df641/colorLogoPNG_1774899454178.png",
     "source": "iptv-org"
   },
@@ -2052,6 +1676,7 @@
     "guide": "https://pluto.tv/live-tv/pluto-tv-retro-crime-drama-ca/details",
     "stream": "https://jmp2.uk/plu-630f1e6073bd1800082107f0.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/630f1e6073bd1800082107f0/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -2068,6 +1693,7 @@
     "guide": "https://pluto.tv/live-tv/pluto-tv-retro-kid-ca/details",
     "stream": "https://jmp2.uk/plu-6408b41b83f58900081d91ad.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/6408b41b83f58900081d91ad/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -2084,6 +1710,7 @@
     "guide": "https://pluto.tv/en/live-tv/pluto-tv-sci-fi",
     "stream": "https://jmp2.uk/plu-66166cb1307fa30008f275e7.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/66166cb1307fa30008f275e7/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -2100,6 +1727,7 @@
     "guide": "https://pluto.tv/live-tv/pluto-tv-snooker-900-ca/details",
     "stream": "https://jmp2.uk/plu-639b4f75d3d35c0007d37b30.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/639b4f75d3d35c0007d37b30/colorLogoPNG_1759333260607.png",
     "source": "iptv-org"
   },
@@ -2116,6 +1744,7 @@
     "guide": "https://pluto.tv/en/live-tv/pluto-tv-true-crime",
     "stream": "https://jmp2.uk/plu-62e9289f8d467f0007fbc701.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/62e9289f8d467f0007fbc701/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -2132,6 +1761,7 @@
     "guide": "https://pluto.tv/en/live-tv/pluto-tv-westerns-ptv1",
     "stream": "https://jmp2.uk/plu-62bdacc96a3751000811842d.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/62bdacc96a3751000811842d/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -2150,24 +1780,6 @@
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
     "insecureStream": true,
     "logoUrl": "https://jiotvimages.cdn.jio.com/dare_images/images/Prime_Asia_HD.png",
-    "source": "iptv-org"
-  },
-  {
-    "id": "prime-canada-tv",
-    "name": "Prime Canada TV",
-    "brand": "Prime Canada TV",
-    "region": "Canada",
-    "category": "Entertainment",
-    "color": "#6b8c92",
-    "language": "en",
-    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Entertainment).",
-    "official": "https://www.primecanada.tv/",
-    "guide": "https://www.primecanada.tv/",
-    "stream": "http://cdn27.live247stream.com/primecanada/247/primecanada/stream1/playlist.m3u8",
-    "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
-    "insecureStream": true,
-    "note": "Channel flagged \"Not 24/7\" in the iptv-org directory: part-time schedule.",
-    "logoUrl": "https://i.imgur.com/Vji81jB.png",
     "source": "iptv-org"
   },
   {
@@ -2216,6 +1828,7 @@
     "guide": "https://pluto.tv/live-tv/puto-tv-classic-tv-crime-drama-ca/details",
     "stream": "https://jmp2.uk/plu-696e61287d2afdec4ff2cb75.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/696e61287d2afdec4ff2cb75/colorLogoPNG_1768842232781.png",
     "source": "iptv-org"
   },
@@ -2264,6 +1877,7 @@
     "guide": "https://pluto.tv/live-tv/rawhide/details",
     "stream": "https://jmp2.uk/plu-65660223635c3c00086c2578.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/65660223635c3c00086c2578/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -2335,22 +1949,6 @@
     "source": "iptv-org"
   },
   {
-    "id": "sohail-tv",
-    "name": "Sohail TV",
-    "brand": "Sohail TV",
-    "region": "Canada",
-    "category": "General",
-    "color": "#6b8c92",
-    "language": "en",
-    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: General).",
-    "official": "https://sohailtv.com/",
-    "guide": "https://sohailtv.com/",
-    "stream": "https://iptv.sohailtv.com/sohail/playlist/index.m3u8",
-    "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
-    "logoUrl": "https://i.ibb.co/dtzjKfT/Sohail-TV.png",
-    "source": "iptv-org"
-  },
-  {
     "id": "sooriyan-tv",
     "name": "Sooriyan TV",
     "brand": "Sooriyan TV",
@@ -2379,6 +1977,7 @@
     "guide": "https://pluto.tv/live-tv/south-park-ca/details",
     "stream": "https://jmp2.uk/plu-62bdb1c5e25122000798ac79.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/62bdb1c5e25122000798ac79/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -2395,6 +1994,7 @@
     "guide": "https://pluto.tv/live-tv/south-park-en-francais-ca/details",
     "stream": "https://jmp2.uk/plu-62bdb919d36cbd0007e6ab8a.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/62bdb919d36cbd0007e6ab8a/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -2411,6 +2011,7 @@
     "guide": "https://pluto.tv/live-tv/south-park-cartman-collection-ca/details",
     "stream": "https://jmp2.uk/plu-65df4934f7f0af0008c32545.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/65df4934f7f0af0008c32545/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -2427,6 +2028,7 @@
     "guide": "https://pluto.tv/live-tv/south-park-kenny-collection-ca/details",
     "stream": "https://jmp2.uk/plu-65df47f428730900089f83ac.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/65df47f428730900089f83ac/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -2443,6 +2045,7 @@
     "guide": "https://pluto.tv/live-tv/south-park-kyle-collection-ca/details",
     "stream": "https://jmp2.uk/plu-65df49b30d45610008172c5b.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/65df49b30d45610008172c5b/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -2459,6 +2062,7 @@
     "guide": "https://pluto.tv/live-tv/south-park-stan-collection-ca/details",
     "stream": "https://jmp2.uk/plu-65df48ba28730900089f8480.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/65df48ba28730900089f8480/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -2475,6 +2079,7 @@
     "guide": "https://pluto.tv/live-tv/south-park-welcome-to-canada-ca/details",
     "stream": "https://jmp2.uk/plu-663115d923e24f000843b49c.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/663115d923e24f000843b49c/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -2491,6 +2096,7 @@
     "guide": "https://pluto.tv/live-tv/spongebob-squarepants-ca/details",
     "stream": "https://jmp2.uk/plu-63f87d057533d80008ab9549.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/63f87d057533d80008ab9549/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -2629,22 +2235,6 @@
     "source": "iptv-org"
   },
   {
-    "id": "summerof-movies",
-    "name": "Summer of Movies",
-    "brand": "Summer of Movies",
-    "region": "Canada",
-    "category": "Movies",
-    "color": "#6b8c92",
-    "language": "en",
-    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Movies).",
-    "official": "https://pluto.tv/live-tv/summer-of-movies-ca/details",
-    "guide": "https://pluto.tv/live-tv/summer-of-movies-ca/details",
-    "stream": "https://jmp2.uk/plu-6654adb1f99922000854388c.m3u8",
-    "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
-    "logoUrl": "https://images.pluto.tv/channels/6654adb1f99922000854388c/colorLogoPNG.png",
-    "source": "iptv-org"
-  },
-  {
     "id": "svbc2",
     "name": "SVBC 2",
     "brand": "SVBC 2",
@@ -2709,23 +2299,6 @@
     "source": "iptv-org"
   },
   {
-    "id": "t-plus-e",
-    "name": "T+E",
-    "brand": "T+E",
-    "region": "Canada",
-    "category": "Series",
-    "color": "#6b8c92",
-    "language": "en",
-    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Series).",
-    "official": "https://www.tandetv.com/",
-    "guide": "https://www.tandetv.com/",
-    "stream": "http://185.246.209.113/T+E/index.m3u8",
-    "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
-    "insecureStream": true,
-    "logoUrl": "https://upload.wikimedia.org/wikipedia/en/4/4e/T%2BE_Television.png",
-    "source": "iptv-org"
-  },
-  {
     "id": "tagtv",
     "name": "TAG TV",
     "brand": "TAG TV",
@@ -2772,6 +2345,7 @@
     "guide": "https://pluto.tv/en/live-tv/the-andy-griffith-show",
     "stream": "https://jmp2.uk/plu-62e9145ec07f2a00070e68dc.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/62e9145ec07f2a00070e68dc/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -2788,6 +2362,7 @@
     "guide": "https://pluto.tv/live-tv/the-beverly-hillbillies-ca/details",
     "stream": "https://jmp2.uk/plu-6565fefdc917a50008485cc6.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/6565fefdc917a50008485cc6/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -2804,23 +2379,8 @@
     "guide": "https://pluto.tv/en/live-tv/the-challenge",
     "stream": "https://jmp2.uk/plu-64f8a22a3efb510008245df0.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/64f8a22a3efb510008245df0/colorLogoPNG.png",
-    "source": "iptv-org"
-  },
-  {
-    "id": "the-conners",
-    "name": "The Conners",
-    "brand": "The Conners",
-    "region": "Canada",
-    "category": "Comedy",
-    "color": "#6b8c92",
-    "language": "en",
-    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Comedy).",
-    "official": "https://lionsgatechannels.com/channel/the-conners",
-    "guide": "https://lionsgatechannels.com/channel/the-conners",
-    "stream": "https://jmp2.uk/plu-66e2a94d167a8b000813485d.m3u8",
-    "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
-    "logoUrl": "https://provider-static.plex.tv/epg/cms/production/3acd803e-a5e3-430c-a34e-508123d2bd95/TheConners_1500x1000_Logo_Dark.png",
     "source": "iptv-org"
   },
   {
@@ -2852,6 +2412,7 @@
     "guide": "https://pluto.tv/live-tv/the-judge-judy-channel-ca/details",
     "stream": "https://jmp2.uk/plu-62e92e536f28870007fa9b3a.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/62e92e536f28870007fa9b3a/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -2868,6 +2429,7 @@
     "guide": "https://pluto.tv/en/live-tv/the-new-detectives",
     "stream": "https://jmp2.uk/plu-62bdabbc5611f2000761ca30.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/62bdabbc5611f2000761ca30/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -2884,6 +2446,7 @@
     "guide": "https://pluto.tv/live-tv/the-price-is-right-ca/details",
     "stream": "https://jmp2.uk/plu-64c2214c2a7f2200089a0c4b.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/64c2214c2a7f2200089a0c4b/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -2900,6 +2463,7 @@
     "guide": "https://www.theweathernetwork.com/",
     "stream": "https://jmp2.uk/plu-63da370e2e477400081cf8b6.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://i.imgur.com/V6ZUwUY.png",
     "source": "iptv-org"
   },
@@ -2916,6 +2480,7 @@
     "guide": "https://pluto.tv/en/live-tv/threes-company",
     "stream": "https://jmp2.uk/plu-64ca723a2bc49300081a8966.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/64ca723a2bc49300081a8966/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -2950,6 +2515,7 @@
     "guide": "https://pluto.tv/live-tv/tortues-ninja-tv-ca/details",
     "stream": "https://jmp2.uk/plu-62e9566e27ce19000732ec85.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/62e9566e27ce19000732ec85/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -2982,92 +2548,8 @@
     "guide": "https://pluto.tv/en/live-tv/totally-turtles",
     "stream": "https://jmp2.uk/plu-62e95265c9fd030007268fb9.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/62e95265c9fd030007268fb9/colorLogoPNG.png",
-    "source": "iptv-org"
-  },
-  {
-    "id": "transformers-tv",
-    "name": "Transformers TV CA",
-    "brand": "Transformers TV CA",
-    "region": "Canada",
-    "category": "Kids",
-    "color": "#6b8c92",
-    "language": "en",
-    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Kids).",
-    "official": "https://pluto.tv/live-tv/transformerstv/details",
-    "guide": "https://pluto.tv/live-tv/transformerstv/details",
-    "stream": "https://jmp2.uk/plu-63da36dea995710008727d4d.m3u8",
-    "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
-    "logoUrl": "https://images.pluto.tv/channels/63da36dea995710008727d4d/colorLogoPNG.png",
-    "source": "iptv-org"
-  },
-  {
-    "id": "tsn4",
-    "name": "TSN4",
-    "brand": "TSN4",
-    "region": "Canada",
-    "category": "Sports",
-    "color": "#6b8c92",
-    "language": "en",
-    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Sports).",
-    "official": "https://www.tsn.ca/",
-    "guide": "https://www.tsn.ca/",
-    "stream": "http://109.104.153.220:80/TSN-4/index.m3u8",
-    "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
-    "insecureStream": true,
-    "logoUrl": "https://i.imgur.com/qJyAWU8.png",
-    "source": "iptv-org"
-  },
-  {
-    "id": "tv5-quebec-canada",
-    "name": "TV5 Quebec Canada",
-    "brand": "TV5 Quebec Canada",
-    "region": "Canada",
-    "category": "General",
-    "color": "#6b8c92",
-    "language": "en",
-    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: General).",
-    "official": "https://tv5unis.ca/",
-    "guide": "https://tv5unis.ca/",
-    "stream": "http://23.133.220.149/TV5/index.m3u8",
-    "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
-    "insecureStream": true,
-    "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/TV5_%28logo%29.svg/960px-TV5_%28logo%29.svg.png",
-    "source": "iptv-org"
-  },
-  {
-    "id": "tv5-unis",
-    "name": "TV5 Unis",
-    "brand": "TV5 Unis",
-    "region": "Canada",
-    "category": "General",
-    "color": "#6b8c92",
-    "language": "fr",
-    "description": "En lecture directe dans Onde via le flux public répertorié par iptv-org (catégorie : General).",
-    "official": "https://www.tv5plus.ca/",
-    "guide": "https://www.tv5plus.ca/",
-    "stream": "http://23.133.220.149/Unis_TV/index.m3u8",
-    "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
-    "insecureStream": true,
-    "logoUrl": "https://static.wikia.nocookie.net/logopedia/images/3/3a/TV5_Unis.svg",
-    "source": "iptv-org"
-  },
-  {
-    "id": "tv16-toronto",
-    "name": "TV 16 Toronto",
-    "brand": "TV 16 Toronto",
-    "region": "Canada",
-    "category": "General",
-    "color": "#6b8c92",
-    "language": "en",
-    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: General).",
-    "official": "https://iptv-org.github.io/iptv/countries/ca.m3u",
-    "guide": "https://iptv-org.github.io/iptv/countries/ca.m3u",
-    "stream": "http://rtmp.smartstream.video:1935/capco/tv29/playlist.m3u8",
-    "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
-    "insecureStream": true,
-    "note": "Channel flagged \"Not 24/7\" in the iptv-org directory: part-time schedule.",
-    "logoUrl": "https://i.imgur.com/c4lLchb.png",
     "source": "iptv-org"
   },
   {
@@ -3119,12 +2601,6 @@
     "guide": "https://iptv-org.github.io/iptv/countries/ca.m3u",
     "stream": "https://fastly.live.brightcove.com/6369851620112/us-east-1/15364602001/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJob3N0IjoicGZncmlmLmVncmVzcy50N2M3emwiLCJhY2NvdW50X2lkIjoiMTUzNjQ2MDIwMDEiLCJlaG4iOiJmYXN0bHkubGl2ZS5icmlnaHRjb3ZlLmNvbSIsImlzcyI6ImJsaXZlLXBsYXliYWNrLXNvdXJjZS1hcGkiLCJzdWIiOiJwYXRobWFwdG9rZW4iLCJhdWQiOlsiMTUzNjQ2MDIwMDEiXSwianRpIjoiNjM2OTg1MTYyMDExMiJ9.zRE6fD9JwdbNLUIK5zgvlTAvXCQ3HeeE5p0yH0Pd3-Q/playlist-hls.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
-    "streamAlts": [
-      {
-        "url": "https://bcovlive-a.akamaihd.net/rf86f817779524249abf842af6d16f55f/us-east-1/15364602001/playlist.m3u8",
-        "label": "SD"
-      }
-    ],
     "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tvokids-logo.svg/960px-Tvokids-logo.svg.png",
     "source": "iptv-org"
   },
@@ -3189,6 +2665,7 @@
     "guide": "https://pluto.tv/en/live-tv/yo-mtv",
     "stream": "https://jmp2.uk/plu-654102ed770cf1000866c307.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/654102ed770cf1000866c307/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -3206,23 +2683,6 @@
     "stream": "https://plus.gigabitcdn.net/live-stream/apna-punjab-H3sE/playlist.m3u8",
     "directory": "https://iptv-org.github.io/api/streams.json",
     "logoUrl": "https://i.imgur.com/IM4D8Wz.png",
-    "source": "iptv-org"
-  },
-  {
-    "id": "chchdt",
-    "name": "CHCH-DT",
-    "brand": "CHCH-DT",
-    "region": "Canada",
-    "category": "General",
-    "color": "#6b8c92",
-    "language": "en",
-    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: General).",
-    "official": "https://www.chch.com/",
-    "guide": "https://www.chch.com/",
-    "stream": "http://185.246.209.113/CHCHHD/index.m3u8",
-    "directory": "https://iptv-org.github.io/api/streams.json",
-    "insecureStream": true,
-    "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/CHCH2010.svg/960px-CHCH2010.svg.png",
     "source": "iptv-org"
   },
   {
@@ -3275,32 +2735,16 @@
         "label": "AU"
       },
       {
-        "url": "https://shls-live-ak.akamaized.net/out/v1/b06a89a463764d3688cda337d40dc5bf/index.m3u8",
+        "url": "https://amg00090-amgnaturetimeemea-rakuten.amagi.tv/playlist.m3u8",
         "label": "ES"
       },
       {
-        "url": "https://jmp2.uk/plu-60dd6b1da79e4d0007309455.m3u8",
-        "label": "ES · jmp2.uk"
-      },
-      {
-        "url": "https://amg00090-amgnaturetimeemea-rakuten.amagi.tv/playlist.m3u8",
-        "label": "ES · amg00090-amgnaturetimeemea-rakuten…"
-      },
-      {
-        "url": "https://jmp2.uk/plu-61fc0df14159c40007250432.m3u8",
-        "label": "France"
-      },
-      {
-        "url": "https://jmp2.uk/plu-681ba2729624e6275efe0044.m3u8",
-        "label": "LATAM"
-      },
-      {
-        "url": "https://jmp2.uk/plu-681ba2ad93d3d19bcab47433.m3u8",
+        "url": "https://bamusa-naturetime-emea-eng-rakuten.amagi.tv/playlist.m3u8",
         "label": "SD"
       },
       {
-        "url": "https://bamusa-naturetime-emea-eng-rakuten.amagi.tv/playlist.m3u8",
-        "label": "SD · bamusa-naturetime-emea-eng-rakuten…"
+        "url": "https://amg00090-blueantmedia-naturetime-samsungse-axgcn.amagi.tv/playlist/amg00090-blueantmedia-naturetime-samsungse/playlist.m3u8",
+        "label": "SD · amg00090-blueantmedia-naturetime-s…"
       }
     ],
     "logoUrl": "https://i.imgur.com/72JmyjM.png",

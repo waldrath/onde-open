@@ -1,9 +1,29 @@
 import type {Channel,ChannelRegion} from './channel-types';
 
-export type ViewerCountry = 'CA' | 'FR' | 'US' | 'XX';
+export type ViewerCountry = 'CA' | 'FR' | 'US' | 'SE' | 'CM' | 'BE' | 'CH' | 'LU' | 'SN' | 'CI' | 'CD' | 'HT' | 'XX';
 
 const CANADA_ZONES = /^America\/(Toronto|Montreal|Quebec|Halifax|St_Johns|Vancouver|Edmonton|Winnipeg|Regina|Whitehorse|Yellowknife|Iqaluit|Moncton|Glace_Bay|Goose_Bay|Thunder_Bay|Nipigon|Rainy_River|Rankin_Inlet|Resolute|Cambridge_Bay|Dawson_Creek|Fort_Nelson|Creston|Dawson|Inuvik)$/;
 const USA_ZONES = /^America\/(New_York|Chicago|Denver|Los_Angeles|Phoenix|Anchorage|Honolulu|Detroit|Indiana|Kentucky|Boise|Juneau|Nome|Sitka|Adak|Menominee|North_Dakota|Puerto_Rico|Virgin)$/;
+// Single-country time zones (IANA) and browser locales, by viewer country.
+const ZONES:ReadonlyMap<string,ViewerCountry> = new Map(Object.entries({
+  'Europe/Paris':'FR','Europe/Monaco':'FR','Europe/Stockholm':'SE','Africa/Douala':'CM',
+  'Europe/Brussels':'BE','Europe/Zurich':'CH','Europe/Luxembourg':'LU','Africa/Dakar':'SN',
+  'Africa/Abidjan':'CI','Africa/Kinshasa':'CD','Africa/Lubumbashi':'CD','America/Port-au-Prince':'HT',
+} satisfies Record<string,ViewerCountry>));
+const LOCALES:ReadonlyMap<string,ViewerCountry> = new Map(Object.entries({
+  'fr-ca':'CA','en-ca':'CA','fr-fr':'FR','fr-mc':'FR','en-us':'US','sv-se':'SE','fr-cm':'CM','en-cm':'CM',
+  'fr-be':'BE','nl-be':'BE','fr-ch':'CH','de-ch':'CH','it-ch':'CH','fr-lu':'LU','lb-lu':'LU','de-lu':'LU',
+  'fr-sn':'SN','fr-ci':'CI','fr-cd':'CD','fr-ht':'HT','ht-ht':'HT',
+} satisfies Record<string,ViewerCountry>));
+// Catalogue region of each viewer country (Québec and Canada share CA).
+const REGION_COUNTRIES:Readonly<Record<ChannelRegion,ViewerCountry>> = {
+  'Québec':'CA','Canada':'CA','France':'FR','USA':'US','Suède':'SE','Cameroun':'CM','Belgique':'BE','Suisse':'CH',
+  'Luxembourg':'LU','Sénégal':'SN',"Côte d'Ivoire":'CI','RD Congo':'CD','Haïti':'HT','International':'XX',
+};
+const COUNTRY_LABELS:Readonly<Record<ViewerCountry,string>> = {
+  CA:'Canada',FR:'France',US:'États-Unis',SE:'Suède',CM:'Cameroun',BE:'Belgique',CH:'Suisse',LU:'Luxembourg',
+  SN:'Sénégal',CI:"Côte d'Ivoire",CD:'RD Congo',HT:'Haïti',XX:'International',
+};
 
 export function detectViewerCountry(input?:{locale?:string;timeZone?:string}):ViewerCountry {
   // The time zone is the better signal for where playback is happening; the
@@ -13,7 +33,8 @@ export function detectViewerCountry(input?:{locale?:string;timeZone?:string}):Vi
       ? Intl.DateTimeFormat().resolvedOptions().timeZone || ''
       : ''
   );
-  if (timeZone === 'Europe/Paris' || timeZone === 'Europe/Monaco') return 'FR';
+  const zoneCountry = ZONES.get(timeZone);
+  if (zoneCountry) return zoneCountry;
   if (CANADA_ZONES.test(timeZone)) return 'CA';
   if (USA_ZONES.test(timeZone)) return 'US';
 
@@ -23,17 +44,11 @@ export function detectViewerCountry(input?:{locale?:string;timeZone?:string}):Vi
       : ''
   );
   const normalizedLocale = locale.toLowerCase();
-  if (normalizedLocale === 'fr-ca' || normalizedLocale === 'en-ca') return 'CA';
-  if (normalizedLocale === 'fr-fr' || normalizedLocale === 'fr-mc') return 'FR';
-  if (normalizedLocale === 'en-us') return 'US';
-  return 'XX';
+  return LOCALES.get(normalizedLocale) ?? 'XX';
 }
 
 export function countryForRegion(region: ChannelRegion): ViewerCountry {
-  if (region === 'Québec' || region === 'Canada') return 'CA';
-  if (region === 'France') return 'FR';
-  if (region === 'USA') return 'US';
-  return 'XX';
+  return REGION_COUNTRIES[region] ?? 'XX';
 }
 
 // `limited` is the catalogue's flag for a source that may be geo-restricted or
@@ -47,8 +62,5 @@ export function isLikelyGeoBlocked(channel:Pick<Channel,'region'|'limited'>, vie
 }
 
 export function viewerCountryLabel(country:ViewerCountry):string {
-  if (country === 'CA') return 'Canada';
-  if (country === 'FR') return 'France';
-  if (country === 'US') return 'États-Unis';
-  return 'International';
+  return COUNTRY_LABELS[country] ?? 'International';
 }

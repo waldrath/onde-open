@@ -27,7 +27,16 @@
   --skin-grid: rgba(255, 255, 255, .05);
   --skin-glow: rgba(100, 200, 209, .22);
   --skin-warm: rgba(255, 180, 120, .18);
+  /* Motion scale shared by every interaction: three durations, two curves. */
+  --ease-out: cubic-bezier(.2, .8, .2, 1);
+  --ease-pop: cubic-bezier(.2, .9, .3, 1.3);
+  --dur-fast: .16s;
+  --dur-base: .26s;
+  --dur-slow: .42s;
+  /* Favourite hearts read the same on cards, tiles and side rows. */
+  --heart: #f37d9b;
 }
+.app-shell:is([data-theme=light], [data-theme=anime], [data-theme=sumi], [data-theme=bureau]) { --heart: #c2405f; }
 
 /* Dark — deep broadcast blue with cyan signal light. */
 .app-shell[data-theme=dark] {
@@ -116,7 +125,7 @@
   --skin-icon-radius: 14px;
   --skin-icon-shadow: 0 8px 18px rgba(224, 86, 138, .12), inset 0 1px 0 #fff;
   --skin-surface-shadow: 0 24px 55px rgba(224, 86, 138, .12), inset 0 1px 0 #fff;
-  --skin-accent: #e0568a;
+  --skin-accent: #c3386d;
   --skin-speck: rgba(224, 86, 138, .38);
   --skin-aura-a: rgba(255, 170, 200, .38);
   --skin-aura-b: rgba(210, 180, 255, .22);
@@ -238,7 +247,7 @@
   --skin-heading-font: Georgia, 'Times New Roman', serif;
   --skin-heading-tracking: 0;
   --skin-heading-shadow: 0 1px 0 rgba(255, 255, 255, .6);
-  --skin-accent: #c8452f;
+  --skin-accent: #b93d28;
   --skin-speck: rgba(29, 28, 26, .28);
   --skin-aura-a: rgba(200, 69, 47, .1);
   --skin-aura-b: rgba(70, 65, 55, .08);
@@ -275,17 +284,16 @@
 .backdrop-aura { position: absolute; inset: 0; overflow: hidden; }
 .backdrop-aura i {
   position: absolute;
-  width: 48vw;
-  height: 48vw;
+  width: 60vw;
+  height: 60vw;
   border-radius: 50%;
-  filter: blur(78px);
   opacity: .72;
   animation: aura-drift 30s ease-in-out infinite alternate;
   will-change: transform;
 }
-.backdrop-aura i:nth-child(1) { left: -14%; top: -20%; background: radial-gradient(circle, var(--skin-aura-a), transparent 68%); }
-.backdrop-aura i:nth-child(2) { right: -12%; top: 4%; background: radial-gradient(circle, var(--skin-aura-b), transparent 68%); animation-delay: -11s; animation-duration: 36s; }
-.backdrop-aura i:nth-child(3) { left: 24%; bottom: -26%; background: radial-gradient(circle, var(--skin-aura-c), transparent 68%); animation-delay: -19s; animation-duration: 42s; }
+.backdrop-aura i:nth-child(1) { left: -14%; top: -20%; background: radial-gradient(circle closest-side, var(--skin-aura-a), transparent); }
+.backdrop-aura i:nth-child(2) { right: -12%; top: 4%; background: radial-gradient(circle closest-side, var(--skin-aura-b), transparent); animation-delay: -11s; animation-duration: 36s; }
+.backdrop-aura i:nth-child(3) { left: 24%; bottom: -26%; background: radial-gradient(circle closest-side, var(--skin-aura-c), transparent); animation-delay: -19s; animation-duration: 42s; }
 
 .backdrop-mesh {
   position: absolute;
@@ -321,9 +329,8 @@
   position: absolute;
   inset: 0;
   background: url('/themes/noir-grain.svg') repeat;
-  opacity: .045;
-  mix-blend-mode: overlay;
-  animation: grain-shift 9s steps(3) infinite;
+  opacity: .03;
+  /* Static and plain-blended: moving it (background-position) or an overlay blend repaints the whole viewport on integrated GPUs. */
 }
 
 .theme-sunrays {
@@ -348,7 +355,6 @@
   transform: perspective(420px) rotateX(62deg);
   transform-origin: bottom;
   mask-image: linear-gradient(to top, #000, transparent 82%);
-  animation: grid-run 5s linear infinite;
   opacity: .65;
 }
 
@@ -385,7 +391,7 @@
 }
 
 @media (max-width: 760px) {
-  .backdrop-aura i { width: 72vw; height: 72vw; filter: blur(52px); }
+  .backdrop-aura i { width: 84vw; height: 84vw; }
   .backdrop-rings { width: 120vw; }
   .backdrop-specks i:nth-child(n+13) { display: none; }
   .theme-sunrays { inset: -45%; }
@@ -442,7 +448,6 @@
 .app-shell .nav-item:hover > svg:first-of-type { transform: translateY(-1px) scale(1.05) rotate(-2deg); }
 .app-shell .home-category-grid button:hover > svg:first-of-type { transform: rotate(-7deg) scale(1.08); }
 .app-shell .quick-option > svg:first-of-type { width: 30px; height: 30px; padding: 7px; border-radius: calc(var(--skin-icon-radius) - 2px); }
-.app-shell .player-more summary > svg:first-of-type { width: 30px; height: 30px; padding: 7px; }
 
 .app-shell .nav-item.nav-active > svg:first-of-type {
   background: rgba(0, 0, 0, .16);
@@ -450,64 +455,6 @@
   color: #fff;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, .16);
 }
-
-.locale-picker { position: relative; display: flex; }
-.locale-switch {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 5px;
-  min-height: 38px;
-  padding: 0 10px;
-  border-radius: 9px;
-  border: 1px solid var(--skin-icon-border);
-  background: var(--skin-icon-bg);
-  color: var(--skin-icon-color);
-  font-size: 10px;
-  font-weight: 750;
-  letter-spacing: .08em;
-  box-shadow: var(--skin-icon-shadow);
-}
-.locale-switch:hover { border-color: var(--skin-accent); background: color-mix(in srgb, var(--skin-accent) 20%, transparent); }
-.locale-menu {
-  position: absolute;
-  top: calc(100% + 8px);
-  right: 0;
-  width: 152px;
-  padding: 6px;
-  display: grid;
-  gap: 3px;
-  border: 1px solid rgba(255, 255, 255, .14);
-  border-radius: 10px;
-  background: rgba(7, 14, 22, .94);
-  box-shadow: 0 18px 45px rgba(0, 0, 0, .45);
-  backdrop-filter: blur(22px) saturate(1.2);
-  z-index: 96;
-  animation: menu-pop .24s cubic-bezier(.2, .9, .2, 1) both;
-}
-.locale-menu button {
-  padding: 8px 10px;
-  border-radius: 7px;
-  color: #eef6f8;
-  font-size: 12px;
-  text-align: left;
-}
-.locale-menu button:hover { background: rgba(255, 255, 255, .1); }
-.locale-menu button.is-active { background: color-mix(in srgb, var(--skin-accent) 28%, transparent); color: #fff; font-weight: 650; }
-@media (max-width: 760px) {
-  .locale-switch { min-width: 38px; min-height: 38px; padding: 0 8px; }
-  .locale-switch span { display: none; }
-}
-
-.app-shell .theme-switch {
-  background: var(--skin-icon-bg);
-  border: 1px solid var(--skin-icon-border);
-  color: var(--skin-icon-color);
-  box-shadow: var(--skin-icon-shadow);
-}
-.app-shell .theme-switch:hover { background: color-mix(in srgb, var(--skin-accent) 22%, transparent); border-color: var(--skin-accent); }
-.app-shell .theme-switch svg { transition: transform .35s cubic-bezier(.2, .8, .2, 1), filter .3s ease; }
-.app-shell .theme-switch:hover svg { transform: rotate(18deg) scale(1.06); filter: drop-shadow(0 0 8px var(--skin-glow)); }
 .app-shell .profile-avatar {
   background: var(--skin-icon-bg);
   border: 1px solid var(--skin-icon-border);
@@ -527,6 +474,10 @@
 .app-shell[data-theme=arcade] { --skin-stroke: 2; }
 .app-shell[data-theme=sumi] { --skin-stroke: 1.7; }
 .app-shell[data-theme=ember] { --skin-stroke: 1.7; }
+.app-shell[data-theme=millennium] { --skin-stroke: 1.7; }
+.app-shell[data-theme=bureau] { --skin-stroke: 1.8; }
+.app-shell[data-theme=comics] { --skin-stroke: 2.2; }
+.app-shell[data-theme=aura] { --skin-stroke: 2; }
 .app-shell :is(.nav-item, .quick-option, .home-category-grid button, .player-more summary) > svg:first-of-type { stroke-width: var(--skin-stroke, 2); }
 
 /* ---------------------------------------------------------------------------
@@ -564,10 +515,8 @@
 .app-shell .home-favorite-row button:hover .home-favorite-art img { transform: scale(1.045); }
 
 .app-shell .desktop-channel-row,
-.app-shell .guide-row,
 .app-shell .selection-row { transition: transform .22s ease, background .22s ease, border-color .22s ease; }
 .app-shell .desktop-channel-row:hover { transform: translateX(2px); }
-.app-shell .guide-row:hover { transform: translateX(3px); border-color: color-mix(in srgb, var(--skin-accent) 50%, var(--skin-line)); }
 
 /* The top bar reads as a sheet of glass with a signal line underneath. */
 .app-shell .topbar {
@@ -595,10 +544,8 @@
   bottom: -1px;
   height: 1px;
   background: linear-gradient(90deg, transparent, var(--skin-accent), transparent);
-  background-size: 220% 100%;
   opacity: .55;
   pointer-events: none;
-  animation: signal-sweep 7s linear infinite;
 }
 .app-shell .search-box { transition: border-color .22s ease, box-shadow .22s ease, background .22s ease; }
 .app-shell .search-box:focus-within { border-color: var(--skin-accent); box-shadow: 0 0 0 3px color-mix(in srgb, var(--skin-accent) 18%, transparent), 0 8px 30px rgba(0, 0, 0, .12); }
@@ -625,27 +572,88 @@
 .app-shell .nav-item > svg { transition: transform .22s cubic-bezier(.2, .8, .2, 1); }
 .app-shell .nav-item.nav-active { box-shadow: inset 0 1px 0 rgba(255, 255, 255, .18), 0 6px 18px color-mix(in srgb, var(--skin-accent) 18%, transparent); }
 
-.app-shell .logo-mark { animation: logo-wave 8s ease-in-out infinite; transform-origin: 50% 55%; }
-.app-shell .logo-mark path:nth-child(2) { animation: logo-wave-soft 8s ease-in-out infinite; }
-.app-shell .logo-period { animation: logo-dot 8s ease-in-out infinite; }
+/* The logo tells its name once when the app opens (about 2.6 s):
+   a drop falls on still water and three ripples spread; from the impact each
+   wave is painted by a brush stroke along its crest (a mask, so every skin
+   keeps its own colour); the letters rise one after the other on the swell;
+   the period lands last as a second drop with its own ripple, and a glint
+   runs along the word. Then nothing runs: an endless logo loop used to cost
+   a layout pass on every frame, a steady drain on phone batteries. Motion is
+   transform and opacity (compositor work) except the brush and the glint,
+   which repaint a few hundred pixels for under a second.
+   Pointing at the logo sends the swell through the letters again with
+   transitions on the separate translate/rotate/scale properties, so leaving
+   it never replays the opening. */
+.logo-rings { display: none; }
+.app-shell .logo { position: relative; }
+.app-shell .logo-rings { display: block; position: absolute; left: .6em; top: 50%; width: 0; height: 0; pointer-events: none; }
+.app-shell .logo-rings::before { content: ''; position: absolute; left: -3px; top: -3px; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); opacity: 0; animation: logo-fall .42s cubic-bezier(.55, 0, .9, .45) both; }
+.app-shell .logo-rings i { position: absolute; left: -.62em; top: -.22em; width: 1.24em; height: .44em; border: 1.5px solid var(--accent); border-radius: 50%; opacity: 0; animation: logo-ring 1.25s calc(.4s + var(--ring, 0) * .17s) cubic-bezier(.2, .7, .3, 1) both; }
+.app-shell .logo-rings i:nth-child(2) { --ring: 1; }
+.app-shell .logo-rings i:nth-child(3) { --ring: 2; }
+.app-shell .logo-mark { transform-origin: 30% 60%; animation: logo-settle 1.5s .38s cubic-bezier(.34, 1.4, .64, 1) both; transition: rotate .55s cubic-bezier(.34, 1.56, .64, 1), translate .55s cubic-bezier(.34, 1.56, .64, 1); }
+.app-shell .logo-brush { animation: logo-brush .95s .46s cubic-bezier(.45, 0, .2, 1) both; }
+.app-shell .logo-mark mask:nth-of-type(2) .logo-brush { animation-delay: .66s; }
+.app-shell .logo-word { position: relative; display: inline-flex; }
+.app-shell .logo-letter { display: inline-block; transform-origin: 50% 100%; animation: logo-rise .9s calc(.82s + var(--letter) * 90ms) cubic-bezier(.3, 1.5, .5, 1) both; transition: translate .42s calc(var(--letter) * 60ms) cubic-bezier(.34, 1.56, .64, 1); }
+.app-shell .logo-word::after { content: 'onde'; position: absolute; inset: 0; color: transparent; text-shadow: none; pointer-events: none; background: linear-gradient(100deg, transparent 38%, color-mix(in srgb, var(--accent) 45%, #fff) 50%, transparent 62%) 160% 0 / 260% 100% no-repeat; -webkit-background-clip: text; background-clip: text; animation: logo-glint 1.1s 1.95s ease-in-out both; }
+.app-shell .logo-period { display: inline-block; position: relative; transform-origin: 50% 85%; animation: logo-drop .66s 1.4s cubic-bezier(.3, 0, .3, 1) both; transition: scale .4s .24s cubic-bezier(.34, 1.56, .64, 1); }
+.app-shell .logo-period::before,
+.app-shell .logo-period::after { content: ''; position: absolute; left: 50%; bottom: .1em; width: .34em; height: .12em; margin-left: -.17em; border: 1.5px solid currentColor; border-radius: 50%; opacity: 0; pointer-events: none; }
+.app-shell .logo-period::before { animation: logo-ripple 1.1s 1.78s cubic-bezier(.2, .7, .3, 1) both; }
+.app-shell .brand-link:is(:hover, :focus-visible) .logo-mark { rotate: -6deg; translate: 0 -1.5px; }
+.app-shell .brand-link:is(:hover, :focus-visible) .logo-letter { translate: 0 -.13em; }
+.app-shell .brand-link:is(:hover, :focus-visible) .logo-period { scale: 1.35; }
+.app-shell .brand-link:is(:hover, :focus-visible) .logo-period::after { animation: logo-ripple 1.1s .36s cubic-bezier(.2, .7, .3, 1) both; }
+
+/* Each skin tells the opening in its own voice. Only the letters' entrance,
+   the ripples and a few timings change; the order (drop, waves, word,
+   period, glint) and the once-only rule stay the same. */
+.app-shell[data-theme=light] .logo-letter { animation-name: logo-rise-soft; animation-duration: 1.1s; animation-timing-function: cubic-bezier(.2, .8, .2, 1); }
+.app-shell[data-theme=retro] .logo-letter { animation-name: logo-neon; animation-duration: 1s; animation-timing-function: linear; }
+.app-shell[data-theme=retro] .logo-letter:nth-child(1) { animation-delay: .9s; }
+.app-shell[data-theme=retro] .logo-letter:nth-child(2) { animation-delay: 1.22s; }
+.app-shell[data-theme=retro] .logo-letter:nth-child(3) { animation-delay: .8s; }
+.app-shell[data-theme=retro] .logo-letter:nth-child(4) { animation-delay: 1.08s; }
+.app-shell[data-theme=matrix] .logo-letter { animation-name: logo-decode; animation-duration: .8s; animation-timing-function: steps(8, end); }
+.app-shell[data-theme=anime] .logo-letter { animation-name: logo-pop; animation-duration: .75s; animation-timing-function: ease-out; }
+.app-shell[data-theme=blueprint] .logo-rings i { border-style: dashed; }
+.app-shell[data-theme=blueprint] .logo-brush { animation-duration: 1.4s; animation-timing-function: linear; }
+.app-shell[data-theme=blueprint] .logo-letter { animation-name: logo-plot; animation-duration: .6s; animation-timing-function: steps(5, end); }
+.app-shell[data-theme=noir] .logo-letter { animation-name: logo-noir; animation-duration: 1.6s; animation-delay: calc(.85s + var(--letter) * .16s); animation-timing-function: cubic-bezier(.2, .7, .2, 1); }
+.app-shell[data-theme=noir] .logo-word::after { animation-duration: 1.8s; animation-delay: 2.1s; }
+.app-shell[data-theme=ocean] .logo-letter { animation-name: logo-bob; animation-duration: 1.4s; animation-timing-function: ease-in-out; }
+.app-shell[data-theme=ocean] .logo-rings i { animation-duration: 1.7s; }
+.app-shell[data-theme=cosmos] .logo-rings { rotate: -14deg; }
+.app-shell[data-theme=cosmos] .logo-rings::before { box-shadow: 0 0 8px 2px var(--accent); }
+.app-shell[data-theme=cosmos] .logo-letter { transform-origin: 50% 260%; animation-name: logo-orbit; animation-duration: 1.15s; animation-timing-function: cubic-bezier(.2, .8, .3, 1); }
+.app-shell[data-theme=arcade] .logo-rings i { border-radius: 0; animation-timing-function: steps(5, end); }
+.app-shell[data-theme=arcade] .logo-letter { animation-name: logo-8bit; animation-duration: .5s; animation-timing-function: steps(1, end); }
+.app-shell[data-theme=arcade] .logo-period { animation-timing-function: steps(4, end); }
+.app-shell[data-theme=sumi] .logo-rings i { border: 0; background: var(--accent); animation-name: logo-ink; animation-duration: 1.6s; }
+.app-shell[data-theme=sumi] .logo-brush { animation-duration: 1.3s; animation-timing-function: cubic-bezier(.6, 0, .3, 1); }
+.app-shell[data-theme=sumi] .logo-letter { animation-name: logo-ink-letter; animation-duration: 1.2s; animation-timing-function: cubic-bezier(.2, .7, .2, 1); }
+.app-shell[data-theme=ember] .logo-letter { animation-name: logo-ember; animation-duration: 1s; animation-timing-function: cubic-bezier(.3, .9, .4, 1); }
+.app-shell[data-theme=millennium] .logo-letter { animation-name: logo-slam; animation-duration: .6s; animation-timing-function: ease-in; }
+.app-shell[data-theme=millennium] .logo-word::after { animation-duration: .8s; animation-iteration-count: 2; }
+.app-shell[data-theme=bureau] .logo-letter { animation-name: logo-slide; animation-duration: .55s; animation-timing-function: cubic-bezier(.2, .8, .2, 1); }
+.app-shell[data-theme=comics] .logo-letter { transform-origin: 0 0; animation-name: logo-thwip; animation-duration: .75s; animation-timing-function: ease-out; }
+.app-shell[data-theme=comics] .logo-period { animation-name: logo-pow; }
+.app-shell[data-theme=aura] .logo-mark { animation-name: logo-power; animation-duration: 1s; animation-timing-function: linear; }
+.app-shell[data-theme=aura] .logo-rings i { border-width: 2px; animation-name: logo-burst; animation-duration: .85s; }
+.app-shell[data-theme=aura] .logo-letter { animation-name: logo-power-up; animation-duration: .6s; animation-timing-function: cubic-bezier(.3, 1.4, .5, 1); }
+.app-shell[data-theme=aura] .logo-word::after { animation-duration: .7s; animation-iteration-count: 2; }
 
 /* ---------------------------------------------------------------------------
-   Skin gallery (theme menu)
+   Skin gallery (Réglages)
 --------------------------------------------------------------------------- */
 
-.theme-menu {
-  width: min(348px, calc(100vw - 24px));
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+.settings-skins {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 8px;
-  padding: 10px;
-  max-height: calc(100dvh - 112px);
-  background: rgba(7, 14, 22, .9);
-  border: 1px solid rgba(255, 255, 255, .14);
-  box-shadow: 0 30px 80px rgba(0, 0, 0, .55), 0 0 0 1px rgba(0, 0, 0, .25);
-  backdrop-filter: blur(26px) saturate(1.25);
-  animation: menu-pop .28s cubic-bezier(.2, .9, .2, 1) both;
 }
-.theme-menu .theme-option {
+.settings-skins .theme-option {
   position: relative;
   display: block;
   min-height: 78px;
@@ -659,9 +667,9 @@
   animation-delay: calc(var(--i, 0) * 22ms);
   transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
 }
-.theme-menu .theme-option:hover { transform: translateY(-2px); border-color: rgba(255, 255, 255, .32); }
-.theme-menu .theme-option[aria-selected=true],
-.theme-menu .theme-option.theme-option-active {
+.settings-skins .theme-option:hover { transform: translateY(-2px); border-color: rgba(255, 255, 255, .32); }
+.settings-skins .theme-option[aria-pressed=true],
+.settings-skins .theme-option.theme-option-active {
   border-color: var(--accent);
   box-shadow: 0 0 0 1px var(--accent), 0 12px 32px color-mix(in srgb, var(--accent) 22%, transparent);
 }
@@ -675,7 +683,7 @@
   transform: scale(1.001);
   transition: transform .35s cubic-bezier(.2, .8, .2, 1);
 }
-.theme-menu .theme-option:hover .theme-preview { transform: scale(1.06); }
+.settings-skins .theme-option:hover .theme-preview { transform: scale(1.06); }
 .theme-preview::before {
   content: "";
   position: absolute;
@@ -733,34 +741,25 @@
   border-radius: 50%;
   box-shadow: 0 2px 8px rgba(0, 0, 0, .4);
 }
-.theme-menu .theme-option[data-theme-id=dark] .theme-preview { background: radial-gradient(120% 90% at 18% 0%, rgba(100, 200, 209, .55), transparent 58%), linear-gradient(135deg, #07162e, #0b1b35); }
-.theme-menu .theme-option[data-theme-id=light] .theme-preview { background: radial-gradient(120% 90% at 18% 0%, rgba(255, 190, 130, .8), transparent 58%), linear-gradient(135deg, #fffefa, #e7eee3); }
-.theme-menu .theme-option[data-theme-id=light] .theme-preview::before { border-color: rgba(25, 79, 64, .35); }
-.theme-menu .theme-option[data-theme-id=retro] .theme-preview { background: radial-gradient(120% 90% at 18% 0%, rgba(255, 63, 200, .55), transparent 58%), linear-gradient(135deg, #1a0b3d, #12021f); }
-.theme-menu .theme-option[data-theme-id=matrix] .theme-preview { background: repeating-linear-gradient(0deg, rgba(61, 255, 138, .16) 0 1px, transparent 1px 7px), linear-gradient(135deg, #02120a, #04130a); }
-.theme-menu .theme-option[data-theme-id=anime] .theme-preview { background: radial-gradient(120% 90% at 18% 0%, rgba(255, 255, 255, .8), transparent 58%), linear-gradient(135deg, #ffd9e4, #fdf3f6); }
-.theme-menu .theme-option[data-theme-id=anime] .theme-preview::before { border-color: rgba(224, 86, 138, .3); }
-.theme-menu .theme-option[data-theme-id=blueprint] .theme-preview { background: linear-gradient(rgba(100, 210, 255, .2) 1px, transparent 1px), linear-gradient(90deg, rgba(100, 210, 255, .2) 1px, transparent 1px), linear-gradient(135deg, #05162c, #08223f); background-size: 12px 12px, 12px 12px, auto; }
-.theme-menu .theme-option[data-theme-id=noir] .theme-preview { background: radial-gradient(90% 90% at 50% 0%, rgba(217, 180, 91, .45), transparent 60%), linear-gradient(135deg, #0b0a08, #14120e); }
-.theme-menu .theme-option[data-theme-id=ocean] .theme-preview { background: radial-gradient(120% 90% at 18% 0%, rgba(63, 224, 200, .45), transparent 58%), linear-gradient(135deg, #03121a, #062430); }
-.theme-menu .theme-option[data-theme-id=cosmos] .theme-preview { background: radial-gradient(1px 1px at 20% 30%, #fff, transparent), radial-gradient(1px 1px at 70% 20%, #fff, transparent), radial-gradient(1px 1px at 40% 70%, #fff, transparent), radial-gradient(120% 90% at 18% 0%, rgba(160, 107, 255, .5), transparent 58%), linear-gradient(135deg, #0c0820, #140b2e); }
-.theme-menu .theme-option[data-theme-id=arcade] .theme-preview { background: linear-gradient(rgba(57, 246, 255, .15) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 107, 53, .15) 1px, transparent 1px), linear-gradient(135deg, #0c0f22, #110b1c); background-size: 10px 10px, 10px 10px, auto; }
-.theme-menu .theme-option[data-theme-id=sumi] .theme-preview { background: radial-gradient(58% 58% at 68% 34%, rgba(200, 69, 47, .55), transparent 62%), linear-gradient(135deg, #f4f1e8, #e4ded0); }
-.theme-menu .theme-option[data-theme-id=sumi] .theme-preview::before { border-color: rgba(29, 28, 26, .35); }
-.theme-menu .theme-option[data-theme-id=ember] .theme-preview { background: radial-gradient(100% 100% at 50% 100%, rgba(255, 122, 47, .6), transparent 60%), linear-gradient(135deg, #1a0c05, #0d0603); }
+.settings-skins .theme-option[data-theme-id=dark] .theme-preview { background: radial-gradient(120% 90% at 18% 0%, rgba(100, 200, 209, .55), transparent 58%), linear-gradient(135deg, #07162e, #0b1b35); }
+.settings-skins .theme-option[data-theme-id=light] .theme-preview { background: radial-gradient(120% 90% at 18% 0%, rgba(255, 190, 130, .8), transparent 58%), linear-gradient(135deg, #fffefa, #e7eee3); }
+.settings-skins .theme-option[data-theme-id=light] .theme-preview::before { border-color: rgba(25, 79, 64, .35); }
+.settings-skins .theme-option[data-theme-id=retro] .theme-preview { background: radial-gradient(120% 90% at 18% 0%, rgba(255, 63, 200, .55), transparent 58%), linear-gradient(135deg, #1a0b3d, #12021f); }
+.settings-skins .theme-option[data-theme-id=matrix] .theme-preview { background: repeating-linear-gradient(0deg, rgba(61, 255, 138, .16) 0 1px, transparent 1px 7px), linear-gradient(135deg, #02120a, #04130a); }
+.settings-skins .theme-option[data-theme-id=anime] .theme-preview { background: radial-gradient(120% 90% at 18% 0%, rgba(255, 255, 255, .8), transparent 58%), linear-gradient(135deg, #ffd9e4, #fdf3f6); }
+.settings-skins .theme-option[data-theme-id=anime] .theme-preview::before { border-color: rgba(224, 86, 138, .3); }
+.settings-skins .theme-option[data-theme-id=blueprint] .theme-preview { background: linear-gradient(rgba(100, 210, 255, .2) 1px, transparent 1px), linear-gradient(90deg, rgba(100, 210, 255, .2) 1px, transparent 1px), linear-gradient(135deg, #05162c, #08223f); background-size: 12px 12px, 12px 12px, auto; }
+.settings-skins .theme-option[data-theme-id=noir] .theme-preview { background: radial-gradient(90% 90% at 50% 0%, rgba(217, 180, 91, .45), transparent 60%), linear-gradient(135deg, #0b0a08, #14120e); }
+.settings-skins .theme-option[data-theme-id=ocean] .theme-preview { background: radial-gradient(120% 90% at 18% 0%, rgba(63, 224, 200, .45), transparent 58%), linear-gradient(135deg, #03121a, #062430); }
+.settings-skins .theme-option[data-theme-id=cosmos] .theme-preview { background: radial-gradient(1px 1px at 20% 30%, #fff, transparent), radial-gradient(1px 1px at 70% 20%, #fff, transparent), radial-gradient(1px 1px at 40% 70%, #fff, transparent), radial-gradient(120% 90% at 18% 0%, rgba(160, 107, 255, .5), transparent 58%), linear-gradient(135deg, #0c0820, #140b2e); }
+.settings-skins .theme-option[data-theme-id=arcade] .theme-preview { background: linear-gradient(rgba(57, 246, 255, .15) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 107, 53, .15) 1px, transparent 1px), linear-gradient(135deg, #0c0f22, #110b1c); background-size: 10px 10px, 10px 10px, auto; }
+.settings-skins .theme-option[data-theme-id=sumi] .theme-preview { background: radial-gradient(58% 58% at 68% 34%, rgba(200, 69, 47, .55), transparent 62%), linear-gradient(135deg, #f4f1e8, #e4ded0); }
+.settings-skins .theme-option[data-theme-id=sumi] .theme-preview::before { border-color: rgba(29, 28, 26, .35); }
+.settings-skins .theme-option[data-theme-id=ember] .theme-preview { background: radial-gradient(100% 100% at 50% 100%, rgba(255, 122, 47, .6), transparent 60%), linear-gradient(135deg, #1a0c05, #0d0603); }
 
 @media (max-width: 760px) {
-  .theme-menu {
-    position: fixed;
-    top: 68px;
-    right: 12px;
-    left: 12px;
-    width: auto;
-    max-height: calc(100dvh - 82px);
-    padding: 8px;
-    gap: 7px;
-  }
-  .theme-menu .theme-option { min-height: 72px; }
+  .settings-skins { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 7px; }
+  .settings-skins .theme-option { min-height: 72px; }
   .theme-option-label { font-size: 10px; padding: 6px 8px; }
 }
 
@@ -828,8 +827,8 @@
   top: 50%;
   transform: translate(-50%, -50%);
   border-radius: 50%;
-  background: radial-gradient(circle, color-mix(in srgb, var(--skin-accent) 22%, transparent), transparent 66%);
-  filter: blur(40px);
+  /* Softness lives in the gradient: a blur filter on an animated layer this size costs every frame. */
+  background: radial-gradient(closest-side, color-mix(in srgb, var(--skin-accent) 22%, transparent), transparent);
   opacity: .55;
   pointer-events: none;
   z-index: 1;
@@ -873,8 +872,7 @@
 .access-page .access-card-glow {
   position: absolute;
   inset: -40% 30% 45% -25%;
-  background: radial-gradient(circle, color-mix(in srgb, var(--skin-accent) 24%, transparent), transparent 65%);
-  filter: blur(30px);
+  background: radial-gradient(closest-side, color-mix(in srgb, var(--skin-accent) 24%, transparent), transparent);
   pointer-events: none;
 }
 .access-page .access-kicker {
@@ -908,27 +906,6 @@
   color: var(--text);
 }
 .access-page .access-card .auth-links button { color: var(--skin-accent); }
-.access-page .access-card .access-note { color: var(--muted); }
-
-/* ---------------------------------------------------------------------------
-   Directional page transitions
---------------------------------------------------------------------------- */
-
-#contenu { view-transition-name: onde-main; }
-::view-transition-old(root),
-::view-transition-new(root) { animation: none; mix-blend-mode: normal; }
-/* Horizontal swap: the incoming page slides over the leaving one, which fades
-   out underneath. Only transform and opacity animate, so the transition stays
-   on the compositor; the group keeps a stable geometry to avoid resizes. */
-::view-transition-group(onde-main) { animation-duration: .42s; animation-timing-function: cubic-bezier(.22, .7, .2, 1); mix-blend-mode: normal; }
-::view-transition-old(onde-main),
-::view-transition-new(onde-main) { mix-blend-mode: normal; will-change: transform, opacity; }
-::view-transition-old(onde-main) { z-index: 1; animation: page-leave-left .42s cubic-bezier(.4, 0, .6, 1) both; }
-::view-transition-new(onde-main) { z-index: 2; animation: page-enter-right .42s cubic-bezier(.22, .7, .2, 1) both; box-shadow: -22px 0 48px rgba(0, 0, 0, .16); }
-html[data-nav=forward]::view-transition-old(onde-main) { animation-name: page-leave-left; }
-html[data-nav=forward]::view-transition-new(onde-main) { animation-name: page-enter-right; }
-html[data-nav=back]::view-transition-old(onde-main) { animation-name: page-leave-right; }
-html[data-nav=back]::view-transition-new(onde-main) { animation-name: page-enter-left; box-shadow: 22px 0 48px rgba(0, 0, 0, .16); }
 
 /* ---------------------------------------------------------------------------
    Micro-interactions
@@ -938,8 +915,11 @@ html[data-nav=back]::view-transition-new(onde-main) { animation-name: page-enter
 .app-shell .secondary,
 .app-shell .icon-button,
 .app-shell .quick-option,
-.app-shell .tv-cast-button,
-.app-shell .theme-switch { transition: transform .18s ease, background .18s ease, color .18s ease, border-color .18s ease, box-shadow .18s ease; }
+.app-shell .tv-cast-button {
+  transition-property: transform, background-color, color, border-color, box-shadow;
+  transition-duration: var(--dur-fast);
+  transition-timing-function: var(--ease-out);
+}
 .app-shell :is(.primary, .secondary, .icon-button, .quick-option, .tv-cast-button):active { transform: scale(.965); }
 .app-shell .primary { position: relative; overflow: hidden; box-shadow: 0 10px 24px color-mix(in srgb, var(--skin-accent) 18%, transparent); }
 .app-shell .primary::after {
@@ -948,32 +928,37 @@ html[data-nav=back]::view-transition-new(onde-main) { animation-name: page-enter
   inset: 0;
   background: linear-gradient(110deg, transparent 30%, rgba(255, 255, 255, .28) 46%, transparent 62%);
   transform: translateX(-130%);
-  transition: transform .65s cubic-bezier(.2, .8, .2, 1);
+  transition: transform .65s var(--ease-out);
   pointer-events: none;
 }
 .app-shell .primary:hover::after { transform: translateX(130%); }
 .app-shell .primary:hover { box-shadow: 0 14px 30px color-mix(in srgb, var(--skin-accent) 26%, transparent); }
 
-.app-shell .card-favorite.is-favorite svg,
-.app-shell .home-favorite-heart { animation: heart-pop .38s cubic-bezier(.2, .9, .3, 1.4) both; }
-.app-shell .card-favorite svg { transition: transform .2s ease, color .2s ease; }
-.app-shell .card-favorite:hover svg { transform: scale(1.12); }
+.app-shell :is(.card-favorite, .home-favorite-fav, .desktop-channel-heart).is-favorite svg { animation: heart-pop .38s var(--ease-pop) both; }
+.app-shell :is(.card-favorite, .home-favorite-fav, .desktop-channel-heart) svg { transition: transform var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out); }
+.app-shell :is(.card-favorite, .home-favorite-fav, .desktop-channel-heart):hover svg { transform: scale(1.12); }
 
-.app-shell .search-results { animation: menu-pop .24s cubic-bezier(.2, .9, .2, 1) both; }
-.app-shell .toast { animation: toast-in .34s cubic-bezier(.2, .9, .2, 1) both; }
-.app-shell .notice { animation: toast-in .3s ease both; }
-.app-shell .player-schedule-toggle svg { transition: transform .25s ease; }
+.app-shell .search-results { animation: menu-pop var(--dur-base) var(--ease-out) both; }
+.app-shell .toast { animation: toast-in var(--dur-base) var(--ease-out) both; }
+.app-shell .notice { animation: toast-in var(--dur-base) var(--ease-out) both; }
+.app-shell .player-schedule-toggle svg { transition: transform var(--dur-base) var(--ease-out); }
 .app-shell .player-schedule-toggle svg.is-closed { transform: rotate(-90deg); }
 
-.app-shell .home-favorite-row button,
-.app-shell .home-category-grid button,
-.app-shell .home-tv { transition: transform .24s cubic-bezier(.2, .8, .2, 1), box-shadow .24s ease, filter .24s ease; }
-.app-shell .home-favorite-row button:hover,
+.app-shell .home-favorite-row .home-favorite-item,
+.app-shell .home-category-grid button { transition: transform var(--dur-base) var(--ease-out), box-shadow var(--dur-base) var(--ease-out), filter var(--dur-base) var(--ease-out); }
+.app-shell .home-favorite-row .home-favorite-item:hover,
 .app-shell .home-category-grid button:hover { transform: translateY(-3px); }
 
-.app-shell .status-dot.live,
-.app-shell .tiny-dot { animation: live-pulse 2.6s ease-in-out infinite; }
-.app-shell .watch-dock { animation: dock-in .38s cubic-bezier(.2, .8, .2, 1) both; }
+.app-shell .tiny-dot { position: relative; }
+.app-shell .tiny-dot::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: inherit;
+  animation: live-pulse 2.6s ease-out infinite;
+}
+.app-shell .watch-dock { animation: dock-in var(--dur-slow) var(--ease-out) both; }
 
 /* ---------------------------------------------------------------------------
    Skin-specific finishing details
@@ -1010,7 +995,7 @@ html[data-nav=back]::view-transition-new(onde-main) { animation-name: page-enter
 .app-shell[data-theme=sumi] .channel-card,
 .app-shell[data-theme=sumi] .desktop-channel-panel,
 .app-shell[data-theme=sumi] .up-next { background-image: url('/themes/noir-grain.svg'); background-blend-mode: multiply; }
-.app-shell[data-theme=sumi] .page-heading h1::after { background: linear-gradient(90deg, #c8452f, transparent); }
+.app-shell[data-theme=sumi] .page-heading h1::after { background: linear-gradient(90deg, #b93d28, transparent); }
 
 @media (min-width: 1024px) {
   .app-shell[data-theme=light] .desktop-first {
@@ -1049,43 +1034,50 @@ html[data-nav=back]::view-transition-new(onde-main) { animation-name: page-enter
   0%, 100% { transform: translate3d(0, 0, 0); opacity: calc(var(--speck-opacity, .4) * .55); }
   50% { transform: translate3d(6px, -18px, 0); opacity: var(--speck-opacity, .4); }
 }
-@keyframes grain-shift {
-  0% { background-position: 0 0; }
-  33% { background-position: 18px 12px; }
-  66% { background-position: -12px 20px; }
-  100% { background-position: 0 0; }
-}
 @keyframes sun-turn { to { transform: rotate(360deg); } }
-@keyframes grid-run { to { background-position: 0 34px, 54px 0; } }
 @keyframes spotlight-breathe { 0%, 100% { opacity: .6; transform: scale(1); } 50% { opacity: .9; transform: scale(1.06); } }
 @keyframes tide-drift { 0% { transform: translate3d(-2%, 2%, 0) scale(1); } 100% { transform: translate3d(2%, -2%, 0) scale(1.04); } }
 @keyframes heat-breathe { 0%, 100% { opacity: .55; transform: scale(.96); } 50% { opacity: .9; transform: scale(1.06); } }
 
-@keyframes signal-sweep { from { background-position: 200% 0; } to { background-position: -200% 0; } }
-@keyframes logo-wave { 0%, 100% { transform: translateY(0) rotate(0); } 48% { transform: translateY(-1px) rotate(-1deg); } 52% { transform: translateY(1px) rotate(1deg); } }
-@keyframes logo-wave-soft { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(1px); } }
-@keyframes logo-dot { 0%, 92%, 100% { opacity: 1; } 95% { opacity: .35; } }
+@keyframes logo-fall { 0% { opacity: 0; transform: translateY(-1.3em) scale(.7, 1.4); } 25% { opacity: 1; } 92% { opacity: 1; transform: translateY(0) scale(.8, 1.3); } 100% { opacity: 0; transform: translateY(0) scale(1.8, .3); } }
+@keyframes logo-ring { 0% { opacity: 0; transform: scale(.12); } 6% { opacity: .8; } 60% { opacity: .3; } 100% { opacity: 0; transform: scale(1.9); } }
+@keyframes logo-settle { 0% { transform: translateY(2px) rotate(3deg); } 100% { transform: none; } }
+@keyframes logo-brush { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+@keyframes logo-rise { 0% { opacity: 0; transform: translateY(.55em) rotate(8deg) scale(.9, 1.15); } 45% { opacity: 1; } 100% { opacity: 1; transform: none; } }
+@keyframes logo-glint { from { background-position: 160% 0; } to { background-position: -60% 0; } }
+@keyframes logo-drop { 0% { opacity: 0; transform: translateY(-1.3em) scale(.75, 1.35); } 55% { opacity: 1; transform: translateY(0) scale(1.35, .65); } 78% { transform: translateY(-.07em) scale(.9, 1.12); } 100% { opacity: 1; transform: none; } }
+@keyframes logo-ripple { 0% { opacity: 0; transform: scale(.3); } 6% { opacity: .8; } 100% { opacity: 0; transform: scale(3); } }
+@keyframes logo-rise-soft { from { opacity: 0; transform: translateY(.25em); } to { opacity: 1; transform: none; } }
+@keyframes logo-neon { 0% { opacity: 0; } 10% { opacity: .9; } 14% { opacity: .1; } 22% { opacity: 1; } 27% { opacity: .2; } 36%, 100% { opacity: 1; } }
+@keyframes logo-decode { 0% { opacity: 0; transform: translateY(-.8em); } 30% { opacity: 1; } 70% { transform: translateY(.05em); } 100% { opacity: 1; transform: none; } }
+@keyframes logo-pop { 0% { opacity: 0; transform: scale(0) rotate(-25deg); } 60% { opacity: 1; transform: scale(1.25) rotate(6deg); } 80% { transform: scale(.92) rotate(-2deg); } 100% { opacity: 1; transform: none; } }
+@keyframes logo-plot { 0% { opacity: 0; transform: scaleY(0); } 20% { opacity: 1; } 100% { opacity: 1; transform: none; } }
+@keyframes logo-noir { from { opacity: 0; transform: translateY(.1em) scale(1.05); } to { opacity: 1; transform: none; } }
+@keyframes logo-bob { 0% { opacity: 0; transform: translateY(.6em); } 35% { opacity: 1; transform: translateY(-.18em); } 60% { transform: translateY(.08em); } 80% { transform: translateY(-.04em); } 100% { opacity: 1; transform: none; } }
+@keyframes logo-orbit { 0% { opacity: 0; transform: rotate(-55deg); } 70% { opacity: 1; transform: rotate(4deg); } 100% { opacity: 1; transform: none; } }
+@keyframes logo-8bit { 0% { opacity: 0; transform: scale(0); } 33% { opacity: 1; transform: scale(.5); } 66% { transform: scale(1.3); } 100% { opacity: 1; transform: none; } }
+@keyframes logo-ink { 0% { opacity: 0; transform: scale(.1); } 10% { opacity: .3; } 100% { opacity: 0; transform: scale(1.6); } }
+@keyframes logo-ink-letter { from { opacity: 0; transform: scale(.85); } to { opacity: 1; transform: none; } }
+@keyframes logo-ember { 0% { opacity: 0; transform: translateY(.7em) scale(.6); } 50% { opacity: 1; transform: translateY(-.1em) scale(1.08); } 100% { opacity: 1; transform: none; } }
+@keyframes logo-slam { 0% { opacity: 0; transform: translateY(-.2em) scale(2.2); } 60% { opacity: 1; transform: scale(.92); } 80% { transform: scale(1.05); } 100% { opacity: 1; transform: none; } }
+@keyframes logo-slide { from { opacity: 0; transform: translateX(-.6em); } to { opacity: 1; transform: none; } }
+@keyframes logo-thwip { 0% { opacity: 0; transform: translateX(-1.4em) rotate(-30deg); } 55% { opacity: 1; transform: translateX(.06em) rotate(8deg); } 75% { transform: rotate(-4deg); } 100% { opacity: 1; transform: none; } }
+@keyframes logo-pow { 0% { opacity: 0; transform: scale(0) rotate(-40deg); } 55% { opacity: 1; transform: scale(1.9) rotate(12deg); } 80% { transform: scale(.85); } 100% { opacity: 1; transform: none; } }
+@keyframes logo-power { 0%, 100% { transform: none; } 10%, 50% { transform: translate(-1px, 1px); } 20%, 60% { transform: translate(1px, -1px); } 30%, 70% { transform: translate(-1px, -1px); } 40%, 80% { transform: translate(1px, 1px); } 90% { transform: scale(1.06); } }
+@keyframes logo-burst { 0% { opacity: 0; transform: scale(.1); } 8% { opacity: .95; } 100% { opacity: 0; transform: scale(2.6); } }
+@keyframes logo-power-up { 0% { opacity: 0; transform: translateY(.3em) scale(.3); } 60% { opacity: 1; transform: scale(1.15); } 100% { opacity: 1; transform: none; } }
 @keyframes menu-pop { from { opacity: 0; transform: translateY(-8px) scale(.97); } to { opacity: 1; transform: translateY(0) scale(1); } }
 @keyframes theme-card-in { from { opacity: 0; transform: translateY(8px) scale(.98); } to { opacity: 1; transform: translateY(0) scale(1); } }
 @keyframes heart-pop { 0% { transform: scale(.6); } 55% { transform: scale(1.22); } 100% { transform: scale(1); } }
-@keyframes toast-in { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-@keyframes live-pulse { 0%, 100% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--skin-accent) 38%, transparent); } 50% { box-shadow: 0 0 0 5px transparent; } }
+@keyframes toast-in { from { opacity: 0; translate: 0 10px; } to { opacity: 1; translate: 0 0; } }
+@keyframes live-pulse { 0% { transform: scale(1); opacity: .55; } 70%, 100% { transform: scale(3); opacity: 0; } }
 @keyframes dock-in { from { opacity: 0; transform: translateY(14px) scale(.98); } to { opacity: 1; transform: translateY(0) scale(1); } }
 @keyframes access-halo { from { transform: translate(-50%, -50%) scale(.94); opacity: .4; } to { transform: translate(-50%, -50%) scale(1.08); opacity: .7; } }
 @keyframes access-card-in { from { opacity: 0; transform: translateY(16px) scale(.985); } to { opacity: 1; transform: translateY(0) scale(1); } }
-@keyframes page-enter-right { from { transform: translate3d(100%, 0, 0); } to { transform: translate3d(0, 0, 0); } }
-@keyframes page-enter-left { from { transform: translate3d(-100%, 0, 0); } to { transform: translate3d(0, 0, 0); } }
-@keyframes page-leave-left { from { opacity: 1; transform: translate3d(0, 0, 0); } to { opacity: 0; transform: translate3d(-8%, 0, 0); } }
-@keyframes page-leave-right { from { opacity: 1; transform: translate3d(0, 0, 0); } to { opacity: 0; transform: translate3d(8%, 0, 0); } }
 
 @media (prefers-reduced-motion: reduce) {
   .app-shell *, .access-page * { scroll-behavior: auto !important; }
-  .app-shell .logo-mark, .app-shell .logo-mark path, .app-shell .logo-period,
-  .app-shell .access-card, .access-page .access-halo,
-  .app-shell .status-dot.live, .app-shell .tiny-dot,
-  .app-shell .watch-dock, .app-shell .toast, .app-shell .notice,
-  .app-shell .search-results, .theme-menu, .theme-menu .theme-option { animation: none !important; }
-  ::view-transition-old(*), ::view-transition-new(*), ::view-transition-group(*) { animation-duration: .01s !important; }
+  .app-shell .logo-mark, .app-shell .logo-mark path, .app-shell .logo-letter, .app-shell .logo-period, .app-shell .logo-period::before, .app-shell .logo-period::after, .app-shell .logo-rings::before, .app-shell .logo-rings i, .app-shell .logo-brush, .app-shell .logo-word::after, .app-shell .access-card, .access-page .access-halo, .app-shell .tiny-dot::after, .app-shell .watch-dock, .app-shell .toast, .app-shell .notice, .app-shell .search-results, .settings-skins .theme-option { animation: none !important; }
 }
 
 /* ---------------------------------------------------------------------------
@@ -1215,25 +1207,314 @@ html[data-nav=back]::view-transition-new(onde-main) { animation-name: page-enter
 
 /* Paper skins (Clair, Manga, Encre) keep ink text on their pale heroes, and
    the small accent links stay readable at 11-12px. */
-.app-shell:is([data-theme=light],[data-theme=anime],[data-theme=sumi]) :is(.desktop-first, .home-hero) .hero-eyebrow {
+.app-shell:is([data-theme=light],[data-theme=anime],[data-theme=sumi],[data-theme=bureau]) :is(.desktop-first, .home-hero) .hero-eyebrow {
   color: var(--text);
 }
-.app-shell:is([data-theme=light],[data-theme=anime],[data-theme=sumi]) :is(.desktop-first, .home-hero) .hero-eyebrow::before {
+.app-shell:is([data-theme=light],[data-theme=anime],[data-theme=sumi],[data-theme=bureau]) :is(.desktop-first, .home-hero) .hero-eyebrow::before {
   background: var(--accent);
   opacity: .85;
 }
-.app-shell:is([data-theme=anime],[data-theme=sumi]) .desktop-first .hero-secondary {
+.app-shell:is([data-theme=anime],[data-theme=sumi],[data-theme=bureau]) .desktop-first .hero-secondary {
   background: color-mix(in srgb, var(--surface) 84%, transparent);
   border-color: var(--border);
   color: var(--text);
 }
-.app-shell:is([data-theme=anime],[data-theme=sumi]) .desktop-first .hero-secondary:hover {
+.app-shell:is([data-theme=anime],[data-theme=sumi],[data-theme=bureau]) .desktop-first .hero-secondary:hover {
   background: var(--surface);
   border-color: var(--accent);
   color: var(--text);
 }
-.app-shell:is([data-theme=anime],[data-theme=sumi]) :is(.desktop-panel-heading button, .home-section-heading > button, .home-carousel-all) {
+.app-shell:is([data-theme=anime],[data-theme=sumi],[data-theme=bureau]) :is(.desktop-panel-heading button, .home-section-heading > button, .home-carousel-all) {
   color: color-mix(in srgb, var(--accent) 72%, #000);
 }
-.app-shell:is([data-theme=anime],[data-theme=sumi]) .desktop-programme-panel p { color: var(--muted); }
-.app-shell:is([data-theme=anime],[data-theme=sumi]) :is(.nav-item, .mobile-nav button) { color: color-mix(in srgb, var(--muted) 82%, #000); }
+.app-shell:is([data-theme=anime],[data-theme=sumi],[data-theme=bureau]) .desktop-programme-panel p { color: var(--muted); }
+.app-shell:is([data-theme=anime],[data-theme=sumi],[data-theme=bureau]) :is(.nav-item, .mobile-nav button) { color: color-mix(in srgb, var(--muted) 82%, #000); }
+
+/* ---------------------------------------------------------------------------
+   Consistency pass: one heart, one disclosure chevron, animated dialogs and
+   the same compact top bar on every mobile view. Colours come from the skin
+   tokens so all twelve skins follow without per-skin overrides.
+--------------------------------------------------------------------------- */
+
+/* Favourite hearts: the same frosted chip on catalogue cards and home tiles. */
+.app-shell[data-theme] :is(.card-favorite, .home-favorite-row .home-favorite-item > .home-favorite-fav) {
+  top: 8px;
+  right: 8px;
+  width: 34px;
+  height: 34px;
+  min-width: 34px;
+  min-height: 34px;
+  border: 1px solid color-mix(in srgb, var(--text) 14%, transparent);
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--panel) 80%, transparent);
+  color: var(--text);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, .18);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  transition: background-color var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out), transform var(--dur-fast) var(--ease-out);
+}
+.app-shell[data-theme] :is(.card-favorite, .home-favorite-row .home-favorite-item > .home-favorite-fav):hover { background: var(--panel); }
+.app-shell[data-theme] :is(.card-favorite, .home-favorite-fav, .desktop-channel-heart):is(:hover, .is-favorite) { color: var(--heart); }
+.app-shell[data-theme] :is(.card-favorite, .home-favorite-fav):active { transform: scale(.92); }
+@media (max-width: 760px) {
+  .app-shell[data-theme] :is(.card-favorite, .home-favorite-row .home-favorite-item > .home-favorite-fav) {
+    top: 6px;
+    right: 6px;
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    min-height: 40px;
+  }
+}
+
+/* Empty states take the skin accent rather than the original green. */
+.app-shell .empty-state > svg { color: var(--accent); }
+
+/* Clock columns size to their content: English times ("12:00 a.m.") are wider
+   than French ones ("00 h 00"), and digits stay aligned from row to row. */
+.app-shell .expanded-programme > time { flex: 0 0 auto; min-width: 56px; }
+.app-shell :is(.expanded-programme > time, .next-item > span:first-child, .desktop-programme-row > span, .today-date) { font-variant-numeric: tabular-nums; }
+
+/* Accent-filled chips use the skin's own ink, so pale-accent skins stay legible. */
+.app-shell[data-theme] .guide-periods button[aria-pressed=true] { color: var(--accent-ink, #092335); }
+.app-shell[data-theme=light] .guide-periods button[aria-pressed=true] { color: #fffefa; }
+
+/* Disclosures: hide the native triangle and use one rotating chevron. */
+.app-shell :is(.guide-filter-disclosure > summary, .help-topics summary, .tv-mirror summary) {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  list-style: none;
+}
+.app-shell :is(.guide-filter-disclosure > summary, .help-topics summary, .tv-mirror summary)::-webkit-details-marker { display: none; }
+.app-shell :is(.guide-filter-disclosure > summary, .help-topics summary, .tv-mirror summary)::after {
+  content: "";
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  margin-left: auto;
+  color: inherit;
+  background: currentColor;
+  opacity: .7;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") center / contain no-repeat;
+  transition: transform var(--dur-base) var(--ease-out);
+}
+.app-shell :is(.guide-filter-disclosure, .help-topics details, .tv-mirror)[open] > summary::after { transform: rotate(180deg); }
+
+/* Dialogs fade and rise in, and fade out on close, where the browser supports
+   animating the top layer; elsewhere they simply appear as before. */
+@media (prefers-reduced-motion: no-preference) {
+  .app-shell dialog.modal {
+    opacity: 0;
+    translate: 0 12px;
+    scale: .985;
+    transition: opacity var(--dur-base) var(--ease-out), translate var(--dur-base) var(--ease-out), scale var(--dur-base) var(--ease-out), overlay var(--dur-base) allow-discrete, display var(--dur-base) allow-discrete;
+  }
+  .app-shell dialog.modal[open] { opacity: 1; translate: 0 0; scale: 1; }
+  @starting-style {
+    .app-shell dialog.modal[open] { opacity: 0; translate: 0 12px; scale: .985; }
+  }
+  .app-shell dialog.modal::backdrop {
+    opacity: 0;
+    transition: opacity var(--dur-base) var(--ease-out), overlay var(--dur-base) allow-discrete, display var(--dur-base) allow-discrete;
+  }
+  .app-shell dialog.modal[open]::backdrop { opacity: 1; }
+  @starting-style {
+    .app-shell dialog.modal[open]::backdrop { opacity: 0; }
+  }
+}
+
+/* Mobile top bar: the home and guide views already drop the sync badge to keep
+   one row; every view does the same (offline state still shows as a notice). */
+@media (max-width: 760px) {
+  .app-shell .topbar .sync-indicator { display: none; }
+}
+@media (max-width: 400px) {
+  .app-shell .topbar { column-gap: 8px; padding-inline: 16px; }
+  .app-shell .mobile-brand .logo { font-size: 25px; }
+}
+
+/* Home tiles: an old rule pulled any svg in the row 22px up for a heart that
+   used to sit inside the tile; the heart chip centres its icon like the cards. */
+.app-shell .home-favorite-row .home-favorite-item > .home-favorite-fav > svg { align-self: center; margin: 0; }
+
+/* ---------------------------------------------------------------------------
+   Réglages: account, appearance, player and device data in one panel that
+   reuses the app's own controls (chips, toggles, skin tiles, buttons).
+--------------------------------------------------------------------------- */
+
+.app-shell .settings-button { position: relative; }
+.app-shell .settings-signed-in {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 2px var(--bg);
+}
+.app-shell .settings-panel { max-width: 620px; }
+.app-shell .settings-panel .modal-body > p { margin-bottom: 6px; }
+.app-shell .settings-section { padding: 18px 0 4px; border-top: 1px solid var(--line); margin-top: 18px; }
+.app-shell .settings-section h3 {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin: 0 0 12px;
+  font-family: var(--skin-heading-font);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text);
+}
+.app-shell .settings-section h3 > svg { color: var(--accent); }
+.app-shell .settings-section p { margin: 0 0 14px; font-size: 13px; line-height: 1.6; }
+.app-shell .settings-label {
+  display: block;
+  margin: 16px 0 8px;
+  font-size: 11px;
+  font-weight: 650;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.app-shell .settings-section h3 + .settings-label { margin-top: 0; }
+.app-shell .settings-choice { display: inline-flex; flex-wrap: wrap; max-width: 100%; }
+.app-shell .settings-choice button { display: inline-flex; align-items: center; gap: 7px; min-height: 40px; }
+.app-shell .settings-hint { display: block; margin: 10px 0 4px; font-size: 12px; line-height: 1.55; color: var(--muted); }
+.app-shell .settings-toggle { margin-top: 12px; font-size: 13px; }
+.app-shell .settings-account { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+.app-shell .settings-account strong { display: block; color: var(--text); font-size: 15px; }
+.app-shell .settings-account small { display: block; color: var(--muted); font-size: 12px; overflow-wrap: anywhere; }
+.app-shell .settings-initial {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--accent-ink, var(--bg));
+  font-weight: 700;
+  font-size: 18px;
+}
+.app-shell .settings-panel .account-stats { margin: 0 0 14px; }
+.app-shell .settings-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.app-shell .settings-actions > a { flex: 1 1 180px; }
+.app-shell .settings-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 12px 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--line) 60%, transparent);
+}
+.app-shell .settings-row:last-of-type { border-bottom: 0; }
+.app-shell .settings-row strong { display: block; font-size: 14px; font-weight: 600; color: var(--text); }
+.app-shell .settings-row small { display: block; font-size: 12px; color: var(--muted); margin-top: 2px; }
+.app-shell .settings-row .secondary { flex-shrink: 0; }
+.app-shell .settings-done { display: flex; align-items: center; gap: 7px; color: var(--accent); font-size: 13px; margin: 6px 0 0; }
+.app-shell .settings-panel > .modal-body > .primary.full-width { margin-top: 22px; }
+.settings-skins .theme-option { min-height: 72px; }
+
+/* ---------------------------------------------------------------------------
+   Mini player: placed where the viewer chose in Réglages, and smaller still
+   over the channel grid, where it should stay out of the way.
+--------------------------------------------------------------------------- */
+
+.app-shell { --sidebar-width: 232px; }
+@media (max-width: 1200px) { .app-shell { --sidebar-width: 205px; } }
+@media (min-width: 761px) {
+  .app-shell[data-dock=left] .watch-dock { right: auto; left: calc(var(--sidebar-width) + 22px); }
+  .app-shell[data-dock=top] .watch-dock { bottom: auto; top: calc(var(--topbar-height, 83px) + 15px); }
+  .app-shell .view-main-channels .watch-dock { width: 272px; }
+}
+@media (max-width: 760px) {
+  .app-shell .watch-dock { left: auto; right: 12px; width: min(78vw, 340px); }
+  .app-shell[data-dock=left] .watch-dock { right: auto; left: 12px; }
+  .app-shell[data-dock=top] .watch-dock { bottom: auto; top: calc(var(--topbar-height, 72px) + 10px); }
+  .app-shell .view-main-channels .watch-dock { width: min(60vw, 232px); }
+}
+/* The mini player's title bar and close button wear the skin, like every panel. */
+.app-shell .dock-head { background: var(--surface-raised); border-color: var(--border); color: var(--text); }
+.app-shell .dock-close { border-color: var(--border); color: var(--text); }
+.app-shell .dock-close:hover { background: color-mix(in srgb, var(--text) 8%, transparent); }
+
+/* Compact mini player over the grid: the picture under its title bar and the
+   controls to enlarge or close it; sources, casting and the schedule wait for Home. */
+.app-shell .view-main-channels .watch-dock :is(.player-toolbar, .player-schedule, .embed-controls, .player-note) { display: none; }
+
+/* "Réduites" in Réglages: the app moves as if the system asked for less motion. */
+html[data-motion=reduced] :is(.app-shell, .app-shell *, .app-shell *::before, .app-shell *::after) {
+  animation-duration: .01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: .01ms !important;
+  scroll-behavior: auto !important;
+}
+
+/* ---------------------------------------------------------------------------
+   Smooth page swaps. Measured on the channel grid, the GPU spent most of each
+   slide re-blurring 96 small backdrop filters (heart chips and broadcast
+   labels) and the animated skin backdrop. Small chips use a dense tint
+   instead, the backdrop holds still while a page slides in (paused by the swap
+   in television.tsx), and off-screen cards skip rendering until they scroll
+   into view.
+--------------------------------------------------------------------------- */
+.app-shell[data-theme] :is(.card-favorite, .home-favorite-row .home-favorite-item > .home-favorite-fav, .playback-tag) {
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+.app-shell[data-theme] :is(.card-favorite, .home-favorite-row .home-favorite-item > .home-favorite-fav) { background: color-mix(in srgb, var(--panel) 92%, transparent); }
+.app-shell .playback-tag { background: rgba(4, 12, 10, .82); }
+.theme-backdrop:is(.is-paused, .is-resting),
+.theme-backdrop:is(.is-paused, .is-resting)::before,
+.theme-backdrop:is(.is-paused, .is-resting)::after,
+.theme-backdrop:is(.is-paused, .is-resting) *,
+.theme-backdrop:is(.is-paused, .is-resting) *::before,
+.theme-backdrop:is(.is-paused, .is-resting) *::after { animation-play-state: paused !important; }
+/* A resting personal GIF shows its still frame (see app/use-ambient-rest.ts). */
+.custom-wallpaper.is-resting .custom-wallpaper-image { background-image: var(--wallpaper-still); }
+.app-shell .channel-grid > .channel-card { content-visibility: auto; contain-intrinsic-size: auto 250px; }
+
+/* Player chrome that kept its first palette: the embed bar and, on the paper
+   skin (whose player stays dark), the mini player's title bar. */
+.app-shell .embed-controls { border-top-color: var(--border); color: var(--muted); }
+.app-shell .embed-controls button { color: var(--text); }
+.app-shell[data-theme=light] .watch-dock .dock-head { background: rgba(255, 255, 255, .06); border-color: #31503e; color: #edf4ef; }
+.app-shell[data-theme=light] .watch-dock .dock-close { border-color: #4d7059; color: #edf4ef; }
+
+/* The incoming page shifts in from the side: never let that open a horizontal scrollbar. */
+.app-shell .main-shell { overflow-x: clip; }
+/* The page is one stacking context, so nothing inside it (raised cards, logos,
+   the mini player) can climb over the top bar or the bottom navigation. */
+#contenu { isolation: isolate; }
+/* A failed stream in the compact mini player: the title and the retry button only. */
+.app-shell .view-main-channels .watch-dock .video-error { padding: 10px; gap: 6px; }
+.app-shell .view-main-channels .watch-dock .video-error :is(p, small, > svg) { display: none; }
+.app-shell .view-main-channels .watch-dock .video-error h3 { font-size: 13px; margin: 0 0 6px; }
+.app-shell .view-main-channels .watch-dock .video-error .button-row :is(.primary, .secondary) { min-height: 34px; padding: 6px 10px; font-size: 12px; }
+
+/* The home cover (a stopped or not yet started stream) takes the skin's
+   palette instead of the original sage poster: the skin's panel colour lit by
+   its accent, and every line of text in the skin tokens. --cover-tint carries
+   the accent for decoration, so a skin whose accent is too dark on its cover
+   can lighten it without touching the button. */
+.app-shell[data-theme] .player-cover {
+  --cover-tint: var(--accent);
+  background:
+    radial-gradient(circle at 74% 40%, color-mix(in srgb, var(--cover-tint) 20%, transparent), transparent 58%),
+    radial-gradient(circle at 8% 110%, color-mix(in srgb, var(--cover-tint) 10%, transparent), transparent 52%),
+    var(--cover-bg, var(--panel));
+  color: var(--text);
+}
+.app-shell[data-theme] .player-cover :is(.cover-content h2, .cover-top) { color: var(--text); }
+.app-shell[data-theme] .player-cover :is(.cover-content p, .cover-caption, .cover-region) { color: var(--muted); }
+.app-shell[data-theme] .player-cover .cover-content .eyebrow { color: var(--cover-tint); }
+.app-shell[data-theme] .player-cover .cover-content .primary { background: var(--accent); color: var(--accent-ink, #fff); }
+.app-shell[data-theme] .player-cover .ring { border-color: color-mix(in srgb, var(--cover-tint) 24%, transparent); }
+.app-shell[data-theme] .player-cover .art-star { color: color-mix(in srgb, var(--cover-tint) 70%, var(--text)); }
+.app-shell[data-theme] .player-cover .cover-wordmark { color: color-mix(in srgb, var(--cover-tint) 78%, var(--text)) !important; }
+/* The paper skin keeps its player dark (see "Light theme" above). */
+.app-shell[data-theme=light] .player-cover { --cover-bg: #10231c; --cover-tint: #8fd3ab; }
+.app-shell[data-theme=light] .player-cover .cover-content .primary { background: #8fd3ab; color: #0d2219; }

@@ -6,7 +6,7 @@ test('the theme ids are unique and complete', () => {
   const ids = themes.map(theme => theme.id);
   assert.equal(new Set(ids).size, ids.length);
   assert.ok(ids.includes('dark') && ids.includes('light'));
-  assert.equal(themes.length, 12);
+  assert.equal(themes.length, 16);
 });
 
 test('only known theme ids are accepted', () => {

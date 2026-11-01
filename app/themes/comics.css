@@ -1,0 +1,252 @@
+/* Toile — a 90s comic book at dusk: a night-blue sky printed in Ben-Day dots,
+   action lines bursting from the middle, a generic city skyline with lit
+   windows, a web drawn in the corners. Panels are inked: thick black lines,
+   hard offset shadows, red and blue primaries with a pop yellow. Captions sit
+   in yellow boxes, messages in speech balloons, titles in a hand-lettered face.
+   No character, emblem, mask or suit pattern: a homage to the print style.
+   Motion: the action lines throb (opacity only); everything else is printed.
+   Every rule is scoped to .app-shell[data-theme=comics] (or this skin's tile in Réglages). */
+.app-shell[data-theme=comics] {
+  --bg: #0f1838;
+  --panel: #18245a;
+  --panel2: #1f2d6b;
+  --surface: #18245a;
+  --surface-raised: #22327a;
+  --sidebar: #0c1330;
+  --line: #33458f;
+  --border: #4257b0;
+  --text: #fffaf0;
+  --copy: #fffaf0;
+  --muted: #c3cdf0;
+  --quiet: #c3cdf0;
+  --accent: #ffd23f;
+  --accent-ink: #111111;
+  --focus: #ffd23f;
+  --heart: #ff5a6a;
+  --ink: #05060f;
+  --red: #d0202f;
+  --blue: #1f5fe0;
+  --dots: radial-gradient(rgba(255, 255, 255, .07) 1.1px, transparent 1.5px) 0 0 / 7px 7px;
+  --page: linear-gradient(180deg, #1c2a66, #152052);
+  --skin-bar: #101a44;
+  --skin-card: var(--dots), var(--page);
+  --skin-tile: var(--dots), var(--page);
+  --skin-hero: var(--dots), linear-gradient(150deg, #1f5fe0, #101a44);
+  --skin-radius: 4px;
+  --skin-line: #05060f;
+  --skin-accent: #ffd23f;
+  --skin-glow: rgba(255, 210, 63, .25);
+  --skin-warm: rgba(208, 32, 47, .2);
+  --skin-speck: #ffd23f;
+  --skin-ring: rgba(255, 255, 255, .1);
+  --skin-grid: rgba(255, 255, 255, .04);
+  --skin-aura-a: rgba(31, 95, 224, .2);
+  --skin-aura-b: rgba(208, 32, 47, .14);
+  --skin-aura-c: rgba(255, 210, 63, .08);
+  --skin-surface-shadow: 4px 4px 0 #05060f;
+  --skin-heading-font: var(--font-comic, var(--font-heading));
+  --skin-heading-tracking: .03em;
+  --skin-heading-transform: none;
+  --skin-heading-shadow: 2px 2px 0 #05060f;
+  --skin-icon-radius: 4px;
+  --skin-icon-bg: linear-gradient(180deg, #2a3d8f, #1a2763);
+  --skin-icon-border: #05060f;
+  --skin-icon-color: #ffe68a;
+  --skin-icon-shadow: 2px 2px 0 #05060f;
+  color-scheme: dark;
+  background: var(--bg);
+}
+.app-shell[data-theme=comics] .watch-section,
+.app-shell[data-theme=comics] .watch-dock,
+.app-shell[data-theme=comics] .modal,
+.app-shell[data-theme=comics] .help-backdrop,
+.app-shell[data-theme=comics] .guide-explorer { --line: #33458f; --accent: #ffd23f; --text: #fffaf0; --muted: #c3cdf0; color: #fffaf0; }
+
+/* Backdrop: a dusk sky in halftone, action lines, the skyline and a web in the corners. */
+.app-shell[data-theme=comics] .backdrop-comics {
+  background:
+    radial-gradient(60% 26% at 50% 86%, rgba(208, 32, 47, .34), transparent 70%),
+    linear-gradient(180deg, #0c1433 0%, #14225e 40%, #23286e 64%, #4a1d4f 82%, #2a0f2c 100%);
+}
+.app-shell[data-theme=comics] .backdrop-comics::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(rgba(150, 190, 255, .16) 1.3px, transparent 1.8px) 0 0 / 10px 10px;
+  mask-image: radial-gradient(70% 60% at 85% 10%, #000, transparent 70%), radial-gradient(60% 50% at 8% 70%, #000, transparent 70%);
+}
+.app-shell[data-theme=comics] :is(.backdrop-aura, .backdrop-mesh, .backdrop-rings) { display: none; }
+.app-shell[data-theme=comics] .backdrop-grain { opacity: .03; }
+.app-shell[data-theme=comics] .backdrop-specks { inset: 0 0 40%; }
+.app-shell[data-theme=comics] .backdrop-specks i { box-shadow: none; animation-duration: 18s; }
+.app-shell[data-theme=comics] .backdrop-specks i:nth-child(n+11) { display: none; }
+.app-shell[data-theme=comics] .theme-action {
+  position: absolute;
+  inset: -20%;
+  background: repeating-conic-gradient(from 0deg at 50% 46%, rgba(255, 255, 255, .055) 0 .7deg, transparent .7deg 6deg);
+  mask-image: radial-gradient(closest-side circle at 50% 46%, transparent 34%, #000 100%);
+  opacity: .7;
+  animation: comics-throb 6s ease-in-out infinite alternate;
+}
+.app-shell[data-theme=comics] .theme-skyline {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 30vh;
+  background: url('/themes/comics/skyline.svg') center bottom / cover no-repeat;
+}
+.app-shell[data-theme=comics] .theme-web { position: absolute; inset: 0; }
+.app-shell[data-theme=comics] .theme-web::before,
+.app-shell[data-theme=comics] .theme-web::after {
+  content: "";
+  position: absolute;
+  width: min(34vw, 380px);
+  aspect-ratio: 1;
+  background: url('/themes/comics/web.svg') 0 0 / contain no-repeat;
+  opacity: .16;
+}
+.app-shell[data-theme=comics] .theme-web::before { right: 0; top: 70px; transform: scaleX(-1); }
+.app-shell[data-theme=comics] .theme-web::after { left: 0; bottom: 18vh; transform: scaleY(-1); width: min(26vw, 280px); opacity: .12; }
+
+/* Chrome: inked bars, a red panel for the open view. */
+.app-shell[data-theme=comics] .sidebar { background: var(--dots), linear-gradient(180deg, #111c4a, #0b1230); border-right: 3px solid var(--ink); -webkit-backdrop-filter: none; backdrop-filter: none; }
+.app-shell[data-theme=comics] .topbar { background: #101a44; border-bottom: 3px solid var(--ink); -webkit-backdrop-filter: none; backdrop-filter: none; }
+.app-shell[data-theme=comics] .topbar::after { background: linear-gradient(90deg, var(--red) 0 33%, #ffd23f 33% 66%, var(--blue) 66%); height: 3px; opacity: 1; }
+.app-shell[data-theme=comics] .logo { font-family: var(--font-comic, var(--font-heading)); letter-spacing: .02em; text-shadow: 2px 2px 0 var(--ink); }
+.app-shell[data-theme=comics] .logo-period { color: #ffd23f; }
+.app-shell[data-theme=comics] :is(.search-box, .profile-avatar) { background: #18245a; border: 2px solid var(--ink); color: var(--muted); box-shadow: 2px 2px 0 var(--ink); }
+.app-shell[data-theme=comics] .search-box { border-radius: 999px; }
+.app-shell[data-theme=comics] .search-box:focus-within { border-color: #ffd23f; }
+.app-shell[data-theme=comics] .nav-item { border-radius: 4px; font-weight: 650; }
+.app-shell[data-theme=comics] .nav-item:hover { background: rgba(31, 95, 224, .25); color: var(--text); }
+.app-shell[data-theme=comics] .nav-item.nav-active { background: var(--red); color: #ffffff; border: 2px solid var(--ink); box-shadow: 4px 4px 0 var(--ink); transform: rotate(-1deg); font-weight: 800; }
+.app-shell[data-theme=comics] .nav-item.nav-active::before { display: none; }
+.app-shell[data-theme=comics] .nav-item.nav-active > svg:first-of-type { background: #ffd23f; border-color: var(--ink); color: var(--ink); box-shadow: 2px 2px 0 var(--ink); }
+.app-shell[data-theme=comics] .device-note { background: var(--skin-card); border: 2px solid var(--ink); border-radius: 4px; box-shadow: 4px 4px 0 var(--ink); }
+.app-shell[data-theme=comics] :focus-visible { outline-color: #ffd23f; }
+
+/* Lettering: titles in a comic face; captions in yellow boxes. */
+.app-shell[data-theme=comics] :is(.page-heading h1, .home-section-heading h2, .section-heading h2, .selection-theme-head h2, .favorites-lists h2, .desktop-panel-heading h2, .home-hero h2, .desktop-first h2, .modal h2, .access-card h1, .settings-section h3, .empty-state h3) { font-family: var(--font-comic, var(--font-heading)); font-weight: 400; letter-spacing: .03em; text-wrap: balance; }
+.app-shell[data-theme=comics] :is(.page-heading h1, .access-card h1) { color: #ffd23f; font-size: 42px; line-height: 1.1; text-shadow: 2px 2px 0 var(--ink), -1px -1px 0 var(--ink), 1px -1px 0 var(--ink), -1px 1px 0 var(--ink), 5px 5px 0 var(--red); }
+.app-shell[data-theme=comics] :is(.home-section-heading h2, .section-heading h2, .selection-theme-head h2, .favorites-lists h2, .desktop-panel-heading h2) { font-size: 24px; color: var(--text); text-shadow: 2px 2px 0 var(--ink); }
+.app-shell[data-theme=comics] .page-heading h1::after { width: 76px; height: 8px; border: 2px solid var(--ink); border-radius: 0; background: repeating-linear-gradient(135deg, var(--red) 0 6px, #ffd23f 6px 12px); opacity: 1; box-shadow: 2px 2px 0 var(--ink); }
+.app-shell[data-theme=comics] .eyebrow { display: inline-block; width: fit-content; padding: 3px 8px; background: #ffd23f; color: #111111; border: 2px solid var(--ink); box-shadow: 2px 2px 0 var(--ink); }
+.app-shell[data-theme=comics] :is(.hero-eyebrow, .access-kicker) { color: #ffd23f; }
+.app-shell[data-theme=comics] :is(.home-section-heading > button, .desktop-panel-heading button, .home-carousel-all, .text-button, .selection-rank) { color: #ffd23f; }
+.app-shell[data-theme=comics] :is(.page-heading p, .section-heading p, .card-meta, .card-programme.muted) { color: var(--muted); }
+
+/* Panels: inked frames on printed blue, hard shadows. */
+.app-shell[data-theme=comics] :is(.channel-card, .list-card, .empty-state, .selection-row, .selection-lead, .favorites-lists, .notice, .desktop-channel-panel, .desktop-programme-panel, .filter-panel, .expanded-guide, .guide-row, .guide-intro, .guide-channel-summary, .guide-filter-disclosure, .up-next, .player-shell, .home-favorite-row button, .home-category-grid button:nth-child(n)) {
+  background: var(--skin-card);
+  border: 2.5px solid var(--ink);
+  border-radius: 4px;
+  color: var(--text);
+  box-shadow: 4px 4px 0 var(--ink);
+}
+.app-shell[data-theme=comics] :is(.desktop-channel-panel, .desktop-programme-panel, .filter-panel, .favorites-lists, .selection-lead) { box-shadow: 6px 6px 0 var(--ink); }
+.app-shell[data-theme=comics] .guide-explorer { background: transparent; border: 0; box-shadow: none; }
+.app-shell[data-theme=comics] :is(.channel-card, .home-favorite-row button, .home-category-grid button:nth-child(n)):hover { border-color: var(--ink); box-shadow: 6px 6px 0 var(--red); transform: translate(-2px, -2px); }
+.app-shell[data-theme=comics] :is(.card-visual, .home-favorite-art) { background: radial-gradient(rgba(255, 255, 255, .1) 1.2px, transparent 1.6px) 0 0 / 6px 6px, linear-gradient(160deg, #2a4fc0, #1a2a6a); border-color: var(--ink); }
+.app-shell[data-theme=comics] .card-visual { border-bottom-width: 2.5px; }
+.app-shell[data-theme=comics] .brand-has-logo { border-radius: 3px; outline: 2px solid var(--ink); outline-offset: -1px; box-shadow: 3px 3px 0 var(--ink); }
+.app-shell[data-theme=comics] .card-favorite,
+.app-shell[data-theme=comics] .home-favorite-row .home-favorite-item > .home-favorite-fav { background: #fffaf0; border: 2px solid var(--ink); color: var(--red); }
+.app-shell[data-theme=comics] .playback-tag { background: #fffaf0; border: 1.5px solid var(--ink); color: #111111; }
+.app-shell[data-theme=comics] .desktop-channel-row { background: rgba(31, 45, 107, .9); border: 2px solid var(--ink); border-radius: 4px; }
+.app-shell[data-theme=comics] .desktop-channel-row:hover { background: #22327a; box-shadow: 3px 3px 0 var(--red); }
+.app-shell[data-theme=comics] .tiny-dot { background: var(--red); box-shadow: 0 0 0 1.5px #fffaf0; }
+
+/* Hero: the river photograph printed in blue halftone, a web in its corner. */
+.app-shell[data-theme=comics] .desktop-first {
+  background-color: #1f5fe0;
+  background-image:
+    url('/themes/comics/web.svg'),
+    radial-gradient(rgba(5, 6, 15, .28) 1.3px, transparent 1.8px),
+    linear-gradient(90deg, rgba(12, 20, 54, .95), rgba(12, 20, 54, .55) 55%, rgba(12, 20, 54, .1)),
+    linear-gradient(0deg, rgba(12, 20, 54, .9), transparent 60%),
+    url('/images/onde-river-hero.webp');
+  background-size: clamp(130px, 16vw, 230px), 6px 6px, auto, auto, cover;
+  background-position: right -2px top -2px, 0 0, center, center, center 55%;
+  background-repeat: no-repeat, repeat, no-repeat, no-repeat, no-repeat;
+  background-blend-mode: normal, normal, normal, normal, luminosity;
+  border: 3px solid var(--ink);
+  border-radius: 4px;
+  box-shadow: 8px 8px 0 var(--red), 8px 8px 0 3px var(--ink);
+}
+.app-shell[data-theme=comics] .desktop-first h2 { color: #ffffff; text-shadow: 3px 3px 0 var(--ink); }
+.app-shell[data-theme=comics] .home-hero { background: #1f5fe0 url('/images/onde-river-hero.webp') center 55% / cover no-repeat; background-blend-mode: luminosity; border: 3px solid var(--ink); border-radius: 4px; box-shadow: 6px 6px 0 var(--red); }
+.app-shell[data-theme=comics] .home-hero::before { background: radial-gradient(rgba(5, 6, 15, .3) 1.2px, transparent 1.7px) 0 0 / 6px 6px, linear-gradient(0deg, rgba(12, 20, 54, .96), rgba(12, 20, 54, .2) 80%); }
+.app-shell[data-theme=comics] .home-hero h2 { color: #ffffff; text-shadow: 2px 2px 0 var(--ink); }
+
+/* Buttons: pop yellow for the main action, printed blue for the rest. */
+.app-shell[data-theme=comics] :is(.primary, .home-primary),
+.app-shell[data-theme=comics] .home-primary:hover {
+  background: #ffd23f;
+  color: #111111;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .03em;
+  border: 2.5px solid var(--ink);
+  border-radius: 4px;
+  box-shadow: 4px 4px 0 var(--red), 4px 4px 0 2.5px var(--ink);
+}
+.app-shell[data-theme=comics] :is(.primary, .home-primary):hover { filter: none; transform: translate(-1px, -1px); box-shadow: 6px 6px 0 var(--red), 6px 6px 0 2.5px var(--ink); }
+.app-shell[data-theme=comics] :is(.secondary, .guide-button, .filter-toggle, .hero-secondary) { background: var(--blue); border: 2.5px solid var(--ink); border-radius: 4px; color: #ffffff; font-weight: 700; box-shadow: 3px 3px 0 var(--ink); -webkit-backdrop-filter: none; backdrop-filter: none; }
+.app-shell[data-theme=comics] :is(.secondary, .guide-button, .hero-secondary):hover { background: #2a6cf0; border-color: var(--ink); color: #ffffff; }
+.app-shell[data-theme=comics] .channel-card .icon-button { background: #22327a; border: 2px solid var(--ink); border-radius: 4px; color: #ffe68a; }
+
+/* Filters, guide and selection. */
+.app-shell[data-theme=comics] .region-tabs { background: #0c1330; border: 2.5px solid var(--ink); border-radius: 4px; box-shadow: 3px 3px 0 var(--ink); }
+.app-shell[data-theme=comics] .region-tabs button.active { background: #ffd23f; color: #111111; font-weight: 800; }
+.app-shell[data-theme=comics] :is(.guide-days button, .guide-periods button) { background: var(--skin-card); border: 2px solid var(--ink); color: var(--muted); border-radius: 4px; box-shadow: 3px 3px 0 var(--ink); }
+.app-shell[data-theme=comics] .guide-days button[aria-pressed=true] { background: var(--red); border-color: var(--ink); color: #ffffff; }
+.app-shell[data-theme=comics] .guide-periods button[aria-pressed=true] { background: #ffd23f; border-color: var(--ink); color: #111111; font-weight: 800; }
+.app-shell[data-theme=comics] .programme-live { background: linear-gradient(90deg, rgba(255, 210, 63, .14), transparent 80%); }
+.app-shell[data-theme=comics] .expanded-programme.programme-live { box-shadow: inset 4px 0 0 var(--red); }
+/* The count badge sits inside inked titles: it keeps the body face and no lettering shadow. */
+.app-shell[data-theme=comics] .section-count { background: #fffaf0; border: 1.5px solid var(--ink); color: #111111; font-family: var(--font-body); font-weight: 700; letter-spacing: 0; text-shadow: none; }
+
+/* Player, mini player and dialogs: inked panels; messages are speech balloons. */
+.app-shell[data-theme=comics] :is(.player-toolbar, .player-note, .dock-head, .dock-controls, .player-resolving, .video-loading) { background: #101a44; border-color: var(--ink); color: var(--text); }
+.app-shell[data-theme=comics] .watch-dock { background: #18245a; border: 3px solid var(--ink); border-radius: 4px; box-shadow: 6px 6px 0 var(--red), 6px 6px 0 3px var(--ink); }
+.app-shell[data-theme=comics] .modal { background: var(--skin-card); border: 3px solid var(--ink); border-radius: 4px; box-shadow: 10px 10px 0 var(--red), 10px 10px 0 3px var(--ink); }
+.app-shell[data-theme=comics] .modal::backdrop { background: radial-gradient(rgba(0, 0, 0, .35) 1.4px, transparent 2px) 0 0 / 8px 8px, rgba(5, 6, 20, .72); }
+.app-shell[data-theme=comics] .toast { background: #ffffff; color: #111111; border: 3px solid var(--ink); border-radius: 26px; font-weight: 700; box-shadow: 4px 4px 0 var(--ink); overflow: visible; }
+.app-shell[data-theme=comics] .toast::before,
+.app-shell[data-theme=comics] .toast::after { content: ""; position: absolute; left: 34px; border-style: solid; border-color: transparent; }
+.app-shell[data-theme=comics] .toast::before { bottom: -19px; border-width: 19px 0 0 19px; border-top-color: var(--ink); }
+.app-shell[data-theme=comics] .toast::after { bottom: -12px; left: 37px; border-width: 13px 0 0 13px; border-top-color: #ffffff; }
+.app-shell[data-theme=comics] .mobile-nav { background: #101a44; border-top: 3px solid var(--ink); -webkit-backdrop-filter: none; backdrop-filter: none; }
+.app-shell[data-theme=comics] .mobile-nav button.active { background: #ffd23f; color: #111111; border: 2px solid var(--ink); border-radius: 4px; box-shadow: 3px 3px 0 var(--ink); font-weight: 800; }
+
+/* Sign-in. */
+.access-page.app-shell[data-theme=comics] .access-halo { background: radial-gradient(closest-side, rgba(255, 210, 63, .18), transparent); }
+.app-shell[data-theme=comics] .access-card { background: var(--skin-card); border: 3px solid var(--ink); border-radius: 4px; box-shadow: 8px 8px 0 var(--red), 8px 8px 0 3px var(--ink); }
+
+/* Réglages tile: dusk in halftone, the skyline, a web corner and a yellow caption. */
+.settings-skins .theme-option[data-theme-id=comics] .theme-preview {
+  background:
+    url('/themes/comics/web.svg') right -2px top -2px / 44px no-repeat,
+    url('/themes/comics/skyline.svg') center bottom / auto 46% repeat-x,
+    radial-gradient(rgba(150, 190, 255, .22) 1px, transparent 1.4px) 0 0 / 5px 5px,
+    linear-gradient(180deg, #0c1433, #23286e 58%, #6a2048);
+}
+.settings-skins .theme-option[data-theme-id=comics] .theme-preview::before { left: 10%; right: auto; top: 14%; width: 38%; height: 18%; border: 2px solid #05060f; border-radius: 0; background: #ffd23f; box-shadow: 2px 2px 0 #05060f; }
+.settings-skins .theme-option[data-theme-id=comics] .theme-preview::after { left: 10%; right: auto; width: 26%; bottom: auto; top: 44%; height: 6px; background: #d0202f; border: 1.5px solid #05060f; box-shadow: none; }
+.settings-skins .theme-option[data-theme-id=comics] .theme-preview i { display: none; }
+
+@keyframes comics-throb { from { opacity: .45; } to { opacity: .85; } }
+@media (max-width: 760px) {
+  .app-shell[data-theme=comics] .theme-skyline { height: 20vh; }
+  .app-shell[data-theme=comics] .theme-web::before { width: 46vw; top: 64px; }
+  .app-shell[data-theme=comics] .theme-web::after { width: 36vw; bottom: 14vh; }
+  .app-shell[data-theme=comics] :is(.page-heading h1, .access-card h1) { font-size: 34px; }
+  .app-shell[data-theme=comics] .desktop-first { background-size: 0 0, 6px 6px, auto, auto, cover; }
+}
+@media (min-width: 761px) {
+  .app-shell[data-theme=comics] .theme-web::after { left: var(--sidebar-width, 232px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .app-shell[data-theme=comics] .theme-action { animation: none; }
+}

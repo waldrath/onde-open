@@ -1,0 +1,375 @@
+/* An 2000 — a late-90s pop stage, as seen on a CD-single sleeve: midnight-blue
+   studio, ice-blue spotlights sweeping in from the rigging, a lens flare, star
+   sparkles, a silver grid on a glossy stage floor. Chrome for what is chosen,
+   aqua gel pills for what you press, a holographic hairline for the special
+   moments and one hot pink accent for life (live dots, hearts, the logo dot).
+   Motion: three beams sweep, sparkles twinkle, the flare breathes; transform
+   and opacity only. No band name, lettering or likeness: an homage to an era.
+   Every rule is scoped to .app-shell[data-theme=millennium] (or this skin's
+   tile in Réglages). */
+.app-shell[data-theme=millennium] {
+  --bg: #060a1c;
+  --panel: #0e1733;
+  --panel2: #141f43;
+  --surface: #0e1733;
+  --surface-raised: #17234b;
+  --sidebar: #070c20;
+  --line: #24315f;
+  --border: #33427a;
+  --text: #f2f6ff;
+  --copy: #f2f6ff;
+  --muted: #b0bfdf;
+  --quiet: #b0bfdf;
+  --accent: #8fd8ff;
+  --accent-ink: #04112a;
+  --focus: #c6eeff;
+  --heart: #ff6fae;
+  --hot: #ff5ca3;
+  --ice: #9fdcff;
+  --chrome: linear-gradient(180deg, #ffffff 0%, #e6edf8 38%, #9aaecb 50%, #d2dded 64%, #f8fbff 100%);
+  --gel: linear-gradient(180deg, rgba(255, 255, 255, .62), rgba(255, 255, 255, .14) 46%, rgba(255, 255, 255, 0) 52%), linear-gradient(180deg, #a6e3ff, #56b8f2);
+  --holo: linear-gradient(90deg, #ff9fd6, #c3b1ff 30%, #93e2ff 62%, #b5ffe1 84%, #fff1b3);
+  --frost: linear-gradient(180deg, rgba(36, 52, 102, .86), rgba(14, 22, 52, .92));
+  --hair: rgba(170, 205, 255, .17);
+  --skin-bar: #070c20;
+  --skin-card: var(--frost);
+  --skin-tile: var(--frost);
+  --skin-hero: radial-gradient(70% 80% at 80% 0%, rgba(143, 216, 255, .26), transparent 70%), linear-gradient(150deg, #1a2a60, #0a1230 70%);
+  --skin-radius: 18px;
+  --skin-line: var(--hair);
+  --skin-accent: #8fd8ff;
+  --skin-glow: rgba(143, 216, 255, .3);
+  --skin-warm: rgba(255, 92, 163, .16);
+  --skin-speck: #ffffff;
+  --skin-ring: rgba(170, 205, 255, .14);
+  --skin-grid: rgba(200, 225, 255, .05);
+  --skin-aura-a: rgba(90, 150, 255, .2);
+  --skin-aura-b: rgba(143, 216, 255, .14);
+  --skin-aura-c: rgba(255, 92, 163, .1);
+  --skin-surface-shadow: inset 0 1px 0 rgba(255, 255, 255, .13), 0 20px 46px -18px rgba(1, 4, 18, .85);
+  --skin-heading-font: var(--font-wide, var(--font-heading));
+  --skin-heading-tracking: .01em;
+  --skin-heading-transform: none;
+  --skin-heading-shadow: none;
+  --skin-icon-radius: 12px;
+  --skin-icon-bg: linear-gradient(180deg, rgba(255, 255, 255, .2), rgba(255, 255, 255, .05) 48%, rgba(143, 216, 255, .06) 52%, rgba(26, 40, 88, .9));
+  --skin-icon-border: rgba(190, 225, 255, .32);
+  --skin-icon-color: #d8f1ff;
+  --skin-icon-shadow: inset 0 1px 0 rgba(255, 255, 255, .28), 0 0 14px rgba(143, 216, 255, .14);
+  color-scheme: dark;
+  background: var(--bg);
+}
+.app-shell[data-theme=millennium] .watch-section,
+.app-shell[data-theme=millennium] .watch-dock,
+.app-shell[data-theme=millennium] .modal,
+.app-shell[data-theme=millennium] .help-backdrop,
+.app-shell[data-theme=millennium] .guide-explorer { --line: #24315f; --accent: #8fd8ff; --text: #f2f6ff; --muted: #b0bfdf; color: #f2f6ff; }
+
+/* Backdrop: the studio above, a glossy stage below the horizon, a flare in the rigging. */
+.app-shell[data-theme=millennium] .backdrop-millennium {
+  background:
+    radial-gradient(46% 20% at 50% 70%, rgba(143, 216, 255, .2), transparent 70%),
+    radial-gradient(70% 46% at 50% -12%, rgba(70, 110, 230, .34), transparent 70%),
+    radial-gradient(40% 34% at 8% 40%, rgba(255, 92, 163, .08), transparent 70%),
+    linear-gradient(180deg, #070d29 0%, #0a1439 46%, #11205a 70%, #070b20 70.15%, #060a1c 100%);
+}
+.app-shell[data-theme=millennium] .backdrop-millennium::before {
+  content: "";
+  position: absolute;
+  right: -6%;
+  top: 18px;
+  width: min(820px, 80vw);
+  aspect-ratio: 800 / 420;
+  background: url('/themes/millennium/flare.svg') center / contain no-repeat;
+  opacity: .7;
+  transform-origin: 80% 17%;
+  animation: millennium-flare 9s ease-in-out infinite alternate;
+}
+/* The stage edge: a silver line catching the light. */
+.app-shell[data-theme=millennium] .backdrop-millennium::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 70%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 159, 214, .6) 18%, #e9f5ff 50%, rgba(147, 226, 255, .6) 82%, transparent);
+  box-shadow: 0 0 16px 1px rgba(143, 216, 255, .4);
+  opacity: .75;
+}
+.app-shell[data-theme=millennium] :is(.backdrop-aura, .backdrop-mesh, .backdrop-rings) { display: none; }
+.app-shell[data-theme=millennium] .backdrop-grain { opacity: .025; }
+.app-shell[data-theme=millennium] .backdrop-specks { inset: 0 0 34%; }
+.app-shell[data-theme=millennium] .backdrop-specks i { box-shadow: 0 0 6px rgba(200, 235, 255, .8); animation-duration: 16s; }
+.app-shell[data-theme=millennium] .backdrop-specks i:nth-child(n+15) { display: none; }
+
+/* The stage floor: a silver Y2K grid in perspective, fading into the dark. Static. */
+.app-shell[data-theme=millennium] .theme-stage-floor {
+  position: absolute;
+  left: -40%;
+  right: -40%;
+  top: 70%;
+  height: 80%;
+  background-image: linear-gradient(rgba(205, 228, 255, .3) 1px, transparent 1px), linear-gradient(90deg, rgba(205, 228, 255, .24) 1px, transparent 1px);
+  background-size: 96px 52px;
+  background-position: 50% 0;
+  transform-origin: 50% 0;
+  transform: perspective(340px) rotateX(66deg);
+  mask-image: linear-gradient(#000, rgba(0, 0, 0, .25) 34%, transparent 56%);
+  opacity: .55;
+}
+
+/* Spotlights: three cones from the rigging, slowly sweeping the stage. */
+.app-shell[data-theme=millennium] .theme-beams { position: absolute; inset: 0; }
+.app-shell[data-theme=millennium] .theme-beams i {
+  position: absolute;
+  top: -6%;
+  width: 52vw;
+  height: 98vh;
+  margin-left: -26vw;
+  background: conic-gradient(at 50% 0, transparent 0 166deg, rgba(190, 228, 255, .08) 171deg, rgba(236, 247, 255, .28) 180deg, rgba(190, 228, 255, .08) 189deg, transparent 194deg 360deg);
+  mask-image: linear-gradient(180deg, #000 18%, rgba(0, 0, 0, .5) 62%, transparent 86%);
+  transform-origin: 50% 0;
+  will-change: transform;
+}
+.app-shell[data-theme=millennium] .theme-beams i:nth-child(1) { left: 20%; transform: rotate(-22deg); animation: millennium-sweep-left 15s ease-in-out infinite alternate; }
+.app-shell[data-theme=millennium] .theme-beams i:nth-child(2) { left: 92%; transform: rotate(22deg); animation: millennium-sweep-right 17s ease-in-out infinite alternate; animation-delay: -6s; }
+.app-shell[data-theme=millennium] .theme-beams i:nth-child(3) {
+  left: 52%;
+  width: 40vw;
+  margin-left: -20vw;
+  height: 90vh;
+  background: conic-gradient(at 50% 0, transparent 0 171deg, rgba(255, 120, 190, .06) 174deg, rgba(255, 150, 205, .18) 180deg, rgba(255, 120, 190, .06) 186deg, transparent 189deg 360deg);
+  transform: rotate(4deg);
+  animation: millennium-sweep-centre 12s ease-in-out infinite alternate;
+  animation-delay: -3s;
+}
+
+/* Star sparkles: four-point glints that open and close. */
+.app-shell[data-theme=millennium] .theme-sparkles { position: absolute; inset: 0; }
+.app-shell[data-theme=millennium] .theme-sparkles i {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background: url('/themes/millennium/sparkle.svg') center / contain no-repeat;
+  opacity: .5;
+  transform: scale(.7);
+  animation: millennium-twinkle 5.4s ease-in-out infinite;
+}
+.app-shell[data-theme=millennium] .theme-sparkles i:nth-child(1) { left: 12%; top: 14%; animation-delay: -1.2s; }
+.app-shell[data-theme=millennium] .theme-sparkles i:nth-child(2) { left: 31%; top: 8%; width: 12px; height: 12px; animation-delay: -3.8s; animation-duration: 6.6s; }
+.app-shell[data-theme=millennium] .theme-sparkles i:nth-child(3) { left: 46%; top: 27%; width: 10px; height: 10px; animation-delay: -2.4s; }
+.app-shell[data-theme=millennium] .theme-sparkles i:nth-child(4) { left: 63%; top: 11%; width: 24px; height: 24px; animation-delay: -.4s; animation-duration: 7.2s; }
+.app-shell[data-theme=millennium] .theme-sparkles i:nth-child(5) { left: 88%; top: 33%; width: 14px; height: 14px; animation-delay: -4.6s; }
+.app-shell[data-theme=millennium] .theme-sparkles i:nth-child(6) { left: 22%; top: 44%; width: 12px; height: 12px; animation-delay: -5.1s; animation-duration: 6.2s; }
+.app-shell[data-theme=millennium] .theme-sparkles i:nth-child(7) { left: 74%; top: 52%; width: 20px; height: 20px; animation-delay: -1.9s; animation-duration: 8s; }
+.app-shell[data-theme=millennium] .theme-sparkles i:nth-child(8) { left: 6%; top: 62%; width: 10px; height: 10px; animation-delay: -3.1s; }
+.app-shell[data-theme=millennium] .theme-sparkles i:nth-child(9) { left: 56%; top: 58%; width: 12px; height: 12px; animation-delay: -6s; animation-duration: 7s; }
+.app-shell[data-theme=millennium] .theme-sparkles i:nth-child(10) { left: 94%; top: 7%; width: 12px; height: 12px; animation-delay: -2.8s; }
+.app-shell[data-theme=millennium] .theme-sparkles i:nth-child(11) { left: 38%; top: 66%; width: 16px; height: 16px; animation-delay: -.9s; animation-duration: 6.8s; }
+.app-shell[data-theme=millennium] .theme-sparkles i:nth-child(12) { left: 81%; top: 78%; width: 14px; height: 14px; animation-delay: -4.2s; animation-duration: 7.6s; }
+
+/* Chrome: dark studio bars, opaque (no blur over the moving beams), a holographic hairline. */
+.app-shell[data-theme=millennium] .sidebar { background: linear-gradient(180deg, rgba(11, 18, 46, .97), rgba(6, 10, 28, .98)); border-color: var(--hair); -webkit-backdrop-filter: none; backdrop-filter: none; }
+.app-shell[data-theme=millennium] .topbar { background: var(--skin-bar); border-color: var(--hair); -webkit-backdrop-filter: none; backdrop-filter: none; }
+.app-shell[data-theme=millennium] .topbar::after { background: var(--holo); opacity: .55; }
+.app-shell[data-theme=millennium] .logo-period { color: var(--hot); }
+.app-shell[data-theme=millennium] :is(.search-box, .profile-avatar) { background: rgba(16, 26, 60, .9); border-color: var(--hair); border-radius: 999px; }
+.app-shell[data-theme=millennium] .search-box:focus-within { border-color: rgba(159, 220, 255, .6); box-shadow: 0 0 0 3px rgba(143, 216, 255, .14); }
+.app-shell[data-theme=millennium] :focus-visible { outline-color: var(--focus); }
+
+/* Navigation: pills; the chosen one is a chrome capsule. */
+.app-shell[data-theme=millennium] :is(.nav-item, .region-tabs button) { border-radius: 999px; }
+.app-shell[data-theme=millennium] .nav-item:hover { background: rgba(143, 216, 255, .09); color: var(--text); }
+.app-shell[data-theme=millennium] .nav-item.nav-active {
+  background: var(--chrome);
+  color: #0a1430;
+  font-weight: 700;
+  box-shadow: inset 0 1px 0 #fff, inset 0 -1px 0 rgba(60, 80, 120, .35), 0 0 0 1px rgba(255, 255, 255, .25), 0 10px 26px -10px rgba(143, 216, 255, .7);
+}
+.app-shell[data-theme=millennium] .nav-item.nav-active::before { display: none; }
+.app-shell[data-theme=millennium] .nav-item.nav-active > svg:first-of-type { background: rgba(10, 20, 48, .1); border-color: rgba(10, 20, 48, .24); color: #0a1430; box-shadow: inset 0 1px 0 rgba(255, 255, 255, .6); }
+
+/* Type: wide Y2K display face; page titles plated in chrome over a holographic rule. */
+.app-shell[data-theme=millennium] :is(.page-heading h1, .home-section-heading h2, .section-heading h2, .selection-theme-head h2, .favorites-lists h2, .home-hero h2, .desktop-first h2, .modal h2, .access-card h1, .settings-section h3) { font-family: var(--font-wide, var(--font-heading)); font-weight: 400; letter-spacing: .01em; text-wrap: balance; }
+/* The face runs about a quarter wider than Manrope, so its sizes step down to keep the same line lengths. */
+.app-shell[data-theme=millennium] :is(.home-section-heading h2, .section-heading h2, .selection-theme-head h2, .favorites-lists h2) { font-size: 17px; }
+.app-shell[data-theme=millennium] .settings-section h3 { font-size: 14px; }
+.app-shell[data-theme=millennium] :is(.page-heading h1, .access-card h1) {
+  background: var(--chrome);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #e6edf8;
+  font-size: 30px;
+}
+.app-shell[data-theme=millennium] .page-heading h1::after { width: 64px; height: 3px; border-radius: 3px; background: var(--holo); opacity: 1; box-shadow: 0 0 12px rgba(255, 159, 214, .45); }
+.app-shell[data-theme=millennium] :is(.eyebrow, .hero-eyebrow, .access-kicker) { color: var(--ice); letter-spacing: .2em; }
+.app-shell[data-theme=millennium] :is(.home-section-heading > button, .desktop-panel-heading button, .home-carousel-all, .text-button, .selection-rank) { color: var(--ice); }
+.app-shell[data-theme=millennium] :is(.page-heading p, .section-heading p, .card-meta, .card-programme.muted) { color: var(--muted); }
+
+/* Surfaces: frosted acrylic (gradient, never a backdrop blur) with a glossy top edge. */
+.app-shell[data-theme=millennium] :is(.channel-card, .list-card, .empty-state, .selection-row, .selection-lead, .device-note, .favorites-lists, .notice, .desktop-channel-panel, .desktop-programme-panel, .filter-panel, .expanded-guide, .guide-row, .guide-intro, .guide-channel-summary, .up-next, .player-shell, .home-favorite-row button, .home-category-grid button:nth-child(n)) {
+  background: var(--frost);
+  border: 1px solid var(--hair);
+  color: var(--text);
+  box-shadow: var(--skin-surface-shadow);
+}
+.app-shell[data-theme=millennium] :is(.channel-card, .list-card, .selection-row, .home-favorite-row button) { border-radius: 18px; }
+.app-shell[data-theme=millennium] :is(.desktop-channel-panel, .desktop-programme-panel, .filter-panel, .expanded-guide, .home-category-grid button:nth-child(n), .favorites-lists, .selection-lead) { border-radius: 22px; }
+.app-shell[data-theme=millennium] .guide-explorer { background: transparent; border: 0; box-shadow: none; }
+.app-shell[data-theme=millennium] :is(.channel-card, .home-category-grid button:nth-child(n), .home-favorite-row button):hover {
+  border-color: rgba(190, 228, 255, .5);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .2), 0 0 0 1px rgba(143, 216, 255, .18), 0 22px 44px -18px rgba(1, 4, 18, .9), 0 0 30px -6px rgba(143, 216, 255, .3);
+}
+.app-shell[data-theme=millennium] :is(.card-visual, .home-favorite-art) { background: radial-gradient(110% 100% at 50% 0%, #253a78, #0e1736 74%); border-color: var(--hair); }
+.app-shell[data-theme=millennium] .brand-has-logo { border-radius: 12px; outline: 1px solid rgba(10, 20, 50, .1); outline-offset: -1px; box-shadow: 0 8px 22px -10px rgba(0, 0, 0, .8); }
+.app-shell[data-theme=millennium] .brand-has-logo.brand-logo-dark { background: #18254f; border-color: var(--hair); }
+.app-shell[data-theme=millennium] .home-favorite-row .home-favorite-item > .home-favorite-fav,
+.app-shell[data-theme=millennium] .card-favorite { background: rgba(10, 16, 40, .9); border-color: var(--hair); }
+.app-shell[data-theme=millennium] .playback-tag { background: rgba(6, 10, 28, .86); border-color: rgba(190, 228, 255, .16); }
+.app-shell[data-theme=millennium] .desktop-channel-row { background: rgba(26, 38, 82, .6); border-color: var(--hair); border-radius: 14px; }
+.app-shell[data-theme=millennium] .desktop-channel-row:hover { background: rgba(36, 52, 108, .78); border-color: rgba(190, 228, 255, .42); }
+.app-shell[data-theme=millennium] .tiny-dot { background: var(--hot); }
+
+/* Hero: the river in ice-blue duotone, a CD single catching the light. */
+.app-shell[data-theme=millennium] .desktop-first {
+  background-color: #2b4f9a;
+  background-image:
+    url('/themes/millennium/cd.svg'),
+    radial-gradient(34% 50% at 86% 6%, rgba(255, 255, 255, .26), transparent 70%),
+    linear-gradient(90deg, rgba(6, 10, 30, .94), rgba(6, 10, 30, .55) 52%, rgba(6, 10, 30, .12)),
+    linear-gradient(0deg, rgba(6, 10, 30, .9), transparent 58%),
+    url('/images/onde-river-hero.webp');
+  background-size: clamp(110px, 12vw, 170px), auto, auto, auto, cover;
+  background-position: right 5% top 9%, center, center, center, center 55%;
+  background-repeat: no-repeat;
+  background-blend-mode: normal, normal, normal, normal, luminosity;
+  border: 1px solid rgba(190, 228, 255, .24);
+  border-radius: 24px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .16), 0 30px 80px -30px rgba(80, 160, 255, .45);
+}
+.app-shell[data-theme=millennium] .desktop-first h2 {
+  background: var(--chrome);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #e6edf8;
+}
+.app-shell[data-theme=millennium] .home-hero {
+  background: #2b4f9a url('/images/onde-river-hero.webp') center 55% / cover no-repeat;
+  background-blend-mode: luminosity;
+  border: 1px solid rgba(190, 228, 255, .22);
+  border-radius: 22px;
+  box-shadow: var(--skin-surface-shadow), 0 0 40px -6px rgba(143, 216, 255, .22);
+}
+.app-shell[data-theme=millennium] .home-hero::before { background: linear-gradient(0deg, rgba(6, 10, 30, .94), rgba(6, 10, 30, .12) 80%); }
+.app-shell[data-theme=millennium] .hero-secondary { background: rgba(10, 16, 42, .74); border-color: rgba(190, 228, 255, .3); border-radius: 999px; color: var(--text); -webkit-backdrop-filter: none; backdrop-filter: none; }
+
+/* Buttons: aqua gel pills to press, dark acrylic pills for the rest. */
+.app-shell[data-theme=millennium] :is(.primary, .home-primary),
+.app-shell[data-theme=millennium] .home-primary:hover {
+  background: var(--gel);
+  color: var(--accent-ink);
+  font-weight: 700;
+  border-radius: 999px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .8), inset 0 -2px 6px rgba(0, 70, 150, .22), 0 0 0 1px rgba(40, 120, 200, .4), 0 10px 26px -10px rgba(86, 184, 242, .8);
+}
+.app-shell[data-theme=millennium] :is(.primary, .home-primary):hover { filter: none; box-shadow: inset 0 1px 0 rgba(255, 255, 255, .8), inset 0 -2px 6px rgba(0, 70, 150, .22), 0 0 0 1px rgba(40, 120, 200, .4), 0 0 0 4px rgba(143, 216, 255, .18), 0 12px 30px -10px rgba(86, 184, 242, .95); }
+.app-shell[data-theme=millennium] :is(.secondary, .guide-button, .channel-card .icon-button) { background: rgba(22, 34, 74, .78); border-color: rgba(190, 228, 255, .26); color: #e4efff; border-radius: 999px; }
+.app-shell[data-theme=millennium] :is(.secondary, .guide-button):hover { background: rgba(34, 50, 104, .9); border-color: rgba(198, 238, 255, .55); }
+
+/* Filters, guide and selection: pill tracks, the chosen chip in chrome. */
+.app-shell[data-theme=millennium] .region-tabs { background: rgba(8, 13, 34, .8); border-color: var(--hair); border-radius: 999px; }
+.app-shell[data-theme=millennium] .region-tabs button.active { background: rgba(143, 216, 255, .16); color: #e3f5ff; box-shadow: inset 0 0 0 1px rgba(159, 220, 255, .38); }
+.app-shell[data-theme=millennium] :is(.guide-days button, .guide-periods button) { background: var(--frost); border-color: var(--hair); color: var(--muted); border-radius: 18px; }
+.app-shell[data-theme=millennium] :is(.guide-days button, .guide-periods button)[aria-pressed=true] { background: var(--chrome); border-color: transparent; color: #0a1430; box-shadow: inset 0 1px 0 #fff, inset 0 -1px 0 rgba(60, 80, 120, .35); }
+.app-shell[data-theme=millennium] .programme-live { background: linear-gradient(90deg, rgba(143, 216, 255, .14), transparent 80%); }
+.app-shell[data-theme=millennium] .expanded-programme.programme-live { box-shadow: inset 3px 0 0 var(--hot); }
+.app-shell[data-theme=millennium] .section-count { background: rgba(143, 216, 255, .1); border-color: var(--hair); color: var(--muted); border-radius: 999px; }
+
+/* Player, mini player and dialogs: acrylic cases with a holographic top edge. */
+.app-shell[data-theme=millennium] :is(.player-toolbar, .player-note, .dock-head, .player-resolving, .video-loading, .dock-controls) { background: rgba(10, 16, 42, .95); border-color: var(--hair); color: var(--text); }
+.app-shell[data-theme=millennium] .watch-dock { background: #0e1733; border: 1px solid rgba(190, 228, 255, .26); border-radius: 18px; box-shadow: 0 30px 70px -20px rgba(1, 3, 14, .92), 0 0 36px -6px rgba(143, 216, 255, .22); }
+.app-shell[data-theme=millennium] .modal {
+  background: var(--holo) top / 100% 2px no-repeat, linear-gradient(180deg, #17244e, #0b1230);
+  border: 1px solid rgba(190, 228, 255, .22);
+  border-radius: 24px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .08), 0 40px 100px -20px rgba(1, 3, 14, .95), 0 0 60px -30px rgba(143, 216, 255, .5);
+}
+.app-shell[data-theme=millennium] .modal::backdrop { background: rgba(3, 6, 18, .76); }
+.app-shell[data-theme=millennium] .toast { background: var(--gel); color: var(--accent-ink); border-radius: 999px; box-shadow: inset 0 1px 0 rgba(255, 255, 255, .8), 0 12px 30px -10px rgba(86, 184, 242, .8); }
+.app-shell[data-theme=millennium] .mobile-nav { background: #070c20; border-color: var(--hair); -webkit-backdrop-filter: none; backdrop-filter: none; }
+.app-shell[data-theme=millennium] .mobile-nav button.active { background: rgba(143, 216, 255, .16); color: #e3f5ff; border-radius: 999px; box-shadow: inset 0 0 0 1px rgba(159, 220, 255, .34); }
+
+/* Sign-in. */
+.access-page.app-shell[data-theme=millennium] .access-halo { background: radial-gradient(closest-side, rgba(143, 216, 255, .2), transparent); }
+.app-shell[data-theme=millennium] .access-card { background: var(--holo) top / 100% 2px no-repeat, linear-gradient(180deg, rgba(26, 40, 86, .92), rgba(10, 16, 42, .95)); border-color: rgba(190, 228, 255, .22); }
+
+/* Réglages tile: two beams crossing over a silver stage grid, a CD and a glint. */
+.settings-skins .theme-option[data-theme-id=millennium] .theme-preview {
+  background:
+    repeating-linear-gradient(180deg, transparent 0 5px, rgba(205, 228, 255, .32) 5px 6px) 0 100% / 100% 32% no-repeat,
+    linear-gradient(90deg, transparent, rgba(255, 159, 214, .7), #eaf6ff, rgba(147, 226, 255, .7), transparent) 0 68% / 100% 1px no-repeat,
+    conic-gradient(at 8% -6%, transparent 0 128deg, rgba(220, 240, 255, .32) 136deg, transparent 144deg 360deg),
+    conic-gradient(at 92% -6%, transparent 0 216deg, rgba(220, 240, 255, .32) 224deg, transparent 232deg 360deg),
+    radial-gradient(60% 50% at 50% 70%, rgba(143, 216, 255, .32), transparent 70%),
+    linear-gradient(180deg, #0a1439, #13245e 68%, #070b20 68.5%);
+}
+.settings-skins .theme-option[data-theme-id=millennium] .theme-preview::before {
+  left: auto;
+  right: 24%;
+  top: 14%;
+  width: 30px;
+  height: 30px;
+  border: 0;
+  border-radius: 50%;
+  background: url('/themes/millennium/cd.svg') center / contain no-repeat;
+  box-shadow: 0 0 16px rgba(143, 216, 255, .45);
+}
+.settings-skins .theme-option[data-theme-id=millennium] .theme-preview::after { display: none; }
+.settings-skins .theme-option[data-theme-id=millennium] .theme-preview i { width: 14px; height: 14px; border-radius: 0; background: url('/themes/millennium/sparkle.svg') center / contain no-repeat; filter: none; }
+.settings-skins .theme-option[data-theme-id=millennium] .theme-preview i:first-child { left: 14%; top: 14%; }
+.settings-skins .theme-option[data-theme-id=millennium] .theme-preview i:last-child { right: auto; left: 40%; bottom: auto; top: 34%; width: 9px; height: 9px; opacity: .9; }
+
+/* The shared pause (page swaps) reaches descendants only; the flare is the backdrop's own pseudo-element. */
+:is(.theme-backdrop.is-paused, .theme-backdrop.is-resting).backdrop-millennium::before { animation-play-state: paused; }
+
+@keyframes millennium-sweep-left { from { transform: rotate(-30deg); } to { transform: rotate(-12deg); } }
+@keyframes millennium-sweep-right { from { transform: rotate(30deg); } to { transform: rotate(12deg); } }
+@keyframes millennium-sweep-centre { from { transform: rotate(-7deg); } to { transform: rotate(9deg); } }
+@keyframes millennium-twinkle {
+  0%, 100% { opacity: .08; transform: scale(.3) rotate(0deg); }
+  50% { opacity: .75; transform: scale(1) rotate(45deg); }
+}
+@keyframes millennium-flare { from { opacity: .5; transform: scale(.96); } to { opacity: .8; transform: scale(1.03); } }
+
+@media (max-width: 760px) {
+  .app-shell[data-theme=millennium] .backdrop-millennium::before { width: 120vw; right: -40%; top: 34px; }
+  .app-shell[data-theme=millennium] .theme-beams i { width: 90vw; margin-left: -45vw; }
+  .app-shell[data-theme=millennium] .theme-beams i:nth-child(3) { display: none; }
+  .app-shell[data-theme=millennium] .theme-sparkles i { width: 11px; height: 11px; }
+  .app-shell[data-theme=millennium] .theme-sparkles i:nth-child(n+6) { display: none; }
+  .app-shell[data-theme=millennium] .theme-sparkles i:nth-child(1) { left: 3%; top: 21%; }
+  .app-shell[data-theme=millennium] .theme-sparkles i:nth-child(2) { left: 93%; top: 31%; }
+  .app-shell[data-theme=millennium] .theme-sparkles i:nth-child(3) { left: 2%; top: 47%; }
+  .app-shell[data-theme=millennium] .theme-sparkles i:nth-child(4) { left: 94%; top: 60%; width: 14px; height: 14px; }
+  .app-shell[data-theme=millennium] .theme-sparkles i:nth-child(5) { left: 4%; top: 72%; }
+  .app-shell[data-theme=millennium] .backdrop-millennium {
+    background:
+      radial-gradient(60% 16% at 50% 78%, rgba(143, 216, 255, .2), transparent 70%),
+      radial-gradient(90% 40% at 50% -10%, rgba(70, 110, 230, .34), transparent 70%),
+      linear-gradient(180deg, #070d29 0%, #0a1439 50%, #11205a 78%, #070b20 78.12%, #060a1c 100%);
+  }
+  .app-shell[data-theme=millennium] .backdrop-millennium::after,
+  .app-shell[data-theme=millennium] .theme-stage-floor { top: 78%; }
+  .app-shell[data-theme=millennium] .theme-stage-floor { opacity: .4; }
+  .app-shell[data-theme=millennium] :is(.page-heading h1, .access-card h1) { font-size: 24px; }
+  .app-shell[data-theme=millennium] :is(.home-section-heading h2, .section-heading h2, .selection-theme-head h2, .favorites-lists h2) { font-size: 16px; }
+  .app-shell[data-theme=millennium] :is(.home-hero h2, .desktop-first h2) { font-size: 19px; line-height: 1.22; }
+  .app-shell[data-theme=millennium] .desktop-first { background-size: 0 0, auto, auto, auto, cover; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .app-shell[data-theme=millennium] .backdrop-millennium::before,
+  .app-shell[data-theme=millennium] :is(.theme-beams i, .theme-sparkles i) { animation: none; }
+}

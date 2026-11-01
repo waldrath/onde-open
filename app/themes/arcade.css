@@ -1,0 +1,153 @@
+/* Arcade — a coin-op cabinet in attract mode: navy cabinet, square chunky panels
+   with hard offset shadows, score-board mono headings, coin-yellow controls with
+   pink and cyan trim, and pixel sprites idling over a neon floor. */
+.app-shell[data-theme=arcade] {
+  --bg: #070a1f;
+  --panel: #0e1330;
+  --panel2: #141a40;
+  --surface: #0e1330;
+  --surface-raised: #161d48;
+  --line: #28316e;
+  --border: #36418c;
+  --text: #f3f5ff;
+  --copy: #f3f5ff;
+  --muted: #a9b2de;
+  --quiet: #a9b2de;
+  --accent: #ffd23f;
+  --accent-ink: #1c1500;
+  --focus: #36e2ff;
+  --sidebar: #080b22;
+  --skin-bar: #080b22;
+  --skin-card: #0e1330;
+  --skin-tile: #0e1330;
+  --skin-hero: linear-gradient(160deg, #1b2156, #0a0d28);
+  --skin-glow: rgba(255, 210, 63, .25);
+  --skin-radius: 0px;
+  --skin-accent: #ffd23f;
+  --skin-line: #28316e;
+  --skin-heading-font: var(--font-mono);
+  --skin-heading-tracking: .02em;
+  --skin-heading-transform: uppercase;
+  --skin-heading-shadow: 3px 3px 0 #ff4f9a;
+  --skin-icon-radius: 0;
+  --skin-icon-bg: #161d48;
+  --skin-icon-border: #36418c;
+  --skin-icon-color: #36e2ff;
+  --skin-icon-shadow: 2px 2px 0 #03050f;
+  --skin-surface-shadow: 5px 5px 0 #03050f;
+  --hard: 5px 5px 0 #03050f;
+  background: #070a1f;
+}
+
+/* Backdrop: starfield pixels, an idling alien, the cabinet floor grid running toward you. */
+.backdrop-arcade { background: radial-gradient(70% 40% at 50% 64%, rgba(255, 79, 154, .16), transparent 70%), linear-gradient(180deg, #050716 0%, #0b0f2e 62%, #070a1f 62.2%); }
+.backdrop-arcade::before {
+  inset: 62% -40% auto;
+  height: 110%;
+  background-image: linear-gradient(rgba(54, 226, 255, .4) 2px, transparent 2px), linear-gradient(90deg, rgba(255, 79, 154, .38) 2px, transparent 2px);
+  background-size: 64px 48px;
+  transform-origin: 50% 0;
+  transform: perspective(280px) rotateX(68deg);
+  mask-image: linear-gradient(#000, transparent 55%);
+  opacity: .5;
+  animation: arcade-floor 8s linear infinite;
+}
+/* High-score corner: the Onde TV mascot and a row of coins beside the page title. */
+.backdrop-arcade::after {
+  inset: 0;
+  background: url('/themes/arcade/tv.svg') right 18% top 100px / 54px auto no-repeat, url('/themes/arcade/coin.svg') right calc(18% + 84px) top 128px / 20px auto no-repeat, url('/themes/arcade/coin.svg') right calc(18% + 112px) top 128px / 20px auto no-repeat, url('/themes/arcade/coin.svg') right calc(18% + 140px) top 128px / 20px auto no-repeat;
+  image-rendering: pixelated;
+  opacity: .7;
+}
+.backdrop-arcade :is(.backdrop-aura, .backdrop-mesh, .backdrop-rings, .backdrop-specks, .backdrop-grain) { display: none; }
+.backdrop-arcade .theme-pixels { inset: 0 0 40%; }
+.backdrop-arcade .theme-pixels i { width: 3px; height: 3px; box-shadow: none; opacity: .2; animation: arcade-blink 9s steps(1) infinite alternate; }
+.backdrop-arcade .theme-pixels i:nth-child(odd) { background: #36e2ff; animation-duration: 12s; }
+.backdrop-arcade .theme-pixels i:nth-child(n+8) { display: none; }
+.backdrop-arcade .theme-pixels::before { content: ""; position: absolute; left: 0; top: 92%; width: 44px; height: 32px; background: url('/themes/arcade/alien.svg') center / contain no-repeat; image-rendering: pixelated; opacity: .5; animation: arcade-alien 48s linear infinite; }
+@keyframes arcade-floor { to { transform: perspective(280px) rotateX(68deg) translateY(48px); } }
+@keyframes arcade-blink { to { opacity: .9; } }
+@keyframes arcade-alien { from { transform: translateX(-60px); } to { transform: translateX(calc(100vw + 60px)); } }
+
+/* Chrome: solid cabinet side panels; every surface and control is pixel-square. */
+.app-shell[data-theme=arcade] :is(.sidebar, .topbar, .mobile-nav) { background: #080b22; border-color: var(--line); -webkit-backdrop-filter: none; backdrop-filter: none; }
+.app-shell[data-theme=arcade] .topbar::after { height: 2px; background: repeating-linear-gradient(90deg, #ff4f9a 0 8px, transparent 8px 16px); opacity: .7; }
+.app-shell[data-theme=arcade] :is(.nav-item, .search-box, .profile-avatar, .icon-button, .region-tabs, .region-tabs button, .guide-days button, .guide-periods button, .mobile-nav button, select, .playback-tag, .section-count, .toast, .notice, .dock-close, .brand, .home-primary, .filter-toggle, .guide-date-input input, .guide-tools select, .guide-tools input, .guide-filter-disclosure, .expanded-guide, .guide-channel-logo, .guide-notice, .access-locale, .access-locale button, .auth-setup, .auth-form input, .primary, .secondary, .hero-secondary, .channel-card, .list-card, .selection-row, .empty-state, .selection-lead, .device-note, .guide-row, .guide-intro, .desktop-channel-panel, .desktop-programme-panel, .up-next, .player-shell, .search-results, .guide-explorer, .favorites-lists, .filter-panel, .home-hero, .desktop-first, .card-visual, .home-favorite-art, .home-favorite-row button, .desktop-channel-row, .home-category-grid button) { border-radius: 0; }
+.app-shell[data-theme=arcade] :is(.nav-item, .mobile-nav button, .eyebrow, .hero-eyebrow, .access-kicker, .settings-label, .playback-tag, .section-count) { font-family: var(--font-mono); }
+.app-shell[data-theme=arcade] :is(.eyebrow, .hero-eyebrow, .access-kicker) { color: #36e2ff; letter-spacing: .14em; }
+.app-shell[data-theme=arcade] .nav-item:hover { background: #161d48; color: #fff; }
+.app-shell[data-theme=arcade] .nav-item.nav-active { background: #ffd23f; color: var(--accent-ink); box-shadow: 4px 4px 0 #ff4f9a; }
+.app-shell[data-theme=arcade] .nav-item.nav-active::before { display: none; }
+.app-shell[data-theme=arcade] .nav-item.nav-active > svg:first-of-type { background: #1c1500; border-color: #1c1500; color: #ffd23f; box-shadow: none; }
+.app-shell[data-theme=arcade] .logo-period { color: #ffd23f; }
+.app-shell[data-theme=arcade] :focus-visible { outline: 3px solid #36e2ff; outline-offset: 2px; }
+
+/* Headings: score-board caps with a hard pink drop and a pixel-dash underline. */
+.app-shell[data-theme=arcade] :is(.page-heading h1, .home-section-heading h2, .section-heading h2, .selection-theme-head h2, .modal h2, .list-open h3, .home-hero h2, .favorites-lists h2, .access-card h1, .desktop-panel-heading h2, .settings-section h3) { font-family: var(--font-mono); font-weight: 800; text-wrap: balance; }
+.app-shell[data-theme=arcade] :is(.home-section-heading h2, .section-heading h2, .selection-theme-head h2, .favorites-lists h2, .list-open h3, .modal h2) { text-shadow: 2px 2px 0 #2c3a9e; }
+.app-shell[data-theme=arcade] .page-heading h1::after { width: 84px; height: 6px; border-radius: 0; background: repeating-linear-gradient(90deg, #ffd23f 0 6px, transparent 6px 12px); box-shadow: none; opacity: 1; }
+
+/* Panels: square, chunky, lifted by a hard shadow; hover lifts further. */
+.app-shell[data-theme=arcade] :is(.channel-card, .list-card, .home-category-grid button, .desktop-channel-panel, .desktop-programme-panel, .filter-panel, .empty-state) { border: 2px solid var(--border); box-shadow: var(--hard); }
+.app-shell[data-theme=arcade] .channel-card { transition: transform var(--dur-fast) var(--ease-out), box-shadow var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out); }
+.app-shell[data-theme=arcade] .channel-card:hover { transform: translate(-3px, -3px); border-color: #ffd23f; box-shadow: 8px 8px 0 #ff4f9a; }
+.app-shell[data-theme=arcade] .home-category-grid button:hover { border-color: #36e2ff; box-shadow: 8px 8px 0 #03050f; filter: none; }
+.app-shell[data-theme=arcade] :is(.card-visual, .home-favorite-art) { background: #161d48; }
+.app-shell[data-theme=arcade] :is(.card-visual, .home-favorite-art, .desktop-channel-row) img { outline: 1px solid rgba(255, 255, 255, .1); outline-offset: -1px; }
+.app-shell[data-theme=arcade] .desktop-channel-row:hover { border-color: #36e2ff; background: #1a2257; }
+.app-shell[data-theme=arcade] :is(.playback-tag, .card-favorite, .home-favorite-fav, .hero-secondary) { -webkit-backdrop-filter: none; backdrop-filter: none; }
+.app-shell[data-theme=arcade] .playback-tag { background: #070a1f; border-color: #36418c; color: #f3f5ff; }
+.app-shell[data-theme=arcade] :is(.card-favorite, .home-favorite-row .home-favorite-item > .home-favorite-fav) { background: #0e1330; border: 2px solid #36418c; border-radius: 0; box-shadow: 2px 2px 0 #03050f; }
+
+/* Heroes: the photograph on a CRT, scanlines baked in. */
+.app-shell[data-theme=arcade] .desktop-first {
+  border: 2px solid #36418c;
+  box-shadow: var(--hard), inset 0 0 0 4px #070a1f;
+  background-image: repeating-linear-gradient(0deg, rgba(3, 5, 15, .28) 0 1px, transparent 1px 3px), linear-gradient(0deg, rgba(7, 10, 31, .96) 10%, rgba(7, 10, 31, .4) 60%, rgba(7, 10, 31, .15)), url('/images/onde-river-hero.webp');
+  background-size: auto, auto, cover;
+  background-position: 0 0, center, center 55%;
+}
+.app-shell[data-theme=arcade] .home-hero { box-shadow: inset 0 0 0 2px #36418c, var(--hard); }
+.app-shell[data-theme=arcade] .home-hero::after { border: 0; border-radius: 0; width: 64px; height: 56px; right: 18px; top: 16px; background: url('/themes/arcade/tv.svg') center / contain no-repeat; image-rendering: pixelated; box-shadow: none; opacity: .9; }
+
+/* Controls: coin-yellow buttons that press down. */
+.app-shell[data-theme=arcade] :is(.primary, .home-primary) { background: #ffd23f; color: var(--accent-ink); box-shadow: 0 4px 0 #b8860b, 4px 8px 0 #03050f; }
+.app-shell[data-theme=arcade] :is(.primary, .home-primary):hover { background: #ffdf6b; filter: none; box-shadow: 0 4px 0 #b8860b, 4px 8px 0 #ff4f9a; }
+.app-shell[data-theme=arcade] :is(.primary, .home-primary):active { transform: translateY(3px); box-shadow: 0 1px 0 #b8860b, 2px 4px 0 #03050f; }
+.app-shell[data-theme=arcade] :is(.secondary, .hero-secondary) { background: #161d48; border: 2px solid #36418c; color: #fff; box-shadow: 3px 3px 0 #03050f; }
+.app-shell[data-theme=arcade] :is(.secondary, .hero-secondary):hover { border-color: #36e2ff; background: #1c2458; }
+.app-shell[data-theme=arcade] :is(.desktop-panel-heading button, .home-section-heading > button, .home-carousel-all, .text-button, .notice button, .notice a) { color: #36e2ff; }
+.app-shell[data-theme=arcade] .region-tabs button.active { background: #ff4f9a; color: #1a0410; }
+.app-shell[data-theme=arcade] .guide-periods button[aria-pressed=true] { background: #ffd23f; border-color: #ffd23f; color: var(--accent-ink); box-shadow: 3px 3px 0 #ff4f9a; }
+.app-shell[data-theme=arcade] .guide-days button[aria-pressed=true] { background: #ff4f9a; border-color: #ff4f9a; color: #1a0410; box-shadow: 3px 3px 0 #03050f; }
+.app-shell[data-theme=arcade] .expanded-programme.programme-live { box-shadow: inset 4px 0 0 #ffd23f; }
+
+/* Dialogs, player and mini player. */
+.app-shell[data-theme=arcade] :is(.watch-section, .watch-dock, .modal, .help-backdrop, .guide-explorer) { --line: #28316e; --accent: #ffd23f; --text: #f3f5ff; --muted: #a9b2de; color: #f3f5ff; }
+.app-shell[data-theme=arcade] :is(.modal, .watch-dock, .access-card) { background: #0e1330; border: 2px solid #36418c; border-radius: 0; box-shadow: 8px 8px 0 #03050f; }
+.app-shell[data-theme=arcade] .modal::backdrop { background: rgba(3, 5, 15, .82); }
+.app-shell[data-theme=arcade] .mobile-nav button.active { background: #ffd23f; color: var(--accent-ink); }
+.app-shell[data-theme=arcade] :is(.toast, .notice) { background: #ffd23f; color: var(--accent-ink); border: 2px solid #1c1500; box-shadow: 4px 4px 0 #ff4f9a; }
+
+/* Réglages tile: the TV mascot on the cabinet floor. */
+.settings-skins .theme-option[data-theme-id=arcade] .theme-preview {
+  background:
+    url('/themes/arcade/tv.svg') 50% 36% / 30px auto no-repeat,
+    linear-gradient(rgba(54, 226, 255, .45) 1px, transparent 1px) 0 0 / 100% 8px,
+    linear-gradient(180deg, #050716 0 52%, #0b0f2e 52%);
+  image-rendering: pixelated;
+}
+.settings-skins .theme-option[data-theme-id=arcade] .theme-preview::before,
+.settings-skins .theme-option[data-theme-id=arcade] .theme-preview i { display: none; }
+.settings-skins .theme-option[data-theme-id=arcade] .theme-preview::after { left: 0; right: 0; bottom: 48%; height: 2px; background: repeating-linear-gradient(90deg, #ff4f9a 0 4px, transparent 4px 8px); box-shadow: none; }
+
+@media (max-width: 760px) {
+  .app-shell[data-theme=arcade] { --skin-heading-tracking: -.03em; }
+  .app-shell[data-theme=arcade] :is(.channel-card, .list-card, .home-category-grid button) { box-shadow: 3px 3px 0 #03050f; }
+  .backdrop-arcade::after { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .backdrop-arcade::before,
+  .backdrop-arcade .theme-pixels i,
+  .backdrop-arcade .theme-pixels::before { animation: none; }
+}

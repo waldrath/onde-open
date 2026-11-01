@@ -7,25 +7,16 @@ import fs from 'node:fs';
 // lib/channels.ts). These tests read the JSON directly so they run
 // under plain `node --test`, like the other suites, without a bundler
 // resolving the JSON imports.
-const CATALOGUE_FILES = [
-  'data/channels/base.json',
-  'data/channels/ca.json',
-  'data/channels/fr.json',
-  'data/channels/us.json',
-  'data/channels/se.json',
-];
+// Generated country files, in the order lib/channels.ts loads them.
+const COUNTRY_FILES = ['ca', 'fr', 'us', 'se', 'cm', 'be', 'ch', 'lu', 'sn', 'ci', 'cd', 'ht'];
+const CATALOGUE_FILES = ['data/channels/base.json', ...COUNTRY_FILES.map((code) => `data/channels/${code}.json`)];
 const channels = CATALOGUE_FILES.flatMap((file) => JSON.parse(fs.readFileSync(file, 'utf8')));
 const imported = channels.filter((channel) => channel.source === 'iptv-org');
 
 const REQUIRED = ['id', 'name', 'brand', 'region', 'category', 'color', 'description', 'official', 'guide'];
-const REGIONS = ['Québec', 'Canada', 'France', 'USA', 'Suède', 'International'];
+const REGIONS = ['Québec', 'Canada', 'France', 'USA', 'Suède', 'Cameroun', 'Belgique', 'Suisse', 'Luxembourg', 'Sénégal', "Côte d'Ivoire", 'RD Congo', 'Haïti', 'International'];
 const RESOLVERS = ['telequebec', 'cpac', 'france24', 'youtube', 'tfo', 'public-senat'];
-const PLAYLISTS = [
-  'https://iptv-org.github.io/iptv/countries/ca.m3u',
-  'https://iptv-org.github.io/iptv/countries/fr.m3u',
-  'https://iptv-org.github.io/iptv/countries/us.m3u',
-  'https://iptv-org.github.io/iptv/countries/se.m3u',
-];
+const PLAYLISTS = COUNTRY_FILES.map((code) => `https://iptv-org.github.io/iptv/countries/${code}.m3u`);
 // Provenance of an imported stream: a country playlist or the streams
 // export of the iptv-org database (database-only channels).
 const SOURCES = [...PLAYLISTS, 'https://iptv-org.github.io/api/streams.json'];
@@ -151,21 +142,63 @@ test('iptv-org imports are playable HLS streams with a known provenance', () => 
     // sniffs those candidates), so the extension is not a reliable rule.
     assert.ok(channel.stream.startsWith('http'), `${channel.id}: stream URL`);
     assert.ok(SOURCES.includes(channel.directory), `${channel.id}: unknown provenance`);
-    assert.ok(['Canada', 'France', 'USA', 'Québec', 'Suède', 'International'].includes(channel.region), `${channel.id}: imported region`);
+    assert.ok(REGIONS.includes(channel.region), `${channel.id}: imported region`);
     assert.equal(channel.embed, undefined, `${channel.id}: imports never carry embeds`);
     assert.equal(channel.resolve, undefined, `${channel.id}: imports never carry resolvers`);
   }
 });
 
 test('Radio-Canada imports coexist with the curated ici-tele entry', () => {
+  // ICI RDI is imported only while its official stream plays from Canada
+  // (the importer's playability probe); when present it is French and HTTPS.
   const rdi = channels.find((channel) => channel.id === 'ici-rdi');
-  assert.ok(rdi?.stream?.startsWith('https://'), 'ici-rdi must be imported with its official HLS stream');
+  if (rdi) {
+    assert.ok(rdi.stream?.startsWith('https://'), 'ici-rdi must use its official HLS stream');
+    assert.equal(rdi.language, 'fr', 'ici-rdi is French');
+  }
   const tele = channels.find((channel) => channel.id === 'ici-radio-canada-tele');
   assert.ok(tele, 'the ICI Télé import is missing from the catalogue');
   assert.equal(tele.name, 'ICI Télé', 'one card for every ICI Télé station');
   assert.equal(tele.limited, true, 'ICI Télé variants are geo-blocked (Canada only)');
   const labels = (tele.streamAlts ?? []).map((alternate) => alternate.label);
   assert.ok(labels.includes('Montréal'), 'the Montréal station is a variant of the single card');
+});
+
+test('Cameroon imports are French or English cards of the Cameroun region', () => {
+  const cameroon = JSON.parse(fs.readFileSync('data/channels/cm.json', 'utf8'));
+  assert.ok(cameroon.length > 0, 'expected Cameroonian channels');
+  for (const channel of cameroon) {
+    assert.equal(channel.region, 'Cameroun', `${channel.id}: region`);
+    assert.ok(['fr', 'en'].includes(channel.language), `${channel.id}: language`);
+    assert.ok(
+      ['https://iptv-org.github.io/iptv/countries/cm.m3u', 'https://iptv-org.github.io/api/streams.json'].includes(channel.directory),
+      `${channel.id}: provenance`,
+    );
+  }
+});
+
+test('francophone country files carry their region and a French (or English) language', () => {
+  const expected = {
+    be: ['Belgique', ['fr']], ch: ['Suisse', ['fr']], lu: ['Luxembourg', ['fr']],
+    sn: ['Sénégal', ['fr', 'en']], ci: ["Côte d'Ivoire", ['fr', 'en']], cd: ['RD Congo', ['fr', 'en']], ht: ['Haïti', ['fr', 'en']],
+  };
+  for (const [code, [region, languages]] of Object.entries(expected)) {
+    for (const channel of JSON.parse(fs.readFileSync(`data/channels/${code}.json`, 'utf8'))) {
+      assert.equal(channel.region, region, `${channel.id}: region`);
+      assert.ok(languages.includes(channel.language), `${channel.id}: language`);
+    }
+  }
+});
+
+test('native-HLS-only channels play over HTTPS only', () => {
+  const native = channels.filter((channel) => channel.nativeHlsOnly !== undefined);
+  assert.ok(native.length > 0, 'expected native-HLS-only channels (Pluto TV relays)');
+  for (const channel of native) {
+    assert.equal(channel.nativeHlsOnly, true, `${channel.id}: nativeHlsOnly must be true when present`);
+    assert.ok(channel.stream?.startsWith('https://'), `${channel.id}: https stream`);
+    assert.equal(channel.insecureStream, undefined, `${channel.id}: never insecure`);
+    for (const alternate of channel.streamAlts ?? []) assert.ok(alternate.url.startsWith('https://'), `${channel.id}: https variants`);
+  }
 });
 
 test('paid channels stay official-link-only (no stream, embed or resolver)', () => {

@@ -1,0 +1,228 @@
+/* Marée — under the swell: deep-sea teal lit from the surface by a net of
+   caustics, bioluminescent aqua for everything alive, a slow tide glow at the
+   bottom, a few bubbles, and soft, rounded, water-worn shapes.
+   Motion: two caustic layers drift against each other, the tide sways, four
+   bubbles rise; transform/opacity only. */
+.app-shell[data-theme=ocean] {
+  --bg: #021218;
+  --panel: #062430;
+  --panel2: #0a2f3c;
+  --surface: #062430;
+  --surface-raised: #0b3341;
+  --sidebar: #031820;
+  --line: #134653;
+  --border: #1d5868;
+  --text: #e4fbff;
+  --copy: #e4fbff;
+  --muted: #98c8d1;
+  --quiet: #98c8d1;
+  --accent: #4ee8d2;
+  --accent-ink: #012019;
+  --focus: #7ff3e2;
+  --water: linear-gradient(180deg, rgba(10, 54, 68, .78), rgba(4, 30, 40, .86));
+  --hair: rgba(120, 240, 225, .14);
+  --skin-bar: rgba(3, 22, 30, .8);
+  --skin-card: var(--water);
+  --skin-tile: var(--water);
+  --skin-hero: linear-gradient(135deg, #07384a, #021218);
+  --skin-radius: 22px;
+  --skin-line: var(--hair);
+  --skin-accent: #4ee8d2;
+  --skin-glow: rgba(78, 232, 210, .28);
+  --skin-surface-shadow: inset 0 1px 0 rgba(200, 255, 245, .06), 0 20px 44px -18px rgba(0, 8, 14, .8);
+  --skin-heading-font: var(--font-heading);
+  --skin-heading-tracking: -.02em;
+  --skin-heading-shadow: none;
+  --skin-icon-radius: 14px;
+  --skin-icon-bg: linear-gradient(160deg, rgba(78, 232, 210, .2), rgba(5, 40, 52, .85));
+  --skin-icon-border: rgba(120, 240, 225, .28);
+  --skin-icon-color: #9ff7ea;
+  --skin-icon-shadow: 0 0 14px rgba(78, 232, 210, .14);
+  background: var(--bg);
+}
+.app-shell[data-theme=ocean] .watch-section,
+.app-shell[data-theme=ocean] .watch-dock,
+.app-shell[data-theme=ocean] .modal,
+.app-shell[data-theme=ocean] .help-backdrop,
+.app-shell[data-theme=ocean] .guide-explorer { --line: #134653; --accent: #4ee8d2; --text: #e4fbff; --muted: #98c8d1; color: #e4fbff; }
+
+/* Backdrop: light from the surface, caustics that fade with depth, the abyss below. */
+.app-shell[data-theme=ocean] .backdrop-ocean {
+  background:
+    radial-gradient(80% 50% at 50% -14%, rgba(70, 200, 210, .26), transparent 70%),
+    linear-gradient(180deg, #063241, #03202b 38%, #021218 75%, #010b10);
+}
+.app-shell[data-theme=ocean] .backdrop-ocean::before,
+.app-shell[data-theme=ocean] .backdrop-ocean::after {
+  content: "";
+  position: absolute;
+  inset: -80px -80px 30%;
+  background: url('/themes/ocean/caustics.svg') 0 0 / 480px 480px;
+  opacity: .075;
+  filter: none;
+  -webkit-mask-image: linear-gradient(180deg, #000, transparent 85%);
+  mask-image: linear-gradient(180deg, #000, transparent 85%);
+  animation: ocean-caustic 26s ease-in-out infinite alternate;
+}
+.app-shell[data-theme=ocean] .backdrop-ocean::after { background-size: 620px 620px; background-position: 140px 90px; opacity: .05; animation-duration: 34s; animation-direction: alternate-reverse; }
+.app-shell[data-theme=ocean] .theme-tide {
+  height: 40%;
+  background: radial-gradient(70% 70% at 50% 100%, rgba(40, 190, 200, .16), transparent 70%);
+  opacity: 1;
+  animation-duration: 24s;
+}
+.app-shell[data-theme=ocean] .theme-bubbles i { border-color: rgba(170, 255, 240, .4); background: radial-gradient(circle at 32% 30%, rgba(255, 255, 255, .35), rgba(78, 232, 210, .05)); }
+.app-shell[data-theme=ocean] .theme-bubbles i:nth-child(n+5) { display: none; }
+.app-shell[data-theme=ocean] .backdrop-aura,
+.app-shell[data-theme=ocean] .backdrop-mesh,
+.app-shell[data-theme=ocean] .backdrop-rings,
+.app-shell[data-theme=ocean] .backdrop-specks { display: none; }
+.app-shell[data-theme=ocean] .backdrop-grain { opacity: .02; }
+
+/* Chrome: deep-water rail without blur, an aqua waterline under the top bar. */
+.app-shell[data-theme=ocean] .sidebar { background: linear-gradient(180deg, rgba(4, 34, 44, .95), rgba(2, 16, 22, .97)); border-color: var(--hair); -webkit-backdrop-filter: none; backdrop-filter: none; }
+.app-shell[data-theme=ocean] .topbar { background: var(--skin-bar); border-color: var(--hair); }
+.app-shell[data-theme=ocean] .topbar::after { background: linear-gradient(90deg, transparent 6%, rgba(78, 232, 210, .55), transparent 94%); opacity: .45; }
+.app-shell[data-theme=ocean] .search-box { background: rgba(6, 40, 52, .7); border-color: var(--hair); border-radius: 999px; }
+.app-shell[data-theme=ocean] .profile-avatar { border-radius: 50%; }
+.app-shell[data-theme=ocean] .logo { font-family: var(--font-heading); letter-spacing: -.06em; }
+
+/* Navigation: soft rounded pills; the active one glows from within. */
+.app-shell[data-theme=ocean] .nav-item { border-radius: 18px; color: var(--muted); }
+.app-shell[data-theme=ocean] .nav-item:hover { background: rgba(120, 240, 225, .07); color: var(--text); }
+.app-shell[data-theme=ocean] .nav-item.nav-active { background: linear-gradient(90deg, rgba(78, 232, 210, .2), rgba(78, 232, 210, .05)); color: #d8fff8; box-shadow: inset 0 0 0 1px rgba(120, 240, 225, .2), 0 0 24px rgba(78, 232, 210, .12); }
+.app-shell[data-theme=ocean] .nav-item.nav-active::before { display: none; }
+.app-shell[data-theme=ocean] .nav-item.nav-active > svg:first-of-type { background: linear-gradient(160deg, #8ff5e6, #3ccfba); border-color: transparent; color: var(--accent-ink); box-shadow: 0 0 16px rgba(78, 232, 210, .45); }
+
+/* Type. */
+.app-shell[data-theme=ocean] .page-heading h1,
+.app-shell[data-theme=ocean] .home-section-heading h2,
+.app-shell[data-theme=ocean] .section-heading h2,
+.app-shell[data-theme=ocean] .selection-theme-head h2,
+.app-shell[data-theme=ocean] .favorites-lists h2,
+.app-shell[data-theme=ocean] .modal h2,
+.app-shell[data-theme=ocean] .home-hero h2,
+.app-shell[data-theme=ocean] .desktop-first h2 { font-family: var(--font-heading); font-style: normal; font-weight: 700; letter-spacing: -.02em; text-wrap: balance; }
+.app-shell[data-theme=ocean] .page-heading h1::after { width: 48px; height: 3px; border-radius: 3px; background: linear-gradient(90deg, var(--accent), rgba(78, 232, 210, 0)); opacity: 1; box-shadow: 0 0 12px rgba(78, 232, 210, .5); }
+.app-shell[data-theme=ocean] .home-section-heading > button,
+.app-shell[data-theme=ocean] .desktop-panel-heading button,
+.app-shell[data-theme=ocean] .home-carousel-all,
+.app-shell[data-theme=ocean] .eyebrow { color: #86eedd; }
+
+/* Hero: the river seen from under the surface, teal-toned with caustic light. */
+.app-shell[data-theme=ocean] .desktop-first {
+  background-color: #0d5560;
+  background-image:
+    linear-gradient(90deg, rgba(2, 20, 28, .9), rgba(2, 20, 28, .35) 55%, rgba(2, 20, 28, .05)),
+    linear-gradient(0deg, rgba(2, 20, 28, .9), transparent 55%),
+    url('/themes/ocean/caustics.svg'),
+    url('/images/onde-river-hero.webp');
+  background-size: auto, auto, 520px 520px, cover;
+  background-position: center, center, 0 0, center 55%;
+  background-blend-mode: normal, normal, soft-light, luminosity;
+  border: 1px solid var(--hair);
+  border-radius: 26px;
+  box-shadow: var(--skin-surface-shadow), 0 30px 90px -30px rgba(40, 200, 200, .3);
+}
+.app-shell[data-theme=ocean] .desktop-first .hero-eyebrow { color: #a8f7ec; }
+.app-shell[data-theme=ocean] .home-hero { background: #0d5560 url('/images/onde-river-hero.webp') center 55% / cover no-repeat; background-blend-mode: luminosity; border: 1px solid var(--hair); border-radius: 24px; box-shadow: var(--skin-surface-shadow); }
+.app-shell[data-theme=ocean] .home-hero::before { background: linear-gradient(0deg, rgba(2, 20, 28, .92), rgba(2, 20, 28, .1) 78%); }
+.app-shell[data-theme=ocean] .hero-secondary { background: rgba(3, 26, 36, .66); border-color: rgba(150, 245, 230, .26); border-radius: 999px; -webkit-backdrop-filter: none; backdrop-filter: none; }
+
+/* Buttons: a bioluminescent pill and deep-water pills. */
+.app-shell[data-theme=ocean] .primary,
+.app-shell[data-theme=ocean] .home-primary { background: linear-gradient(180deg, #8ff5e6, #3fd5c0); color: var(--accent-ink); border-radius: 999px; box-shadow: inset 0 1px 0 rgba(255, 255, 255, .45), 0 10px 26px -10px rgba(78, 232, 210, .75); }
+.app-shell[data-theme=ocean] .primary:hover,
+.app-shell[data-theme=ocean] .home-primary:hover { box-shadow: inset 0 1px 0 rgba(255, 255, 255, .45), 0 0 0 4px rgba(78, 232, 210, .14), 0 12px 30px -10px rgba(78, 232, 210, .85); }
+.app-shell[data-theme=ocean] .secondary,
+.app-shell[data-theme=ocean] .guide-button,
+.app-shell[data-theme=ocean] .channel-card .icon-button { background: rgba(8, 48, 62, .6); border-color: rgba(120, 240, 225, .24); color: #d4fbf5; border-radius: 999px; }
+.app-shell[data-theme=ocean] .secondary:hover,
+.app-shell[data-theme=ocean] .guide-button:hover { background: rgba(12, 66, 82, .75); border-color: rgba(127, 243, 226, .5); }
+
+/* Surfaces: rounded deep-water glass. */
+.app-shell[data-theme=ocean] .channel-card,
+.app-shell[data-theme=ocean] .list-card,
+.app-shell[data-theme=ocean] .empty-state,
+.app-shell[data-theme=ocean] .selection-row,
+.app-shell[data-theme=ocean] .selection-lead,
+.app-shell[data-theme=ocean] .device-note,
+.app-shell[data-theme=ocean] .favorites-lists,
+.app-shell[data-theme=ocean] .notice,
+.app-shell[data-theme=ocean] .desktop-channel-panel,
+.app-shell[data-theme=ocean] .desktop-programme-panel,
+.app-shell[data-theme=ocean] .filter-panel,
+.app-shell[data-theme=ocean] .expanded-guide,
+.app-shell[data-theme=ocean] .up-next,
+.app-shell[data-theme=ocean] .player-shell,
+.app-shell[data-theme=ocean] .home-favorite-row button,
+.app-shell[data-theme=ocean] .home-category-grid button:nth-child(n) { background: var(--water); border: 1px solid var(--hair); color: var(--text); box-shadow: var(--skin-surface-shadow); }
+.app-shell[data-theme=ocean] .desktop-channel-panel,
+.app-shell[data-theme=ocean] .desktop-programme-panel,
+.app-shell[data-theme=ocean] .filter-panel,
+.app-shell[data-theme=ocean] .expanded-guide,
+.app-shell[data-theme=ocean] .home-category-grid button:nth-child(n) { border-radius: 24px; }
+.app-shell[data-theme=ocean] .channel-card:hover,
+.app-shell[data-theme=ocean] .home-category-grid button:nth-child(n):hover { border-color: rgba(127, 243, 226, .4); box-shadow: var(--skin-surface-shadow), 0 0 30px rgba(78, 232, 210, .16); }
+.app-shell[data-theme=ocean] .card-visual,
+.app-shell[data-theme=ocean] .home-favorite-art { background: radial-gradient(100% 120% at 50% 0%, #0f4a5a, #052430 72%); border-color: var(--hair); }
+.app-shell[data-theme=ocean] .guide-explorer { background: transparent; border: 0; box-shadow: none; }
+.app-shell[data-theme=ocean] .brand-has-logo { border-radius: 14px; outline: 1px solid rgba(2, 30, 40, .1); outline-offset: -1px; box-shadow: 0 8px 20px -10px rgba(0, 10, 16, .85); }
+.app-shell[data-theme=ocean] .brand-has-logo.brand-logo-dark { background: #0a3a48; border-color: var(--hair); }
+.app-shell[data-theme=ocean] .card-meta,
+.app-shell[data-theme=ocean] .card-programme.muted,
+.app-shell[data-theme=ocean] .page-heading p,
+.app-shell[data-theme=ocean] .section-heading p { color: var(--muted); }
+.app-shell[data-theme=ocean] .home-favorite-row .home-favorite-item > .home-favorite-fav { background: rgba(3, 26, 36, .88); border-color: var(--hair); }
+.app-shell[data-theme=ocean] .desktop-channel-row { background: rgba(8, 48, 62, .55); border-color: var(--hair); border-radius: 16px; }
+.app-shell[data-theme=ocean] .desktop-channel-row:hover { background: rgba(12, 66, 82, .7); border-color: rgba(127, 243, 226, .36); }
+
+/* Filters, guide and selection. */
+.app-shell[data-theme=ocean] .region-tabs { background: rgba(2, 20, 28, .6); border-color: var(--hair); border-radius: 999px; }
+.app-shell[data-theme=ocean] .region-tabs button { border-radius: 999px; }
+.app-shell[data-theme=ocean] .region-tabs button.active { background: rgba(78, 232, 210, .16); color: #e4fffb; box-shadow: inset 0 0 0 1px rgba(120, 240, 225, .3); }
+.app-shell[data-theme=ocean] .guide-days button { background: var(--water); border-color: var(--hair); color: var(--muted); border-radius: 20px; }
+.app-shell[data-theme=ocean] .guide-periods button { border-color: var(--hair); color: var(--muted); }
+.app-shell[data-theme=ocean] .guide-days button[aria-pressed=true],
+.app-shell[data-theme=ocean] .guide-periods button[aria-pressed=true] { background: linear-gradient(180deg, #8ff5e6, #3fd5c0); border-color: transparent; color: var(--accent-ink); box-shadow: 0 0 22px rgba(78, 232, 210, .35); }
+.app-shell[data-theme=ocean] .programme-live { background: linear-gradient(90deg, rgba(78, 232, 210, .13), transparent 80%); }
+.app-shell[data-theme=ocean] .selection-rank { color: #86eedd; font-weight: 700; }
+
+/* Player, mini player and dialogs. */
+.app-shell[data-theme=ocean] .player-toolbar,
+.app-shell[data-theme=ocean] .player-note,
+.app-shell[data-theme=ocean] .dock-head,
+.app-shell[data-theme=ocean] .player-resolving,
+.app-shell[data-theme=ocean] .video-loading,
+.app-shell[data-theme=ocean] .dock-controls { background: rgba(3, 26, 36, .94); border-color: var(--hair); color: var(--text); }
+.app-shell[data-theme=ocean] .watch-dock { border: 1px solid rgba(120, 240, 225, .24); border-radius: 20px; box-shadow: 0 30px 70px -20px rgba(0, 6, 10, .9), 0 0 30px rgba(40, 200, 190, .14); }
+.app-shell[data-theme=ocean] .modal { background: linear-gradient(180deg, #08313e, #031b24); border: 1px solid rgba(120, 240, 225, .2); border-radius: 26px; box-shadow: inset 0 1px 0 rgba(200, 255, 245, .08), 0 40px 100px -20px rgba(0, 6, 10, .95); }
+.app-shell[data-theme=ocean] .toast { background: #0a3a48; border: 1px solid rgba(120, 240, 225, .35); color: var(--text); }
+.app-shell[data-theme=ocean] .mobile-nav { background: rgba(3, 22, 30, .95); border-color: var(--hair); -webkit-backdrop-filter: none; backdrop-filter: none; }
+.app-shell[data-theme=ocean] .mobile-nav button.active { background: rgba(78, 232, 210, .15); color: #c8fff6; border-radius: 18px; box-shadow: inset 0 0 0 1px rgba(120, 240, 225, .22); }
+.app-shell[data-theme=ocean] :focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+
+/* Sign-in. */
+.app-shell[data-theme=ocean] .access-halo { background: radial-gradient(closest-side, rgba(78, 232, 210, .14), transparent); }
+.app-shell[data-theme=ocean] .access-card { background: linear-gradient(180deg, rgba(10, 54, 68, .88), rgba(3, 26, 36, .92)); border-color: rgba(120, 240, 225, .22); border-radius: 26px; }
+
+/* Réglages tile: caustic light over deep water, a rounded pane. */
+.settings-skins .theme-option[data-theme-id=ocean] .theme-preview {
+  background:
+    url('/themes/ocean/caustics.svg') 0 0 / 160px 160px,
+    radial-gradient(90% 70% at 50% -10%, rgba(80, 220, 210, .5), transparent 70%),
+    linear-gradient(180deg, #07384a, #021218);
+}
+.settings-skins .theme-option[data-theme-id=ocean] .theme-preview::before { border-color: rgba(150, 245, 230, .45); border-radius: 12px; background: linear-gradient(180deg, rgba(20, 90, 100, .55), rgba(4, 30, 40, .6)); box-shadow: 0 0 16px rgba(78, 232, 210, .25); }
+.settings-skins .theme-option[data-theme-id=ocean] .theme-preview::after { background: linear-gradient(90deg, transparent, #4ee8d2, transparent); box-shadow: 0 0 8px #4ee8d2; }
+.settings-skins .theme-option[data-theme-id=ocean] .theme-preview i { width: 8px; height: 8px; border: 1px solid rgba(190, 255, 245, .7); background: none; filter: none; }
+
+@keyframes ocean-caustic {
+  from { transform: translate3d(-24px, -10px, 0) scale(1); }
+  to { transform: translate3d(24px, 16px, 0) scale(1.04); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .app-shell[data-theme=ocean] .backdrop-ocean::before,
+  .app-shell[data-theme=ocean] .backdrop-ocean::after,
+  .app-shell[data-theme=ocean] .theme-bubbles i { animation: none; }
+}

@@ -1,15 +1,27 @@
 import {secretMatches} from '../../../lib/session';
 import {db} from '../../../lib/database';
 import {channels as baseChannels} from '../../../lib/channels';
-import {readCatalogue} from '../../../lib/catalogue-store';
-import {recordHealth,validateChannel,type MaintenanceRun,type ChannelHealth} from '../../../lib/catalogue-maintenance';
+import {readCatalogue,loadCatalogue,invalidateCatalogue,logReadFailure} from '../../../lib/catalogue-store';
+import {clientCatalogue,recordHealth,validateChannel,type MaintenanceRun,type ChannelHealth} from '../../../lib/catalogue-maintenance';
 import {maintenanceInstructions} from '../../../lib/maintenance-instructions';
 export const dynamic='force-dynamic';
 const response=(data:unknown,status=200)=>Response.json(data,{status,headers:{'Cache-Control':'no-store','X-Content-Type-Options':'nosniff'}});
 // Catalogue reads are public; maintenance instructions and writes require the admin secret.
 export async function GET(request:Request){
- if(new URL(request.url).searchParams.has('instructions')){if(!secretMatches(request.headers.get('authorization'),process.env.CATALOGUE_ADMIN_SECRET))return response({error:'Accès refusé'},401);return response({version:1,instructions:maintenanceInstructions});}
- try{return response(await readCatalogue());}catch{return response({error:'Catalogue partagé momentanément indisponible'},503);}
+ const params=new URL(request.url).searchParams;
+ if(params.has('instructions')){if(!secretMatches(request.headers.get('authorization'),process.env.CATALOGUE_ADMIN_SECRET))return response({error:'Accès refusé'},401);return response({version:1,instructions:maintenanceInstructions});}
+ try{
+  // Revalidation instead of a 1.5 MB re-download: the ETag changes only when
+  // the catalogue content does, and the short edge/browser TTL keeps repeat
+  // polls (every five minutes) cheap. `?view=client` is the page's own projection.
+  // `native=0`: the browser has no native HLS, so Safari-only channels are left out (see clientCatalogue).
+  const full=await readCatalogue(),view=params.get('view')==='client'?(params.get('native')==='0'?'client-lean':'client'):'full',data=view==='full'?full:clientCatalogue(full,view==='client');
+  const checkedAt=Object.values(full.health).reduce((latest,check)=>check.checkedAt>latest?check.checkedAt:latest,'0');
+  const etag=`W/"${view}-${full.updatedAt||'0'}-${full.channels.length}-${full.recentIds.length}-${full.latest?.finishedAt||'0'}-${Object.keys(full.health).length}-${checkedAt}"`;
+  const headers={'Cache-Control':'public, max-age=30, s-maxage=60, stale-while-revalidate=300','X-Content-Type-Options':'nosniff','ETag':etag};
+  if(request.headers.get('if-none-match')===etag)return new Response(null,{status:304,headers});
+  return Response.json(data,{headers});
+ }catch(error){logReadFailure(error);return response({error:'Catalogue partagé momentanément indisponible'},503);}
 }
 export async function POST(request:Request){
  if(!secretMatches(request.headers.get('authorization'),process.env.CATALOGUE_ADMIN_SECRET))return response({error:'Accès refusé'},401);
@@ -25,14 +37,15 @@ export async function POST(request:Request){
   if(typeof body.runId!=='string'||body.runId.length>80)throw new Error('Entretien invalide');
   const stored=await db.prepare('SELECT data FROM catalogue_runs WHERE run_id=?').bind(body.runId).first<{data:string}>();if(!stored)throw new Error('Entretien inconnu');
   const run=JSON.parse(stored.data) as MaintenanceRun;if(run.finishedAt)throw new Error('Cet entretien est terminé');
-  const catalogue=await readCatalogue(),known=new Set(catalogue.channels.map(c=>c.id));
+  // Writes start from the database itself, never from a possibly stale cache.
+  const catalogue=await loadCatalogue(),known=new Set(catalogue.channels.map(c=>c.id));
   if(body.operation==='checks'){
    if(!Array.isArray(body.checks)||!body.checks.length||body.checks.length>50)throw new Error('Lot de contrôles invalide');
    const ids=new Set<string>();const rows=body.checks.map((c:{id:string;result:ChannelHealth['result'];note:string})=>{
     if(!known.has(c.id)||ids.has(c.id))throw new Error('Chaîne inconnue ou contrôle en double');ids.add(c.id);
     return recordHealth(catalogue.health[c.id],c.id,c.result,c.note,run.id,now);
    });
-   await db.batch(rows.map((h:ChannelHealth)=>db.prepare('INSERT INTO catalogue_health (channel_id,data) VALUES (?,?) ON CONFLICT(channel_id) DO UPDATE SET data=excluded.data').bind(h.id,JSON.stringify(h))));return response({saved:rows.length});
+   await db.batch(rows.map((h:ChannelHealth)=>db.prepare('INSERT INTO catalogue_health (channel_id,data) VALUES (?,?) ON CONFLICT(channel_id) DO UPDATE SET data=excluded.data').bind(h.id,JSON.stringify(h))));invalidateCatalogue();return response({saved:rows.length});
   }
   if(body.operation==='upsert'){
    if(!Array.isArray(body.channels)||!body.channels.length||body.channels.length>20||typeof body.evidence!=='string'||body.evidence.trim().length<20||body.evidence.length>8000)throw new Error('Sources et preuves requises');
@@ -45,13 +58,13 @@ export async function POST(request:Request){
    }
    run.sources=[...(run.sources||[]),{ids:rows.map(c=>c.id),evidence:body.evidence}].slice(-30);
    statements.push(db.prepare('UPDATE catalogue_runs SET data=? WHERE run_id=?').bind(JSON.stringify(run),run.id));
-   await db.batch(statements);return response({saved:rows.length,ids:rows.map(c=>c.id)});
+   await db.batch(statements);invalidateCatalogue();return response({saved:rows.length,ids:rows.map(c=>c.id)});
   }
   if(body.operation==='finish'){
    if(typeof body.summary!=='string'||!body.summary.trim()||body.summary.length>2500)throw new Error('Résumé requis');
    const checks=Object.values(catalogue.health).filter(h=>h.runId===run.id),changed=await db.prepare('SELECT channel_id,added_at FROM catalogue_entries WHERE run_id=?').bind(run.id).all<{channel_id:string;added_at:string}>();
    run.checked=checks.length;run.added=changed.results.filter(c=>c.added_at>=run.startedAt&&!baseChannels.some(b=>b.id===c.channel_id)).length;run.updated=changed.results.length-run.added;run.finishedAt=now;run.summary=body.summary;
-   await db.prepare('UPDATE catalogue_runs SET data=? WHERE run_id=?').bind(JSON.stringify(run),run.id).run();return response({run});
+   await db.prepare('UPDATE catalogue_runs SET data=? WHERE run_id=?').bind(JSON.stringify(run),run.id).run();invalidateCatalogue();return response({run});
   }
   throw new Error('Opération inconnue');
  }catch(e){return response({error:e instanceof Error?e.message:'Entretien indisponible'},400);}

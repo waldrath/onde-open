@@ -2,9 +2,8 @@
 import {makeId} from '../lib/identifiers';
 import {useCallback,useEffect,useMemo,useRef,useState} from 'react';
 import {applyOperation,emptyPreferences,type Operation,type Preferences} from '../lib/preferences';
-import {channels as baseChannels} from '../lib/channels';
 import {PreferenceCache,clearPreferenceCache,type Snapshot} from '../lib/preference-cache';
-export function usePreferences(userId:string|null,knownChannels:readonly {id:string}[]=baseChannels){
+export function usePreferences(userId:string|null,knownChannels:readonly {id:string}[]){
  const known=useRef(knownChannels);known.current=knownChannels;
  const store=useMemo(()=>new PreferenceCache(userId),[userId]);
  const [rendered,setRendered]=useState<{scope:string|null;data:Preferences}>({scope:userId,data:emptyPreferences});
@@ -24,7 +23,7 @@ export function usePreferences(userId:string|null,knownChannels:readonly {id:str
  },[store,userId,render,flush,expired]);
  useEffect(()=>{
   store.active=true;store.authorized=true;abort.current=new AbortController();setError('');setStatus('loading');try{store.load(localStorage);}catch{}render();void refresh();
-  const update=()=>{if(!document.hidden)void refresh();};const timer=setInterval(update,15000);const logout=()=>{abort.current?.abort();store.deactivate();setRendered({scope:userId,data:emptyPreferences});};const restored=(event:PageTransitionEvent)=>{if(event.persisted&&userId){abort.current?.abort();abort.current=new AbortController();store.generation++;store.busy=false;store.authorized=false;setRendered({scope:userId,data:emptyPreferences});store.serverFresh=false;void refresh();}};const accountEvent=(event:StorageEvent)=>{if(userId&&event.key==='onde-auth-event'){try{clearPreferenceCache(localStorage,userId);}catch{}logout();window.location.assign('/sign-in');}};
+  const update=()=>{if(!document.hidden)void refresh();};const timer=setInterval(update,60000);const logout=()=>{abort.current?.abort();store.deactivate();setRendered({scope:userId,data:emptyPreferences});};const restored=(event:PageTransitionEvent)=>{if(event.persisted&&userId){abort.current?.abort();abort.current=new AbortController();store.generation++;store.busy=false;store.authorized=false;setRendered({scope:userId,data:emptyPreferences});store.serverFresh=false;void refresh();}};const accountEvent=(event:StorageEvent)=>{if(userId&&event.key==='onde-auth-event'){try{clearPreferenceCache(localStorage,userId);}catch{}logout();window.location.assign('/sign-in');}};
   window.addEventListener('focus',update);window.addEventListener('online',update);window.addEventListener('onde-sign-out',logout);window.addEventListener('storage',accountEvent);window.addEventListener('pageshow',restored);document.addEventListener('visibilitychange',update);
   return()=>{abort.current?.abort();store.deactivate();clearInterval(timer);window.removeEventListener('focus',update);window.removeEventListener('online',update);window.removeEventListener('onde-sign-out',logout);window.removeEventListener('storage',accountEvent);window.removeEventListener('pageshow',restored);document.removeEventListener('visibilitychange',update);};
  },[store,userId,render,refresh]);

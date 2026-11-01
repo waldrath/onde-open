@@ -1,0 +1,53 @@
+# Weekly iptv-org refresh: regenerate the country files with the playability
+# probe, test them, and open (or update) a pull request. Never pushes to main,
+# which deploys to production. See data/README.md, "Weekly refresh".
+# Requires Settings > Actions > General > "Allow GitHub Actions to create and
+# approve pull requests".
+name: Refresh iptv-org catalogue
+
+on:
+  schedule:
+    - cron: '17 6 * * 1' # Mondays, 06:17 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: refresh-catalogue
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - name: Regenerate data/channels from iptv-org
+        env:
+          # GitHub runners are in the USA: their verdicts are merged with the
+          # Canadian checks committed in data/geo-checks.json (a stream that
+          # fails from Canada never plays for a Canadian card, new cards wait
+          # for a Canadian check), and their 403s never remove a card nor
+          # clear `limited`. See data/README.md, "Canadian checks".
+          IPTV_PROBE_COUNTRY: us
+          IPTV_REPORT_MARKDOWN: ${{ runner.temp }}/refresh-report.md
+        shell: bash # -eo pipefail: a failing importer fails the step despite tee
+        run: node scripts/import-iptv-org.mjs | tee "$RUNNER_TEMP/refresh-report.json"
+      - run: npm test
+      - name: Open or update the refresh pull request
+        uses: peter-evans/create-pull-request@v8
+        with:
+          branch: catalogue/iptv-org-refresh
+          base: main
+          add-paths: data/channels/*.json
+          commit-message: 'chore(catalogue): weekly iptv-org refresh'
+          title: 'chore(catalogue): weekly iptv-org refresh'
+          body-path: ${{ runner.temp }}/refresh-report.md
+          delete-branch: true

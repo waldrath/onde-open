@@ -1,6 +1,6 @@
 import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';import ts from 'typescript';
 const source=ts.transpile(fs.readFileSync('lib/catalogue-maintenance.ts','utf8'),{module:ts.ModuleKind.ES2022,target:ts.ScriptTarget.ES2022});
-const {recordHealth,validateChannel,mergeCatalogue}=await import('data:text/javascript;base64,'+Buffer.from(source).toString('base64'));
+const {recordHealth,validateChannel,mergeCatalogue,clientCatalogue}=await import('data:text/javascript;base64,'+Buffer.from(source).toString('base64'));
 const c={id:'local-tv',name:'Télé locale',brand:'Télé locale',region:'Québec',language:'fr',category:'Culture',color:'#628a95',description:'La vie locale.',official:'https://diffuseur.example/live',guide:'https://diffuseur.example/horaire',stream:'https://cdn.diffuseur.example/live.m3u8'};
 test('one outage and repeated attempts cannot mark a source suspect; a later success restores it',()=>{
  const a=recordHealth(undefined,c.id,'failed','Timeout','a','2026-10-23T08:00:00Z');assert.equal(a.state,'unknown');assert.equal(a.failures,1);
@@ -30,4 +30,19 @@ test('a discovered channel can be favorited without changing existing favorites 
  const after=applyOperation(before,{type:'favorite',channel:'discovered',value:true},'2026-10-23T08:00:00Z',known);
  assert.deepEqual(after.favorites,['existing','discovered']);assert.deepEqual(before.favorites,['existing']);
  assert.throws(()=>applyOperation(after,{type:'favorite',channel:'unknown',value:true},'2026-10-23T08:00:00Z',known));
+ // A channel that left the catalogue can still be removed, but only with a well-formed id.
+ const retired=applyOperation(after,{type:'favorite',channel:'existing',value:false},'2026-10-23T08:00:00Z',[{id:'discovered'}]);
+ assert.deepEqual(retired.favorites,['discovered']);
+ assert.throws(()=>applyOperation(after,{type:'favorite',channel:'../bad',value:false},'2026-10-23T08:00:00Z',known));
+});
+test('the page payload drops maintenance provenance and passing checks without touching the stored catalogue',()=>{
+ const withProvenance={...c,directory:'https://iptv-org.github.io/iptv/countries/ca.m3u',note:'Part-time schedule'};
+ const ok=recordHealth(undefined,c.id,'ok','Video confirmed','a','2026-10-23T08:00:00Z');
+ const suspect={...recordHealth(undefined,'other','failed','Timeout','a','2026-10-23T08:00:00Z'),state:'suspect'};
+ const payload={channels:[withProvenance],health:{[c.id]:ok,other:suspect},latest:null,recentIds:[c.id],updatedAt:'2026-10-23T08:00:00Z'};
+ const view=clientCatalogue(payload);
+ assert.equal('directory' in view.channels[0],false);assert.equal('note' in view.channels[0],false);
+ assert.equal(view.channels[0].stream,c.stream);assert.deepEqual(Object.keys(view.health),['other']);
+ assert.deepEqual(view.recentIds,[c.id]);assert.equal(payload.channels[0].directory,withProvenance.directory);assert.ok(payload.health[c.id]);
+ assert.equal(clientCatalogue(payload),view,'a cached payload is projected once');
 });

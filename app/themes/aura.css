@@ -1,0 +1,307 @@
+/* Aura — a late-80s / 90s cel-anime power-up: a dramatic night sky over a
+   rocky wasteland, speed lines radiating from the horizon, golden energy
+   rising, an impact flash now and then, faint VHS scanlines. The palette is
+   royal and navy blue with white armour-like plates and gold-yellow energy.
+   No character, hairstyle, armour shape, emblem, attack name or quote: a
+   homage to the drawing style and its colours only.
+   Motion: speed lines pulse, sparks rise, the flash bursts, the hero's aura
+   breathes; transform and opacity only.
+   Note: the backdrop element is classed .backdrop-power (see theme-backdrop.tsx),
+   because .backdrop-aura already names the shared ambient layer.
+   Every rule is scoped to .app-shell[data-theme=aura] (or this skin's tile in Réglages). */
+.app-shell[data-theme=aura] {
+  --bg: #070b24;
+  --panel: #0f1b4d;
+  --panel2: #15246a;
+  --surface: #0f1b4d;
+  --surface-raised: #182a75;
+  --sidebar: #081033;
+  --line: #263a8a;
+  --border: #3550b0;
+  --text: #f4f7ff;
+  --copy: #f4f7ff;
+  --muted: #b7c3ea;
+  --quiet: #b7c3ea;
+  --accent: #ffc93c;
+  --accent-ink: #0b1440;
+  --focus: #ffe08a;
+  --heart: #ff7a8a;
+  --gold: linear-gradient(180deg, #ffe892 0%, #ffcf45 45%, #f3ac1c 100%);
+  --armour: linear-gradient(180deg, #ffffff 0%, #eef2fb 48%, #cfd8ee 100%);
+  --royal: linear-gradient(180deg, rgba(24, 42, 117, .92), rgba(12, 22, 66, .95));
+  --plate: rgba(235, 241, 255, .85);
+  --skin-bar: rgba(8, 14, 46, .96);
+  --skin-card: var(--royal);
+  --skin-tile: var(--royal);
+  --skin-hero: radial-gradient(70% 80% at 50% 110%, rgba(255, 190, 40, .3), transparent 70%), linear-gradient(160deg, #1d3496, #070b24);
+  --skin-radius: 4px 16px 4px 16px;
+  --skin-line: rgba(160, 185, 255, .2);
+  --skin-accent: #ffc93c;
+  --skin-glow: rgba(255, 201, 60, .35);
+  --skin-warm: rgba(255, 170, 40, .2);
+  --skin-speck: #ffd970;
+  --skin-ring: rgba(255, 201, 60, .14);
+  --skin-grid: rgba(160, 185, 255, .04);
+  --skin-aura-a: rgba(40, 70, 200, .24);
+  --skin-aura-b: rgba(255, 190, 40, .12);
+  --skin-aura-c: rgba(120, 60, 180, .14);
+  --skin-surface-shadow: inset 0 2px 0 var(--plate), 0 18px 40px -18px rgba(0, 2, 14, .9);
+  --skin-heading-font: var(--font-impact, var(--font-heading));
+  --skin-heading-tracking: .02em;
+  --skin-heading-transform: uppercase;
+  --skin-heading-shadow: none;
+  --skin-icon-radius: 4px 10px 4px 10px;
+  --skin-icon-bg: linear-gradient(180deg, rgba(255, 255, 255, .14), rgba(24, 42, 117, .9));
+  --skin-icon-border: rgba(220, 230, 255, .4);
+  --skin-icon-color: #ffe08a;
+  --skin-icon-shadow: inset 0 1px 0 rgba(255, 255, 255, .3), 0 0 12px rgba(255, 201, 60, .14);
+  color-scheme: dark;
+  background: var(--bg);
+}
+.app-shell[data-theme=aura] .watch-section,
+.app-shell[data-theme=aura] .watch-dock,
+.app-shell[data-theme=aura] .modal,
+.app-shell[data-theme=aura] .help-backdrop,
+.app-shell[data-theme=aura] .guide-explorer { --line: #263a8a; --accent: #ffc93c; --text: #f4f7ff; --muted: #b7c3ea; color: #f4f7ff; }
+
+/* Backdrop: night sky to a hot horizon, speed lines, the wasteland, sparks and a flash. */
+.app-shell[data-theme=aura] .backdrop-power {
+  background:
+    radial-gradient(50% 22% at 50% 80%, rgba(255, 180, 40, .3), transparent 70%),
+    radial-gradient(80% 40% at 50% -10%, rgba(40, 70, 200, .35), transparent 70%),
+    linear-gradient(180deg, #050826 0%, #0b1650 38%, #1d2478 60%, #3b2a78 74%, #24184a 86%, #070a1f 100%);
+}
+/* VHS-era scanlines: static, plain-blended. */
+.app-shell[data-theme=aura] .backdrop-power::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(0deg, rgba(0, 0, 0, .16) 0 1px, transparent 1px 3px);
+  opacity: .6;
+}
+.app-shell[data-theme=aura] :is(.backdrop-aura, .backdrop-mesh, .backdrop-rings) { display: none; }
+.app-shell[data-theme=aura] .backdrop-grain { opacity: .035; }
+.app-shell[data-theme=aura] .backdrop-specks { inset: 0 0 40%; }
+.app-shell[data-theme=aura] .backdrop-specks i { box-shadow: 0 0 6px rgba(255, 220, 120, .7); animation-duration: 15s; }
+.app-shell[data-theme=aura] .backdrop-specks i:nth-child(n+13) { display: none; }
+.app-shell[data-theme=aura] .theme-speed {
+  position: absolute;
+  inset: -30% -20% 0;
+  background: repeating-conic-gradient(from 0deg at 50% 84%, rgba(255, 235, 170, .07) 0 .6deg, transparent .6deg 4.5deg);
+  mask-image: radial-gradient(closest-side circle at 50% 84%, transparent 18%, #000 60%, transparent 100%);
+  opacity: .6;
+  animation: aura-speed 3.2s ease-in-out infinite alternate;
+}
+.app-shell[data-theme=aura] .theme-flash {
+  position: absolute;
+  left: 50%;
+  top: 80%;
+  width: 70vmin;
+  aspect-ratio: 1;
+  margin: -35vmin 0 0 -35vmin;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(255, 252, 230, .55), rgba(255, 210, 90, .28) 30%, rgba(255, 170, 40, .08) 60%, transparent);
+  opacity: 0;
+  transform: scale(.4);
+  animation: aura-impact 11s ease-out infinite;
+  animation-delay: 2s;
+}
+.app-shell[data-theme=aura] .theme-rocks {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 30vh;
+  background: url('/themes/aura/rocks.svg') center bottom / cover no-repeat;
+}
+.app-shell[data-theme=aura] .theme-energy { position: absolute; inset: 0; overflow: hidden; }
+.app-shell[data-theme=aura] .theme-energy i {
+  position: absolute;
+  bottom: 18vh;
+  width: 3px;
+  height: 22px;
+  border-radius: 3px;
+  background: linear-gradient(0deg, rgba(255, 200, 60, 0), #ffe08a 60%, #fffbe8);
+  opacity: .5;
+  animation: aura-rise 6s linear infinite;
+}
+.app-shell[data-theme=aura] .theme-energy i:nth-child(1) { left: 8%; animation-delay: -1s; }
+.app-shell[data-theme=aura] .theme-energy i:nth-child(2) { left: 19%; animation-duration: 7.5s; animation-delay: -4s; height: 14px; }
+.app-shell[data-theme=aura] .theme-energy i:nth-child(3) { left: 31%; animation-duration: 5.4s; animation-delay: -2.6s; }
+.app-shell[data-theme=aura] .theme-energy i:nth-child(4) { left: 42%; animation-duration: 8s; animation-delay: -6s; height: 30px; }
+.app-shell[data-theme=aura] .theme-energy i:nth-child(5) { left: 50%; animation-duration: 6.6s; animation-delay: -.4s; }
+.app-shell[data-theme=aura] .theme-energy i:nth-child(6) { left: 58%; animation-duration: 7s; animation-delay: -3.3s; height: 16px; }
+.app-shell[data-theme=aura] .theme-energy i:nth-child(7) { left: 67%; animation-duration: 5.8s; animation-delay: -5.1s; }
+.app-shell[data-theme=aura] .theme-energy i:nth-child(8) { left: 76%; animation-duration: 8.4s; animation-delay: -1.8s; height: 26px; }
+.app-shell[data-theme=aura] .theme-energy i:nth-child(9) { left: 86%; animation-duration: 6.2s; animation-delay: -4.6s; height: 12px; }
+.app-shell[data-theme=aura] .theme-energy i:nth-child(10) { left: 94%; animation-duration: 7.2s; animation-delay: -2.2s; }
+
+/* Chrome: navy bars edged with a white plate; the open view is an armour plate lit in gold. */
+.app-shell[data-theme=aura] .sidebar { background: linear-gradient(180deg, #0b1544, #060a26); border-right: 1px solid rgba(220, 230, 255, .2); box-shadow: inset -2px 0 0 rgba(255, 255, 255, .06); -webkit-backdrop-filter: none; backdrop-filter: none; }
+.app-shell[data-theme=aura] .topbar { background: var(--skin-bar); border-color: rgba(220, 230, 255, .2); -webkit-backdrop-filter: none; backdrop-filter: none; }
+.app-shell[data-theme=aura] .topbar::after { background: linear-gradient(90deg, transparent, #ffc93c 30%, #fff6c8 50%, #ffc93c 70%, transparent); opacity: .6; }
+.app-shell[data-theme=aura] .logo-period { color: #ffc93c; }
+.app-shell[data-theme=aura] :is(.search-box, .profile-avatar) { background: rgba(15, 27, 77, .95); border-color: rgba(220, 230, 255, .26); }
+.app-shell[data-theme=aura] .search-box { border-radius: 4px 14px 4px 14px; }
+.app-shell[data-theme=aura] .search-box:focus-within { border-color: #ffc93c; box-shadow: 0 0 0 3px rgba(255, 201, 60, .18); }
+.app-shell[data-theme=aura] .nav-item { border-radius: 4px 14px 4px 14px; font-weight: 600; }
+.app-shell[data-theme=aura] .nav-item:hover { background: rgba(80, 110, 230, .2); color: var(--text); }
+.app-shell[data-theme=aura] .nav-item.nav-active {
+  background: var(--armour);
+  color: #0b1440;
+  font-weight: 800;
+  box-shadow: inset 4px 0 0 #ffc93c, 0 0 0 1px rgba(255, 220, 120, .6), 0 0 22px -2px rgba(255, 201, 60, .55);
+}
+.app-shell[data-theme=aura] .nav-item.nav-active::before { display: none; }
+.app-shell[data-theme=aura] .nav-item.nav-active > svg:first-of-type { background: #1d3496; border-color: #0b1440; color: #ffe08a; box-shadow: none; }
+.app-shell[data-theme=aura] .device-note { background: var(--royal); border: 1px solid var(--skin-line); border-radius: 4px 16px 4px 16px; box-shadow: var(--skin-surface-shadow); }
+.app-shell[data-theme=aura] :focus-visible { outline-color: var(--focus); }
+
+/* Type: tall condensed capitals with a golden aura; an energy bar under page titles. */
+.app-shell[data-theme=aura] :is(.page-heading h1, .home-section-heading h2, .section-heading h2, .selection-theme-head h2, .favorites-lists h2, .desktop-panel-heading h2, .home-hero h2, .desktop-first h2, .modal h2, .access-card h1, .settings-section h3) { font-family: var(--font-impact, var(--font-heading)); font-weight: 400; letter-spacing: .02em; text-transform: uppercase; text-wrap: balance; }
+.app-shell[data-theme=aura] :is(.page-heading h1, .access-card h1) { color: #ffffff; font-size: 40px; line-height: 1.1; text-shadow: 0 0 2px #fff3c0, 0 0 14px rgba(255, 201, 60, .75), 0 0 34px rgba(255, 160, 30, .4); }
+.app-shell[data-theme=aura] :is(.home-section-heading h2, .section-heading h2, .selection-theme-head h2, .favorites-lists h2, .desktop-panel-heading h2) { font-size: 22px; color: var(--text); text-shadow: 0 0 12px rgba(255, 201, 60, .3); }
+.app-shell[data-theme=aura] .page-heading h1::after { width: 84px; height: 4px; border-radius: 4px; background: linear-gradient(90deg, #fffbe8, #ffc93c 40%, rgba(255, 170, 40, 0)); opacity: 1; box-shadow: 0 0 12px rgba(255, 201, 60, .8); }
+.app-shell[data-theme=aura] :is(.eyebrow, .hero-eyebrow, .access-kicker) { color: #ffd970; letter-spacing: .18em; }
+.app-shell[data-theme=aura] :is(.home-section-heading > button, .desktop-panel-heading button, .home-carousel-all, .text-button, .selection-rank) { color: #ffd970; }
+.app-shell[data-theme=aura] :is(.page-heading p, .section-heading p, .card-meta, .card-programme.muted) { color: var(--muted); }
+
+/* Panels: royal-blue plates with a white top edge and bevelled corners. */
+.app-shell[data-theme=aura] :is(.channel-card, .list-card, .empty-state, .selection-row, .selection-lead, .favorites-lists, .notice, .desktop-channel-panel, .desktop-programme-panel, .filter-panel, .expanded-guide, .guide-row, .guide-intro, .guide-channel-summary, .guide-filter-disclosure, .up-next, .player-shell, .home-favorite-row button, .home-category-grid button:nth-child(n)) {
+  background: var(--royal);
+  border: 1px solid var(--skin-line);
+  border-radius: 4px 16px 4px 16px;
+  color: var(--text);
+  box-shadow: var(--skin-surface-shadow);
+}
+.app-shell[data-theme=aura] .guide-explorer { background: transparent; border: 0; box-shadow: none; }
+.app-shell[data-theme=aura] :is(.channel-card, .home-favorite-row button, .home-category-grid button:nth-child(n)):hover { border-color: rgba(255, 220, 120, .7); box-shadow: inset 0 2px 0 #fff6c8, 0 0 0 1px rgba(255, 201, 60, .35), 0 0 28px -4px rgba(255, 190, 40, .5), 0 18px 40px -18px rgba(0, 2, 14, .9); }
+.app-shell[data-theme=aura] :is(.card-visual, .home-favorite-art) { background: radial-gradient(100% 90% at 50% 110%, rgba(255, 190, 40, .2), transparent 70%), linear-gradient(180deg, #1d3496, #0f1b4d); border-color: var(--skin-line); }
+.app-shell[data-theme=aura] .brand-has-logo { border-radius: 3px 10px 3px 10px; box-shadow: 0 0 0 1px rgba(255, 255, 255, .5), 0 8px 18px -8px rgba(0, 0, 0, .8); }
+.app-shell[data-theme=aura] .card-favorite,
+.app-shell[data-theme=aura] .home-favorite-row .home-favorite-item > .home-favorite-fav { background: rgba(8, 14, 46, .92); border-color: rgba(220, 230, 255, .3); }
+.app-shell[data-theme=aura] .playback-tag { background: rgba(8, 14, 46, .9); border-color: rgba(220, 230, 255, .2); }
+.app-shell[data-theme=aura] .desktop-channel-row { background: rgba(24, 42, 117, .6); border-color: var(--skin-line); border-radius: 4px 12px 4px 12px; }
+.app-shell[data-theme=aura] .desktop-channel-row:hover { background: rgba(32, 54, 150, .8); border-color: rgba(255, 220, 120, .6); }
+.app-shell[data-theme=aura] .tiny-dot { background: #ffc93c; box-shadow: 0 0 6px #ffc93c; }
+
+/* Hero: the river under a power-up sky, wrapped in a breathing golden aura. */
+.app-shell[data-theme=aura] .desktop-first {
+  position: relative;
+  background-color: #1d3496;
+  background-image:
+    radial-gradient(60% 50% at 78% 100%, rgba(255, 200, 70, .4), transparent 70%),
+    repeating-conic-gradient(from 0deg at 78% 100%, rgba(255, 240, 190, .12) 0 .8deg, transparent .8deg 5deg),
+    linear-gradient(90deg, rgba(7, 11, 36, .94), rgba(7, 11, 36, .55) 55%, rgba(7, 11, 36, .15)),
+    linear-gradient(0deg, rgba(7, 11, 36, .9), transparent 60%),
+    url('/images/onde-river-hero.webp');
+  background-size: auto, auto, auto, auto, cover;
+  background-position: center, center, center, center, center 55%;
+  background-blend-mode: normal, normal, normal, normal, luminosity;
+  border: 1px solid rgba(255, 230, 150, .5);
+  border-radius: 6px 26px 6px 26px;
+  box-shadow: inset 0 2px 0 var(--plate);
+}
+.app-shell[data-theme=aura] .desktop-first::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  pointer-events: none;
+  box-shadow: 0 0 0 2px rgba(255, 210, 90, .7), 0 0 26px 4px rgba(255, 190, 40, .5), 0 0 70px 10px rgba(255, 160, 20, .2);
+  opacity: .6;
+  animation: aura-breathe 2.6s ease-in-out infinite alternate;
+}
+.app-shell[data-theme=aura] .desktop-first h2 { color: #ffffff; text-shadow: 0 0 16px rgba(255, 201, 60, .6); }
+.app-shell[data-theme=aura] .home-hero {
+  background: #1d3496 url('/images/onde-river-hero.webp') center 55% / cover no-repeat;
+  background-blend-mode: luminosity;
+  border: 1px solid rgba(255, 230, 150, .55);
+  border-radius: 6px 22px 6px 22px;
+  box-shadow: inset 0 2px 0 var(--plate), 0 0 0 2px rgba(255, 210, 90, .4), 0 0 26px rgba(255, 190, 40, .3);
+}
+.app-shell[data-theme=aura] .home-hero::before { background: radial-gradient(70% 50% at 80% 100%, rgba(255, 190, 40, .3), transparent 70%), linear-gradient(0deg, rgba(7, 11, 36, .95), rgba(7, 11, 36, .15) 80%); }
+.app-shell[data-theme=aura] .home-hero h2 { color: #ffffff; text-shadow: 0 0 14px rgba(255, 201, 60, .6); }
+
+/* Buttons: charged gold for the main action, navy plates with a white edge for the rest. */
+.app-shell[data-theme=aura] :is(.primary, .home-primary),
+.app-shell[data-theme=aura] .home-primary:hover {
+  background: var(--gold);
+  color: #0b1440;
+  font-weight: 800;
+  border-radius: 4px 14px 4px 14px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .8), 0 0 0 1px #b8780c, 0 0 22px -4px rgba(255, 190, 40, .8);
+}
+.app-shell[data-theme=aura] :is(.primary, .home-primary):hover { filter: none; box-shadow: inset 0 1px 0 rgba(255, 255, 255, .8), 0 0 0 1px #b8780c, 0 0 0 4px rgba(255, 201, 60, .2), 0 0 30px -2px rgba(255, 190, 40, .95); }
+.app-shell[data-theme=aura] :is(.secondary, .guide-button, .filter-toggle, .hero-secondary, .channel-card .icon-button) { background: rgba(15, 27, 77, .9); border: 1px solid rgba(235, 241, 255, .55); border-radius: 4px 14px 4px 14px; color: #ffffff; -webkit-backdrop-filter: none; backdrop-filter: none; }
+.app-shell[data-theme=aura] :is(.secondary, .guide-button, .hero-secondary):hover { background: #1d3496; border-color: #ffe08a; color: #ffffff; }
+
+/* Filters, guide and selection. */
+.app-shell[data-theme=aura] .region-tabs { background: rgba(8, 14, 46, .9); border-color: var(--skin-line); border-radius: 4px 14px 4px 14px; }
+.app-shell[data-theme=aura] .region-tabs button { border-radius: 3px 10px 3px 10px; }
+.app-shell[data-theme=aura] .region-tabs button.active { background: rgba(255, 201, 60, .16); color: #ffe08a; box-shadow: inset 0 0 0 1px rgba(255, 220, 120, .45); }
+.app-shell[data-theme=aura] :is(.guide-days button, .guide-periods button) { background: var(--royal); border: 1px solid var(--skin-line); color: var(--muted); border-radius: 4px 14px 4px 14px; }
+.app-shell[data-theme=aura] .guide-days button[aria-pressed=true] { background: var(--armour); border-color: #ffc93c; color: #0b1440; box-shadow: inset 0 -3px 0 #ffc93c; }
+.app-shell[data-theme=aura] .guide-periods button[aria-pressed=true] { background: var(--gold); border-color: #b8780c; color: #0b1440; font-weight: 800; }
+.app-shell[data-theme=aura] .programme-live { background: linear-gradient(90deg, rgba(255, 201, 60, .14), transparent 80%); }
+.app-shell[data-theme=aura] .expanded-programme.programme-live { box-shadow: inset 3px 0 0 #ffc93c; }
+/* The count badge sits inside glowing capitals: it keeps the body face, case and no glow. */
+.app-shell[data-theme=aura] .section-count { background: rgba(255, 201, 60, .12); border-color: rgba(255, 220, 120, .35); color: #ffe08a; font-family: var(--font-body); letter-spacing: 0; text-transform: none; text-shadow: none; }
+
+/* Player, mini player and dialogs. */
+.app-shell[data-theme=aura] :is(.player-toolbar, .player-note, .dock-head, .dock-controls, .player-resolving, .video-loading) { background: rgba(8, 14, 46, .96); border-color: var(--skin-line); color: var(--text); }
+.app-shell[data-theme=aura] .watch-dock { background: #0f1b4d; border: 1px solid rgba(235, 241, 255, .4); border-radius: 4px 16px 4px 16px; box-shadow: inset 0 2px 0 var(--plate), 0 30px 70px -20px rgba(0, 2, 14, .92), 0 0 30px -6px rgba(255, 190, 40, .35); }
+.app-shell[data-theme=aura] .modal {
+  background: var(--armour) top / 100% 6px no-repeat, linear-gradient(180deg, #16286e, #0a1238);
+  border: 1px solid rgba(235, 241, 255, .35);
+  border-radius: 6px 24px 6px 24px;
+  box-shadow: 0 40px 100px -20px rgba(0, 2, 14, .95), 0 0 50px -14px rgba(255, 190, 40, .5);
+}
+.app-shell[data-theme=aura] .modal::backdrop { background: rgba(3, 5, 20, .78); }
+.app-shell[data-theme=aura] .toast { background: var(--gold); color: #0b1440; font-weight: 750; border-radius: 4px 16px 4px 16px; box-shadow: inset 0 1px 0 rgba(255, 255, 255, .8), 0 0 0 1px #b8780c, 0 12px 30px -8px rgba(255, 170, 30, .7); }
+.app-shell[data-theme=aura] .mobile-nav { background: rgba(8, 14, 46, .98); border-top: 2px solid rgba(235, 241, 255, .3); -webkit-backdrop-filter: none; backdrop-filter: none; }
+.app-shell[data-theme=aura] .mobile-nav button.active { background: var(--armour); color: #0b1440; border-radius: 4px 14px 4px 14px; box-shadow: inset 0 -3px 0 #ffc93c, 0 0 18px -4px rgba(255, 201, 60, .6); font-weight: 800; }
+
+/* Sign-in. */
+.access-page.app-shell[data-theme=aura] .access-halo { background: radial-gradient(closest-side, rgba(255, 190, 40, .24), transparent); }
+.app-shell[data-theme=aura] .access-card { background: var(--armour) top / 100% 6px no-repeat, linear-gradient(180deg, #16286e, #0a1238); border-color: rgba(235, 241, 255, .35); border-radius: 6px 24px 6px 24px; }
+
+/* Réglages tile: the hot horizon, the rocks, speed lines and a rising spark. */
+.settings-skins .theme-option[data-theme-id=aura] .theme-preview {
+  background:
+    url('/themes/aura/rocks.svg') center bottom / auto 48% repeat-x,
+    radial-gradient(46% 34% at 50% 74%, rgba(255, 210, 90, .75), transparent 70%),
+    repeating-conic-gradient(from 0deg at 50% 74%, rgba(255, 240, 190, .26) 0 1.4deg, transparent 1.4deg 9deg),
+    linear-gradient(180deg, #050826, #1d2478 58%, #4b2a78 74%);
+}
+.settings-skins .theme-option[data-theme-id=aura] .theme-preview::before { display: none; }
+.settings-skins .theme-option[data-theme-id=aura] .theme-preview::after { left: 18%; right: 18%; bottom: 30%; height: 2px; background: linear-gradient(90deg, transparent, #ffe08a, transparent); box-shadow: 0 0 8px #ffc93c; }
+.settings-skins .theme-option[data-theme-id=aura] .theme-preview i { width: 3px; height: 14px; border-radius: 3px; background: linear-gradient(0deg, transparent, #ffe08a); filter: none; }
+.settings-skins .theme-option[data-theme-id=aura] .theme-preview i:first-child { left: 30%; top: 22%; }
+.settings-skins .theme-option[data-theme-id=aura] .theme-preview i:last-child { left: 66%; right: auto; top: 30%; bottom: auto; width: 2px; height: 10px; }
+
+/* The shared pause (page swaps) reaches descendants only; the hero's aura lives outside the backdrop. */
+.app-shell[data-theme=aura] :is(.theme-backdrop.is-paused, .theme-backdrop.is-resting) ~ .main-shell .desktop-first::after { animation-play-state: paused; }
+
+@keyframes aura-speed { from { opacity: .35; transform: scale(1); } to { opacity: .75; transform: scale(1.03); } }
+@keyframes aura-impact {
+  0%, 86% { opacity: 0; transform: scale(.4); }
+  89% { opacity: .9; transform: scale(.9); }
+  100% { opacity: 0; transform: scale(1.4); }
+}
+@keyframes aura-rise {
+  0% { opacity: 0; transform: translate3d(0, 0, 0) scaleY(.6); }
+  15% { opacity: .85; }
+  100% { opacity: 0; transform: translate3d(0, -58vh, 0) scaleY(1.2); }
+}
+@keyframes aura-breathe { from { opacity: .45; transform: scale(1); } to { opacity: 1; transform: scale(1.006); } }
+@media (max-width: 760px) {
+  .app-shell[data-theme=aura] .theme-rocks { height: 20vh; }
+  .app-shell[data-theme=aura] .theme-energy i:nth-child(2n) { display: none; }
+  .app-shell[data-theme=aura] .theme-energy i { bottom: 12vh; }
+  .app-shell[data-theme=aura] :is(.page-heading h1, .access-card h1) { font-size: 32px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .app-shell[data-theme=aura] :is(.theme-speed, .theme-flash, .theme-energy i),
+  .app-shell[data-theme=aura] .desktop-first::after { animation: none; }
+}

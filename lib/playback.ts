@@ -1,4 +1,4 @@
-import type { Channel } from './channels';
+import type { Channel } from './channel-utils';
 export type PlaybackSource={kind:'hls'|'embed';url:string;label:string;insecure?:boolean};
 export type PlaybackResult={sources:PlaybackSource[];message?:string;expiresAt?:number};
 export function hasPlayback(channel:Channel){return !!(channel.stream||channel.embed||channel.resolve);}
@@ -14,6 +14,24 @@ export function defaultSources(channel:Channel):PlaybackSource[]{
  for(const [index,alternate] of (channel.streamAlts??[]).entries())sources.push(hlsSource(alternate.url,alternate.label?`Lecteur Onde · ${alternate.label}`:`Lecteur Onde · secours ${index+1}`));
  if(channel.embed)sources.push({kind:'embed',url:channel.embed,label:'Lecteur du diffuseur'});
  return sources;
+}
+// An https page cannot load http media unless the viewer allows insecure
+// content, so playback opens on the first secure source; an insecure one stays
+// reachable as a later fallback. With only insecure sources, start at 0 and let
+// the player explain the browser setting.
+export function startIndex(sources:readonly PlaybackSource[],secureContext:boolean):number{if(!secureContext)return 0;const index=sources.findIndex(source=>!source.insecure);return index<0?0:index;}
+// A source that never played in this attempt is most likely down or blocked:
+// give it a short startup window. One that played and stalled gets the patient one.
+export function stallTimeout(everPlayed:boolean):number{return everPlayed?25000:10000;}
+export type FailoverStep={action:'retry';delay:number}|{action:'next';index:number}|{action:'give-up'};
+// Never played: one quick retry, then the next source. Played then dropped:
+// backoff retries first, since live streams hiccup. Sources are tried in a ring
+// from `first` (where this round began), so each one gets a turn before giving up.
+export function failoverStep({retries,everPlayed,index,count,first=0}:{retries:number;everPlayed:boolean;index:number;count:number;first?:number}):FailoverStep{
+ if(retries<(everPlayed?3:1))return {action:'retry',delay:everPlayed?1000*2**retries:1000};
+ if(count<2)return {action:'give-up'};
+ const origin=first>=0&&first<count?first:0,next=(index+1)%count;
+ return next===origin?{action:'give-up'}:{action:'next',index:next};
 }
 function allowed(raw:string,hosts:string[]){const url=new URL(raw);if(url.protocol!=='https:'||!hosts.includes(url.hostname)||url.username||url.password)throw new Error('Source non prise en charge');return url.toString();}
 export function telequebecSource(html:string):PlaybackSource{
