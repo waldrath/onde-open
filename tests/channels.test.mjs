@@ -8,21 +8,24 @@ import fs from 'node:fs';
 // under plain `node --test`, like the other suites, without a bundler
 // resolving the JSON imports.
 // Generated country files, in the order lib/channels.ts loads them.
-const COUNTRY_FILES = ['ca', 'fr', 'us', 'se', 'cm', 'be', 'ch', 'lu', 'sn', 'ci', 'cd', 'ht'];
+const COUNTRY_FILES = ['ca', 'fr', 'us', 'se', 'cm', 'be', 'ch', 'lu', 'sn', 'ci', 'cd', 'ht', 'monde'];
 const CATALOGUE_FILES = ['data/channels/base.json', ...COUNTRY_FILES.map((code) => `data/channels/${code}.json`)];
 const channels = CATALOGUE_FILES.flatMap((file) => JSON.parse(fs.readFileSync(file, 'utf8')));
 const imported = channels.filter((channel) => channel.source === 'iptv-org');
 
 const REQUIRED = ['id', 'name', 'brand', 'region', 'category', 'color', 'description', 'official', 'guide'];
-const REGIONS = ['Québec', 'Canada', 'France', 'USA', 'Suède', 'Cameroun', 'Belgique', 'Suisse', 'Luxembourg', 'Sénégal', "Côte d'Ivoire", 'RD Congo', 'Haïti', 'International'];
+const REGIONS = ['Québec', 'Canada', 'France', 'USA', 'Suède', 'Cameroun', 'Belgique', 'Suisse', 'Luxembourg', 'Sénégal', "Côte d'Ivoire", 'RD Congo', 'Haïti',
+  'Maroc', 'Algérie', 'Tunisie', 'Monaco', 'Togo', 'Bénin', 'Congo', 'Burkina Faso', 'Guinée', 'Niger', 'Mali', 'Rwanda', 'Burundi', 'Tchad', 'Gabon', 'Madagascar', 'Outre-mer',
+  'International'];
 const RESOLVERS = ['telequebec', 'cpac', 'france24', 'youtube', 'tfo', 'public-senat'];
-const PLAYLISTS = COUNTRY_FILES.map((code) => `https://iptv-org.github.io/iptv/countries/${code}.m3u`);
+// monde.json (French-language channels of other countries) comes from the French language playlist.
+const PLAYLISTS = COUNTRY_FILES.map((code) => (code === 'monde' ? 'https://iptv-org.github.io/iptv/languages/fra.m3u' : `https://iptv-org.github.io/iptv/countries/${code}.m3u`));
 // Provenance of an imported stream: a country playlist or the streams
 // export of the iptv-org database (database-only channels).
 const SOURCES = [...PLAYLISTS, 'https://iptv-org.github.io/api/streams.json'];
 // Paid channels that must stay official-link-only: no playable source may
 // ever be attached to them (no pirated or unofficial streams).
-const OFFICIAL_LINK_ONLY = ['ici-tele'];
+const OFFICIAL_LINK_ONLY = ['ici-tele', 'rds', 'tva-sports', 'crave', 'illico-plus', 'historia', 'series-plus', 'tsn', 'sportsnet', 'dazn', 'canal-plus', 'bein-sports', 'rmc-sport', 'eurosport', 'hbo-max', 'paramount-plus'];
 
 test('catalogue is a non-empty array with unique, well-formed ids', () => {
   assert.ok(Array.isArray(channels) && channels.length > 0);
@@ -182,6 +185,11 @@ test('francophone country files carry their region and a French (or English) lan
     be: ['Belgique', ['fr']], ch: ['Suisse', ['fr']], lu: ['Luxembourg', ['fr']],
     sn: ['Sénégal', ['fr', 'en']], ci: ["Côte d'Ivoire", ['fr', 'en']], cd: ['RD Congo', ['fr', 'en']], ht: ['Haïti', ['fr', 'en']],
   };
+  // monde.json: French channels of other countries, in their country's region.
+  for (const channel of JSON.parse(fs.readFileSync('data/channels/monde.json', 'utf8'))) {
+    assert.ok(REGIONS.slice(13).includes(channel.region), `${channel.id}: region`);
+    assert.equal(channel.language, 'fr', `${channel.id}: language`);
+  }
   for (const [code, [region, languages]] of Object.entries(expected)) {
     for (const channel of JSON.parse(fs.readFileSync(`data/channels/${code}.json`, 'utf8'))) {
       assert.equal(channel.region, region, `${channel.id}: region`);
@@ -210,4 +218,17 @@ test('paid channels stay official-link-only (no stream, embed or resolver)', () 
     assert.equal(channel.resolve, undefined, `${id}: resolve`);
     assert.ok(channel.note?.length > 0, `${id}: note explaining the subscription`);
   }
+});
+
+test('the page ships compact channels that rebuild exactly, and the importer description matches', async () => {
+  const {compactChannel, expandChannel, importedDescription} = await import('../lib/channel-utils.ts');
+  let saved = 0;
+  for (const channel of channels) {
+    const compact = compactChannel(channel);
+    saved += JSON.stringify(channel).length - JSON.stringify(compact).length;
+    assert.deepEqual(expandChannel(compact), channel, channel.id);
+  }
+  // describe() in the importer and importedDescription agree, or nothing would be left out.
+  for (const channel of imported) assert.equal(channel.description, importedDescription(channel.category, channel.language), channel.id);
+  assert.ok(saved > 200_000, `compaction saves ${saved} bytes`);
 });

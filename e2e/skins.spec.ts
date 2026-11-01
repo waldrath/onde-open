@@ -21,6 +21,10 @@ for (const {id} of themes) {
       .filter(animation => animation.playState === 'running' && (animation.effect as KeyframeEffect | null)?.target?.closest('.logo')).length),
     {timeout: 6000}).toBe(0);
     expect(await page.locator('.sidebar .logo-letter').evaluateAll(letters => letters.map(letter => getComputedStyle(letter).opacity))).toEqual(['1', '1', '1', '1']);
+    // Every skin but Sombre draws a mark of its own, ending fully drawn.
+    const strokes = await page.locator('.sidebar .logo-line').evaluateAll(lines => lines.map(line => parseFloat(getComputedStyle(line).strokeDashoffset)));
+    if (id === 'dark') expect(strokes).toEqual([]);
+    else { expect(strokes.length).toBeGreaterThan(0); for (const offset of strokes) expect(offset).toBe(0); }
   });
 }
 

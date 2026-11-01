@@ -109,7 +109,7 @@
 
 /* Player, dialogs, mobile. */
 .app-shell[data-theme=anime] :is(.watch-dock, .modal) { border: 1.5px solid var(--ink); box-shadow: 0 6px 0 #f2b0c7, 0 24px 60px rgba(120, 60, 90, .22); }
-.app-shell[data-theme=anime] .modal::backdrop { background: rgba(60, 30, 50, .5); }
+.app-shell[data-theme=anime] .modal::backdrop { background: rgba(60, 30, 50, .62); }
 .app-shell[data-theme=anime] .modal .primary { background: #c3386d; color: #fff; }
 .app-shell[data-theme=anime] .mobile-nav { border-top: 1.5px solid #efc9d7; }
 .app-shell[data-theme=anime] .mobile-nav button.active { background: #ffe1eb; color: #a52a5a; }

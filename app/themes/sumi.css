@@ -100,7 +100,7 @@
 .app-shell[data-theme=sumi] .guide-days button[aria-pressed=true] { background: #1d1c1a; border-color: #1d1c1a; color: #f7f2e8; }
 .app-shell[data-theme=sumi] .region-tabs { border-radius: 3px; }
 .app-shell[data-theme=sumi] .region-tabs button.active { background: transparent; color: #1d1c1a; box-shadow: inset 0 -2px 0 #b93d28; border-radius: 0; }
-.app-shell[data-theme=sumi] :is(.primary, .home-primary, .secondary, .search-box, .filter-field select) { border-radius: 3px; }
+.app-shell[data-theme=sumi] :is(.primary, .home-primary, .secondary, .search-box, .filter-field select, .multi-select-summary) { border-radius: 3px; }
 .app-shell[data-theme=sumi] .home-primary:hover { background: #a3331f; }
 .app-shell[data-theme=sumi] .secondary { background: #fbf8f1; }
 .app-shell[data-theme=sumi] .secondary:hover { border-color: #1d1c1a; }
@@ -108,7 +108,7 @@
 /* Player, dialogs, mobile. */
 .app-shell[data-theme=sumi] :is(.watch-dock, .modal) { border: 1px solid var(--line); border-radius: 4px; box-shadow: 0 30px 70px -24px rgba(40, 32, 20, .4); }
 .app-shell[data-theme=sumi] .modal { background: var(--washi), #fbf8f1; }
-.app-shell[data-theme=sumi] .modal::backdrop { background: rgba(29, 28, 26, .45); }
+.app-shell[data-theme=sumi] .modal::backdrop { background: rgba(29, 28, 26, .58); }
 .app-shell[data-theme=sumi] .mobile-nav button.active { background: transparent; color: #1d1c1a; box-shadow: inset 0 2px 0 #b93d28; }
 .access-page.app-shell[data-theme=sumi] .access-halo { background: radial-gradient(closest-side, rgba(29, 28, 26, .06), transparent); }
 .access-page.app-shell[data-theme=sumi] .access-card { border-radius: 4px; background: var(--seal) right 18px bottom 14px / 22px no-repeat, #fbf8f1; }

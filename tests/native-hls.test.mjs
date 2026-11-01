@@ -1,5 +1,6 @@
 import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';import ts from 'typescript';
-const source=ts.transpile(fs.readFileSync('lib/catalogue-maintenance.ts','utf8'),{module:ts.ModuleKind.ES2022,target:ts.ScriptTarget.ES2022});
+const utils='data:text/javascript;base64,'+Buffer.from(ts.transpile(fs.readFileSync('lib/channel-utils.ts','utf8'),{module:ts.ModuleKind.ES2022,target:ts.ScriptTarget.ES2022})).toString('base64');
+const source=ts.transpile(fs.readFileSync('lib/catalogue-maintenance.ts','utf8'),{module:ts.ModuleKind.ES2022,target:ts.ScriptTarget.ES2022}).replace(/from ['"]\.\/channel-utils['"]/,`from '${utils}'`);
 const {validateChannel,clientCatalogue,likelyNativeHls}=await import('data:text/javascript;base64,'+Buffer.from(source).toString('base64'));
 const c={id:'pluto-film',name:'Pluto Film',brand:'Pluto Film',region:'France',language:'fr',category:'Movies',color:'#6b8c92',description:'Films en continu.',official:'https://pluto.example/',guide:'https://pluto.example/',stream:'https://jmp2.example/plu-1.m3u8'};
 test('a native-HLS-only channel keeps its flag and requires an https stream',()=>{

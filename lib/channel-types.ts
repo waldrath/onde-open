@@ -10,6 +10,9 @@
 export type ChannelRegion =
   | 'Québec' | 'Canada' | 'France' | 'USA' | 'Suède' | 'Cameroun'
   | 'Belgique' | 'Suisse' | 'Luxembourg' | 'Sénégal' | "Côte d'Ivoire" | 'RD Congo' | 'Haïti'
+  // French-language channels of other countries (data/channels/monde.json).
+  | 'Maroc' | 'Algérie' | 'Tunisie' | 'Monaco' | 'Togo' | 'Bénin' | 'Congo' | 'Burkina Faso' | 'Guinée'
+  | 'Niger' | 'Mali' | 'Rwanda' | 'Burundi' | 'Tchad' | 'Gabon' | 'Madagascar' | 'Outre-mer'
   | 'International';
 
 export type ChannelLanguage = 'fr' | 'en' | 'sv' | 'zxx';

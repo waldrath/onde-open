@@ -93,3 +93,19 @@ test('the mini player is docked on Chaînes and does not move horizontally durin
     expect(Math.max(...centres) - Math.min(...centres), `dock moved horizontally while swapping to ${view}`).toBeLessThanOrEqual(1);
   }
 });
+
+// Audio only keeps the sound and covers the picture; the choice is a device
+// setting, so it survives a reload.
+test('audio only covers the picture and is remembered on this device', async ({page}, info) => {
+  await openApp(page);
+  await goTo(page, info, 'selection');
+  await page.locator('.selection-play').first().click();
+  const toggle = page.getByRole('button', {name: 'Mode audio seul'});
+  await expect(toggle).toHaveAttribute('aria-pressed', 'false');
+  await toggle.click();
+  await expect(page.locator('.audio-only-cover')).toBeVisible();
+  await expect(page.getByRole('button', {name: 'Revenir à la vidéo'})).toHaveAttribute('aria-pressed', 'true');
+  expect(await page.evaluate(() => JSON.parse(localStorage.getItem('onde-settings') || '{}').audioOnly)).toBe(true);
+  await page.getByRole('button', {name: 'Revenir à la vidéo'}).click();
+  await expect(page.locator('.audio-only-cover')).toHaveCount(0);
+});

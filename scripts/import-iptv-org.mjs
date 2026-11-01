@@ -10,8 +10,10 @@
  * variable points at a file / directory, which makes runs reproducible and
  * lets maintainers diff the report before committing):
  *   - Playlists: https://iptv-org.github.io/iptv/countries/<code>.m3u for
- *     every country of COUNTRIES (ca, fr, us, se, cm, be, ch, lu, sn, ci, cd, ht).
- *     Override with IPTV_PLAYLIST_DIR=<dir containing ca.m3u/fr.m3u/…>.
+ *     every country of COUNTRIES (ca, fr, us, se, cm, be, ch, lu, sn, ci, cd, ht),
+ *     and https://iptv-org.github.io/iptv/languages/fra.m3u for `monde`
+ *     (French-language channels of every other country).
+ *     Override with IPTV_PLAYLIST_DIR=<dir containing ca.m3u/fr.m3u/…/monde.m3u>.
  *   - Channel metadata: https://iptv-org.github.io/api/channels.json
  *     Override with IPTV_CHANNELS_API=<file path>.
  *   - Streams: https://iptv-org.github.io/api/streams.json
@@ -170,7 +172,36 @@ const COUNTRIES = [
   { code: 'ci', region: "Côte d'Ivoire", language: 'fr', databaseCountry: 'CI', languagePolicy: 'francophone' },
   { code: 'cd', region: 'RD Congo', language: 'fr', databaseCountry: 'CD', languagePolicy: 'francophone' },
   { code: 'ht', region: 'Haïti', language: 'fr', databaseCountry: 'HT', languagePolicy: 'francophone' },
+  // French-language channels of every other country: the iptv-org French
+  // playlist plus the database channels with a French feed (see inWorldScope).
+  // Last, so a country file above always wins a duplicate. Cards take their
+  // country's region (worldRegion), International otherwise.
+  { code: 'monde', region: 'International', language: 'fr', databaseCountry: null, languagePolicy: 'lenient', playlistUrl: 'https://iptv-org.github.io/iptv/languages/fra.m3u' },
 ];
+
+/** Playlist of a COUNTRIES entry: its country list, or its own (French world). */
+const playlistUrlOf = (country) => country.playlistUrl || `${PLAYLIST_BASE}/${country.code}.m3u`;
+
+/** Database countries that have their own file above. */
+const COVERED_COUNTRIES = new Set(COUNTRIES.map((country) => country.databaseCountry).filter(Boolean));
+
+/** Catalogue region of a French-world card, by database country (ISO 3166-1). */
+const WORLD_REGIONS = {
+  MA: 'Maroc', DZ: 'Algérie', TN: 'Tunisie', MC: 'Monaco',
+  TG: 'Togo', BJ: 'Bénin', CG: 'Congo', BF: 'Burkina Faso', GN: 'Guinée', NE: 'Niger', ML: 'Mali',
+  RW: 'Rwanda', BI: 'Burundi', TD: 'Tchad', GA: 'Gabon', MG: 'Madagascar',
+  GP: 'Outre-mer', MQ: 'Outre-mer', GF: 'Outre-mer', RE: 'Outre-mer', YT: 'Outre-mer', PF: 'Outre-mer',
+  NC: 'Outre-mer', PM: 'Outre-mer', WF: 'Outre-mer', BL: 'Outre-mer', MF: 'Outre-mer',
+};
+
+export function worldRegion(countryCode) {
+  return WORLD_REGIONS[countryCode] || 'International';
+}
+
+/** A database channel belongs to the French world: another country, a French feed. */
+export function inWorldScope(countryCode, languages) {
+  return !COVERED_COUNTRIES.has(countryCode) && languages.has('fr');
+}
 
 /**
  * Card language from the catalogue languages of a channel's feeds (a Set,
@@ -536,8 +567,8 @@ async function probeHls(url) {
 }
 
 /** Probe every candidate that is not HLS by extension, once, concurrently. */
-async function probeUnknownHls(playlists, databaseStreams, channelsById) {
-  const scope = new Set(COUNTRIES.map((country) => country.databaseCountry));
+async function probeUnknownHls(playlists, databaseStreams, channelsById, inWorld) {
+  const scope = COVERED_COUNTRIES;
   const unknown = new Set();
   for (const text of playlists.values()) {
     for (const raw of parsePlaylist(text)) {
@@ -547,7 +578,7 @@ async function probeUnknownHls(playlists, databaseStreams, channelsById) {
   for (const stream of databaseStreams) {
     if (!stream.url || isHls(stream.url)) continue;
     const channel = channelsById.get(stream.channel);
-    if (channel && scope.has(channel.country)) unknown.add(stream.url);
+    if (channel && (scope.has(channel.country) || inWorld(channel))) unknown.add(stream.url);
   }
   const found = new Set();
   const queue = [...unknown];
@@ -936,19 +967,19 @@ async function main() {
   // extension is sniffed: some lists serve HLS from an extensionless URL.
   const playlists = new Map();
   for (const country of COUNTRIES) {
-    const playlistUrl = `${PLAYLIST_BASE}/${country.code}.m3u`;
-    playlists.set(country.code, await readText(playlistUrl, process.env.IPTV_PLAYLIST_DIR
+    playlists.set(country.code, await readText(playlistUrlOf(country), process.env.IPTV_PLAYLIST_DIR
       ? path.join(process.env.IPTV_PLAYLIST_DIR, `${country.code}.m3u`)
       : undefined));
   }
-  const contentHls = await probeUnknownHls(playlists, databaseStreams, channelsById);
+  const inWorld = (channel) => inWorldScope(channel.country, feedLanguages(channel.id));
+  const contentHls = await probeUnknownHls(playlists, databaseStreams, channelsById, inWorld);
   const isHlsCandidate = (url) => isHls(url) || contentHls.found.has(url);
 
   // Every country's cards are grouped first, so the playability probe can
   // run once over all their candidates before any file is written.
   const prepared = [];
   for (const country of COUNTRIES) {
-    const playlistUrl = `${PLAYLIST_BASE}/${country.code}.m3u`;
+    const playlistUrl = playlistUrlOf(country);
     const text = playlists.get(country.code);
     const rawEntries = parsePlaylist(text);
     const stats = {
@@ -962,7 +993,7 @@ async function main() {
       keptInsecure: 0, keptBareIp: 0, keptHttpsUpgrades: 0, keptAlternates: 0, keptProbedHls: 0,
       excludedUnplayable: 0, unplayableReasons: {}, keptProbeGeoBlocked: 0,
       keptProbeHttpsUpgrades: 0, droppedFailingVariants: 0, excludedLanguage: 0,
-      keptNativeOnly: 0, keptGeoFromPrevious: 0, heldForHomeCheck: [],
+      keptNativeOnly: 0, keptGeoFromPrevious: 0, heldForHomeCheck: [], excludedOtherFile: 0,
     };
 
     // One card per channel (tvg-id without its feed): every playlist entry
@@ -1000,7 +1031,7 @@ async function main() {
     }
 
     for (const channel of databaseChannels) {
-      if (channel.country !== country.databaseCountry) continue;
+      if (country.databaseCountry ? channel.country !== country.databaseCountry : !inWorld(channel)) continue;
       stats.databaseChannels++;
       const streams = streamsByChannel.get(channel.id) || [];
       if (!streams.length) continue;
@@ -1079,8 +1110,10 @@ async function main() {
       const parsed = new URL(streamUrl);
       const bareIp = isBareIp(parsed.hostname);
 
+      // The French playlist also lists channels of the countries above: their own file carries them.
+      if (!country.databaseCountry && record && COVERED_COUNTRIES.has(record.country)) { stats.excludedOtherFile++; continue; }
       // Region / name / language.
-      let region = country.region;
+      let region = country.databaseCountry ? country.region : worldRegion(record?.country);
       let displayName = group.name || record?.name || group.tvgId.split('.')[0];
       if (!group.name) stats.keptFromDatabase++;
       let language = country.code === 'ca' ? canadaLanguage(displayName, group.tvgId) : country.language;

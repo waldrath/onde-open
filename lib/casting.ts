@@ -19,7 +19,7 @@ export type CastSDK={
 type CastGlobal=Window&{cast?:{framework:CastSDK['framework']};chrome?:{cast:CastSDK['base']};__onGCastApiAvailable?:(available:boolean)=>void};
 let sdkPromise:Promise<CastSDK>|undefined;
 function currentSDK(scope:CastGlobal):CastSDK|undefined{return scope.cast?.framework&&scope.chrome?.cast?{framework:scope.cast.framework,base:scope.chrome.cast}:undefined;}
-export function loadCastSDK():Promise<CastSDK>{
+function loadCastSDK():Promise<CastSDK>{
  if(typeof window==='undefined')return Promise.reject(new Error('Google Cast nécessite un navigateur.'));
  const scope=window as CastGlobal,existing=currentSDK(scope);if(existing)return Promise.resolve(existing);
  if(sdkPromise)return sdkPromise;
@@ -39,7 +39,7 @@ export function loadCastSDK():Promise<CastSDK>{
  return sdkPromise;
 }
 export type CastSnapshot={phase:'idle'|'loading'|'ready'|'unavailable';available:boolean;connected:boolean;busy:boolean;deviceName:string;channelId:string;mediaName:string;mediaLoaded:boolean;paused:boolean;volume:number;error:string};
-export const initialCastSnapshot:CastSnapshot={phase:'idle',available:false,connected:false,busy:false,deviceName:'',channelId:'',mediaName:'',mediaLoaded:false,paused:false,volume:1,error:''};
+const initialCastSnapshot:CastSnapshot={phase:'idle',available:false,connected:false,busy:false,deviceName:'',channelId:'',mediaName:'',mediaLoaded:false,paused:false,volume:1,error:''};
 function cancelled(error:unknown){const code=typeof error==='string'?error:(error as {code?:unknown;name?:unknown})?.code||(error as {name?:unknown})?.name;return /cancel|abort/i.test(String(code));}
 type MediaSource={kind:string;url:string};
 function isCastSource(source:MediaSource|undefined):source is MediaSource{

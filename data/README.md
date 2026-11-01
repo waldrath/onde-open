@@ -6,7 +6,7 @@ stays reviewable and one of them is machine-generated:
 
 | File | Contents | How to change it |
 | --- | --- | --- |
-| `channels/base.json` | The hand-curated catalogue (477 channels, `core` / `additional` / `expanded` sources). | Edit by hand, following the schema and rules below. |
+| `channels/base.json` | The hand-curated catalogue (492 channels, `core` / `additional` / `expanded` sources). | Edit by hand, following the schema and rules below. |
 | `channels/ca.json` | Channels imported from the iptv-org database and Canada playlist. | **Generated** — run `node scripts/import-iptv-org.mjs`; never edit by hand. |
 | `channels/fr.json` | Channels imported from the iptv-org database and France playlist. | Generated, same script. |
 | `channels/us.json` | Channels imported from the iptv-org database and USA playlist. | Generated, same script. |
@@ -14,10 +14,11 @@ stays reviewable and one of them is machine-generated:
 | `channels/cm.json` | Cameroonian channels imported from the iptv-org database and Cameroon playlist (`region: Cameroun`, `language` from the database feeds: `fr` or `en`). | Generated, same script. |
 | `channels/{be,ch,lu}.json` | French-speaking channels of Belgium, Switzerland and Luxembourg (`region: Belgique` / `Suisse` / `Luxembourg`, `language: fr`; channels whose feeds do not speak French are skipped). | Generated, same script. |
 | `channels/{sn,ci,cd,ht}.json` | Channels of Senegal, Côte d'Ivoire, DR Congo and Haiti (`region: Sénégal` / `Côte d'Ivoire` / `RD Congo` / `Haïti`; `language` `fr`, or `en` when the feeds speak English only, `fr` without language data; other languages are skipped). | Generated, same script. |
+| `channels/monde.json` | French-language channels of every other country: the iptv-org French language playlist (`languages/fra.m3u`) plus the database channels with a French feed, minus the countries above. Each card takes its country's region (`Maroc`, `Togo`, `Outre-mer`… see `WORLD_REGIONS` in the importer), `International` otherwise; `language: fr`. | Generated, same script. |
 | `geo-checks.json` | Playability of every iptv-org stream **as seen from Canada**, one dated verdict per stream URL (see "Canadian checks" below). Not loaded by the app. | **Generated** by a run of the importer from Canada; commit it with the data. |
 
 `lib/channels.ts` loads `base.json`, then the country files in the order
-`ca, fr, us, se, cm, be, ch, lu, sn, ci, cd, ht`, validates every
+`ca, fr, us, se, cm, be, ch, lu, sn, ci, cd, ht, monde`, validates every
 entry, deduplicates by id and builds the lookup indexes — at runtime
 there is exactly one catalogue, and every existing import keeps working.
 Catalogue entries stored in Postgres (Neon) are merged on top of this
@@ -177,7 +178,7 @@ One JSON object per channel, in display order within each file:
 | `id` | yes | Unique across all files, `^[a-z0-9][a-z0-9-]{0,79}$`. Stable: user favourites and lists reference it. |
 | `name` | yes | Display name. |
 | `brand` | yes | Short text logo fallback, `\n` for line breaks. |
-| `region` | yes | `Québec`, `Canada`, `France`, `USA`, `Suède`, `Cameroun`, `Belgique`, `Suisse`, `Luxembourg`, `Sénégal`, `Côte d'Ivoire`, `RD Congo`, `Haïti` or `International`. |
+| `region` | yes | `Québec`, `Canada`, `France`, `USA`, `Suède`, `Cameroun`, `Belgique`, `Suisse`, `Luxembourg`, `Sénégal`, `Côte d'Ivoire`, `RD Congo`, `Haïti`, the French-world regions (`Maroc`, `Algérie`, `Tunisie`, `Monaco`, `Togo`, `Bénin`, `Congo`, `Burkina Faso`, `Guinée`, `Niger`, `Mali`, `Rwanda`, `Burundi`, `Tchad`, `Gabon`, `Madagascar`, `Outre-mer`) or `International`. |
 | `category` | yes | Free-form, e.g. `Actualités`, `Découvertes`. |
 | `color` | yes | Accent colour, `#rrggbb`. |
 | `language` | no | `fr` (default), `en`, `sv` or `zxx` (no speech). |

@@ -8,8 +8,8 @@ const {parseSettings,readSettings,writeSettings,defaultSettings,SETTINGS_KEY}=aw
 const memory=(initial={})=>{const data=new Map(Object.entries(initial));return {data,getItem:k=>data.has(k)?data.get(k):null,setItem:(k,v)=>data.set(k,String(v)),removeItem:k=>data.delete(k)};};
 
 test('valid stored settings are kept and everything else falls back field by field',()=>{
- assert.deepEqual(parseSettings({dock:'top',motion:'reduced',schedule:false}),{dock:'top',motion:'reduced',schedule:false});
- assert.deepEqual(parseSettings({dock:'bottom',motion:'fast',schedule:'yes'}),defaultSettings);
+ assert.deepEqual(parseSettings({dock:'top',motion:'reduced',schedule:false,audioOnly:true}),{dock:'top',motion:'reduced',schedule:false,audioOnly:true});
+ assert.deepEqual(parseSettings({dock:'bottom',motion:'fast',schedule:'yes',audioOnly:'on'}),defaultSettings);
  assert.deepEqual(parseSettings(null),defaultSettings);
  assert.deepEqual(parseSettings(['top']),defaultSettings);
  assert.equal(parseSettings({dock:'left'}).dock,'left');
@@ -26,5 +26,5 @@ test('the schedule choice made before settings existed is carried over, then ret
  assert.equal(settings.schedule,false);
  writeSettings(storage,{...settings,dock:'left'});
  assert.equal(storage.data.has('onde-schedule-open'),false);
- assert.deepEqual(readSettings(storage),{dock:'left',motion:'system',schedule:false});
+ assert.deepEqual(readSettings(storage),{dock:'left',motion:'system',schedule:false,audioOnly:false});
 });

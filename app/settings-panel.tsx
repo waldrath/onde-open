@@ -53,6 +53,8 @@ export default function SettingsPanel({onClose,userId,account,favoriteCount,list
    <div className="region-tabs settings-choice" role="group" aria-labelledby="settings-dock">{docks.map(dock=><button key={dock.id} type="button" aria-pressed={settings.dock===dock.id} className={settings.dock===dock.id?'active':''} onClick={()=>onSettings({dock:dock.id})}><dock.icon size={16} aria-hidden="true"/>{t(dock.label)}</button>)}</div>
    <small className="settings-hint">{t('Le mini-lecteur garde la chaîne à l’écran quand vous quittez l’accueil. Une chaîne choisie pendant qu’il est ouvert s’y lance directement.')}</small>
    <label className="playback-filter settings-toggle"><input type="checkbox" checked={settings.schedule} onChange={e=>onSettings({schedule:e.target.checked})}/>{t('Afficher l’horaire sous le lecteur')}</label>
+   <label className="playback-filter settings-toggle"><input type="checkbox" checked={settings.audioOnly} onChange={e=>onSettings({audioOnly:e.target.checked})}/>{t('Mode audio seul')}</label>
+   <small className="settings-hint">{t('Le son sans l’image : la qualité vidéo la plus basse est chargée et rien n’est affiché, pour économiser les données et la batterie.')}</small>
   </section>
 
   <section className="settings-section" aria-labelledby="settings-device"><h3 id="settings-device"><HardDrive size={17}/>{t('Sur cet appareil')}</h3>

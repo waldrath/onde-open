@@ -3,10 +3,12 @@
 // TV-side laptop rarely want the same mini-player corner or motion level.
 export const dockPositions=['right','left','top'] as const;
 export type DockPosition=(typeof dockPositions)[number];
-export const motionPreferences=['system','reduced'] as const;
+const motionPreferences=['system','reduced'] as const;
 export type MotionPreference=(typeof motionPreferences)[number];
-export type DeviceSettings={dock:DockPosition;motion:MotionPreference;schedule:boolean};
-export const defaultSettings:DeviceSettings={dock:'right',motion:'system',schedule:true};
+// audioOnly: the player keeps the sound and drops the picture (lowest video
+// quality, nothing drawn) to spare data and battery.
+export type DeviceSettings={dock:DockPosition;motion:MotionPreference;schedule:boolean;audioOnly:boolean};
+export const defaultSettings:DeviceSettings={dock:'right',motion:'system',schedule:true,audioOnly:false};
 export const SETTINGS_KEY='onde-settings';
 // Written by earlier versions of the player before settings existed.
 const LEGACY_SCHEDULE_KEY='onde-schedule-open';
@@ -20,6 +22,7 @@ export function parseSettings(raw:unknown,legacySchedule:string|null=null):Devic
   dock:isOneOf(dockPositions,source.dock)?source.dock:defaultSettings.dock,
   motion:isOneOf(motionPreferences,source.motion)?source.motion:defaultSettings.motion,
   schedule:typeof source.schedule==='boolean'?source.schedule:legacySchedule==='0'?false:defaultSettings.schedule,
+  audioOnly:typeof source.audioOnly==='boolean'?source.audioOnly:defaultSettings.audioOnly,
  };
 }
 
