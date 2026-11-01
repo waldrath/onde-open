@@ -1,0 +1,18 @@
+[
+  {
+    "id": "rtl-zwee",
+    "name": "RTL Zwee",
+    "brand": "RTL Zwee",
+    "region": "Luxembourg",
+    "category": "General",
+    "color": "#6b8c92",
+    "language": "fr",
+    "description": "En lecture directe dans Onde via le flux public répertorié par iptv-org (catégorie : General).",
+    "official": "https://www.rtl.lu/tele/",
+    "guide": "https://www.rtl.lu/tele/",
+    "stream": "https://live-edge.rtl.lu/channel2/smil:channel2/playlist.m3u8",
+    "directory": "https://iptv-org.github.io/iptv/countries/lu.m3u",
+    "logoUrl": "https://i.imgur.com/7SmCtyy.png",
+    "source": "iptv-org"
+  }
+]

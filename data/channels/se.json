@@ -22,6 +22,7 @@
         "label": "NO"
       }
     ],
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/6728c9c85534bb0008b320a4/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -48,24 +49,8 @@
         "label": "NO"
       }
     ],
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/61c091c39863900007ac9e8f/colorLogoPNG.png",
-    "source": "iptv-org"
-  },
-  {
-    "id": "aryen-tv",
-    "name": "Aryen TV",
-    "brand": "Aryen TV",
-    "region": "Suède",
-    "category": "General",
-    "color": "#6b8c92",
-    "language": "sv",
-    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: General).",
-    "official": "https://www.aryen.tv/",
-    "guide": "https://www.aryen.tv/",
-    "stream": "https://aryen.tv/live/tv/playlist.m3u8",
-    "directory": "https://iptv-org.github.io/iptv/countries/se.m3u",
-    "note": "Channel flagged \"Not 24/7\" in the iptv-org directory: part-time schedule.",
-    "logoUrl": "https://i.imgur.com/hIhzT7t.png",
     "source": "iptv-org"
   },
   {
@@ -107,6 +92,7 @@
         "label": "NO"
       }
     ],
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/62da73c4ec46c000070f4cb1/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -133,6 +119,7 @@
         "label": "NO"
       }
     ],
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/6486e8984cfc2c0008b6844e/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -159,6 +146,7 @@
         "label": "NO"
       }
     ],
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/672e157d7d5da5000812872d/colorLogoPNG-1731073515797.png",
     "source": "iptv-org"
   },
@@ -185,6 +173,7 @@
         "label": "NO"
       }
     ],
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/632aff5e44111b00076ad9b1/colorLogoPNG_1767773210944.png",
     "source": "iptv-org"
   },
@@ -201,6 +190,7 @@
     "guide": "https://pluto.tv/live-tv/best-of-paradise-hotel-finalveckan-se/details",
     "stream": "https://jmp2.uk/plu-65e97d41f7f0af0008da2543.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/se.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/65e97d41f7f0af0008da2543/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -217,6 +207,7 @@
     "guide": "https://pluto.tv/live-tv/best-of-paradise-hotel-kyssar-and-karlek-se/details",
     "stream": "https://jmp2.uk/plu-65b1077e0d9ab40008245b20.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/se.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/65b1077e0d9ab40008245b20/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -233,6 +224,7 @@
     "guide": "https://pluto.tv/live-tv/best-of-paradise-hotel-pandoras-ask-se/details",
     "stream": "https://jmp2.uk/plu-65e97d760d456100082da660.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/se.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/65e97d760d456100082da660/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -249,6 +241,7 @@
     "guide": "https://pluto.tv/live-tv/best-of-paradise-hotel-skolveckan-se/details",
     "stream": "https://jmp2.uk/plu-65e97cd118036500082ed0ce.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/se.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/65e97cd118036500082ed0ce/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -275,6 +268,7 @@
         "label": "NO"
       }
     ],
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/61c1939b8929e40007ff6382/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -301,6 +295,7 @@
         "label": "NO"
       }
     ],
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/67a09ddc21af380008088dc3/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -327,6 +322,7 @@
         "label": "NO"
       }
     ],
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/65cba73611ced700082123bc/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -353,6 +349,7 @@
         "label": "NO"
       }
     ],
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/6964b982ca459f9b939da8e6/colorLogoPNG_1770900947317.png",
     "source": "iptv-org"
   },
@@ -369,6 +366,7 @@
     "guide": "https://pluto.tv/live-tv/buying-blind-denmark-se/details",
     "stream": "https://jmp2.uk/plu-63c6a7544faf1c0007b496d7.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/se.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/63c6a7544faf1c0007b496d7/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -391,6 +389,7 @@
         "label": "NO"
       }
     ],
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/61c1dce2fb9ae40007d0ac15/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -417,6 +416,7 @@
         "label": "NO"
       }
     ],
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/66a7aa44cd0d31000843942b/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -443,6 +443,7 @@
         "label": "NO"
       }
     ],
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/65e976ad0d456100082d9b74/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -469,6 +470,7 @@
         "label": "NO"
       }
     ],
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/693ae5660eedebc8d5db6579/colorLogoPNG_1770039249880.png",
     "source": "iptv-org"
   },
@@ -495,6 +497,7 @@
         "label": "NO"
       }
     ],
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/64e87c6b28cec700088ceb55/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -521,6 +524,7 @@
         "label": "NO"
       }
     ],
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/692edc78d52ea9e4858cf78f/colorLogoPNG_1768226003744.png",
     "source": "iptv-org"
   },
@@ -563,6 +567,7 @@
         "label": "NO"
       }
     ],
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/668bf7dd74f5ec000817e6d1/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -589,6 +594,7 @@
         "label": "NO"
       }
     ],
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/63a1cab19ab2df0007bf1c8b/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -621,6 +627,7 @@
     "guide": "https://pluto.tv/live-tv/frusna-vagar-se-ptv1/details",
     "stream": "https://jmp2.uk/plu-61c19099bf8c520007a93cff.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/se.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/61c19099bf8c520007a93cff/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -647,6 +654,7 @@
         "label": "NO"
       }
     ],
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/6442512cee6a2f0008d3351f/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -679,6 +687,7 @@
     "guide": "https://pluto.tv/live-tv/hogspanning-se/details",
     "stream": "https://jmp2.uk/plu-6537abf42cf1310008441686.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/se.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/6537abf42cf1310008441686/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -705,6 +714,7 @@
         "label": "NO"
       }
     ],
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/693ae62a43fe00a023e76e0d/colorLogoPNG_1769415649672.png",
     "source": "iptv-org"
   },
@@ -731,6 +741,7 @@
         "label": "NO"
       }
     ],
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/6728c831c7626f0008b28127/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -757,6 +768,7 @@
         "label": "NO"
       }
     ],
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/6380c36389eccc000858c50f/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -783,6 +795,7 @@
         "label": "NO"
       }
     ],
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/65cba715dc10a40008034917/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -799,6 +812,7 @@
     "guide": "https://pluto.tv/live-tv/kvlon-se/details",
     "stream": "https://jmp2.uk/plu-65a63ff00d9ab400080b101c.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/se.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/65a63ff00d9ab400080b101c/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -849,6 +863,7 @@
     "guide": "https://pluto.tv/live-tv/lyxfallan-se/details",
     "stream": "https://jmp2.uk/plu-61c18f62f5acaf0007f83135.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/se.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/61c18f62f5acaf0007f83135/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -865,6 +880,7 @@
     "guide": "https://pluto.tv/live-tv/lyxfallan-danmark-se/details",
     "stream": "https://jmp2.uk/plu-61c19165decece0007e9b2f3.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/se.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/61c19165decece0007e9b2f3/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -881,6 +897,7 @@
     "guide": "https://pluto.tv/live-tv/lyxfallan-norge-se/details",
     "stream": "https://jmp2.uk/plu-67f7d328efc5473b6b4ac5f4.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/se.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/67f7d328efc5473b6b4ac5f4/colorLogoPNG_1745915912635.png",
     "source": "iptv-org"
   },
@@ -907,6 +924,7 @@
         "label": "NO"
       }
     ],
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/678f88bb272ded16b1558c5e/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -933,6 +951,7 @@
         "label": "NO"
       }
     ],
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/68f0f54ca362b63a8df4d5a9/colorLogoPNG_1760622009795.png",
     "source": "iptv-org"
   },
@@ -959,6 +978,7 @@
         "label": "NO"
       }
     ],
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/63048147b09fd60007847a08/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -1001,6 +1021,7 @@
         "label": "NO"
       }
     ],
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/61c0909b872c650008ed42e4/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -1027,6 +1048,7 @@
         "label": "NO"
       }
     ],
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/61c09039ebd75200072587f9/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -1053,6 +1075,7 @@
         "label": "NO"
       }
     ],
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/6728d2be529ac9000830dc15/colorLogoPNG_1732110461260.png",
     "source": "iptv-org"
   },
@@ -1147,6 +1170,7 @@
         "label": "NO"
       }
     ],
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/642e94c1af2bd90008852697/colorLogoPNG_1756716763207.png",
     "source": "iptv-org"
   },
@@ -1169,6 +1193,7 @@
         "label": "DK"
       }
     ],
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/629e095e511d4b00070c9f44/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -1195,6 +1220,7 @@
         "label": "NO"
       }
     ],
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/61c19af83fae0a00078c8918/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -1221,6 +1247,7 @@
         "label": "NO"
       }
     ],
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/61c091343bf4940007803e03/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -1247,6 +1274,7 @@
         "label": "NO"
       }
     ],
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/64be7398e4391c0008cdedfe/colorLogoPNG_1776936976930.png",
     "source": "iptv-org"
   },
@@ -1263,6 +1291,7 @@
     "guide": "https://pluto.tv/live-tv/pluto-tv-buskis-se/details",
     "stream": "https://jmp2.uk/plu-660d5f2a635c75000828855f.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/se.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/660d5f2a635c75000828855f/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -1285,6 +1314,7 @@
         "label": "DK"
       }
     ],
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/62b30b0060a9ca0007d628b4/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -1311,6 +1341,7 @@
         "label": "NO"
       }
     ],
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/61c09515fbb4b50007d221f5/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -1327,6 +1358,7 @@
     "guide": "https://pluto.tv/live-tv/pluto-tv-handboll-highlights-se/details",
     "stream": "https://jmp2.uk/plu-68dfa3e2cc3c6cd904052c41.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/se.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/68dfa3e2cc3c6cd904052c41/colorLogoPNG_1761838923264.png",
     "source": "iptv-org"
   },
@@ -1343,6 +1375,7 @@
     "guide": "https://pluto.tv/live-tv/pluto-tv-handboll-live-se/details",
     "stream": "https://jmp2.uk/plu-686faf533ffa5e0c912688e7.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/se.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/686faf533ffa5e0c912688e7/colorLogoPNG_1762169254016.png",
     "source": "iptv-org"
   },
@@ -1369,6 +1402,7 @@
         "label": "NO"
       }
     ],
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/68c01afa3efb41cd9759dafb/colorLogoPNG_1770018342774.png",
     "source": "iptv-org"
   },
@@ -1395,6 +1429,7 @@
         "label": "NO"
       }
     ],
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/655ca7aa635c3c000855d655/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -1421,6 +1456,7 @@
         "label": "NO"
       }
     ],
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/61c09a78bd194c0008decc28/colorLogoPNG_1748329348443.png",
     "source": "iptv-org"
   },
@@ -1437,6 +1473,7 @@
     "guide": "https://pluto.tv/live-tv/pluto-tv-komedi-se/details",
     "stream": "https://jmp2.uk/plu-61c0b36d18447e000717d686.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/se.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/61c0b36d18447e000717d686/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -1459,6 +1496,7 @@
         "label": "NO"
       }
     ],
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/63dbe80f60bc8f0008aa7c78/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -1485,6 +1523,7 @@
         "label": "NO"
       }
     ],
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/68ac51dede4a734954b5a67a/colorLogoPNG_1761126157471.png",
     "source": "iptv-org"
   },
@@ -1507,6 +1546,7 @@
         "label": "DK"
       }
     ],
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/63a1c954d3897300079fcb12/colorLogoPNG_1767773445743.png",
     "source": "iptv-org"
   },
@@ -1533,6 +1573,7 @@
         "label": "NO"
       }
     ],
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/6357f3de3643ba0007bc0b50/colorLogoPNG_1746816938506.png",
     "source": "iptv-org"
   },
@@ -1549,6 +1590,7 @@
     "guide": "https://pluto.tv/live-tv/pluto-tv-tecknade-klassiker-se/details",
     "stream": "https://jmp2.uk/plu-67f5095a3481170e6843d95d.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/se.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/67f5095a3481170e6843d95d/colorLogoPNG_1748955339418.png",
     "source": "iptv-org"
   },
@@ -1565,6 +1607,7 @@
     "guide": "https://pluto.tv/live-tv/pluto-tv-tecknat-ptv1/details",
     "stream": "https://jmp2.uk/plu-61c0b6f028e94c000782684a.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/se.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/61c0b6f028e94c000782684a/colorLogoPNG_1749627909756.png",
     "source": "iptv-org"
   },
@@ -1591,6 +1634,7 @@
         "label": "NO"
       }
     ],
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/67f3fb1cdea1c5e0d588ac1b/colorLogoPNG_1748270797322.png",
     "source": "iptv-org"
   },
@@ -1607,6 +1651,7 @@
     "guide": "https://pluto.tv/live-tv/pluto-tv-varldskrigen-se/details",
     "stream": "https://jmp2.uk/plu-677d3ad04bd63600082f7c54.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/se.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/677d3ad04bd63600082f7c54/colorLogoPNG_1759445391825.png",
     "source": "iptv-org"
   },
@@ -1633,6 +1678,7 @@
         "label": "NO"
       }
     ],
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/68c01732b3900870ec74766f/colorLogoPNG_1761917904777.png",
     "source": "iptv-org"
   },
@@ -1659,6 +1705,7 @@
         "label": "NO"
       }
     ],
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/65e9766eec9fda0008cb418a/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -1675,6 +1722,7 @@
     "guide": "https://pluto.tv/live-tv/ridiculousness-nya-avsnitt-se/details",
     "stream": "https://jmp2.uk/plu-68dfa1e7fae18f8db6218703.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/se.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/68dfa1e7fae18f8db6218703/colorLogoPNG_1762543429004.png",
     "source": "iptv-org"
   },
@@ -1701,6 +1749,7 @@
         "label": "NO"
       }
     ],
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/6512ecf63a0d700008db506a/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -1727,6 +1776,7 @@
         "label": "NO"
       }
     ],
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/63a1caefc8d285000799e8af/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -1743,6 +1793,7 @@
     "guide": "https://pluto.tv/live-tv/skonhetsfallan-danmark-se/details",
     "stream": "https://jmp2.uk/plu-643808dce0789d00084797f6.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/se.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/643808dce0789d00084797f6/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -1769,6 +1820,7 @@
         "label": "NO"
       }
     ],
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/660bff28516d260008479e23/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -1795,6 +1847,7 @@
         "label": "NO"
       }
     ],
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/664f132c8ea5560008ce4d86/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -1821,6 +1874,7 @@
         "label": "NO"
       }
     ],
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/65d87a66ec9fda0008a5ac11/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -1847,6 +1901,7 @@
         "label": "NO"
       }
     ],
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/664f0eaa8ce31100088036bd/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -1873,6 +1928,7 @@
         "label": "NO"
       }
     ],
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/6400c281dff38e00083f59da/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -1899,6 +1955,7 @@
         "label": "NO"
       }
     ],
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/693add137e308621c051e733/colorLogoPNG_1765465486347.png",
     "source": "iptv-org"
   },
@@ -1915,6 +1972,7 @@
     "guide": "https://pluto.tv/live-tv/stugfixarna-norge-se/details",
     "stream": "https://jmp2.uk/plu-61c18ec6ac860c0007684981.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/se.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/61c18ec6ac860c0007684981/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -1931,6 +1989,7 @@
     "guide": "https://pluto.tv/live-tv/svampbob-fyrkant-se/details",
     "stream": "https://jmp2.uk/plu-61c0ba0816e2fd00086cb6b1.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/se.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/61c0ba0816e2fd00086cb6b1/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -1947,6 +2006,7 @@
     "guide": "https://pluto.tv/live-tv/svenska-hollywoodfruar-se/details",
     "stream": "https://jmp2.uk/plu-61c1921610d254000727eebd.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/se.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/61c1921610d254000727eebd/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -1969,6 +2029,7 @@
         "label": "NO"
       }
     ],
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/61f128f68a1dfc00086470af/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -2031,6 +2092,7 @@
         "label": "NO"
       }
     ],
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/65c096d23ba51e0008305a75/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -2057,6 +2119,7 @@
         "label": "NO"
       }
     ],
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/693ae48864476d678e9b6235/colorLogoPNG_1768226798170.png",
     "source": "iptv-org"
   },
@@ -2083,6 +2146,7 @@
         "label": "NO"
       }
     ],
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/69afeefa0a7f2095e768401c/colorLogoPNG_1776168453662.png",
     "source": "iptv-org"
   },
@@ -2125,6 +2189,7 @@
         "label": "NO"
       }
     ],
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/6512ec9f3a0d700008db4f0c/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -2141,6 +2206,7 @@
     "guide": "https://pluto.tv/live-tv/true-crime-fran-viaplay-se/details",
     "stream": "https://jmp2.uk/plu-645cb7857cb4b1000859c57c.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/se.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/645cb7857cb4b1000859c57c/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -2163,6 +2229,7 @@
         "label": "NO"
       }
     ],
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/61c1e1c445b45d0007aad03e/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -2189,6 +2256,7 @@
         "label": "NO"
       }
     ],
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/62bebc3459624e00078209c3/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -2215,6 +2283,7 @@
         "label": "NO"
       }
     ],
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/62b9b63d3bbe9000073c0a2d/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -2231,6 +2300,7 @@
     "guide": "https://pluto.tv/live-tv/2900-happiness-dk/details",
     "stream": "https://jmp2.uk/plu-6720bc6cdaad7f000872a6e2.m3u8",
     "directory": "https://iptv-org.github.io/api/streams.json",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/6720bc6cdaad7f000872a6e2/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -2247,6 +2317,7 @@
     "guide": "https://pluto.tv/live-tv/avatar-se-plus/details",
     "stream": "https://jmp2.uk/plu-61c09b48d6d97900076e91c5.m3u8",
     "directory": "https://iptv-org.github.io/api/streams.json",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/61c09b48d6d97900076e91c5/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -2263,23 +2334,8 @@
     "guide": "https://pluto.tv/live-tv/awkward-dk/details",
     "stream": "https://jmp2.uk/plu-61c0925c738ecd000882450a.m3u8",
     "directory": "https://iptv-org.github.io/api/streams.json",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/61c0925c738ecd000882450a/colorLogoPNG.png",
-    "source": "iptv-org"
-  },
-  {
-    "id": "aznews-tv",
-    "name": "Aznews TV",
-    "brand": "Aznews TV",
-    "region": "Suède",
-    "category": "News",
-    "color": "#6b8c92",
-    "language": "sv",
-    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: News).",
-    "official": "https://www.aznews.tv/",
-    "guide": "https://www.aznews.tv/",
-    "stream": "https://edge1.socialsmart.tv/aznews/smil/playlist.m3u8",
-    "directory": "https://iptv-org.github.io/api/streams.json",
-    "logoUrl": "https://i.imgur.com/Kw17XfP.png",
     "source": "iptv-org"
   },
   {
@@ -2295,6 +2351,7 @@
     "guide": "https://pluto.tv/live-tv/boligjakten-no/details",
     "stream": "https://jmp2.uk/plu-61c1dc21b9587d0007e3fc15.m3u8",
     "directory": "https://iptv-org.github.io/api/streams.json",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/61c1dc21b9587d0007e3fc15/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -2311,6 +2368,7 @@
     "guide": "https://pluto.tv/live-tv/boligkjop-i-blinde-no/details",
     "stream": "https://jmp2.uk/plu-63c6a1c46d126a000760b91c.m3u8",
     "directory": "https://iptv-org.github.io/api/streams.json",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/63c6a1c46d126a000760b91c/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -2327,23 +2385,8 @@
     "guide": "https://pluto.tv/live-tv/boligkob-i-blinde-dk/details",
     "stream": "https://jmp2.uk/plu-63c6a27a4faf1c0007b48f7b.m3u8",
     "directory": "https://iptv-org.github.io/api/streams.json",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/63c6a27a4faf1c0007b48f7b/colorLogoPNG.png",
-    "source": "iptv-org"
-  },
-  {
-    "id": "breinholts",
-    "name": "Breinholts",
-    "brand": "Breinholts",
-    "region": "Suède",
-    "category": "Entertainment",
-    "color": "#6b8c92",
-    "language": "sv",
-    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Entertainment).",
-    "official": "https://pluto.tv/live-tv/breinholts-dk/details",
-    "guide": "https://pluto.tv/live-tv/breinholts-dk/details",
-    "stream": "https://jmp2.uk/plu-660d6c0094db140008fe2f74.m3u8",
-    "directory": "https://iptv-org.github.io/api/streams.json",
-    "logoUrl": "https://images.pluto.tv/channels/660d6c0094db140008fe2f74/colorLogoPNG.png",
     "source": "iptv-org"
   },
   {
@@ -2359,6 +2402,7 @@
     "guide": "https://pluto.tv/live-tv/brondby-tv-dk/details",
     "stream": "https://jmp2.uk/plu-685029cda1e091e16ff57fc8.m3u8",
     "directory": "https://iptv-org.github.io/api/streams.json",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/685029cda1e091e16ff57fc8/colorLogoPNG_1750246109707.png",
     "source": "iptv-org"
   },
@@ -2375,6 +2419,7 @@
     "guide": "https://pluto.tv/live-tv/charterfeber-no/details",
     "stream": "https://jmp2.uk/plu-61c1dda0fe470d00080f85b8.m3u8",
     "directory": "https://iptv-org.github.io/api/streams.json",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/61c1dda0fe470d00080f85b8/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -2391,6 +2436,7 @@
     "guide": "https://pluto.tv/live-tv/comedy-central-roast-dk/details",
     "stream": "https://jmp2.uk/plu-6641fd41b18d700008e7e2b8.m3u8",
     "directory": "https://iptv-org.github.io/api/streams.json",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/6641fd41b18d700008e7e2b8/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -2407,39 +2453,8 @@
     "guide": "https://pluto.tv/live-tv/den-gule-sofa-med-allan-sindberg-dk/details",
     "stream": "https://jmp2.uk/plu-66b22714d512590008c3d573.m3u8",
     "directory": "https://iptv-org.github.io/api/streams.json",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/66b22714d512590008c3d573/colorLogoPNG.png",
-    "source": "iptv-org"
-  },
-  {
-    "id": "detseneshowmed-christian-fuhlendorff",
-    "name": "Det sene show med Christian Fuhlendorff",
-    "brand": "Det sene show med Christian Fuhlendorff",
-    "region": "Suède",
-    "category": "Entertainment",
-    "color": "#6b8c92",
-    "language": "sv",
-    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Entertainment).",
-    "official": "https://pluto.tv/live-tv/det-sene-show-med-christian-fuhlendorff-dk/details",
-    "guide": "https://pluto.tv/live-tv/det-sene-show-med-christian-fuhlendorff-dk/details",
-    "stream": "https://jmp2.uk/plu-660d6bc10cd4630008f4a25a.m3u8",
-    "directory": "https://iptv-org.github.io/api/streams.json",
-    "logoUrl": "https://images.pluto.tv/channels/660d6bc10cd4630008f4a25a/colorLogoPNG.png",
-    "source": "iptv-org"
-  },
-  {
-    "id": "deungemodre",
-    "name": "De unge modre",
-    "brand": "De unge modre",
-    "region": "Suède",
-    "category": "Entertainment",
-    "color": "#6b8c92",
-    "language": "sv",
-    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Entertainment).",
-    "official": "https://pluto.tv/live-tv/de-unge-modre-dk/details",
-    "guide": "https://pluto.tv/live-tv/de-unge-modre-dk/details",
-    "stream": "https://jmp2.uk/plu-69172a4fcf4a1101befdd894.m3u8",
-    "directory": "https://iptv-org.github.io/api/streams.json",
-    "logoUrl": "https://images.pluto.tv/channels/69172a4fcf4a1101befdd894/colorLogoPNG_1770030924752.png",
     "source": "iptv-org"
   },
   {
@@ -2455,6 +2470,7 @@
     "guide": "https://pluto.tv/live-tv/eventyrlig-oppussing-no/details",
     "stream": "https://jmp2.uk/plu-61c1de93244e500007581d69.m3u8",
     "directory": "https://iptv-org.github.io/api/streams.json",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/61c1de93244e500007581d69/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -2471,6 +2487,7 @@
     "guide": "https://pluto.tv/live-tv/familien-fra-bryggen-dk/details",
     "stream": "https://jmp2.uk/plu-61c19c8c9863900007acaa57.m3u8",
     "directory": "https://iptv-org.github.io/api/streams.json",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/61c19c8c9863900007acaa57/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -2487,6 +2504,7 @@
     "guide": "https://pluto.tv/live-tv/fboy-island-dk/details",
     "stream": "https://jmp2.uk/plu-6790d6c7bc03978b9bfbfd44.m3u8",
     "directory": "https://iptv-org.github.io/api/streams.json",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/6790d6c7bc03978b9bfbfd44/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -2503,6 +2521,7 @@
     "guide": "https://pluto.tv/live-tv/fck-lovinderne-dk/details",
     "stream": "https://jmp2.uk/plu-68ac5403de4a734954b5ab75.m3u8",
     "directory": "https://iptv-org.github.io/api/streams.json",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/68ac5403de4a734954b5ab75/colorLogoPNG_1756124331035.png",
     "source": "iptv-org"
   },
@@ -2519,6 +2538,7 @@
     "guide": "https://pluto.tv/live-tv/for-laekker-til-love-dk/details",
     "stream": "https://jmp2.uk/plu-6272511cb389bb0007b30b09.m3u8",
     "directory": "https://iptv-org.github.io/api/streams.json",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/6272511cb389bb0007b30b09/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -2535,6 +2555,7 @@
     "guide": "https://pluto.tv/live-tv/forsidefruer-dk/details",
     "stream": "https://jmp2.uk/plu-61c19dcefbb4b50007d242e1.m3u8",
     "directory": "https://iptv-org.github.io/api/streams.json",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/61c19dcefbb4b50007d242e1/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -2551,29 +2572,8 @@
     "guide": "https://pluto.tv/live-tv/gustav-and-linse-pa-udebane/details",
     "stream": "https://jmp2.uk/plu-69c290eeed1b1f1acb446dd8.m3u8",
     "directory": "https://iptv-org.github.io/api/streams.json",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/69c290eeed1b1f1acb446dd8/colorLogoPNG_1778675778733.png",
-    "source": "iptv-org"
-  },
-  {
-    "id": "kanal10-asia",
-    "name": "Kanal 10 Asia",
-    "brand": "Kanal 10 Asia",
-    "region": "Suède",
-    "category": "Religious",
-    "color": "#6b8c92",
-    "language": "sv",
-    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Religious).",
-    "official": "https://www.kanal10asia.com/",
-    "guide": "https://www.kanal10asia.com/",
-    "stream": "https://cdn-kanal10.crossnet.net/kanal10/ngrp:kanal10asia_all/playlist.m3u8",
-    "directory": "https://iptv-org.github.io/api/streams.json",
-    "streamAlts": [
-      {
-        "url": "http://cdn-kanal10.crossnet.net:1935/kanal10/kanal10asia/playlist.m3u8",
-        "label": "SD"
-      }
-    ],
-    "logoUrl": "https://i.imgur.com/tY7IJva.png",
     "source": "iptv-org"
   },
   {
@@ -2589,6 +2589,7 @@
     "guide": "https://pluto.tv/live-tv/kochen-pa-toppen-dk/details",
     "stream": "https://jmp2.uk/plu-660d667519ca71000849a1e1.m3u8",
     "directory": "https://iptv-org.github.io/api/streams.json",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/660d667519ca71000849a1e1/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -2605,6 +2606,7 @@
     "guide": "https://pluto.tv/live-tv/langt-fra-bryggen-dk/details",
     "stream": "https://jmp2.uk/plu-654a3fe6986ad20008a42add.m3u8",
     "directory": "https://iptv-org.github.io/api/streams.json",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/654a3fe6986ad20008a42add/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -2621,6 +2623,7 @@
     "guide": "https://pluto.tv/live-tv/luksusfaelden-dk/details",
     "stream": "https://jmp2.uk/plu-61c19b7785706b00072d421a.m3u8",
     "directory": "https://iptv-org.github.io/api/streams.json",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/61c19b7785706b00072d421a/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -2637,6 +2640,7 @@
     "guide": "https://pluto.tv/live-tv/luksusfellen-no/details",
     "stream": "https://jmp2.uk/plu-61c1e060197fe600073c1ffb.m3u8",
     "directory": "https://iptv-org.github.io/api/streams.json",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/61c1e060197fe600073c1ffb/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -2653,6 +2657,7 @@
     "guide": "https://pluto.tv/live-tv/luksusfellen-sverige-no/details",
     "stream": "https://jmp2.uk/plu-61c1e0f1d6d97900076ea16f.m3u8",
     "directory": "https://iptv-org.github.io/api/streams.json",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/61c1e0f1d6d97900076ea16f/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -2669,6 +2674,7 @@
     "guide": "https://pluto.tv/live-tv/masterchef-danmarks-storste-madtalenter-dk/details",
     "stream": "https://jmp2.uk/plu-61c19edbf535220007075c4e.m3u8",
     "directory": "https://iptv-org.github.io/api/streams.json",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/61c19edbf535220007075c4e/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -2685,6 +2691,7 @@
     "guide": "https://pluto.tv/live-tv/med-kniven-for-struben-dk/details",
     "stream": "https://jmp2.uk/plu-63e3b33e8795f300087e6a46.m3u8",
     "directory": "https://iptv-org.github.io/api/streams.json",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/63e3b33e8795f300087e6a46/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -2701,6 +2708,7 @@
     "guide": "https://pluto.tv/live-tv/mit-plastikmareridt-dk/details",
     "stream": "https://jmp2.uk/plu-643814ef479f6400086ff043.m3u8",
     "directory": "https://iptv-org.github.io/api/streams.json",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/643814ef479f6400086ff043/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -2717,6 +2725,7 @@
     "guide": "https://pluto.tv/live-tv/ncis-det-bedste-med-gibbs-dk/details",
     "stream": "https://jmp2.uk/plu-6901d952ec12c3c759fdc7cd.m3u8",
     "directory": "https://iptv-org.github.io/api/streams.json",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/6901d952ec12c3c759fdc7cd/colorLogoPNG_1763121346503.png",
     "source": "iptv-org"
   },
@@ -2733,6 +2742,7 @@
     "guide": "https://pluto.tv/live-tv/ncis-det-bedste-med-tony-and-ziva-dk/details",
     "stream": "https://jmp2.uk/plu-68921b2f4fa995eff24df6c8.m3u8",
     "directory": "https://iptv-org.github.io/api/streams.json",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/68921b2f4fa995eff24df6c8/colorLogoPNG_1756105299557.png",
     "source": "iptv-org"
   },
@@ -2749,6 +2759,7 @@
     "guide": "https://pluto.tv/live-tv/nordisk-krim-fra-viaplay-no/details",
     "stream": "https://jmp2.uk/plu-64eca23c9c1e390008524ae6.m3u8",
     "directory": "https://iptv-org.github.io/api/streams.json",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/64eca23c9c1e390008524ae6/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -2765,6 +2776,7 @@
     "guide": "https://pluto.tv/live-tv/paradise-hotel-under-lagnerne-dk/details",
     "stream": "https://jmp2.uk/plu-662b71658dd8160008fc3abf.m3u8",
     "directory": "https://iptv-org.github.io/api/streams.json",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/662b71658dd8160008fc3abf/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -2781,6 +2793,7 @@
     "guide": "https://pluto.tv/live-tv/pluto-tv-alien-invasion-dk/details",
     "stream": "https://jmp2.uk/plu-650999b86a841400083bd1ab.m3u8",
     "directory": "https://iptv-org.github.io/api/streams.json",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/650999b86a841400083bd1ab/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -2797,6 +2810,7 @@
     "guide": "https://pluto.tv/live-tv/pluto-tv-danske-klassikere-dk/details",
     "stream": "https://jmp2.uk/plu-67d2b814fe36d6e7b1d2318a.m3u8",
     "directory": "https://iptv-org.github.io/api/streams.json",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/67d2b814fe36d6e7b1d2318a/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -2813,6 +2827,7 @@
     "guide": "https://pluto.tv/live-tv/pluto-tv-fishing-dk/details",
     "stream": "https://jmp2.uk/plu-619e1874e0d3a7000729a036.m3u8",
     "directory": "https://iptv-org.github.io/api/streams.json",
+    "nativeHlsOnly": true,
     "logoUrl": "https://i.imgur.com/ZaHOk8j.png",
     "source": "iptv-org"
   },
@@ -2829,6 +2844,7 @@
     "guide": "https://pluto.tv/live-tv/pluto-tv-handbold-highlights-dk/details",
     "stream": "https://jmp2.uk/plu-68dfa431cc3c6cd904053100.m3u8",
     "directory": "https://iptv-org.github.io/api/streams.json",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/68dfa431cc3c6cd904053100/colorLogoPNG_1761838112979.png",
     "source": "iptv-org"
   },
@@ -2845,6 +2861,7 @@
     "guide": "https://pluto.tv/live-tv/pluto-tv-handbold-live-dk/details",
     "stream": "https://jmp2.uk/plu-6618f54baec96800081525ec.m3u8",
     "directory": "https://iptv-org.github.io/api/streams.json",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/6618f54baec96800081525ec/colorLogoPNG_1762173655031.png",
     "source": "iptv-org"
   },
@@ -2861,6 +2878,7 @@
     "guide": "https://pluto.tv/live-tv/pluto-tv-klassiske-tegnefilm-dk/details",
     "stream": "https://jmp2.uk/plu-67f508992ebe80e2929b5c98.m3u8",
     "directory": "https://iptv-org.github.io/api/streams.json",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/67f508992ebe80e2929b5c98/colorLogoPNG_1748955041610.png",
     "source": "iptv-org"
   },
@@ -2877,6 +2895,7 @@
     "guide": "https://pluto.tv/live-tv/pluto-tv-klassiske-tegnefilmer-no/details",
     "stream": "https://jmp2.uk/plu-67f508f68ddd60c57dc44766.m3u8",
     "directory": "https://iptv-org.github.io/api/streams.json",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/67f508f68ddd60c57dc44766/colorLogoPNG_1748955225113.png",
     "source": "iptv-org"
   },
@@ -2893,6 +2912,7 @@
     "guide": "https://pluto.tv/live-tv/pluto-tv-komedie-no/details",
     "stream": "https://jmp2.uk/plu-61c1e3a679a4390007c78136.m3u8",
     "directory": "https://iptv-org.github.io/api/streams.json",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/61c1e3a679a4390007c78136/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -2909,6 +2929,7 @@
     "guide": "https://pluto.tv/live-tv/pluto-tv-kultfilm-dk/details",
     "stream": "https://jmp2.uk/plu-63dbe7ed51f5d000083e9499.m3u8",
     "directory": "https://iptv-org.github.io/api/streams.json",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/63dbe7ed51f5d000083e9499/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -2925,6 +2946,7 @@
     "guide": "https://pluto.tv/live-tv/pluto-tv-overnaturlig-no/details",
     "stream": "https://jmp2.uk/plu-61c1e74354d923000731bf7c.m3u8",
     "directory": "https://iptv-org.github.io/api/streams.json",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/61c1e74354d923000731bf7c/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -2941,6 +2963,7 @@
     "guide": "https://pluto.tv/live-tv/pluto-tv-under-mistelteinen-no/details",
     "stream": "https://jmp2.uk/plu-63a19bb5e6914b000721b5c0.m3u8",
     "directory": "https://iptv-org.github.io/api/streams.json",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/63a19bb5e6914b000721b5c0/colorLogoPNG_1767773376618.png",
     "source": "iptv-org"
   },
@@ -2957,6 +2980,7 @@
     "guide": "https://pluto.tv/live-tv/pluto-tv-space-dk/details",
     "stream": "https://jmp2.uk/plu-61b86c6ef30f5d0007e4c6d1.m3u8",
     "directory": "https://iptv-org.github.io/api/streams.json",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/61b86c6ef30f5d0007e4c6d1/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -2973,6 +2997,7 @@
     "guide": "https://pluto.tv/live-tv/pluto-tv-star-trek-dk/details",
     "stream": "https://jmp2.uk/plu-61c1979dfa307000070bbe4d.m3u8",
     "directory": "https://iptv-org.github.io/api/streams.json",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/61c1979dfa307000070bbe4d/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -2995,6 +3020,7 @@
         "label": "NO"
       }
     ],
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/61c09938e0d3a700072b68b1/colorLogoPNG_1749627293329.png",
     "source": "iptv-org"
   },
@@ -3017,6 +3043,7 @@
         "label": "NO"
       }
     ],
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/677d397b60fbeb00084b0bff/colorLogoPNG_1759437735629.png",
     "source": "iptv-org"
   },
@@ -3033,6 +3060,7 @@
     "guide": "https://pluto.tv/live-tv/podradio-pa-pluto-tv-dk/details",
     "stream": "https://jmp2.uk/plu-67f79fdb3481170e68c0bc38.m3u8",
     "directory": "https://iptv-org.github.io/api/streams.json",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/67f79fdb3481170e68c0bc38/colorLogoPNG_1748943874109.png",
     "source": "iptv-org"
   },
@@ -3049,6 +3077,7 @@
     "guide": "https://pluto.tv/live-tv/r8dio-tv/details",
     "stream": "https://jmp2.uk/plu-698ddf5a8c21a5f2d64c14a8.m3u8",
     "directory": "https://iptv-org.github.io/api/streams.json",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/698ddf5a8c21a5f2d64c14a8/colorLogoPNG_1774610552478.png",
     "source": "iptv-org"
   },
@@ -3065,6 +3094,7 @@
     "guide": "https://pluto.tv/live-tv/ridiculousness-nye-afsnit-dk/details",
     "stream": "https://jmp2.uk/plu-68dfa160cc3c6cd90404d798.m3u8",
     "directory": "https://iptv-org.github.io/api/streams.json",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/68dfa160cc3c6cd90404d798/colorLogoPNG_1762543256959.png",
     "source": "iptv-org"
   },
@@ -3081,6 +3111,7 @@
     "guide": "https://pluto.tv/live-tv/ridiculousness-nye-episoder-no/details",
     "stream": "https://jmp2.uk/plu-68dfa1a7fae18f8db6218222.m3u8",
     "directory": "https://iptv-org.github.io/api/streams.json",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/68dfa1a7fae18f8db6218222/colorLogoPNG_1762510989212.png",
     "source": "iptv-org"
   },
@@ -3097,6 +3128,7 @@
     "guide": "https://pluto.tv/live-tv/robinson-ekspeditionen-dk/details",
     "stream": "https://jmp2.uk/plu-63a42df60cc44a0007dd47f8.m3u8",
     "directory": "https://iptv-org.github.io/api/streams.json",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/63a42df60cc44a0007dd47f8/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -3113,6 +3145,7 @@
     "guide": "https://pluto.tv/live-tv/skjonnhetsfellen-danmark-no/details",
     "stream": "https://jmp2.uk/plu-643810f2e8a4aa0008ccf575.m3u8",
     "directory": "https://iptv-org.github.io/api/streams.json",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/643810f2e8a4aa0008ccf575/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -3129,6 +3162,7 @@
     "guide": "https://pluto.tv/live-tv/skonne-ombygninger-dk/details",
     "stream": "https://jmp2.uk/plu-61c19d329b8260000744331b.m3u8",
     "directory": "https://iptv-org.github.io/api/streams.json",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/61c19d329b8260000744331b/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -3151,6 +3185,7 @@
         "label": "NO"
       }
     ],
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/61c09ac98a80a4000703f992/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -3167,6 +3202,8 @@
     "guide": "https://www.svt.se/",
     "stream": "https://svt-live-channel.akamaized.net/l6/se/svtb/master-fmp4.m3u8?defaultSubLang=1&format=hls",
     "directory": "https://iptv-org.github.io/api/streams.json",
+    "limited": true,
+    "note": "Stream refused (HTTP 403) from outside its region when checked: playback is probably limited to the broadcaster's country.",
     "logoUrl": "https://i.imgur.com/uMEwuTH.png",
     "source": "iptv-org"
   },
@@ -3183,6 +3220,7 @@
     "guide": "https://pluto.tv/live-tv/til-julefrokost-hos-r8dio-dk/details",
     "stream": "https://jmp2.uk/plu-69256bd7db5cc2f81d8a1a08.m3u8",
     "directory": "https://iptv-org.github.io/api/streams.json",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/69256bd7db5cc2f81d8a1a08/colorLogoPNG_1764256965972.png",
     "source": "iptv-org"
   },
@@ -3199,6 +3237,7 @@
     "guide": "https://pluto.tv/live-tv/til-middag-hos-dk/details",
     "stream": "https://jmp2.uk/plu-61c1a05ef30f5d0007e562f3.m3u8",
     "directory": "https://iptv-org.github.io/api/streams.json",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/61c1a05ef30f5d0007e562f3/colorLogoPNG.png",
     "source": "iptv-org"
   }

@@ -1,0 +1,175 @@
+/* Rétro 90 — outrun night drive: a striped sun setting behind wireframe hills,
+   a neon floor running to the horizon, chrome headings and magenta-to-cyan light.
+   Glow is static layered shadow; the only motion is the floor sliding (transform). */
+.app-shell[data-theme=retro] {
+  --bg: #0a0322;
+  --panel: #150a38;
+  --panel2: #1c0e48;
+  --surface: #150a38;
+  --surface-raised: #211253;
+  --line: #3a2472;
+  --border: #4d3194;
+  --text: #f5f0ff;
+  --copy: #f5f0ff;
+  --muted: #bcaee8;
+  --quiet: #bcaee8;
+  --accent: #ff4fd0;
+  --accent-ink: #1a0329;
+  --focus: #3ef0ff;
+  --chrome: linear-gradient(180deg, #fff 0%, #e2fbff 38%, #6ff4ff 50%, #ff7ad9 54%, #ffd1f3 100%);
+  --neon: linear-gradient(90deg, #ff4fd0, #a77bff);
+  --skin-accent: #ff4fd0;
+  --skin-line: #3a2472;
+  --skin-heading-font: var(--font-heading);
+  --skin-heading-tracking: .02em;
+  --skin-heading-shadow: none;
+  --skin-icon-bg: linear-gradient(160deg, rgba(255, 79, 208, .2), rgba(62, 240, 255, .08));
+  --skin-icon-border: rgba(255, 79, 208, .42);
+  --skin-icon-color: #a6f7ff;
+  --skin-icon-shadow: 0 0 14px rgba(255, 79, 208, .18), inset 0 1px 0 rgba(255, 255, 255, .1);
+  --skin-surface-shadow: 0 18px 44px rgba(4, 0, 18, .5), inset 0 1px 0 rgba(255, 255, 255, .06);
+  --skin-speck: #fff;
+  background: #0a0322;
+}
+/* The old full-screen scanline veil sat over logos and video; the backdrop carries the mood now. */
+.app-shell[data-theme=retro]::after { display: none; }
+
+/* Backdrop: dusk sky, sun and hills on the horizon, a perspective floor below. */
+.backdrop-retro {
+  background:
+    radial-gradient(46% 30% at 50% 66%, rgba(255, 79, 208, .3), transparent 70%),
+    radial-gradient(80% 50% at 50% 0, rgba(122, 76, 255, .2), transparent 70%),
+    linear-gradient(180deg, #08021c 0%, #160641 50%, #3a0c5e 66%, #0a0322 66.1%, #0a0322 100%);
+}
+.backdrop-retro::before {
+  content: "";
+  position: absolute;
+  inset: auto auto 34% 50%;
+  width: min(1180px, 150vw);
+  aspect-ratio: 4;
+  /* A dusk haze over the sun keeps text that sits on the backdrop above 4.5:1. */
+  background: radial-gradient(12.6% 50.5% at 50% 56.7%, rgba(30, 8, 66, .7) 99%, transparent 100%), url('/themes/retro/horizon.svg') center bottom / contain no-repeat;
+  transform: translateX(-50%);
+  opacity: .62;
+  animation: none;
+}
+.backdrop-retro::after { inset: 66% 0 auto; height: 2px; background: linear-gradient(90deg, transparent, #ff7ad9 22%, #6ff4ff 50%, #ff7ad9 78%, transparent); box-shadow: 0 0 18px 2px rgba(255, 79, 208, .45); opacity: .8; }
+.backdrop-retro .theme-neon-grid {
+  left: -40%;
+  right: -40%;
+  top: 66%;
+  bottom: auto;
+  height: 120%;
+  background-image: linear-gradient(rgba(62, 240, 255, .34) 2px, transparent 2px), linear-gradient(90deg, rgba(255, 79, 208, .3) 2px, transparent 2px);
+  background-size: 80px 60px;
+  transform-origin: 50% 0;
+  transform: perspective(300px) rotateX(70deg);
+  mask-image: linear-gradient(#000, rgba(0, 0, 0, .2) 40%, transparent 60%);
+  opacity: .55;
+  animation: retro-floor 6s linear infinite;
+}
+.backdrop-retro :is(.backdrop-aura, .backdrop-mesh, .backdrop-rings, .backdrop-grain) { display: none; }
+.backdrop-retro .backdrop-specks { inset: 0 0 40%; }
+.backdrop-retro .backdrop-specks i { box-shadow: none; animation-duration: 14s; }
+.backdrop-retro .backdrop-specks i:nth-child(n+9) { display: none; }
+@keyframes retro-floor { to { transform: perspective(300px) rotateX(70deg) translateY(60px); } }
+
+/* Chrome: deep violet bars with a neon hairline. */
+.app-shell[data-theme=retro] :is(.sidebar, .mobile-nav) { background: linear-gradient(180deg, #120637, #0a0322); border-color: var(--line); }
+.app-shell[data-theme=retro] .topbar { background: rgba(10, 3, 34, .8); border-color: var(--line); }
+.app-shell[data-theme=retro] .topbar::after { background: linear-gradient(90deg, transparent, #ff4fd0 30%, #3ef0ff 70%, transparent); opacity: .5; }
+.app-shell[data-theme=retro] .logo { color: #fff; text-shadow: 0 0 10px rgba(255, 79, 208, .55), 0 0 2px rgba(255, 255, 255, .6); animation: none; }
+.app-shell[data-theme=retro] :is(.nav-item, .breadcrumb, .breadcrumb span, .sync-indicator, .icon-button) { color: #cfc3f2; }
+.app-shell[data-theme=retro] .nav-item:hover { background: rgba(62, 240, 255, .07); color: #b9f8ff; }
+.app-shell[data-theme=retro] .nav-item.nav-active { background: var(--neon); color: var(--accent-ink); box-shadow: 0 0 0 1px rgba(255, 255, 255, .18) inset, 0 8px 24px rgba(255, 79, 208, .35); }
+.app-shell[data-theme=retro] .nav-item.nav-active > svg:first-of-type { background: rgba(26, 3, 41, .2); border-color: rgba(26, 3, 41, .3); color: var(--accent-ink); }
+.app-shell[data-theme=retro] :is(.search-box, .profile-avatar) { background: rgba(21, 10, 56, .9); border-color: var(--border); color: var(--muted); }
+.app-shell[data-theme=retro] :focus-visible { outline-color: #3ef0ff; }
+
+/* Type: chrome-plated page titles, neon-lit section titles. */
+.app-shell[data-theme=retro] :is(.page-heading h1, .home-section-heading h2, .section-heading h2, .selection-theme-head h2, .modal h2, .favorites-lists h2, .list-open h3, .home-hero h2, .access-card h1) {
+  background: none;
+  filter: none;
+  color: var(--text);
+  -webkit-text-fill-color: currentColor;
+  font-weight: 800;
+  font-style: italic;
+  text-transform: uppercase;
+  text-wrap: balance;
+  text-shadow: 0 0 16px rgba(255, 79, 208, .4);
+}
+.app-shell[data-theme=retro] :is(.page-heading h1, .access-card h1) { background: var(--chrome); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; text-shadow: none; letter-spacing: .01em; }
+.app-shell[data-theme=retro] .page-heading h1::after { width: 64px; height: 3px; background: linear-gradient(90deg, #ff4fd0, #3ef0ff); opacity: 1; box-shadow: 0 0 10px rgba(255, 79, 208, .6); }
+.app-shell[data-theme=retro] :is(.eyebrow, .hero-eyebrow, .access-kicker) { color: #8ff6ff; letter-spacing: .2em; }
+
+/* Surfaces: violet glass slabs (opaque, no backdrop blur) with a lit top edge. */
+.app-shell[data-theme=retro] :is(.channel-card, .list-card, .selection-row, .empty-state, .selection-lead, .device-note, .guide-row, .guide-intro, .desktop-channel-panel, .desktop-programme-panel, .up-next, .player-shell, .guide-explorer, .favorites-lists, .filter-panel) {
+  background: linear-gradient(170deg, #1c0d4a, #120838 70%);
+  border-color: var(--line);
+  border-radius: 14px;
+}
+.app-shell[data-theme=retro] .channel-card:hover { border-color: #ff4fd0; box-shadow: 0 0 0 1px rgba(255, 79, 208, .4), 0 18px 40px rgba(4, 0, 18, .55), 0 0 30px rgba(255, 79, 208, .22); }
+.app-shell[data-theme=retro] :is(.card-visual, .home-favorite-art) { background: radial-gradient(120% 100% at 50% 0, #2c1566, #160a3c); border-color: var(--line); }
+.app-shell[data-theme=retro] :is(.card-visual, .home-favorite-art, .desktop-channel-row) img { outline: 1px solid rgba(255, 255, 255, .1); outline-offset: -1px; }
+.app-shell[data-theme=retro] :is(.home-favorite-row button, .desktop-channel-row) { background: linear-gradient(170deg, #1e0f4c, #150a3a); border-color: var(--line); color: var(--text); }
+.app-shell[data-theme=retro] .desktop-channel-row:hover { border-color: #3ef0ff; background: #24125a; }
+.app-shell[data-theme=retro] :is(.home-category-grid button, .home-category-grid button:nth-child(n)) { background: linear-gradient(160deg, #1f0f50, #140838); border: 1px solid var(--line); color: var(--text); }
+.app-shell[data-theme=retro] .home-category-grid button:hover { filter: none; border-color: #3ef0ff; box-shadow: 0 0 0 1px rgba(62, 240, 255, .25), 0 0 22px rgba(62, 240, 255, .16); }
+.app-shell[data-theme=retro] :is(.playback-tag, .card-favorite, .home-favorite-fav, .hero-secondary) { -webkit-backdrop-filter: none; backdrop-filter: none; }
+.app-shell[data-theme=retro] .playback-tag { background: rgba(10, 3, 34, .86); border-color: rgba(255, 255, 255, .14); }
+.app-shell[data-theme=retro] :is(.card-favorite, .home-favorite-row .home-favorite-item > .home-favorite-fav) { background: rgba(21, 10, 56, .9); }
+
+/* Heroes: the river photograph at dusk, washed in magenta and violet. */
+.app-shell[data-theme=retro] .desktop-first {
+  border-color: var(--border);
+  border-radius: 16px;
+  background:
+    linear-gradient(0deg, rgba(10, 3, 34, .96) 8%, rgba(10, 3, 34, .35) 58%, rgba(10, 3, 34, .1)),
+    linear-gradient(180deg, rgba(122, 76, 255, .35), rgba(255, 79, 208, .3) 55%, rgba(10, 3, 34, 0)),
+    url('/images/onde-river-hero.webp') center 55% / cover;
+  box-shadow: 0 24px 60px rgba(4, 0, 18, .5), 0 0 0 1px rgba(255, 79, 208, .12);
+}
+.app-shell[data-theme=retro] .home-hero { background: linear-gradient(160deg, #2b0e62, #12063a 60%, #0a0322); box-shadow: inset 0 0 0 1px var(--line), 0 18px 44px rgba(4, 0, 18, .5); }
+.app-shell[data-theme=retro] .home-hero::after { border-color: rgba(255, 79, 208, .35); box-shadow: 0 0 0 30px rgba(255, 79, 208, .06), 0 0 0 31px rgba(62, 240, 255, .18), 0 0 0 64px rgba(122, 76, 255, .05), 0 0 0 65px rgba(255, 79, 208, .14); }
+
+/* Controls. */
+.app-shell[data-theme=retro] :is(.primary, .home-primary) { background: var(--neon); color: var(--accent-ink); box-shadow: 0 0 0 1px rgba(255, 255, 255, .16) inset, 0 10px 26px rgba(255, 79, 208, .3); }
+.app-shell[data-theme=retro] :is(.primary, .home-primary):hover { background: linear-gradient(90deg, #ff6fda, #b892ff); box-shadow: 0 0 0 1px rgba(255, 255, 255, .22) inset, 0 12px 32px rgba(255, 79, 208, .42); }
+.app-shell[data-theme=retro] :is(.secondary, .hero-secondary) { background: rgba(33, 18, 83, .85); border-color: var(--border); color: var(--text); }
+.app-shell[data-theme=retro] :is(.secondary, .hero-secondary):hover { border-color: #3ef0ff; background: #2a1764; color: #fff; }
+.app-shell[data-theme=retro] :is(.desktop-panel-heading button, .home-section-heading > button, .home-carousel-all, .text-button, .notice button, .notice a) { color: #8ff6ff; }
+.app-shell[data-theme=retro] .region-tabs { background: #120838; border-color: var(--line); }
+.app-shell[data-theme=retro] :is(.region-tabs button, .mobile-nav button) { color: var(--muted); }
+.app-shell[data-theme=retro] .region-tabs button.active { background: rgba(255, 79, 208, .16); color: #ffb3ec; box-shadow: inset 0 -2px 0 #ff4fd0; }
+.app-shell[data-theme=retro] .guide-periods button[aria-pressed=true] { background: var(--neon); color: var(--accent-ink); border-color: transparent; }
+.app-shell[data-theme=retro] .guide-days button[aria-pressed=true] { background: linear-gradient(180deg, #3a1470, #22104f); border-color: #ff4fd0; color: #fff; box-shadow: 0 0 18px rgba(255, 79, 208, .25); }
+.app-shell[data-theme=retro] .expanded-programme.programme-live { box-shadow: inset 3px 0 0 #3ef0ff; }
+.app-shell[data-theme=retro] .selection-rank { color: #ff9ae4; }
+.app-shell[data-theme=retro] .section-count { font-style: normal; color: var(--muted); }
+
+/* Dialogs, player and mini player share the palette. */
+.app-shell[data-theme=retro] :is(.watch-section, .watch-dock, .modal, .help-backdrop, .guide-explorer) { --line: #3a2472; --accent: #ff4fd0; --text: #f5f0ff; --muted: #bcaee8; color: #f5f0ff; }
+.app-shell[data-theme=retro] :is(.modal, .watch-dock) { background: linear-gradient(180deg, #1a0b45, #0f0530); border-color: #5b3aa8; box-shadow: 0 0 0 1px rgba(62, 240, 255, .12), 0 30px 80px rgba(2, 0, 12, .65), 0 0 50px rgba(255, 79, 208, .12); }
+.app-shell[data-theme=retro] .modal::backdrop { background: rgba(6, 1, 22, .78); }
+.app-shell[data-theme=retro] .mobile-nav button.active { background: linear-gradient(180deg, rgba(255, 79, 208, .2), rgba(122, 76, 255, .14)); color: #ffd1f3; }
+.app-shell[data-theme=retro] :is(.toast, .notice) { background: linear-gradient(90deg, #2a0f62, #1a0a48); border: 1px solid #ff4fd0; color: var(--text); }
+
+/* Réglages tile: sun, hills and floor in miniature. */
+.settings-skins .theme-option[data-theme-id=retro] .theme-preview {
+  background:
+    url('/themes/retro/horizon.svg') 50% 58% / 150% auto no-repeat,
+    linear-gradient(rgba(62, 240, 255, .4) 1px, transparent 1px) 0 0 / 100% 7px,
+    linear-gradient(180deg, #0b0224, #3a0c5e 58%, #0a0322 58.5%);
+}
+.settings-skins .theme-option[data-theme-id=retro] .theme-preview::before,
+.settings-skins .theme-option[data-theme-id=retro] .theme-preview i { display: none; }
+.settings-skins .theme-option[data-theme-id=retro] .theme-preview::after { left: 0; right: 0; bottom: 42%; background: linear-gradient(90deg, transparent, #ff7ad9, #6ff4ff, #ff7ad9, transparent); box-shadow: 0 0 8px #ff4fd0; }
+
+@media (max-width: 760px) {
+  .backdrop-retro::before { width: 150vw; bottom: 30%; opacity: .45; }
+  .backdrop-retro .theme-neon-grid { top: 70%; }
+  .backdrop-retro::after { top: 70%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .backdrop-retro .theme-neon-grid { animation: none; }
+}

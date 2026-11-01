@@ -1,0 +1,268 @@
+/* Bureau 2001 — an early-2000s desktop: a pale blue sky with slow clouds over
+   soft green hills, glossy blue title bars with rounded top corners, beige
+   window chrome, blue selection highlights, a green pill for the main action
+   and tooltip balloons for messages. Generic shapes only: no product name,
+   logo, wallpaper photo or system font.
+   Motion: the clouds drift (transform only). Light skin: ink text everywhere,
+   the player cover keeps its own beige window.
+   Every rule is scoped to .app-shell[data-theme=bureau] (or this skin's tile in Réglages). */
+.app-shell[data-theme=bureau] {
+  --bg: #cfe3fb;
+  --panel: #f4f2e8;
+  --panel2: #ece9d8;
+  --surface: #f4f2e8;
+  --surface-raised: #ece9d8;
+  --sidebar: #d6e3f8;
+  --line: #c3ccdb;
+  --border: #8ea4c4;
+  --text: #16203a;
+  --copy: #16203a;
+  --muted: #3f475d;
+  --quiet: #3f475d;
+  --accent: #1a45a0;
+  --accent-ink: #ffffff;
+  --focus: #2a63d4;
+  --luna: #2a63d4;
+  --titlebar: linear-gradient(180deg, #4a93f5 0%, #1667e0 14%, #0a58d6 50%, #0b4fc9 86%, #0a3fa8 100%);
+  --pill: linear-gradient(180deg, rgba(255, 255, 255, .32), rgba(255, 255, 255, .06) 22%, rgba(255, 255, 255, 0) 24%), linear-gradient(180deg, #2e8a2a, #1b6418);
+  --selection: linear-gradient(180deg, #3f7be0, #2a63d4 55%, #2457c2);
+  --button: linear-gradient(180deg, #ffffff, #f4f2ea 60%, #e3e0d0);
+  --skin-bar: rgba(214, 227, 248, .96);
+  --skin-card: #ffffff;
+  --skin-tile: #ffffff;
+  --skin-hero: linear-gradient(180deg, #f4f2e8, #e7e4d2);
+  --skin-radius: 8px;
+  --skin-line: #c3ccdb;
+  --skin-accent: #2a63d4;
+  --skin-glow: rgba(42, 99, 212, .18);
+  --skin-warm: rgba(255, 200, 90, .2);
+  --skin-speck: #ffffff;
+  --skin-ring: rgba(42, 99, 212, .12);
+  --skin-grid: rgba(42, 99, 212, .04);
+  --skin-aura-a: rgba(255, 255, 255, .4);
+  --skin-aura-b: rgba(160, 200, 250, .3);
+  --skin-aura-c: rgba(160, 220, 130, .2);
+  --skin-surface-shadow: 0 1px 0 rgba(255, 255, 255, .8) inset, 0 10px 24px -14px rgba(20, 50, 110, .45);
+  --skin-heading-font: var(--font-heading);
+  --skin-heading-tracking: -.015em;
+  --skin-heading-transform: none;
+  --skin-heading-shadow: none;
+  --skin-icon-radius: 6px;
+  --skin-icon-bg: linear-gradient(180deg, #ffffff, #e8eefb);
+  --skin-icon-border: #9fb4d8;
+  --skin-icon-color: #1a45a0;
+  --skin-icon-shadow: 0 1px 0 rgba(255, 255, 255, .9) inset, 0 1px 2px rgba(20, 50, 110, .18);
+  color-scheme: light;
+  background: var(--bg);
+}
+.app-shell[data-theme=bureau] .watch-section,
+.app-shell[data-theme=bureau] .watch-dock,
+.app-shell[data-theme=bureau] .modal,
+.app-shell[data-theme=bureau] .help-backdrop,
+.app-shell[data-theme=bureau] .guide-explorer { --line: #c3ccdb; --accent: #1a45a0; --text: #16203a; --muted: #3f475d; color: #16203a; }
+
+/* Backdrop: a pale sky (kept light so ink text reads on it), clouds, green hills. */
+.app-shell[data-theme=bureau] .backdrop-bureau { background: linear-gradient(180deg, #a9cdf6 0%, #bcd8f8 34%, #d4e7fb 62%, #e6f2fd 100%); }
+.app-shell[data-theme=bureau] :is(.backdrop-aura, .backdrop-mesh, .backdrop-rings, .backdrop-specks) { display: none; }
+.app-shell[data-theme=bureau] .backdrop-grain { opacity: .02; }
+.app-shell[data-theme=bureau] .theme-hills {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 34vh;
+  background: url('/themes/bureau/hills.svg') center bottom / cover no-repeat;
+}
+.app-shell[data-theme=bureau] .theme-clouds { position: absolute; inset: 0 0 30%; overflow: hidden; }
+.app-shell[data-theme=bureau] .theme-clouds i {
+  position: absolute;
+  left: 0;
+  width: 220px;
+  aspect-ratio: 2;
+  background: url('/themes/bureau/cloud.svg') center / contain no-repeat;
+  opacity: .9;
+  animation: bureau-drift 150s linear infinite;
+  will-change: transform;
+}
+.app-shell[data-theme=bureau] .theme-clouds i:nth-child(1) { top: 9%; left: 12%; animation-delay: -20s; }
+.app-shell[data-theme=bureau] .theme-clouds i:nth-child(2) { top: 26%; left: 62%; width: 150px; opacity: .75; animation-duration: 190s; animation-delay: -120s; }
+.app-shell[data-theme=bureau] .theme-clouds i:nth-child(3) { top: 46%; left: 34%; width: 280px; opacity: .7; animation-duration: 230s; animation-delay: -60s; }
+.app-shell[data-theme=bureau] .theme-clouds i:nth-child(4) { top: 64%; left: 84%; width: 120px; opacity: .65; animation-duration: 170s; animation-delay: -150s; }
+
+/* Chrome: the top bar is a title bar; the rail is a pale task pane. */
+.app-shell[data-theme=bureau] .topbar { background: var(--titlebar); border-color: #0a3fa8; -webkit-backdrop-filter: none; backdrop-filter: none; box-shadow: 0 1px 0 rgba(255, 255, 255, .35) inset, 0 2px 6px rgba(10, 40, 110, .25); }
+.app-shell[data-theme=bureau] .topbar::after { display: none; }
+.app-shell[data-theme=bureau] .topbar :is(.breadcrumb, .breadcrumb span, .sync-indicator, .icon-button, .logo) { color: #ffffff; }
+.app-shell[data-theme=bureau] .topbar .logo-period { color: #9ff08a; }
+.app-shell[data-theme=bureau] .topbar .icon-button:hover { background: rgba(255, 255, 255, .16); }
+.app-shell[data-theme=bureau] :is(.search-box, .profile-avatar) { background: #ffffff; border: 1px solid #7f9db9; color: var(--muted); }
+.app-shell[data-theme=bureau] .search-box { border-radius: 4px; }
+.app-shell[data-theme=bureau] .search-box input { color: var(--text); }
+.app-shell[data-theme=bureau] .search-box:focus-within { border-color: #2a63d4; box-shadow: 0 0 0 2px rgba(42, 99, 212, .25); }
+.app-shell[data-theme=bureau] .sidebar { background: linear-gradient(180deg, #e2ecfb, #c2d4f3); border-color: #8ea4c4; -webkit-backdrop-filter: none; backdrop-filter: none; }
+.app-shell[data-theme=bureau] :is(.sidebar-caption, .sidebar-section-label, .sidebar-version) { color: #24407e; }
+.app-shell[data-theme=bureau] .sidebar .logo { color: #0c2d83; }
+.app-shell[data-theme=bureau] .logo-period { color: #2e8a2a; }
+.app-shell[data-theme=bureau] .nav-item { color: #0c2d83; border-radius: 6px; font-weight: 600; }
+.app-shell[data-theme=bureau] .nav-item:hover { background: rgba(255, 255, 255, .7); color: #0a3fa8; box-shadow: inset 0 0 0 1px #9fb4d8; }
+.app-shell[data-theme=bureau] .nav-item.nav-active { background: var(--selection); color: #ffffff; box-shadow: inset 0 1px 0 rgba(255, 255, 255, .35), 0 2px 6px rgba(20, 60, 150, .35); }
+.app-shell[data-theme=bureau] .nav-item.nav-active::before { display: none; }
+.app-shell[data-theme=bureau] .nav-item.nav-active > svg:first-of-type { background: rgba(255, 255, 255, .18); border-color: rgba(255, 255, 255, .5); color: #ffffff; box-shadow: none; }
+.app-shell[data-theme=bureau] .device-note { background: #ffffff; border: 1px solid #8ea4c4; border-radius: 6px; color: var(--text); box-shadow: var(--skin-surface-shadow); }
+.app-shell[data-theme=bureau] .device-note p { color: var(--muted); }
+.app-shell[data-theme=bureau] .device-note svg { color: #2a63d4; }
+.app-shell[data-theme=bureau] :focus-visible { outline-color: var(--focus); }
+
+/* Type: plain bold headings in deep blue, a short green pill under page titles. */
+.app-shell[data-theme=bureau] :is(.page-heading h1, .home-section-heading h2, .section-heading h2, .selection-theme-head h2, .favorites-lists h2, .desktop-panel-heading h2, .desktop-first h2, .home-hero h2, .modal h2, .access-card h1) { color: #0c2d83; font-weight: 800; text-wrap: balance; }
+.app-shell[data-theme=bureau] .page-heading h1::after { width: 54px; height: 6px; border-radius: 6px; background: var(--pill); opacity: 1; box-shadow: 0 1px 2px rgba(20, 80, 20, .35); }
+.app-shell[data-theme=bureau] :is(.eyebrow, .access-kicker) { color: #1a45a0; }
+.app-shell[data-theme=bureau] :is(.page-heading p, .section-heading p, .card-meta, .card-programme.muted) { color: var(--muted); }
+.app-shell[data-theme=bureau] :is(.home-section-heading > button, .desktop-panel-heading button, .home-carousel-all, .text-button, .selection-rank) { color: #1a45a0; }
+
+/* Windows: white client areas in beige frames, a blue title strip on top. */
+.app-shell[data-theme=bureau] :is(.channel-card, .list-card, .home-favorite-row button) {
+  background: var(--titlebar) top / 100% 6px no-repeat, #ffffff;
+  border: 1px solid #8ea4c4;
+  border-radius: 8px 8px 4px 4px;
+  color: var(--text);
+  box-shadow: var(--skin-surface-shadow);
+}
+.app-shell[data-theme=bureau] :is(.desktop-channel-panel, .desktop-programme-panel, .filter-panel, .favorites-lists, .selection-lead, .expanded-guide, .up-next, .empty-state) {
+  background: var(--titlebar) top / 100% 8px no-repeat, linear-gradient(180deg, #f7f6ee, #ece9d8);
+  border: 1px solid #7f9db9;
+  border-radius: 9px 9px 4px 4px;
+  color: var(--text);
+  box-shadow: var(--skin-surface-shadow);
+}
+.app-shell[data-theme=bureau] :is(.guide-row, .guide-intro, .guide-channel-summary, .guide-filter-disclosure, .selection-row, .notice) { background: #ffffff; border: 1px solid #b9c4d6; border-radius: 6px; color: var(--text); box-shadow: 0 1px 2px rgba(20, 50, 110, .12); }
+.app-shell[data-theme=bureau] .home-category-grid button:nth-child(n) { background: var(--button); border: 1px solid #8ea4c4; border-radius: 6px; color: var(--text); box-shadow: var(--skin-surface-shadow); }
+.app-shell[data-theme=bureau] .guide-explorer { background: transparent; border: 0; box-shadow: none; }
+.app-shell[data-theme=bureau] :is(.channel-card, .home-favorite-row button, .home-category-grid button:nth-child(n)):hover { border-color: #2a63d4; box-shadow: 0 0 0 1px #2a63d4, 0 12px 26px -14px rgba(20, 60, 150, .55); }
+.app-shell[data-theme=bureau] :is(.card-visual, .home-favorite-art) { background: linear-gradient(180deg, #f4f2e8, #e3dfcb); border-color: #c9c4ae; }
+.app-shell[data-theme=bureau] .card-visual { background: var(--titlebar) top / 100% 6px no-repeat, linear-gradient(180deg, #f4f2e8, #e3dfcb); }
+.app-shell[data-theme=bureau] .channel-card .card-visual::after { display: none; }
+.app-shell[data-theme=bureau] .playback-tag > span { background: #2e8a2a; box-shadow: none; }
+.app-shell[data-theme=bureau] .brand-has-logo { border-radius: 4px; box-shadow: 0 0 0 1px rgba(20, 40, 90, .14), 0 2px 6px -2px rgba(20, 40, 90, .3); }
+.app-shell[data-theme=bureau] .card-favorite,
+.app-shell[data-theme=bureau] .home-favorite-row .home-favorite-item > .home-favorite-fav { background: rgba(255, 255, 255, .94); border-color: #8ea4c4; color: #3f475d; }
+.app-shell[data-theme=bureau] .playback-tag { background: rgba(255, 255, 255, .94); border-color: #8ea4c4; color: #16203a; }
+.app-shell[data-theme=bureau] .desktop-channel-row { background: #ffffff; border-color: #c3ccdb; border-radius: 4px; }
+.app-shell[data-theme=bureau] .desktop-channel-row:hover { background: #e8f0fd; border-color: #2a63d4; }
+.app-shell[data-theme=bureau] .tiny-dot { background: #2e8a2a; }
+
+/* Home hero: the river photograph inside a window, washed beige where the text sits. */
+.app-shell[data-theme=bureau] .desktop-first {
+  background:
+    var(--titlebar) top / 100% 12px no-repeat,
+    linear-gradient(90deg, rgba(244, 242, 232, .97) 0%, rgba(244, 242, 232, .9) 42%, rgba(244, 242, 232, .35) 72%, rgba(244, 242, 232, .05)),
+    url('/images/onde-river-hero.webp') center 55% / cover no-repeat;
+  border: 1px solid #0a3fa8;
+  border-radius: 10px 10px 6px 6px;
+  box-shadow: 0 18px 40px -20px rgba(10, 40, 110, .6);
+  color: var(--text);
+}
+.app-shell[data-theme=bureau] .desktop-first p { color: #2c3550; }
+.app-shell[data-theme=bureau] .home-hero {
+  background: var(--titlebar) top / 100% 10px no-repeat, url('/images/onde-river-hero.webp') center 55% / cover no-repeat;
+  border: 1px solid #0a3fa8;
+  border-radius: 10px 10px 6px 6px;
+  box-shadow: 0 14px 30px -18px rgba(10, 40, 110, .6);
+}
+.app-shell[data-theme=bureau] .home-hero::before { background: linear-gradient(0deg, rgba(244, 242, 232, .97) 0%, rgba(244, 242, 232, .88) 52%, rgba(244, 242, 232, .1) 90%); }
+.app-shell[data-theme=bureau] .home-hero :is(h2, p) { color: var(--text); }
+.app-shell[data-theme=bureau] :is(.desktop-first, .home-hero) .hero-secondary { -webkit-backdrop-filter: none; backdrop-filter: none; }
+
+/* Buttons: a green pill for the main action, raised beige buttons for the rest. */
+.app-shell[data-theme=bureau] :is(.primary, .home-primary),
+.app-shell[data-theme=bureau] .home-primary:hover,
+.app-shell[data-theme=bureau] .desktop-first .primary {
+  background: var(--pill);
+  color: #ffffff;
+  font-weight: 750;
+  border-radius: 999px;
+  text-shadow: 0 1px 1px rgba(0, 40, 0, .45);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .4), inset 0 -2px 3px rgba(0, 40, 0, .3), 0 0 0 1px #145012, 0 4px 10px -4px rgba(20, 80, 20, .6);
+}
+.app-shell[data-theme=bureau] :is(.primary, .home-primary):hover { filter: brightness(1.08); }
+.app-shell[data-theme=bureau] :is(.secondary, .guide-button, .filter-toggle, .channel-card .icon-button, .hero-secondary) { background: var(--button); border: 1px solid #003c74; border-radius: 4px; color: var(--text); }
+.app-shell[data-theme=bureau] :is(.secondary, .guide-button, .hero-secondary):hover { background: var(--button); border-color: #003c74; box-shadow: inset 0 0 0 2px #f8b33c; color: var(--text); }
+.app-shell[data-theme=bureau] .channel-card .icon-button { border-color: #8ea4c4; }
+
+/* Tabs and chips: tabs with a warm top edge, blue selection for the chosen day. */
+.app-shell[data-theme=bureau] .region-tabs { background: #ece9d8; border-color: #8ea4c4; border-radius: 6px; }
+.app-shell[data-theme=bureau] .region-tabs button { color: #2c3550; border-radius: 4px 4px 0 0; }
+.app-shell[data-theme=bureau] .region-tabs button.active { background: #ffffff; color: #16203a; box-shadow: inset 0 3px 0 #f0a028, inset 0 0 0 1px #8ea4c4; }
+.app-shell[data-theme=bureau] :is(.guide-days button, .guide-periods button) { background: var(--button); border: 1px solid #8ea4c4; color: #2c3550; border-radius: 6px; }
+.app-shell[data-theme=bureau] :is(.guide-days button, .guide-periods button)[aria-pressed=true] { background: var(--selection); border-color: #1a45a0; color: #ffffff; box-shadow: inset 0 1px 0 rgba(255, 255, 255, .35); }
+.app-shell[data-theme=bureau] .programme-live { background: linear-gradient(90deg, rgba(42, 99, 212, .12), transparent 80%); }
+.app-shell[data-theme=bureau] .expanded-programme.programme-live { box-shadow: inset 3px 0 0 #2e8a2a; }
+.app-shell[data-theme=bureau] .section-count { background: #ffffff; border-color: #8ea4c4; color: #2c3550; }
+
+/* Player, mini player and dialogs: windows with a blue title bar. */
+.app-shell[data-theme=bureau] :is(.player-toolbar, .player-note, .dock-controls, .player-resolving, .video-loading) { background: #ece9d8; border-color: #b9b49c; color: var(--text); }
+.app-shell[data-theme=bureau] .player-shell { border: 1px solid #0a3fa8; border-radius: 9px 9px 4px 4px; box-shadow: 0 16px 34px -18px rgba(10, 40, 110, .55); }
+.app-shell[data-theme=bureau] .watch-dock { background: #ece9d8; border: 1px solid #0a3fa8; border-radius: 9px 9px 4px 4px; box-shadow: 0 20px 44px -16px rgba(10, 40, 110, .6); }
+.app-shell[data-theme=bureau] .watch-dock .dock-head { background: var(--titlebar); border-color: #0a3fa8; color: #ffffff; }
+.app-shell[data-theme=bureau] .watch-dock .dock-close { border-color: rgba(255, 255, 255, .6); color: #ffffff; }
+.app-shell[data-theme=bureau] .modal {
+  background: var(--titlebar) top / 100% 26px no-repeat, #ece9d8;
+  background-attachment: local, scroll;
+  border: 1px solid #0a3fa8;
+  border-radius: 10px 10px 5px 5px;
+  box-shadow: 0 30px 70px -20px rgba(10, 30, 80, .6);
+}
+.app-shell[data-theme=bureau] .modal .modal-body { padding-top: 40px; }
+.app-shell[data-theme=bureau] .modal p { color: var(--muted); }
+.app-shell[data-theme=bureau] .modal::backdrop { background: rgba(30, 60, 120, .35); }
+.app-shell[data-theme=bureau] .modal-close { background: var(--button); border-color: #003c74; color: var(--text); }
+.app-shell[data-theme=bureau] .field-label input { background: #ffffff; border-color: #7f9db9; color: var(--text); }
+.app-shell[data-theme=bureau] .player-cover .cover-content .primary { background: var(--pill); color: #ffffff; }
+
+/* Messages appear as tooltip balloons. */
+.app-shell[data-theme=bureau] .toast { background: #ffffe1; color: #111111; border: 1px solid #1b1b1b; border-radius: 10px; box-shadow: 2px 3px 8px rgba(0, 0, 0, .28); overflow: visible; }
+.app-shell[data-theme=bureau] .toast::before,
+.app-shell[data-theme=bureau] .toast::after { content: ""; position: absolute; right: 30px; border: solid transparent; border-bottom: 0; }
+.app-shell[data-theme=bureau] .toast::before { bottom: -12px; border-width: 12px 12px 0 0; border-top-color: #1b1b1b; }
+.app-shell[data-theme=bureau] .toast::after { bottom: -10px; right: 31px; border-width: 10px 10px 0 0; border-top-color: #ffffe1; }
+
+/* Mobile: the bottom bar is a taskbar; the open view is a green pill. */
+.app-shell[data-theme=bureau] .mobile-nav { background: linear-gradient(180deg, #3a78e6, #2457c2 12%, #1f4fb6 88%, #173f98); border-color: #0a3fa8; -webkit-backdrop-filter: none; backdrop-filter: none; }
+.app-shell[data-theme=bureau] .mobile-nav button { color: #ffffff; }
+.app-shell[data-theme=bureau] .mobile-nav button.active { background: var(--pill); color: #ffffff; border-radius: 12px; box-shadow: inset 0 1px 0 rgba(255, 255, 255, .4), 0 0 0 1px #145012; text-shadow: 0 1px 1px rgba(0, 40, 0, .45); }
+
+/* Sign-in. */
+.access-page.app-shell[data-theme=bureau] .access-halo { background: radial-gradient(closest-side, rgba(255, 255, 255, .55), transparent); }
+.app-shell[data-theme=bureau] .access-card { background: var(--titlebar) top / 100% 26px no-repeat, #ece9d8; border: 1px solid #0a3fa8; border-radius: 10px 10px 5px 5px; }
+
+/* Réglages tile: sky, a hill, a cloud and a small window. */
+.settings-skins .theme-option[data-theme-id=bureau] .theme-preview {
+  background:
+    url('/themes/bureau/cloud.svg') 16% 18% / 40px auto no-repeat,
+    url('/themes/bureau/hills.svg') center bottom / 100% 62% no-repeat,
+    linear-gradient(180deg, #8fbdf3, #d2e6fb);
+}
+.settings-skins .theme-option[data-theme-id=bureau] .theme-preview::before {
+  left: 46%;
+  right: 10%;
+  top: 14%;
+  height: 40%;
+  border: 1px solid #0a3fa8;
+  border-radius: 4px 4px 2px 2px;
+  background: linear-gradient(180deg, #2a6be0, #0a4fc9) top / 100% 6px no-repeat, #ece9d8;
+  box-shadow: 0 3px 8px rgba(10, 40, 110, .35);
+}
+.settings-skins .theme-option[data-theme-id=bureau] .theme-preview::after { left: 52%; right: 26%; bottom: auto; top: 38%; height: 5px; border-radius: 5px; background: linear-gradient(180deg, #3f9a3a, #1f6c1c); box-shadow: none; }
+.settings-skins .theme-option[data-theme-id=bureau] .theme-preview i { display: none; }
+
+/* Each cloud rests at its own left when motion is reduced, and crosses the whole sky otherwise. */
+@keyframes bureau-drift { from { transform: translateX(-100vw); } to { transform: translateX(100vw); } }
+@media (max-width: 760px) {
+  .app-shell[data-theme=bureau] .theme-hills { height: 24vh; }
+  .app-shell[data-theme=bureau] .theme-clouds i { width: 130px; }
+  .app-shell[data-theme=bureau] .theme-clouds i:nth-child(3) { width: 170px; }
+  .app-shell[data-theme=bureau] .theme-clouds i:nth-child(4) { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .app-shell[data-theme=bureau] .theme-clouds i { animation: none; }
+}

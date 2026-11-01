@@ -1,0 +1,243 @@
+/* Orbite — a night in orbit: deep violet space with drifting nebulae, a crisp
+   tiled star field, tilted orbital rings carrying small moons, Space Grotesk
+   headings and soft violet halos around whatever is active.
+   Motion: nebula drift, star twinkle, one shooting star and three slow orbits. */
+.app-shell[data-theme=cosmos] {
+  --bg: #07040f;
+  --panel: #110b26;
+  --panel2: #18102f;
+  --surface: #110b26;
+  --surface-raised: #1b1236;
+  --sidebar: #090514;
+  --line: #2a1f4f;
+  --border: #382a66;
+  --text: #f2edff;
+  --copy: #f2edff;
+  --muted: #b1a6d8;
+  --quiet: #b1a6d8;
+  --accent: #b096ff;
+  --accent-ink: #12082a;
+  --focus: #c7b4ff;
+  --void: linear-gradient(180deg, rgba(30, 20, 62, .8), rgba(13, 8, 32, .88));
+  --hair: rgba(190, 165, 255, .15);
+  --halo: 0 0 0 1px rgba(176, 150, 255, .28), 0 0 22px rgba(150, 110, 255, .32);
+  --skin-bar: rgba(9, 5, 22, .8);
+  --skin-card: var(--void);
+  --skin-tile: var(--void);
+  --skin-hero: linear-gradient(135deg, #1d1145, #07040f);
+  --skin-radius: 18px;
+  --skin-line: var(--hair);
+  --skin-accent: #b096ff;
+  --skin-glow: rgba(150, 110, 255, .3);
+  --skin-surface-shadow: inset 0 1px 0 rgba(220, 205, 255, .06), 0 20px 46px -18px rgba(3, 0, 12, .85);
+  --skin-heading-font: var(--font-grotesk);
+  --skin-heading-tracking: -.02em;
+  --skin-heading-shadow: none;
+  --skin-icon-radius: 50%;
+  --skin-icon-bg: radial-gradient(circle at 35% 30%, rgba(176, 150, 255, .3), rgba(24, 14, 56, .85) 70%);
+  --skin-icon-border: rgba(190, 165, 255, .3);
+  --skin-icon-color: #ddd0ff;
+  --skin-icon-shadow: 0 0 14px rgba(150, 110, 255, .18);
+  background: var(--bg);
+}
+.app-shell[data-theme=cosmos] .watch-section,
+.app-shell[data-theme=cosmos] .watch-dock,
+.app-shell[data-theme=cosmos] .modal,
+.app-shell[data-theme=cosmos] .help-backdrop,
+.app-shell[data-theme=cosmos] .guide-explorer { --line: #2a1f4f; --accent: #b096ff; --text: #f2edff; --muted: #b1a6d8; color: #f2edff; }
+
+/* Backdrop: nebulae over black-violet, stars from one small tile, orbits on the right. */
+.app-shell[data-theme=cosmos] .backdrop-cosmos {
+  background:
+    radial-gradient(60% 45% at 78% 8%, rgba(120, 70, 220, .28), transparent 70%),
+    radial-gradient(50% 40% at 8% 90%, rgba(40, 70, 190, .2), transparent 70%),
+    linear-gradient(180deg, #0b0619, #06030d);
+}
+.app-shell[data-theme=cosmos] .backdrop-cosmos::before {
+  inset: -20%;
+  background:
+    radial-gradient(28% 20% at 66% 30%, rgba(200, 110, 255, .15), transparent 70%),
+    radial-gradient(24% 26% at 30% 62%, rgba(90, 120, 255, .12), transparent 70%),
+    radial-gradient(18% 14% at 52% 44%, rgba(255, 130, 210, .07), transparent 70%);
+  filter: none;
+  animation: cosmos-nebula 70s ease-in-out infinite alternate;
+}
+.app-shell[data-theme=cosmos] .theme-stars { background: url('/themes/cosmos/stars.svg') 0 0 / 320px 320px; animation: cosmos-twinkle 11s ease-in-out infinite alternate; }
+.app-shell[data-theme=cosmos] .backdrop-rings {
+  left: 76%;
+  top: 22%;
+  width: min(100vw, 1180px);
+  transform: translate(-50%, -50%) rotate(-16deg) scaleY(.36);
+}
+.app-shell[data-theme=cosmos] .backdrop-rings i { border-color: rgba(190, 165, 255, .13); opacity: 1; animation: cosmos-orbit 140s linear infinite; }
+.app-shell[data-theme=cosmos] .backdrop-rings i:nth-child(2) { inset: 18%; animation-duration: 96s; animation-delay: -30s; border-color: rgba(160, 190, 255, .11); }
+.app-shell[data-theme=cosmos] .backdrop-rings i:nth-child(3) { inset: 34%; animation-duration: 64s; animation-delay: -12s; }
+.app-shell[data-theme=cosmos] .backdrop-rings i::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -4px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #fff, #b8a2ff 60%);
+  box-shadow: 0 0 10px rgba(190, 165, 255, .8);
+}
+.app-shell[data-theme=cosmos] .backdrop-aura,
+.app-shell[data-theme=cosmos] .backdrop-mesh,
+.app-shell[data-theme=cosmos] .backdrop-specks,
+.app-shell[data-theme=cosmos] .nav-item.nav-active::before { display: none; }
+.app-shell[data-theme=cosmos] .backdrop-grain { opacity: .02; }
+
+/* Chrome: dark violet rail without blur, a violet signal under the top bar. */
+.app-shell[data-theme=cosmos] .sidebar { background: linear-gradient(180deg, rgba(14, 8, 32, .95), rgba(8, 4, 18, .96)); border-color: var(--hair); -webkit-backdrop-filter: none; backdrop-filter: none; }
+.app-shell[data-theme=cosmos] .topbar { background: var(--skin-bar); border-color: var(--hair); }
+.app-shell[data-theme=cosmos] .topbar::after { background: linear-gradient(90deg, transparent 10%, rgba(176, 150, 255, .6), transparent 90%); opacity: .45; }
+.app-shell[data-theme=cosmos] .search-box,
+.app-shell[data-theme=cosmos] .profile-avatar { background: rgba(20, 12, 44, .72); border-color: var(--hair); border-radius: 999px; }
+.app-shell[data-theme=cosmos] .logo,
+.app-shell[data-theme=cosmos] .logo-mark { fill: #c7b4ff; font-family: var(--font-heading); letter-spacing: -.06em; }
+
+/* Navigation: pills; the active one glows like a lit module. */
+.app-shell[data-theme=cosmos] .nav-item,
+.app-shell[data-theme=cosmos] .region-tabs button { border-radius: 999px; color: var(--muted); }
+.app-shell[data-theme=cosmos] .nav-item:hover { background: rgba(176, 150, 255, .08); color: var(--text); }
+.app-shell[data-theme=cosmos] .nav-item.nav-active { background: radial-gradient(140% 220% at 0% 50%, rgba(176, 150, 255, .3), rgba(176, 150, 255, .06) 70%); color: #efe8ff; box-shadow: var(--halo); }
+.app-shell[data-theme=cosmos] .nav-item.nav-active > svg:first-of-type { background: radial-gradient(circle at 35% 30%, #d9cbff, #9677ff 75%); border-color: transparent; color: var(--accent-ink); box-shadow: 0 0 16px rgba(176, 150, 255, .6); }
+
+/* Type: Space Grotesk headings, an orbit-dot underline. */
+.app-shell[data-theme=cosmos] .page-heading h1,
+.app-shell[data-theme=cosmos] .home-section-heading h2,
+.app-shell[data-theme=cosmos] .section-heading h2,
+.app-shell[data-theme=cosmos] .selection-theme-head h2,
+.app-shell[data-theme=cosmos] .favorites-lists h2,
+.app-shell[data-theme=cosmos] .modal h2,
+.app-shell[data-theme=cosmos] .home-hero h2,
+.app-shell[data-theme=cosmos] .desktop-first h2,
+.app-shell[data-theme=cosmos] .settings-section h3,
+.app-shell[data-theme=cosmos] .selection-rank { font-family: var(--font-grotesk); font-weight: 600; letter-spacing: -.02em; text-wrap: balance; }
+.app-shell[data-theme=cosmos] .page-heading h1::after { width: 52px; height: 2px; background: linear-gradient(90deg, #ff9ae0, var(--accent) 45%, transparent); opacity: 1; box-shadow: 0 0 12px rgba(176, 150, 255, .5); }
+.app-shell[data-theme=cosmos] .home-section-heading > button,
+.app-shell[data-theme=cosmos] .desktop-panel-heading button,
+.app-shell[data-theme=cosmos] .home-carousel-all,
+.app-shell[data-theme=cosmos] .eyebrow,
+.app-shell[data-theme=cosmos] .desktop-first .hero-eyebrow,
+.app-shell[data-theme=cosmos] .selection-rank { color: #c9b8ff; }
+
+/* Hero: the river at night, printed in violet moonlight. */
+.app-shell[data-theme=cosmos] .desktop-first {
+  background-color: #3a2380;
+  background-image:
+    radial-gradient(30% 40% at 84% 18%, rgba(255, 240, 255, .2), transparent 70%),
+    linear-gradient(90deg, rgba(9, 5, 24, .9), rgba(9, 5, 24, .35) 55%, rgba(9, 5, 24, .05)),
+    linear-gradient(0deg, rgba(9, 5, 24, .9), transparent 55%),
+    url('/images/onde-river-hero.webp');
+  background-size: auto, auto, auto, cover;
+  background-position: center, center, center, center 55%;
+  background-blend-mode: normal, normal, normal, luminosity;
+  border: 1px solid var(--hair);
+  border-radius: 22px;
+  box-shadow: var(--skin-surface-shadow), 0 30px 90px -30px rgba(120, 80, 255, .4);
+}
+.app-shell[data-theme=cosmos] .home-hero { background: #3a2380 url('/images/onde-river-hero.webp') center 55% / cover no-repeat; background-blend-mode: luminosity; border: 1px solid var(--hair); border-radius: 22px; box-shadow: var(--skin-surface-shadow), 0 0 40px rgba(120, 80, 255, .2); }
+.app-shell[data-theme=cosmos] .home-hero::before { background: linear-gradient(0deg, rgba(9, 5, 24, .92), rgba(9, 5, 24, .1) 78%); }
+.app-shell[data-theme=cosmos] .hero-secondary { background: rgba(14, 8, 34, .66); border-color: rgba(200, 180, 255, .28); border-radius: 999px; -webkit-backdrop-filter: none; backdrop-filter: none; }
+
+/* Buttons: a lit violet pill and dark glass pills. */
+.app-shell[data-theme=cosmos] .primary,
+.app-shell[data-theme=cosmos] .home-primary { background: linear-gradient(135deg, #cdb8ff, #9a7bff); color: var(--accent-ink); border-radius: 999px; box-shadow: inset 0 1px 0 rgba(255, 255, 255, .45), 0 10px 28px -10px rgba(150, 110, 255, .8); }
+.app-shell[data-theme=cosmos] .primary:hover,
+.app-shell[data-theme=cosmos] .home-primary:hover { box-shadow: inset 0 1px 0 rgba(255, 255, 255, .45), 0 0 0 4px rgba(176, 150, 255, .16), 0 12px 32px -10px rgba(150, 110, 255, .9); }
+.app-shell[data-theme=cosmos] .secondary,
+.app-shell[data-theme=cosmos] .guide-button,
+.app-shell[data-theme=cosmos] .channel-card .icon-button { background: rgba(26, 16, 58, .6); border-color: rgba(190, 165, 255, .24); color: #e6ddff; border-radius: 999px; }
+.app-shell[data-theme=cosmos] .secondary:hover,
+.app-shell[data-theme=cosmos] .guide-button:hover { background: rgba(40, 26, 84, .75); border-color: rgba(199, 180, 255, .5); }
+
+/* Surfaces: dark violet glass, halo on hover. */
+.app-shell[data-theme=cosmos] .channel-card,
+.app-shell[data-theme=cosmos] .list-card,
+.app-shell[data-theme=cosmos] .empty-state,
+.app-shell[data-theme=cosmos] .selection-row,
+.app-shell[data-theme=cosmos] .selection-lead,
+.app-shell[data-theme=cosmos] .device-note,
+.app-shell[data-theme=cosmos] .favorites-lists,
+.app-shell[data-theme=cosmos] .notice,
+.app-shell[data-theme=cosmos] .desktop-channel-panel,
+.app-shell[data-theme=cosmos] .desktop-programme-panel,
+.app-shell[data-theme=cosmos] .filter-panel,
+.app-shell[data-theme=cosmos] .expanded-guide,
+.app-shell[data-theme=cosmos] .up-next,
+.app-shell[data-theme=cosmos] .player-shell,
+.app-shell[data-theme=cosmos] .home-favorite-row button,
+.app-shell[data-theme=cosmos] .home-category-grid button:nth-child(n) { background: var(--void); border: 1px solid var(--hair); color: var(--text); box-shadow: var(--skin-surface-shadow); }
+.app-shell[data-theme=cosmos] .desktop-channel-panel,
+.app-shell[data-theme=cosmos] .desktop-programme-panel,
+.app-shell[data-theme=cosmos] .filter-panel,
+.app-shell[data-theme=cosmos] .expanded-guide,
+.app-shell[data-theme=cosmos] .home-category-grid button:nth-child(n) { border-radius: 22px; }
+.app-shell[data-theme=cosmos] .channel-card:hover,
+.app-shell[data-theme=cosmos] .home-category-grid button:nth-child(n):hover { border-color: rgba(199, 180, 255, .4); box-shadow: var(--skin-surface-shadow), 0 0 30px rgba(150, 110, 255, .22); }
+.app-shell[data-theme=cosmos] .card-visual,
+.app-shell[data-theme=cosmos] .home-favorite-art { background: radial-gradient(100% 120% at 50% 0%, #2b1a5e, #110a28 72%); border-color: var(--hair); }
+.app-shell[data-theme=cosmos] .guide-explorer { background: transparent; border: 0; box-shadow: none; }
+.app-shell[data-theme=cosmos] .brand-has-logo { border-radius: 12px; outline: 1px solid rgba(20, 10, 50, .1); outline-offset: -1px; box-shadow: 0 8px 22px -10px rgba(0, 0, 0, .8); }
+.app-shell[data-theme=cosmos] .brand-has-logo.brand-logo-dark { background: #1c1240; border-color: var(--hair); }
+.app-shell[data-theme=cosmos] .card-meta,
+.app-shell[data-theme=cosmos] .card-programme.muted,
+.app-shell[data-theme=cosmos] .page-heading p,
+.app-shell[data-theme=cosmos] .section-heading p { color: var(--muted); }
+.app-shell[data-theme=cosmos] .home-favorite-row .home-favorite-item > .home-favorite-fav { background: rgba(14, 8, 34, .88); border-color: var(--hair); }
+.app-shell[data-theme=cosmos] .desktop-channel-row { background: rgba(26, 16, 58, .55); border-color: var(--hair); border-radius: 14px; }
+.app-shell[data-theme=cosmos] .desktop-channel-row:hover { background: rgba(38, 24, 82, .7); border-color: rgba(199, 180, 255, .36); }
+
+/* Filters, guide and selection: pills, the chosen one in a violet halo. */
+.app-shell[data-theme=cosmos] .region-tabs { background: rgba(10, 6, 24, .6); border-color: var(--hair); border-radius: 999px; }
+.app-shell[data-theme=cosmos] .region-tabs button.active { background: rgba(176, 150, 255, .18); color: #f2edff; box-shadow: var(--halo); }
+.app-shell[data-theme=cosmos] .guide-days button,
+.app-shell[data-theme=cosmos] .guide-periods button { background: var(--void); border-color: var(--hair); color: var(--muted); border-radius: 18px; }
+.app-shell[data-theme=cosmos] .guide-days button[aria-pressed=true],
+.app-shell[data-theme=cosmos] .guide-periods button[aria-pressed=true] { background: linear-gradient(135deg, #cdb8ff, #9a7bff); border-color: transparent; color: var(--accent-ink); box-shadow: 0 0 22px rgba(150, 110, 255, .45); }
+.app-shell[data-theme=cosmos] .programme-live { background: linear-gradient(90deg, rgba(176, 150, 255, .14), transparent 80%); }
+
+/* Player, mini player and dialogs. */
+.app-shell[data-theme=cosmos] .player-toolbar,
+.app-shell[data-theme=cosmos] .player-note,
+.app-shell[data-theme=cosmos] .dock-head,
+.app-shell[data-theme=cosmos] .player-resolving,
+.app-shell[data-theme=cosmos] .video-loading,
+.app-shell[data-theme=cosmos] .dock-controls,
+.app-shell[data-theme=cosmos] .toast { background: rgba(14, 8, 34, .94); border-color: var(--hair); color: var(--text); }
+.app-shell[data-theme=cosmos] .watch-dock { border: 1px solid rgba(190, 165, 255, .24); border-radius: 18px; box-shadow: 0 30px 70px -20px rgba(2, 0, 10, .9), 0 0 36px rgba(120, 80, 255, .18); }
+.app-shell[data-theme=cosmos] .modal { background: linear-gradient(180deg, #1a1138, #0d0822); border: 1px solid rgba(190, 165, 255, .2); border-radius: 24px; box-shadow: inset 0 1px 0 rgba(220, 205, 255, .08), 0 40px 100px -20px rgba(2, 0, 10, .95); }
+.app-shell[data-theme=cosmos] .mobile-nav { background: rgba(9, 5, 22, .95); border-color: var(--hair); -webkit-backdrop-filter: none; backdrop-filter: none; }
+.app-shell[data-theme=cosmos] .mobile-nav button.active { background: rgba(176, 150, 255, .16); color: #e4daff; border-radius: 999px; box-shadow: var(--halo); }
+.app-shell[data-theme=cosmos] :focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+
+/* Sign-in. */
+.app-shell[data-theme=cosmos] .access-halo { background: radial-gradient(closest-side, rgba(150, 110, 255, .16), transparent); }
+.app-shell[data-theme=cosmos] .access-card { background: linear-gradient(180deg, rgba(28, 18, 62, .88), rgba(12, 7, 30, .92)); border-color: rgba(190, 165, 255, .22); }
+
+/* Réglages tile: stars, a tilted orbit and its moon. */
+.settings-skins .theme-option[data-theme-id=cosmos] .theme-preview {
+  background:
+    url('/themes/cosmos/stars.svg') 0 0 / 120px 120px,
+    radial-gradient(60% 60% at 75% 20%, rgba(150, 100, 255, .55), transparent 70%),
+    linear-gradient(160deg, #1a0f3e, #07040f);
+}
+.settings-skins .theme-option[data-theme-id=cosmos] .theme-preview::before { left: 8%; right: 8%; top: 18%; height: 44%; border-color: rgba(200, 180, 255, .5); border-radius: 50%; background: none; transform: rotate(-12deg); box-shadow: 0 0 14px rgba(150, 110, 255, .4); }
+.settings-skins .theme-option[data-theme-id=cosmos] .theme-preview::after { left: auto; right: 24%; bottom: auto; top: 18%; width: 8px; height: 8px; border-radius: 50%; background: #e6dcff; box-shadow: 0 0 10px #b096ff; }
+.settings-skins .theme-option[data-theme-id=cosmos] .theme-preview i { display: none; }
+
+@keyframes cosmos-nebula {
+  from { transform: translate3d(-3%, -2%, 0) scale(1); }
+  to { transform: translate3d(3%, 2%, 0) scale(1.1); }
+}
+@keyframes cosmos-twinkle { from { opacity: .6; } to { opacity: 1; } }
+@keyframes cosmos-orbit { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) {
+  .app-shell[data-theme=cosmos] .backdrop-cosmos::before,
+  .app-shell[data-theme=cosmos] .theme-stars,
+  .app-shell[data-theme=cosmos] .theme-stars::after,
+  .app-shell[data-theme=cosmos] .backdrop-rings i { animation: none; }
+}

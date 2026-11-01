@@ -1,19 +1,22 @@
 import type {Channel} from './channels';
 export type ChannelHealth={id:string;result:'ok'|'failed'|'unverified';state:'responding'|'suspect'|'unknown';checkedAt:string;lastSuccessAt?:string;lastFailureAt?:string;failures:number;note:string;runId:string};
 export type MaintenanceRun={id:string;startedAt:string;finishedAt?:string;checked:number;added:number;updated:number;summary:string;sources?:{ids:string[];evidence:string}[]};
-export type CataloguePayload={channels:Channel[];health:Record<string,ChannelHealth>;latest:MaintenanceRun|null;recentIds:string[];updatedAt:string|null};
-const fields=['id','name','brand','region','category','color','language','directory','description','official','guide','stream','streamAlts','embed','resolve','youtube','limited','premium','note','logoUrl','insecureStream'] as const;
+// `nativeOnlyIds` lists the Safari-only channels left out of a payload for a
+// browser that cannot play them, so their ids are still known to exist.
+export type CataloguePayload={channels:Channel[];health:Record<string,ChannelHealth>;latest:MaintenanceRun|null;recentIds:string[];updatedAt:string|null;nativeOnlyIds?:string[]};
+const fields=['id','name','brand','region','category','color','language','directory','description','official','guide','stream','streamAlts','embed','resolve','youtube','limited','premium','note','logoUrl','insecureStream','nativeHlsOnly'] as const;
 const resolves=['telequebec','cpac','france24','youtube','tfo','public-senat'];
 export function validateChannel(raw:unknown):Channel{
  if(!raw||typeof raw!=='object'||Array.isArray(raw))throw new Error('Chaîne invalide');
  const c=Object.fromEntries(fields.filter(k=>k in raw).map(k=>[k,(raw as Record<string,unknown>)[k]])) as unknown as Channel;
  if(typeof c.id!=='string'||!/^[a-z0-9][a-z0-9-]{0,79}$/.test(c.id))throw new Error('Identifiant de chaîne invalide');
  for(const key of ['name','brand','category','description'] as const)if(typeof c[key]!=='string'||!c[key].trim()||c[key].length>(key==='description'?1200:120))throw new Error('Description de chaîne invalide');
- if(!['Québec','Canada','France','USA','Suède','International'].includes(c.region)||!['fr','en','sv','zxx'].includes(c.language||'fr')||!/^#[0-9a-f]{6}$/i.test(c.color))throw new Error('Région, langue ou couleur invalide');
+ if(!['Québec','Canada','France','USA','Suède','Cameroun','Belgique','Suisse','Luxembourg','Sénégal',"Côte d'Ivoire",'RD Congo','Haïti','International'].includes(c.region)||!['fr','en','sv','zxx'].includes(c.language||'fr')||!/^#[0-9a-f]{6}$/i.test(c.color))throw new Error('Région, langue ou couleur invalide');
  if(c.resolve&&!resolves.includes(c.resolve))throw new Error('Résolveur inconnu');
  if(c.limited!==undefined&&typeof c.limited!=='boolean')throw new Error('Restriction invalide');
  if(c.premium!==undefined&&typeof c.premium!=='boolean')throw new Error('Marqueur premium invalide');
  if(c.insecureStream!==undefined&&(typeof c.insecureStream!=='boolean'||(c.insecureStream&&!(typeof c.stream==='string'&&c.stream.startsWith('http://')))))throw new Error('Marqueur de flux non sécurisé invalide');
+ if(c.nativeHlsOnly!==undefined&&(typeof c.nativeHlsOnly!=='boolean'||(c.nativeHlsOnly&&!(typeof c.stream==='string'&&c.stream.startsWith('https://')&&c.insecureStream===undefined))))throw new Error('Marqueur de lecture native invalide');
  if(c.streamAlts!==undefined){
   if(!Array.isArray(c.streamAlts)||!c.streamAlts.length||c.streamAlts.length>8)throw new Error('Liste de flux de secours invalide');
   if(typeof c.stream!=='string')throw new Error('Flux de secours sans flux principal');
@@ -58,4 +61,31 @@ export function recordHealth(previous:ChannelHealth|undefined,id:string,result:C
   next.state=next.failures>=2?'suspect':'unknown';
  }else{next.state=previous?.state==='suspect'?'suspect':'unknown';}
  return next;
+}
+// The page embeds the catalogue in its HTML, so it ships only what the browser
+// reads: maintenance provenance (`directory`, `note`) and the records of
+// channels that pass their checks stay on the server. Memoized per payload,
+// so cached catalogues are projected once rather than on every request.
+// A browser without native HLS (`nativeHls` false) also skips the Safari-only
+// channels it could never play: about a quarter of the payload.
+const projected=new WeakMap<CataloguePayload,CataloguePayload>(),projectedLean=new WeakMap<CataloguePayload,CataloguePayload>();
+export function clientCatalogue(data:CataloguePayload,nativeHls=true):CataloguePayload{
+ const cache=nativeHls?projected:projectedLean;
+ let result=cache.get(data);
+ if(!result){
+  const kept=nativeHls?data.channels:data.channels.filter(channel=>!channel.nativeHlsOnly);
+  const channels=kept.map(channel=>{const copy={...channel};delete copy.directory;delete copy.note;return copy;});
+  const health=Object.fromEntries(Object.entries(data.health).filter(([,check])=>check.state==='suspect'));
+  result={...data,channels,health,...(nativeHls?{}:{nativeOnlyIds:data.channels.filter(channel=>channel.nativeHlsOnly).map(channel=>channel.id)})};cache.set(data,result);
+ }
+ return result;
+}
+
+/** Whether a browser can play HLS natively (Safari, or any iOS browser), from its user agent. Unknown agents are assumed able: a Safari-only channel too many is harmless, one missing is not. */
+export function likelyNativeHls(userAgent:string|null):boolean{
+ if(!userAgent)return true;
+ if(/iPhone|iPad|iPod/.test(userAgent))return true;
+ if(/Android/.test(userAgent))return false;
+ if(/Safari\//.test(userAgent)&&!/Chrome|Chromium|CriOS|Edg|OPR|Firefox|FxiOS|SamsungBrowser/.test(userAgent))return true;
+ return !/Chrome|Chromium|Edg|OPR|Firefox|SamsungBrowser/.test(userAgent);
 }

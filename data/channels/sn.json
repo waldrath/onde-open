@@ -1,0 +1,37 @@
+[
+  {
+    "id": "diaspora24",
+    "name": "Diaspora 24",
+    "brand": "Diaspora 24",
+    "region": "Sénégal",
+    "category": "General",
+    "color": "#6b8c92",
+    "language": "fr",
+    "description": "En lecture directe dans Onde via le flux public répertorié par iptv-org (catégorie : General).",
+    "official": "https://iptv-org.github.io/iptv/countries/sn.m3u",
+    "guide": "https://iptv-org.github.io/iptv/countries/sn.m3u",
+    "stream": "https://vdo3.pro-fhi.net:3218/stream/play.m3u8",
+    "directory": "https://iptv-org.github.io/iptv/countries/sn.m3u",
+    "limited": true,
+    "note": "Flux marqué géo-bloqué dans l'annuaire iptv-org : lecture réservée aux régions autorisées par le diffuseur (limité).",
+    "logoUrl": "https://i.imgur.com/4devfx1.png",
+    "source": "iptv-org"
+  },
+  {
+    "id": "sen-jeunes-tv",
+    "name": "SenJeunes TV",
+    "brand": "SenJeunes TV",
+    "region": "Sénégal",
+    "category": "General",
+    "color": "#6b8c92",
+    "language": "fr",
+    "description": "En lecture directe dans Onde via le flux public répertorié par iptv-org (catégorie : General).",
+    "official": "https://senjeunes.net/",
+    "guide": "https://senjeunes.net/",
+    "stream": "https://stream.sen-gt.com/senjeunestv/myStream/playlist.m3u8",
+    "directory": "https://iptv-org.github.io/iptv/countries/sn.m3u",
+    "note": "Chaîne marquée « Not 24/7 » dans l'annuaire iptv-org : diffusion à temps partiel.",
+    "logoUrl": "https://i.imgur.com/MeCSPsI.jpg",
+    "source": "iptv-org"
+  }
+]

@@ -1,0 +1,145 @@
+/* Braise — a night hearth. Warm charcoal and smoke above, a bed of coals
+   breathing at the bottom of the room, a few sparks rising. Ember orange is
+   the light; amber is its warm echo.
+   Every rule is scoped to .app-shell[data-theme=ember] (or this skin's tile in Réglages). */
+
+.app-shell[data-theme=ember] {
+  --bg: #120c09;
+  --panel: #1c1410;
+  --panel2: #261a14;
+  --line: #3d2a1f;
+  --text: #fbeee2;
+  --muted: #c9a58c;
+  --quiet: #c9a58c;
+  --sidebar: #140d0a;
+  --surface: #1c1410;
+  --surface-raised: #2a1d16;
+  --border: #4a3226;
+  --copy: #fbeee2;
+  --amber: #ffb347;
+  --heart: #ff7a5c;
+  --skin-bar: rgba(20, 13, 10, .9);
+  --skin-card: linear-gradient(180deg, rgba(46, 31, 24, .94), rgba(26, 18, 14, .96));
+  --skin-tile: linear-gradient(180deg, #2a1d16, #1c1410);
+  --skin-hero: radial-gradient(90% 70% at 50% 110%, rgba(255, 110, 30, .3), transparent 70%), linear-gradient(160deg, #2a1b13, #140d0a);
+  --skin-radius: 12px;
+  --skin-line: rgba(255, 140, 80, .14);
+  --skin-surface-shadow: inset 0 1px 0 rgba(255, 190, 140, .07), 0 22px 50px -22px rgba(0, 0, 0, .8);
+  --skin-heading-shadow: 0 0 26px rgba(255, 122, 47, .22);
+  --skin-icon-bg: linear-gradient(160deg, rgba(255, 122, 47, .16), rgba(40, 26, 19, .9));
+  --skin-icon-border: rgba(255, 140, 80, .28);
+  --skin-icon-color: #ffc59a;
+  --skin-icon-shadow: inset 0 1px 0 rgba(255, 200, 150, .1);
+}
+
+/* Backdrop: smoke above, coals below; two coal layers breathe out of phase. */
+.app-shell[data-theme=ember] .theme-backdrop {
+  background: radial-gradient(70% 45% at 50% -8%, rgba(92, 62, 46, .32), transparent 70%), radial-gradient(110% 45% at 50% 112%, rgba(255, 92, 24, .26), transparent 64%), linear-gradient(180deg, #140d0a, #110b08 62%, #1a0d07);
+}
+.app-shell[data-theme=ember] :is(.backdrop-aura, .backdrop-mesh, .backdrop-rings, .backdrop-specks) { display: none; }
+.app-shell[data-theme=ember] .backdrop-grain { opacity: .05; }
+.app-shell[data-theme=ember] .theme-heat {
+  left: -6%;
+  right: -6%;
+  bottom: -7%;
+  height: 24%;
+  background:
+    radial-gradient(closest-side, rgba(255, 170, 70, .5), rgba(255, 90, 20, .16) 60%, transparent) 8% 80% / 22% 70% no-repeat,
+    radial-gradient(closest-side, rgba(255, 140, 50, .42), rgba(255, 70, 10, .12) 60%, transparent) 34% 95% / 26% 64% no-repeat,
+    radial-gradient(closest-side, rgba(255, 186, 90, .48), rgba(255, 90, 20, .14) 60%, transparent) 63% 85% / 20% 72% no-repeat,
+    radial-gradient(closest-side, rgba(255, 130, 40, .4), rgba(255, 70, 10, .1) 60%, transparent) 92% 92% / 24% 66% no-repeat;
+  filter: none;
+  transform-origin: 50% 100%;
+  animation: heat-breathe 9s ease-in-out infinite alternate;
+}
+.app-shell[data-theme=ember] .backdrop-ember::after {
+  inset: auto -4% -4%;
+  height: 20%;
+  background:
+    radial-gradient(closest-side, rgba(255, 196, 110, .32), transparent) 22% 100% / 18% 80% no-repeat,
+    radial-gradient(closest-side, rgba(255, 150, 60, .3), transparent) 50% 100% / 22% 76% no-repeat,
+    radial-gradient(closest-side, rgba(255, 196, 110, .28), transparent) 78% 100% / 18% 80% no-repeat;
+  animation-duration: 8.5s;
+}
+.app-shell[data-theme=ember] .theme-embers i {
+  width: 3px;
+  height: 3px;
+  background: #ffc27a;
+  box-shadow: 0 0 6px 1px rgba(255, 122, 47, .75);
+}
+.app-shell[data-theme=ember] .theme-embers i:nth-child(2n),
+.app-shell[data-theme=ember] .theme-embers i:nth-child(15) { display: none; }
+.app-shell[data-theme=ember] .theme-embers i:nth-child(3n) { width: 2px; height: 2px; background: #ffd9a0; }
+
+/* Chrome: dark wood bars, the active item glowing like a coal. */
+.app-shell[data-theme=ember] .sidebar { border-color: rgba(255, 140, 80, .1); }
+.app-shell[data-theme=ember] .topbar { border-color: rgba(255, 140, 80, .1); }
+.app-shell[data-theme=ember] .topbar::after { opacity: .4; }
+.app-shell[data-theme=ember] .nav-item.nav-active {
+  background: linear-gradient(135deg, #ff8f45, #e8591a);
+  color: #1a0802;
+  box-shadow: inset 0 1px 0 rgba(255, 230, 200, .35), 0 10px 26px -10px rgba(255, 110, 30, .7);
+}
+.app-shell[data-theme=ember] .search-box { background: #1c1410; border-color: var(--border); }
+.app-shell[data-theme=ember] .device-note { background: var(--skin-card); border-color: var(--skin-line); }
+
+/* Type: warm titles with a faint glow, an ember underline. */
+.app-shell[data-theme=ember] :is(.page-heading h1, .home-section-heading h2, .section-heading h2, .selection-theme-head h2, .desktop-first h2, .access-card h1) { font-weight: 750; text-wrap: balance; }
+.app-shell[data-theme=ember] .page-heading h1::after {
+  width: 52px;
+  background: linear-gradient(90deg, var(--amber), #ff7a2f 55%, transparent);
+  box-shadow: 0 0 12px rgba(255, 122, 47, .6);
+  opacity: 1;
+}
+.app-shell[data-theme=ember] .eyebrow { color: var(--amber); }
+
+/* Smoky panels: warm hairlines, a lit top edge, a glow under the hovered card. */
+.app-shell[data-theme=ember] :is(.filter-panel, .guide-row, .guide-channel-summary, .favorites-lists, .selection-lead, .selection-row) { background: var(--skin-card); border-color: var(--skin-line); box-shadow: var(--skin-surface-shadow); }
+.app-shell[data-theme=ember] .channel-card:hover { border-color: rgba(255, 140, 80, .45); box-shadow: inset 0 1px 0 rgba(255, 190, 140, .1), 0 26px 50px -20px rgba(255, 90, 20, .35); }
+.app-shell[data-theme=ember] .card-visual { border-color: rgba(255, 140, 80, .12); }
+.app-shell[data-theme=ember] .brand-has-logo { box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .1); }
+.app-shell[data-theme=ember] :is(.home-favorite-row button, .home-category-grid button) { border-color: var(--skin-line); box-shadow: var(--skin-surface-shadow); }
+.app-shell[data-theme=ember] .home-favorite-art { background: #241812; border-color: rgba(255, 140, 80, .1); }
+.app-shell[data-theme=ember] .desktop-channel-row { background: rgba(42, 29, 22, .7); border-color: rgba(255, 140, 80, .1); }
+.app-shell[data-theme=ember] .desktop-channel-row:hover { background: #2e2018; border-color: rgba(255, 140, 80, .32); }
+
+/* Home hero: the river at dusk, lit from below by the hearth. */
+.app-shell[data-theme=ember] .desktop-first {
+  background:
+    radial-gradient(80% 60% at 30% 108%, rgba(255, 110, 30, .3), transparent 70%),
+    linear-gradient(0deg, rgba(18, 12, 9, .97) 0, rgba(18, 12, 9, .72) 40%, rgba(30, 16, 8, .18) 78%),
+    url('/images/onde-river-hero.webp') center 55% / cover no-repeat;
+  border-color: rgba(255, 140, 80, .2);
+}
+.app-shell[data-theme=ember] .desktop-first .hero-eyebrow { color: var(--amber); }
+.app-shell[data-theme=ember] .home-hero .hero-eyebrow { color: #ffd2a8; }
+.app-shell[data-theme=ember] .desktop-first .hero-secondary { background: rgba(28, 20, 16, .82); border-color: rgba(255, 140, 80, .3); color: #fbeee2; backdrop-filter: none; }
+.app-shell[data-theme=ember] .home-hero { background: radial-gradient(80% 60% at 30% 112%, rgba(255, 110, 30, .4), transparent 70%), url('/images/onde-river-hero.webp') center 55% / cover no-repeat; box-shadow: inset 0 0 0 1px var(--skin-line), var(--skin-surface-shadow); }
+
+/* Buttons and chips. */
+.app-shell[data-theme=ember] :is(.primary, .home-primary), .app-shell[data-theme=ember] .home-primary:hover { background: linear-gradient(135deg, #ff9148, #f0621f); color: #1a0802; box-shadow: inset 0 1px 0 rgba(255, 230, 200, .35), 0 10px 24px -10px rgba(255, 110, 30, .65); }
+.app-shell[data-theme=ember] .secondary { background: #241812; border-color: var(--border); }
+.app-shell[data-theme=ember] .secondary:hover { border-color: rgba(255, 140, 80, .55); }
+.app-shell[data-theme=ember] .guide-days button[aria-pressed=true] { background: linear-gradient(160deg, #ff8f45, #e8591a); border-color: transparent; color: #1a0802; }
+.app-shell[data-theme=ember] .region-tabs button.active { background: rgba(255, 122, 47, .14); color: #ffb98a; }
+
+/* Player, dialogs, mobile. */
+.app-shell[data-theme=ember] :is(.player-shell, .watch-dock, .modal) { background: #1a120e; border-color: rgba(255, 140, 80, .18); }
+.app-shell[data-theme=ember] :is(.watch-dock, .modal) { box-shadow: inset 0 1px 0 rgba(255, 190, 140, .08), 0 30px 70px -20px rgba(0, 0, 0, .85), 0 0 60px -30px rgba(255, 110, 30, .5); }
+.app-shell[data-theme=ember] .modal::backdrop { background: rgba(8, 4, 2, .72); }
+.app-shell[data-theme=ember] .mobile-nav { background: rgba(20, 13, 10, .96); border-color: rgba(255, 140, 80, .14); }
+.app-shell[data-theme=ember] .mobile-nav button.active { background: rgba(255, 122, 47, .14); color: #ffb98a; }
+.access-page.app-shell[data-theme=ember] .access-halo { background: radial-gradient(closest-side, rgba(255, 110, 30, .3), transparent); }
+
+/* Réglages tile: charcoal, a coal bed glowing at the bottom and three sparks. */
+.settings-skins .theme-option[data-theme-id=ember] .theme-preview {
+  background:
+    radial-gradient(circle, #ffc27a 0 1.2px, transparent 2px) 30% 30% / 8px 8px no-repeat,
+    radial-gradient(circle, #ffd9a0 0 1px, transparent 1.8px) 64% 18% / 8px 8px no-repeat,
+    radial-gradient(circle, #ffb347 0 1px, transparent 1.8px) 78% 44% / 8px 8px no-repeat,
+    radial-gradient(60% 40% at 30% 100%, rgba(255, 150, 50, .75), transparent 70%),
+    radial-gradient(50% 36% at 76% 100%, rgba(255, 110, 30, .7), transparent 70%),
+    linear-gradient(180deg, #1e1510, #120c09);
+}
+.settings-skins .theme-option[data-theme-id=ember] .theme-preview::before { border-color: rgba(255, 140, 80, .3); background: linear-gradient(180deg, rgba(60, 40, 30, .7), rgba(26, 18, 14, .7)); box-shadow: none; }
+.settings-skins .theme-option[data-theme-id=ember] .theme-preview i { display: none; }

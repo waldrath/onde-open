@@ -1,0 +1,51 @@
+[
+  {
+    "id": "baraka-television",
+    "name": "Baraka Television",
+    "brand": "Baraka Television",
+    "region": "RD Congo",
+    "category": "News",
+    "color": "#6b8c92",
+    "language": "fr",
+    "description": "En lecture directe dans Onde via le flux public répertorié par iptv-org (catégorie : News).",
+    "official": "https://iptv-org.github.io/iptv/countries/cd.m3u",
+    "guide": "https://iptv-org.github.io/iptv/countries/cd.m3u",
+    "stream": "https://stream.berosat.live:19360/baraka-hd/baraka-hd.m3u8",
+    "directory": "https://iptv-org.github.io/iptv/countries/cd.m3u",
+    "note": "Chaîne marquée « Not 24/7 » dans l'annuaire iptv-org : diffusion à temps partiel.",
+    "logoUrl": "https://i.imgur.com/IKXddHN.png",
+    "source": "iptv-org"
+  },
+  {
+    "id": "evitv",
+    "name": "EVI TV",
+    "brand": "EVI TV",
+    "region": "RD Congo",
+    "category": "Entertainment",
+    "color": "#6b8c92",
+    "language": "fr",
+    "description": "En lecture directe dans Onde via le flux public répertorié par iptv-org (catégorie : Entertainment).",
+    "official": "https://iptv-org.github.io/iptv/countries/cd.m3u",
+    "guide": "https://iptv-org.github.io/iptv/countries/cd.m3u",
+    "stream": "https://mistserver.evi-tv.com/hls/evi_tv_live/index.m3u8",
+    "directory": "https://iptv-org.github.io/iptv/countries/cd.m3u",
+    "logoUrl": "https://i.imgur.com/fBc9JSM.png",
+    "source": "iptv-org"
+  },
+  {
+    "id": "le-mondeen24h",
+    "name": "Le Monde en 24h",
+    "brand": "Le Monde en 24h",
+    "region": "RD Congo",
+    "category": "News",
+    "color": "#6b8c92",
+    "language": "fr",
+    "description": "En lecture directe dans Onde via le flux public répertorié par iptv-org (catégorie : News).",
+    "official": "https://lemondeen24h.com/",
+    "guide": "https://lemondeen24h.com/",
+    "stream": "https://stream.berosat.live/hls/monde24h-tv-index/monde24h-tv-index.m3u8",
+    "directory": "https://iptv-org.github.io/iptv/countries/cd.m3u",
+    "logoUrl": "https://i.imgur.com/2igwi7g.png",
+    "source": "iptv-org"
+  }
+]

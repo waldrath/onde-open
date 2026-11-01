@@ -15,19 +15,17 @@
  * - No logo URL is ever synthesized from a channel slug; a URL is used only
  *   when it was explicitly matched to that exact channel id.
  * - Missing or failed images use the UI's text fallback (`brand`).
+ *
+ * Client-safe: no catalogue import. The server merges the base catalogue's
+ * `logoUrl` into database entries, so the channel object carries it.
  */
 
-import { channelsById } from './channels';
-
 /**
- * Resolve the logo URL for a channel. Accepts a full channel (its own
- * `logoUrl` wins) or any object carrying a channel `id`; the id fallback
- * covers catalogue entries merged in from the database, whose stored
- * payload may predate the `logoUrl` field.
+ * Resolve the logo URL for a channel: its own `logoUrl`.
  */
 export function getChannelLogo(channel: {
   id: string;
   logoUrl?: string;
 }): string | undefined {
-  return channel.logoUrl ?? channelsById.get(channel.id)?.logoUrl;
+  return channel.logoUrl;
 }

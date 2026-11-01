@@ -6,13 +6,16 @@ This repository is the community edition. It is meant for learning, self-hosting
 
 ## Features
 
-- More than 2,600 free channels from Quebec, Canada, France, the United States, and international sources.
-- Integrated HLS playback with `hls.js` and native HLS on Safari.
+- More than 2,100 free channels from Quebec, Canada, France, the United States, Sweden, Belgium, Switzerland, Luxembourg, Cameroon, Senegal, Côte d'Ivoire, DR Congo, Haiti, and international sources. Every imported stream is probed for playability before it is kept.
+- Integrated HLS playback with `hls.js` and native HLS on Safari. Channels that only play natively are shown to Safari viewers only, and other browsers receive a lighter catalogue.
 - Official broadcaster players for channels that do not expose a compatible stream.
-- Favorites, custom lists, recently watched channels, and last-channel resume.
-- A TV guide with per-channel schedules and programme details.
-- A curated selection of channels by genre.
-- Twelve complete visual skins, each with its own palette, type, icon treatment, ambient motion, and surfaces.
+- Favorites, custom lists, recently watched channels, and last-channel resume. Favorites removed from the catalogue are reported instead of silently disappearing.
+- Channel zapping with on-screen buttons, remote-control channel keys, and arrow keys in the player.
+- A TV guide with per-channel schedules and programme details, including programme reminders delivered as notifications.
+- Community reliability: anonymous playback outcomes mark channels as reliable or unstable, and the channel list can be sorted by reliability.
+- A weekly curated selection by genre that rotates on a fixed schedule instead of at random.
+- Sixteen complete visual skins, each with its own palette, type, icon treatment, ambient motion, and surfaces. Viewers can set a personal background image or animated GIF per skin; it stays on their device.
+- Battery-aware ambient motion: skin animations rest while a video plays, on low battery, and with data saver.
 - French and English interface. Catalogue metadata remains in the language supplied by the broadcaster.
 - Automatic region detection hides channels flagged as geo-limited for another country. An optional filter reveals them.
 - Player captions are disabled by default; viewers can enable the tracks they want.
@@ -30,6 +33,7 @@ This repository is the community edition. It is meant for learning, self-hosting
 - PostgreSQL through the Neon serverless driver
 - Neon Auth for optional accounts
 - Node's built-in test runner for unit and catalogue tests
+- Playwright for end-to-end UI tests on desktop and mobile viewports
 
 ## Requirements
 
@@ -83,7 +87,7 @@ The app works without an account. Accounts, preference sync, and catalogue maint
 | --- | --- | --- |
 | `DATABASE_URL` | Yes | Pooled PostgreSQL connection used by the app. |
 | `DATABASE_URL_UNPOOLED` | For migrations | Direct PostgreSQL connection used by `npm run db:migrate`. |
-| `ONDE_APP_ORIGIN` | Production | Canonical public origin, used for origin checks and auth callbacks. |
+| `ONDE_APP_ORIGIN` | Production | Canonical public origin, used for origin checks, auth callbacks, and as the Origin of the catalogue importer's playability probe. |
 | `NEON_AUTH_BASE_URL` | For accounts | Neon Auth project URL. |
 | `NEON_AUTH_COOKIE_SECRET` | For accounts | Secret used to sign session cookies. Use a long random value. |
 | `CATALOGUE_ADMIN_SECRET` | For maintenance | Shared secret for catalogue maintenance writes. |
@@ -98,6 +102,7 @@ The app works without an account. Accounts, preference sync, and catalogue maint
 | `npm run build` | Create a production build. |
 | `npm start` | Serve the production build. |
 | `npm test` | Run the Node test suite. |
+| `npm run test:e2e` | Build the app and run the Playwright UI tests (run `npx playwright install chromium` once). |
 | `npm run db:migrate` | Apply the database schema. |
 | `npm run prebuild` | Clear the generated Next.js build cache (runs automatically before `build`). |
 
@@ -125,6 +130,7 @@ migrations/          PostgreSQL schema
 public/              Icons, images, and theme artwork
 scripts/             Migration, import, and build helpers
 tests/               Unit and catalogue validation tests
+e2e/                 Playwright UI tests (external requests are mocked)
 ```
 
 ## How the catalogue works

@@ -10,6 +10,7 @@
     "build": "next build",
     "start": "next start",
     "test": "node --test tests/*.test.mjs",
+    "test:e2e": "playwright test",
     "db:migrate": "node --env-file=.env.local scripts/migrate.mjs",
     "prebuild": "node scripts/clean-build-cache.mjs"
   },
@@ -23,6 +24,7 @@
     "react-dom": "19.2.6"
   },
   "devDependencies": {
+    "@playwright/test": "1.64.1",
     "@tailwindcss/postcss": "4.2.1",
     "@types/node": "22.19.19",
     "@types/react": "19.2.14",

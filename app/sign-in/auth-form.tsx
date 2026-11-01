@@ -14,9 +14,9 @@ function message(error:AuthError,t:Translate){
  if(error?.code==='OTP_EXPIRED'||error?.code==='INVALID_OTP')return t('Ce code est invalide ou expiré. Demandez un nouveau code.');
  return t('La connexion n’a pas pu être terminée. Vérifiez vos informations et réessayez.');
 }
-export default function AuthForm(){
+export default function AuthForm({initialMode='sign-in'}:{initialMode?:'sign-in'|'sign-up'}){
  const {t}=useLocale();
- const [mode,setMode]=useState<Mode>('sign-in'),[email,setEmail]=useState(''),[password,setPassword]=useState(''),[name,setName]=useState(''),[code,setCode]=useState(''),[token,setToken]=useState('');
+ const [mode,setMode]=useState<Mode>(initialMode),[email,setEmail]=useState(''),[password,setPassword]=useState(''),[name,setName]=useState(''),[code,setCode]=useState(''),[token,setToken]=useState('');
  const [showPassword,setShowPassword]=useState(false);
  const [busy,setBusy]=useState(false),[error,setError]=useState(''),[notice,setNotice]=useState('');
  useEffect(()=>{const q=new URLSearchParams(window.location.search);const value=q.get('token');if(value){setToken(value);setMode('reset');window.history.replaceState(null,'','/sign-in');}if(q.get('error'))setError(t('Ce lien est invalide ou expiré. Demandez un nouveau lien.'));},[]);

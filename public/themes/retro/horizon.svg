@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300">
+<defs>
+<linearGradient id="s" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff1a1"/><stop offset=".38" stop-color="#ffb35c"/><stop offset=".68" stop-color="#ff4fa3"/><stop offset="1" stop-color="#b03cff"/></linearGradient>
+<linearGradient id="r" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2a0b5c"/><stop offset="1" stop-color="#0b0224"/></linearGradient>
+<mask id="m"><rect width="1200" height="300" fill="#fff"/><g fill="#000"><rect y="166" width="1200" height="4"/><rect y="186" width="1200" height="6"/><rect y="207" width="1200" height="8"/><rect y="229" width="1200" height="10"/><rect y="252" width="1200" height="12"/><rect y="276" width="1200" height="14"/></g></mask>
+</defs>
+<circle cx="600" cy="170" r="150" fill="url(#s)" mask="url(#m)"/>
+<g fill="url(#r)" stroke="#ff5fd2" stroke-width="1.4" stroke-linejoin="round" stroke-opacity=".75">
+<path d="M0 300l70-74 58 30 86-82 74 64 50-26 104 88z"/>
+<path d="M1200 300l-66-82-72 46-94-90-80 78-46-22-118 70z"/>
+</g>
+<g fill="none" stroke="#ff5fd2" stroke-opacity=".35" stroke-width="1">
+<path d="M214 174l-30 126M214 174l40 126M70 226l14 74M968 174l-28 126M968 174l46 126M1134 218l-14 82"/>
+</g>
+</svg>

@@ -29,6 +29,7 @@
     "guide": "https://pluto.tv/en/live-tv/alerte-a-malibu-fr",
     "stream": "https://jmp2.uk/plu-60afaa535580be0007ac9ee4.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://i.imgur.com/hBiB6uk.png",
     "source": "iptv-org"
   },
@@ -131,6 +132,8 @@
     "guide": "https://www.bfmtv.com/grand-lille/",
     "stream": "https://ncdn-live-bfm.pfd.sfr.net/shls/LIVE$BFMGRANDLILLE/index.m3u8?end=END&start=LIVE",
     "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
+    "limited": true,
+    "note": "Flux refusé (HTTP 403) hors de sa région lors de la vérification : lecture probablement réservée au pays du diffuseur (limité).",
     "logoUrl": "https://i.imgur.com/HE5xP0r.png",
     "source": "iptv-org"
   },
@@ -271,6 +274,7 @@
     "guide": "https://www.canalplus.com/chaines/cstar",
     "stream": "https://raw.githubusercontent.com/Paradise-91/ParaTV/refs/heads/main/streams/canalplus/cstar-dm.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://i.imgur.com/w4kAX1V.png",
     "source": "iptv-org"
   },
@@ -291,25 +295,6 @@
     "source": "iptv-org"
   },
   {
-    "id": "canal-plus-sport",
-    "name": "Canal+ Sport",
-    "brand": "Canal+ Sport",
-    "region": "France",
-    "category": "Sports",
-    "color": "#6b8c92",
-    "language": "fr",
-    "description": "En lecture directe dans Onde via le flux public répertorié par iptv-org (catégorie : Sports).",
-    "official": "https://www.canalplus.fr/pid1747-c-sport.html",
-    "guide": "https://www.canalplus.fr/pid1747-c-sport.html",
-    "stream": "http://tv.streambox.fr/live/testlivestream/testlivestream/31.m3u8",
-    "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
-    "insecureStream": true,
-    "limited": true,
-    "note": "Flux marqué géo-bloqué dans l'annuaire iptv-org : lecture réservée aux régions autorisées par le diffuseur (limité).",
-    "logoUrl": "https://i.imgur.com/EOXnU15.png",
-    "source": "iptv-org"
-  },
-  {
     "id": "cine666by-pluto-tv",
     "name": "Cine 666 by Pluto TV",
     "brand": "Cine 666 by Pluto TV",
@@ -322,6 +307,7 @@
     "guide": "https://pluto.tv/live-tv/cine-666-by-pluto-tv-fr/details",
     "stream": "https://jmp2.uk/plu-6823648580b2665220d9e69a.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/6823648580b2665220d9e69a/colorLogoPNG-1757404141.png",
     "source": "iptv-org"
   },
@@ -338,6 +324,7 @@
     "guide": "https://pluto.tv/live-tv/cine-action-by-pluto-tv-fr/details",
     "stream": "https://jmp2.uk/plu-5f8ed1ff5c39700007e2204a.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/5f8ed1ff5c39700007e2204a/colorLogoPNG_1752228138963.png",
     "source": "iptv-org"
   },
@@ -354,6 +341,7 @@
     "guide": "https://pluto.tv/live-tv/cine-by-pluto-tv-fr/details",
     "stream": "https://jmp2.uk/plu-5f8ed0f17564a300082b676a.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/5f8ed0f17564a300082b676a/colorLogoPNG_1775048900088.png",
     "source": "iptv-org"
   },
@@ -370,6 +358,8 @@
     "guide": "https://pluto.tv/live-tv/cine-catastrophe-by-pluto-tv-fr/details",
     "stream": "https://jmp2.uk/plu-65a69ef53af63d000825e0ee.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
+    "limited": true,
+    "note": "Flux refusé (HTTP 403) hors de sa région lors de la vérification : lecture probablement réservée au pays du diffuseur (limité).",
     "logoUrl": "https://images.pluto.tv/channels/65a69ef53af63d000825e0ee/colorLogoPNG_1751272916058.png",
     "source": "iptv-org"
   },
@@ -386,6 +376,7 @@
     "guide": "https://pluto.tv/live-tv/cine-dasie-by-pluto-tv-fr/details",
     "stream": "https://jmp2.uk/plu-62f3e2d000418d00070f7dbc.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/62f3e2d000418d00070f7dbc/colorLogoPNG_1751272759694.png",
     "source": "iptv-org"
   },
@@ -402,6 +393,7 @@
     "guide": "https://pluto.tv/live-tv/cine-horreur-by-pluto-tv-fr/details",
     "stream": "https://jmp2.uk/plu-66e1978babec540008ce41ac.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/66e1978babec540008ce41ac/colorLogoPNG_1751272165674.png",
     "source": "iptv-org"
   },
@@ -418,6 +410,7 @@
     "guide": "https://pluto.tv/live-tv/cine-retro-by-pluto-tv-fr/details",
     "stream": "https://jmp2.uk/plu-5f8ed168f72fcd0007e56269.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/5f8ed168f72fcd0007e56269/colorLogoPNG_1751272859383.png",
     "source": "iptv-org"
   },
@@ -434,6 +427,7 @@
     "guide": "https://pluto.tv/live-tv/cine-romance-by-pluto-tv-fr/details",
     "stream": "https://jmp2.uk/plu-60812fc8539963000707d1e1.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/60812fc8539963000707d1e1/colorLogoPNG_1775048649580.png",
     "source": "iptv-org"
   },
@@ -450,6 +444,7 @@
     "guide": "https://pluto.tv/live-tv/cine-sci-fi-by-pluto-tv-fr/details",
     "stream": "https://jmp2.uk/plu-60c34592c911890007f29a73.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/60c34592c911890007f29a73/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -466,6 +461,7 @@
     "guide": "https://pluto.tv/live-tv/cine-thrillers-by-pluto-tv-fr/details",
     "stream": "https://jmp2.uk/plu-60c3472a51a2050008dad272.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/60c3472a51a2050008dad272/colorLogoPNG_1751272093012.png",
     "source": "iptv-org"
   },
@@ -482,57 +478,8 @@
     "guide": "https://pluto.tv/live-tv/cine-western-by-pluto-tv-fr/details",
     "stream": "https://jmp2.uk/plu-65cca3e2ec452d0008af3a65.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/65cca3e2ec452d0008af3a65/colorLogoPNG_1751272826143.png",
-    "source": "iptv-org"
-  },
-  {
-    "id": "cine-plus-classic",
-    "name": "Cine+ Classic",
-    "brand": "Cine+ Classic",
-    "region": "France",
-    "category": "Movies",
-    "color": "#6b8c92",
-    "language": "fr",
-    "description": "En lecture directe dans Onde via le flux public répertorié par iptv-org (catégorie : Movies).",
-    "official": "https://www.canalplus.com/chaines/cine-plus-ocs/",
-    "guide": "https://www.canalplus.com/chaines/cine-plus-ocs/",
-    "stream": "http://99.27.51.147/CineClassic/index.m3u8",
-    "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
-    "insecureStream": true,
-    "logoUrl": "https://i.imgur.com/y2zeLS3.jpeg",
-    "source": "iptv-org"
-  },
-  {
-    "id": "cine-plus-frisson",
-    "name": "Cine+ Frisson",
-    "brand": "Cine+ Frisson",
-    "region": "France",
-    "category": "Movies",
-    "color": "#6b8c92",
-    "language": "fr",
-    "description": "En lecture directe dans Onde via le flux public répertorié par iptv-org (catégorie : Movies).",
-    "official": "https://www.canalplus.com/chaines/cine-plus-ocs/",
-    "guide": "https://www.canalplus.com/chaines/cine-plus-ocs/",
-    "stream": "http://99.27.51.147:8080/CineFrisson/index.m3u8",
-    "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
-    "insecureStream": true,
-    "logoUrl": "https://i.imgur.com/MwFtbnR.jpeg",
-    "source": "iptv-org"
-  },
-  {
-    "id": "clubbing-tv",
-    "name": "Clubbing TV France",
-    "brand": "Clubbing TV France",
-    "region": "France",
-    "category": "Music",
-    "color": "#6b8c92",
-    "language": "fr",
-    "description": "En lecture directe dans Onde via le flux public répertorié par iptv-org (catégorie : Music).",
-    "official": "https://pluto.tv/en/live-tv/clubbing-tv-de",
-    "guide": "https://pluto.tv/en/live-tv/clubbing-tv-de",
-    "stream": "https://d1j2csarxnwazk.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-uze1m6xh4fiyr-ssai-prd/master.m3u8",
-    "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
-    "logoUrl": "https://i.imgur.com/MyiA92q.png",
     "source": "iptv-org"
   },
   {
@@ -548,12 +495,7 @@
     "guide": "https://www.cnews.fr/",
     "stream": "https://raw.githubusercontent.com/Paradise-91/ParaTV/main/streams/canalplus/cnews-dm.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
-    "streamAlts": [
-      {
-        "url": "https://raw.githubusercontent.com/LeBazarDeBryan/XTVZ_/main/Stream/Live/CNews.m3u8",
-        "label": "SD"
-      }
-    ],
+    "nativeHlsOnly": true,
     "logoUrl": "https://i.imgur.com/sSNhk2g.png",
     "source": "iptv-org"
   },
@@ -570,6 +512,7 @@
     "guide": "https://www.cnews.fr/le-direct-cnews-prime",
     "stream": "https://raw.githubusercontent.com/Paradise-91/ParaTV/main/streams/canalplus/cnews-prime-dm.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://www.cnews.fr/themes/cnews/img/cnews-prime.png",
     "source": "iptv-org"
   },
@@ -586,6 +529,7 @@
     "guide": "https://iptv-org.github.io/iptv/countries/fr.m3u",
     "stream": "https://jmp2.uk/plu-62f3e8ad2a8e8000077b013d.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/62f3e8ad2a8e8000077b013d/colorLogoPNG.png?w=512",
     "source": "iptv-org"
   },
@@ -602,23 +546,8 @@
     "guide": "https://pluto.tv/en/live-tv/dossiers-fbi-fr",
     "stream": "https://jmp2.uk/plu-5f8edad922b10b000753bc37.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://i.imgur.com/8Zx6dA7.png",
-    "source": "iptv-org"
-  },
-  {
-    "id": "equidia",
-    "name": "Equidia",
-    "brand": "Equidia",
-    "region": "France",
-    "category": "Sports",
-    "color": "#6b8c92",
-    "language": "fr",
-    "description": "En lecture directe dans Onde via le flux public répertorié par iptv-org (catégorie : Sports).",
-    "official": "https://www.equidia.fr/",
-    "guide": "https://www.equidia.fr/",
-    "stream": "https://raw.githubusercontent.com/Paradise-91/ParaTV/main/streams/equidia/live2.m3u8",
-    "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
-    "logoUrl": "https://i.imgur.com/QPpbRcZ.png",
     "source": "iptv-org"
   },
   {
@@ -640,31 +569,11 @@
         "label": "SD"
       },
       {
-        "url": "https://jmp2.uk/plu-60d35bcaf1ff4a00078af0a6.m3u8",
-        "label": "SD · jmp2.uk"
-      },
-      {
         "url": "https://euronews-live-fra-fr.fast.rakuten.tv/v1/master/0547f18649bd788bec7b67b746e47670f558b6b2/production-LiveChannel-6564/bitok/eyJzdGlkIjoiYjA1ZmVmMzAtYjhkZC00Y2E5LThkM2ItMTRkNjE1MjdmYjE0IiwibWt0IjoiZnIiLCJjaCI6NjU2NCwicHRmIjo1fQ==/26032/euronews-fr.m3u8",
         "label": "SD · euronews-live-fra-fr.fast.rakuten.…"
       }
     ],
     "logoUrl": "https://i.imgur.com/8t9mdg9.png",
-    "source": "iptv-org"
-  },
-  {
-    "id": "europe1-tv",
-    "name": "Europe 1 TV",
-    "brand": "Europe 1 TV",
-    "region": "France",
-    "category": "News",
-    "color": "#6b8c92",
-    "language": "fr",
-    "description": "En lecture directe dans Onde via le flux public répertorié par iptv-org (catégorie : News).",
-    "official": "https://www.europe1.fr/",
-    "guide": "https://www.europe1.fr/",
-    "stream": "https://raw.githubusercontent.com/Paradise-91/ParaTV/main/streams/misc/europe-1-tv-dm.m3u8",
-    "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
-    "logoUrl": "https://i.ibb.co/rGqB5FcH/Europe1-TV.png",
     "source": "iptv-org"
   },
   {
@@ -680,6 +589,8 @@
     "guide": "https://www.fashiontv.com/",
     "stream": "https://ssai.aniview.com/api/v1/hls/stream.m3u8?AVS_SSAIID=67c0c39764ad6f7dab07aa0b&AV_APPNAME=[ADS.APP_NAME]&AV_APPPKGNAME=[ADS.APP_BUNDLE]&AV_APPSTOREURL=[ADS.APP_STORE_URL]&AV_CCPA=[ADS.US_PRIVACY]&AV_CLIENT_SECTION=ftv_secrets&AV_CONSENT=[ADS.GDPR_CONSENT]&AV_CONTENT_CAT=IAB7&AV_CONTENT_CHANNEL=&AV_CONTENT_CONTEXT=&AV_CONTENT_EPISODE=&AV_CONTENT_GENRE=fashion+and+lifestyle&AV_CONTENT_ID=[ADS.VIDAA_ADS_CONTENTID]&AV_CONTENT_KEYWORDS=&AV_CONTENT_LANGUAGE=en&AV_CONTENT_LENGTH=&AV_CONTENT_NETWORK=&AV_CONTENT_PROVIDER=FTV&AV_CONTENT_RATING=R&AV_CONTENT_SEASON=&AV_CONTENT_SERIES=&AV_CONTENT_TITLE=&AV_CONTENT_URL=&AV_DNT=[ADS.DNT]&AV_GDPR=[ADS.GDPR]&AV_HEIGHT=[ADS.H]&AV_IDFA=[ADS.IFA]&AV_IFA_TYPE=[ADS.IFA_TYPE]&AV_LANGUAGE=[ADS.DEVICE_LANGUAGE]&AV_OSVERS=[ADS.DEVICE_OSV]&AV_RTB_DEVICE_TYPE=[ADS.DEVICE_TYPE]&AV_VAUTH=[ADS.VAUTH]&AV_WIDTH=[ADS.W]&Content_Id=[ADS.ADS_CONTENTID]&ads.vidaa_ads_param=1191723366&cb=[CACHEBUSTER]&content_channel_name=ftv+-fashiontv+Secrets&content_livestream=1",
     "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
+    "limited": true,
+    "note": "Flux refusé (HTTP 403) hors de sa région lors de la vérification : lecture probablement réservée au pays du diffuseur (limité).",
     "logoUrl": "https://i.ibb.co/fVGJyCC8/w512.png",
     "source": "iptv-org"
   },
@@ -758,25 +669,6 @@
     "source": "iptv-org"
   },
   {
-    "id": "golf-plus",
-    "name": "Golf +",
-    "brand": "Golf +",
-    "region": "France",
-    "category": "Sports",
-    "color": "#6b8c92",
-    "language": "fr",
-    "description": "En lecture directe dans Onde via le flux public répertorié par iptv-org (catégorie : Sports).",
-    "official": "https://www.canalsat.fr/",
-    "guide": "https://www.canalsat.fr/",
-    "stream": "http://tv.streambox.fr/live/testlivestream/testlivestream/49.m3u8",
-    "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
-    "insecureStream": true,
-    "limited": true,
-    "note": "Flux marqué géo-bloqué dans l'annuaire iptv-org : lecture réservée aux régions autorisées par le diffuseur (limité).",
-    "logoUrl": "https://i.imgur.com/WHnddkg.png",
-    "source": "iptv-org"
-  },
-  {
     "id": "gulli",
     "name": "Gulli",
     "brand": "Gulli",
@@ -806,6 +698,7 @@
     "guide": "https://pluto.tv/en/live-tv/helene-et-les-garcons-fr",
     "stream": "https://jmp2.uk/plu-604f8de01b479400078fb1e7.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://i.imgur.com/EjjzjF9.png",
     "source": "iptv-org"
   },
@@ -822,6 +715,7 @@
     "guide": "https://pluto.tv/en/live-tv/inazuma-eleven-fr",
     "stream": "https://jmp2.uk/plu-632c6df43d2bc5000751f621.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://i.imgur.com/pLv0T3D.png",
     "source": "iptv-org"
   },
@@ -838,24 +732,8 @@
     "guide": "https://pluto.tv/live-tv/investigation-by-pluto-tv-fr/details",
     "stream": "https://jmp2.uk/plu-6683cd2fca74680008772545.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/6683cd2fca74680008772545/colorLogoPNG_1747399523793.png",
-    "source": "iptv-org"
-  },
-  {
-    "id": "kto",
-    "name": "KTO",
-    "brand": "KTO",
-    "region": "France",
-    "category": "Religious",
-    "color": "#6b8c92",
-    "language": "fr",
-    "description": "En lecture directe dans Onde via le flux public répertorié par iptv-org (catégorie : Religious).",
-    "official": "https://www.ktotv.com/",
-    "guide": "https://www.ktotv.com/",
-    "stream": "https://live-kto.akamaized.net/hls/live/2033284/KTO/master.m3u8",
-    "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
-    "note": "Chaîne marquée « Not 24/7 » dans l'annuaire iptv-org : diffusion à temps partiel.",
-    "logoUrl": "https://i.imgur.com/EY6TsdV.png",
     "source": "iptv-org"
   },
   {
@@ -871,12 +749,6 @@
     "guide": "https://www.lci.fr/",
     "stream": "http://149.62.177.107:9999/LCI/index.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
-    "streamAlts": [
-      {
-        "url": "http://151.80.18.177:86/LCI_HD/index.m3u8",
-        "label": "HD"
-      }
-    ],
     "insecureStream": true,
     "logoUrl": "https://i.imgur.com/DED8EXs.png",
     "source": "iptv-org"
@@ -894,6 +766,7 @@
     "guide": "https://pluto.tv/en/live-tv/le-miracles-de-lamour-fr",
     "stream": "https://jmp2.uk/plu-60549c238c3f21000753d3e0.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://i.imgur.com/3Xz4hjD.png",
     "source": "iptv-org"
   },
@@ -910,6 +783,7 @@
     "guide": "https://pluto.tv/en/live-tv/les-annees-fac-fr",
     "stream": "https://jmp2.uk/plu-60afae68a7fc50000737186d.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://i.imgur.com/M1OjaB0.png",
     "source": "iptv-org"
   },
@@ -926,6 +800,7 @@
     "guide": "https://pluto.tv/en/live-tv/les-filles-da-cote-fr",
     "stream": "https://jmp2.uk/plu-60549d97cd7b090007c73314.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://i.imgur.com/dxipSaQ.png",
     "source": "iptv-org"
   },
@@ -942,6 +817,7 @@
     "guide": "https://pluto.tv/en/live-tv/les-nouveaux-detectives-fr",
     "stream": "https://jmp2.uk/plu-5f8edb6df1ebb800072edf10.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://i.imgur.com/ego8ozn.png",
     "source": "iptv-org"
   },
@@ -958,6 +834,7 @@
     "guide": "https://pluto.tv/en/live-tv/louis-la-brocante-fr",
     "stream": "https://jmp2.uk/plu-5f8ed6d569d2d4000864a976.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://i.imgur.com/I1w7rFb.png",
     "source": "iptv-org"
   },
@@ -1041,25 +918,9 @@
     "guide": "https://moselle.tv/",
     "stream": "https://live.creacast.com/mirabelletv/smil:mirabelletv.smil/playlist.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
-    "note": "Chaîne marquée « Not 24/7 » dans l'annuaire iptv-org : diffusion à temps partiel.",
+    "limited": true,
+    "note": "Flux refusé (HTTP 403) hors de sa région lors de la vérification : lecture probablement réservée au pays du diffuseur (limité). Chaîne marquée « Not 24/7 » dans l'annuaire iptv-org : diffusion à temps partiel.",
     "logoUrl": "https://i.imgur.com/hrm5QnU.png",
-    "source": "iptv-org"
-  },
-  {
-    "id": "mtv",
-    "name": "MTV (France)",
-    "brand": "MTV (France)",
-    "region": "France",
-    "category": "Entertainment",
-    "color": "#6b8c92",
-    "language": "fr",
-    "description": "En lecture directe dans Onde via le flux public répertorié par iptv-org (catégorie : Entertainment).",
-    "official": "https://www.mtv.fr/",
-    "guide": "https://www.mtv.fr/",
-    "stream": "http://99.27.51.147:8080/MTV/index.m3u8",
-    "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
-    "insecureStream": true,
-    "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/MTV_2021_%28brand_version%29.svg/960px-MTV_2021_%28brand_version%29.svg.png",
     "source": "iptv-org"
   },
   {
@@ -1075,81 +936,8 @@
     "guide": "https://pluto.tv/live-tv/mtv-classics-fr/details",
     "stream": "https://jmp2.uk/plu-5f92b56a367e170007cd43f4.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/5f92b56a367e170007cd43f4/colorLogoPNG.png",
-    "source": "iptv-org"
-  },
-  {
-    "id": "museum-tv-french",
-    "name": "Museum TV French",
-    "brand": "Museum TV French",
-    "region": "France",
-    "category": "Culture",
-    "color": "#6b8c92",
-    "language": "fr",
-    "description": "En lecture directe dans Onde via le flux public répertorié par iptv-org (catégorie : Culture).",
-    "official": "https://www.museumtv.art/",
-    "guide": "https://www.museumtv.art/",
-    "stream": "https://cdn-ue1-prod.tsv2.amagi.tv/linear/amg01492-secomsasmediart-museumtv-eng-samsungit/playlist.m3u8",
-    "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
-    "limited": true,
-    "note": "Flux marqué géo-bloqué dans l'annuaire iptv-org : lecture réservée aux régions autorisées par le diffuseur (limité).",
-    "logoUrl": "https://i.imgur.com/WbjURLo.png",
-    "source": "iptv-org"
-  },
-  {
-    "id": "my-zen-tv",
-    "name": "MyZen TV",
-    "brand": "MyZen TV",
-    "region": "France",
-    "category": "Relax",
-    "color": "#6b8c92",
-    "language": "fr",
-    "description": "En lecture directe dans Onde via le flux public répertorié par iptv-org (catégorie : Relax).",
-    "official": "https://www.myzen.tv/",
-    "guide": "https://www.myzen.tv/",
-    "stream": "https://cdn-ue1-prod.tsv2.amagi.tv/linear/amg01255-secomcofites-my-myzen-en-plex/playlist.m3u8",
-    "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
-    "streamAlts": [
-      {
-        "url": "https://cdn-ue1-prod.tsv2.amagi.tv/linear/amg01255-secomcofites-my-myzen-samsungen-samsungit/playlist.m3u8",
-        "label": "SD"
-      }
-    ],
-    "logoUrl": "https://i.imgur.com/fIi8o0C.png",
-    "source": "iptv-org"
-  },
-  {
-    "id": "nickelodeon",
-    "name": "Nickelodeon (France)",
-    "brand": "Nickelodeon (France)",
-    "region": "France",
-    "category": "Kids",
-    "color": "#6b8c92",
-    "language": "fr",
-    "description": "En lecture directe dans Onde via le flux public répertorié par iptv-org (catégorie : Kids).",
-    "official": "https://www.nickelodeon.fr/",
-    "guide": "https://www.nickelodeon.fr/",
-    "stream": "http://151.80.18.177:86/Nickelodeon_FR/index.m3u8",
-    "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
-    "insecureStream": true,
-    "logoUrl": "https://i.imgur.com/E84jnP8.png",
-    "source": "iptv-org"
-  },
-  {
-    "id": "nickelodeon-junior",
-    "name": "Nickelodeon Junior",
-    "brand": "Nickelodeon Junior",
-    "region": "France",
-    "category": "Kids",
-    "color": "#6b8c92",
-    "language": "fr",
-    "description": "En lecture directe dans Onde via le flux public répertorié par iptv-org (catégorie : Kids).",
-    "official": "https://www.nickelodeonjunior.fr/",
-    "guide": "https://www.nickelodeonjunior.fr/",
-    "stream": "http://151.80.18.177:86/Nickelodeon_Junior/index.m3u8",
-    "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
-    "insecureStream": true,
-    "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Nickelodeon_Junior.png/960px-Nickelodeon_Junior.png",
     "source": "iptv-org"
   },
   {
@@ -1182,6 +970,7 @@
     "guide": "https://pluto.tv/live-tv/pluto-tv-90s-classics-fr/details",
     "stream": "https://jmp2.uk/plu-66b4990746762a00084c2f78.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/66b4990746762a00084c2f78/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -1198,6 +987,7 @@
     "guide": "https://pluto.tv/live-tv/pluto-tv-animaux-fr/details",
     "stream": "https://jmp2.uk/plu-60925a44f0350600075a1fdc.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/60925a44f0350600075a1fdc/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -1214,6 +1004,7 @@
     "guide": "https://pluto.tv/live-tv/pluto-tv-anime-go-fr/details",
     "stream": "https://jmp2.uk/plu-691b3669c48674840c3b832a.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/691b3669c48674840c3b832a/colorLogoPNG_1778491402325.png",
     "source": "iptv-org"
   },
@@ -1230,6 +1021,7 @@
     "guide": "https://pluto.tv/live-tv/pluto-tv-aventure-fr/details",
     "stream": "https://jmp2.uk/plu-611e7811eb9daf000764cbfd.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/611e7811eb9daf000764cbfd/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -1246,6 +1038,7 @@
     "guide": "https://pluto.tv/live-tv/pluto-tv-brigade-criminelle-fr/details",
     "stream": "https://jmp2.uk/plu-684bf01df7d8b74b625b7dd1.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/684bf01df7d8b74b625b7dd1/colorLogoPNG_1753890939606.png",
     "source": "iptv-org"
   },
@@ -1262,6 +1055,7 @@
     "guide": "https://pluto.tv/live-tv/pluto-tv-comedie-fr/details",
     "stream": "https://jmp2.uk/plu-5f8eb91bb9b9e7000817e67f.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/5f8eb91bb9b9e7000817e67f/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -1278,6 +1072,7 @@
     "guide": "https://pluto.tv/live-tv/pluto-tv-comedies-cultes-fr/details",
     "stream": "https://jmp2.uk/plu-67b4b2d976a934282e92d71c.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/67b4b2d976a934282e92d71c/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -1294,6 +1089,7 @@
     "guide": "https://pluto.tv/live-tv/pluto-tv-cuisine-fr-ptv5/details",
     "stream": "https://jmp2.uk/plu-5f8ed48146ba9e00078424b6.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/5f8ed48146ba9e00078424b6/colorLogoPNG_1733440509319.png",
     "source": "iptv-org"
   },
@@ -1310,6 +1106,7 @@
     "guide": "https://pluto.tv/live-tv/pluto-tv-dating-fr/details",
     "stream": "https://jmp2.uk/plu-682318568e6c0f2f6c6e0038.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/682318568e6c0f2f6c6e0038/colorLogoPNG_1750772750435.png",
     "source": "iptv-org"
   },
@@ -1326,6 +1123,7 @@
     "guide": "https://pluto.tv/live-tv/pluto-tv-french-collection-fr-ptv1/details",
     "stream": "https://jmp2.uk/plu-62f3e0522443200008c567d7.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/62f3e0522443200008c567d7/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -1342,6 +1140,7 @@
     "guide": "https://pluto.tv/live-tv/pluto-tv-histoire-fr/details",
     "stream": "https://jmp2.uk/plu-611e771e2f5f180007002224.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/611e771e2f5f180007002224/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -1358,6 +1157,7 @@
     "guide": "https://pluto.tv/live-tv/pluot-tv-inside-fr/details",
     "stream": "https://jmp2.uk/plu-5f8ed3892ed7bb000741a1d2.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/5f8ed3892ed7bb000741a1d2/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -1374,6 +1174,7 @@
     "guide": "https://pluto.tv/live-tv/pluto-tv-toons-clasico-es/details",
     "stream": "https://jmp2.uk/plu-654a58dbf9cc82000868f0fb.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/609e7e423e9173000706a681/colorLogoPNG_1750147033956.png",
     "source": "iptv-org"
   },
@@ -1390,6 +1191,7 @@
     "guide": "https://pluto.tv/live-tv/pluto-tv-polar-fr/details",
     "stream": "https://jmp2.uk/plu-5f8ed4dbf6bb0800071ffbcb.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/5f8ed4dbf6bb0800071ffbcb/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -1406,6 +1208,7 @@
     "guide": "https://pluto.tv/live-tv/pluto-tv-retro-toons-fr/details",
     "stream": "https://jmp2.uk/plu-611e6a9b4bb5790007a6f0f8.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/611e6a9b4bb5790007a6f0f8/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -1422,6 +1225,7 @@
     "guide": "https://pluto.tv/live-tv/pluto-tv-series-fantastiques-fr-ptv1/details",
     "stream": "https://jmp2.uk/plu-625ec7a1c853fd00073b38fd.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/625ec7a1c853fd00073b38fd/colorLogoPNG_1775048560569.png",
     "source": "iptv-org"
   },
@@ -1438,6 +1242,7 @@
     "guide": "https://pluto.tv/live-tv/pluto-tv-super-kids/details",
     "stream": "https://jmp2.uk/plu-652557d93fd33c000802f995.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/652557d93fd33c000802f995/colorLogoPNG_1733440546104.png",
     "source": "iptv-org"
   },
@@ -1454,6 +1259,7 @@
     "guide": "https://pluto.tv/live-tv/pluto-tv-teen-es/details",
     "stream": "https://jmp2.uk/plu-5f8eb99ff17815000784a3b0.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/63eb944dc111bc0008fe7021/colorLogoPNG_1761820520562.png",
     "source": "iptv-org"
   },
@@ -1470,6 +1276,7 @@
     "guide": "https://pluto.tv/live-tv/pluto-tv-telerealite-france-fr/details",
     "stream": "https://jmp2.uk/plu-699865ccac36b147e74619fe.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/699865ccac36b147e74619fe/colorLogoPNG_1779788356699.png",
     "source": "iptv-org"
   },
@@ -1486,6 +1293,7 @@
     "guide": "https://pluto.tv/live-tv/pluto-tv-toons-es/details",
     "stream": "https://jmp2.uk/plu-5f8eba14a4ffb8000764e950.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/6880aa28164eb4890282e803/colorLogoPNG_1760522020317.png",
     "source": "iptv-org"
   },
@@ -1524,6 +1332,7 @@
     "guide": "https://pluto.tv/live-tv/ridiculousness-fr/details",
     "stream": "https://jmp2.uk/plu-5f8eb8a8b2619a000710605c.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/5f8eb8a8b2619a000710605c/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -1540,6 +1349,7 @@
     "guide": "https://pluto.tv/live-tv/series-by-pluto-tv-fr/details",
     "stream": "https://jmp2.uk/plu-5f8ed2d1c34c2300073bf02c.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/5f8ed2d1c34c2300073bf02c/colorLogoPNG_1775048963457.png",
     "source": "iptv-org"
   },
@@ -1556,6 +1366,7 @@
     "guide": "https://iptv-org.github.io/iptv/countries/fr.m3u",
     "stream": "https://raw.githubusercontent.com/Paradise-91/ParaTV/main/streams/t18/t18-dm.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Logo_de_la_chaine_T18.svg/500px-Logo_de_la_chaine_T18.svg.png",
     "source": "iptv-org"
   },
@@ -1572,23 +1383,8 @@
     "guide": "https://pluto.tv/live-tv/teen-mom-it/details",
     "stream": "https://jmp2.uk/plu-62f3f05505e621000783df2f.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/62e7fc8c0d061100083946a9/colorLogoPNG.png",
-    "source": "iptv-org"
-  },
-  {
-    "id": "tele-gohelle",
-    "name": "TeleGohelle",
-    "brand": "TeleGohelle",
-    "region": "France",
-    "category": "General",
-    "color": "#6b8c92",
-    "language": "fr",
-    "description": "En lecture directe dans Onde via le flux public répertorié par iptv-org (catégorie : General).",
-    "official": "https://telegohelle.agglo-lenslievin.fr/",
-    "guide": "https://telegohelle.agglo-lenslievin.fr/",
-    "stream": "https://videas.agglo-lenslievin.fr/index.m3u8",
-    "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
-    "logoUrl": "https://i.imgur.com/Oa3Pwbf.png",
     "source": "iptv-org"
   },
   {
@@ -1671,18 +1467,8 @@
     "description": "En lecture directe dans Onde via le flux public répertorié par iptv-org (catégorie : General).",
     "official": "https://www.tf1.fr/tmc",
     "guide": "https://www.tf1.fr/tmc",
-    "stream": "http://151.80.18.177:86/TMC/index.m3u8",
+    "stream": "http://149.62.177.107:9999/TMC/index.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
-    "streamAlts": [
-      {
-        "url": "http://149.62.177.107:9999/TMC/index.m3u8",
-        "label": "HD"
-      },
-      {
-        "url": "http://tv.streambox.fr/live/testlivestream/testlivestream/13.m3u8",
-        "label": "HD · tv.streambox.fr"
-      }
-    ],
     "insecureStream": true,
     "logoUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/5/54/TMC_logo.svg/960px-TMC_logo.svg.png",
     "source": "iptv-org"
@@ -1700,6 +1486,7 @@
     "guide": "https://pluto.tv/live-tv/tout-le-monde-deteste-chris-fr/details",
     "stream": "https://jmp2.uk/plu-67b4b4a21a5ca760802d25fd.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/67b4b4a21a5ca760802d25fd/colorLogoPNG_1747394750060.png",
     "source": "iptv-org"
   },
@@ -1716,6 +1503,8 @@
     "guide": "https://trace.tv/trace-africa/",
     "stream": "https://channels.trace.plus/Traceprod/AFRICA_FR_hd/index.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
+    "limited": true,
+    "note": "Flux refusé (HTTP 403) hors de sa région lors de la vérification : lecture probablement réservée au pays du diffuseur (limité).",
     "logoUrl": "https://i.imgur.com/kPUkoS7.png",
     "source": "iptv-org"
   },
@@ -1732,6 +1521,8 @@
     "guide": "https://trace.company/activities/television/trace-afrikora/",
     "stream": "https://channels.trace.plus/Traceprod/TERANGA_hd/index.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
+    "limited": true,
+    "note": "Flux refusé (HTTP 403) hors de sa région lors de la vérification : lecture probablement réservée au pays du diffuseur (limité).",
     "logoUrl": "https://i.imgur.com/CQDdnhp.png",
     "source": "iptv-org"
   },
@@ -1748,6 +1539,8 @@
     "guide": "https://trace.company/activities/television/trace-ayiti/",
     "stream": "https://channels.trace.plus/Traceprod/AYITI_hd/index.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
+    "limited": true,
+    "note": "Flux refusé (HTTP 403) hors de sa région lors de la vérification : lecture probablement réservée au pays du diffuseur (limité).",
     "logoUrl": "https://i.imgur.com/KkJ6fet.png",
     "source": "iptv-org"
   },
@@ -1762,16 +1555,16 @@
     "description": "En lecture directe dans Onde via le flux public répertorié par iptv-org (catégorie : Music).",
     "official": "https://trace.company/activities/television/trace-brazuca/",
     "guide": "https://trace.company/activities/television/trace-brazuca/",
-    "stream": "https://amg01131-tracetv-amg01131c4-stirr-us-4390.playouts.now.amagi.tv/playlist.m3u8",
+    "stream": "https://channels.trace.plus/Traceprod/BRAZIL_hd/index.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
     "streamAlts": [
       {
-        "url": "https://cdn-uw2-prod.tsv2.amagi.tv/linear/amg01131-tracetv-tracebrazuca-samsungbr/playlist.m3u8",
-        "label": "HD"
+        "url": "https://amg01131-tracetv-amg01131c4-stirr-us-4390.playouts.now.amagi.tv/playlist.m3u8",
+        "label": "SD"
       },
       {
-        "url": "https://channels.trace.plus/Traceprod/BRAZIL_hd/index.m3u8",
-        "label": "HD · channels.trace.plus"
+        "url": "https://cdn-uw2-prod.tsv2.amagi.tv/linear/amg01131-tracetv-tracebrazuca-samsungbr/playlist.m3u8",
+        "label": "HD"
       }
     ],
     "logoUrl": "https://i.imgur.com/DFBocPu.png",
@@ -1866,12 +1659,8 @@
     "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
     "streamAlts": [
       {
-        "url": "https://mumbai-edge.smartplaytv.in/TraceLatina/index.m3u8",
-        "label": "SD"
-      },
-      {
         "url": "https://cdn-ue1-prod.tsv2.amagi.tv/linear/amg01131-tracetv-tracelatinait-samsungit/playlist.m3u8",
-        "label": "SD · cdn-ue1-prod.tsv2.amagi.tv"
+        "label": "SD"
       },
       {
         "url": "https://amg01131-tracetv-tracelatina-glewed-vtnk7.amagi.tv/playlist.m3u8",
@@ -1964,7 +1753,7 @@
     "description": "En lecture directe dans Onde via le flux public répertorié par iptv-org (catégorie : Sports).",
     "official": "https://www.trace.tv/fr/tv/sport",
     "guide": "https://www.trace.tv/fr/tv/sport",
-    "stream": "https://lightning-tracesport-samsungau.amagi.tv/playlist.m3u8",
+    "stream": "https://tracesportstars-samsunges.amagi.tv/hls/amagi_hls_data_samsunguk-tracesport-samsungspain/CDN/playlist.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
     "streamAlts": [
       {
@@ -1976,18 +1765,6 @@
         "label": "HD · channels.trace.plus"
       },
       {
-        "url": "https://trace-sportstars-samsungnz.amagi.tv/playlist.m3u8",
-        "label": "HD · trace-sportstars-samsungnz.amagi.tv"
-      },
-      {
-        "url": "https://tracesportstars-klowdtv.amagi.tv/playlist.m3u8",
-        "label": "HD · tracesportstars-klowdtv.amagi.tv"
-      },
-      {
-        "url": "https://amg01131-tracetv-amg01131c2-stirr-us-4392.playouts.now.amagi.tv/playlist.m3u8",
-        "label": "HD · amg01131-tracetv-amg01131c2-stirr-…"
-      },
-      {
         "url": "https://stream8.cinerama.uz/1274/tracks-v1a1/mono.m3u8",
         "label": "Russia"
       },
@@ -1996,8 +1773,8 @@
         "label": "SD"
       },
       {
-        "url": "http://tracesportstars-samsunges.amagi.tv/hls/amagi_hls_data_samsunguk-tracesport-samsungspain/CDN/playlist.m3u8",
-        "label": "HD · tracesportstars-samsunges.amagi.tv"
+        "url": "https://amg01131-tracetv-amg01131c2-stirr-us-4392.playouts.now.amagi.tv/playlist.m3u8",
+        "label": "HD · amg01131-tracetv-amg01131c2-stirr-…"
       }
     ],
     "logoUrl": "https://i.imgur.com/FabFP5A.png",
@@ -2014,13 +1791,9 @@
     "description": "En lecture directe dans Onde via le flux public répertorié par iptv-org (catégorie : Music).",
     "official": "https://fr.trace.tv/trace-urban/",
     "guide": "https://fr.trace.tv/trace-urban/",
-    "stream": "https://lightning-traceurban-samsungau.amagi.tv/playlist.m3u8",
+    "stream": "https://channels.trace.plus/Traceprod/URBAN_FR_hd/index.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
     "streamAlts": [
-      {
-        "url": "https://channels.trace.plus/Traceprod/URBAN_FR_hd/index.m3u8",
-        "label": "HD"
-      },
       {
         "url": "https://channels.trace.plus/Traceprod/URBAN_AFRIC_FR_hd/index.m3u8",
         "label": "AfricaFranco"
@@ -2048,6 +1821,10 @@
       {
         "url": "https://amg01131-tracetv-traceurbanse-samsungse-ov22d.amagi.tv/playlist/amg01131-tracetv-traceurbanse-samsungse/playlist.m3u8",
         "label": "SD · amg01131-tracetv-traceurbanse-sams…"
+      },
+      {
+        "url": "https://amg01131-tracetv-traceurbanuk-samsunguk-6r213.amagi.tv/playlist/amg01131-tracetv-traceurbanuk-samsunguk/playlist.m3u8",
+        "label": "SD · amg01131-tracetv-traceurbanuk-sams…"
       }
     ],
     "logoUrl": "https://i.imgur.com/DLIbUMx.png",
@@ -2082,6 +1859,7 @@
     "guide": "https://pluto.tv/live-tv/true-crime-by-pluto-tv-fr/details",
     "stream": "https://jmp2.uk/plu-5f914f4b36d67d0007a91a04.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/5f914f4b36d67d0007a91a04/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -2098,6 +1876,7 @@
     "guide": "https://pluto.tv/live-tv/turbo-fr/details",
     "stream": "https://jmp2.uk/plu-66f55c3955567d0008ef9b68.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/66f55c3955567d0008ef9b68/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -2133,6 +1912,7 @@
     "stream": "https://ott.tv5monde.com/Content/HLS/Live/channel(info)/variant.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
     "limited": true,
+    "nativeHlsOnly": true,
     "note": "Flux marqué géo-bloqué dans l'annuaire iptv-org : lecture réservée aux régions autorisées par le diffuseur (limité).",
     "logoUrl": "https://i.imgur.com/AJx5Fy2.png",
     "source": "iptv-org"
@@ -2148,32 +1928,11 @@
     "description": "En lecture directe dans Onde via le flux public répertorié par iptv-org (catégorie : Lifestyle).",
     "official": "https://apac.tv5monde.com/channels",
     "guide": "https://apac.tv5monde.com/channels",
-    "stream": "http://103.190.232.129/stream/tvb/style/master.m3u8?p=967e33767f592e1aaf3d4019f38f380bf784e113b193d89c412d047059d6300d&u=Oleg",
+    "stream": "https://ott.tv5monde.com/Content/HLS/Live/channel(style1)/variant.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
-    "streamAlts": [
-      {
-        "url": "https://ott.tv5monde.com/Content/HLS/Live/channel(style1)/variant.m3u8",
-        "label": "SD"
-      }
-    ],
-    "insecureStream": true,
+    "limited": true,
+    "note": "Flux refusé (HTTP 403) hors de sa région lors de la vérification : lecture probablement réservée au pays du diffuseur (limité).",
     "logoUrl": "https://i.imgur.com/cwC7Q2V.png",
-    "source": "iptv-org"
-  },
-  {
-    "id": "tv78",
-    "name": "TV78",
-    "brand": "TV78",
-    "region": "France",
-    "category": "General",
-    "color": "#6b8c92",
-    "language": "fr",
-    "description": "En lecture directe dans Onde via le flux public répertorié par iptv-org (catégorie : General).",
-    "official": "https://iptv-org.github.io/iptv/countries/fr.m3u",
-    "guide": "https://iptv-org.github.io/iptv/countries/fr.m3u",
-    "stream": "https://streamtv.cdn.dvmr.fr/TV78/ngrp:tv78.stream_all/master.m3u8",
-    "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
-    "logoUrl": "https://i.imgur.com/stzE1Ij.png",
     "source": "iptv-org"
   },
   {
@@ -2211,40 +1970,6 @@
     "source": "iptv-org"
   },
   {
-    "id": "t-zi-k",
-    "name": "TZiK",
-    "brand": "TZiK",
-    "region": "France",
-    "category": "Music",
-    "color": "#6b8c92",
-    "language": "fr",
-    "description": "En lecture directe dans Onde via le flux public répertorié par iptv-org (catégorie : Music).",
-    "official": "https://www.tzik.com/",
-    "guide": "https://www.tzik.com/",
-    "stream": "https://54627d4fc5996.streamlock.net/tzik/tzik/chunklist.m3u8",
-    "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
-    "note": "Chaîne marquée « Not 24/7 » dans l'annuaire iptv-org : diffusion à temps partiel.",
-    "logoUrl": "https://i.imgur.com/TAagRkn.png",
-    "source": "iptv-org"
-  },
-  {
-    "id": "via-occitanie",
-    "name": "ViaOccitanie",
-    "brand": "ViaOccitanie",
-    "region": "France",
-    "category": "General",
-    "color": "#6b8c92",
-    "language": "fr",
-    "description": "En lecture directe dans Onde via le flux public répertorié par iptv-org (catégorie : General).",
-    "official": "https://viaoccitanie.tv/",
-    "guide": "https://viaoccitanie.tv/",
-    "stream": "https://streamer01.myvideoplace.tv/streamer02/hls/MDS_VIA_PAD_301117.m3u8",
-    "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
-    "note": "Chaîne marquée « Not 24/7 » dans l'annuaire iptv-org : diffusion à temps partiel.",
-    "logoUrl": "https://i.imgur.com/NzuKt1R.png",
-    "source": "iptv-org"
-  },
-  {
     "id": "voyages-saveurs",
     "name": "Voyages & Saveurs",
     "brand": "Voyages & Saveurs",
@@ -2257,6 +1982,7 @@
     "guide": "https://lovetvchannels.com/en/our-channels/#travel",
     "stream": "https://jmp2.uk/plu-680291e38e1ff89c2427aefd.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/680291e38e1ff89c2427aefd/colorLogoPNG_1749650211442.png",
     "source": "iptv-org"
   },
@@ -2300,6 +2026,7 @@
     "guide": "https://pluto.tv/en/live-tv/walker-texas-ranger-fr",
     "stream": "https://jmp2.uk/plu-635659445b4c4700076d2ad1.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://i.imgur.com/0N7EhuD.png",
     "source": "iptv-org"
   },
@@ -2316,28 +2043,8 @@
     "guide": "https://pluto.tv/en/live-tv/y-a-que-la-verite-qui-compte-fr",
     "stream": "https://jmp2.uk/plu-612e044c970e6f00083bcf3b.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://i.imgur.com/MDHN2Vc.png",
-    "source": "iptv-org"
-  },
-  {
-    "id": "4-afghanistan",
-    "name": "4 Afghanistan",
-    "brand": "4 Afghanistan",
-    "region": "France",
-    "category": "General",
-    "color": "#6b8c92",
-    "language": "fr",
-    "description": "En lecture directe dans Onde via le flux public répertorié par iptv-org (catégorie : General).",
-    "official": "https://iptv-org.github.io/api/streams.json",
-    "guide": "https://iptv-org.github.io/api/streams.json",
-    "stream": "https://4afghls.persiana.live/hls/stream.m3u8",
-    "directory": "https://iptv-org.github.io/api/streams.json",
-    "streamAlts": [
-      {
-        "url": "https://4afghls.wns.live/hls/stream.m3u8",
-        "label": "SD"
-      }
-    ],
     "source": "iptv-org"
   },
   {
@@ -2369,12 +2076,6 @@
     "guide": "https://4music.persiana.live/",
     "stream": "https://musichls.persiana.live/hls/stream.m3u8",
     "directory": "https://iptv-org.github.io/api/streams.json",
-    "streamAlts": [
-      {
-        "url": "https://itthls.wns.live/hls/stream.m3u8",
-        "label": "SD"
-      }
-    ],
     "source": "iptv-org"
   },
   {
@@ -2388,16 +2089,12 @@
     "description": "En lecture directe dans Onde via le flux public répertorié par iptv-org (catégorie : News).",
     "official": "https://de.euronews.com/",
     "guide": "https://de.euronews.com/",
-    "stream": "https://jmp2.uk/plu-6639d7d4b18d700008da5316.m3u8",
+    "stream": "https://575b7833.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/UmxheHhUVi1ldV9FdXJvbmV3c0RldXRzY2hfSExT/playlist.m3u8",
     "directory": "https://iptv-org.github.io/api/streams.json",
     "streamAlts": [
       {
-        "url": "https://575b7833.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/UmxheHhUVi1ldV9FdXJvbmV3c0RldXRzY2hfSExT/playlist.m3u8",
-        "label": "SD"
-      },
-      {
         "url": "https://cdn-euronews.akamaized.net/live/eds/euronews-de/25027/index.m3u8",
-        "label": "SD · cdn-euronews.akamaized.net"
+        "label": "SD"
       }
     ],
     "logoUrl": "https://i.imgur.com/8t9mdg9.png",
@@ -2458,10 +2155,6 @@
       {
         "url": "https://cdn-euronews.akamaized.net/live/eds/euronews-it/25085/index.m3u8",
         "label": "SD"
-      },
-      {
-        "url": "https://jmp2.uk/plu-61b86ea479a4390007c6d5fc.m3u8",
-        "label": "SD · jmp2.uk"
       }
     ],
     "logoUrl": "https://i.imgur.com/8t9mdg9.png",
@@ -2478,16 +2171,12 @@
     "description": "En lecture directe dans Onde via le flux public répertorié par iptv-org (catégorie : News).",
     "official": "https://pt.euronews.com/",
     "guide": "https://pt.euronews.com/",
-    "stream": "https://jmp2.uk/plu-619e6614c9d9650007a2b171.m3u8",
+    "stream": "https://6e52fb8b.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/UmxheHhUVi1ldV9FdXJvbmV3c1BvcnR1Z3Vlc19ITFM/playlist.m3u8",
     "directory": "https://iptv-org.github.io/api/streams.json",
     "streamAlts": [
       {
-        "url": "https://6e52fb8b.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/UmxheHhUVi1ldV9FdXJvbmV3c1BvcnR1Z3Vlc19ITFM/playlist.m3u8",
-        "label": "SD"
-      },
-      {
         "url": "https://cdn-euronews.akamaized.net/live/eds/euronews-pt/25040/index.m3u8",
-        "label": "SD · cdn-euronews.akamaized.net"
+        "label": "SD"
       }
     ],
     "logoUrl": "https://i.imgur.com/8t9mdg9.png",
@@ -2510,10 +2199,6 @@
       {
         "url": "https://stream8.cinerama.uz/1024/tracks-v1a1/mono.m3u8",
         "label": "SD"
-      },
-      {
-        "url": "http://tmptv.sunduk.tv/CH31/index.m3u8",
-        "label": "SD · tmptv.sunduk.tv"
       }
     ],
     "logoUrl": "https://i.imgur.com/8t9mdg9.png",
@@ -2530,20 +2215,12 @@
     "description": "En lecture directe dans Onde via le flux public répertorié par iptv-org (catégorie : News).",
     "official": "https://es.euronews.com/",
     "guide": "https://es.euronews.com/",
-    "stream": "https://jmp2.uk/plu-60d3583ef310610007fb02b1.m3u8",
+    "stream": "https://cdn-euronews.akamaized.net/live/eds/euronews-es/25053/index.m3u8",
     "directory": "https://iptv-org.github.io/api/streams.json",
     "streamAlts": [
       {
-        "url": "https://cdn-euronews.akamaized.net/live/eds/euronews-es/25053/index.m3u8",
-        "label": "SD"
-      },
-      {
         "url": "https://iptv.bitred.cl/euronews/index.m3u8",
-        "label": "SD · iptv.bitred.cl"
-      },
-      {
-        "url": "https://jmp2.uk/plu-619d59b7cbef25000728221c.m3u8",
-        "label": "SD · jmp2.uk"
+        "label": "SD"
       }
     ],
     "logoUrl": "https://a.jsrdn.com/hls/22886/euronews-spa/extras/1080_logo.png",
@@ -2566,10 +2243,6 @@
       {
         "url": "http://45.134.141.161:2200/ARG/Eurosport_1_HD/index.m3u8",
         "label": "Spain"
-      },
-      {
-        "url": "https://andro.mangeinde4.lat/checklist/androstreamlivees1.m3u8",
-        "label": "Turkiye"
       },
       {
         "url": "http://stream.mcquack.net/176/index.m3u8",
@@ -2599,31 +2272,12 @@
         "label": "Spain"
       },
       {
-        "url": "https://andro.mangeinde4.lat/checklist/androstreamlivees2.m3u8",
-        "label": "Turkiye"
-      },
-      {
         "url": "http://stream.mcquack.net/192/index.m3u8",
         "label": "Russia"
       }
     ],
     "insecureStream": true,
     "logoUrl": "https://i.imgur.com/f56dHgR.png",
-    "source": "iptv-org"
-  },
-  {
-    "id": "iran-nama",
-    "name": "Iran Nama",
-    "brand": "Iran Nama",
-    "region": "France",
-    "category": "General",
-    "color": "#6b8c92",
-    "language": "fr",
-    "description": "En lecture directe dans Onde via le flux public répertorié par iptv-org (catégorie : General).",
-    "official": "https://iptv-org.github.io/api/streams.json",
-    "guide": "https://iptv-org.github.io/api/streams.json",
-    "stream": "https://iran613hls.wns.live/hls/stream.m3u8",
-    "directory": "https://iptv-org.github.io/api/streams.json",
     "source": "iptv-org"
   },
   {
@@ -2639,12 +2293,6 @@
     "guide": "https://persianagroup.tv/",
     "stream": "https://cinehls.persiana.live/hls/stream.m3u8",
     "directory": "https://iptv-org.github.io/api/streams.json",
-    "streamAlts": [
-      {
-        "url": "https://todayhls.wns.live/hls/stream.m3u8",
-        "label": "SD"
-      }
-    ],
     "logoUrl": "https://i.imgur.com/hgIro9r.png",
     "source": "iptv-org"
   },
@@ -2774,21 +2422,6 @@
     "source": "iptv-org"
   },
   {
-    "id": "persiana-latino",
-    "name": "Persiana Latino",
-    "brand": "Persiana Latino",
-    "region": "France",
-    "category": "Movies",
-    "color": "#6b8c92",
-    "language": "fr",
-    "description": "En lecture directe dans Onde via le flux public répertorié par iptv-org (catégorie : Movies).",
-    "official": "https://www.persianagroup.tv/",
-    "guide": "https://www.persianagroup.tv/",
-    "stream": "https://latinohls.persiana.live/hls/stream.m3u8",
-    "directory": "https://iptv-org.github.io/api/streams.json",
-    "source": "iptv-org"
-  },
-  {
     "id": "persiana-medical",
     "name": "Persiana Medical",
     "brand": "Persiana Medical",
@@ -2801,12 +2434,6 @@
     "guide": "https://www.persianagroup.tv/",
     "stream": "https://phd2hls.persiana.live/hls/stream.m3u8",
     "directory": "https://iptv-org.github.io/api/streams.json",
-    "streamAlts": [
-      {
-        "url": "https://tfnhls.wns.live/hls/stream.m3u8",
-        "label": "SD"
-      }
-    ],
     "source": "iptv-org"
   },
   {
@@ -2842,21 +2469,6 @@
     "source": "iptv-org"
   },
   {
-    "id": "persiana-reality",
-    "name": "Persiana Reality",
-    "brand": "Persiana Reality",
-    "region": "France",
-    "category": "Entertainment",
-    "color": "#6b8c92",
-    "language": "fr",
-    "description": "En lecture directe dans Onde via le flux public répertorié par iptv-org (catégorie : Entertainment).",
-    "official": "https://www.persianagroup.tv/",
-    "guide": "https://www.persianagroup.tv/",
-    "stream": "https://twohls.persiana.live/hls/stream.m3u8",
-    "directory": "https://iptv-org.github.io/api/streams.json",
-    "source": "iptv-org"
-  },
-  {
     "id": "persiana-series",
     "name": "Persiana Series",
     "brand": "Persiana Series",
@@ -2868,21 +2480,6 @@
     "official": "https://www.persianagroup.tv/",
     "guide": "https://www.persianagroup.tv/",
     "stream": "https://onehls.persiana.live/hls/stream.m3u8",
-    "directory": "https://iptv-org.github.io/api/streams.json",
-    "source": "iptv-org"
-  },
-  {
-    "id": "persiana-teen",
-    "name": "Persiana Teen",
-    "brand": "Persiana Teen",
-    "region": "France",
-    "category": "Kids",
-    "color": "#6b8c92",
-    "language": "fr",
-    "description": "En lecture directe dans Onde via le flux public répertorié par iptv-org (catégorie : Kids).",
-    "official": "https://www.persianagroup.tv/",
-    "guide": "https://www.persianagroup.tv/",
-    "stream": "https://kphls.persiana.live/hls/stream.m3u8",
     "directory": "https://iptv-org.github.io/api/streams.json",
     "source": "iptv-org"
   },
@@ -2899,12 +2496,6 @@
     "guide": "https://www.persianagroup.tv/",
     "stream": "https://ptravelhls.persiana.live/hls/stream.m3u8",
     "directory": "https://iptv-org.github.io/api/streams.json",
-    "streamAlts": [
-      {
-        "url": "https://mardomhls.wns.live/hls/stream.m3u8",
-        "label": "SD"
-      }
-    ],
     "source": "iptv-org"
   },
   {
@@ -2952,12 +2543,8 @@
     "directory": "https://iptv-org.github.io/api/streams.json",
     "streamAlts": [
       {
-        "url": "https://op-group1-swiftservehd-1.dens.tv/h/h153/index2.m3u8",
-        "label": "SD"
-      },
-      {
         "url": "https://amg00447-qwesttv-qwestjazz-cineverse-ve12d.amagi.tv/playlist/amg00447-qwesttv-qwestjazz-cineverse/playlist.m3u8",
-        "label": "SD · amg00447-qwesttv-qwestjazz-cinever…"
+        "label": "SD"
       }
     ],
     "logoUrl": "https://i.imgur.com/DjgNNHK.png",
@@ -3039,35 +2626,22 @@
     "description": "En lecture directe dans Onde via le flux public répertorié par iptv-org (catégorie : General).",
     "official": "https://apac.tv5monde.com/",
     "guide": "https://apac.tv5monde.com/",
-    "stream": "http://54.37.19.157/TV5MONDE/index.m3u8",
+    "stream": "https://mumt03.tangotv.in/Dsly5z3HTV5MONDEASIA/index.m3u8",
     "directory": "https://iptv-org.github.io/api/streams.json",
     "streamAlts": [
       {
-        "url": "http://27.131.164.187:8080/TV5_Monde/index.m3u8",
+        "url": "https://freem3u.xyz/api/live/play.m3u8?vid=9852",
         "label": "SD"
       },
       {
-        "url": "http://103.190.232.129/stream/tvb/asie/master.m3u8?p=967e33767f592e1aaf3d4019f38f380bf784e113b193d89c412d047059d6300d&u=Oleg",
-        "label": "SD · 103.190.232.129"
+        "url": "http://27.131.164.187:8080/TV5_Monde/index.m3u8",
+        "label": "SD · 27.131.164.187"
       },
       {
         "url": "https://ott.tv5monde.com/Content/HLS/Live/channel(seasie)/variant.m3u8",
         "label": "SD · ott.tv5monde.com"
-      },
-      {
-        "url": "https://mumt03.tangotv.in/Dsly5z3HTV5MONDEASIA/index.m3u8",
-        "label": "SD · mumt03.tangotv.in"
-      },
-      {
-        "url": "https://freem3u.xyz/api/live/play.m3u8?vid=9852",
-        "label": "SD · freem3u.xyz"
-      },
-      {
-        "url": "https://op-group1-swiftservehd-1.dens.tv/h/h121/index.m3u8",
-        "label": "SD · op-group1-swiftservehd-1.dens.tv"
       }
     ],
-    "insecureStream": true,
     "logoUrl": "https://i.imgur.com/FRsRXRR.png",
     "source": "iptv-org"
   },
@@ -3082,47 +2656,19 @@
     "description": "En lecture directe dans Onde via le flux public répertorié par iptv-org (catégorie : General).",
     "official": "https://europe.tv5monde.com/",
     "guide": "https://europe.tv5monde.com/",
-    "stream": "http://5.180.164.197:8080/TV5MONDE/index.m3u8",
+    "stream": "https://ert-ucdn.broadpeak-aas.com/bpk-tv/TV5/default/index.m3u8",
     "directory": "https://iptv-org.github.io/api/streams.json",
     "streamAlts": [
       {
-        "url": "http://45.14.84.37/tv5monde/index.m3u8",
+        "url": "http://5.180.164.197:8080/TV5MONDE/index.m3u8",
         "label": "SD"
       },
       {
         "url": "https://ott.tv5monde.com/Content/HLS/Live/channel(europe)/variant.m3u8",
         "label": "SD · ott.tv5monde.com"
-      },
-      {
-        "url": "https://ert-ucdn.broadpeak-aas.com/bpk-tv/TV5/default/index.m3u8",
-        "label": "SD · ert-ucdn.broadpeak-aas.com"
       }
     ],
-    "insecureStream": true,
     "logoUrl": "https://i.imgur.com/rPAbMSu.png",
-    "source": "iptv-org"
-  },
-  {
-    "id": "tv5-monde-latin-america",
-    "name": "TV5Monde Latin America",
-    "brand": "TV5Monde Latin America",
-    "region": "France",
-    "category": "General",
-    "color": "#6b8c92",
-    "language": "fr",
-    "description": "En lecture directe dans Onde via le flux public répertorié par iptv-org (catégorie : General).",
-    "official": "https://latina.tv5monde.com/",
-    "guide": "https://latina.tv5monde.com/",
-    "stream": "http://45.162.231.38:7779/TV5_Monde/index.m3u8",
-    "directory": "https://iptv-org.github.io/api/streams.json",
-    "streamAlts": [
-      {
-        "url": "http://45.235.0.78/TV5_Monde/index.m3u8",
-        "label": "SD"
-      }
-    ],
-    "insecureStream": true,
-    "logoUrl": "https://i.imgur.com/x8rjGhp.png",
     "source": "iptv-org"
   },
   {
@@ -3136,15 +2682,10 @@
     "description": "En lecture directe dans Onde via le flux public répertorié par iptv-org (catégorie : General).",
     "official": "https://apac.tv5monde.com/",
     "guide": "https://apac.tv5monde.com/",
-    "stream": "http://103.190.232.129/stream/tvb/pacifique/master.m3u8?p=967e33767f592e1aaf3d4019f38f380bf784e113b193d89c412d047059d6300d&u=Oleg",
+    "stream": "https://ott.tv5monde.com/Content/HLS/Live/channel(pacifique)/variant.m3u8",
     "directory": "https://iptv-org.github.io/api/streams.json",
-    "streamAlts": [
-      {
-        "url": "https://ott.tv5monde.com/Content/HLS/Live/channel(pacifique)/variant.m3u8",
-        "label": "SD"
-      }
-    ],
-    "insecureStream": true,
+    "limited": true,
+    "note": "Flux refusé (HTTP 403) hors de sa région lors de la vérification : lecture probablement réservée au pays du diffuseur (limité).",
     "logoUrl": "https://i.imgur.com/mfZOYZI.png",
     "source": "iptv-org"
   }

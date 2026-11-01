@@ -1,0 +1,254 @@
+/* Sombre — midnight broadcast: a calm, high-end TV product. Deep blue layers of
+   frosted-looking glass (gradients, not backdrop filters), precise hairlines, one
+   cyan signal light, and a faint aurora drifting high in the backdrop.
+   Motion: the aurora and two auras, transform only. */
+.app-shell[data-theme=dark] {
+  --bg: #050d1e;
+  --panel: #0c1a32;
+  --panel2: #12233f;
+  --surface: #0c1a32;
+  --surface-raised: #132641;
+  --sidebar: #061024;
+  --line: #1d3253;
+  --border: #253c5f;
+  --text: #eef4fb;
+  --copy: #eef4fb;
+  --muted: #a0b3ca;
+  --quiet: #a0b3ca;
+  --accent: #5ed3df;
+  --accent-ink: #03131e;
+  --focus: #7fe3ec;
+  --glass: linear-gradient(180deg, rgba(24, 43, 74, .8), rgba(11, 23, 45, .86));
+  --hair: rgba(150, 200, 255, .13);
+  --skin-bar: rgba(6, 14, 32, .78);
+  --skin-card: var(--glass);
+  --skin-tile: var(--glass);
+  --skin-radius: 14px;
+  --skin-line: var(--hair);
+  --skin-accent: #5ed3df;
+  --skin-glow: rgba(94, 211, 223, .26);
+  --skin-surface-shadow: inset 0 1px 0 rgba(255, 255, 255, .05), 0 18px 40px -16px rgba(0, 4, 16, .7), 0 2px 6px rgba(0, 4, 16, .25);
+  --skin-icon-bg: linear-gradient(160deg, rgba(94, 211, 223, .16), rgba(20, 40, 72, .7));
+  --skin-icon-border: rgba(130, 220, 235, .22);
+  --skin-icon-color: #aef0f4;
+  --skin-icon-shadow: inset 0 1px 0 rgba(255, 255, 255, .1);
+  --skin-heading-tracking: -.025em;
+  --skin-aura-a: rgba(40, 120, 210, .2);
+  --skin-aura-b: rgba(110, 100, 255, .12);
+  background: var(--bg);
+}
+.app-shell[data-theme=dark] .watch-section,
+.app-shell[data-theme=dark] .watch-dock,
+.app-shell[data-theme=dark] .modal,
+.app-shell[data-theme=dark] .help-backdrop,
+.app-shell[data-theme=dark] .guide-explorer { --line: #1d3253; --accent: #5ed3df; --text: #eef4fb; --muted: #a0b3ca; }
+
+/* Backdrop: a night sky over the city glow, with aurora ribbons high up. */
+.app-shell[data-theme=dark] .backdrop-dark {
+  background:
+    radial-gradient(90% 55% at 50% 118%, rgba(48, 70, 160, .2), transparent 70%),
+    radial-gradient(70% 50% at 50% -12%, #0e2a52, transparent 70%),
+    linear-gradient(180deg, #071329, #050c1d 60%, #040a18);
+}
+.app-shell[data-theme=dark] .backdrop-dark::before {
+  inset: -18% -25% 40%;
+  background:
+    radial-gradient(42% 16% at 34% 46%, rgba(94, 211, 223, .22), transparent 72%),
+    radial-gradient(36% 13% at 60% 34%, rgba(120, 130, 255, .17), transparent 72%),
+    radial-gradient(28% 11% at 82% 52%, rgba(80, 230, 200, .09), transparent 72%);
+  transform-origin: 50% 40%;
+  animation: dark-aurora 46s ease-in-out infinite alternate;
+}
+.app-shell[data-theme=dark] .backdrop-mesh,
+.app-shell[data-theme=dark] .backdrop-rings,
+.app-shell[data-theme=dark] .backdrop-specks,
+.app-shell[data-theme=dark] .backdrop-aura i:nth-child(3) { display: none; }
+.app-shell[data-theme=dark] .backdrop-aura i { opacity: .8; animation-duration: 52s; }
+/* Grain only dithers the gradients; it never moves. */
+.app-shell[data-theme=dark] .backdrop-grain { opacity: .025; }
+
+/* Chrome: one dark glass sheet for the rail, a lighter one for the top bar. */
+.app-shell[data-theme=dark] .sidebar {
+  background: linear-gradient(180deg, rgba(8, 19, 40, .94), rgba(5, 13, 30, .96));
+  border-color: var(--hair);
+  box-shadow: inset -1px 0 0 rgba(255, 255, 255, .02);
+}
+.app-shell[data-theme=dark] .topbar { background: var(--skin-bar); border-color: var(--hair); }
+.app-shell[data-theme=dark] .topbar::after { background: linear-gradient(90deg, transparent 8%, rgba(94, 211, 223, .5) 50%, transparent 92%); opacity: .45; }
+.app-shell[data-theme=dark] .search-box,
+.app-shell[data-theme=dark] .search-box input { background: rgba(14, 30, 56, .72); border-color: var(--hair); color: var(--text); }
+.app-shell[data-theme=dark] .search-box,
+.app-shell[data-theme=dark] .profile-avatar { border-radius: 12px; box-shadow: inset 0 1px 0 rgba(255, 255, 255, .04); }
+
+/* Navigation: quiet labels, the active row lit from its leading edge. */
+.app-shell[data-theme=dark] .nav-item,
+.app-shell[data-theme=dark] .sidebar-caption,
+.app-shell[data-theme=dark] .breadcrumb,
+.app-shell[data-theme=dark] .breadcrumb span { color: var(--muted); }
+.app-shell[data-theme=dark] .nav-item,
+.app-shell[data-theme=dark] .region-tabs button { border-radius: 12px; transition: background-color var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out); }
+.app-shell[data-theme=dark] .nav-item:hover { background: rgba(130, 180, 255, .06); color: var(--text); }
+.app-shell[data-theme=dark] .nav-item.nav-active {
+  background: linear-gradient(90deg, rgba(94, 211, 223, .17), rgba(94, 211, 223, .04) 70%, transparent);
+  color: #d4f8fb;
+  box-shadow: inset 0 0 0 1px rgba(94, 211, 223, .16);
+}
+.app-shell[data-theme=dark] .nav-item.nav-active::before { background: var(--accent); opacity: 1; box-shadow: 0 0 10px var(--accent); }
+.app-shell[data-theme=dark] .nav-item.nav-active > svg:first-of-type {
+  background: linear-gradient(160deg, rgba(94, 211, 223, .32), rgba(94, 211, 223, .1));
+  border-color: rgba(127, 227, 236, .5);
+  color: #e6fdff;
+  box-shadow: 0 0 16px rgba(94, 211, 223, .22), inset 0 1px 0 rgba(255, 255, 255, .2);
+}
+.app-shell[data-theme=dark] .device-note,
+.app-shell[data-theme=dark] .favorites-lists,
+.app-shell[data-theme=dark] .notice { background: var(--glass); border: 1px solid var(--hair); border-radius: 16px; color: var(--text); }
+
+/* Type: tight Manrope headings with a short signal underline. */
+.app-shell[data-theme=dark] .page-heading h1,
+.app-shell[data-theme=dark] .home-section-heading h2,
+.app-shell[data-theme=dark] .section-heading h2,
+.app-shell[data-theme=dark] .desktop-first h2,
+.app-shell[data-theme=dark] .favorites-lists h2,
+.app-shell[data-theme=dark] .empty-state h3 { font-weight: 700; color: var(--text); text-wrap: balance; }
+.app-shell[data-theme=dark] .page-heading h1::after { width: 40px; height: 2px; background: linear-gradient(90deg, var(--accent), rgba(94, 211, 223, 0)); opacity: 1; box-shadow: 0 0 12px rgba(94, 211, 223, .45); }
+.app-shell[data-theme=dark] .eyebrow,
+.app-shell[data-theme=dark] .desktop-first .hero-eyebrow { color: #8fdde5; letter-spacing: .16em; }
+.app-shell[data-theme=dark] .page-heading p,
+.app-shell[data-theme=dark] .section-heading p,
+.app-shell[data-theme=dark] .card-meta,
+.app-shell[data-theme=dark] .card-programme.muted,
+.app-shell[data-theme=dark] .now-heading,
+.app-shell[data-theme=dark] .now-description,
+.app-shell[data-theme=dark] .next-item > span,
+.app-shell[data-theme=dark] .device-note p,
+.app-shell[data-theme=dark] .favorites-lists p,
+.app-shell[data-theme=dark] .region-tabs button,
+.app-shell[data-theme=dark] .mobile-nav button { color: var(--muted); }
+.app-shell[data-theme=dark] .card-title,
+.app-shell[data-theme=dark] .card-programme,
+.app-shell[data-theme=dark] .home-favorite-name { color: var(--text); }
+.app-shell[data-theme=dark] .home-section-heading > button,
+.app-shell[data-theme=dark] .desktop-panel-heading button,
+.app-shell[data-theme=dark] .home-carousel-all { color: #8fdde5; }
+
+/* Hero: the river at dusk, graded to midnight on the reading side. */
+.app-shell[data-theme=dark] .desktop-first {
+  background:
+    linear-gradient(90deg, rgba(5, 13, 30, .9), rgba(5, 13, 30, .45) 48%, rgba(5, 13, 30, 0) 78%),
+    linear-gradient(0deg, rgba(5, 13, 30, .9), rgba(5, 13, 30, 0) 58%),
+    url('/images/onde-river-hero.webp') center 55% / cover no-repeat;
+  border: 1px solid var(--hair);
+  border-radius: 20px;
+  box-shadow: var(--skin-surface-shadow), 0 30px 80px -30px rgba(40, 120, 210, .35);
+}
+.app-shell[data-theme=dark] .home-hero { border: 1px solid var(--hair); border-radius: 20px; box-shadow: var(--skin-surface-shadow); }
+.app-shell[data-theme=dark] .home-hero::before { background: linear-gradient(0deg, rgba(5, 13, 30, .92), rgba(5, 13, 30, .1) 78%); }
+.app-shell[data-theme=dark] .hero-secondary {
+  background: rgba(8, 20, 42, .66);
+  border-color: rgba(170, 215, 255, .22);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+
+/* Buttons: a lit cyan primary, glass secondaries. */
+.app-shell[data-theme=dark] .primary,
+.app-shell[data-theme=dark] .home-primary {
+  background: linear-gradient(180deg, #7ce2eb, #4fc6d3);
+  color: var(--accent-ink);
+  border-radius: 12px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .45), 0 10px 26px -10px rgba(94, 211, 223, .7);
+}
+.app-shell[data-theme=dark] .primary:hover,
+.app-shell[data-theme=dark] .home-primary:hover { box-shadow: inset 0 1px 0 rgba(255, 255, 255, .45), 0 14px 30px -10px rgba(94, 211, 223, .9); }
+.app-shell[data-theme=dark] .secondary,
+.app-shell[data-theme=dark] .guide-button,
+.app-shell[data-theme=dark] .channel-card .icon-button { background: rgba(20, 40, 70, .55); border-color: rgba(150, 200, 255, .2); color: #d6eef4; border-radius: 12px; }
+.app-shell[data-theme=dark] .secondary:hover,
+.app-shell[data-theme=dark] .guide-button:hover { background: rgba(30, 58, 96, .7); border-color: rgba(127, 227, 236, .45); }
+
+/* Surfaces: every panel and card is the same glass, lifted by soft shadow. */
+.app-shell[data-theme=dark] .channel-card,
+.app-shell[data-theme=dark] .list-card,
+.app-shell[data-theme=dark] .empty-state,
+.app-shell[data-theme=dark] .catalogue-maintenance,
+.app-shell[data-theme=dark] .selection-row,
+.app-shell[data-theme=dark] .selection-lead,
+.app-shell[data-theme=dark] .desktop-channel-panel,
+.app-shell[data-theme=dark] .desktop-programme-panel,
+.app-shell[data-theme=dark] .filter-panel,
+.app-shell[data-theme=dark] .expanded-guide,
+.app-shell[data-theme=dark] .up-next,
+.app-shell[data-theme=dark] .player-shell { background: var(--glass); border: 1px solid var(--hair); color: var(--text); box-shadow: var(--skin-surface-shadow); }
+.app-shell[data-theme=dark] .desktop-channel-panel,
+.app-shell[data-theme=dark] .desktop-programme-panel,
+.app-shell[data-theme=dark] .filter-panel,
+.app-shell[data-theme=dark] .expanded-guide { border-radius: 18px; }
+.app-shell[data-theme=dark] .channel-card:hover,
+.app-shell[data-theme=dark] .home-category-grid button:nth-child(n):hover { border-color: rgba(127, 227, 236, .36); box-shadow: var(--skin-surface-shadow), 0 22px 44px -18px rgba(94, 211, 223, .35); }
+.app-shell[data-theme=dark] .card-visual { background: radial-gradient(120% 100% at 50% 0%, #17335b, #0b1933 75%); border-color: var(--hair); }
+.app-shell[data-theme=dark] .brand-has-logo { border-radius: 10px; outline: 1px solid rgba(8, 20, 40, .1); outline-offset: -1px; box-shadow: 0 8px 20px -8px rgba(0, 4, 16, .7); }
+.app-shell[data-theme=dark] .brand-has-logo.brand-logo-dark { background: #0f2444; border-color: rgba(150, 200, 255, .18); }
+
+/* Home rows. */
+.app-shell[data-theme=dark] .home-favorite-row button { background: var(--glass); border: 1px solid var(--hair); border-radius: 14px; box-shadow: var(--skin-surface-shadow); }
+.app-shell[data-theme=dark] .home-favorite-art { background: radial-gradient(120% 100% at 50% 0%, #17335b, #0b1933 75%); border-color: var(--hair); border-radius: 10px; }
+.app-shell[data-theme=dark] .home-favorite-row .home-favorite-item > .home-favorite-fav { border-color: var(--hair); background: rgba(8, 20, 42, .86); color: var(--text); }
+.app-shell[data-theme=dark] .home-category-grid button:nth-child(n) { background: var(--glass); border: 1px solid var(--hair); border-radius: 16px; color: var(--text); box-shadow: var(--skin-surface-shadow); }
+.app-shell[data-theme=dark] .desktop-channel-row { background: rgba(18, 36, 64, .6); border-color: var(--hair); border-radius: 12px; }
+.app-shell[data-theme=dark] .desktop-channel-row:hover { background: rgba(26, 50, 86, .75); border-color: rgba(127, 227, 236, .3); }
+
+/* Filters and guide chips: glass rails, the chosen one lit in cyan. */
+.app-shell[data-theme=dark] .region-tabs { background: rgba(6, 15, 32, .6); border-color: var(--hair); border-radius: 15px; }
+.app-shell[data-theme=dark] .region-tabs button.active { background: rgba(94, 211, 223, .14); border-color: transparent; color: #d4f8fb; box-shadow: inset 0 0 0 1px rgba(94, 211, 223, .3); }
+.app-shell[data-theme=dark] .guide-days button,
+.app-shell[data-theme=dark] .guide-periods button { background: var(--glass); border-color: var(--hair); color: var(--muted); border-radius: 14px; }
+.app-shell[data-theme=dark] .guide-days button[aria-pressed=true],
+.app-shell[data-theme=dark] .guide-periods button[aria-pressed=true] { background: linear-gradient(180deg, #7ce2eb, #4fc6d3); border-color: transparent; color: var(--accent-ink); box-shadow: 0 8px 22px -10px rgba(94, 211, 223, .8); }
+.app-shell[data-theme=dark] .programme-live { background: linear-gradient(90deg, rgba(94, 211, 223, .12), transparent 80%); border-left-color: var(--accent); }
+.app-shell[data-theme=dark] .selection-rank { color: #8fdde5; font-weight: 700; }
+
+/* Player, mini player and dialogs: the deepest glass, a hair brighter at the top. */
+.app-shell[data-theme=dark] .player-toolbar,
+.app-shell[data-theme=dark] .player-note,
+.app-shell[data-theme=dark] .dock-head,
+.app-shell[data-theme=dark] .player-resolving,
+.app-shell[data-theme=dark] .video-loading,
+.app-shell[data-theme=dark] .dock-controls { background: rgba(10, 22, 44, .92); border-color: var(--hair); color: var(--text); }
+.app-shell[data-theme=dark] .watch-dock { border: 1px solid rgba(150, 200, 255, .18); border-radius: 16px; box-shadow: 0 30px 70px -20px rgba(0, 4, 16, .85), 0 0 0 1px rgba(0, 0, 0, .3); }
+.app-shell[data-theme=dark] .modal {
+  background: linear-gradient(180deg, #11223f, #0a1730);
+  border: 1px solid rgba(150, 200, 255, .16);
+  border-radius: 22px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .06), 0 40px 100px -20px rgba(0, 3, 12, .9);
+}
+.app-shell[data-theme=dark] .modal::backdrop { background: rgba(2, 6, 16, .72); }
+.app-shell[data-theme=dark] .toast { background: #13274a; border-color: rgba(127, 227, 236, .3); color: var(--text); }
+.app-shell[data-theme=dark] .mobile-nav { background: rgba(6, 14, 32, .94); border-color: var(--hair); }
+.app-shell[data-theme=dark] .mobile-nav button.active { background: rgba(94, 211, 223, .13); color: #bff4f8; box-shadow: inset 0 0 0 1px rgba(94, 211, 223, .22); }
+
+/* Focus: a cyan ring with a dark gap, visible on glass and on logos. */
+.app-shell[data-theme=dark] :focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+
+/* Sign-in: the same sky; the halo is a soft gradient, not a blurred layer. */
+.app-shell[data-theme=dark] .access-halo { background: radial-gradient(closest-side, rgba(94, 211, 223, .14), transparent); }
+.app-shell[data-theme=dark] .access-card { background: linear-gradient(180deg, rgba(18, 36, 66, .86), rgba(9, 20, 40, .9)); border-color: rgba(150, 200, 255, .16); }
+
+/* Réglages tile: midnight, an aurora ribbon, a glass card and the signal line. */
+.settings-skins .theme-option[data-theme-id=dark] .theme-preview {
+  background:
+    radial-gradient(50% 22% at 36% 22%, rgba(94, 211, 223, .5), transparent 72%),
+    radial-gradient(40% 18% at 70% 14%, rgba(120, 130, 255, .4), transparent 72%),
+    linear-gradient(180deg, #0b1d3c, #050d1e);
+}
+.settings-skins .theme-option[data-theme-id=dark] .theme-preview::before { border-color: rgba(150, 200, 255, .3); border-radius: 6px; background: linear-gradient(180deg, rgba(40, 70, 120, .55), rgba(12, 26, 50, .6)); box-shadow: 0 8px 18px rgba(0, 0, 0, .4); }
+.settings-skins .theme-option[data-theme-id=dark] .theme-preview::after { background: linear-gradient(90deg, transparent, #5ed3df, transparent); box-shadow: 0 0 8px #5ed3df; }
+.settings-skins .theme-option[data-theme-id=dark] .theme-preview i { display: none; }
+
+@keyframes dark-aurora {
+  from { transform: translate3d(-3%, 0, 0) rotate(-3deg) scale(1); }
+  to { transform: translate3d(3%, 2%, 0) rotate(2deg) scale(1.08); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .app-shell[data-theme=dark] .backdrop-dark::before { animation: none; }
+}

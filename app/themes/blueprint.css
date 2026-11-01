@@ -1,0 +1,130 @@
+/* Blueprint — a technical drawing on cyanotype paper: a fine grid, white and cyan
+   line work, panels drawn as framed sheets with crop marks, dimension lines under
+   titles, upper-case grotesk labels, and a single warm yellow for what matters. */
+.app-shell[data-theme=blueprint] {
+  --bg: #0b2d55;
+  --panel: #0c3361;
+  --panel2: #0f3b6f;
+  --surface: #0c3361;
+  --surface-raised: #11427a;
+  --line: #3f6f9f;
+  --border: #5a8bbb;
+  --text: #f4f9ff;
+  --copy: #f4f9ff;
+  --muted: #b4d2ee;
+  --quiet: #b4d2ee;
+  --accent: #ffd166;
+  --accent-ink: #1d1600;
+  --focus: #9fe3ff;
+  --sidebar: #0a2a50;
+  --skin-bar: rgba(10, 40, 76, .96);
+  --skin-card: #0c3361;
+  --skin-tile: #0e386a;
+  --skin-hero: linear-gradient(160deg, #11427a, #0a2a50);
+  --skin-glow: rgba(159, 227, 255, .14);
+  --skin-radius: 2px;
+  --skin-accent: #ffd166;
+  --skin-line: #3f6f9f;
+  --skin-heading-font: var(--font-grotesk);
+  --skin-heading-tracking: .08em;
+  --skin-heading-transform: uppercase;
+  --skin-heading-shadow: none;
+  --skin-icon-radius: 2px;
+  --skin-icon-bg: rgba(255, 255, 255, .04);
+  --skin-icon-border: rgba(191, 230, 255, .5);
+  --skin-icon-color: #d6f0ff;
+  --skin-icon-shadow: none;
+  --skin-surface-shadow: 0 1px 0 rgba(255, 255, 255, .05) inset, 0 14px 30px rgba(3, 14, 32, .35);
+  --ink: #bfe6ff;
+  --mark: linear-gradient(var(--ink), var(--ink));
+  background: #0b2d55;
+}
+
+/* Backdrop: grid paper, a vignette like a lit drafting table, the drawing of a set in the corner. */
+.backdrop-blueprint { background: radial-gradient(120% 90% at 50% 40%, transparent 55%, rgba(4, 18, 38, .55)), url('/themes/blueprint/grid.svg') 0 0 / 120px 120px, #0b2d55; }
+.backdrop-blueprint::after { inset: auto 2% 3% auto; width: min(520px, 46vw); aspect-ratio: 52 / 42; box-shadow: none; background: url('/themes/blueprint/drawing.svg') center / contain no-repeat; opacity: .22; }
+.backdrop-blueprint::before { height: 1px; background: rgba(191, 230, 255, .22); animation-duration: 16s; }
+.backdrop-blueprint :is(.backdrop-aura, .backdrop-mesh, .backdrop-rings, .backdrop-specks, .backdrop-grain) { display: none; }
+
+/* Chrome: solid sheets with ruled edges. */
+.app-shell[data-theme=blueprint] :is(.sidebar, .topbar, .mobile-nav) { background: #0a284c; border-color: var(--line); -webkit-backdrop-filter: none; backdrop-filter: none; }
+.app-shell[data-theme=blueprint] .topbar::after { background: var(--line); opacity: 1; }
+.app-shell[data-theme=blueprint] :is(.nav-item, .mobile-nav button, .eyebrow, .hero-eyebrow, .access-kicker, .settings-label, .playback-tag, .section-count, .desktop-panel-heading h2, .desktop-panel-heading h3) { font-family: var(--font-grotesk); }
+.app-shell[data-theme=blueprint] :is(.nav-item, .eyebrow, .hero-eyebrow, .access-kicker, .settings-label) { text-transform: uppercase; letter-spacing: .1em; font-size: 12px; }
+.app-shell[data-theme=blueprint] :is(.eyebrow, .hero-eyebrow, .access-kicker) { color: #9fe3ff; font-size: 10px; }
+.app-shell[data-theme=blueprint] .nav-item:hover { background: rgba(159, 227, 255, .08); color: #fff; }
+.app-shell[data-theme=blueprint] .nav-item.nav-active { background: #11427a; color: #fff; box-shadow: inset 0 0 0 1px #9fe3ff; }
+.app-shell[data-theme=blueprint] .nav-item.nav-active::before { left: 0; width: 3px; background: #ffd166; opacity: 1; height: 60%; }
+.app-shell[data-theme=blueprint] .nav-item.nav-active > svg:first-of-type { background: rgba(255, 209, 102, .12); border-color: #ffd166; color: #ffd166; }
+.app-shell[data-theme=blueprint] :is(.nav-item, .search-box, .profile-avatar, .region-tabs, .region-tabs button, .guide-days button, .guide-periods button, .mobile-nav button, select, .playback-tag, .section-count, .dock-close, .primary, .secondary, .hero-secondary, .brand, .home-primary, .filter-toggle, .guide-date-input input, .guide-tools select, .guide-tools input, .guide-filter-disclosure, .expanded-guide, .guide-channel-logo, .guide-notice, .access-locale, .access-locale button, .auth-setup, .auth-form input) { border-radius: 2px; }
+.app-shell[data-theme=blueprint] .logo-period { color: #ffd166; }
+.app-shell[data-theme=blueprint] :focus-visible { outline: 2px dashed #9fe3ff; outline-offset: 3px; }
+
+/* Titles: ruled caps with a dimension line (end ticks and a centre mark) beneath. */
+.app-shell[data-theme=blueprint] :is(.page-heading h1, .home-section-heading h2, .section-heading h2, .selection-theme-head h2, .modal h2, .list-open h3, .home-hero h2, .favorites-lists h2, .access-card h1, .settings-section h3, .desktop-panel-heading h2) { font-family: var(--font-grotesk); font-weight: 500; letter-spacing: .05em; text-wrap: balance; }
+.app-shell[data-theme=blueprint] .page-heading h1::after { width: 132px; height: 9px; margin-top: 10px; border-radius: 0; opacity: .85; background: var(--mark) 0 50% / 100% 1px no-repeat, var(--mark) 0 0 / 1px 100% no-repeat, var(--mark) 100% 0 / 1px 100% no-repeat, linear-gradient(#ffd166, #ffd166) 50% 50% / 5px 5px no-repeat; }
+.app-shell[data-theme=blueprint] .section-heading h2::before { content: none; }
+.app-shell[data-theme=blueprint] :is(.home-section-heading h2, .section-heading h2)::after { content: ""; display: inline-block; width: 7px; height: 7px; margin-left: 10px; vertical-align: .2em; border: 1px solid #ffd166; transform: rotate(45deg); }
+
+/* Sheets: flat paper panels, a hairline frame and crop marks in each corner. */
+.app-shell[data-theme=blueprint] :is(.channel-card, .list-card, .selection-row, .empty-state, .selection-lead, .device-note, .guide-row, .guide-intro, .desktop-channel-panel, .desktop-programme-panel, .up-next, .player-shell, .search-results, .guide-explorer, .favorites-lists, .filter-panel, .home-hero, .desktop-first, .card-visual, .home-favorite-art, .home-favorite-row button, .desktop-channel-row, .home-category-grid button) { border-radius: 2px; }
+.app-shell[data-theme=blueprint] :is(.channel-card, .desktop-channel-panel)::after {
+  inset: 4px;
+  border: 0;
+  background:
+    var(--mark) 0 0 / 10px 1px no-repeat, var(--mark) 0 0 / 1px 10px no-repeat,
+    var(--mark) 100% 0 / 10px 1px no-repeat, var(--mark) 100% 0 / 1px 10px no-repeat,
+    var(--mark) 0 100% / 10px 1px no-repeat, var(--mark) 0 100% / 1px 10px no-repeat,
+    var(--mark) 100% 100% / 10px 1px no-repeat, var(--mark) 100% 100% / 1px 10px no-repeat;
+  opacity: .55;
+  z-index: 2;
+}
+.app-shell[data-theme=blueprint] .channel-card:hover { border-color: #9fe3ff; box-shadow: 0 0 0 1px rgba(159, 227, 255, .35), 0 16px 34px rgba(3, 14, 32, .45); }
+.app-shell[data-theme=blueprint] :is(.card-visual, .home-favorite-art) { background: #0f3b6f; border-color: #3f6f9f; }
+.app-shell[data-theme=blueprint] :is(.card-visual, .home-favorite-art, .desktop-channel-row) img { outline: 1px solid rgba(255, 255, 255, .12); outline-offset: -1px; }
+.app-shell[data-theme=blueprint] .desktop-channel-row:hover { border-color: #9fe3ff; background: #134782; }
+.app-shell[data-theme=blueprint] .home-category-grid button:hover { border-color: #9fe3ff; box-shadow: 0 0 0 1px rgba(159, 227, 255, .3); filter: none; }
+.app-shell[data-theme=blueprint] :is(.playback-tag, .card-favorite, .home-favorite-fav, .hero-secondary) { -webkit-backdrop-filter: none; backdrop-filter: none; }
+.app-shell[data-theme=blueprint] .playback-tag { background: rgba(8, 34, 66, .92); border-color: rgba(191, 230, 255, .4); color: #f4f9ff; letter-spacing: .04em; }
+.app-shell[data-theme=blueprint] :is(.card-favorite, .home-favorite-row .home-favorite-item > .home-favorite-fav) { background: rgba(10, 40, 76, .94); }
+
+/* Heroes: the photograph printed as a cyanotype on the grid. */
+.app-shell[data-theme=blueprint] .desktop-first {
+  border-color: #5a8bbb;
+  background-color: #2f6fae;
+  background-image: linear-gradient(0deg, rgba(8, 36, 70, .96) 10%, rgba(8, 36, 70, .4) 60%, rgba(8, 36, 70, .2)), url('/themes/blueprint/grid.svg'), url('/images/onde-river-hero.webp');
+  background-size: auto, 60px 60px, cover;
+  background-position: center, 0 0, center 55%;
+  background-blend-mode: normal, normal, luminosity;
+}
+.app-shell[data-theme=blueprint] .home-hero::after { border: 1px dashed rgba(191, 230, 255, .35); box-shadow: 0 0 0 36px rgba(191, 230, 255, .03), 0 0 0 37px rgba(191, 230, 255, .2); }
+
+/* Controls: yellow is kept for the primary action. */
+.app-shell[data-theme=blueprint] :is(.primary, .home-primary) { background: #ffd166; color: var(--accent-ink); box-shadow: 0 8px 20px rgba(3, 14, 32, .35); }
+.app-shell[data-theme=blueprint] :is(.primary, .home-primary):hover { background: #ffdc85; filter: none; }
+.app-shell[data-theme=blueprint] :is(.secondary, .hero-secondary) { background: rgba(10, 40, 76, .9); border-color: #7fb0dc; color: #fff; }
+.app-shell[data-theme=blueprint] :is(.secondary, .hero-secondary):hover { border-color: #fff; background: #11427a; }
+.app-shell[data-theme=blueprint] :is(.desktop-panel-heading button, .home-section-heading > button, .home-carousel-all, .text-button, .notice button, .notice a) { color: #9fe3ff; }
+.app-shell[data-theme=blueprint] .region-tabs button.active { background: #11427a; color: #fff; box-shadow: inset 0 -2px 0 #ffd166; }
+.app-shell[data-theme=blueprint] .guide-periods button[aria-pressed=true] { background: #f4f9ff; border-color: #f4f9ff; color: #0b2d55; }
+.app-shell[data-theme=blueprint] .guide-days button[aria-pressed=true] { background: #11427a; border-color: #ffd166; color: #fff; }
+.app-shell[data-theme=blueprint] .expanded-programme.programme-live { box-shadow: inset 3px 0 0 #ffd166; }
+
+/* Dialogs, player and mini player. */
+.app-shell[data-theme=blueprint] :is(.watch-section, .watch-dock, .modal, .help-backdrop, .guide-explorer) { --line: #3f6f9f; --accent: #ffd166; --text: #f4f9ff; --muted: #b4d2ee; color: #f4f9ff; }
+.app-shell[data-theme=blueprint] :is(.modal, .watch-dock) { background: url('/themes/blueprint/grid.svg') 0 0 / 60px 60px, #0c3361; border: 1px solid #7fb0dc; border-radius: 3px; box-shadow: 0 0 0 4px rgba(11, 45, 85, .9), 0 0 0 5px rgba(191, 230, 255, .25), 0 30px 80px rgba(2, 10, 24, .6); }
+.app-shell[data-theme=blueprint] .modal::backdrop { background: rgba(4, 18, 38, .78); }
+.app-shell[data-theme=blueprint] .mobile-nav button.active { background: #11427a; color: #ffd166; }
+.app-shell[data-theme=blueprint] :is(.toast, .notice) { background: #0c3361; border: 1px solid #ffd166; border-radius: 2px; color: var(--text); }
+.app-shell[data-theme=blueprint] .access-card { border-radius: 3px; }
+
+/* Réglages tile: grid paper with the drawing. */
+.settings-skins .theme-option[data-theme-id=blueprint] .theme-preview { background: url('/themes/blueprint/drawing.svg') 50% 30% / 64% auto no-repeat, url('/themes/blueprint/grid.svg') 0 0 / 30px 30px, #0b2d55; }
+.settings-skins .theme-option[data-theme-id=blueprint] .theme-preview::before,
+.settings-skins .theme-option[data-theme-id=blueprint] .theme-preview i { display: none; }
+.settings-skins .theme-option[data-theme-id=blueprint] .theme-preview::after { display: none; }
+
+@media (max-width: 760px) {
+  .backdrop-blueprint::after { width: 80vw; opacity: .16; bottom: 12%; }
+  .app-shell[data-theme=blueprint] .section-heading h2::after { content: none; }
+}

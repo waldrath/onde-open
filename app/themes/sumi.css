@@ -1,0 +1,122 @@
+/* Encre — sumi ink on washi. Fibred paper, black ink, one brushed enso and a
+   vermilion hanko seal as the only colour. Serif titles, hairlines, lots of air.
+   Every rule is scoped to .app-shell[data-theme=sumi] (or this skin's tile in Réglages). */
+
+.app-shell[data-theme=sumi] {
+  --washi: url('/themes/sumi/washi.svg');
+  --enso: url('/themes/sumi/enso.svg');
+  --seal: url('/themes/sumi/seal.svg');
+  --bg: #f3eee3;
+  --panel: #fbf8f1;
+  --panel2: #ede7da;
+  --line: #ddd5c4;
+  --muted: #635e55;
+  --quiet: #635e55;
+  --surface: #fbf8f1;
+  --surface-raised: #f1ebdf;
+  --skin-card: #fbf8f1;
+  --skin-tile: #fbf8f1;
+  --skin-hero: #f7f2e8;
+  --skin-radius: 3px;
+  --skin-line: #ddd5c4;
+  --skin-surface-shadow: 0 1px 0 rgba(29, 28, 26, .04), 0 10px 24px -14px rgba(60, 48, 30, .22);
+  --skin-heading-font: var(--font-serif);
+  --skin-heading-shadow: none;
+  --skin-icon-bg: #fbf8f1;
+  --skin-icon-border: #ddd5c4;
+  --skin-icon-shadow: none;
+  --skin-icon-radius: 50%;
+}
+
+/* Backdrop: washi, a slow wash of diluted ink and a giant enso turning very slowly. */
+.app-shell[data-theme=sumi] .theme-backdrop { background: var(--washi), linear-gradient(180deg, #f6f2e9, #efe9dc); }
+.app-shell[data-theme=sumi] :is(.backdrop-aura, .backdrop-mesh, .backdrop-rings, .backdrop-specks) { display: none; }
+.app-shell[data-theme=sumi] .backdrop-grain { opacity: .035; }
+.app-shell[data-theme=sumi] .backdrop-sumi::before {
+  background: radial-gradient(closest-side, rgba(29, 28, 26, .07), transparent) 18% 24% / 46% 40% no-repeat, radial-gradient(closest-side, rgba(29, 28, 26, .05), transparent) 82% 72% / 40% 34% no-repeat;
+  filter: none;
+  animation-duration: 60s;
+}
+.app-shell[data-theme=sumi] .theme-ink {
+  inset: auto -9vw -14vw auto;
+  width: min(46vw, 620px);
+  height: auto;
+  aspect-ratio: 1;
+  border-radius: 0;
+  background: var(--enso) center / contain no-repeat;
+  opacity: .055;
+  filter: none;
+  animation: encre-turn 140s linear infinite;
+}
+
+/* Chrome: paper bars, an ink selection in the sidebar. */
+.app-shell[data-theme=sumi] .topbar::after { opacity: .4; }
+.app-shell[data-theme=sumi] .nav-item.nav-active { background: #1d1c1a; color: #f7f2e8; box-shadow: 0 8px 18px -10px rgba(29, 28, 26, .7); }
+.app-shell[data-theme=sumi] .nav-item.nav-active::before { background: #d4523b; opacity: 1; }
+.app-shell[data-theme=sumi] :is(.search-box, .device-note) { background: #fbf8f1; border-color: var(--line); }
+
+/* Type: Fraunces, light and calm; page titles are signed with an ink line and the seal. */
+.app-shell[data-theme=sumi] :is(.page-heading h1, .home-section-heading h2, .section-heading h2, .selection-theme-head h2, .desktop-panel-heading h2, .desktop-first h2, .home-hero h2, .empty-state h2, .modal h2, .access-card h1) {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  letter-spacing: -.01em;
+  text-wrap: balance;
+}
+.app-shell[data-theme=sumi] .page-heading h1::after {
+  width: 66px;
+  height: 16px;
+  margin-top: 8px;
+  border-radius: 0;
+  background: var(--seal) right center / 16px no-repeat, linear-gradient(90deg, #1d1c1a, rgba(29, 28, 26, .25)) left center / 42px 2px no-repeat;
+  opacity: 1;
+}
+.app-shell[data-theme=sumi] .selection-rank { font-family: var(--font-serif); color: #b93d28; }
+
+/* Paper on paper: cards lift by a hairline and a long, faint shadow. */
+.app-shell[data-theme=sumi] :is(.channel-card, .desktop-channel-panel, .up-next) { background-image: none; }
+.app-shell[data-theme=sumi] :is(.filter-panel, .guide-row, .guide-channel-summary, .favorites-lists, .selection-lead) { background: #fbf8f1; border-color: var(--line); border-radius: 3px; box-shadow: var(--skin-surface-shadow); }
+.app-shell[data-theme=sumi] .channel-card::before { display: none; }
+.app-shell[data-theme=sumi] .channel-card:hover { border-color: #1d1c1a; }
+.app-shell[data-theme=sumi] .brand-has-logo { border-radius: 2px; box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .08); }
+.app-shell[data-theme=sumi] .home-favorite-art { background: #f3eee3; border-color: transparent; }
+.app-shell[data-theme=sumi] .desktop-channel-row { background: #f7f3ea; border-color: #e5dece; border-radius: 2px; }
+.app-shell[data-theme=sumi] .desktop-channel-row:hover { background: #fffdf8; border-color: #1d1c1a; }
+
+/* Home hero: washi, the brushed enso and the seal stamped beside it. */
+.app-shell[data-theme=sumi] .desktop-first {
+  background: var(--seal) right 9% bottom 30% / 30px no-repeat, var(--enso) right 5.5% top 14% / auto 62% no-repeat, var(--washi), linear-gradient(160deg, #faf6ee, #efe8da);
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  box-shadow: var(--skin-surface-shadow);
+}
+.app-shell[data-theme=sumi] .desktop-first p { color: #4a463f; }
+.app-shell[data-theme=sumi] .desktop-first .hero-secondary { background: #fbf8f1; backdrop-filter: none; }
+.app-shell[data-theme=sumi] .home-hero { background: var(--enso) right -34px top -40px / 190px no-repeat, var(--washi), linear-gradient(160deg, #faf6ee, #efe8da); border: 1px solid var(--line); border-radius: 4px; box-shadow: var(--skin-surface-shadow); }
+.app-shell[data-theme=sumi] .home-hero::before { background: linear-gradient(0deg, rgba(250, 246, 238, .94), transparent 70%); }
+.app-shell[data-theme=sumi] .home-hero :is(h2, p) { color: #1d1c1a; }
+
+/* Controls: ink for the chosen day, a vermilion underline for the chosen region. */
+.app-shell[data-theme=sumi] .guide-days button { background: #fbf8f1; border-color: var(--line); border-radius: 3px; }
+.app-shell[data-theme=sumi] .guide-days button[aria-pressed=true] { background: #1d1c1a; border-color: #1d1c1a; color: #f7f2e8; }
+.app-shell[data-theme=sumi] .region-tabs { border-radius: 3px; }
+.app-shell[data-theme=sumi] .region-tabs button.active { background: transparent; color: #1d1c1a; box-shadow: inset 0 -2px 0 #b93d28; border-radius: 0; }
+.app-shell[data-theme=sumi] :is(.primary, .home-primary, .secondary, .search-box, .filter-field select) { border-radius: 3px; }
+.app-shell[data-theme=sumi] .home-primary:hover { background: #a3331f; }
+.app-shell[data-theme=sumi] .secondary { background: #fbf8f1; }
+.app-shell[data-theme=sumi] .secondary:hover { border-color: #1d1c1a; }
+
+/* Player, dialogs, mobile. */
+.app-shell[data-theme=sumi] :is(.watch-dock, .modal) { border: 1px solid var(--line); border-radius: 4px; box-shadow: 0 30px 70px -24px rgba(40, 32, 20, .4); }
+.app-shell[data-theme=sumi] .modal { background: var(--washi), #fbf8f1; }
+.app-shell[data-theme=sumi] .modal::backdrop { background: rgba(29, 28, 26, .45); }
+.app-shell[data-theme=sumi] .mobile-nav button.active { background: transparent; color: #1d1c1a; box-shadow: inset 0 2px 0 #b93d28; }
+.access-page.app-shell[data-theme=sumi] .access-halo { background: radial-gradient(closest-side, rgba(29, 28, 26, .06), transparent); }
+.access-page.app-shell[data-theme=sumi] .access-card { border-radius: 4px; background: var(--seal) right 18px bottom 14px / 22px no-repeat, #fbf8f1; }
+
+/* Réglages tile: washi, the enso and its seal. */
+.settings-skins .theme-option[data-theme-id=sumi] .theme-preview { background: url('/themes/sumi/seal.svg') 76% 58% / 13px no-repeat, url('/themes/sumi/enso.svg') 66% 40% / 52px no-repeat, linear-gradient(150deg, #f8f4ec, #e9e2d3); }
+.settings-skins .theme-option[data-theme-id=sumi] .theme-preview::before,
+.settings-skins .theme-option[data-theme-id=sumi] .theme-preview i { display: none; }
+.settings-skins .theme-option[data-theme-id=sumi] .theme-preview::after { left: 12%; right: 62%; bottom: 46%; background: #1d1c1a; box-shadow: none; opacity: .5; }
+
+@keyframes encre-turn { to { transform: rotate(360deg); } }

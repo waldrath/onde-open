@@ -1,0 +1,220 @@
+/* Noir — a late screening in an old picture house: warm near-black, brass
+   hairlines, Fraunces headings, a projector beam and a soft spotlight over
+   static film grain, a letterboxed sepia hero and sharp 2px corners.
+   Motion: the beam sways and the spotlight breathes, transform/opacity only. */
+.app-shell[data-theme=noir] {
+  --bg: #0b0907;
+  --panel: #14110d;
+  --panel2: #1b1712;
+  --surface: #14110d;
+  --surface-raised: #1d1913;
+  --sidebar: #0d0b08;
+  --line: #2e271d;
+  --border: #3d3426;
+  --text: #f3ebdb;
+  --copy: #f3ebdb;
+  --muted: #b3a78f;
+  --quiet: #b3a78f;
+  --accent: #d8b463;
+  --accent-ink: #150f05;
+  --focus: #e6c77f;
+  --brass: rgba(216, 180, 99, .2);
+  --velvet: linear-gradient(180deg, #17130e, #100d0a);
+  --skin-bar: rgba(11, 9, 7, .9);
+  --skin-card: var(--velvet);
+  --skin-tile: var(--velvet);
+  --skin-hero: linear-gradient(135deg, #1c1710, #0b0907);
+  --skin-radius: 2px;
+  --skin-line: var(--brass);
+  --skin-accent: #d8b463;
+  --skin-glow: rgba(216, 180, 99, .2);
+  --skin-surface-shadow: inset 0 1px 0 rgba(255, 230, 180, .04), 0 20px 44px -18px rgba(0, 0, 0, .85);
+  --skin-heading-font: var(--font-serif);
+  --skin-heading-tracking: -.012em;
+  --skin-heading-shadow: none;
+  --skin-icon-radius: 2px;
+  --skin-icon-bg: linear-gradient(160deg, #1f1a12, #110e0a);
+  --skin-icon-border: rgba(216, 180, 99, .3);
+  --skin-icon-color: #e6c77f;
+  --skin-icon-shadow: none;
+  background: var(--bg);
+}
+.app-shell[data-theme=noir] .watch-section,
+.app-shell[data-theme=noir] .watch-dock,
+.app-shell[data-theme=noir] .modal,
+.app-shell[data-theme=noir] .help-backdrop,
+.app-shell[data-theme=noir] .guide-explorer { --line: #2e271d; --accent: #d8b463; --text: #f3ebdb; --muted: #b3a78f; color: #f3ebdb; }
+
+/* Backdrop: the dark house, a beam from the booth, vignette at the edges. */
+.app-shell[data-theme=noir] .backdrop-noir { background: radial-gradient(80% 60% at 50% -10%, #1e1810, transparent 70%), #0b0907; }
+.app-shell[data-theme=noir] .backdrop-noir::before {
+  inset: -10% 0 20%;
+  background: conic-gradient(from 168deg at 50% -6%, transparent 0deg, rgba(255, 226, 170, .045) 8deg, rgba(255, 226, 170, .075) 12deg, rgba(255, 226, 170, .045) 16deg, transparent 24deg);
+  transform-origin: 50% 0;
+  animation: noir-beam 28s ease-in-out infinite alternate;
+}
+.app-shell[data-theme=noir] .backdrop-noir::after {
+  background: radial-gradient(120% 90% at 50% 40%, transparent 55%, rgba(0, 0, 0, .55));
+  opacity: 1;
+}
+.app-shell[data-theme=noir] .theme-spotlight {
+  inset: -12% 15% 50%;
+  background: radial-gradient(closest-side, rgba(240, 205, 140, .11), transparent);
+  mix-blend-mode: normal;
+}
+.app-shell[data-theme=noir] .backdrop-aura,
+.app-shell[data-theme=noir] .backdrop-mesh,
+.app-shell[data-theme=noir] .backdrop-rings,
+.app-shell[data-theme=noir] .backdrop-specks { display: none; }
+.app-shell[data-theme=noir] .backdrop-grain { opacity: .07; }
+
+/* Chrome: solid black rail (no blur), a thin brass rule under the top bar. */
+.app-shell[data-theme=noir] .sidebar { background: #0d0b08; border-color: var(--brass); -webkit-backdrop-filter: none; backdrop-filter: none; }
+.app-shell[data-theme=noir] .topbar { background: var(--skin-bar); border-color: var(--brass); }
+.app-shell[data-theme=noir] .topbar::after { background: linear-gradient(90deg, transparent, rgba(216, 180, 99, .55), transparent); opacity: .5; }
+.app-shell[data-theme=noir] .search-box,
+.app-shell[data-theme=noir] .profile-avatar { background: #120f0b; border-color: var(--brass); border-radius: 2px; }
+.app-shell[data-theme=noir] .logo,
+.app-shell[data-theme=noir] .logo-mark { fill: var(--accent); font-family: var(--font-serif); font-weight: 600; letter-spacing: -.04em; }
+.app-shell[data-theme=noir] .sidebar-caption,
+.app-shell[data-theme=noir] .eyebrow,
+.app-shell[data-theme=noir] .hero-eyebrow { letter-spacing: .26em; }
+
+/* Navigation: no gold slab; the active title is lit and underscored in brass. */
+.app-shell[data-theme=noir] .nav-item { border-radius: 2px; color: var(--muted); }
+.app-shell[data-theme=noir] .nav-item:hover { background: rgba(216, 180, 99, .06); color: var(--text); }
+.app-shell[data-theme=noir] .nav-item.nav-active { background: linear-gradient(90deg, rgba(216, 180, 99, .14), transparent 85%); color: #f6e3b4; box-shadow: none; }
+.app-shell[data-theme=noir] .nav-item.nav-active::before { left: 0; background: var(--accent); opacity: 1; }
+.app-shell[data-theme=noir] .nav-item.nav-active > svg:first-of-type { background: rgba(216, 180, 99, .14); border-color: rgba(230, 199, 127, .6); color: #f6e3b4; box-shadow: none; }
+
+/* Type: Fraunces upright, set large and close, like a title card. */
+.app-shell[data-theme=noir] .page-heading h1,
+.app-shell[data-theme=noir] .home-section-heading h2,
+.app-shell[data-theme=noir] .section-heading h2,
+.app-shell[data-theme=noir] .selection-theme-head h2,
+.app-shell[data-theme=noir] .favorites-lists h2,
+.app-shell[data-theme=noir] .modal h2,
+.app-shell[data-theme=noir] .list-open h3,
+.app-shell[data-theme=noir] .home-hero h2,
+.app-shell[data-theme=noir] .desktop-first h2,
+.app-shell[data-theme=noir] .guide-channel-summary h2,
+.app-shell[data-theme=noir] .settings-section h3 { font-family: var(--font-serif); font-style: normal; font-weight: 560; letter-spacing: -.012em; text-wrap: balance; }
+.app-shell[data-theme=noir] .page-heading h1 { font-size: clamp(30px, 2.8vw, 42px); font-weight: 500; }
+.app-shell[data-theme=noir] .page-heading h1::after { width: 64px; height: 1px; border-radius: 0; background: linear-gradient(90deg, var(--accent), transparent); opacity: 1; }
+.app-shell[data-theme=noir] .home-section-heading > button,
+.app-shell[data-theme=noir] .desktop-panel-heading button,
+.app-shell[data-theme=noir] .home-carousel-all { color: #e0bf74; }
+
+/* Hero: a sepia print in a letterbox; the copy sits above the lower bar. */
+.app-shell[data-theme=noir] .desktop-first {
+  background-color: #3e3222;
+  background-image:
+    linear-gradient(180deg, #050403 0 7%, transparent 7% 93%, #050403 93%),
+    linear-gradient(90deg, rgba(8, 6, 4, .88), rgba(8, 6, 4, .35) 55%, rgba(8, 6, 4, .1)),
+    url('/images/onde-river-hero.webp');
+  background-size: auto, auto, cover;
+  background-position: center, center, center 55%;
+  background-blend-mode: normal, normal, luminosity;
+  padding-bottom: 9%;
+  border: 1px solid var(--brass);
+  border-radius: 2px;
+  box-shadow: 0 30px 70px -30px rgba(0, 0, 0, .9);
+}
+.app-shell[data-theme=noir] .desktop-first .hero-eyebrow { color: #e6c77f; }
+.app-shell[data-theme=noir] .home-hero { background: #3e3222 url('/images/onde-river-hero.webp') center 55% / cover no-repeat; background-blend-mode: luminosity; border: 1px solid var(--brass); border-radius: 2px; box-shadow: none; }
+.app-shell[data-theme=noir] .home-hero::before { background: linear-gradient(180deg, #050403 0 6%, transparent 6% 94%, #050403 94%), linear-gradient(0deg, rgba(8, 6, 4, .92), transparent 72%); }
+.app-shell[data-theme=noir] .hero-secondary { background: rgba(10, 8, 6, .7); border-color: rgba(216, 180, 99, .4); border-radius: 2px; -webkit-backdrop-filter: none; backdrop-filter: none; }
+
+/* Buttons: brass plate primaries, hairline secondaries. */
+.app-shell[data-theme=noir] .primary,
+.app-shell[data-theme=noir] .home-primary { background: linear-gradient(180deg, #e3c27a, #c49b48); color: var(--accent-ink); border-radius: 2px; box-shadow: inset 0 1px 0 rgba(255, 245, 215, .45), 0 10px 24px -12px rgba(216, 180, 99, .6); }
+.app-shell[data-theme=noir] .primary:hover,
+.app-shell[data-theme=noir] .home-primary:hover { box-shadow: inset 0 1px 0 rgba(255, 245, 215, .45), 0 14px 28px -12px rgba(216, 180, 99, .8); }
+.app-shell[data-theme=noir] .secondary,
+.app-shell[data-theme=noir] .guide-button,
+.app-shell[data-theme=noir] .channel-card .icon-button { background: transparent; border-color: rgba(216, 180, 99, .3); color: #eee2c8; border-radius: 2px; }
+.app-shell[data-theme=noir] .secondary:hover,
+.app-shell[data-theme=noir] .guide-button:hover { background: rgba(216, 180, 99, .08); border-color: rgba(230, 199, 127, .6); }
+
+/* Surfaces: velvet black panels with brass hairlines and square corners. */
+.app-shell[data-theme=noir] .channel-card,
+.app-shell[data-theme=noir] .list-card,
+.app-shell[data-theme=noir] .empty-state,
+.app-shell[data-theme=noir] .selection-row,
+.app-shell[data-theme=noir] .selection-lead,
+.app-shell[data-theme=noir] .device-note,
+.app-shell[data-theme=noir] .favorites-lists,
+.app-shell[data-theme=noir] .notice,
+.app-shell[data-theme=noir] .desktop-channel-panel,
+.app-shell[data-theme=noir] .desktop-programme-panel,
+.app-shell[data-theme=noir] .filter-panel,
+.app-shell[data-theme=noir] .expanded-guide,
+.app-shell[data-theme=noir] .up-next,
+.app-shell[data-theme=noir] .player-shell,
+.app-shell[data-theme=noir] .home-favorite-row button,
+.app-shell[data-theme=noir] .home-category-grid button:nth-child(n) { background: var(--velvet); border: 1px solid var(--brass); border-radius: 2px; color: var(--text); box-shadow: var(--skin-surface-shadow); }
+.app-shell[data-theme=noir] .channel-card:hover,
+.app-shell[data-theme=noir] .home-category-grid button:nth-child(n):hover { border-color: rgba(230, 199, 127, .5); }
+.app-shell[data-theme=noir] .card-visual,
+.app-shell[data-theme=noir] .home-favorite-art { background: radial-gradient(90% 120% at 50% 0%, #2a2218, #110e0a 70%); border-color: var(--brass); border-radius: 0; }
+.app-shell[data-theme=noir] .brand-has-logo { border-radius: 2px; outline: 1px solid rgba(20, 15, 8, .12); outline-offset: -1px; box-shadow: 0 10px 22px -10px #000; }
+.app-shell[data-theme=noir] .brand-has-logo.brand-logo-dark { background: #1d1912; border-color: var(--brass); }
+.app-shell[data-theme=noir] .card-meta,
+.app-shell[data-theme=noir] .card-programme.muted,
+.app-shell[data-theme=noir] .page-heading p,
+.app-shell[data-theme=noir] .section-heading p { color: var(--muted); }
+.app-shell[data-theme=noir] .home-favorite-row .home-favorite-item > .home-favorite-fav { background: rgba(12, 10, 7, .88); border-color: var(--brass); }
+.app-shell[data-theme=noir] .desktop-channel-row { background: #120f0b; border-color: var(--brass); border-radius: 2px; }
+.app-shell[data-theme=noir] .desktop-channel-row:hover { background: #1b1711; border-color: rgba(230, 199, 127, .45); }
+
+/* Filters, guide and selection: brass marks the chosen item, numerals in Fraunces. */
+.app-shell[data-theme=noir] .region-tabs { background: #0f0c09; border-color: var(--brass); border-radius: 2px; }
+.app-shell[data-theme=noir] .region-tabs button { border-radius: 1px; }
+.app-shell[data-theme=noir] .region-tabs button.active { background: rgba(216, 180, 99, .14); color: #f6e3b4; box-shadow: inset 0 -1px 0 var(--accent); }
+.app-shell[data-theme=noir] .guide-days button,
+.app-shell[data-theme=noir] .guide-periods button { background: #120f0b; border-color: var(--brass); color: var(--muted); border-radius: 2px; }
+.app-shell[data-theme=noir] .guide-days button strong { font-family: var(--font-serif); }
+.app-shell[data-theme=noir] .guide-days button[aria-pressed=true],
+.app-shell[data-theme=noir] .guide-periods button[aria-pressed=true] { background: linear-gradient(180deg, #e3c27a, #c49b48); border-color: transparent; color: var(--accent-ink); }
+.app-shell[data-theme=noir] .programme-live { background: linear-gradient(90deg, rgba(216, 180, 99, .12), transparent 80%); }
+.app-shell[data-theme=noir] .selection-rank { font-family: var(--font-serif); font-size: 18px; color: #e0bf74; }
+
+/* Player, mini player and dialogs: the screen in its black frame. */
+.app-shell[data-theme=noir] .player-toolbar,
+.app-shell[data-theme=noir] .player-note,
+.app-shell[data-theme=noir] .dock-head,
+.app-shell[data-theme=noir] .player-resolving,
+.app-shell[data-theme=noir] .video-loading,
+.app-shell[data-theme=noir] .dock-controls { background: #0f0c09; border-color: var(--brass); color: var(--text); }
+.app-shell[data-theme=noir] .watch-dock { border: 1px solid rgba(216, 180, 99, .32); border-radius: 2px; box-shadow: 0 30px 70px -20px #000; }
+.app-shell[data-theme=noir] .modal { background: linear-gradient(180deg, #19150f, #0f0c09); border: 1px solid rgba(216, 180, 99, .28); border-radius: 3px; box-shadow: 0 40px 100px -20px #000; }
+.app-shell[data-theme=noir] .guide-explorer { background: transparent; border: 0; box-shadow: none; }
+.app-shell[data-theme=noir] .modal::backdrop { background: rgba(4, 3, 2, .78); }
+.app-shell[data-theme=noir] .toast { background: #1d1912; border: 1px solid rgba(216, 180, 99, .4); color: var(--text); border-radius: 2px; }
+.app-shell[data-theme=noir] .mobile-nav { background: rgba(9, 7, 5, .96); border-color: var(--brass); -webkit-backdrop-filter: none; backdrop-filter: none; }
+.app-shell[data-theme=noir] .mobile-nav button.active { background: transparent; color: #f0d48f; border-radius: 2px; box-shadow: inset 0 2px 0 var(--accent); }
+.app-shell[data-theme=noir] :focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+
+/* Sign-in: the same house; a soft gradient halo instead of a blurred one. */
+.app-shell[data-theme=noir] .access-halo { background: radial-gradient(closest-side, rgba(216, 180, 99, .12), transparent); }
+.app-shell[data-theme=noir] .access-card,
+.app-shell[data-theme=noir] .access-card .auth-setup { background: linear-gradient(180deg, rgba(26, 21, 15, .92), rgba(13, 11, 8, .94)); border-color: rgba(216, 180, 99, .28); border-radius: 3px; }
+
+/* Réglages tile: a letterboxed screen under the beam. */
+.settings-skins .theme-option[data-theme-id=noir] .theme-preview {
+  background:
+    linear-gradient(180deg, #000 0 12%, transparent 12% 88%, #000 88%),
+    conic-gradient(from 160deg at 50% -10%, transparent 0deg, rgba(255, 226, 170, .22) 14deg, rgba(255, 226, 170, .3) 20deg, rgba(255, 226, 170, .22) 26deg, transparent 40deg),
+    radial-gradient(70% 60% at 50% 30%, #2b2216, #0b0907);
+}
+.settings-skins .theme-option[data-theme-id=noir] .theme-preview::before { border-color: rgba(216, 180, 99, .55); border-radius: 0; background: linear-gradient(160deg, rgba(240, 220, 180, .14), rgba(0, 0, 0, .3)); box-shadow: none; }
+.settings-skins .theme-option[data-theme-id=noir] .theme-preview::after { background: linear-gradient(90deg, transparent, #d8b463, transparent); box-shadow: none; }
+.settings-skins .theme-option[data-theme-id=noir] .theme-preview i { display: none; }
+
+@keyframes noir-beam {
+  from { transform: rotate(-3deg); }
+  to { transform: rotate(3deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .app-shell[data-theme=noir] .backdrop-noir::before { animation: none; }
+}

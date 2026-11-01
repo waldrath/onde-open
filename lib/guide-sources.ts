@@ -1,4 +1,5 @@
-export type CommunityGuideSource={id:string;provider:string;apiId?:string;url?:string;xmlChannelId?:string;sourceName:string;version?:string;fallbackOnly?:boolean};
+// apiId is the provider’s own channel key (epg.pw, blue.ch, post.lu, rts.ch); XMLTV providers use url + xmlChannelId.
+export type CommunityGuideSource={id:string;provider:'epg.pw'|'SamsungTVPlus'|'blue.ch'|'post.lu'|'rts.ch';apiId?:string;url?:string;xmlChannelId?:string;sourceName:string;version?:string;fallbackOnly?:boolean};
 export const communityGuideSources:CommunityGuideSource[]=[
  {
   "id": "tva",
@@ -226,5 +227,141 @@ export const communityGuideSources:CommunityGuideSource[]=[
   "url": "https://i.mjh.nz/SamsungTVPlus/gb.xml.gz",
   "xmlChannelId": "GBBC300003UQ",
   "sourceName": "WaterBear"
+ },
+ {
+  "id": "crtv",
+  "provider": "epg.pw",
+  "apiId": "568372",
+  "version": "Cameroun, chaîne nationale",
+  "sourceName": "CRTV",
+  "fallbackOnly": false
+ },
+ {
+  "id": "la-une",
+  "provider": "epg.pw",
+  "apiId": "459202",
+  "version": "Belgique, RTBF",
+  "sourceName": "La Une",
+  "fallbackOnly": false
+ },
+ {
+  "id": "tipik",
+  "provider": "epg.pw",
+  "apiId": "459205",
+  "version": "Belgique, RTBF",
+  "sourceName": "Tipik",
+  "fallbackOnly": false
+ },
+ {
+  "id": "matele",
+  "provider": "epg.pw",
+  "apiId": "443180",
+  "version": "Dinant, Belgique",
+  "sourceName": "Vià MATÉLÉ",
+  "fallbackOnly": false
+ },
+ {
+  "id": "tvm3",
+  "provider": "epg.pw",
+  "apiId": "539601",
+  "version": "Suisse romande",
+  "sourceName": "TVM3 [CH]",
+  "fallbackOnly": false
+ },
+ {
+  "id": "carac1",
+  "provider": "blue.ch",
+  "apiId": "355",
+  "version": "Suisse romande",
+  "sourceName": "CARAC 1",
+  "fallbackOnly": false
+ },
+ {
+  "id": "carac2",
+  "provider": "blue.ch",
+  "apiId": "301",
+  "version": "Suisse romande",
+  "sourceName": "CARAC 2",
+  "fallbackOnly": false
+ },
+ {
+  "id": "carac3",
+  "provider": "blue.ch",
+  "apiId": "246",
+  "version": "Suisse romande",
+  "sourceName": "CARAC 3",
+  "fallbackOnly": false
+ },
+ {
+  "id": "carac4",
+  "provider": "blue.ch",
+  "apiId": "1082",
+  "version": "Suisse romande",
+  "sourceName": "CARAC 4",
+  "fallbackOnly": false
+ },
+ {
+  "id": "carac5",
+  "provider": "blue.ch",
+  "apiId": "41",
+  "version": "Suisse romande",
+  "sourceName": "CARAC 5",
+  "fallbackOnly": false
+ },
+ {
+  "id": "maxtv",
+  "provider": "blue.ch",
+  "apiId": "253",
+  "version": "Suisse romande",
+  "sourceName": "Max TV",
+  "fallbackOnly": false
+ },
+ {
+  "id": "canal9",
+  "provider": "blue.ch",
+  "apiId": "72",
+  "version": "Valais, Suisse",
+  "sourceName": "Canal 9",
+  "fallbackOnly": false
+ },
+ {
+  "id": "leman-bleu",
+  "provider": "blue.ch",
+  "apiId": "244",
+  "version": "Genève, Suisse",
+  "sourceName": "Léman Bleu Télévision",
+  "fallbackOnly": false
+ },
+ {
+  "id": "rhone-tv",
+  "provider": "blue.ch",
+  "apiId": "2096",
+  "version": "Valais, Suisse",
+  "sourceName": "Rhône TV",
+  "fallbackOnly": false
+ },
+ {
+  "id": "rts-info",
+  "provider": "rts.ch",
+  "apiId": "5d332a26e06d08eec8ad385d566187df72955623",
+  "version": "Suisse, RTS",
+  "sourceName": "RTS Info",
+  "fallbackOnly": false
+ },
+ {
+  "id": "rtl-zwee",
+  "provider": "post.lu",
+  "apiId": "5c2aa860-8096-11e9-b5ca-f345a2ed0fbe",
+  "version": "Luxembourg",
+  "sourceName": "RTL Zwee",
+  "fallbackOnly": false
+ },
+ {
+  "id": "tv-lux",
+  "provider": "post.lu",
+  "apiId": "bdd3df00-1411-11ea-934c-4323fc36d546",
+  "version": "Province de Luxembourg, Belgique",
+  "sourceName": "TVLux",
+  "fallbackOnly": false
  }
 ];
