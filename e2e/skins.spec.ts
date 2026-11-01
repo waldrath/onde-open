@@ -16,6 +16,11 @@ for (const {id} of themes) {
     // The last request of a settled Accueil (1.5 s after mount).
     await reliability;
     expect(errors).toEqual([]);
+    // The skin's own logo opening ends with the whole word shown and nothing left running.
+    await expect.poll(() => page.evaluate(() => document.getAnimations()
+      .filter(animation => animation.playState === 'running' && (animation.effect as KeyframeEffect | null)?.target?.closest('.logo')).length),
+    {timeout: 6000}).toBe(0);
+    expect(await page.locator('.sidebar .logo-letter').evaluateAll(letters => letters.map(letter => getComputedStyle(letter).opacity))).toEqual(['1', '1', '1', '1']);
   });
 }
 
