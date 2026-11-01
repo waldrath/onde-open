@@ -6,17 +6,20 @@ This repository is the community edition. It is meant for learning, self-hosting
 
 ## Features
 
-- More than 2,100 free channels from Quebec, Canada, France, the United States, Sweden, Belgium, Switzerland, Luxembourg, Cameroon, Senegal, Côte d'Ivoire, DR Congo, Haiti, and international sources. Every imported stream is probed for playability before it is kept.
+- More than 2,200 free channels from Quebec, Canada, France, the United States, Sweden, Belgium, Switzerland, Luxembourg, Cameroon, Senegal, Côte d'Ivoire, DR Congo, Haiti, and international sources, plus the French-language channels of every other country (Morocco, Algeria, Togo, Benin, Congo, Burkina Faso, Mali, the French overseas territories and more). Every imported stream is probed for playability before it is kept.
+- Premium channels and services (sports, films, series) listed with a link to their broadcaster's official live page.
 - Integrated HLS playback with `hls.js` and native HLS on Safari. Channels that only play natively are shown to Safari viewers only, and other browsers receive a lighter catalogue.
+- Audio-only mode: the player keeps the sound, loads the stream's lightest quality and draws no picture, to save data and battery.
 - Official broadcaster players for channels that do not expose a compatible stream.
 - Favorites, custom lists, recently watched channels, and last-channel resume. Favorites removed from the catalogue are reported instead of silently disappearing.
 - Channel zapping with on-screen buttons, remote-control channel keys, and arrow keys in the player.
 - A TV guide with per-channel schedules and programme details, including programme reminders delivered as notifications.
 - Community reliability: anonymous playback outcomes mark channels as reliable or unstable, and the channel list can be sorted by reliability.
 - A weekly curated selection by genre that rotates on a fixed schedule instead of at random.
-- Sixteen complete visual skins, each with its own palette, type, icon treatment, ambient motion, and surfaces. Viewers can set a personal background image or animated GIF per skin; it stays on their device.
+- Sixteen complete visual skins, each with its own palette, type, icon treatment, logo mark and opening animation, ambient motion, and surfaces. Viewers can set a personal background image or animated GIF per skin; it stays on their device.
 - Battery-aware ambient motion: skin animations rest while a video plays, on low battery, and with data saver.
 - French and English interface. Catalogue metadata remains in the language supplied by the broadcaster.
+- Filters that take several values at once (regions, languages, categories).
 - Automatic region detection hides channels flagged as geo-limited for another country. An optional filter reveals them.
 - Player captions are disabled by default; viewers can enable the tracks they want.
 - Responsive layouts for desktop, tablet, and mobile, including swipe navigation between main sections.

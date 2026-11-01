@@ -1,5 +1,7 @@
 import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';import ts from 'typescript';
-const source=ts.transpile(fs.readFileSync('lib/catalogue-maintenance.ts','utf8'),{module:ts.ModuleKind.ES2022,target:ts.ScriptTarget.ES2022});
+// channel-utils (compactChannel) is inlined the same way: data: modules cannot resolve relative imports.
+const utils='data:text/javascript;base64,'+Buffer.from(ts.transpile(fs.readFileSync('lib/channel-utils.ts','utf8'),{module:ts.ModuleKind.ES2022,target:ts.ScriptTarget.ES2022})).toString('base64');
+const source=ts.transpile(fs.readFileSync('lib/catalogue-maintenance.ts','utf8'),{module:ts.ModuleKind.ES2022,target:ts.ScriptTarget.ES2022}).replace(/from ['"]\.\/channel-utils['"]/,`from '${utils}'`);
 const {recordHealth,validateChannel,mergeCatalogue,clientCatalogue}=await import('data:text/javascript;base64,'+Buffer.from(source).toString('base64'));
 const c={id:'local-tv',name:'Télé locale',brand:'Télé locale',region:'Québec',language:'fr',category:'Culture',color:'#628a95',description:'La vie locale.',official:'https://diffuseur.example/live',guide:'https://diffuseur.example/horaire',stream:'https://cdn.diffuseur.example/live.m3u8'};
 test('one outage and repeated attempts cannot mark a source suspect; a later success restores it',()=>{

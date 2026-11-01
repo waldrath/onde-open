@@ -113,7 +113,7 @@
 /* Controls: a segmented region switch, ink chips for the active day and period. */
 .app-shell[data-theme=light] .region-tabs { background: #f1ece1; border-color: transparent; }
 .app-shell[data-theme=light] .region-tabs button.active { background: #fffdf8; color: #194f40; box-shadow: 0 1px 3px rgba(70, 56, 34, .14); }
-.app-shell[data-theme=light] .filter-field select { background-color: #faf7f0; border-color: var(--border); }
+.app-shell[data-theme=light] :is(.filter-field select, .multi-select-summary) { background-color: #faf7f0; border-color: var(--border); }
 .app-shell[data-theme=light] .guide-days button { background: #fffdf8; border-color: rgba(80, 64, 40, .1); box-shadow: 0 1px 2px rgba(70, 56, 34, .06); }
 .app-shell[data-theme=light] .guide-days button[aria-pressed=true] { background: #194f40; border-color: #194f40; color: #fffdf6; box-shadow: 0 10px 22px -12px rgba(25, 79, 64, .8); }
 .app-shell[data-theme=light] .secondary { background: #fffdf8; border-color: var(--border); box-shadow: 0 1px 2px rgba(70, 56, 34, .06); }
@@ -127,7 +127,7 @@
 
 /* Dialogs and small surfaces. */
 .app-shell[data-theme=light] .modal { background: #fffdf8; box-shadow: 0 0 0 1px rgba(80, 64, 40, .08), 0 30px 80px -20px rgba(50, 40, 24, .38); }
-.app-shell[data-theme=light] .modal::backdrop { background: rgba(38, 34, 26, .42); }
+.app-shell[data-theme=light] .modal::backdrop { background: rgba(38, 34, 26, .56); }
 .app-shell[data-theme=light] .mobile-nav { background: rgba(248, 244, 236, .94); border-color: var(--line); }
 .app-shell[data-theme=light] .mobile-nav button.active { background: #e8eee5; color: #194f40; }
 .app-shell[data-theme=light] .toast { background: #194f40; color: #fffdf6; }

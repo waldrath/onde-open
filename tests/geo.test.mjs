@@ -17,7 +17,7 @@ test('viewer country detection prefers the time zone and falls back to locale', 
   assert.equal(detectViewerCountry({locale:'fr-CM',timeZone:'Unknown/Zone'}),'CM');
   for (const [timeZone,country] of [['Europe/Brussels','BE'],['Europe/Zurich','CH'],['Europe/Luxembourg','LU'],['Africa/Dakar','SN'],['Africa/Abidjan','CI'],['Africa/Kinshasa','CD'],['Africa/Lubumbashi','CD'],['America/Port-au-Prince','HT']])
     assert.equal(detectViewerCountry({locale:'fr',timeZone}),country,timeZone);
-  for (const [locale,country] of [['fr-BE','BE'],['nl-BE','BE'],['de-CH','CH'],['fr-LU','LU'],['fr-SN','SN'],['fr-CI','CI'],['fr-CD','CD'],['ht-HT','HT']])
+  for (const [locale,country] of [['fr-BE','BE'],['nl-BE','BE'],['de-CH','CH'],['fr-LU','LU'],['fr-SN','SN'],['fr-CI','CI'],['fr-CD','CD'],['ht-HT','HT'],['fr-MA','MA'],['fr-TG','TG'],['mg-MG','MG']])
     assert.equal(detectViewerCountry({locale,timeZone:'Unknown/Zone'}),country,locale);
   // Prototype keys are not countries.
   assert.equal(detectViewerCountry({locale:'constructor',timeZone:'toString'}),'XX');
@@ -30,7 +30,7 @@ test('catalogue regions map to viewer countries', () => {
   assert.equal(countryForRegion('USA'),'US');
   assert.equal(countryForRegion('Suède'),'SE');
   assert.equal(countryForRegion('Cameroun'),'CM');
-  for (const [region,country] of [['Belgique','BE'],['Suisse','CH'],['Luxembourg','LU'],['Sénégal','SN'],["Côte d'Ivoire",'CI'],['RD Congo','CD'],['Haïti','HT']])
+  for (const [region,country] of [['Belgique','BE'],['Suisse','CH'],['Luxembourg','LU'],['Sénégal','SN'],["Côte d'Ivoire",'CI'],['RD Congo','CD'],['Haïti','HT'],['Maroc','MA'],['Togo','TG'],['Burkina Faso','BF'],['Monaco','FR'],['Outre-mer','XX']])
     assert.equal(countryForRegion(region),country,region);
   assert.equal(countryForRegion('International'),'XX');
 });

@@ -1,6 +1,6 @@
 import {authConfigured,getAuth} from './auth-server';
 import {verifiedAccount} from './owner-auth';
-export {randomToken,hashToken,secretMatches,validState} from './session-security';
+export {secretMatches} from './session-security';
 export type OndeUser={userId:string;authId:string;email:string;displayName:string;fullName:string|null};
 
 export async function getOndeUser():Promise<OndeUser|null>{

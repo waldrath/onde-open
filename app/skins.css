@@ -606,6 +606,27 @@
 .app-shell .brand-link:is(:hover, :focus-visible) .logo-period { scale: 1.35; }
 .app-shell .brand-link:is(:hover, :focus-visible) .logo-period::after { animation: logo-ripple 1.1s .36s cubic-bezier(.2, .7, .3, 1) both; }
 
+/* Skin marks (app/onde-logo.tsx): every skin but Sombre has its own mark,
+   drawn in its accent colour stroke by stroke, then a flourish of its own. */
+.logo-line { fill: none; stroke: var(--accent, currentColor); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+.app-shell .logo-line { stroke-dasharray: 1 2; animation: logo-brush .8s calc(.46s + var(--stroke, 0) * .14s) cubic-bezier(.45, 0, .2, 1) both; }
+.app-shell .logo-mark-light { transform-origin: 50% 100%; animation-name: logo-sunrise; animation-duration: 1.6s; }
+.app-shell .logo-mark-retro { animation-name: logo-neon; animation-duration: 1.2s; animation-delay: .9s; animation-timing-function: linear; }
+.app-shell .logo-mark-matrix .logo-line { animation-timing-function: steps(7, end); }
+.app-shell .logo-mark-anime { animation-name: logo-twinkle; animation-duration: 1.1s; animation-delay: .6s; }
+.app-shell .logo-mark-blueprint .logo-line { stroke-width: 2; animation-duration: 1.3s; animation-timing-function: linear; }
+.app-shell .logo-mark-noir { transform-origin: 50% 81%; animation-name: logo-fan; animation-duration: 1.4s; animation-timing-function: cubic-bezier(.2, .7, .2, 1); }
+.app-shell .logo-mark-ocean { animation-name: logo-drip; animation-duration: 1.2s; animation-timing-function: ease-out; }
+.app-shell .logo-mark-cosmos { animation-name: logo-orbit-in; animation-duration: 1.8s; animation-timing-function: cubic-bezier(.2, .8, .3, 1); }
+.app-shell .logo-mark-arcade .logo-line { animation-timing-function: steps(9, end); }
+.app-shell .logo-mark-sumi .logo-line { stroke-width: 4.5; animation-duration: 1.5s; animation-timing-function: cubic-bezier(.6, 0, .3, 1); }
+.app-shell .logo-mark-ember { transform-origin: 50% 100%; animation-name: logo-flicker; animation-duration: 1.4s; animation-delay: .7s; animation-timing-function: ease-in-out; }
+.app-shell .logo-mark-millennium { animation-name: logo-spin; animation-duration: 1.4s; animation-timing-function: cubic-bezier(.2, .8, .2, 1); }
+.app-shell .logo-mark-bureau { animation-name: logo-power-on; animation-duration: .7s; animation-timing-function: cubic-bezier(.2, .8, .2, 1); }
+.app-shell .logo-mark-comics { animation-name: logo-pow; animation-duration: .7s; animation-delay: .9s; animation-timing-function: ease-out; }
+.app-shell .logo-mark-aura .logo-line { animation-duration: .45s; }
+.app-shell .brand-link:is(:hover, :focus-visible) :is(.logo-mark-cosmos, .logo-mark-millennium) { rotate: 20deg; }
+
 /* Each skin tells the opening in its own voice. Only the letters' entrance,
    the ripples and a few timings change; the order (drop, waves, word,
    period, glint) and the once-only rule stay the same. */
@@ -1047,6 +1068,14 @@
 @keyframes logo-glint { from { background-position: 160% 0; } to { background-position: -60% 0; } }
 @keyframes logo-drop { 0% { opacity: 0; transform: translateY(-1.3em) scale(.75, 1.35); } 55% { opacity: 1; transform: translateY(0) scale(1.35, .65); } 78% { transform: translateY(-.07em) scale(.9, 1.12); } 100% { opacity: 1; transform: none; } }
 @keyframes logo-ripple { 0% { opacity: 0; transform: scale(.3); } 6% { opacity: .8; } 100% { opacity: 0; transform: scale(3); } }
+@keyframes logo-sunrise { from { opacity: 0; transform: translateY(5px) scale(.94); } to { opacity: 1; transform: none; } }
+@keyframes logo-twinkle { 0% { transform: rotate(-30deg) scale(.5); } 60% { transform: rotate(8deg) scale(1.15); } 100% { transform: none; } }
+@keyframes logo-fan { from { transform: scaleY(0); } to { transform: none; } }
+@keyframes logo-drip { 0% { transform: translateY(-9px); } 55% { transform: translateY(1.5px) scale(1.06, .92); } 80% { transform: translateY(-1px); } 100% { transform: none; } }
+@keyframes logo-orbit-in { from { transform: rotate(-160deg) scale(.6); opacity: 0; } 30% { opacity: 1; } to { transform: none; opacity: 1; } }
+@keyframes logo-flicker { 0%, 100% { transform: none; } 20% { transform: scale(.94, 1.08); } 40% { transform: scale(1.05, .95); } 60% { transform: scale(.97, 1.05); } 80% { transform: scale(1.02, .98); } }
+@keyframes logo-spin { from { transform: rotate(-360deg); } to { transform: none; } }
+@keyframes logo-power-on { 0% { opacity: 0; transform: scale(1.1, .04); } 45% { opacity: 1; transform: scale(1, .08); } 100% { opacity: 1; transform: none; } }
 @keyframes logo-rise-soft { from { opacity: 0; transform: translateY(.25em); } to { opacity: 1; transform: none; } }
 @keyframes logo-neon { 0% { opacity: 0; } 10% { opacity: .9; } 14% { opacity: .1; } 22% { opacity: 1; } 27% { opacity: .2; } 36%, 100% { opacity: 1; } }
 @keyframes logo-decode { 0% { opacity: 0; transform: translateY(-.8em); } 30% { opacity: 1; } 70% { transform: translateY(.05em); } 100% { opacity: 1; transform: none; } }
@@ -1077,7 +1106,7 @@
 
 @media (prefers-reduced-motion: reduce) {
   .app-shell *, .access-page * { scroll-behavior: auto !important; }
-  .app-shell .logo-mark, .app-shell .logo-mark path, .app-shell .logo-letter, .app-shell .logo-period, .app-shell .logo-period::before, .app-shell .logo-period::after, .app-shell .logo-rings::before, .app-shell .logo-rings i, .app-shell .logo-brush, .app-shell .logo-word::after, .app-shell .access-card, .access-page .access-halo, .app-shell .tiny-dot::after, .app-shell .watch-dock, .app-shell .toast, .app-shell .notice, .app-shell .search-results, .settings-skins .theme-option { animation: none !important; }
+  .app-shell .logo-mark, .app-shell .logo-mark path, .app-shell .logo-letter, .app-shell .logo-period, .app-shell .logo-period::before, .app-shell .logo-period::after, .app-shell .logo-rings::before, .app-shell .logo-rings i, .app-shell .logo-brush, .app-shell .logo-line, .app-shell .logo-word::after, .app-shell .access-card, .access-page .access-halo, .app-shell .tiny-dot::after, .app-shell .watch-dock, .app-shell .toast, .app-shell .notice, .app-shell .search-results, .settings-skins .theme-option { animation: none !important; }
 }
 
 /* ---------------------------------------------------------------------------

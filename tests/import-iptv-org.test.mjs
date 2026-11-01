@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {cardLanguage,freshHomeCheck,mergeHomeCheck,pickStreams,playabilityTier,reportMarkdown} from '../scripts/import-iptv-org.mjs';
+import {cardLanguage,freshHomeCheck,inWorldScope,mergeHomeCheck,pickStreams,playabilityTier,reportMarkdown,worldRegion} from '../scripts/import-iptv-org.mjs';
 
 // Pure helpers of the iptv-org importer (importing the script runs nothing).
 const hls=()=>true;
@@ -120,4 +120,19 @@ test('the refresh report flags stale Canadian checks and held cards',()=>{
  const held=reportMarkdown({homeChecks:{mode:'read',fresh:10,stale:2,maxAgeDays:60,oldest:'2026-08-01'},report:{ca:{...stats,heldForHomeCheck:['ici-rdi']}}});
  assert.match(held,/Refresh them/);
  assert.match(held,/\*\*ca\*\* held until checked from Canada: ici-rdi/);
+});
+
+test('French world: other countries with a French feed, in their region or International',()=>{
+ assert.equal(inWorldScope('TG',new Set(['fr'])),true);
+ assert.equal(inWorldScope('DE',new Set(['fr','other'])),true);
+ // Countries with their own file, and channels without a French feed, stay out.
+ assert.equal(inWorldScope('FR',new Set(['fr'])),false);
+ assert.equal(inWorldScope('BE',new Set(['fr'])),false);
+ assert.equal(inWorldScope('MA',new Set(['other'])),false);
+ assert.equal(inWorldScope('UK',new Set()),false);
+ assert.equal(worldRegion('TG'),'Togo');
+ assert.equal(worldRegion('MQ'),'Outre-mer');
+ assert.equal(worldRegion('MC'),'Monaco');
+ assert.equal(worldRegion('DE'),'International');
+ assert.equal(worldRegion(undefined),'International');
 });

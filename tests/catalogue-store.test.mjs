@@ -7,7 +7,7 @@ import ts from 'typescript';
 // exercised without Neon: each query batch resolves or rejects on demand.
 const transpile=file=>ts.transpile(fs.readFileSync(file,'utf8'),{module:ts.ModuleKind.ES2022,target:ts.ScriptTarget.ES2022});
 const url=code=>'data:text/javascript;base64,'+Buffer.from(code).toString('base64');
-const maintenance=url(transpile('lib/catalogue-maintenance.ts'));
+const maintenance=url(transpile('lib/catalogue-maintenance.ts').replace(/from ['"]\.\/channel-utils['"]/,`from '${url(transpile('lib/channel-utils.ts'))}'`));
 const database=url(`export const db={prepare:sql=>({all:()=>globalThis.__catalogueDb(sql)})};`);
 const channels=url(`export const channels=[{id:'base',name:'Base',brand:'Base',region:'Québec',category:'Culture',color:'#000000',description:'',official:'https://example.com',guide:'https://example.com'}];`);
 const source=transpile('lib/catalogue-store.ts').replace(/from ['"]\.\/database['"]/,`from '${database}'`).replace(/from ['"]\.\/channels['"]/,`from '${channels}'`).replace(/from ['"]\.\/catalogue-maintenance['"]/,`from '${maintenance}'`);

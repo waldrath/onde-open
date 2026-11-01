@@ -13,11 +13,18 @@ test('filters: a region applied from the sheet shows its channels @mobile', asyn
   await expect(page.locator('.filter-panel')).toBeVisible();
   const total = countIn(await apply.textContent());
 
-  await page.locator('.filter-field-region select').selectOption('Québec');
+  // Regions are a multi-value filter: Québec, then France on top of it.
+  await page.locator('.filter-field-region summary').click();
+  const regionOption = (name: string) => page.locator('.filter-field-region .multi-select-option', {hasText: new RegExp(`^${name}$`)}).locator('input');
+  await regionOption('Québec').check();
   await expect.poll(async () => countIn(await apply.textContent())).not.toBe(total);
+  const quebec = countIn(await apply.textContent());
+  await regionOption('France').check();
+  await expect.poll(async () => countIn(await apply.textContent())).toBeGreaterThan(quebec);
   const count = countIn(await apply.textContent());
-  expect(count).toBeGreaterThan(0);
+  expect(quebec).toBeGreaterThan(0);
   expect(count).toBeLessThan(total);
+  await expect(page.locator('.filter-field-region summary')).toContainText('Québec, France');
 
   await apply.click();
   await expect(bar).not.toHaveClass(/filter-open/);
@@ -25,6 +32,22 @@ test('filters: a region applied from the sheet shows its channels @mobile', asyn
   const cards = page.locator('.channel-grid .channel-card');
   await expect(cards).toHaveCount(Math.min(count, PAGE_SIZE));
   await expect(cards.first().locator('.card-meta')).toContainText('Québec');
+});
+
+test('filters: Chaînes premium lists the official-site premium channels', async ({page}, info) => {
+  await openApp(page);
+  await goTo(page, info, 'channels');
+  // Phones open the filters as a sheet; desktops show them inline.
+  if (isMobile(info)) await page.locator('.filter-toggle').click();
+  const playback = page.locator('label.playback-filter', {hasText: 'Lecture dans Onde'}).locator('input');
+  await expect(playback).toBeChecked();
+  // Premium channels mostly link to the broadcaster's subscription site, so
+  // asking for them lifts the "plays in Onde" filter.
+  await page.locator('label.playback-filter', {hasText: 'Chaînes premium'}).locator('input').check();
+  await expect(playback).not.toBeChecked();
+  if (isMobile(info)) await page.locator('.filter-panel-apply .primary').click();
+  const titles = page.locator('.channel-grid .channel-card .card-title');
+  for (const name of ['RDS', 'TVA Sports', 'Crave', 'Canal+']) await expect(titles.filter({hasText: new RegExp(`^${name.replace('+', '\\+')}$`)})).toHaveCount(1);
 });
 
 test('search: Enter shows the filtered Chaînes grid without starting a player', async ({page}, info) => {

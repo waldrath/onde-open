@@ -2,7 +2,7 @@
 // stable for a given seed (the day, plus a counter when the viewer asks for
 // other ideas) and balanced across regions, so the row changes without
 // becoming random on every render.
-export function hashSeed(value: string) {
+function hashSeed(value: string) {
   let state = 2166136261;
   for (let i = 0; i < value.length; i += 1) {
     state ^= value.charCodeAt(i);
