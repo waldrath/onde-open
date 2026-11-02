@@ -693,6 +693,30 @@
     "source": "iptv-org"
   },
   {
+    "id": "turkmenistan",
+    "name": "Turkmenistan",
+    "brand": "Turkmenistan",
+    "region": "International",
+    "category": "General",
+    "color": "#6b8c92",
+    "language": "fr",
+    "description": "En lecture directe dans Onde via le flux public répertorié par iptv-org (catégorie : General).",
+    "official": "https://turkmentv.gov.tm/",
+    "guide": "https://turkmentv.gov.tm/",
+    "stream": "https://alpha.tv.online.tm/hls/ch007.m3u8",
+    "directory": "https://iptv-org.github.io/iptv/languages/fra.m3u",
+    "streamAlts": [
+      {
+        "url": "https://alpha.tv.online.tm/legacyhls/ch007.m3u8",
+        "label": "SD"
+      }
+    ],
+    "limited": true,
+    "note": "Flux refusé (HTTP 403) hors de sa région lors de la vérification : lecture probablement réservée au pays du diffuseur (limité). Chaîne marquée « Not 24/7 » dans l'annuaire iptv-org : diffusion à temps partiel.",
+    "logoUrl": "https://i.imgur.com/iBBpBx4.png",
+    "source": "iptv-org"
+  },
+  {
     "id": "tv2",
     "name": "TV2 (Algeria)",
     "brand": "TV2 (Algeria)",
@@ -822,6 +846,38 @@
     "source": "iptv-org"
   },
   {
+    "id": "rakuten-tv-action-movies",
+    "name": "Rakuten TV Action Movies",
+    "brand": "Rakuten TV Action Movies",
+    "region": "International",
+    "category": "Movies",
+    "color": "#6b8c92",
+    "language": "fr",
+    "description": "En lecture directe dans Onde via le flux public répertorié par iptv-org (catégorie : Movies).",
+    "official": "https://iptv-org.github.io/api/streams.json",
+    "guide": "https://iptv-org.github.io/api/streams.json",
+    "stream": "https://284824cf70404fdfb6ddf9349009c710.mediatailor.eu-west-1.amazonaws.com/v1/master/0547f18649bd788bec7b67b746e47670f558b6b2/production-LiveChannel-6066/master.m3u8",
+    "directory": "https://iptv-org.github.io/api/streams.json",
+    "streamAlts": [
+      {
+        "url": "https://87f2e2e5e7624e3bad85da1ca2ed31a7.mediatailor.eu-west-1.amazonaws.com/v1/master/0547f18649bd788bec7b67b746e47670f558b6b2/production-LiveChannel-6067/master.m3u8",
+        "label": "Italy"
+      },
+      {
+        "url": "https://a9c57ec7ec5e4b7daeacc6316a0bb404.mediatailor.eu-west-1.amazonaws.com/v1/master/0547f18649bd788bec7b67b746e47670f558b6b2/production-LiveChannel-6069/master.m3u8",
+        "label": "Spain"
+      },
+      {
+        "url": "https://54045f0c40fd442c8b06df076aaf1e85.mediatailor.eu-west-1.amazonaws.com/v1/master/0547f18649bd788bec7b67b746e47670f558b6b2/production-LiveChannel-6065/master.m3u8",
+        "label": "UK"
+      }
+    ],
+    "limited": true,
+    "note": "Flux refusé (HTTP 403) hors de sa région lors de la vérification : lecture probablement réservée au pays du diffuseur (limité).",
+    "logoUrl": "https://i.imgur.com/Meew6eX.png",
+    "source": "iptv-org"
+  },
+  {
     "id": "rakuten-tv-comedy-movies",
     "name": "Rakuten TV Comedy Movies",
     "brand": "Rakuten TV Comedy Movies",
@@ -926,8 +982,16 @@
     "directory": "https://iptv-org.github.io/api/streams.json",
     "streamAlts": [
       {
+        "url": "https://d4a4999341764c67a67e9ec9eb3790ab.mediatailor.eu-west-1.amazonaws.com/v1/master/0547f18649bd788bec7b67b746e47670f558b6b2/production-LiveChannel-5984/master.m3u8",
+        "label": "Italy"
+      },
+      {
         "url": "https://ff335120300e4742a2b135ee9a9e7df8.mediatailor.eu-west-1.amazonaws.com/v1/master/0547f18649bd788bec7b67b746e47670f558b6b2/production-LiveChannel-5983/master.m3u8",
         "label": "Spain"
+      },
+      {
+        "url": "https://0145451975a64b35866170fd2e8fa486.mediatailor.eu-west-1.amazonaws.com/v1/master/0547f18649bd788bec7b67b746e47670f558b6b2/production-LiveChannel-5987/master.m3u8",
+        "label": "UK"
       }
     ],
     "limited": true,

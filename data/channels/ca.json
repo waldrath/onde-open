@@ -279,12 +279,6 @@
     "guide": "https://www.cbc.ca/programguide/daily/today/cbc_news_network/",
     "stream": "https://amg00788-cbc-amg00788c4-xumo-us-3045.playouts.now.amagi.tv/master.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
-    "streamAlts": [
-      {
-        "url": "https://d2ny9lo79ujali.cloudfront.net/CBC_News_International.m3u8",
-        "label": "SD"
-      }
-    ],
     "logoUrl": "https://i.imgur.com/SjTdhvJ.png",
     "source": "iptv-org"
   },
@@ -685,12 +679,6 @@
     "guide": "https://iptv-org.github.io/iptv/countries/ca.m3u",
     "stream": "https://d3uyzhwvmemdyf.cloudfront.net/v1/master/9d062541f2ff39b5c0f48b743c6411d25f62fc25/HardKnocks-PLEX/121.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
-    "streamAlts": [
-      {
-        "url": "https://d3uyzhwvmemdyf.cloudfront.net/v1/master/9d062541f2ff39b5c0f48b743c6411d25f62fc25/HardKnocks-SportsTribal/121.m3u8",
-        "label": "SD"
-      }
-    ],
     "logoUrl": "https://i.imgur.com/nt9B6jx.png",
     "source": "iptv-org"
   },
@@ -1292,12 +1280,6 @@
     "guide": "https://www.outdoorchannelplus.com/",
     "stream": "http://23.237.104.106:8080/USA_OUTDOOR/index.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
-    "streamAlts": [
-      {
-        "url": "https://amg00718-outdoorchannela-outdoortv-samsungau-uc7mp.amagi.tv/playlist/amg00718-outdoorchannela-outdoortv-samsungau/playlist.m3u8",
-        "label": "SD"
-      }
-    ],
     "insecureStream": true,
     "logoUrl": "https://i.imgur.com/Kh4MWaY.png",
     "source": "iptv-org"
@@ -2747,10 +2729,6 @@
       {
         "url": "https://amg00090-blueantmedia-naturetime-samsungse-axgcn.amagi.tv/playlist/amg00090-blueantmedia-naturetime-samsungse/playlist.m3u8",
         "label": "SD · amg00090-blueantmedia-naturetime-s…"
-      },
-      {
-        "url": "https://amg01515-amg01515c43-samsung-gb-9038.playouts.now.amagi.tv/playlist.m3u8",
-        "label": "UK"
       }
     ],
     "logoUrl": "https://i.imgur.com/72JmyjM.png",
