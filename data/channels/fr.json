@@ -10,9 +10,8 @@
     "description": "En lecture directe dans Onde via le flux public répertorié par iptv-org (catégorie : Entertainment).",
     "official": "https://www.6play.fr/6ter",
     "guide": "https://www.6play.fr/6ter",
-    "stream": "http://149.62.177.107:9999/6ter/index.m3u8",
+    "stream": "https://r.eu.cdn-redge.media/livehls/oeu/mt/live/6ter_fr/live.livx/playlist.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
-    "insecureStream": true,
     "logoUrl": "https://i.imgur.com/2nd5Cox.png",
     "source": "iptv-org"
   },
@@ -236,6 +235,12 @@
     "guide": "https://www.bfmtv.com/",
     "stream": "https://ncdn-live-bfm.pfd.sfr.net/shls/LIVE$BFM_TV/index.m3u8?end=END&start=LIVE",
     "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
+    "streamAlts": [
+      {
+        "url": "https://live-cdn-stream-euw1.bfmtv.bct.nextradiotv.com/master.m3u8",
+        "label": "SD"
+      }
+    ],
     "logoUrl": "https://i.imgur.com/YJCcczD.png",
     "source": "iptv-org"
   },
@@ -253,6 +258,42 @@
     "stream": "https://ncdn-live-bfm.pfd.sfr.net/shls/LIVE$BFM_TOULONVAR/index.m3u8?end=END&start=LIVE",
     "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
     "logoUrl": "https://i.imgur.com/vp1oVj3.png",
+    "source": "iptv-org"
+  },
+  {
+    "id": "c-star",
+    "name": "C Star",
+    "brand": "C Star",
+    "region": "France",
+    "category": "Entertainment",
+    "color": "#6b8c92",
+    "language": "fr",
+    "description": "En lecture directe dans Onde via le flux public répertorié par iptv-org (catégorie : Entertainment).",
+    "official": "https://www.canalplus.com/chaines/cstar",
+    "guide": "https://www.canalplus.com/chaines/cstar",
+    "stream": "https://raw.githubusercontent.com/Paradise-91/ParaTV/refs/heads/main/streams/canalplus/cstar-dm.m3u8",
+    "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
+    "limited": true,
+    "note": "Flux refusé (HTTP 403) hors de sa région lors de la vérification : lecture probablement réservée au pays du diffuseur (limité).",
+    "logoUrl": "https://i.imgur.com/w4kAX1V.png",
+    "source": "iptv-org"
+  },
+  {
+    "id": "caillou",
+    "name": "Caillou",
+    "brand": "Caillou",
+    "region": "France",
+    "category": "General",
+    "color": "#6b8c92",
+    "language": "fr",
+    "description": "En lecture directe dans Onde via le flux public répertorié par iptv-org (catégorie : General).",
+    "official": "https://iptv-org.github.io/iptv/countries/fr.m3u",
+    "guide": "https://iptv-org.github.io/iptv/countries/fr.m3u",
+    "stream": "https://do7nccdsswstc.cloudfront.net/v1/manifest/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-1aso0bc668saa/a5233c83-f772-4a81-959a-45ec7877ef61/5.m3u8",
+    "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
+    "limited": true,
+    "note": "Flux refusé (HTTP 403) hors de sa région lors de la vérification : lecture probablement réservée au pays du diffuseur (limité).",
+    "logoUrl": "https://i.imgur.com/RgKaoe4.png",
     "source": "iptv-org"
   },
   {
@@ -287,6 +328,60 @@
     "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
     "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/5f8ed1ff5c39700007e2204a/colorLogoPNG_1752228138963.png",
+    "source": "iptv-org"
+  },
+  {
+    "id": "cineby-pluto-tv",
+    "name": "Cine by Pluto TV",
+    "brand": "Cine by Pluto TV",
+    "region": "France",
+    "category": "Movies",
+    "color": "#6b8c92",
+    "language": "fr",
+    "description": "En lecture directe dans Onde via le flux public répertorié par iptv-org (catégorie : Movies).",
+    "official": "https://pluto.tv/live-tv/cine-by-pluto-tv-fr/details",
+    "guide": "https://pluto.tv/live-tv/cine-by-pluto-tv-fr/details",
+    "stream": "https://jmp2.uk/plu-5f8ed0f17564a300082b676a.m3u8",
+    "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
+    "limited": true,
+    "note": "Flux refusé (HTTP 403) hors de sa région lors de la vérification : lecture probablement réservée au pays du diffuseur (limité).",
+    "logoUrl": "https://images.pluto.tv/channels/5f8ed0f17564a300082b676a/colorLogoPNG_1775048900088.png",
+    "source": "iptv-org"
+  },
+  {
+    "id": "cine-catastropheby-pluto-tv",
+    "name": "Cine Catastrophe by Pluto TV",
+    "brand": "Cine Catastrophe by Pluto TV",
+    "region": "France",
+    "category": "Movies",
+    "color": "#6b8c92",
+    "language": "fr",
+    "description": "En lecture directe dans Onde via le flux public répertorié par iptv-org (catégorie : Movies).",
+    "official": "https://pluto.tv/live-tv/cine-catastrophe-by-pluto-tv-fr/details",
+    "guide": "https://pluto.tv/live-tv/cine-catastrophe-by-pluto-tv-fr/details",
+    "stream": "https://jmp2.uk/plu-65a69ef53af63d000825e0ee.m3u8",
+    "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
+    "limited": true,
+    "note": "Flux refusé (HTTP 403) hors de sa région lors de la vérification : lecture probablement réservée au pays du diffuseur (limité).",
+    "logoUrl": "https://images.pluto.tv/channels/65a69ef53af63d000825e0ee/colorLogoPNG_1751272916058.png",
+    "source": "iptv-org"
+  },
+  {
+    "id": "cined-asieby-pluto-tv",
+    "name": "Cine d'Asie by Pluto TV",
+    "brand": "Cine d'Asie by Pluto TV",
+    "region": "France",
+    "category": "Movies",
+    "color": "#6b8c92",
+    "language": "fr",
+    "description": "En lecture directe dans Onde via le flux public répertorié par iptv-org (catégorie : Movies).",
+    "official": "https://pluto.tv/live-tv/cine-dasie-by-pluto-tv-fr/details",
+    "guide": "https://pluto.tv/live-tv/cine-dasie-by-pluto-tv-fr/details",
+    "stream": "https://jmp2.uk/plu-62f3e2d000418d00070f7dbc.m3u8",
+    "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
+    "limited": true,
+    "note": "Flux refusé (HTTP 403) hors de sa région lors de la vérification : lecture probablement réservée au pays du diffuseur (limité).",
+    "logoUrl": "https://images.pluto.tv/channels/62f3e2d000418d00070f7dbc/colorLogoPNG_1751272759694.png",
     "source": "iptv-org"
   },
   {
@@ -476,6 +571,10 @@
       {
         "url": "https://cdn-euronews.akamaized.net/live/eds/euronews-fr/25026/index.m3u8",
         "label": "SD"
+      },
+      {
+        "url": "https://euronews-live-fra-fr.fast.rakuten.tv/v1/master/0547f18649bd788bec7b67b746e47670f558b6b2/production-LiveChannel-6564/bitok/eyJzdGlkIjoiYjA1ZmVmMzAtYjhkZC00Y2E5LThkM2ItMTRkNjE1MjdmYjE0IiwibWt0IjoiZnIiLCJjaCI6NjU2NCwicHRmIjo1fQ==/26032/euronews-fr.m3u8",
+        "label": "SD · euronews-live-fra-fr.fast.rakuten.…"
       }
     ],
     "logoUrl": "https://i.imgur.com/8t9mdg9.png",
@@ -498,6 +597,116 @@
     "source": "iptv-org"
   },
   {
+    "id": "eurosport1",
+    "name": "Eurosport 1",
+    "brand": "Eurosport 1",
+    "region": "France",
+    "category": "Sports",
+    "color": "#6b8c92",
+    "language": "fr",
+    "description": "En lecture directe dans Onde via le flux public répertorié par iptv-org (catégorie : Sports).",
+    "official": "https://www.eurosport.fr/",
+    "guide": "https://www.eurosport.fr/",
+    "stream": "https://r.eu.cdn-redge.media/livehls/oeu/mt/live/eurosport_1/live.livx/playlist.m3u8",
+    "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
+    "streamAlts": [
+      {
+        "url": "https://r.eu.cdn-redge.media/livehls/oeu/mt/live/eurosport_1_it/live.livx/playlist.m3u8",
+        "label": "Italy"
+      },
+      {
+        "url": "https://s7.iptv-24.net/1439/playlist.m3u8",
+        "label": "Russia"
+      },
+      {
+        "url": "http://88.212.7.14/live/test_esp1_hevc_tizen/playlist.m3u8",
+        "label": "Czechia"
+      },
+      {
+        "url": "http://90.183.52.46:4000/play/a06v/index.m3u8",
+        "label": "Germany"
+      },
+      {
+        "url": "http://88.212.7.14/live/esp1_hun/index.m3u8",
+        "label": "Hungary"
+      },
+      {
+        "url": "http://45.134.141.161:2200/ARG/Eurosport_1_HD/index.m3u8",
+        "label": "Spain"
+      },
+      {
+        "url": "http://85.117.37.43/eurosport1/index.m3u8",
+        "label": "UK"
+      }
+    ],
+    "logoUrl": "https://i.imgur.com/olQJgm7.png",
+    "source": "iptv-org"
+  },
+  {
+    "id": "eurosport2",
+    "name": "Eurosport 2",
+    "brand": "Eurosport 2",
+    "region": "France",
+    "category": "Sports",
+    "color": "#6b8c92",
+    "language": "fr",
+    "description": "En lecture directe dans Onde via le flux public répertorié par iptv-org (catégorie : Sports).",
+    "official": "https://www.eurosport.fr/",
+    "guide": "https://www.eurosport.fr/",
+    "stream": "https://r.eu.cdn-redge.media/livehls/oeu/mt/live/eurosport_2/live.livx/playlist.m3u8",
+    "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
+    "streamAlts": [
+      {
+        "url": "https://r.eu.cdn-redge.media/livehls/oeu/mt/live/eurosport_2_it/live.livx/playlist.m3u8",
+        "label": "Italy"
+      },
+      {
+        "url": "https://s7.iptv-24.net/1452/playlist.m3u8",
+        "label": "Russia"
+      },
+      {
+        "url": "https://r.eu.cdn-redge.media/livehls/oeu/mt/live/eurosport_2_en/live.livx/playlist.m3u8",
+        "label": "UK"
+      },
+      {
+        "url": "http://88.212.7.14/live/test_esp2_hevc_tizen/playlist.m3u8",
+        "label": "Czechia"
+      },
+      {
+        "url": "http://46.244.99.71:8181/stream/74/index.m3u8",
+        "label": "Germany"
+      },
+      {
+        "url": "http://88.212.7.14/live/esp2_hun/index.m3u8",
+        "label": "Hungary"
+      },
+      {
+        "url": "http://45.134.141.161:2200/ARG/Eurosport_2_HD/index.m3u8",
+        "label": "Spain"
+      }
+    ],
+    "logoUrl": "https://i.imgur.com/f56dHgR.png",
+    "source": "iptv-org"
+  },
+  {
+    "id": "fashion-tv-secrets",
+    "name": "FashionTV Secrets",
+    "brand": "FashionTV Secrets",
+    "region": "France",
+    "category": "Lifestyle",
+    "color": "#6b8c92",
+    "language": "fr",
+    "description": "En lecture directe dans Onde via le flux public répertorié par iptv-org (catégorie : Lifestyle).",
+    "official": "https://www.fashiontv.com/",
+    "guide": "https://www.fashiontv.com/",
+    "stream": "https://ssai.aniview.com/api/v1/hls/stream.m3u8?AVS_SSAIID=67c0c39764ad6f7dab07aa0b&AV_APPNAME=[ADS.APP_NAME]&AV_APPPKGNAME=[ADS.APP_BUNDLE]&AV_APPSTOREURL=[ADS.APP_STORE_URL]&AV_CCPA=[ADS.US_PRIVACY]&AV_CLIENT_SECTION=ftv_secrets&AV_CONSENT=[ADS.GDPR_CONSENT]&AV_CONTENT_CAT=IAB7&AV_CONTENT_CHANNEL=&AV_CONTENT_CONTEXT=&AV_CONTENT_EPISODE=&AV_CONTENT_GENRE=fashion+and+lifestyle&AV_CONTENT_ID=[ADS.VIDAA_ADS_CONTENTID]&AV_CONTENT_KEYWORDS=&AV_CONTENT_LANGUAGE=en&AV_CONTENT_LENGTH=&AV_CONTENT_NETWORK=&AV_CONTENT_PROVIDER=FTV&AV_CONTENT_RATING=R&AV_CONTENT_SEASON=&AV_CONTENT_SERIES=&AV_CONTENT_TITLE=&AV_CONTENT_URL=&AV_DNT=[ADS.DNT]&AV_GDPR=[ADS.GDPR]&AV_HEIGHT=[ADS.H]&AV_IDFA=[ADS.IFA]&AV_IFA_TYPE=[ADS.IFA_TYPE]&AV_LANGUAGE=[ADS.DEVICE_LANGUAGE]&AV_OSVERS=[ADS.DEVICE_OSV]&AV_RTB_DEVICE_TYPE=[ADS.DEVICE_TYPE]&AV_VAUTH=[ADS.VAUTH]&AV_WIDTH=[ADS.W]&Content_Id=[ADS.ADS_CONTENTID]&ads.vidaa_ads_param=1191723366&cb=[CACHEBUSTER]&content_channel_name=ftv+-fashiontv+Secrets&content_livestream=1",
+    "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
+    "limited": true,
+    "note": "Flux refusé (HTTP 403) hors de sa région lors de la vérification : lecture probablement réservée au pays du diffuseur (limité).",
+    "logoUrl": "https://i.ibb.co/fVGJyCC8/w512.png",
+    "source": "iptv-org"
+  },
+  {
     "id": "france2",
     "name": "France 2",
     "brand": "France 2",
@@ -508,9 +717,8 @@
     "description": "En lecture directe dans Onde via le flux public répertorié par iptv-org (catégorie : General).",
     "official": "https://www.france.tv/france-2/",
     "guide": "https://www.france.tv/france-2/",
-    "stream": "http://149.62.177.107:9999/France_2/index.m3u8",
+    "stream": "https://r.eu.cdn-redge.media/livehls/oeu/mt/live/france_2/live.livx/playlist.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
-    "insecureStream": true,
     "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/France_2_2018.svg/960px-France_2_2018.svg.png",
     "source": "iptv-org"
   },
@@ -525,15 +733,18 @@
     "description": "En lecture directe dans Onde via le flux public répertorié par iptv-org (catégorie : General).",
     "official": "https://www.france.tv/france-3/",
     "guide": "https://www.france.tv/france-3/",
-    "stream": "http://89.187.185.76:8080/France3/index.m3u8",
+    "stream": "https://r.eu.cdn-redge.media/livehls/oeu/mt/live/france_3/live.livx/playlist.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
     "streamAlts": [
+      {
+        "url": "http://89.187.185.76:8080/France3/index.m3u8",
+        "label": "CotedAzur"
+      },
       {
         "url": "http://5.180.164.197:8080/FRANCE3/index.m3u8",
         "label": "Lorraine"
       }
     ],
-    "insecureStream": true,
     "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/France_3_2018.svg/960px-France_3_2018.svg.png",
     "source": "iptv-org"
   },
@@ -548,9 +759,8 @@
     "description": "En lecture directe dans Onde via le flux public répertorié par iptv-org (catégorie : Kids).",
     "official": "https://www.france.tv/france-4/",
     "guide": "https://www.france.tv/france-4/",
-    "stream": "http://149.62.177.107:9999/France_4/index.m3u8",
+    "stream": "https://r.eu.cdn-redge.media/livehls/oeu/mt/live/france_4/live.livx/playlist.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
-    "insecureStream": true,
     "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/France_4_2018.svg/960px-France_4_2018.svg.png",
     "source": "iptv-org"
   },
@@ -565,9 +775,8 @@
     "description": "En lecture directe dans Onde via le flux public répertorié par iptv-org (catégorie : General).",
     "official": "https://www.france.tv/france-5/",
     "guide": "https://www.france.tv/france-5/",
-    "stream": "http://149.62.177.107:9999/France_5/index.m3u8",
+    "stream": "https://r.eu.cdn-redge.media/livehls/oeu/mt/live/france_5/live.livx/playlist.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
-    "insecureStream": true,
     "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/France_5_2018.svg/960px-France_5_2018.svg.png",
     "source": "iptv-org"
   },
@@ -650,9 +859,8 @@
     "description": "En lecture directe dans Onde via le flux public répertorié par iptv-org (catégorie : News).",
     "official": "https://www.lci.fr/",
     "guide": "https://www.lci.fr/",
-    "stream": "http://149.62.177.107:9999/LCI/index.m3u8",
+    "stream": "https://r.eu.cdn-redge.media/livehls/oeu/mt/live/lci/live.livx/playlist.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
-    "insecureStream": true,
     "logoUrl": "https://i.imgur.com/DED8EXs.png",
     "source": "iptv-org"
   },
@@ -809,6 +1017,24 @@
     "source": "iptv-org"
   },
   {
+    "id": "moselle-tv",
+    "name": "Moselle TV",
+    "brand": "Moselle TV",
+    "region": "France",
+    "category": "General",
+    "color": "#6b8c92",
+    "language": "fr",
+    "description": "En lecture directe dans Onde via le flux public répertorié par iptv-org (catégorie : General).",
+    "official": "https://moselle.tv/",
+    "guide": "https://moselle.tv/",
+    "stream": "https://live.creacast.com/mirabelletv/smil:mirabelletv.smil/playlist.m3u8",
+    "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
+    "limited": true,
+    "note": "Flux refusé (HTTP 403) hors de sa région lors de la vérification : lecture probablement réservée au pays du diffuseur (limité). Chaîne marquée « Not 24/7 » dans l'annuaire iptv-org : diffusion à temps partiel.",
+    "logoUrl": "https://i.imgur.com/hrm5QnU.png",
+    "source": "iptv-org"
+  },
+  {
     "id": "mtvclassics",
     "name": "MTV CLASSICS",
     "brand": "MTV CLASSICS",
@@ -836,9 +1062,8 @@
     "description": "En lecture directe dans Onde via le flux public répertorié par iptv-org (catégorie : General).",
     "official": "https://iptv-org.github.io/iptv/countries/fr.m3u",
     "guide": "https://iptv-org.github.io/iptv/countries/fr.m3u",
-    "stream": "http://149.62.177.107:9999/NOVO19/index.m3u8",
+    "stream": "https://r.eu.cdn-redge.media/livehls/oeu/mt/live/novo_19/live.livx/playlist.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
-    "insecureStream": true,
     "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Logo_NOVO19_-_2025.svg/960px-Logo_NOVO19_-_2025.svg.png",
     "source": "iptv-org"
   },
@@ -1273,23 +1498,6 @@
     "source": "iptv-org"
   },
   {
-    "id": "tf1",
-    "name": "TF1",
-    "brand": "TF1",
-    "region": "France",
-    "category": "Entertainment",
-    "color": "#6b8c92",
-    "language": "fr",
-    "description": "En lecture directe dans Onde via le flux public répertorié par iptv-org (catégorie : Entertainment).",
-    "official": "https://www.tf1.fr",
-    "guide": "https://www.tf1.fr",
-    "stream": "http://149.62.177.107:9999/TF1/index.m3u8",
-    "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
-    "insecureStream": true,
-    "logoUrl": "https://i.imgur.com/QxHt9NC.png",
-    "source": "iptv-org"
-  },
-  {
     "id": "tf1-series-films",
     "name": "TF1 Series Films",
     "brand": "TF1 Series Films",
@@ -1300,9 +1508,8 @@
     "description": "En lecture directe dans Onde via le flux public répertorié par iptv-org (catégorie : Movies).",
     "official": "https://www.tf1.fr/tf1-series-films",
     "guide": "https://www.tf1.fr/tf1-series-films",
-    "stream": "http://149.62.177.107:9999/TF1_Series_Films/index.m3u8",
+    "stream": "https://r.eu.cdn-redge.media/livehls/oeu/mt/live/tf1_series_films/live.livx/playlist.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
-    "insecureStream": true,
     "logoUrl": "https://i.imgur.com/4CJIDKQ.png",
     "source": "iptv-org"
   },
@@ -1317,9 +1524,8 @@
     "description": "En lecture directe dans Onde via le flux public répertorié par iptv-org (catégorie : General).",
     "official": "https://www.tf1.fr/tfx",
     "guide": "https://www.tf1.fr/tfx",
-    "stream": "http://149.62.177.107:9999/TFX/index.m3u8",
+    "stream": "https://r.eu.cdn-redge.media/livehls/oeu/mt/live/tfx/live.livx/playlist.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
-    "insecureStream": true,
     "logoUrl": "https://i.imgur.com/d91GcVf.png",
     "source": "iptv-org"
   },
@@ -1339,23 +1545,6 @@
     "limited": true,
     "note": "Flux marqué géo-bloqué dans l'annuaire iptv-org : lecture réservée aux régions autorisées par le diffuseur (limité).",
     "logoUrl": "https://i.imgur.com/fVVKpmk.png",
-    "source": "iptv-org"
-  },
-  {
-    "id": "tmc",
-    "name": "TMC",
-    "brand": "TMC",
-    "region": "France",
-    "category": "General",
-    "color": "#6b8c92",
-    "language": "fr",
-    "description": "En lecture directe dans Onde via le flux public répertorié par iptv-org (catégorie : General).",
-    "official": "https://www.tf1.fr/tmc",
-    "guide": "https://www.tf1.fr/tmc",
-    "stream": "http://149.62.177.107:9999/TMC/index.m3u8",
-    "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
-    "insecureStream": true,
-    "logoUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/5/54/TMC_logo.svg/960px-TMC_logo.svg.png",
     "source": "iptv-org"
   },
   {
@@ -1650,6 +1839,10 @@
         "label": "HD · channels.trace.plus"
       },
       {
+        "url": "https://tracesportstars-klowdtv.amagi.tv/playlist.m3u8",
+        "label": "HD · tracesportstars-klowdtv.amagi.tv"
+      },
+      {
         "url": "https://stream8.cinerama.uz/1274/tracks-v1a1/mono.m3u8",
         "label": "Russia"
       },
@@ -1794,11 +1987,10 @@
     "description": "En lecture directe dans Onde via le flux public répertorié par iptv-org (catégorie : News).",
     "official": "https://maghreb-orient.tv5monde.com/en/direct-tv5monde-info",
     "guide": "https://maghreb-orient.tv5monde.com/en/direct-tv5monde-info",
-    "stream": "https://ott.tv5monde.com/Content/HLS/Live/channel(info)/variant.m3u8",
+    "stream": "https://tvf-tvfm.otteravision.com/tvf/tvfm/tvfm_720.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/fr.m3u",
     "limited": true,
-    "nativeHlsOnly": true,
-    "note": "Flux marqué géo-bloqué dans l'annuaire iptv-org : lecture réservée aux régions autorisées par le diffuseur (limité).",
+    "note": "Flux refusé (HTTP 403) hors de sa région lors de la vérification : lecture probablement réservée au pays du diffuseur (limité).",
     "logoUrl": "https://i.imgur.com/AJx5Fy2.png",
     "source": "iptv-org"
   },
@@ -2100,69 +2292,19 @@
     "description": "En lecture directe dans Onde via le flux public répertorié par iptv-org (catégorie : News).",
     "official": "https://es.euronews.com/",
     "guide": "https://es.euronews.com/",
-    "stream": "https://cdn-euronews.akamaized.net/live/eds/euronews-es/25053/index.m3u8",
+    "stream": "https://iptv.bitred.cl/euronews/index.m3u8",
     "directory": "https://iptv-org.github.io/api/streams.json",
     "streamAlts": [
       {
-        "url": "https://iptv.bitred.cl/euronews/index.m3u8",
+        "url": "https://cdn-euronews.akamaized.net/live/eds/euronews-es/25053/index.m3u8",
         "label": "SD"
+      },
+      {
+        "url": "https://euronews-live-spa-es.fast.rakuten.tv/v1/master/0547f18649bd788bec7b67b746e47670f558b6b2/production-LiveChannel-6571/bitok/eyJzdGlkIjoiMDA0YjY0NTMtYjY2MC00ZTZkLTlkNzEtMTk3YTM3ZDZhZWIxIiwibWt0IjoiZXMiLCJjaCI6NjU3MSwicHRmIjoxfQ==/26034/euronews-es.m3u8",
+        "label": "SD · euronews-live-spa-es.fast.rakuten.…"
       }
     ],
     "logoUrl": "https://a.jsrdn.com/hls/22886/euronews-spa/extras/1080_logo.png",
-    "source": "iptv-org"
-  },
-  {
-    "id": "eurosport1",
-    "name": "Eurosport 1",
-    "brand": "Eurosport 1",
-    "region": "France",
-    "category": "Sports",
-    "color": "#6b8c92",
-    "language": "fr",
-    "description": "En lecture directe dans Onde via le flux public répertorié par iptv-org (catégorie : Sports).",
-    "official": "https://www.eurosport.fr/",
-    "guide": "https://www.eurosport.fr/",
-    "stream": "http://88.212.7.14/live/esp1_hun/index.m3u8",
-    "directory": "https://iptv-org.github.io/api/streams.json",
-    "streamAlts": [
-      {
-        "url": "http://45.134.141.161:2200/ARG/Eurosport_1_HD/index.m3u8",
-        "label": "Spain"
-      },
-      {
-        "url": "http://stream.mcquack.net/176/index.m3u8",
-        "label": "Russia"
-      }
-    ],
-    "insecureStream": true,
-    "logoUrl": "https://i.imgur.com/olQJgm7.png",
-    "source": "iptv-org"
-  },
-  {
-    "id": "eurosport2",
-    "name": "Eurosport 2",
-    "brand": "Eurosport 2",
-    "region": "France",
-    "category": "Sports",
-    "color": "#6b8c92",
-    "language": "fr",
-    "description": "En lecture directe dans Onde via le flux public répertorié par iptv-org (catégorie : Sports).",
-    "official": "https://www.eurosport.fr/",
-    "guide": "https://www.eurosport.fr/",
-    "stream": "http://88.212.7.14/live/esp2_hun/index.m3u8",
-    "directory": "https://iptv-org.github.io/api/streams.json",
-    "streamAlts": [
-      {
-        "url": "http://45.134.141.161:2200/ARG/Eurosport_2_HD/index.m3u8",
-        "label": "Spain"
-      },
-      {
-        "url": "http://stream.mcquack.net/192/index.m3u8",
-        "label": "Russia"
-      }
-    ],
-    "insecureStream": true,
-    "logoUrl": "https://i.imgur.com/f56dHgR.png",
     "source": "iptv-org"
   },
   {
@@ -2519,6 +2661,10 @@
         "label": "SD"
       },
       {
+        "url": "https://freem3u.xyz/api/live/play.m3u8?vid=9852",
+        "label": "SD · freem3u.xyz"
+      },
+      {
         "url": "https://ott.tv5monde.com/Content/HLS/Live/channel(seasie)/variant.m3u8",
         "label": "SD · ott.tv5monde.com"
       }
@@ -2541,8 +2687,12 @@
     "directory": "https://iptv-org.github.io/api/streams.json",
     "streamAlts": [
       {
-        "url": "http://5.180.164.197:8080/TV5MONDE/index.m3u8",
+        "url": "https://hls01ns.antenaplay.ro/hls/tv5-monde-europe-sd/index.m3u8",
         "label": "SD"
+      },
+      {
+        "url": "http://5.180.164.197:8080/TV5MONDE/index.m3u8",
+        "label": "SD · 5.180.164.197"
       },
       {
         "url": "https://ott.tv5monde.com/Content/HLS/Live/channel(europe)/variant.m3u8",

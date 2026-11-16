@@ -277,11 +277,11 @@
     "description": "Playing directly in Onde via the public stream listed by iptv-org (category: News).",
     "official": "https://www.cbc.ca/programguide/daily/today/cbc_news_network/",
     "guide": "https://www.cbc.ca/programguide/daily/today/cbc_news_network/",
-    "stream": "https://amg00788-cbc-amg00788c4-xumo-us-3045.playouts.now.amagi.tv/master.m3u8",
+    "stream": "https://aka-live1050.delivery.roku.com/0c24a9ef-e9c3-485c-bf68-3f1ae5ef3e85/t2-origin/out/v1/live.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
     "streamAlts": [
       {
-        "url": "https://d2ny9lo79ujali.cloudfront.net/CBC_News_International.m3u8",
+        "url": "https://amg00788-cbc-amg00788c4-xumo-us-3045.playouts.now.amagi.tv/master.m3u8",
         "label": "SD"
       }
     ],
@@ -685,12 +685,6 @@
     "guide": "https://iptv-org.github.io/iptv/countries/ca.m3u",
     "stream": "https://d3uyzhwvmemdyf.cloudfront.net/v1/master/9d062541f2ff39b5c0f48b743c6411d25f62fc25/HardKnocks-PLEX/121.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
-    "streamAlts": [
-      {
-        "url": "https://d3uyzhwvmemdyf.cloudfront.net/v1/master/9d062541f2ff39b5c0f48b743c6411d25f62fc25/HardKnocks-SportsTribal/121.m3u8",
-        "label": "SD"
-      }
-    ],
     "logoUrl": "https://i.imgur.com/nt9B6jx.png",
     "source": "iptv-org"
   },
@@ -1292,12 +1286,6 @@
     "guide": "https://www.outdoorchannelplus.com/",
     "stream": "http://23.237.104.106:8080/USA_OUTDOOR/index.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
-    "streamAlts": [
-      {
-        "url": "https://amg00718-outdoorchannela-outdoortv-samsungau-uc7mp.amagi.tv/playlist/amg00718-outdoorchannela-outdoortv-samsungau/playlist.m3u8",
-        "label": "SD"
-      }
-    ],
     "insecureStream": true,
     "logoUrl": "https://i.imgur.com/Kh4MWaY.png",
     "source": "iptv-org"
@@ -1322,8 +1310,8 @@
   },
   {
     "id": "paramount-network",
-    "name": "Paramount Network",
-    "brand": "Paramount Network",
+    "name": "Paramount Network (United States)",
+    "brand": "Paramount Network (United States)",
     "region": "Canada",
     "category": "Movies",
     "color": "#6b8c92",
@@ -1778,9 +1766,14 @@
     "description": "Playing directly in Onde via the public stream listed by iptv-org (category: General).",
     "official": "https://primeasiatv.com/",
     "guide": "https://primeasiatv.com/",
-    "stream": "http://primeasia.selfip.net/Samsung/index.m3u8",
+    "stream": "https://stream.ottlive.co.in/primeasia/index.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
-    "insecureStream": true,
+    "streamAlts": [
+      {
+        "url": "http://primeasia.selfip.net/Samsung/index.m3u8",
+        "label": "SD"
+      }
+    ],
     "logoUrl": "https://jiotvimages.cdn.jio.com/dare_images/images/Prime_Asia_HD.png",
     "source": "iptv-org"
   },
@@ -2585,6 +2578,12 @@
     "guide": "https://www.rtve.es/play/tve-internacional/",
     "stream": "https://rtvelivestream-rtveplayplus.rtve.es/rtvesec/int/tvei_ame_main_1080.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "streamAlts": [
+      {
+        "url": "https://barinaslive1.boldmss.com/TVE/TVE.isml/index.m3u8",
+        "label": "SD"
+      }
+    ],
     "limited": true,
     "note": "Stream flagged geo-blocked in the iptv-org directory: playback is limited to the regions the broadcaster allows.",
     "logoUrl": "https://i.ibb.co/RpKLCMvp/tve.png",
@@ -2747,10 +2746,6 @@
       {
         "url": "https://amg00090-blueantmedia-naturetime-samsungse-axgcn.amagi.tv/playlist/amg00090-blueantmedia-naturetime-samsungse/playlist.m3u8",
         "label": "SD · amg00090-blueantmedia-naturetime-s…"
-      },
-      {
-        "url": "https://amg01515-amg01515c43-samsung-gb-9038.playouts.now.amagi.tv/playlist.m3u8",
-        "label": "UK"
       }
     ],
     "logoUrl": "https://i.imgur.com/72JmyjM.png",

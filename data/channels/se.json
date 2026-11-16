@@ -1090,10 +1090,11 @@
     "description": "Playing directly in Onde via the public stream listed by iptv-org (category: General).",
     "official": "https://www.nrk.no/nrk1/",
     "guide": "https://www.nrk.no/nrk1/",
-    "stream": "https://nrk-live-no.akamaized.net/nrk1/muxed.m3u8",
+    "stream": "http://185.19.191.171:8090/NRK1/index.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/se.m3u",
+    "insecureStream": true,
     "limited": true,
-    "note": "Stream flagged geo-blocked in the iptv-org directory: playback is limited to the regions the broadcaster allows.",
+    "note": "Stream refused (HTTP 403) from outside its region when checked: playback is probably limited to the broadcaster's country.",
     "logoUrl": "https://i.imgur.com/9tj8ds7.png",
     "source": "iptv-org"
   },

@@ -84,24 +84,6 @@
     "source": "iptv-org"
   },
   {
-    "id": "my-righteous-tv",
-    "name": "My Righteous TV",
-    "brand": "My Righteous TV",
-    "region": "Cameroun",
-    "category": "Religious",
-    "color": "#6b8c92",
-    "language": "en",
-    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Religious).",
-    "official": "https://ligministries.org/my-righteous-tv/",
-    "guide": "https://ligministries.org/my-righteous-tv/",
-    "stream": "https://live20.bozztv.com/ssh101/ssh101/myrighteous/playlist.m3u8",
-    "directory": "https://iptv-org.github.io/iptv/countries/cm.m3u",
-    "limited": true,
-    "note": "Stream refused (HTTP 403) from outside its region when checked: playback is probably limited to the broadcaster's country.",
-    "logoUrl": "https://i.imgur.com/wKSLNHB.png",
-    "source": "iptv-org"
-  },
-  {
     "id": "my-tv-channel",
     "name": "My TV Channel",
     "brand": "My TV Channel",
