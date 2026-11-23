@@ -47,5 +47,41 @@
     "directory": "https://iptv-org.github.io/iptv/countries/cd.m3u",
     "logoUrl": "https://i.imgur.com/2igwi7g.png",
     "source": "iptv-org"
+  },
+  {
+    "id": "lollywood-hdtv",
+    "name": "Lollywood HD TV",
+    "brand": "Lollywood HD TV",
+    "region": "RD Congo",
+    "category": "Movies",
+    "color": "#6b8c92",
+    "language": "fr",
+    "description": "En lecture directe dans Onde via le flux public répertorié par iptv-org (catégorie : Movies).",
+    "official": "https://iptv-org.github.io/iptv/countries/cd.m3u",
+    "guide": "https://iptv-org.github.io/iptv/countries/cd.m3u",
+    "stream": "https://stream.berosat.live/hls/lollywood-hd/lollywood-hd.m3u8",
+    "directory": "https://iptv-org.github.io/iptv/countries/cd.m3u",
+    "limited": true,
+    "note": "Flux refusé (HTTP 403) hors de sa région lors de la vérification : lecture probablement réservée au pays du diffuseur (limité).",
+    "logoUrl": "https://i.imgur.com/fQhrsdr.png",
+    "source": "iptv-org"
+  },
+  {
+    "id": "rlprotv",
+    "name": "RL PRO TV",
+    "brand": "RL PRO TV",
+    "region": "RD Congo",
+    "category": "Documentary",
+    "color": "#6b8c92",
+    "language": "fr",
+    "description": "En lecture directe dans Onde via le flux public répertorié par iptv-org (catégorie : Documentary).",
+    "official": "https://iptv-org.github.io/iptv/countries/cd.m3u",
+    "guide": "https://iptv-org.github.io/iptv/countries/cd.m3u",
+    "stream": "https://stream.berosat.live:19360/rlpro-tv/rlpro-tv.m3u8",
+    "directory": "https://iptv-org.github.io/iptv/countries/cd.m3u",
+    "limited": true,
+    "note": "Flux refusé (HTTP 403) hors de sa région lors de la vérification : lecture probablement réservée au pays du diffuseur (limité).",
+    "logoUrl": "https://i.imgur.com/PIBtCEN.jpeg",
+    "source": "iptv-org"
   }
 ]

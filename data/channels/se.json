@@ -545,33 +545,6 @@
     "source": "iptv-org"
   },
   {
-    "id": "diagnosis-murder",
-    "name": "Diagnosis Murder",
-    "brand": "Diagnosis Murder",
-    "region": "Suède",
-    "category": "Classic",
-    "color": "#6b8c92",
-    "language": "sv",
-    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Classic).",
-    "official": "https://pluto.tv/live-tv/diagnosis-murder-se/details",
-    "guide": "https://pluto.tv/live-tv/diagnosis-murder-se/details",
-    "stream": "https://jmp2.uk/plu-668bf9be0642e5000815102d.m3u8",
-    "directory": "https://iptv-org.github.io/iptv/countries/se.m3u",
-    "streamAlts": [
-      {
-        "url": "https://jmp2.uk/plu-668bf7dd74f5ec000817e6d1.m3u8",
-        "label": "DK"
-      },
-      {
-        "url": "https://jmp2.uk/plu-668bf91208d5490008065ffd.m3u8",
-        "label": "NO"
-      }
-    ],
-    "nativeHlsOnly": true,
-    "logoUrl": "https://images.pluto.tv/channels/668bf7dd74f5ec000817e6d1/colorLogoPNG.png",
-    "source": "iptv-org"
-  },
-  {
     "id": "everybody-hates-chris",
     "name": "Everybody Hates Chris",
     "brand": "Everybody Hates Chris",
@@ -1090,10 +1063,11 @@
     "description": "Playing directly in Onde via the public stream listed by iptv-org (category: General).",
     "official": "https://www.nrk.no/nrk1/",
     "guide": "https://www.nrk.no/nrk1/",
-    "stream": "https://nrk-live-no.akamaized.net/nrk1/muxed.m3u8",
+    "stream": "http://185.19.191.171:8090/NRK1/index.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/se.m3u",
+    "insecureStream": true,
     "limited": true,
-    "note": "Stream flagged geo-blocked in the iptv-org directory: playback is limited to the regions the broadcaster allows.",
+    "note": "Stream refused (HTTP 403) from outside its region when checked: playback is probably limited to the broadcaster's country.",
     "logoUrl": "https://i.imgur.com/9tj8ds7.png",
     "source": "iptv-org"
   },
@@ -1152,29 +1126,6 @@
     "source": "iptv-org"
   },
   {
-    "id": "numb3rs",
-    "name": "Numb3rs",
-    "brand": "Numb3rs",
-    "region": "Suède",
-    "category": "Series",
-    "color": "#6b8c92",
-    "language": "sv",
-    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Series).",
-    "official": "https://pluto.tv/live-tv/numb3rs-se/details",
-    "guide": "https://pluto.tv/live-tv/numb3rs-se/details",
-    "stream": "https://jmp2.uk/plu-63dbe8a1c111bc0008dec8b8.m3u8",
-    "directory": "https://iptv-org.github.io/iptv/countries/se.m3u",
-    "streamAlts": [
-      {
-        "url": "https://jmp2.uk/plu-63dbe78051f5d000083e9249.m3u8",
-        "label": "NO"
-      }
-    ],
-    "nativeHlsOnly": true,
-    "logoUrl": "https://images.pluto.tv/channels/642e94c1af2bd90008852697/colorLogoPNG_1756716763207.png",
-    "source": "iptv-org"
-  },
-  {
     "id": "paradise",
     "name": "Paradise",
     "brand": "Paradise",
@@ -1222,33 +1173,6 @@
     ],
     "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/61c19af83fae0a00078c8918/colorLogoPNG.png",
-    "source": "iptv-org"
-  },
-  {
-    "id": "pimp-my-ride",
-    "name": "Pimp My Ride",
-    "brand": "Pimp My Ride",
-    "region": "Suède",
-    "category": "Entertainment",
-    "color": "#6b8c92",
-    "language": "sv",
-    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Entertainment).",
-    "official": "https://pluto.tv/live-tv/pimp-my-ride-se/details",
-    "guide": "https://pluto.tv/live-tv/pimp-my-ride-se/details",
-    "stream": "https://jmp2.uk/plu-61c09a3894aa450007814aea.m3u8",
-    "directory": "https://iptv-org.github.io/iptv/countries/se.m3u",
-    "streamAlts": [
-      {
-        "url": "https://jmp2.uk/plu-61c091343bf4940007803e03.m3u8",
-        "label": "DK"
-      },
-      {
-        "url": "https://jmp2.uk/plu-61c1d6e1f5acaf0007f8381d.m3u8",
-        "label": "NO"
-      }
-    ],
-    "nativeHlsOnly": true,
-    "logoUrl": "https://images.pluto.tv/channels/61c091343bf4940007803e03/colorLogoPNG.png",
     "source": "iptv-org"
   },
   {

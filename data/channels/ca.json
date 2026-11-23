@@ -100,16 +100,12 @@
     "description": "Playing directly in Onde via the public stream listed by iptv-org (category: General).",
     "official": "https://www.azstartv.com/",
     "guide": "https://www.azstartv.com/",
-    "stream": "https://live.livestreamtv.ca/azstar/amlst:azstar/playlist.m3u8",
+    "stream": "https://live.livestreamtv.ca/azstar/ngrp:azstar/playlist.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
     "streamAlts": [
       {
-        "url": "https://live.livestreamtv.ca/azstar/ngrp:azstar/playlist.m3u8",
-        "label": "SD"
-      },
-      {
         "url": "http://live.azstartv.com/azstar/smil:azstar.smil/playlist.m3u8",
-        "label": "SD · live.azstartv.com"
+        "label": "SD"
       }
     ],
     "logoUrl": "https://i.imgur.com/di3XX5L.png",
@@ -150,8 +146,8 @@
   },
   {
     "id": "bestof-the-drew-barrymore-show",
-    "name": "Best of The Drew Barrymore Show (United States)",
-    "brand": "Best of The Drew Barrymore Show (United States)",
+    "name": "Best of The Drew Barrymore Show",
+    "brand": "Best of The Drew Barrymore Show",
     "region": "Canada",
     "category": "Entertainment",
     "color": "#6b8c92",
@@ -201,8 +197,8 @@
   },
   {
     "id": "bondi-rescue",
-    "name": "Bondi Rescue (United States)",
-    "brand": "Bondi Rescue (United States)",
+    "name": "Bondi Rescue",
+    "brand": "Bondi Rescue",
     "region": "Canada",
     "category": "Entertainment",
     "color": "#6b8c92",
@@ -277,11 +273,11 @@
     "description": "Playing directly in Onde via the public stream listed by iptv-org (category: News).",
     "official": "https://www.cbc.ca/programguide/daily/today/cbc_news_network/",
     "guide": "https://www.cbc.ca/programguide/daily/today/cbc_news_network/",
-    "stream": "https://amg00788-cbc-amg00788c4-xumo-us-3045.playouts.now.amagi.tv/master.m3u8",
+    "stream": "https://aka-live1050.delivery.roku.com/0c24a9ef-e9c3-485c-bf68-3f1ae5ef3e85/t2-origin/out/v1/live.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
     "streamAlts": [
       {
-        "url": "https://d2ny9lo79ujali.cloudfront.net/CBC_News_International.m3u8",
+        "url": "https://amg00788-cbc-amg00788c4-xumo-us-3045.playouts.now.amagi.tv/master.m3u8",
         "label": "SD"
       }
     ],
@@ -290,8 +286,8 @@
   },
   {
     "id": "cheers",
-    "name": "Cheers (United States)",
-    "brand": "Cheers (United States)",
+    "name": "Cheers",
+    "brand": "Cheers",
     "region": "Canada",
     "category": "Series",
     "color": "#6b8c92",
@@ -389,8 +385,8 @@
   },
   {
     "id": "doc-martin",
-    "name": "Doc Martin (United States)",
-    "brand": "Doc Martin (United States)",
+    "name": "Doc Martin",
+    "brand": "Doc Martin",
     "region": "Canada",
     "category": "Series",
     "color": "#6b8c92",
@@ -555,8 +551,8 @@
   },
   {
     "id": "frasier",
-    "name": "Frasier (United States)",
-    "brand": "Frasier (United States)",
+    "name": "Frasier",
+    "brand": "Frasier",
     "region": "Canada",
     "category": "Series",
     "color": "#6b8c92",
@@ -657,8 +653,8 @@
   },
   {
     "id": "happy-days",
-    "name": "Happy Days (United States) CA",
-    "brand": "Happy Days (United States) CA",
+    "name": "Happy Days CA",
+    "brand": "Happy Days CA",
     "region": "Canada",
     "category": "Series",
     "color": "#6b8c92",
@@ -685,12 +681,6 @@
     "guide": "https://iptv-org.github.io/iptv/countries/ca.m3u",
     "stream": "https://d3uyzhwvmemdyf.cloudfront.net/v1/master/9d062541f2ff39b5c0f48b743c6411d25f62fc25/HardKnocks-PLEX/121.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
-    "streamAlts": [
-      {
-        "url": "https://d3uyzhwvmemdyf.cloudfront.net/v1/master/9d062541f2ff39b5c0f48b743c6411d25f62fc25/HardKnocks-SportsTribal/121.m3u8",
-        "label": "SD"
-      }
-    ],
     "logoUrl": "https://i.imgur.com/nt9B6jx.png",
     "source": "iptv-org"
   },
@@ -853,8 +843,8 @@
   },
   {
     "id": "jag",
-    "name": "JAG (United States)",
-    "brand": "JAG (United States)",
+    "name": "JAG",
+    "brand": "JAG",
     "region": "Canada",
     "category": "Series",
     "color": "#6b8c92",
@@ -906,8 +896,8 @@
   },
   {
     "id": "matlock",
-    "name": "Matlock (United States) CA",
-    "brand": "Matlock (United States) CA",
+    "name": "Matlock CA",
+    "brand": "Matlock CA",
     "region": "Canada",
     "category": "Series",
     "color": "#6b8c92",
@@ -939,8 +929,8 @@
   },
   {
     "id": "mission-impossible",
-    "name": "Mission Impossible (United States) CA",
-    "brand": "Mission Impossible (United States) CA",
+    "name": "Mission Impossible CA",
+    "brand": "Mission Impossible CA",
     "region": "Canada",
     "category": "Series",
     "color": "#6b8c92",
@@ -1039,8 +1029,8 @@
   },
   {
     "id": "mtv-catfish",
-    "name": "MTV Catfish (United States)",
-    "brand": "MTV Catfish (United States)",
+    "name": "MTV Catfish",
+    "brand": "MTV Catfish",
     "region": "Canada",
     "category": "Entertainment",
     "color": "#6b8c92",
@@ -1073,8 +1063,8 @@
   },
   {
     "id": "mtv-dating",
-    "name": "MTV Dating (United States) CA",
-    "brand": "MTV Dating (United States) CA",
+    "name": "MTV Dating CA",
+    "brand": "MTV Dating CA",
     "region": "Canada",
     "category": "Series",
     "color": "#6b8c92",
@@ -1107,8 +1097,8 @@
   },
   {
     "id": "mtv-reality",
-    "name": "MTV Reality (United States) CA",
-    "brand": "MTV Reality (United States) CA",
+    "name": "MTV Reality CA",
+    "brand": "MTV Reality CA",
     "region": "Canada",
     "category": "Entertainment",
     "color": "#6b8c92",
@@ -1124,8 +1114,8 @@
   },
   {
     "id": "mtv-ridiculousness",
-    "name": "MTV Ridiculousness (United States) CA",
-    "brand": "MTV Ridiculousness (United States) CA",
+    "name": "MTV Ridiculousness CA",
+    "brand": "MTV Ridiculousness CA",
     "region": "Canada",
     "category": "Entertainment",
     "color": "#6b8c92",
@@ -1175,8 +1165,8 @@
   },
   {
     "id": "ncis",
-    "name": "NCIS (United States) CA",
-    "brand": "NCIS (United States) CA",
+    "name": "NCIS CA",
+    "brand": "NCIS CA",
     "region": "Canada",
     "category": "Series",
     "color": "#6b8c92",
@@ -1192,8 +1182,8 @@
   },
   {
     "id": "ncis-los-angeles",
-    "name": "NCIS: Los Angeles (United States)",
-    "brand": "NCIS: Los Angeles (United States)",
+    "name": "NCIS: Los Angeles",
+    "brand": "NCIS: Los Angeles",
     "region": "Canada",
     "category": "Series",
     "color": "#6b8c92",
@@ -1292,12 +1282,6 @@
     "guide": "https://www.outdoorchannelplus.com/",
     "stream": "http://23.237.104.106:8080/USA_OUTDOOR/index.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
-    "streamAlts": [
-      {
-        "url": "https://amg00718-outdoorchannela-outdoortv-samsungau-uc7mp.amagi.tv/playlist/amg00718-outdoorchannela-outdoortv-samsungau/playlist.m3u8",
-        "label": "SD"
-      }
-    ],
     "insecureStream": true,
     "logoUrl": "https://i.imgur.com/Kh4MWaY.png",
     "source": "iptv-org"
@@ -1322,8 +1306,8 @@
   },
   {
     "id": "paramount-network",
-    "name": "Paramount Network",
-    "brand": "Paramount Network",
+    "name": "Paramount Network (United States)",
+    "brand": "Paramount Network (United States)",
     "region": "Canada",
     "category": "Movies",
     "color": "#6b8c92",
@@ -1582,8 +1566,8 @@
   },
   {
     "id": "pluto-tv-horror",
-    "name": "Pluto TV Horror (United States) CA",
-    "brand": "Pluto TV Horror (United States) CA",
+    "name": "Pluto TV Horror CA",
+    "brand": "Pluto TV Horror CA",
     "region": "Canada",
     "category": "Movies",
     "color": "#6b8c92",
@@ -1599,8 +1583,8 @@
   },
   {
     "id": "pluto-tv-paranormal",
-    "name": "Pluto TV Paranormal (United States) CA",
-    "brand": "Pluto TV Paranormal (United States) CA",
+    "name": "Pluto TV Paranormal CA",
+    "brand": "Pluto TV Paranormal CA",
     "region": "Canada",
     "category": "Documentary",
     "color": "#6b8c92",
@@ -1701,8 +1685,8 @@
   },
   {
     "id": "pluto-tv-sci-fi",
-    "name": "Pluto TV Sci-Fi (United States) CA",
-    "brand": "Pluto TV Sci-Fi (United States) CA",
+    "name": "Pluto TV Sci-Fi CA",
+    "brand": "Pluto TV Sci-Fi CA",
     "region": "Canada",
     "category": "Movies",
     "color": "#6b8c92",
@@ -1735,8 +1719,8 @@
   },
   {
     "id": "pluto-tv-true-crime",
-    "name": "Pluto TV True Crime (United States) CA",
-    "brand": "Pluto TV True Crime (United States) CA",
+    "name": "Pluto TV True Crime CA",
+    "brand": "Pluto TV True Crime CA",
     "region": "Canada",
     "category": "Documentary",
     "color": "#6b8c92",
@@ -1752,8 +1736,8 @@
   },
   {
     "id": "pluto-tv-westerns",
-    "name": "Pluto TV Westerns (United States) CA",
-    "brand": "Pluto TV Westerns (United States) CA",
+    "name": "Pluto TV Westerns CA",
+    "brand": "Pluto TV Westerns CA",
     "region": "Canada",
     "category": "Movies",
     "color": "#6b8c92",
@@ -1778,9 +1762,14 @@
     "description": "Playing directly in Onde via the public stream listed by iptv-org (category: General).",
     "official": "https://primeasiatv.com/",
     "guide": "https://primeasiatv.com/",
-    "stream": "http://primeasia.selfip.net/Samsung/index.m3u8",
+    "stream": "https://stream.ottlive.co.in/primeasia/index.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
-    "insecureStream": true,
+    "streamAlts": [
+      {
+        "url": "http://primeasia.selfip.net/Samsung/index.m3u8",
+        "label": "SD"
+      }
+    ],
     "logoUrl": "https://jiotvimages.cdn.jio.com/dare_images/images/Prime_Asia_HD.png",
     "source": "iptv-org"
   },
@@ -1868,8 +1857,8 @@
   },
   {
     "id": "rawhide",
-    "name": "Rawhide (United States) CA",
-    "brand": "Rawhide (United States) CA",
+    "name": "Rawhide CA",
+    "brand": "Rawhide CA",
     "region": "Canada",
     "category": "Movies",
     "color": "#6b8c92",
@@ -1968,8 +1957,8 @@
   },
   {
     "id": "south-park",
-    "name": "South Park (United States)",
-    "brand": "South Park (United States)",
+    "name": "South Park",
+    "brand": "South Park",
     "region": "Canada",
     "category": "Animation",
     "color": "#6b8c92",
@@ -2002,8 +1991,8 @@
   },
   {
     "id": "south-park-cartman-collection",
-    "name": "South Park: Cartman Collection (United States)",
-    "brand": "South Park: Cartman Collection (United States)",
+    "name": "South Park: Cartman Collection",
+    "brand": "South Park: Cartman Collection",
     "region": "Canada",
     "category": "Animation",
     "color": "#6b8c92",
@@ -2019,8 +2008,8 @@
   },
   {
     "id": "south-park-kenny-collection",
-    "name": "South Park: Kenny Collection (United States)",
-    "brand": "South Park: Kenny Collection (United States)",
+    "name": "South Park: Kenny Collection",
+    "brand": "South Park: Kenny Collection",
     "region": "Canada",
     "category": "Animation",
     "color": "#6b8c92",
@@ -2036,8 +2025,8 @@
   },
   {
     "id": "south-park-kyle-collection",
-    "name": "South Park: Kyle Collection (United States)",
-    "brand": "South Park: Kyle Collection (United States)",
+    "name": "South Park: Kyle Collection",
+    "brand": "South Park: Kyle Collection",
     "region": "Canada",
     "category": "Animation",
     "color": "#6b8c92",
@@ -2053,8 +2042,8 @@
   },
   {
     "id": "south-park-stan-collection",
-    "name": "South Park: Stan Collection (United States)",
-    "brand": "South Park: Stan Collection (United States)",
+    "name": "South Park: Stan Collection",
+    "brand": "South Park: Stan Collection",
     "region": "Canada",
     "category": "Animation",
     "color": "#6b8c92",
@@ -2420,8 +2409,8 @@
   },
   {
     "id": "the-new-detectives",
-    "name": "The New Detectives (United States) CA",
-    "brand": "The New Detectives (United States) CA",
+    "name": "The New Detectives CA",
+    "brand": "The New Detectives CA",
     "region": "Canada",
     "category": "Series",
     "color": "#6b8c92",
@@ -2506,8 +2495,8 @@
   },
   {
     "id": "tortues-ninja-tv",
-    "name": "Tortues Ninja TV (United States)",
-    "brand": "Tortues Ninja TV (United States)",
+    "name": "Tortues Ninja TV",
+    "brand": "Tortues Ninja TV",
     "region": "Canada",
     "category": "Kids",
     "color": "#6b8c92",
@@ -2539,8 +2528,8 @@
   },
   {
     "id": "totally-turtles",
-    "name": "Totally Turtles (United States) CA",
-    "brand": "Totally Turtles (United States) CA",
+    "name": "Totally Turtles CA",
+    "brand": "Totally Turtles CA",
     "region": "Canada",
     "category": "Kids",
     "color": "#6b8c92",
@@ -2585,6 +2574,12 @@
     "guide": "https://www.rtve.es/play/tve-internacional/",
     "stream": "https://rtvelivestream-rtveplayplus.rtve.es/rtvesec/int/tvei_ame_main_1080.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/ca.m3u",
+    "streamAlts": [
+      {
+        "url": "https://barinaslive1.boldmss.com/TVE/TVE.isml/index.m3u8",
+        "label": "SD"
+      }
+    ],
     "limited": true,
     "note": "Stream flagged geo-blocked in the iptv-org directory: playback is limited to the regions the broadcaster allows.",
     "logoUrl": "https://i.ibb.co/RpKLCMvp/tve.png",
@@ -2747,10 +2742,6 @@
       {
         "url": "https://amg00090-blueantmedia-naturetime-samsungse-axgcn.amagi.tv/playlist/amg00090-blueantmedia-naturetime-samsungse/playlist.m3u8",
         "label": "SD · amg00090-blueantmedia-naturetime-s…"
-      },
-      {
-        "url": "https://amg01515-amg01515c43-samsung-gb-9038.playouts.now.amagi.tv/playlist.m3u8",
-        "label": "UK"
       }
     ],
     "logoUrl": "https://i.imgur.com/72JmyjM.png",

@@ -71,6 +71,24 @@
     "source": "iptv-org"
   },
   {
+    "id": "30-a-darcizzle-offshore",
+    "name": "30A Darcizzle Offshore",
+    "brand": "30A Darcizzle Offshore",
+    "region": "USA",
+    "category": "Outdoor",
+    "color": "#6b8c92",
+    "language": "en",
+    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Outdoor).",
+    "official": "https://channelstore.roku.com/en-ca/details/1b2681ea44d80b53d4af1e7fa103eb2c/darcizzle-offshore",
+    "guide": "https://channelstore.roku.com/en-ca/details/1b2681ea44d80b53d4af1e7fa103eb2c/darcizzle-offshore",
+    "stream": "https://30a-tv.com/darcizzle.m3u8",
+    "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
+    "limited": true,
+    "note": "Stream refused (HTTP 403) from outside its region when checked: playback is probably limited to the broadcaster's country.",
+    "logoUrl": "https://i.imgur.com/Q4l2uao.png",
+    "source": "iptv-org"
+  },
+  {
     "id": "30-a-georgia-hollywood-review",
     "name": "30A Georgia Hollywood Review",
     "brand": "30A Georgia Hollywood Review",
@@ -203,6 +221,41 @@
     "source": "iptv-org"
   },
   {
+    "id": "30-a-the-beach-show",
+    "name": "30A The Beach Show",
+    "brand": "30A The Beach Show",
+    "region": "USA",
+    "category": "Shop",
+    "color": "#6b8c92",
+    "language": "en",
+    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Shop).",
+    "official": "https://30a-tv.com/30a/the-beach-show/",
+    "guide": "https://30a-tv.com/30a/the-beach-show/",
+    "stream": "https://30a-tv.com/beachy.m3u8",
+    "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
+    "limited": true,
+    "note": "Stream refused (HTTP 403) from outside its region when checked: playback is probably limited to the broadcaster's country.",
+    "logoUrl": "https://i.imgur.com/0j5Aget.png",
+    "source": "iptv-org"
+  },
+  {
+    "id": "30-atv-classic-movies",
+    "name": "30A TV Classic Movies",
+    "brand": "30A TV Classic Movies",
+    "region": "USA",
+    "category": "Movies",
+    "color": "#6b8c92",
+    "language": "en",
+    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Movies).",
+    "official": "https://30a-tv.com/m3u8-channels/",
+    "guide": "https://30a-tv.com/m3u8-channels/",
+    "stream": "https://30a-tv.com/feeds/pzaz/30atvmovies.m3u8",
+    "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
+    "limited": true,
+    "note": "Stream refused (HTTP 403) from outside its region when checked: playback is probably limited to the broadcaster's country.",
+    "source": "iptv-org"
+  },
+  {
     "id": "30-a-we-love-cars",
     "name": "30A We Love Cars",
     "brand": "30A We Love Cars",
@@ -229,9 +282,8 @@
     "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Movies).",
     "official": "https://50centaction.com/",
     "guide": "https://50centaction.com/",
-    "stream": "https://jmp2.uk/plu-68487fb3f212bedacf5a53e3.m3u8",
+    "stream": "https://amg00353-amg00353c49-vizio-us-7989.playouts.now.amagi.tv/playlist.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
-    "nativeHlsOnly": true,
     "logoUrl": "https://provider-static.plex.tv/epg/cms/production/bcfb9977-809f-49ae-acc7-430f2c6ffb26/50CentAction_Logo_1500x1000_DarkBG_-_Chris_Connors.png",
     "source": "iptv-org"
   },
@@ -322,8 +374,8 @@
   },
   {
     "id": "abc",
-    "name": "ABC KAAL",
-    "brand": "ABC KAAL",
+    "name": "ABC",
+    "brand": "ABC",
     "region": "USA",
     "category": "General",
     "color": "#6b8c92",
@@ -335,20 +387,28 @@
     "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
     "streamAlts": [
       {
-        "url": "https://aegis-cloudfront-1.tubi.video/69c4e4f9-84fa-43eb-b38e-6d1f9464ca73/playlist.m3u8",
+        "url": "https://amg01438-amg01438c4-vizio-us-10920.playouts.now.amagi.tv/playlist.m3u8",
+        "label": "KATC"
+      },
+      {
+        "url": "https://amg01438-amg01438c13-vizio-us-10921.playouts.now.amagi.tv/playlist.m3u8",
         "label": "KEROTV"
       },
       {
-        "url": "https://aegis-cloudfront-1.tubi.video/1a352414-3a30-4f42-b14b-c091d02a5e45/playlist.m3u8",
+        "url": "https://amg01438-amg01438c6-vizio-us-10897.playouts.now.amagi.tv/playlist.m3u8",
         "label": "KGTV"
       },
       {
-        "url": "https://aegis-cloudfront-1.tubi.video/a53514a7-f2aa-4d34-802e-c2b5594fc0d7/playlist.m3u8",
+        "url": "https://amg01438-amg01438c3-vizio-us-10813.playouts.now.amagi.tv/playlist.m3u8",
         "label": "KGUNTV"
       },
       {
         "url": "https://fuel-streaming-prod01.fuelmedia.io/v1/sem/c4067ddc-0e67-4928-b7ec-624481f721a6.m3u8",
         "label": "KITV"
+      },
+      {
+        "url": "https://amg01438-amg01438c5-vizio-us-10929.playouts.now.amagi.tv/playlist.m3u8",
+        "label": "KIVITV"
       },
       {
         "url": "https://content.uplynk.com/channel/64ca339f04964a5e961c3207a7771bf1.m3u8",
@@ -357,16 +417,10 @@
       {
         "url": "https://aegis-cloudfront-1.tubi.video/2dba5dd9-4097-45e3-b169-56735cc48476/playlist.m3u8",
         "label": "KOATTV"
-      },
-      {
-        "url": "https://amg01942-amg01942c2-stirr-us-10173.playouts.now.amagi.tv/playlist.m3u8",
-        "label": "KSTPTV"
-      },
-      {
-        "url": "https://content.uplynk.com/channel/9d4e02c9c3544c269d32e6b316792c8f.m3u8",
-        "label": "KXXV"
       }
     ],
+    "limited": true,
+    "note": "Stream flagged geo-blocked in the iptv-org directory: playback is limited to the regions the broadcaster allows.",
     "logoUrl": "https://i.imgur.com/pvXZ8DX.png",
     "source": "iptv-org"
   },
@@ -935,8 +989,14 @@
     "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Series).",
     "official": "https://pluto.tv/en/live-tv/all-reality-by-we-tv",
     "guide": "https://pluto.tv/en/live-tv/all-reality-by-we-tv",
-    "stream": "https://pb-6pmy4e08w6rny.akamaized.net/playlist.m3u8",
+    "stream": "https://amc-absolutereality-1-us.vizio.wurl.tv/playlist.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
+    "streamAlts": [
+      {
+        "url": "https://pb-6pmy4e08w6rny.akamaized.net/playlist.m3u8",
+        "label": "SD"
+      }
+    ],
     "limited": true,
     "note": "Stream refused (HTTP 403) from outside its region when checked: playback is probably limited to the broadcaster's country.",
     "logoUrl": "https://i.imgur.com/HZTz5HJ.png",
@@ -986,8 +1046,18 @@
     "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Entertainment).",
     "official": "https://watch.plex.tv/live-tv/channel/amc-en-espanol",
     "guide": "https://watch.plex.tv/live-tv/channel/amc-en-espanol",
-    "stream": "https://pb-fmbyorn1d0n1n.akamaized.net/v1/amc_amcespanol_3/samsungheadend_us/latest/main/hls/playlist.m3u8",
+    "stream": "https://amc-amcespanol-1-us.vizio.wurl.tv/playlist.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
+    "streamAlts": [
+      {
+        "url": "https://amc-amcespanol-1-us.plex.wurl.tv/playlist.m3u8",
+        "label": "SD"
+      },
+      {
+        "url": "https://pb-fmbyorn1d0n1n.akamaized.net/v1/amc_amcespanol_3/samsungheadend_us/latest/main/hls/playlist.m3u8",
+        "label": "SD · pb-fmbyorn1d0n1n.akamaized.net"
+      }
+    ],
     "limited": true,
     "note": "Stream refused (HTTP 403) from outside its region when checked: playback is probably limited to the broadcaster's country.",
     "logoUrl": "https://i.imgur.com/L1h6W5Q.png",
@@ -1008,8 +1078,12 @@
     "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
     "streamAlts": [
       {
-        "url": "https://pb-zwcfuzg8t5abc.akamaized.net/Americas_Test_Kitchen.m3u8",
+        "url": "https://amg01420-americastestkitchen-amg01420c1-vizio-us-887.playouts.now.amagi.tv/playlist/amg01420-americastestkitchen-americastestkitchen-vizious/playlist.m3u8",
         "label": "SD"
+      },
+      {
+        "url": "https://pb-zwcfuzg8t5abc.akamaized.net/Americas_Test_Kitchen.m3u8",
+        "label": "SD · pb-zwcfuzg8t5abc.akamaized.net"
       },
       {
         "url": "https://amg01420-americastestkitchen-amg01420c1-xumo-us-878.playouts.now.amagi.tv/playlist.m3u8",
@@ -1318,7 +1392,6 @@
     "guide": "https://www.atlantaga.gov/government/channel-26",
     "stream": "https://securestream11.champds.com/LIVE/AtlantaGALIVE/AtlantaGALIVE.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
-    "nativeHlsOnly": true,
     "logoUrl": "https://i.imgur.com/s4fqNMt.png",
     "source": "iptv-org"
   },
@@ -1489,13 +1562,27 @@
       {
         "url": "https://a-cdn.klowdtv.com/live1/awee/playlist.m3u8",
         "label": "SD"
-      },
-      {
-        "url": "https://aweencore-vizio.amagi.tv/playlist.m3u8",
-        "label": "SD · aweencore-vizio.amagi.tv"
       }
     ],
     "logoUrl": "https://i.imgur.com/hL8i7Ar.png",
+    "source": "iptv-org"
+  },
+  {
+    "id": "axstv",
+    "name": "AXS TV",
+    "brand": "AXS TV",
+    "region": "USA",
+    "category": "Music",
+    "color": "#6b8c92",
+    "language": "en",
+    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Music).",
+    "official": "https://www.axs.tv/",
+    "guide": "https://www.axs.tv/",
+    "stream": "https://tvsen3.aynaott.com/P2fJzfsg/index.m3u8",
+    "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
+    "limited": true,
+    "note": "Stream refused (HTTP 403) from outside its region when checked: playback is probably limited to the broadcaster's country.",
+    "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/AXS_TV_logo.svg/960px-AXS_TV_logo.svg.png",
     "source": "iptv-org"
   },
   {
@@ -1539,8 +1626,14 @@
     "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Documentary).",
     "official": "https://www.fuse.tv/v/fuse-backstage/a4068154335cc15ab055a34979c5e1c4",
     "guide": "https://www.fuse.tv/v/fuse-backstage/a4068154335cc15ab055a34979c5e1c4",
-    "stream": "https://d2ah48mnofquik.cloudfront.net/Backstage.m3u8",
+    "stream": "https://fusexl-vizio.amagi.tv/playlist.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
+    "streamAlts": [
+      {
+        "url": "https://d2ah48mnofquik.cloudfront.net/Backstage.m3u8",
+        "label": "SD"
+      }
+    ],
     "limited": true,
     "note": "Stream refused (HTTP 403) from outside its region when checked: playback is probably limited to the broadcaster's country.",
     "logoUrl": "https://i.imgur.com/qcTNvNU.png",
@@ -1720,20 +1813,12 @@
     "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Sports).",
     "official": "https://www.beinsportsxtra.com/",
     "guide": "https://www.beinsportsxtra.com/",
-    "stream": "https://bein-beinxtrasports-firetv.amagi.tv/playlist.m3u8",
+    "stream": "https://d9ssxzmclhfo4.cloudfront.net/bein_sports.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
     "streamAlts": [
       {
-        "url": "https://d9ssxzmclhfo4.cloudfront.net/bein_sports.m3u8",
-        "label": "SD"
-      },
-      {
         "url": "https://aegis-cloudfront-1.tubi.video/651ee7d3-e75b-4748-be86-422d43ff24b6/playlist.m3u8",
-        "label": "SD · aegis-cloudfront-1.tubi.video"
-      },
-      {
-        "url": "https://bein-xtra-xumo.amagi.tv/playlist.m3u8",
-        "label": "SD · bein-xtra-xumo.amagi.tv"
+        "label": "SD"
       }
     ],
     "logoUrl": "https://i.ibb.co/HT49GPmB/XTRA-2.png",
@@ -1857,19 +1942,8 @@
     "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Entertainment).",
     "official": "https://pluto.tv/en/live-tv/best-of-dr-phil",
     "guide": "https://pluto.tv/en/live-tv/best-of-dr-phil",
-    "stream": "https://jmp2.uk/plu-666815f24b9fb400083f7e31.m3u8",
+    "stream": "https://44afb29d.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/Vml6aW9fRHJQaGlsX0hMUw/playlist.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
-    "streamAlts": [
-      {
-        "url": "https://jmp2.uk/plu-65a7b01907e03a0008913e8f.m3u8",
-        "label": "SD"
-      },
-      {
-        "url": "https://jmp2.uk/plu-60f760bbdf090700075d7bfe.m3u8",
-        "label": "SD · jmp2.uk"
-      }
-    ],
-    "nativeHlsOnly": true,
     "logoUrl": "https://i.imgur.com/Jj0wTFQ.png",
     "source": "iptv-org"
   },
@@ -2312,6 +2386,10 @@
         "label": "US"
       },
       {
+        "url": "https://2fa38f3b.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/Vml6aW9fQmxvb21iZXJnT3JpZ2luYWxzLTFfSExT/playlist.m3u8",
+        "label": "US · 2fa38f3b.wurl.com"
+      },
+      {
         "url": "https://d3qwwydnxv5vo9.cloudfront.net/v1/bloomberg_quicktake_3/samsungheadend_us/latest/main/hls/playlist.m3u8",
         "label": "US · d3qwwydnxv5vo9.cloudfront.net"
       },
@@ -2360,6 +2438,10 @@
       {
         "url": "https://d2d98ykcmmhgd4.cloudfront.net/v1/bloomberg_bloombergtv_2/samsungheadend_us/latest/main/hls/playlist.m3u8",
         "label": "Plus · d2d98ykcmmhgd4.cloudfront.net"
+      },
+      {
+        "url": "https://tvsen6.aynaott.com/bloombergtv/index.m3u8",
+        "label": "US · tvsen6.aynaott.com"
       }
     ],
     "logoUrl": "https://i.imgur.com/OuogLHx.png",
@@ -2400,8 +2482,8 @@
   },
   {
     "id": "boomerang",
-    "name": "Boomerang",
-    "brand": "Boomerang",
+    "name": "Boomerang (United States)",
+    "brand": "Boomerang (United States)",
     "region": "USA",
     "category": "Kids",
     "color": "#6b8c92",
@@ -2550,8 +2632,12 @@
     "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
     "streamAlts": [
       {
-        "url": "https://pb-ippotemhtglhp.akamaized.net/playlist.m3u8",
+        "url": "https://linear-796.frequency.stream/mt/vizio/796/hls/master/playlist.m3u8",
         "label": "SD"
+      },
+      {
+        "url": "https://pb-ippotemhtglhp.akamaized.net/playlist.m3u8",
+        "label": "SD · pb-ippotemhtglhp.akamaized.net"
       }
     ],
     "logoUrl": "https://i.imgur.com/PJdzoLN.png",
@@ -2574,6 +2660,24 @@
     "source": "iptv-org"
   },
   {
+    "id": "butv10",
+    "name": "BUTV10",
+    "brand": "BUTV10",
+    "region": "USA",
+    "category": "Education",
+    "color": "#6b8c92",
+    "language": "en",
+    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Education).",
+    "official": "https://www.butv10.com/",
+    "guide": "https://www.butv10.com/",
+    "stream": "https://cdnapisec.kaltura.com/p/2184561/sp/218456100/playManifest/entryId/1_68qxw4eu/format/applehttp/a.m3u8",
+    "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
+    "limited": true,
+    "note": "Stream refused (HTTP 403) from outside its region when checked: playback is probably limited to the broadcaster's country. Channel flagged \"Not 24/7\" in the iptv-org directory: part-time schedule.",
+    "logoUrl": "https://i.imgur.com/Iv1Fe67.png",
+    "source": "iptv-org"
+  },
+  {
     "id": "buzzr",
     "name": "Buzzr",
     "brand": "Buzzr",
@@ -2584,11 +2688,11 @@
     "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Entertainment).",
     "official": "https://buzzrtv.com/",
     "guide": "https://buzzrtv.com/",
-    "stream": "https://buzzrota-ono.amagi.tv/playlist.m3u8",
+    "stream": "https://aegis-cloudfront-1.tubi.video/d4038326-a3e3-4aba-b1f1-f0526c912c74/playlist.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
     "streamAlts": [
       {
-        "url": "https://aegis-cloudfront-1.tubi.video/d4038326-a3e3-4aba-b1f1-f0526c912c74/playlist.m3u8",
+        "url": "https://buzzr-vizio.amagi.tv/playlist.m3u8",
         "label": "SD"
       },
       {
@@ -2690,12 +2794,16 @@
     "description": "Playing directly in Onde via the public stream listed by iptv-org (category: General).",
     "official": "https://www.byutv.org/",
     "guide": "https://www.byutv.org/",
-    "stream": "https://d13j8jpstr8iqz.cloudfront.net/BYUtv.m3u8",
+    "stream": "https://amg02604-byutv-amg02604c2-vizio-us-3726.playouts.now.amagi.tv/playlist.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
     "streamAlts": [
       {
-        "url": "https://amg02604-byutv-amg02604c2-firetv-us-4981.playouts.now.amagi.tv/playlist.m3u8",
+        "url": "https://d13j8jpstr8iqz.cloudfront.net/BYUtv.m3u8",
         "label": "SD"
+      },
+      {
+        "url": "https://amg02604-byutv-amg02604c2-firetv-us-4981.playouts.now.amagi.tv/playlist.m3u8",
+        "label": "SD · amg02604-byutv-amg02604c2-firetv-u…"
       }
     ],
     "limited": true,
@@ -2714,16 +2822,12 @@
     "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Music).",
     "official": "https://cmctv.com/",
     "guide": "https://cmctv.com/",
-    "stream": "https://cmc-cmctv-cineverse.amagi.tv/playlist.m3u8",
+    "stream": "https://cmc-kowdtv.amagi.tv/playlist.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
     "streamAlts": [
       {
-        "url": "https://cmc-kowdtv.amagi.tv/playlist.m3u8",
-        "label": "SD"
-      },
-      {
         "url": "https://cmc-ono.amagi.tv/hls/amagi_hls_data_cmcAAAAAA-cmc-ono/CDN/playlist.m3u8",
-        "label": "SD · cmc-ono.amagi.tv"
+        "label": "SD"
       },
       {
         "url": "https://cmc-ono.amagi.tv/playlist.m3u8",
@@ -2747,6 +2851,24 @@
     "stream": "https://rpn.bozztv.com/gusa/gusa-camerasmile/index.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
     "logoUrl": "https://i.imgur.com/V5h4R83.png",
+    "source": "iptv-org"
+  },
+  {
+    "id": "camp-spoopy",
+    "name": "Camp Spoopy",
+    "brand": "Camp Spoopy",
+    "region": "USA",
+    "category": "Kids",
+    "color": "#6b8c92",
+    "language": "en",
+    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Kids).",
+    "official": "https://iptv-org.github.io/iptv/countries/us.m3u",
+    "guide": "https://iptv-org.github.io/iptv/countries/us.m3u",
+    "stream": "https://stream.ads.ottera.tv/playlist.m3u8?network_id=269",
+    "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
+    "limited": true,
+    "note": "Stream refused (HTTP 403) from outside its region when checked: playback is probably limited to the broadcaster's country.",
+    "logoUrl": "https://img2.static-ottera.com/prod/tg/linear_channel/logo/640x360/camp-spoopy-2021_1920-x-1080_option-5.jpg",
     "source": "iptv-org"
   },
   {
@@ -2866,8 +2988,8 @@
   },
   {
     "id": "car-chase",
-    "name": "Car Chase (United States)",
-    "brand": "Car Chase (United States)",
+    "name": "Car Chase",
+    "brand": "Car Chase",
     "region": "USA",
     "category": "Entertainment",
     "color": "#6b8c92",
@@ -2913,11 +3035,11 @@
     "streamAlts": [
       {
         "url": "http://212.5.144.156:8080/cartoon/index.m3u8",
-        "label": "East"
+        "label": "West"
       }
     ],
     "limited": true,
-    "note": "Stream flagged geo-blocked in the iptv-org directory: playback is limited to the regions the broadcaster allows.",
+    "note": "Stream flagged geo-blocked in the iptv-org directory: playback is limited to the regions the broadcaster allows. Channel flagged \"Not 24/7\" in the iptv-org directory: part-time schedule.",
     "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Cartoon_Network_2010_logo.svg/960px-Cartoon_Network_2010_logo.svg.png",
     "source": "iptv-org"
   },
@@ -2999,6 +3121,58 @@
     "stream": "https://fastly.live.brightcove.com/6380396819112/us-east-1/734546207001/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJob3N0IjoiczFpM3ZpLmVncmVzcy50N2M3emwiLCJhY2NvdW50X2lkIjoiNzM0NTQ2MjA3MDAxIiwiZWhuIjoiZmFzdGx5LmxpdmUuYnJpZ2h0Y292ZS5jb20iLCJpc3MiOiJibGl2ZS1wbGF5YmFjay1zb3VyY2UtYXBpIiwic3ViIjoicGF0aG1hcHRva2VuIiwiYXVkIjpbIjczNDU0NjIwNzAwMSJdLCJqdGkiOiI2MzgwMzk2ODE5MTEyIn0.GDYp4IWtzwPkupEWeeOavnioVknO-Ev3UGlHvM1rE6I/playlist-hls.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
     "logoUrl": "https://i.imgur.com/9f9YMsA.png",
+    "source": "iptv-org"
+  },
+  {
+    "id": "cbs",
+    "name": "CBS KBZK",
+    "brand": "CBS KBZK",
+    "region": "USA",
+    "category": "General",
+    "color": "#6b8c92",
+    "language": "en",
+    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: General).",
+    "official": "https://www.cbs.com/",
+    "guide": "https://www.cbs.com/",
+    "stream": "https://amg01438-amg01438c32-vizio-us-10898.playouts.now.amagi.tv/playlist.m3u8",
+    "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
+    "streamAlts": [
+      {
+        "url": "https://amg00312-amg00312c44-amgplt0022.playout.now3.amagi.tv/ts-us-e2-n2/playlist/amg00312-amg00312c44-amgplt0022/playlist.m3u8",
+        "label": "KMOV"
+      },
+      {
+        "url": "https://amg01438-amg01438c9-vizio-us-10858.playouts.now.amagi.tv/playlist.m3u8",
+        "label": "KMTVTV"
+      },
+      {
+        "url": "https://amg00312-amg00312c49-amgplt0022.playout.now3.amagi.tv/ts-us-e2-n2/playlist/amg00312-amg00312c49-amgplt0022/playlist.m3u8",
+        "label": "KOLDTV"
+      },
+      {
+        "url": "https://amg01438-amg01438c14-vizio-us-10931.playouts.now.amagi.tv/playlist.m3u8",
+        "label": "KPAXTV"
+      },
+      {
+        "url": "https://amg01438-amg01438c36-vizio-us-10859.playouts.now.amagi.tv/playlist.m3u8",
+        "label": "KRTV"
+      },
+      {
+        "url": "https://amg01438-amg01438c27-vizio-us-10895.playouts.now.amagi.tv/playlist.m3u8",
+        "label": "KTVQ"
+      },
+      {
+        "url": "https://fuel-streaming-prod01.fuelmedia.io/v1/sem/e48409e7-672d-42f2-b5e0-ebb6744b0425.m3u8",
+        "label": "KWTVDT"
+      },
+      {
+        "url": "https://content.uplynk.com/channel/d1f868588ae5476dadaeff450170a183.m3u8",
+        "label": "KZTV"
+      }
+    ],
+    "limited": true,
+    "note": "Stream flagged geo-blocked in the iptv-org directory: playback is limited to the regions the broadcaster allows. Channel flagged \"Not 24/7\" in the iptv-org directory: part-time schedule.",
+    "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/7/71/KBZK_7_logo.png?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
     "source": "iptv-org"
   },
   {
@@ -3973,11 +4147,11 @@
     "description": "Playing directly in Onde via the public stream listed by iptv-org (category: News).",
     "official": "https://cnnespanol.cnn.com/",
     "guide": "https://cnnespanol.cnn.com/",
-    "stream": "https://streaming.onnethn.com/CNN_ESPANOL/playlist.m3u8",
+    "stream": "https://amg00803-cnnfast-amg00803c3-lg-es-5477.playouts.now.amagi.tv/playlist.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
     "streamAlts": [
       {
-        "url": "https://amg00803-cnnfast-amg00803c3-lg-es-5477.playouts.now.amagi.tv/playlist.m3u8",
+        "url": "https://streaming.onnethn.com/CNN_ESPANOL/playlist.m3u8",
         "label": "SD"
       }
     ],
@@ -4072,12 +4246,16 @@
     "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Comedy).",
     "official": "https://www.comedydynamics.com/where-to-watch/",
     "guide": "https://www.comedydynamics.com/where-to-watch/",
-    "stream": "https://linear-903.frequency.stream/dist/xumo/903/hls/master/playlist.m3u8",
+    "stream": "https://linear-903.frequency.stream/mt/vizio/903/hls/master/playlist.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
     "streamAlts": [
       {
-        "url": "https://d3a5mry3t5fzw9.cloudfront.net/playlist.m3u8",
+        "url": "https://linear-903.frequency.stream/dist/xumo/903/hls/master/playlist.m3u8",
         "label": "SD"
+      },
+      {
+        "url": "https://d3a5mry3t5fzw9.cloudfront.net/playlist.m3u8",
+        "label": "SD · d3a5mry3t5fzw9.cloudfront.net"
       }
     ],
     "logoUrl": "https://i.imgur.com/1lEvUOa.png",
@@ -4085,8 +4263,8 @@
   },
   {
     "id": "comedy-tv",
-    "name": "Comedy TV (United States)",
-    "brand": "Comedy TV (United States)",
+    "name": "Comedy.TV",
+    "brand": "Comedy.TV",
     "region": "USA",
     "category": "Comedy",
     "color": "#6b8c92",
@@ -4187,6 +4365,24 @@
     "source": "iptv-org"
   },
   {
+    "id": "cooking-panda",
+    "name": "Cooking Panda",
+    "brand": "Cooking Panda",
+    "region": "USA",
+    "category": "Cooking",
+    "color": "#6b8c92",
+    "language": "en",
+    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Cooking).",
+    "official": "https://cookingpanda.com/pages/contact-us",
+    "guide": "https://cookingpanda.com/pages/contact-us",
+    "stream": "https://stream-us-east-1.getpublica.com/playlist.m3u8?network_id=46",
+    "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
+    "limited": true,
+    "note": "Stream refused (HTTP 403) from outside its region when checked: playback is probably limited to the broadcaster's country.",
+    "logoUrl": "https://i.imgur.com/bhY0Zcs.png",
+    "source": "iptv-org"
+  },
+  {
     "id": "cops",
     "name": "Cops",
     "brand": "Cops",
@@ -4272,8 +4468,14 @@
     "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Documentary).",
     "official": "https://pluto.tv/en/live-tv/crime-360",
     "guide": "https://pluto.tv/en/live-tv/crime-360",
-    "stream": "https://94a3e237.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/UmFrdXRlblRWLWV1X0NyaW1lMzYwX0hMUw/playlist.m3u8",
+    "stream": "https://f82e592c.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/Vml6aW9fQ3JpbWUzNjBfSExT/playlist.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
+    "streamAlts": [
+      {
+        "url": "https://94a3e237.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/UmFrdXRlblRWLWV1X0NyaW1lMzYwX0hMUw/playlist.m3u8",
+        "label": "SD"
+      }
+    ],
     "logoUrl": "https://i.imgur.com/IjtaG1m.png",
     "source": "iptv-org"
   },
@@ -4373,8 +4575,8 @@
   },
   {
     "id": "csi",
-    "name": "CSI (United States)",
-    "brand": "CSI (United States)",
+    "name": "CSI",
+    "brand": "CSI",
     "region": "USA",
     "category": "Series",
     "color": "#6b8c92",
@@ -4826,19 +5028,8 @@
     "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Series).",
     "official": "https://pluto.tv/en/live-tv/degrassi",
     "guide": "https://pluto.tv/en/live-tv/degrassi",
-    "stream": "https://jmp2.uk/plu-62bdaf3470f09a000714a2f6.m3u8",
+    "stream": "https://amg01927-amg01927c6-amgplt0022.playout.now3.amagi.tv/ts-us-w2-n2/playlist/amg01927-amg01927c6-amgplt0022/playlist.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
-    "streamAlts": [
-      {
-        "url": "https://jmp2.uk/plu-611e71322f5f180007001dde.m3u8",
-        "label": "US"
-      },
-      {
-        "url": "https://jmp2.uk/plu-5c6eeb85c05dfc257e5a50c4.m3u8",
-        "label": "US · jmp2.uk"
-      }
-    ],
-    "nativeHlsOnly": true,
     "logoUrl": "https://i.imgur.com/vhSzfDC.png",
     "source": "iptv-org"
   },
@@ -5035,9 +5226,14 @@
     "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Auto).",
     "official": "https://iptv-org.github.io/iptv/countries/us.m3u",
     "guide": "https://iptv-org.github.io/iptv/countries/us.m3u",
-    "stream": "http://41.205.93.154/ESPNNEWS/index.m3u8",
+    "stream": "https://amg00136-wbd-amg00136c57-vizio-us-8927.playouts.now.amagi.tv/playlist.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
-    "insecureStream": true,
+    "streamAlts": [
+      {
+        "url": "http://41.205.93.154/ESPNNEWS/index.m3u8",
+        "label": "SD"
+      }
+    ],
     "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Discovery_Turbo_2025.svg/1920px-Discovery_Turbo_2025.svg.png",
     "source": "iptv-org"
   },
@@ -5052,7 +5248,7 @@
     "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Kids).",
     "official": "https://disney.go.com/disneyjunior/",
     "guide": "https://disney.go.com/disneyjunior/",
-    "stream": "https://directv-iptv-player.vercel.app/api/stream?url=http%3A%2F%2F212.5.144.156%3A8080%2Fdisneyjr%2Ftracks-v1a1%2Fmono.m3u8",
+    "stream": "https://directv-iptv-player.vercel.app/api/stream?url=http://212.5.144.156:8080/disneyjr/tracks-v1a1/mono.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
     "streamAlts": [
       {
@@ -5077,6 +5273,24 @@
     "stream": "https://video.oct.dc.gov/out/u/DCN.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
     "logoUrl": "https://i.imgur.com/GGZ8BQ8.png",
+    "source": "iptv-org"
+  },
+  {
+    "id": "diya-tv",
+    "name": "Diya TV",
+    "brand": "Diya TV",
+    "region": "USA",
+    "category": "General",
+    "color": "#6b8c92",
+    "language": "en",
+    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: General).",
+    "official": "https://www.diyatvusa.com/",
+    "guide": "https://www.diyatvusa.com/",
+    "stream": "https://stream.diyatvinc.com/diya.m3u8",
+    "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
+    "limited": true,
+    "note": "Stream refused (HTTP 403) from outside its region when checked: playback is probably limited to the broadcaster's country.",
+    "logoUrl": "https://i.imgur.com/1fC7tqH.png",
     "source": "iptv-org"
   },
   {
@@ -5190,8 +5404,8 @@
   },
   {
     "id": "e",
-    "name": "E! East",
-    "brand": "E! East",
+    "name": "E! (United States) East",
+    "brand": "E! (United States) East",
     "region": "USA",
     "category": "Entertainment",
     "color": "#6b8c92",
@@ -5238,23 +5452,6 @@
     "source": "iptv-org"
   },
   {
-    "id": "el-sembrador-nueva-evangelizacion-esne",
-    "name": "El Sembrador Nueva Evangelizacion ESNE",
-    "brand": "El Sembrador Nueva Evangelizacion ESNE",
-    "region": "USA",
-    "category": "Religious",
-    "color": "#6b8c92",
-    "language": "en",
-    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Religious).",
-    "official": "https://elsembradorministries.com/esne_deployment/",
-    "guide": "https://elsembradorministries.com/esne_deployment/",
-    "stream": "http://190.61.90.17:40000/play/a025/index.m3u8",
-    "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
-    "insecureStream": true,
-    "logoUrl": "https://i.imgur.com/APhSi1Y.jpg",
-    "source": "iptv-org"
-  },
-  {
     "id": "elbeshara-gtv",
     "name": "Elbeshara GTV",
     "brand": "Elbeshara GTV",
@@ -5283,12 +5480,16 @@
     "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Entertainment).",
     "official": "https://www.electricnow.tv/",
     "guide": "https://www.electricnow.tv/",
-    "stream": "https://amg01705-amg01705c1-amgplt0095.playout.now3.amagi.tv/playlist.m3u8",
+    "stream": "https://amg01705-amg01705c1-amgplt0022.playout.now3.amagi.tv/playlist.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
     "streamAlts": [
       {
-        "url": "https://pb-aexv6wqzkg929.akamaized.net/ElectricNOW.m3u8",
+        "url": "https://amg01705-amg01705c1-amgplt0095.playout.now3.amagi.tv/playlist.m3u8",
         "label": "SD"
+      },
+      {
+        "url": "https://pb-aexv6wqzkg929.akamaized.net/ElectricNOW.m3u8",
+        "label": "SD · pb-aexv6wqzkg929.akamaized.net"
       }
     ],
     "limited": true,
@@ -5336,6 +5537,22 @@
       }
     ],
     "logoUrl": "https://i.imgur.com/isRfHYZ.png",
+    "source": "iptv-org"
+  },
+  {
+    "id": "estv",
+    "name": "ES.TV",
+    "brand": "ES.TV",
+    "region": "USA",
+    "category": "Entertainment",
+    "color": "#6b8c92",
+    "language": "en",
+    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Entertainment).",
+    "official": "https://es.tv/",
+    "guide": "https://es.tv/",
+    "stream": "https://a-cdn.klowdtv.com/live2/estv_720p/playlist.m3u8",
+    "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
+    "logoUrl": "https://i.imgur.com/ihY01ao.png",
     "source": "iptv-org"
   },
   {
@@ -5431,6 +5648,10 @@
         "label": "SD"
       },
       {
+        "url": "https://estrellaa-estrella-games-vizio-yxcgo.amagi.tv/playlist/estrellaA-estrella-games-vizio/playlist.m3u8",
+        "label": "SD · estrellaa-estrella-games-vizio-yxc…"
+      },
+      {
         "url": "https://estrella-games-oando.amagi.tv/playlist.m3u8",
         "label": "SD · estrella-games-oando.amagi.tv"
       },
@@ -5465,16 +5686,8 @@
         "label": "SD"
       },
       {
-        "url": "https://estrellanews-glewed.amagi.tv/playlist.m3u8",
-        "label": "SD · estrellanews-glewed.amagi.tv"
-      },
-      {
         "url": "https://estrellanews-plex.amagi.tv/playlist.m3u8",
         "label": "SD · estrellanews-plex.amagi.tv"
-      },
-      {
-        "url": "https://estrellanews-roku.amagi.tv/playlist.m3u8",
-        "label": "SD · estrellanews-roku.amagi.tv"
       },
       {
         "url": "https://estrellanews-samsung-us.amagi.tv/playlist.m3u8",
@@ -5483,6 +5696,10 @@
       {
         "url": "https://aegis-cloudfront-1.tubi.video/0383cf2d-1ca5-4765-aa18-ba81329a7b05/playlist.m3u8",
         "label": "SD · aegis-cloudfront-1.tubi.video"
+      },
+      {
+        "url": "https://estrellanews-vizio.amagi.tv/playlist.m3u8",
+        "label": "SD · estrellanews-vizio.amagi.tv"
       },
       {
         "url": "https://estrellanews-xumo.amagi.tv/playlist.m3u8",
@@ -5511,16 +5728,8 @@
         "label": "SD"
       },
       {
-        "url": "https://estrellatv-glewed.amagi.tv/playlist.m3u8",
-        "label": "SD · estrellatv-glewed.amagi.tv"
-      },
-      {
         "url": "https://estrellatv-plex.amagi.tv/playlist.m3u8",
         "label": "SD · estrellatv-plex.amagi.tv"
-      },
-      {
-        "url": "https://estrellatv-roku.amagi.tv/playlist.m3u8",
-        "label": "SD · estrellatv-roku.amagi.tv"
       },
       {
         "url": "https://aegis-cloudfront-1.tubi.video/20bf77c0-dc60-46ae-8e87-c01cc7a836fc/playlist.m3u8",
@@ -5608,8 +5817,8 @@
   },
   {
     "id": "family-ties",
-    "name": "Family Ties (United States)",
-    "brand": "Family Ties (United States)",
+    "name": "Family Ties",
+    "brand": "Family Ties",
     "region": "USA",
     "category": "Series",
     "color": "#6b8c92",
@@ -5683,6 +5892,7 @@
     "guide": "https://watch.motortrend.com/",
     "stream": "https://live-manifest.production-public.tubi.io/live/e7be5ad5-9044-4151-95d4-a9aae10ab0a5/playlist.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
+    "nativeHlsOnly": true,
     "logoUrl": "https://us1-prod-images.disco-api.com/2020/7/13/4f26aaf2-a993-480d-9675-0d501fb8d86f.png?bf=0&f=png&p=true&q=85&w=250",
     "source": "iptv-org"
   },
@@ -5736,6 +5946,24 @@
     "source": "iptv-org"
   },
   {
+    "id": "fernandina-beach-channel",
+    "name": "Fernandina Beach Channel",
+    "brand": "Fernandina Beach Channel",
+    "region": "USA",
+    "category": "Legislative",
+    "color": "#6b8c92",
+    "language": "en",
+    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Legislative).",
+    "official": "https://www.fbfl.us/815/City-Meeting-Videos",
+    "guide": "https://www.fbfl.us/815/City-Meeting-Videos",
+    "stream": "https://edge-f.swagit.com/live/fernandinabeachfl/live-1-a/playlist.m3u8",
+    "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
+    "limited": true,
+    "note": "Stream refused (HTTP 403) from outside its region when checked: playback is probably limited to the broadcaster's country. Channel flagged \"Not 24/7\" in the iptv-org directory: part-time schedule.",
+    "logoUrl": "https://i.imgur.com/9UfyekJ.png",
+    "source": "iptv-org"
+  },
+  {
     "id": "fgtv",
     "name": "FGTV (United States)",
     "brand": "FGTV (United States)",
@@ -5748,7 +5976,6 @@
     "guide": "https://fultoncountyga.gov/watch-fgtv",
     "stream": "https://securestream11.champds.com/LIVE/FultonCoGALIVE/FultonCoGALIVE.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
-    "nativeHlsOnly": true,
     "logoUrl": "https://i.imgur.com/RXFmzVY.png",
     "source": "iptv-org"
   },
@@ -5932,8 +6159,16 @@
     "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
     "streamAlts": [
       {
-        "url": "https://cdn-uw2-prod.tsv2.amagi.tv/linear/amg00488-foxdigital-fox4dallaskdfw-vizious/playlist.m3u8",
+        "url": "https://amg00488-foxdigital-fox13seattlekcpq-vizious-a31ok.amagi.tv/playlist/amg00488-foxdigital-fox13seattlekcpq-vizious/playlist.m3u8",
+        "label": "KCPQ"
+      },
+      {
+        "url": "https://amg00488-foxdigital-fox4dallaskdfw-vizious-g5zvc.amagi.tv/playlist/amg00488-foxdigital-fox4dallaskdfw-vizious/playlist.m3u8",
         "label": "KDFW"
+      },
+      {
+        "url": "https://amg00488-foxdigital-amg00488c8-vizio-us-904.playouts.now.amagi.tv/playlist/amg00488-foxdigitalfast-fox9minneapoliskmsp-vizious/playlist.m3u8",
+        "label": "KMSPTV"
       },
       {
         "url": "https://cdn-uw2-prod.tsv2.amagi.tv/linear/amg00488-foxdigital-kriv-lgus/playlist.m3u8",
@@ -5944,24 +6179,16 @@
         "label": "KSAZTV"
       },
       {
+        "url": "https://amg01438-amg01438c10-vizio-us-10896.playouts.now.amagi.tv/playlist.m3u8",
+        "label": "KSTU"
+      },
+      {
         "url": "https://cdn-uw2-prod.tsv2.amagi.tv/linear/amg00488-foxdigital-ktbc-lgus/playlist.m3u8",
         "label": "KTBC"
       },
       {
-        "url": "https://cdn-uw2-prod.tsv2.amagi.tv/linear/amg00488-foxdigital-fox11losangeleskttv-vizious/playlist.m3u8",
+        "url": "https://amg00488-foxdigital-fox11losangeleskttv-vizious-a7b8z.amagi.tv/playlist/amg00488-foxdigital-fox11losangeleskttv-vizious/playlist.m3u8",
         "label": "KTTV"
-      },
-      {
-        "url": "https://content.uplynk.com/channel/8975f81e6efd4e609873c3e8e25c7756.m3u8",
-        "label": "WFTXTV"
-      },
-      {
-        "url": "https://cdn-uw2-prod.tsv2.amagi.tv/linear/amg02104-imagicommcommun-whbqbreaking-ono/playlist.m3u8",
-        "label": "WHBQTV"
-      },
-      {
-        "url": "https://cdn-uw2-prod.tsv2.amagi.tv/linear/amg00488-foxdigital-witi-lgus/playlist.m3u8",
-        "label": "WITI"
       }
     ],
     "limited": true,
@@ -5982,6 +6209,16 @@
     "guide": "https://www.foxbusiness.com/",
     "stream": "https://247preview.foxbusiness.com/hls/live/2020026/fbnv3preview/primary.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
+    "streamAlts": [
+      {
+        "url": "https://tvsen6.aynaott.com/foxbusiness/index.m3u8",
+        "label": "SD"
+      },
+      {
+        "url": "http://103.253.74.210:7070/stream/125/index.m3u8",
+        "label": "SD · 103.253.74.210"
+      }
+    ],
     "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Fox_Business.svg/960px-Fox_Business.svg.png",
     "source": "iptv-org"
   },
@@ -5996,14 +6233,9 @@
     "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Sports).",
     "official": "https://www.foxdeportes.com/",
     "guide": "https://www.foxdeportes.com/",
-    "stream": "https://live-manifest.production-public.tubi.io/live/d906efca-1302-4e29-b0d9-9a1d7a305d69/playlist.m3u8",
+    "stream": "http://23.237.104.106:8080/USA_FOX_DEPORTES/index.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
-    "streamAlts": [
-      {
-        "url": "http://23.237.104.106:8080/USA_FOX_DEPORTES/index.m3u8",
-        "label": "SD"
-      }
-    ],
+    "insecureStream": true,
     "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/FOX_Deportes_logo.png/960px-FOX_Deportes_logo.png",
     "source": "iptv-org"
   },
@@ -6018,14 +6250,16 @@
     "description": "Playing directly in Onde via the public stream listed by iptv-org (category: News).",
     "official": "https://www.foxnews.com/",
     "guide": "https://www.foxnews.com/",
-    "stream": "https://247preview.foxnews.com/hls/live/2020027/fncv3preview/primary.m3u8",
+    "stream": "https://tvsen6.aynaott.com/foxnews/index.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
     "streamAlts": [
       {
-        "url": "http://138.121.15.230:9002/FOX-NEWS/index.m3u8",
+        "url": "https://p14.usnlive.com/stream/foxnews.m3u8",
         "label": "SD"
       }
     ],
+    "limited": true,
+    "note": "Stream refused (HTTP 403) from outside its region when checked: playback is probably limited to the broadcaster's country.",
     "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Fox_News_Channel_logo.svg/960px-Fox_News_Channel_logo.svg.png",
     "source": "iptv-org"
   },
@@ -6240,8 +6474,14 @@
     "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Entertainment).",
     "official": "https://pluto.tv/en/live-tv/game-show-central",
     "guide": "https://pluto.tv/en/live-tv/game-show-central",
-    "stream": "https://pb-bunear28tuvaw.akamaized.net/v1/gsn_gameshowchannnel_1/samsungheadend_us/latest/main/hls/playlist.m3u8",
+    "stream": "https://d56be438.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/Vml6aW9fR2FtZVNob3dDZW50cmFsX0hMUw/playlist.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
+    "streamAlts": [
+      {
+        "url": "https://pb-bunear28tuvaw.akamaized.net/v1/gsn_gameshowchannnel_1/samsungheadend_us/latest/main/hls/playlist.m3u8",
+        "label": "SD"
+      }
+    ],
     "limited": true,
     "note": "Stream refused (HTTP 403) from outside its region when checked: playback is probably limited to the broadcaster's country.",
     "logoUrl": "https://i.imgur.com/Uuc5h1s.png",
@@ -6369,6 +6609,30 @@
     "source": "iptv-org"
   },
   {
+    "id": "giggle-mug",
+    "name": "Giggle Mug",
+    "brand": "Giggle Mug",
+    "region": "USA",
+    "category": "Kids",
+    "color": "#6b8c92",
+    "language": "en",
+    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Kids).",
+    "official": "https://iptv-org.github.io/iptv/countries/us.m3u",
+    "guide": "https://iptv-org.github.io/iptv/countries/us.m3u",
+    "stream": "https://tvsen3.aynaott.com/uYpFg3RV/index.m3u8",
+    "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
+    "streamAlts": [
+      {
+        "url": "https://tvsen6.aynaott.com/ytv/index.m3u8",
+        "label": "SD"
+      }
+    ],
+    "limited": true,
+    "note": "Stream refused (HTTP 403) from outside its region when checked: playback is probably limited to the broadcaster's country.",
+    "logoUrl": "https://i.imgur.com/NbNHJXo.png",
+    "source": "iptv-org"
+  },
+  {
     "id": "gillette-public-access-television-channel189",
     "name": "Gillette Public Access Television Channel 189",
     "brand": "Gillette Public Access Television Channel 189",
@@ -6381,7 +6645,6 @@
     "guide": "https://play.champds.com/gillettewy/live/7",
     "stream": "https://securestream11.champds.com/LIVE/GilletteWYLIVE3/GilletteWYLIVE3.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
-    "nativeHlsOnly": true,
     "logoUrl": "https://yt3.googleusercontent.com/ytc/AGIKgqMoPQ32FU8R2lR71LXhYrC3tCHfjJEXcm6E9PEO=s176-c-k-c0x00ffffff-no-rj",
     "source": "iptv-org"
   },
@@ -6398,7 +6661,6 @@
     "guide": "https://play.champds.com/gillettewy/live/5",
     "stream": "https://securestream11.champds.com/LIVE/GilletteWYLIVE/GilletteWYLIVE.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
-    "nativeHlsOnly": true,
     "logoUrl": "https://yt3.googleusercontent.com/ytc/AGIKgqMoPQ32FU8R2lR71LXhYrC3tCHfjJEXcm6E9PEO=s176-c-k-c0x00ffffff-no-rj",
     "source": "iptv-org"
   },
@@ -6415,7 +6677,6 @@
     "guide": "https://play.champds.com/gillettewy/live/6",
     "stream": "https://securestream11.champds.com/LIVE/GilletteWYLIVE2/GilletteWYLIVE2.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
-    "nativeHlsOnly": true,
     "logoUrl": "https://yt3.googleusercontent.com/ytc/AGIKgqMoPQ32FU8R2lR71LXhYrC3tCHfjJEXcm6E9PEO=s176-c-k-c0x00ffffff-no-rj",
     "source": "iptv-org"
   },
@@ -6631,22 +6892,6 @@
     "source": "iptv-org"
   },
   {
-    "id": "gun-az-tv",
-    "name": "GunAz TV",
-    "brand": "GunAz TV",
-    "region": "USA",
-    "category": "General",
-    "color": "#6b8c92",
-    "language": "en",
-    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: General).",
-    "official": "https://www.gunaz.tv/",
-    "guide": "https://www.gunaz.tv/",
-    "stream": "https://tv.gunaz.tv/hls/live.m3u8",
-    "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
-    "logoUrl": "https://i.imgur.com/2ZnQazl.png",
-    "source": "iptv-org"
-  },
-  {
     "id": "gunsmoke",
     "name": "Gunsmoke",
     "brand": "Gunsmoke",
@@ -6824,8 +7069,12 @@
     "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
     "streamAlts": [
       {
-        "url": "https://freecast-lukentvlive.vgcdn.net/out/v1/ef4c45af299c46aaabc3f8713f92f163/index.m3u8",
+        "url": "https://amg00353-amg00353c68-vizio-us-9821.playouts.now.amagi.tv/playlist.m3u8",
         "label": "Eastern"
+      },
+      {
+        "url": "https://freecast-lukentvlive.vgcdn.net/out/v1/ef4c45af299c46aaabc3f8713f92f163/index.m3u8",
+        "label": "Eastern · freecast-lukentvlive.vgcdn.net"
       },
       {
         "url": "https://lukentvlive.vgcdn.net/v1/master/cef183924f24adfa3d5d7601c3a17769082c0c2b/heartland/index.m3u8",
@@ -7002,8 +7251,14 @@
     "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Series).",
     "official": "https://www.aetv.com/home-made",
     "guide": "https://www.aetv.com/home-made",
-    "stream": "https://d1kgo9l74vimu0.cloudfront.net/v1/aenetworks_ae_1/samsungheadend_us/latest/main/hls/playlist.m3u8",
+    "stream": "https://3cfa9d89.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/Vml6aW9fTGl2ZWx5UGxhY2VfSExT/playlist.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
+    "streamAlts": [
+      {
+        "url": "https://d1kgo9l74vimu0.cloudfront.net/v1/aenetworks_ae_1/samsungheadend_us/latest/main/hls/playlist.m3u8",
+        "label": "SD"
+      }
+    ],
     "limited": true,
     "note": "Stream refused (HTTP 403) from outside its region when checked: playback is probably limited to the broadcaster's country.",
     "logoUrl": "https://i.imgur.com/IdGNIoB.png",
@@ -7107,6 +7362,32 @@
     "source": "iptv-org"
   },
   {
+    "id": "hsn",
+    "name": "HSN",
+    "brand": "HSN",
+    "region": "USA",
+    "category": "Shop",
+    "color": "#6b8c92",
+    "language": "en",
+    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Shop).",
+    "official": "https://www.hsn.com/",
+    "guide": "https://www.hsn.com/",
+    "stream": "https://986a99ca.wurl.com/v1/hsn_samsung/vizio_us/latest/main/hls/playlist.m3u8",
+    "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
+    "streamAlts": [
+      {
+        "url": "https://qvc-amd-live.akamaized.net/hls/live/2034113/lshsn1uswest/master.m3u8",
+        "label": "West"
+      },
+      {
+        "url": "https://a-cdn.klowdtv.com/live2/hsn_720p/playlist.m3u8",
+        "label": "East"
+      }
+    ],
+    "logoUrl": "https://m.media-amazon.com/images/I/419RyCp4+WL.png",
+    "source": "iptv-org"
+  },
+  {
     "id": "htv1-houston-television",
     "name": "HTV 1 Houston Television",
     "brand": "HTV 1 Houston Television",
@@ -7140,8 +7421,8 @@
   },
   {
     "id": "i-carly",
-    "name": "iCarly (United States) SD",
-    "brand": "iCarly (United States) SD",
+    "name": "iCarly SD",
+    "brand": "iCarly SD",
     "region": "USA",
     "category": "Series",
     "color": "#6b8c92",
@@ -7264,6 +7545,24 @@
     "source": "iptv-org"
   },
   {
+    "id": "in-touch-plus",
+    "name": "InTouch+",
+    "brand": "InTouch+",
+    "region": "USA",
+    "category": "Religious",
+    "color": "#6b8c92",
+    "language": "en",
+    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Religious).",
+    "official": "https://www.intouch.org/plus",
+    "guide": "https://www.intouch.org/plus",
+    "stream": "https://amg01540-amg01540c1-amgplt0095.playout.now3.amagi.tv/playlist.m3u8",
+    "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
+    "limited": true,
+    "note": "Stream flagged geo-blocked in the iptv-org directory: playback is limited to the regions the broadcaster allows.",
+    "logoUrl": "https://d2cc5gnf1jy2pj.cloudfront.net/custom_landing_pages/intouchplus/intouchplus_logo.svg",
+    "source": "iptv-org"
+  },
+  {
     "id": "investiga",
     "name": "Investiga US",
     "brand": "Investiga US",
@@ -7316,15 +7615,18 @@
     "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Entertainment).",
     "official": "https://iontelevision.com/",
     "guide": "https://iontelevision.com/",
-    "stream": "http://23.237.104.106:8080/USA_ION/index.m3u8",
+    "stream": "https://wurlewscripps.global.transmit.live/hls/68b9b0338cacd6fc468c222c/v1/scripps_ion_1/vizio_us/latest/main/hls/playlist.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
     "streamAlts": [
       {
-        "url": "https://pb-xhb3ic8b61whm.akamaized.net/Ion_US.m3u8",
+        "url": "http://23.237.104.106:8080/USA_ION/index.m3u8",
         "label": "East"
+      },
+      {
+        "url": "https://pb-xhb3ic8b61whm.akamaized.net/Ion_US.m3u8",
+        "label": "East · pb-xhb3ic8b61whm.akamaized.net"
       }
     ],
-    "insecureStream": true,
     "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Ion_logo.svg/960px-Ion_logo.svg.png",
     "source": "iptv-org"
   },
@@ -7421,8 +7723,8 @@
   },
   {
     "id": "jersey-shore",
-    "name": "Jersey Shore (United States)",
-    "brand": "Jersey Shore (United States)",
+    "name": "Jersey Shore",
+    "brand": "Jersey Shore",
     "region": "USA",
     "category": "Series",
     "color": "#6b8c92",
@@ -7510,13 +7812,19 @@
     "guide": "https://www.joelosteen.com/",
     "stream": "https://linear-860.frequency.stream/dist/xumo/860/hls/master/playlist.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
+    "streamAlts": [
+      {
+        "url": "https://linear-860.frequency.stream/mt/vizio/860/hls/master/playlist.m3u8",
+        "label": "SD"
+      }
+    ],
     "logoUrl": "https://www.tablotv.com/wp-content/uploads/2025/05/Osteen_black.png",
     "source": "iptv-org"
   },
   {
     "id": "justice-central-tv",
-    "name": "Justice Central TV",
-    "brand": "Justice Central TV",
+    "name": "Justice Central.TV",
+    "brand": "Justice Central.TV",
     "region": "USA",
     "category": "Entertainment",
     "color": "#6b8c92",
@@ -7644,6 +7952,24 @@
     "source": "iptv-org"
   },
   {
+    "id": "kids-flix",
+    "name": "KidsFlix",
+    "brand": "KidsFlix",
+    "region": "USA",
+    "category": "Kids",
+    "color": "#6b8c92",
+    "language": "en",
+    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Kids).",
+    "official": "https://www.kidsflix.com/",
+    "guide": "https://www.kidsflix.com/",
+    "stream": "https://stream-us-east-1.getpublica.com/playlist.m3u8?network_id=50",
+    "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
+    "limited": true,
+    "note": "Stream refused (HTTP 403) from outside its region when checked: playback is probably limited to the broadcaster's country. Channel flagged \"Not 24/7\" in the iptv-org directory: part-time schedule.",
+    "logoUrl": "https://i.imgur.com/4Pn0ADQ.png",
+    "source": "iptv-org"
+  },
+  {
     "id": "kiiold101",
     "name": "KIIO-LD 10.1",
     "brand": "KIIO-LD 10.1",
@@ -7658,6 +7984,24 @@
     "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
     "insecureStream": true,
     "logoUrl": "https://i.imgur.com/wkzwXFO.png",
+    "source": "iptv-org"
+  },
+  {
+    "id": "kiiold104",
+    "name": "KIIO-LD 10.4",
+    "brand": "KIIO-LD 10.4",
+    "region": "USA",
+    "category": "Culture",
+    "color": "#6b8c92",
+    "language": "en",
+    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Culture).",
+    "official": "https://www.aabc.tv/",
+    "guide": "https://www.aabc.tv/",
+    "stream": "https://streamer1.connectto.com/AABC_WEB_1201/index.m3u8",
+    "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
+    "limited": true,
+    "note": "Stream refused (HTTP 403) from outside its region when checked: playback is probably limited to the broadcaster's country.",
+    "logoUrl": "https://i.imgur.com/Spu4s89.png",
     "source": "iptv-org"
   },
   {
@@ -7720,12 +8064,16 @@
     "description": "Playing directly in Onde via the public stream listed by iptv-org (category: General).",
     "official": "https://www.abc15.com/",
     "guide": "https://www.abc15.com/",
-    "stream": "https://aegis-cloudfront-1.tubi.video/e923f4ce-7229-4e01-a25e-d453993dab82/playlist.m3u8",
+    "stream": "https://amg01438-amg01438c7-vizio-us-10930.playouts.now.amagi.tv/playlist.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
     "streamAlts": [
       {
-        "url": "https://content.uplynk.com/channel/9deaf22aaa33461f9cac22e030ed00ec.m3u8",
+        "url": "https://aegis-cloudfront-1.tubi.video/e923f4ce-7229-4e01-a25e-d453993dab82/playlist.m3u8",
         "label": "HD"
+      },
+      {
+        "url": "https://content.uplynk.com/channel/9deaf22aaa33461f9cac22e030ed00ec.m3u8",
+        "label": "HD · content.uplynk.com"
       }
     ],
     "logoUrl": "https://i.imgur.com/43s7KXt.png",
@@ -7744,7 +8092,6 @@
     "guide": "https://www.koct.org/channel-18",
     "stream": "https://securestream10.champds.com/LIVE/KOCTCALIVE/KOCTCALIVE.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
-    "nativeHlsOnly": true,
     "logoUrl": "https://i.imgur.com/6C71KwP.png",
     "source": "iptv-org"
   },
@@ -7761,7 +8108,6 @@
     "guide": "https://www.koct.org/channel-19",
     "stream": "https://securestream10.champds.com/LIVE/KOCTCALIVE2/KOCTCALIVE2.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
-    "nativeHlsOnly": true,
     "logoUrl": "https://i.imgur.com/6C71KwP.png",
     "source": "iptv-org"
   },
@@ -7779,24 +8125,6 @@
     "stream": "https://2-fss-1.streamhoster.com/pl_122/206858-4405346-1/playlist.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
     "logoUrl": "https://i.imgur.com/dGoQ88j.png",
-    "source": "iptv-org"
-  },
-  {
-    "id": "krgvtv52",
-    "name": "KRGV-TV 5.2",
-    "brand": "KRGV-TV 5.2",
-    "region": "USA",
-    "category": "Entertainment",
-    "color": "#6b8c92",
-    "language": "en",
-    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Entertainment).",
-    "official": "https://iptv-org.github.io/iptv/countries/us.m3u",
-    "guide": "https://iptv-org.github.io/iptv/countries/us.m3u",
-    "stream": "https://d3svnrf3rmq619.cloudfront.net/krgv-live/smil:krgv-somos.smil/playlist.m3u8",
-    "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
-    "limited": true,
-    "note": "Stream flagged geo-blocked in the iptv-org directory: playback is limited to the regions the broadcaster allows.",
-    "logoUrl": "https://i.imgur.com/kTh2jgF.png",
     "source": "iptv-org"
   },
   {
@@ -7890,9 +8218,46 @@
     "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Religious).",
     "official": "https://gia.tv/watchssh101.php?pptv=208429",
     "guide": "https://gia.tv/watchssh101.php?pptv=208429",
-    "stream": "https://live20.bozztv.com/giatvplayout7/giatv-208429/playlist.m3u8",
+    "stream": "https://183.giatvcdn.com/giatvplayout7/giatv-208429/playlist.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
+    "note": "Channel flagged \"Not 24/7\" in the iptv-org directory: part-time schedule.",
     "logoUrl": "https://gia.tv/streams/pstream/208429.png",
+    "source": "iptv-org"
+  },
+  {
+    "id": "lacrosse-tv",
+    "name": "Lacrosse TV",
+    "brand": "Lacrosse TV",
+    "region": "USA",
+    "category": "Sports",
+    "color": "#6b8c92",
+    "language": "en",
+    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Sports).",
+    "official": "https://streamstak.com/lacrossetv/",
+    "guide": "https://streamstak.com/lacrossetv/",
+    "stream": "https://a-cdn.klowdtv.com/live2/lsn_720p/playlist.m3u8",
+    "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
+    "limited": true,
+    "note": "Stream refused (HTTP 403) from outside its region when checked: playback is probably limited to the broadcaster's country.",
+    "logoUrl": "https://yt3.googleusercontent.com/ytc/AIdro_m_xSJFydxZ9QBU-85OuchjmzS0Bo0_Tukmk7to8hBfyl8=s512-c-k-c0x00ffffff-no-rj",
+    "source": "iptv-org"
+  },
+  {
+    "id": "laff",
+    "name": "Laff",
+    "brand": "Laff",
+    "region": "USA",
+    "category": "Comedy",
+    "color": "#6b8c92",
+    "language": "en",
+    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Comedy).",
+    "official": "https://www.laff.com/",
+    "guide": "https://www.laff.com/",
+    "stream": "https://tvsen3.aynaott.com/UC6a8nsf/index.m3u8",
+    "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
+    "limited": true,
+    "note": "Stream refused (HTTP 403) from outside its region when checked: playback is probably limited to the broadcaster's country.",
+    "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/LAFF_logo.png/960px-LAFF_logo.png",
     "source": "iptv-org"
   },
   {
@@ -7988,6 +8353,10 @@
       {
         "url": "https://cdn.lawandcrime.net/rewind/playlist.m3u8",
         "label": "SD"
+      },
+      {
+        "url": "https://d7fab335.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/Vml6aW9fTGF3YW5kQ3JpbWUtMV9ITFM/playlist-absolute_scte_v2.m3u8",
+        "label": "SD · d7fab335.wurl.com"
       }
     ],
     "logoUrl": "https://yt3.googleusercontent.com/CRP3YudPa55QypbDnIvuh3erLZTsn2HK8ESR-2fJFFiLJVf7US2CKQELCKK_UowmHA3wCjAdxg=s512-c-k-c0x00ffffff-no-rj",
@@ -8465,6 +8834,12 @@
     "guide": "https://watch.plex.tv/live-tv/channel/love-nature-en-espanol",
     "stream": "https://bantel-cdn1.iptvperu.tv:1936/ZyphraCast/love-nature/chunks.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
+    "streamAlts": [
+      {
+        "url": "https://amg01515-amg01515c17-vizio-us-10418.playouts.now.amagi.tv/playlist.m3u8",
+        "label": "SD"
+      }
+    ],
     "logoUrl": "https://i.imgur.com/7uNdcWB.png",
     "source": "iptv-org"
   },
@@ -8595,7 +8970,7 @@
     "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Movies).",
     "official": "https://gia.tv/watchssh101.php?pptv=209163",
     "guide": "https://gia.tv/watchssh101.php?pptv=209163",
-    "stream": "https://live20.bozztv.com/giatvplayout7/giatv-209163/playlist.m3u8",
+    "stream": "https://183.giatvcdn.com/giatvplayout7/giatv-209163/playlist.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
     "logoUrl": "https://gia.tv/streams/pptv/209163.png",
     "source": "iptv-org"
@@ -8611,7 +8986,7 @@
     "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Movies).",
     "official": "https://gia.tv/watchssh101.php?pptv=208138",
     "guide": "https://gia.tv/watchssh101.php?pptv=208138",
-    "stream": "https://live20.bozztv.com/giatvplayout7/giatv-208138/playlist.m3u8",
+    "stream": "https://183.giatvcdn.com/giatvplayout7/giatv-208138/playlist.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
     "logoUrl": "https://gia.tv/streams/pptv/208138.png",
     "source": "iptv-org"
@@ -8627,7 +9002,7 @@
     "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Movies).",
     "official": "https://gia.tv/watchssh101.php?pptv=208730",
     "guide": "https://gia.tv/watchssh101.php?pptv=208730",
-    "stream": "https://live20.bozztv.com/giatvplayout7/giatv-208730/playlist.m3u8",
+    "stream": "https://183.giatvcdn.com/giatvplayout7/giatv-208730/playlist.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
     "logoUrl": "https://gia.tv/streams/pptv/208730.png",
     "source": "iptv-org"
@@ -8643,7 +9018,7 @@
     "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Movies).",
     "official": "https://gia.tv/watchssh101.php?pptv=208817",
     "guide": "https://gia.tv/watchssh101.php?pptv=208817",
-    "stream": "https://live20.bozztv.com/giatvplayout7/giatv-208817/playlist.m3u8",
+    "stream": "https://183.giatvcdn.com/giatvplayout7/giatv-208817/playlist.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
     "logoUrl": "https://gia.tv/streams/pptv/208817.png",
     "source": "iptv-org"
@@ -8659,7 +9034,7 @@
     "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Movies).",
     "official": "https://gia.tv/watchssh101.php?pptv=209909",
     "guide": "https://gia.tv/watchssh101.php?pptv=209909",
-    "stream": "https://live20.bozztv.com/giatvplayout7/giatv-209909/playlist.m3u8",
+    "stream": "https://183.giatvcdn.com/giatvplayout7/giatv-209909/playlist.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
     "logoUrl": "https://gia.tv/streams/pptv/209909.png",
     "source": "iptv-org"
@@ -9072,8 +9447,8 @@
   },
   {
     "id": "mnt",
-    "name": "MNT WCIV",
-    "brand": "MNT WCIV",
+    "name": "MNT KCTV",
+    "brand": "MNT KCTV",
     "region": "USA",
     "category": "General",
     "color": "#6b8c92",
@@ -9081,14 +9456,28 @@
     "description": "Playing directly in Onde via the public stream listed by iptv-org (category: General).",
     "official": "https://www.mynetworktv.com/",
     "guide": "https://www.mynetworktv.com/",
-    "stream": "https://cdn-uw2-prod.tsv2.amagi.tv/linear/amg00488-foxdigital-wfld-lgus/playlist.m3u8",
+    "stream": "https://amg00312-amg00312c41-amgplt0022.playout.now3.amagi.tv/ts-us-e2-n2/playlist/amg00312-amg00312c41-amgplt0022/playlist.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
     "streamAlts": [
       {
+        "url": "https://amg00312-amg00312c43-amgplt0022.playout.now3.amagi.tv/ts-us-e2-n2/playlist/amg00312-amg00312c43-amgplt0022/playlist.m3u8",
+        "label": "KPTV"
+      },
+      {
+        "url": "https://cdn-uw2-prod.tsv2.amagi.tv/linear/amg00488-foxdigital-wfld-lgus/playlist.m3u8",
+        "label": "WFLD"
+      },
+      {
         "url": "https://live-streaming-mcdn.api.graylive.quickplay.com/woio-xos1-input-1/woio-xos1-input-1.isml/woio-xos1-input-1-audio_eng=96000-video=388000.m3u8",
         "label": "WOIO"
+      },
+      {
+        "url": "https://amg00312-amg00312c60-amgplt0022.playout.now3.amagi.tv/ts-us-e2-n2/playlist/amg00312-amg00312c60-amgplt0022/playlist.m3u8",
+        "label": "WOIO · amg00312-amg00312c60-amgplt0022.…"
       }
     ],
+    "limited": true,
+    "note": "Stream flagged geo-blocked in the iptv-org directory: playback is limited to the regions the broadcaster allows.",
     "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/MyNetworkTV_2D_Logo.svg/960px-MyNetworkTV_2D_Logo.svg.png",
     "source": "iptv-org"
   },
@@ -9304,8 +9693,14 @@
     "description": "Playing directly in Onde via the public stream listed by iptv-org (category: News).",
     "official": "https://www.ms.now/live",
     "guide": "https://www.ms.now/live",
-    "stream": "https://p13.usnlive.com/stream/msnbc.m3u8",
+    "stream": "https://tvsen6.aynaott.com/msnbc/index.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
+    "streamAlts": [
+      {
+        "url": "https://p13.usnlive.com/stream/msnbc.m3u8",
+        "label": "SD"
+      }
+    ],
     "limited": true,
     "note": "Stream refused (HTTP 403) from outside its region when checked: playback is probably limited to the broadcaster's country.",
     "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/MS_NOW_logo.svg/960px-MS_NOW_logo.svg.png",
@@ -9322,16 +9717,12 @@
     "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Series).",
     "official": "https://pluto.tv/en/live-tv/mst3k",
     "guide": "https://pluto.tv/en/live-tv/mst3k",
-    "stream": "https://mst3k-roku.amagi.tv/playlist.m3u8",
+    "stream": "https://aegis-cloudfront-1.tubi.video/99c48388-377e-4f2c-ad8e-33d0dee33bc3/playlist.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
     "streamAlts": [
       {
-        "url": "https://aegis-cloudfront-1.tubi.video/99c48388-377e-4f2c-ad8e-33d0dee33bc3/playlist.m3u8",
-        "label": "US"
-      },
-      {
         "url": "https://amg00163-shoutfactory-mst3k-xumo-r2pwd.amagi.tv/playlist.m3u8",
-        "label": "US · amg00163-shoutfactory-mst3k-xumo-r…"
+        "label": "US"
       }
     ],
     "logoUrl": "https://i.imgur.com/2LSdcga.png",
@@ -9408,23 +9799,6 @@
     ],
     "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/62b218fc511d4b00070ddc0c/colorLogoPNG.png",
-    "source": "iptv-org"
-  },
-  {
-    "id": "mtv-live",
-    "name": "MTV Live",
-    "brand": "MTV Live",
-    "region": "USA",
-    "category": "Music",
-    "color": "#6b8c92",
-    "language": "en",
-    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Music).",
-    "official": "https://www.mtv.com/live",
-    "guide": "https://www.mtv.com/live",
-    "stream": "http://23.237.104.106:8080/USA_MTV_LIVE/index.m3u8",
-    "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
-    "insecureStream": true,
-    "logoUrl": "https://i.imgur.com/3UByLqb.png",
     "source": "iptv-org"
   },
   {
@@ -9547,8 +9921,14 @@
     "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Series).",
     "official": "https://lionsgatechannels.com/channel/nash-bridges",
     "guide": "https://lionsgatechannels.com/channel/nash-bridges",
-    "stream": "https://amg00353-amg00353c35-xumo-us-3804.playouts.now.amagi.tv/playlist.m3u8",
+    "stream": "https://amg00353-amg00353c35-vizio-us-8780.playouts.now.amagi.tv/playlist.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
+    "streamAlts": [
+      {
+        "url": "https://amg00353-amg00353c35-xumo-us-3804.playouts.now.amagi.tv/playlist.m3u8",
+        "label": "SD"
+      }
+    ],
     "logoUrl": "https://images.pluto.tv/channels/666021cccb3ea10008406866/colorLogoPNG.png",
     "source": "iptv-org"
   },
@@ -9693,9 +10073,17 @@
     "description": "Playing directly in Onde via the public stream listed by iptv-org (category: General).",
     "official": "https://www.nbc.com/",
     "guide": "https://www.nbc.com/",
-    "stream": "https://d368vp0qqzvkid.cloudfront.net/11603/88889711/hls/master.m3u8?ads.xumo_channelId=88889711a&ads.xumo_ifaType=&ads.xumo_providerId=3822&ads.xumo_providerName=NBCNBA",
+    "stream": "https://amg01438-amg01438c8-vizio-us-10941.playouts.now.amagi.tv/playlist.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
     "streamAlts": [
+      {
+        "url": "https://d368vp0qqzvkid.cloudfront.net/11603/88889711/hls/master.m3u8?ads.xumo_channelId=88889711a&ads.xumo_ifaType=&ads.xumo_providerId=3822&ads.xumo_providerName=NBCNBA",
+        "label": "KNTV"
+      },
+      {
+        "url": "https://amg01438-amg01438c11-vizio-us-10928.playouts.now.amagi.tv/playlist.m3u8",
+        "label": "KOAATV"
+      },
       {
         "url": "https://content.uplynk.com/channel/e72660594b7a4182982af1690609683d.m3u8",
         "label": "KRISTV"
@@ -9705,31 +10093,24 @@
         "label": "KSBW"
       },
       {
-        "url": "https://aegis-cloudfront-1.tubi.video/d5f0543d-5f83-4a69-ba01-c5a68f0c09a1/playlist.m3u8",
+        "url": "https://amg01438-amg01438c17-vizio-us-10900.playouts.now.amagi.tv/playlist.m3u8",
         "label": "KSBY"
       },
       {
-        "url": "https://content.uplynk.com/channel/50d0fa1b042945a3a4f550f9b8412c83.m3u8",
+        "url": "https://amg01438-amg01438c35-vizio-us-10899.playouts.now.amagi.tv/playlist.m3u8",
         "label": "KSHBTV"
+      },
+      {
+        "url": "https://amg01438-amg01438c26-vizio-us-10902.playouts.now.amagi.tv/playlist.m3u8",
+        "label": "KTVHDT"
       },
       {
         "url": "https://d368vp0qqzvkid.cloudfront.net/11603/88889706/hls/master.m3u8?ads.xumo_channelId=88889706a&ads.xumo_ifaType=&ads.xumo_providerId=3831&ads.xumo_providerName=NBCNDAL",
         "label": "KXASTV"
-      },
-      {
-        "url": "https://aegis-cloudfront-1.tubi.video/888aedca-93fb-4aed-bb92-4beb8f1323c6/playlist.m3u8",
-        "label": "WBALTV"
-      },
-      {
-        "url": "https://d368vp0qqzvkid.cloudfront.net/11603/88889713/hls/master.m3u8?ads.xumo_channelId=88889713a&ads.xumo_ifaType=&ads.xumo_providerId=3820&ads.xumo_providerName=NBCNBOS",
-        "label": "WBTSCD"
-      },
-      {
-        "url": "https://aegis-cloudfront-1.tubi.video/5d314174-0110-42af-8811-feaae073ea1e/playlist.m3u8",
-        "label": "WGAL"
       }
     ],
-    "note": "Channel flagged \"Not 24/7\" in the iptv-org directory: part-time schedule.",
+    "limited": true,
+    "note": "Stream flagged geo-blocked in the iptv-org directory: playback is limited to the regions the broadcaster allows. Channel flagged \"Not 24/7\" in the iptv-org directory: part-time schedule.",
     "logoUrl": "https://i.imgur.com/nxY84W5.png",
     "source": "iptv-org"
   },
@@ -9750,17 +10131,53 @@
     "source": "iptv-org"
   },
   {
-    "id": "news12-new-jersey",
-    "name": "News12 New Jersey",
-    "brand": "News12 New Jersey",
+    "id": "newkpop",
+    "name": "NEW K-POP",
+    "brand": "NEW K-POP",
+    "region": "USA",
+    "category": "Music",
+    "color": "#6b8c92",
+    "language": "en",
+    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Music).",
+    "official": "https://watch.plex.tv/live-tv/channel/new-k-id",
+    "guide": "https://watch.plex.tv/live-tv/channel/new-k-id",
+    "stream": "https://ads.its-newid.net/api/manifest.m3u8?ads.service_id=GB17000088V&channel_id=newid_086&tp=samsung_tvplus",
+    "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
+    "limited": true,
+    "note": "Stream refused (HTTP 403) from outside its region when checked: playback is probably limited to the broadcaster's country.",
+    "logoUrl": "https://i.imgur.com/B7ILXMc.png",
+    "source": "iptv-org"
+  },
+  {
+    "id": "newkmovies",
+    "name": "NEW K.MOVIES",
+    "brand": "NEW K.MOVIES",
+    "region": "USA",
+    "category": "Movies",
+    "color": "#6b8c92",
+    "language": "en",
+    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Movies).",
+    "official": "https://watch.plex.tv/live-tv/channel/new-k-movies",
+    "guide": "https://watch.plex.tv/live-tv/channel/new-k-movies",
+    "stream": "https://ads.its-newid.net/api/manifest.m3u8?ads.service_id=GB1700007PK&channel_id=newid_343&tp=samsung_tvplus",
+    "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
+    "limited": true,
+    "note": "Stream refused (HTTP 403) from outside its region when checked: playback is probably limited to the broadcaster's country.",
+    "logoUrl": "https://i.imgur.com/wCgirjc.png",
+    "source": "iptv-org"
+  },
+  {
+    "id": "news12-hudson-valley",
+    "name": "News12 Hudson Valley",
+    "brand": "News12 Hudson Valley",
     "region": "USA",
     "category": "News",
     "color": "#6b8c92",
     "language": "en",
     "description": "Playing directly in Onde via the public stream listed by iptv-org (category: News).",
-    "official": "https://newjersey.news12.com/",
-    "guide": "https://newjersey.news12.com/",
-    "stream": "https://mdc.ott.alticeusa.net/live4.ott.optimum.net/live4-uploads/N12JH_CENT_A1/index_new.m3u8?omap=https",
+    "official": "https://hudsonvalley.news12.com/",
+    "guide": "https://hudsonvalley.news12.com/",
+    "stream": "https://mdc.ott.alticeusa.net/live4.ott.optimum.net/live4-uploads/N12HH_A1/index_new.m3u8?omap=https",
     "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
     "limited": true,
     "note": "Stream flagged geo-blocked in the iptv-org directory: playback is limited to the regions the broadcaster allows.",
@@ -9778,28 +10195,9 @@
     "description": "Playing directly in Onde via the public stream listed by iptv-org (category: News).",
     "official": "https://pluto.tv/en/live-tv/news-12-new-york",
     "guide": "https://pluto.tv/en/live-tv/news-12-new-york",
-    "stream": "https://jmp2.uk/plu-5fff49cfb5cd4f0007c2b0dc.m3u8",
+    "stream": "https://cda7bae2.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/Vml6aW9fTmV3czEyTmV3WW9ya19ITFM/playlist.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
-    "nativeHlsOnly": true,
     "logoUrl": "https://i.imgur.com/Ez7qAZP.png",
-    "source": "iptv-org"
-  },
-  {
-    "id": "news12-westchester",
-    "name": "News12 Westchester",
-    "brand": "News12 Westchester",
-    "region": "USA",
-    "category": "News",
-    "color": "#6b8c92",
-    "language": "en",
-    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: News).",
-    "official": "https://westchester.news12.com/",
-    "guide": "https://westchester.news12.com/",
-    "stream": "https://mdc.ott.alticeusa.net/live4.ott.optimum.net/live4-uploads/N12WH_A1/index_new.m3u8?omap=https",
-    "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
-    "limited": true,
-    "note": "Stream flagged geo-blocked in the iptv-org directory: playback is limited to the regions the broadcaster allows.",
-    "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/News_12_logo_2019.png/960px-News_12_logo_2019.png",
     "source": "iptv-org"
   },
   {
@@ -9861,10 +10259,6 @@
       {
         "url": "https://amg00217-newsmax-newsmax-rokuus-dur76.amagi.tv/playlist.m3u8",
         "label": "SD · amg00217-newsmax-newsmax-rokuus-du…"
-      },
-      {
-        "url": "https://newsmax-vizio.amagi.tv/playlist.m3u8",
-        "label": "SD · newsmax-vizio.amagi.tv"
       },
       {
         "url": "https://newsmax-klowdtv.amagi.tv/playlist.m3u8",
@@ -10105,16 +10499,16 @@
     "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Series).",
     "official": "https://pluto.tv/en/live-tv/nosey",
     "guide": "https://pluto.tv/en/live-tv/nosey",
-    "stream": "https://nosey-intl-1-samsungau.amagi.tv/playlist.m3u8",
+    "stream": "https://amg00514-noseybaxterllc-nosey-cineverse-hvu5a.amagi.tv/playlist/amg00514-noseybaxterllc-nosey-cineverse/playlist.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
     "streamAlts": [
       {
-        "url": "https://amg00514-noseybaxterllc-nosey-cineverse-hvu5a.amagi.tv/playlist/amg00514-noseybaxterllc-nosey-cineverse/playlist.m3u8",
+        "url": "https://aegis-cloudfront-1.tubi.video/f111d6c2-02bf-45fb-9a90-2e55b18d9f70/playlist.m3u8",
         "label": "US"
       },
       {
-        "url": "https://aegis-cloudfront-1.tubi.video/f111d6c2-02bf-45fb-9a90-2e55b18d9f70/playlist.m3u8",
-        "label": "US · aegis-cloudfront-1.tubi.video"
+        "url": "https://amg00514-amg00514c7-amgplt0022.playout.now3.amagi.tv/playlist.m3u8",
+        "label": "US · amg00514-amg00514c7-amgplt0022.pla…"
       },
       {
         "url": "https://samsungau-nosey-intl-1-samsungau-50d5x.amagi.tv/playlist/samsungau-nosey-intl-1-samsungau/playlist.m3u8",
@@ -10180,7 +10574,7 @@
         "label": "SD"
       }
     ],
-    "logoUrl": "https://i.imgur.com/2PL1Au7.png",
+    "logoUrl": "https://i.imgur.com/zrx756t.png",
     "source": "iptv-org"
   },
   {
@@ -10262,8 +10656,8 @@
         "label": "SD"
       },
       {
-        "url": "https://oneamericanews-roku-us.amagi.tv/playlist.m3u8",
-        "label": "SD · oneamericanews-roku-us.amagi.tv"
+        "url": "https://2-fss-2.streamhoster.com/pl_118/206858-4404458-1/playlist.m3u8",
+        "label": "KPVMLD"
       }
     ],
     "logoUrl": "https://i.imgur.com/T9VhMAD.png",
@@ -10408,6 +10802,28 @@
     "source": "iptv-org"
   },
   {
+    "id": "on-tv4-u",
+    "name": "OnTV4U",
+    "brand": "OnTV4U",
+    "region": "USA",
+    "category": "Shop",
+    "color": "#6b8c92",
+    "language": "en",
+    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Shop).",
+    "official": "https://www.cannellamedia.com/",
+    "guide": "https://www.cannellamedia.com/",
+    "stream": "https://ontv4u-orka.b-cdn.net/ONTV4U-ORKA/index.m3u8",
+    "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
+    "streamAlts": [
+      {
+        "url": "https://stirr.b-cdn.net/stirr/playlist.m3u8",
+        "label": "SD"
+      }
+    ],
+    "logoUrl": "https://i.imgur.com/yaCK1Mh.png",
+    "source": "iptv-org"
+  },
+  {
     "id": "orange-government-access-tv",
     "name": "Orange Government Access TV",
     "brand": "Orange Government Access TV",
@@ -10488,8 +10904,14 @@
     "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Sports).",
     "official": "https://watch.plex.tv/live-tv/channel/overtime",
     "guide": "https://watch.plex.tv/live-tv/channel/overtime",
-    "stream": "https://d1a8aq6t30gkqj.cloudfront.net/v1/amc_overtime_1/samsungheadend_us/latest/main/hls/playlist_hd.m3u8",
+    "stream": "https://25f6ebf6.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/Vml6aW9fT3ZlcnRpbWVfSExT/playlist.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
+    "streamAlts": [
+      {
+        "url": "https://d1a8aq6t30gkqj.cloudfront.net/v1/amc_overtime_1/samsungheadend_us/latest/main/hls/playlist_hd.m3u8",
+        "label": "SD"
+      }
+    ],
     "limited": true,
     "note": "Stream refused (HTTP 403) from outside its region when checked: playback is probably limited to the broadcaster's country.",
     "logoUrl": "https://i.imgur.com/9S9k4IK.png",
@@ -10711,9 +11133,8 @@
     "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Sports).",
     "official": "https://pluto.tv/en/live-tv/pbr-ridepass",
     "guide": "https://pluto.tv/en/live-tv/pbr-ridepass",
-    "stream": "https://jmp2.uk/plu-60d39387706fe50007fda8e8.m3u8",
+    "stream": "https://amg17573-pbr-amg17573c1-vizio-us-6909.playouts.now.amagi.tv/playlist.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
-    "nativeHlsOnly": true,
     "logoUrl": "https://i.imgur.com/gUxH97E.png",
     "source": "iptv-org"
   },
@@ -10762,7 +11183,7 @@
     "guide": "https://www.pbs.org/",
     "stream": "https://livestream.pbskids.org/out/v1/3fe3030a2c8045a3932f4289d9eba3e6/mst.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
-    "logoUrl": "https://i.imgur.com/ambc9le.png",
+    "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e3/PBS_Kids_logo_%282022%29.svg",
     "source": "iptv-org"
   },
   {
@@ -10778,7 +11199,7 @@
     "guide": "https://www.pbs.org/",
     "stream": "https://livestream.pbskids.org/out/v1/11f2e6b73eaa4887b3746cb863960e79/pst.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
-    "logoUrl": "https://i.imgur.com/ambc9le.png",
+    "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e3/PBS_Kids_logo_%282022%29.svg",
     "source": "iptv-org"
   },
   {
@@ -10967,8 +11388,8 @@
   },
   {
     "id": "pluto-tv-action",
-    "name": "Pluto TV Action (United States)",
-    "brand": "Pluto TV Action (United States)",
+    "name": "Pluto TV Action",
+    "brand": "Pluto TV Action",
     "region": "USA",
     "category": "Movies",
     "color": "#6b8c92",
@@ -11669,6 +12090,10 @@
         "label": "SD"
       },
       {
+        "url": "https://amg01258-raycom-amg01258c1-vizio-us-780.playouts.now.amagi.tv/playlist/amg01258-raycomsportsfast-powernation-vizious/playlist.m3u8",
+        "label": "SD · amg01258-raycom-amg01258c1-vizio-u…"
+      },
+      {
         "url": "https://d1g3ue0w0jg45k.cloudfront.net/POWERNATION.m3u8",
         "label": "SD · d1g3ue0w0jg45k.cloudfront.net"
       }
@@ -11755,10 +12180,6 @@
       {
         "url": "https://linear-205.frequency.stream/dist/xumo/205/hls/master/playlist.m3u8",
         "label": "SD · linear-205.frequency.stream"
-      },
-      {
-        "url": "https://pursuitup-klowdtv.amagi.tv/playlist.m3u8",
-        "label": "SD · pursuitup-klowdtv.amagi.tv"
       }
     ],
     "logoUrl": "https://i.imgur.com/5Vzwqts.png",
@@ -11807,12 +12228,16 @@
     "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Shop).",
     "official": "https://www.qvc.com/",
     "guide": "https://www.qvc.com/",
-    "stream": "https://qvc-amd-live.akamaized.net/hls/live/2034113/lsqvc1us/master.m3u8",
+    "stream": "https://653db23c.wurl.com/v1/qvc_samsung/vizio_us/latest/main/hls/playlist.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
     "streamAlts": [
       {
-        "url": "https://a-cdn.klowdtv.com/live2/qvclive_720p/playlist.m3u8",
+        "url": "https://qvc-amd-live.akamaized.net/hls/live/2034113/lsqvc1us/master.m3u8",
         "label": "SD"
+      },
+      {
+        "url": "https://a-cdn.klowdtv.com/live2/qvclive_720p/playlist.m3u8",
+        "label": "SD · a-cdn.klowdtv.com"
       }
     ],
     "logoUrl": "https://play-lh.googleusercontent.com/58IEgCECrId5YdLMZWL9ohHzyZCY1lNduLVxK9QF1P5EZuSIJScTWEMaw2efd88zMkc",
@@ -11939,6 +12364,10 @@
       {
         "url": "https://d2jiqiw4g5lj5k.cloudfront.net/AVSamsung/AVSamsung.m3u8",
         "label": "SD · d2jiqiw4g5lj5k.cloudfront.net"
+      },
+      {
+        "url": "https://cba95922.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/Vml6aW9fQW1lcmljYXNWb2ljZV9ITFM/playlist.m3u8",
+        "label": "SD · cba95922.wurl.com"
       }
     ],
     "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Logo_Real_America%27s_Voice.svg/960px-Logo_Real_America%27s_Voice.svg.png",
@@ -11964,8 +12393,8 @@
   },
   {
     "id": "recipe-tv",
-    "name": "Recipe TV",
-    "brand": "Recipe TV",
+    "name": "Recipe.TV",
+    "brand": "Recipe.TV",
     "region": "USA",
     "category": "Cooking",
     "color": "#6b8c92",
@@ -12032,7 +12461,7 @@
     ],
     "limited": true,
     "note": "Stream flagged geo-blocked in the iptv-org directory: playback is limited to the regions the broadcaster allows.",
-    "logoUrl": "https://i.imgur.com/iUTL0pm.png",
+    "logoUrl": "https://i.imgur.com/ofairB5.png",
     "source": "iptv-org"
   },
   {
@@ -12111,6 +12540,23 @@
         "label": "SD"
       }
     ],
+    "source": "iptv-org"
+  },
+  {
+    "id": "ridiculousness",
+    "name": "Ridiculousness",
+    "brand": "Ridiculousness",
+    "region": "USA",
+    "category": "Comedy",
+    "color": "#6b8c92",
+    "language": "en",
+    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Comedy).",
+    "official": "https://pluto.tv/live-tv/ridiculousness/details",
+    "guide": "https://pluto.tv/live-tv/ridiculousness/details",
+    "stream": "https://jmp2.uk/plu-6996296087742204bff43147.m3u8",
+    "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
+    "nativeHlsOnly": true,
+    "logoUrl": "https://images.pluto.tv/channels/6996296087742204bff43147/colorLogoPNG_1772645176417.png",
     "source": "iptv-org"
   },
   {
@@ -12241,6 +12687,16 @@
     "guide": "https://www.rvtv.tv/",
     "stream": "https://rvtv-on-freecast.b-cdn.net/RVTV-on-Freecast/index.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
+    "streamAlts": [
+      {
+        "url": "https://rvtv-orka.b-cdn.net/RVTV-ORKA/index.m3u8",
+        "label": "HD"
+      },
+      {
+        "url": "https://rvtv-stirr.b-cdn.net/rvtv-on-stirr/playlist.m3u8",
+        "label": "HD · rvtv-stirr.b-cdn.net"
+      }
+    ],
     "logoUrl": "https://i.imgur.com/pBBb0wx.png",
     "source": "iptv-org"
   },
@@ -12323,8 +12779,12 @@
     "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
     "streamAlts": [
       {
-        "url": "https://d3a0tomzw8z726.cloudfront.net/Ryan_and_Friends.m3u8",
+        "url": "https://pocketwat-ryan-friends-vizio-fr7uq.amagi.tv/playlist/pocketwat-ryan-friends-vizio/playlist.m3u8",
         "label": "SD"
+      },
+      {
+        "url": "https://d3a0tomzw8z726.cloudfront.net/Ryan_and_Friends.m3u8",
+        "label": "SD · d3a0tomzw8z726.cloudfront.net"
       }
     ],
     "logoUrl": "https://i.imgur.com/jcIprmt.png",
@@ -12718,6 +13178,24 @@
     "source": "iptv-org"
   },
   {
+    "id": "skwad-play",
+    "name": "Skwad Play",
+    "brand": "Skwad Play",
+    "region": "USA",
+    "category": "Kids",
+    "color": "#6b8c92",
+    "language": "en",
+    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Kids).",
+    "official": "https://www.skwadplay.com/",
+    "guide": "https://www.skwadplay.com/",
+    "stream": "https://stream-us-east-1.getpublica.com/playlist.m3u8?network_id=71",
+    "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
+    "limited": true,
+    "note": "Stream refused (HTTP 403) from outside its region when checked: playback is probably limited to the broadcaster's country.",
+    "logoUrl": "https://i.imgur.com/cP56PrG.png",
+    "source": "iptv-org"
+  },
+  {
     "id": "slo-county-channel21",
     "name": "SLO County Channel 21",
     "brand": "SLO County Channel 21",
@@ -12815,8 +13293,8 @@
   },
   {
     "id": "smithsonian-channel-selects",
-    "name": "Smithsonian Channel Selects (United States)",
-    "brand": "Smithsonian Channel Selects (United States)",
+    "name": "Smithsonian Channel Selects",
+    "brand": "Smithsonian Channel Selects",
     "region": "USA",
     "category": "Science",
     "color": "#6b8c92",
@@ -12828,6 +13306,24 @@
     "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
     "nativeHlsOnly": true,
     "logoUrl": "https://i.imgur.com/Kt5j8Vr.png",
+    "source": "iptv-org"
+  },
+  {
+    "id": "smurf-tv",
+    "name": "Smurf TV",
+    "brand": "Smurf TV",
+    "region": "USA",
+    "category": "Kids",
+    "color": "#6b8c92",
+    "language": "en",
+    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Kids).",
+    "official": "https://toongoggles.com/linear/smurf-tv",
+    "guide": "https://toongoggles.com/linear/smurf-tv",
+    "stream": "https://stream.ads.ottera.tv/playlist.m3u8?network_id=4065",
+    "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
+    "limited": true,
+    "note": "Stream refused (HTTP 403) from outside its region when checked: playback is probably limited to the broadcaster's country.",
+    "logoUrl": "https://img.static-ottera.com/prod/tg/linear_channel/thumbnails/widescreen/EJIyYyBMkbW5UntSCAkGp-uLla7Z8KWHvDjyEqoOf3k.jpg",
     "source": "iptv-org"
   },
   {
@@ -12968,16 +13464,12 @@
     "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Sports).",
     "official": "https://www.sportsgrid.com/live/",
     "guide": "https://www.sportsgrid.com/live/",
-    "stream": "https://amg00315-sportsgrid-firetv.amagi.tv/playlist.m3u8",
+    "stream": "https://sportsgrid-samsungus.amagi.tv/playlist.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
     "streamAlts": [
       {
-        "url": "https://sportsgrid-klowdtv.amagi.tv/playlist.m3u8",
+        "url": "https://vizioaaaa-sportsgrid-vizio-ugub0.amagi.tv/playlist/vizioAAAA-sportsgrid-vizio/playlist.m3u8",
         "label": "SD"
-      },
-      {
-        "url": "https://sportsgrid-samsungus.amagi.tv/playlist.m3u8",
-        "label": "SD · sportsgrid-samsungus.amagi.tv"
       }
     ],
     "logoUrl": "https://i.imgur.com/ulGKX30.png",
@@ -13061,8 +13553,8 @@
   },
   {
     "id": "star-trek-the-next-generation",
-    "name": "Star Trek: The Next Generation (United States)",
-    "brand": "Star Trek: The Next Generation (United States)",
+    "name": "Star Trek: The Next Generation",
+    "brand": "Star Trek: The Next Generation",
     "region": "USA",
     "category": "Movies",
     "color": "#6b8c92",
@@ -13078,8 +13570,8 @@
   },
   {
     "id": "star-trek-voyager",
-    "name": "Star Trek: Voyager (United States)",
-    "brand": "Star Trek: Voyager (United States)",
+    "name": "Star Trek: Voyager",
+    "brand": "Star Trek: Voyager",
     "region": "USA",
     "category": "Movies",
     "color": "#6b8c92",
@@ -13380,6 +13872,24 @@
     "source": "iptv-org"
   },
   {
+    "id": "tbn-armenia",
+    "name": "TBN Armenia",
+    "brand": "TBN Armenia",
+    "region": "USA",
+    "category": "General",
+    "color": "#6b8c92",
+    "language": "en",
+    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: General).",
+    "official": "https://iptv-org.github.io/iptv/countries/us.m3u",
+    "guide": "https://iptv-org.github.io/iptv/countries/us.m3u",
+    "stream": "https://164475.gvideo.io/mpegts/164475_650646/master_mpegts.m3u8",
+    "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
+    "limited": true,
+    "note": "Stream refused (HTTP 403) from outside its region when checked: playback is probably limited to the broadcaster's country.",
+    "logoUrl": "https://i.imgur.com/U5XsT3j.png",
+    "source": "iptv-org"
+  },
+  {
     "id": "tbn-pacific",
     "name": "TBN Pacific",
     "brand": "TBN Pacific",
@@ -13482,9 +13992,26 @@
     "source": "iptv-org"
   },
   {
+    "id": "teen-mom",
+    "name": "Teen Mom",
+    "brand": "Teen Mom",
+    "region": "USA",
+    "category": "Documentary",
+    "color": "#6b8c92",
+    "language": "en",
+    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Documentary).",
+    "official": "https://pluto.tv/en/live-tv/teen-mom",
+    "guide": "https://pluto.tv/en/live-tv/teen-mom",
+    "stream": "https://jmp2.uk/plu-6127e12ed140e900077e7b6f.m3u8",
+    "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
+    "nativeHlsOnly": true,
+    "logoUrl": "https://i.imgur.com/8o3ClCV.png",
+    "source": "iptv-org"
+  },
+  {
     "id": "telemundo",
-    "name": "Telemundo",
-    "brand": "Telemundo",
+    "name": "Telemundo East HD",
+    "brand": "Telemundo East HD",
     "region": "USA",
     "category": "General",
     "color": "#6b8c92",
@@ -13512,12 +14039,20 @@
         "label": "WKAQTV"
       },
       {
+        "url": "https://nbculocallive.akamaized.net/hls/live/2037499/puertorico/stream1/master_720.m3u8",
+        "label": "WKAQTV · nbculocallive.akamaized.net"
+      },
+      {
         "url": "https://nbculocallive.akamaized.net/hls/live/2037499/puertorico/stream1/master_1080.m3u8",
         "label": "WKAQTV · nbculocallive.akamaized.net"
       },
       {
-        "url": "https://nbculocallive.akamaized.net/hls/live/2037499/puertorico/stream1/master_720.m3u8",
-        "label": "WKAQTV · nbculocallive.akamaized.net"
+        "url": "http://45.5.117.57:8900/play/a058/index.m3u8",
+        "label": "West"
+      },
+      {
+        "url": "http://38.107.110.140:61400/play/a07a/index.m3u8",
+        "label": "WKAQTV · 38.107.110.140"
       }
     ],
     "note": "Channel flagged \"Not 24/7\" in the iptv-org directory: part-time schedule.",
@@ -13602,6 +14137,12 @@
     "guide": "https://www.tennischannel.app/",
     "stream": "https://mumbai-edge.smartplaytv.in/Tennis2/index.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
+    "streamAlts": [
+      {
+        "url": "https://amg01444-tennischannel-amg01444c2-vizio-us-2327.playouts.now.amagi.tv/playlist.m3u8",
+        "label": "SD"
+      }
+    ],
     "logoUrl": "https://image-resizer-cloud-cdn.api.cms.amdvids.com/image/7382296F-97F6-4450-B77B-8FE331FC04F6/3-1x1.png",
     "source": "iptv-org"
   },
@@ -13718,8 +14259,14 @@
     "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Series).",
     "official": "https://pluto.tv/en/live-tv/the-bob-ross-channel",
     "guide": "https://pluto.tv/en/live-tv/the-bob-ross-channel",
-    "stream": "https://pb-yxyesssss0re7.akamaized.net/v1/cinedigm_entertainment_corp_thebobrosschannel_1/samsungheadend_us/latest/main/hls/playlist.m3u8",
+    "stream": "https://wurlcineverse.global.transmit.live/hls/678863ef58870f59fceabf94/v1/cinedigm_entertainment_corp_thebobrosschannel_1/vizio_us/latest/main/hls/playlist.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
+    "streamAlts": [
+      {
+        "url": "https://pb-yxyesssss0re7.akamaized.net/v1/cinedigm_entertainment_corp_thebobrosschannel_1/samsungheadend_us/latest/main/hls/playlist.m3u8",
+        "label": "SD"
+      }
+    ],
     "limited": true,
     "note": "Stream refused (HTTP 403) from outside its region when checked: playback is probably limited to the broadcaster's country.",
     "logoUrl": "https://i.imgur.com/gFHKCbZ.png",
@@ -13840,10 +14387,16 @@
     "description": "Playing directly in Onde via the public stream listed by iptv-org (category: General).",
     "official": "https://thehill.com/hilltv/",
     "guide": "https://thehill.com/hilltv/",
-    "stream": "https://pb-aq5tqlshz44jr.akamaized.net/playlist.m3u8",
+    "stream": "https://linear-1178.frequency.stream/mt/vizio/1178/hls/master/playlist.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
+    "streamAlts": [
+      {
+        "url": "https://pb-aq5tqlshz44jr.akamaized.net/playlist.m3u8",
+        "label": "SD"
+      }
+    ],
     "limited": true,
-    "note": "Stream flagged geo-blocked in the iptv-org directory: playback is limited to the regions the broadcaster allows.",
+    "note": "Stream refused (HTTP 403) from outside its region when checked: playback is probably limited to the broadcaster's country.",
     "logoUrl": "https://i.imgur.com/Ioh5xbx.png",
     "source": "iptv-org"
   },
@@ -14035,8 +14588,8 @@
   },
   {
     "id": "the-wild-wild-west",
-    "name": "The Wild Wild West (United States)",
-    "brand": "The Wild Wild West (United States)",
+    "name": "The Wild Wild West",
+    "brand": "The Wild Wild West",
     "region": "USA",
     "category": "Movies",
     "color": "#6b8c92",
@@ -14083,6 +14636,36 @@
     "source": "iptv-org"
   },
   {
+    "id": "the-grio-tv",
+    "name": "TheGrio TV",
+    "brand": "TheGrio TV",
+    "region": "USA",
+    "category": "General",
+    "color": "#6b8c92",
+    "language": "en",
+    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: General).",
+    "official": "https://thegriotv.com/",
+    "guide": "https://thegriotv.com/",
+    "stream": "https://blacknewschannel-xumo-us.amagi.tv/playlist.m3u8",
+    "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
+    "streamAlts": [
+      {
+        "url": "https://blacknewschannel-vizio.amagi.tv/playlist.m3u8",
+        "label": "FAST"
+      },
+      {
+        "url": "https://redbox-blacknewschannel-xumo.amagi.tv/playlist.m3u8",
+        "label": "FAST · redbox-blacknewschannel-xumo.ama…"
+      },
+      {
+        "url": "https://a-cdn.klowdtv.com/live2/thegrio_720p/playlist.m3u8",
+        "label": "SD"
+      }
+    ],
+    "logoUrl": "https://i.imgur.com/8nqbi9b.png",
+    "source": "iptv-org"
+  },
+  {
     "id": "tin-tv",
     "name": "Tin TV",
     "brand": "Tin TV",
@@ -14115,12 +14698,16 @@
     "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Series).",
     "official": "https://pluto.tv/en/live-tv/tiny-house-nation",
     "guide": "https://pluto.tv/en/live-tv/tiny-house-nation",
-    "stream": "https://adf47c43.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/U2Ftc3VuZy1nYl9UaW55SG91c2VOYXRpb25fSExT/playlist.m3u8",
+    "stream": "https://42bea5f2.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/Vml6aW9fVGlueUhvdXNlTmF0aW9uX0hMUw/playlist.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
     "streamAlts": [
       {
-        "url": "https://pb-yxy31pwnm3mp2.akamaized.net/v1/aenetworks_tinyhousenation_1/samsungheadend_us/latest/main/hls/playlist.m3u8",
+        "url": "https://adf47c43.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/U2Ftc3VuZy1nYl9UaW55SG91c2VOYXRpb25fSExT/playlist.m3u8",
         "label": "SD"
+      },
+      {
+        "url": "https://pb-yxy31pwnm3mp2.akamaized.net/v1/aenetworks_tinyhousenation_1/samsungheadend_us/latest/main/hls/playlist.m3u8",
+        "label": "SD · pb-yxy31pwnm3mp2.akamaized.net"
       }
     ],
     "logoUrl": "https://i.imgur.com/ai1P06C.png",
@@ -14167,12 +14754,16 @@
     "description": "Playing directly in Onde via the public stream listed by iptv-org (category: General).",
     "official": "https://www.international.tbs.com/",
     "guide": "https://www.international.tbs.com/",
-    "stream": "https://turnerlive.warnermediacdn.com/hls/live/2023168/tnteast/slate/VIDEO_0_3564000.m3u8",
+    "stream": "https://turnerlive.warnermediacdn.com/hls/live/2023170/tntwest/slate/VIDEO_0_3564000.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
     "streamAlts": [
       {
-        "url": "http://212.5.144.156/tnt/index.m3u8",
+        "url": "https://turnerlive.warnermediacdn.com/hls/live/2023168/tnteast/slate/VIDEO_0_3564000.m3u8",
         "label": "East"
+      },
+      {
+        "url": "http://212.5.144.156/tnt/index.m3u8",
+        "label": "East · 212.5.144.156"
       }
     ],
     "limited": true,
@@ -14213,39 +14804,10 @@
     "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Kids).",
     "official": "https://gia.tv/watchssh101.php?pptv=208314",
     "guide": "https://gia.tv/watchssh101.php?pptv=208314",
-    "stream": "https://live20.bozztv.com/giatvplayout7/giatv-208314/playlist.m3u8",
+    "stream": "https://183.giatvcdn.com/giatvplayout7/giatv-208314/playlist.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
+    "note": "Channel flagged \"Not 24/7\" in the iptv-org directory: part-time schedule.",
     "logoUrl": "https://gia.tv/streams/pptv/208314.jpg?1750373428",
-    "source": "iptv-org"
-  },
-  {
-    "id": "tooncast",
-    "name": "Tooncast",
-    "brand": "Tooncast",
-    "region": "USA",
-    "category": "Animation",
-    "color": "#6b8c92",
-    "language": "en",
-    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Animation).",
-    "official": "https://www.tooncast.tv/",
-    "guide": "https://www.tooncast.tv/",
-    "stream": "https://streaming.onnethn.com/TOONCAST/playlist.m3u8",
-    "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
-    "streamAlts": [
-      {
-        "url": "http://45.134.141.161:2200/ARG/Tooncast/index.m3u8",
-        "label": "Argentina"
-      },
-      {
-        "url": "http://190.61.42.218:9000/play/a06i/index.m3u8",
-        "label": "SouthAmerica"
-      },
-      {
-        "url": "http://45.173.231.22:8000/play/a01i/index.m3u8",
-        "label": "SouthAmerica · 45.173.231.22"
-      }
-    ],
-    "logoUrl": "https://i.imgur.com/3yXRbQy.png",
     "source": "iptv-org"
   },
   {
@@ -14263,8 +14825,16 @@
     "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
     "streamAlts": [
       {
-        "url": "https://tg-tg-xumo.otteravision.com/tg/tg/tg.m3u8",
+        "url": "https://stream-us-east-1.getpublica.com/playlist.m3u8?network_id=37",
         "label": "SD"
+      },
+      {
+        "url": "https://stream.ads.ottera.tv/playlist.m3u8?network_id=771",
+        "label": "SD · stream.ads.ottera.tv"
+      },
+      {
+        "url": "https://tg-tg-xumo.otteravision.com/tg/tg/tg.m3u8",
+        "label": "SD · tg-tg-xumo.otteravision.com"
       }
     ],
     "logoUrl": "https://i.imgur.com/JMnxswq.png",
@@ -14288,8 +14858,8 @@
   },
   {
     "id": "tosh0",
-    "name": "Tosh.0 (United States)",
-    "brand": "Tosh.0 (United States)",
+    "name": "Tosh.0",
+    "brand": "Tosh.0",
     "region": "USA",
     "category": "Series",
     "color": "#6b8c92",
@@ -14331,8 +14901,14 @@
     "description": "Playing directly in Onde via the public stream listed by iptv-org (category: General).",
     "official": "https://watch.plex.tv/live-tv/channel/tribeca-channel",
     "guide": "https://watch.plex.tv/live-tv/channel/tribeca-channel",
-    "stream": "https://amg02507-giantpictures-tribeca-xumo-ey2b7.amagi.tv/playlist.m3u8",
+    "stream": "https://amg02042-amg02042c43-vizio-us-11531.playouts.now.amagi.tv/playlist.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
+    "streamAlts": [
+      {
+        "url": "https://amg02507-giantpictures-tribeca-xumo-ey2b7.amagi.tv/playlist.m3u8",
+        "label": "SD"
+      }
+    ],
     "limited": true,
     "note": "Stream flagged geo-blocked in the iptv-org directory: playback is limited to the regions the broadcaster allows.",
     "logoUrl": "https://i.imgur.com/JCpFAll.png",
@@ -14422,6 +14998,8 @@
     "guide": "https://www.tudn.com/",
     "stream": "https://streaming-live-fcdn.api.prd.univisionnow.com/tudn/tudn.isml/hls/tudn.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
+    "limited": true,
+    "note": "Stream flagged geo-blocked in the iptv-org directory: playback is limited to the regions the broadcaster allows.",
     "logoUrl": "https://i.imgur.com/oT5CAvd.png",
     "source": "iptv-org"
   },
@@ -14436,8 +15014,9 @@
     "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Entertainment).",
     "official": "https://gia.tv/watchssh101.php?psid=54",
     "guide": "https://gia.tv/watchssh101.php?psid=54",
-    "stream": "https://live20.bozztv.com/giatvplayout7/giatv-208343/playlist.m3u8",
+    "stream": "https://183.giatvcdn.com/giatvplayout7/giatv-208343/playlist.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
+    "note": "Channel flagged \"Not 24/7\" in the iptv-org directory: part-time schedule.",
     "logoUrl": "https://gia.tv/streams/pptv/208343.jpg",
     "source": "iptv-org"
   },
@@ -14962,8 +15541,8 @@
   },
   {
     "id": "uni-mas",
-    "name": "UniMas Central",
-    "brand": "UniMas Central",
+    "name": "UniMas KFTR-DT",
+    "brand": "UniMas KFTR-DT",
     "region": "USA",
     "category": "General",
     "color": "#6b8c92",
@@ -15043,16 +15622,16 @@
     "description": "Playing directly in Onde via the public stream listed by iptv-org (category: General).",
     "official": "https://www.univision.com/",
     "guide": "https://www.univision.com/",
-    "stream": "https://streaming-live-fcdn.api.prd.univisionnow.com/kmex/kmex.isml/hls/kmex.m3u8",
+    "stream": "https://streaming-live-fcdn.api.prd.univisionnow.com/unieast/unieast.isml/hls/unieast.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
     "streamAlts": [
       {
-        "url": "https://streaming-live-fcdn.api.prd.univisionnow.com/uniwest/uniwest.isml/hls/uniwest.m3u8",
-        "label": "West"
+        "url": "https://streaming-live-fcdn.api.prd.univisionnow.com/kmex/kmex.isml/hls/kmex.m3u8",
+        "label": "KMEXDT"
       },
       {
-        "url": "https://streaming-live-fcdn.api.prd.univisionnow.com/unieast/unieast.isml/hls/unieast.m3u8",
-        "label": "East"
+        "url": "https://streaming-live-fcdn.api.prd.univisionnow.com/uniwest/uniwest.isml/hls/uniwest.m3u8",
+        "label": "West"
       },
       {
         "url": "https://streaming-live-fcdn.api.prd.univisionnow.com/wltv/wltv.isml/hls/wltv.m3u8",
@@ -15061,6 +15640,10 @@
       {
         "url": "http://168.228.44.241:9997/play/a09d/index.m3u8",
         "label": "WLTVDT · 168.228.44.241"
+      },
+      {
+        "url": "https://unidfp-nlds154.global.ssl.fastly.net/nlds/univisionnow/univision_chi2/as/live/univision_chi2_hd_pc.m3u8?t1=null",
+        "label": "WGBODT"
       }
     ],
     "limited": true,
@@ -15199,8 +15782,14 @@
     "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Music).",
     "official": "https://pluto.tv/en/live-tv/vevo-80s",
     "guide": "https://pluto.tv/en/live-tv/vevo-80s",
-    "stream": "https://d3svsvgc81yfe1.cloudfront.net/Vevo_80s.m3u8",
+    "stream": "https://amg00056-vevotv-vevo80s-vizious-qj27c.amagi.tv/playlist/amg00056-vevotv-vevo80s-vizious/playlist.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
+    "streamAlts": [
+      {
+        "url": "https://d3svsvgc81yfe1.cloudfront.net/Vevo_80s.m3u8",
+        "label": "SD"
+      }
+    ],
     "limited": true,
     "note": "Stream refused (HTTP 403) from outside its region when checked: playback is probably limited to the broadcaster's country.",
     "logoUrl": "https://images.pluto.tv/channels/5fd7b8bf927e090007685853/featuredImage.jpg",
@@ -15217,8 +15806,14 @@
     "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Music).",
     "official": "https://pluto.tv/en/live-tv/vevo-90s",
     "guide": "https://pluto.tv/en/live-tv/vevo-90s",
-    "stream": "https://d29u7uq3k6xqk0.cloudfront.net/Vevo_90s.m3u8",
+    "stream": "https://amg00056-vevotv-vevo90s-vizious-j79s1.amagi.tv/playlist/amg00056-vevotv-vevo90s-vizious/playlist.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
+    "streamAlts": [
+      {
+        "url": "https://d29u7uq3k6xqk0.cloudfront.net/Vevo_90s.m3u8",
+        "label": "SD"
+      }
+    ],
     "limited": true,
     "note": "Stream refused (HTTP 403) from outside its region when checked: playback is probably limited to the broadcaster's country.",
     "logoUrl": "https://images.pluto.tv/channels/5fd7bb1f86d94a000796e2c2/featuredImage.jpg",
@@ -15235,8 +15830,14 @@
     "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Music).",
     "official": "https://pluto.tv/en/live-tv/vevo-country",
     "guide": "https://pluto.tv/en/live-tv/vevo-country",
-    "stream": "https://pb-xrdbj9zdgm6ez.akamaized.net/Vevo_Country.m3u8",
+    "stream": "https://amg00056-vevotv-vevocountry-vizious-nxv37.amagi.tv/playlist/amg00056-vevotv-vevocountry-vizious/playlist.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
+    "streamAlts": [
+      {
+        "url": "https://pb-xrdbj9zdgm6ez.akamaized.net/Vevo_Country.m3u8",
+        "label": "SD"
+      }
+    ],
     "limited": true,
     "note": "Stream refused (HTTP 403) from outside its region when checked: playback is probably limited to the broadcaster's country.",
     "logoUrl": "https://images.pluto.tv/channels/5da0d75e84830900098a1ea0/featuredImage.jpg",
@@ -15567,16 +16168,16 @@
     "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Outdoor).",
     "official": "https://waypointtv.com/",
     "guide": "https://waypointtv.com/",
-    "stream": "https://waypoint-waypointtv-firetv.amagi.tv/playlist.m3u8",
+    "stream": "https://djb4ma5fajjay.cloudfront.net/Waypoint_TV.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
     "streamAlts": [
       {
-        "url": "https://djb4ma5fajjay.cloudfront.net/Waypoint_TV.m3u8",
+        "url": "https://aegis-cloudfront-1.tubi.video/5f3c2b46-3b02-48e8-8e7b-3ce1d89395ce/playlist.m3u8",
         "label": "SD"
       },
       {
-        "url": "https://aegis-cloudfront-1.tubi.video/5f3c2b46-3b02-48e8-8e7b-3ce1d89395ce/playlist.m3u8",
-        "label": "SD · aegis-cloudfront-1.tubi.video"
+        "url": "https://amg00381-waypointcommuni-waypointtv-vizious-v9qqa.amagi.tv/playlist/amg00381-waypointcommuni-waypointtv-vizious/playlist.m3u8",
+        "label": "SD · amg00381-waypointcommuni-waypointt…"
       },
       {
         "url": "https://amg00381-waypointcommuni-waypointtv-xumo-syiru.amagi.tv/playlist.m3u8",
@@ -15599,6 +16200,12 @@
     "guide": "https://www.wbtv.com/",
     "stream": "https://d2ugl2g2gz1giy.cloudfront.net/index.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
+    "streamAlts": [
+      {
+        "url": "https://amg00312-amg00312c42-amgplt0022.playout.now3.amagi.tv/ts-us-e2-n2/playlist/amg00312-amg00312c42-amgplt0022/playlist.m3u8",
+        "label": "HD"
+      }
+    ],
     "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/CBS_logo_%282020%29.svg/960px-CBS_logo_%282020%29.svg.png",
     "source": "iptv-org"
   },
@@ -15648,7 +16255,7 @@
     "stream": "http://23.237.104.106:8080/USA_WE_TV/index.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
     "insecureStream": true,
-    "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/We_TV_logo_2014.svg/960px-We_TV_logo_2014.svg.png",
+    "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Wetv-july-2024-logo.svg/3840px-Wetv-july-2024-logo.svg.png",
     "source": "iptv-org"
   },
   {
@@ -15662,9 +16269,8 @@
     "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Series).",
     "official": "https://lionsgatechannels.com/channel/weeds-and-nurse-jackie",
     "guide": "https://lionsgatechannels.com/channel/weeds-and-nurse-jackie",
-    "stream": "https://jmp2.uk/plu-688a44cf5d73ec0a3f49718b.m3u8",
+    "stream": "https://amg00353-amg00353c38-vizio-us-10595.playouts.now.amagi.tv/playlist.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
-    "nativeHlsOnly": true,
     "logoUrl": "https://images.pluto.tv/channels/688a44cf5d73ec0a3f49718b/colorLogoPNG_1756145413989.png",
     "source": "iptv-org"
   },
@@ -15905,12 +16511,16 @@
     "description": "Playing directly in Onde via the public stream listed by iptv-org (category: General).",
     "official": "https://www.winewatcheswhiskey.com/",
     "guide": "https://www.winewatcheswhiskey.com/",
-    "stream": "https://www-on-freecast.b-cdn.net/WWW-on-Freecast/index.m3u8",
+    "stream": "https://w3-orka.b-cdn.net/W3-ORKA/index.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
     "streamAlts": [
       {
-        "url": "https://www-on-stirr.b-cdn.net/Wine-Watches-and-Whiskey/playlist.m3u8",
+        "url": "https://www-on-freecast.b-cdn.net/WWW-on-Freecast/index.m3u8",
         "label": "HD"
+      },
+      {
+        "url": "https://www-on-stirr.b-cdn.net/Wine-Watches-and-Whiskey/playlist.m3u8",
+        "label": "HD · www-on-stirr.b-cdn.net"
       }
     ],
     "logoUrl": "https://i.imgur.com/MN89dfS.png",
@@ -16031,25 +16641,6 @@
     "stream": "https://2-fss-2.streamhoster.com/pl_138/amlst:207282-6094500/playlist.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
     "logoUrl": "https://upload.wikimedia.org/wikipedia/en/3/3f/WVVH-CD_logo.png",
-    "source": "iptv-org"
-  },
-  {
-    "id": "wwe-network",
-    "name": "WWE Network",
-    "brand": "WWE Network",
-    "region": "USA",
-    "category": "Sports",
-    "color": "#6b8c92",
-    "language": "en",
-    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Sports).",
-    "official": "https://www.wwe.com/wwenetwork",
-    "guide": "https://www.wwe.com/wwenetwork",
-    "stream": "http://103.151.60.162:2122/play/a00p/index.m3u8?hls",
-    "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
-    "insecureStream": true,
-    "limited": true,
-    "note": "Stream refused (HTTP 403) from outside its region when checked: playback is probably limited to the broadcaster's country.",
-    "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/WWE_Network_logo.svg/500px-WWE_Network_logo.svg.png",
     "source": "iptv-org"
   },
   {
@@ -16185,7 +16776,6 @@
     "guide": "https://www.yumacountyaz.gov/government/live-streaming",
     "stream": "https://securestream10.champds.com/LIVE/YumaCoAZLIVE/YumaCoAZLIVE.m3u8",
     "directory": "https://iptv-org.github.io/iptv/countries/us.m3u",
-    "nativeHlsOnly": true,
     "logoUrl": "https://i.imgur.com/KBriwwj.png",
     "source": "iptv-org"
   },
@@ -16307,23 +16897,6 @@
     "source": "iptv-org"
   },
   {
-    "id": "adult-swim-latin-america",
-    "name": "Adult Swim Latin America",
-    "brand": "Adult Swim Latin America",
-    "region": "USA",
-    "category": "Entertainment",
-    "color": "#6b8c92",
-    "language": "en",
-    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Entertainment).",
-    "official": "https://iptv-org.github.io/api/streams.json",
-    "guide": "https://iptv-org.github.io/api/streams.json",
-    "stream": "http://45.162.64.114/ADULT_SWIM/index.m3u8",
-    "directory": "https://iptv-org.github.io/api/streams.json",
-    "insecureStream": true,
-    "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Adult_Swim_2003_logo.svg/960px-Adult_Swim_2003_logo.svg.png",
-    "source": "iptv-org"
-  },
-  {
     "id": "ae-latin-america",
     "name": "A&E Latin America",
     "brand": "A&E Latin America",
@@ -16410,6 +16983,10 @@
       {
         "url": "http://45.171.64.30:6060/play/a005/index.m3u8",
         "label": "Panregional"
+      },
+      {
+        "url": "http://45.5.118.231:5001/stream/41/index.m3u8",
+        "label": "Panregional · 45.5.118.231"
       }
     ],
     "logoUrl": "https://amc-series.s3.amazonaws.com/menu/hbfen1Gom0_k1cyqi7rw4-amc-series-train-w.png",
@@ -16589,23 +17166,6 @@
     "source": "iptv-org"
   },
   {
-    "id": "axn-adria",
-    "name": "AXN Adria",
-    "brand": "AXN Adria",
-    "region": "USA",
-    "category": "Movies",
-    "color": "#6b8c92",
-    "language": "en",
-    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Movies).",
-    "official": "https://www.axn.com/",
-    "guide": "https://www.axn.com/",
-    "stream": "http://5.57.74.130:8000/play/a0at/index.m3u8",
-    "directory": "https://iptv-org.github.io/api/streams.json",
-    "insecureStream": true,
-    "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/AXN_logo_%282015%29.svg/960px-AXN_logo_%282015%29.svg.png",
-    "source": "iptv-org"
-  },
-  {
     "id": "axn-black",
     "name": "AXN Black",
     "brand": "AXN Black",
@@ -16620,7 +17180,7 @@
     "directory": "https://iptv-org.github.io/api/streams.json",
     "streamAlts": [
       {
-        "url": "http://141.94.193.53:80/axn_black/index.m3u8",
+        "url": "http://141.94.193.53/axn_black/index.m3u8",
         "label": "Hungary"
       },
       {
@@ -16793,11 +17353,11 @@
     "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Kids).",
     "official": "https://www.latingroup.us/ci.html",
     "guide": "https://www.latingroup.us/ci.html",
-    "stream": "http://177.234.218.66:8084/play/a01x/index.m3u8",
+    "stream": "http://179.1.196.222:9000/play/a02y/index.m3u8",
     "directory": "https://iptv-org.github.io/api/streams.json",
     "streamAlts": [
       {
-        "url": "http://179.1.196.222:9000/play/a02y/index.m3u8",
+        "url": "http://177.234.218.66:8084/play/a01x/index.m3u8",
         "label": "SD"
       },
       {
@@ -16823,10 +17383,6 @@
     "stream": "http://15.204.246.24:8080/CartoonNetworkHD/index.m3u8",
     "directory": "https://iptv-org.github.io/api/streams.json",
     "streamAlts": [
-      {
-        "url": "http://45.162.64.114/CARTOON_NETWORK/index.m3u8",
-        "label": "Brazil"
-      },
       {
         "url": "http://158.172.217.18:8000/play/a03a/index.m3u8",
         "label": "SouthAtlantic"
@@ -16956,15 +17512,11 @@
     "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Movies).",
     "official": "https://www.latingroup.us/cp.html",
     "guide": "https://www.latingroup.us/cp.html",
-    "stream": "http://190.61.90.17:40000/play/a02i/index.m3u8",
+    "stream": "http://bantel-cdn1.iptvperu.tv:1935/btnscrtn/cinepremium.stream/playlist.m3u8",
     "directory": "https://iptv-org.github.io/api/streams.json",
-    "streamAlts": [
-      {
-        "url": "http://bantel-cdn1.iptvperu.tv:1935/btnscrtn/cinepremium.stream/playlist.m3u8",
-        "label": "SD"
-      }
-    ],
     "insecureStream": true,
+    "limited": true,
+    "note": "Stream refused (HTTP 403) from outside its region when checked: playback is probably limited to the broadcaster's country.",
     "logoUrl": "https://i.imgur.com/tC3jGd4.png",
     "source": "iptv-org"
   },
@@ -16995,24 +17547,24 @@
     "description": "Playing directly in Onde via the public stream listed by iptv-org (category: News).",
     "official": "https://edition.cnn.com/",
     "guide": "https://edition.cnn.com/",
-    "stream": "https://d3bp6dwmpbdajl.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-ury0meh5m4nzm/index.m3u8",
+    "stream": "https://vid.hls.protv.ro/liveibu8/liveibu8_highw/index.m3u8?1",
     "directory": "https://iptv-org.github.io/api/streams.json",
     "streamAlts": [
-      {
-        "url": "https://vid.hls.protv.ro/liveibu8/liveibu8_highw/index.m3u8?1",
-        "label": "Europe"
-      },
       {
         "url": "https://d2sybdl23b9psq.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-bocx3i7bjz0dg/CNNFAST_GB.m3u8",
         "label": "NorthAmerica"
       },
       {
         "url": "http://88.212.15.50/live/test_cnn_1200_atk/playlist.m3u8",
-        "label": "Europe · 88.212.15.50"
+        "label": "Europe"
       },
       {
         "url": "http://168.228.44.241:9997/play/a073/index.m3u8",
         "label": "LatinAmerica"
+      },
+      {
+        "url": "http://103.253.74.210:7070/stream/115/index.m3u8",
+        "label": "SouthAsia"
       }
     ],
     "logoUrl": "https://i.imgur.com/dfxefQw.png",
@@ -17029,14 +17581,9 @@
     "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Comedy).",
     "official": "https://comedycentral.la/",
     "guide": "https://comedycentral.la/",
-    "stream": "https://barinaslive1.boldmss.com/COMEDY/COMEDY.isml/COMEDY.m3u8",
+    "stream": "http://190.93.224.42/COMEDY-CENTRAL/index.m3u8",
     "directory": "https://iptv-org.github.io/api/streams.json",
-    "streamAlts": [
-      {
-        "url": "https://bantel-cdn1.iptvperu.tv:1936/btnscrtn/Comedy_Central/playlist.m3u8",
-        "label": "Panregional"
-      }
-    ],
+    "insecureStream": true,
     "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Comedy_Central_2018.svg/960px-Comedy_Central_2018.svg.png",
     "source": "iptv-org"
   },
@@ -17180,13 +17727,9 @@
     "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Entertainment).",
     "official": "https://www.latam.discovery.com/",
     "guide": "https://www.latam.discovery.com/",
-    "stream": "http://45.162.64.114/DISCOVERY_CHANNEL/index.m3u8",
+    "stream": "http://45.171.64.30:6060/play/a032/index.m3u8",
     "directory": "https://iptv-org.github.io/api/streams.json",
     "streamAlts": [
-      {
-        "url": "http://45.171.64.30:6060/play/a032/index.m3u8",
-        "label": "Panregional"
-      },
       {
         "url": "http://45.184.109.10/live/69393EAE6ADBC65A68F942022362A202/20.m3u8",
         "label": "South"
@@ -17194,6 +17737,24 @@
     ],
     "insecureStream": true,
     "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/2019_Discovery_logo.svg/960px-2019_Discovery_logo.svg.png",
+    "source": "iptv-org"
+  },
+  {
+    "id": "discovery-family",
+    "name": "Discovery Family",
+    "brand": "Discovery Family",
+    "region": "USA",
+    "category": "Family",
+    "color": "#6b8c92",
+    "language": "en",
+    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Family).",
+    "official": "https://www.discoveryfamilychannel.com/",
+    "guide": "https://www.discoveryfamilychannel.com/",
+    "stream": "https://tvsen5.aynaott.com/discoveryfamily/index.m3u8",
+    "directory": "https://iptv-org.github.io/api/streams.json",
+    "limited": true,
+    "note": "Stream refused (HTTP 403) from outside its region when checked: playback is probably limited to the broadcaster's country.",
+    "logoUrl": "https://i.ibb.co/CK3VrYmc/IMG-2812.png",
     "source": "iptv-org"
   },
   {
@@ -17322,8 +17883,14 @@
     "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Series).",
     "official": "https://pluto.tv/en/live-tv/dog-whisperer-gb",
     "guide": "https://pluto.tv/en/live-tv/dog-whisperer-gb",
-    "stream": "https://pb-ffpxvjshv4rxx.akamaized.net/Dog_Whisperer_with_Cesar_Millan.m3u8",
+    "stream": "https://amg01201-amg01201c30-vizio-us-4216.playouts.now.amagi.tv/playlist.m3u8",
     "directory": "https://iptv-org.github.io/api/streams.json",
+    "streamAlts": [
+      {
+        "url": "https://pb-ffpxvjshv4rxx.akamaized.net/Dog_Whisperer_with_Cesar_Millan.m3u8",
+        "label": "UK"
+      }
+    ],
     "limited": true,
     "note": "Stream refused (HTTP 403) from outside its region when checked: playback is probably limited to the broadcaster's country.",
     "logoUrl": "https://i.imgur.com/tgWypVJ.png",
@@ -17344,6 +17911,10 @@
     "directory": "https://iptv-org.github.io/api/streams.json",
     "streamAlts": [
       {
+        "url": "https://barinaslive1.boldmss.com/DREAMWORKS/DREAMWORKS.isml/index.m3u8",
+        "label": "Panregional"
+      },
+      {
         "url": "https://cdn-5.nxplay.com.br/DREAMWORKS/index.m3u8",
         "label": "SD"
       }
@@ -17362,8 +17933,14 @@
     "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Sports).",
     "official": "https://www.directvsports.com/",
     "guide": "https://www.directvsports.com/",
-    "stream": "http://187.102.208.209:8000/play/a0bq/index.m3u8",
+    "stream": "http://45.134.141.161:2200/ARG/DTV_SP2/tracks-v1a1/mono.m3u8",
     "directory": "https://iptv-org.github.io/api/streams.json",
+    "streamAlts": [
+      {
+        "url": "http://187.102.208.209:8000/play/a0bq/index.m3u8",
+        "label": "Panregional"
+      }
+    ],
     "insecureStream": true,
     "limited": true,
     "note": "Stream refused (HTTP 403) from outside its region when checked: playback is probably limited to the broadcaster's country.",
@@ -17381,9 +17958,13 @@
     "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Entertainment).",
     "official": "https://la.eonline.com/",
     "guide": "https://la.eonline.com/",
-    "stream": "http://72.1.184.5:8089/play/a05d/index.m3u8",
+    "stream": "http://38.134.250.110:8000/play/a00x/index.m3u8",
     "directory": "https://iptv-org.github.io/api/streams.json",
     "streamAlts": [
+      {
+        "url": "http://72.1.184.5:8089/play/a05d/index.m3u8",
+        "label": "Mexico"
+      },
       {
         "url": "http://bantel-cdn1.iptvperu.tv:1935/btnscrtn/entertainment.stream/playlist.m3u8",
         "label": "South"
@@ -17488,8 +18069,12 @@
     "directory": "https://iptv-org.github.io/api/streams.json",
     "streamAlts": [
       {
-        "url": "http://190.61.47.54:8000/play/a005/index.m3u8",
+        "url": "http://38.211.118.56:50002/play/a0fa/index.m3u8",
         "label": "Colombia"
+      },
+      {
+        "url": "http://190.61.47.54:8000/play/a005/index.m3u8",
+        "label": "Colombia · 190.61.47.54"
       },
       {
         "url": "https://bantel-cdn1.iptvperu.tv:1936/btnscrtn/espn2-mux/playlist.m3u8",
@@ -17556,7 +18141,7 @@
         "label": "South"
       }
     ],
-    "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/ESPN_wordmark.svg/960px-ESPN_wordmark.svg.png",
+    "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/ESPN_5_logo.svg/960px-ESPN_5_logo.svg.png",
     "source": "iptv-org"
   },
   {
@@ -17578,7 +18163,7 @@
         "label": "SD"
       }
     ],
-    "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/ESPN_wordmark.svg/960px-ESPN_wordmark.svg.png",
+    "logoUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/ESPN_6_logo.svg/960px-ESPN_6_logo.svg.png",
     "source": "iptv-org"
   },
   {
@@ -17594,7 +18179,7 @@
     "guide": "https://espn.com/",
     "stream": "https://barinaslive1.boldmss.com/ESPN_7/ESPN_7.isml/ESPN_7.m3u8",
     "directory": "https://iptv-org.github.io/api/streams.json",
-    "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/ESPN_wordmark.svg/960px-ESPN_wordmark.svg.png",
+    "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/ESPN_7_logo.svg/960px-ESPN_7_logo.svg.png",
     "source": "iptv-org"
   },
   {
@@ -17612,8 +18197,12 @@
     "directory": "https://iptv-org.github.io/api/streams.json",
     "streamAlts": [
       {
-        "url": "http://190.61.47.54:8000/play/a004/index.m3u8",
+        "url": "http://181.78.211.244:8005/play/a08q/index.m3u8",
         "label": "Colombia"
+      },
+      {
+        "url": "http://190.61.47.54:8000/play/a004/index.m3u8",
+        "label": "Colombia · 190.61.47.54"
       },
       {
         "url": "http://168.228.44.241:9997/play/a06p/index.m3u8",
@@ -17625,22 +18214,6 @@
       }
     ],
     "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/ESPN_wordmark.svg/960px-ESPN_wordmark.svg.png",
-    "source": "iptv-org"
-  },
-  {
-    "id": "estv",
-    "name": "ES.TV",
-    "brand": "ES.TV",
-    "region": "USA",
-    "category": "Entertainment",
-    "color": "#6b8c92",
-    "language": "en",
-    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Entertainment).",
-    "official": "https://es.tv/",
-    "guide": "https://es.tv/",
-    "stream": "https://a-cdn.klowdtv.com/live2/estv_720p/playlist.m3u8",
-    "directory": "https://iptv-org.github.io/api/streams.json",
-    "logoUrl": "https://i.imgur.com/ihY01ao.png",
     "source": "iptv-org"
   },
   {
@@ -17731,12 +18304,12 @@
         "label": "Panregional"
       },
       {
-        "url": "http://190.93.224.42/FX/index.m3u8",
-        "label": "Panregional · 190.93.224.42"
-      },
-      {
         "url": "http://168.196.127.137:6001/play/a05u/index.m3u8",
         "label": "Panregional · 168.196.127.137"
+      },
+      {
+        "url": "http://190.93.224.42/FX/index.m3u8",
+        "label": "Panregional · 190.93.224.42"
       },
       {
         "url": "https://bantel-cdn1.iptvperu.tv:1936/btnscrtn/fx-key/chunks.m3u8",
@@ -17899,11 +18472,11 @@
     "description": "Playing directly in Onde via the public stream listed by iptv-org (category: General).",
     "official": "https://www.hbolatam.com/",
     "guide": "https://www.hbolatam.com/",
-    "stream": "http://15.204.246.24:8080/HBOPlusHD/index.m3u8",
+    "stream": "http://45.134.141.161:2200/ARG/HBO_HD/index.m3u8",
     "directory": "https://iptv-org.github.io/api/streams.json",
     "streamAlts": [
       {
-        "url": "http://45.134.141.161:2200/ARG/HBO_HD/index.m3u8",
+        "url": "http://15.204.246.24:8080/HBOPlusHD/index.m3u8",
         "label": "SD"
       }
     ],
@@ -17940,8 +18513,15 @@
     "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Movies).",
     "official": "https://www.hbolatam.com/",
     "guide": "https://www.hbolatam.com/",
-    "stream": "https://bantel-cdn1.iptvperu.tv:1936/btnscrtn/HBO_Xtreme/chunks.m3u8",
+    "stream": "http://15.204.246.24:8080/HBOXTREMEHD/index.m3u8",
     "directory": "https://iptv-org.github.io/api/streams.json",
+    "streamAlts": [
+      {
+        "url": "https://bantel-cdn1.iptvperu.tv:1936/btnscrtn/HBO_Xtreme/chunks.m3u8",
+        "label": "SD"
+      }
+    ],
+    "insecureStream": true,
     "limited": true,
     "note": "Stream refused (HTTP 403) from outside its region when checked: playback is probably limited to the broadcaster's country.",
     "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/HBO_Xtreme.svg/960px-HBO_Xtreme.svg.png",
@@ -18190,24 +18770,6 @@
     "directory": "https://iptv-org.github.io/api/streams.json",
     "nativeHlsOnly": true,
     "logoUrl": "https://i.imgur.com/NZDUlME.png",
-    "source": "iptv-org"
-  },
-  {
-    "id": "in-touch-plus",
-    "name": "InTouch+",
-    "brand": "InTouch+",
-    "region": "USA",
-    "category": "Religious",
-    "color": "#6b8c92",
-    "language": "en",
-    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Religious).",
-    "official": "https://www.intouch.org/plus",
-    "guide": "https://www.intouch.org/plus",
-    "stream": "https://amg01540-amg01540c1-amgplt0095.playout.now3.amagi.tv/playlist.m3u8",
-    "directory": "https://iptv-org.github.io/api/streams.json",
-    "limited": true,
-    "note": "Stream refused (HTTP 403) from outside its region when checked: playback is probably limited to the broadcaster's country.",
-    "logoUrl": "https://d2cc5gnf1jy2pj.cloudfront.net/custom_landing_pages/intouchplus/intouchplus_logo.svg",
     "source": "iptv-org"
   },
   {
@@ -18567,8 +19129,14 @@
     "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Music).",
     "official": "https://www.latingroup.us/mms.html",
     "guide": "https://www.latingroup.us/mms.html",
-    "stream": "http://181.78.12.119:16123/play/ch55/index.m3u8",
+    "stream": "http://38.134.250.110:8000/play/a02m/index.m3u8",
     "directory": "https://iptv-org.github.io/api/streams.json",
+    "streamAlts": [
+      {
+        "url": "http://181.78.12.119:16123/play/ch55/index.m3u8",
+        "label": "SD"
+      }
+    ],
     "insecureStream": true,
     "logoUrl": "https://i.imgur.com/sT91t83.png",
     "source": "iptv-org"
@@ -18586,6 +19154,12 @@
     "guide": "https://www.monsterjam.com/en-us/streaming/",
     "stream": "https://4b9627c7.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/UmFrdXRlblRWLWV1X01vbnN0ZXJKYW1fSExT/playlist.m3u8",
     "directory": "https://iptv-org.github.io/api/streams.json",
+    "streamAlts": [
+      {
+        "url": "https://wurlspacemob.global.transmit.live/hls/6791101f0b2848c81efe74d7/v1/answermedia_monsterjam_1/vizio_us/latest/main/hls/playlist.m3u8",
+        "label": "SD"
+      }
+    ],
     "logoUrl": "https://images-1.rakuten.tv/storage/global-live-channel/translation/artwork/0734ee9d-7417-4f53-a092-e29d6e8146ee-width200-quality90.jpeg",
     "source": "iptv-org"
   },
@@ -18844,12 +19418,12 @@
         "label": "Panregional"
       },
       {
-        "url": "http://190.93.224.42/NAT-GEO/index.m3u8",
-        "label": "Panregional · 190.93.224.42"
-      },
-      {
         "url": "http://45.173.231.22:8000/play/a05z/index.m3u8",
         "label": "Panregional · 45.173.231.22"
+      },
+      {
+        "url": "http://190.93.224.42/NAT-GEO/index.m3u8",
+        "label": "Panregional · 190.93.224.42"
       }
     ],
     "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Natgeologo.svg/960px-Natgeologo.svg.png",
@@ -19214,16 +19788,16 @@
     "directory": "https://iptv-org.github.io/api/streams.json",
     "streamAlts": [
       {
-        "url": "http://45.224.97.181:9999/Pasiones/index.m3u8",
+        "url": "http://45.173.231.22:8000/play/a06n/index.m3u8",
         "label": "SD"
+      },
+      {
+        "url": "http://45.224.97.181:9999/Pasiones/index.m3u8",
+        "label": "SD · 45.224.97.181"
       },
       {
         "url": "http://190.93.224.42/PASIONES/index.m3u8",
         "label": "SD · 190.93.224.42"
-      },
-      {
-        "url": "http://45.173.231.22:8000/play/a06n/index.m3u8",
-        "label": "SD · 45.173.231.22"
       },
       {
         "url": "https://bantel-cdn1.iptvperu.tv:1936/btnscrtn/pasiones/chunks.m3u8",
@@ -21251,6 +21825,10 @@
     "directory": "https://iptv-org.github.io/api/streams.json",
     "streamAlts": [
       {
+        "url": "http://181.78.14.26:4000/play/a04d/index.m3u8",
+        "label": "Panregional"
+      },
+      {
         "url": "http://45.171.64.30:6060/play/a014/index.m3u8",
         "label": "South"
       }
@@ -21269,7 +21847,7 @@
     "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Series).",
     "official": "https://telecyan.blogspot.com",
     "guide": "https://telecyan.blogspot.com",
-    "stream": "https://live20.bozztv.com/giatvplayout7/giatv-211227/playlist.m3u8",
+    "stream": "https://183.giatvcdn.com/giatvplayout7/giatv-211227/playlist.m3u8",
     "directory": "https://iptv-org.github.io/api/streams.json",
     "logoUrl": "https://i.imgur.com/9BnHCj5.png",
     "source": "iptv-org"
@@ -21289,24 +21867,24 @@
     "directory": "https://iptv-org.github.io/api/streams.json",
     "streamAlts": [
       {
-        "url": "http://138.121.15.230:9002/TELEMUNDO/index.m3u8",
+        "url": "http://45.173.231.22:8000/play/a01h/index.m3u8",
         "label": "South"
       },
       {
-        "url": "http://190.93.224.42/TELEMUNDO/index.m3u8",
-        "label": "South · 190.93.224.42"
+        "url": "http://45.173.231.22:8000/play/a097/index.m3u8",
+        "label": "South · 45.173.231.22"
+      },
+      {
+        "url": "http://138.121.15.230:9002/TELEMUNDO/index.m3u8",
+        "label": "South · 138.121.15.230"
       },
       {
         "url": "http://168.196.127.137:6001/play/a05t/index.m3u8",
         "label": "South · 168.196.127.137"
       },
       {
-        "url": "http://45.173.231.22:8000/play/a01h/index.m3u8",
-        "label": "South · 45.173.231.22"
-      },
-      {
-        "url": "http://45.173.231.22:8000/play/a097/index.m3u8",
-        "label": "South · 45.173.231.22"
+        "url": "http://190.93.224.42/TELEMUNDO/index.m3u8",
+        "label": "South · 190.93.224.42"
       },
       {
         "url": "http://45.184.109.10/live/69393EAE6ADBC65A68F942022362A202/54.m3u8",
@@ -21420,20 +21998,16 @@
     "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Series).",
     "official": "https://iptv-org.github.io/api/streams.json",
     "guide": "https://iptv-org.github.io/api/streams.json",
-    "stream": "http://45.162.64.114/TNT_NOVELAS/index.m3u8",
+    "stream": "http://190.61.47.54:8000/play/a02f/index.m3u8",
     "directory": "https://iptv-org.github.io/api/streams.json",
     "streamAlts": [
       {
-        "url": "http://190.61.47.54:8000/play/a02f/index.m3u8",
-        "label": "Colombia"
-      },
-      {
-        "url": "http://190.93.224.42/TNT-NOVELAS/index.m3u8",
+        "url": "http://158.172.155.130:8000/play/a0at/index.m3u8",
         "label": "Panregional"
       },
       {
-        "url": "http://158.172.155.130:8000/play/a0at/index.m3u8",
-        "label": "Panregional · 158.172.155.130"
+        "url": "http://190.93.224.42/TNT-NOVELAS/index.m3u8",
+        "label": "Panregional · 190.93.224.42"
       },
       {
         "url": "https://bantel-cdn1.iptvperu.tv:1936/btnscrtn/tntnovelas.stream/chunks.m3u8",
@@ -21488,6 +22062,48 @@
     ],
     "nativeHlsOnly": true,
     "logoUrl": "https://i.imgur.com/tWpjXtl.png",
+    "source": "iptv-org"
+  },
+  {
+    "id": "tooncast",
+    "name": "Tooncast",
+    "brand": "Tooncast",
+    "region": "USA",
+    "category": "Animation",
+    "color": "#6b8c92",
+    "language": "en",
+    "description": "Playing directly in Onde via the public stream listed by iptv-org (category: Animation).",
+    "official": "https://www.tooncast.tv/",
+    "guide": "https://www.tooncast.tv/",
+    "stream": "https://streaming.onnethn.com/TOONCAST/playlist.m3u8",
+    "directory": "https://iptv-org.github.io/api/streams.json",
+    "streamAlts": [
+      {
+        "url": "http://45.134.141.161:2200/ARG/Tooncast/index.m3u8",
+        "label": "Argentina"
+      },
+      {
+        "url": "http://170.83.16.50/TOONCAST/index.m3u8",
+        "label": "Brazil"
+      },
+      {
+        "url": "http://45.184.109.10/live/69393EAE6ADBC65A68F942022362A202/69.m3u8",
+        "label": "Panregional"
+      },
+      {
+        "url": "http://181.224.255.210:8001/play/a0ou/index.m3u8?hls",
+        "label": "Panregional · 181.224.255.210"
+      },
+      {
+        "url": "http://190.61.42.218:9000/play/a06i/index.m3u8",
+        "label": "SouthAmerica"
+      },
+      {
+        "url": "http://45.173.231.22:8000/play/a01i/index.m3u8",
+        "label": "SouthAmerica · 45.173.231.22"
+      }
+    ],
+    "logoUrl": "https://i.imgur.com/3yXRbQy.png",
     "source": "iptv-org"
   },
   {
